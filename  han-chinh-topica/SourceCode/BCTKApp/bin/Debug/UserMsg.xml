@@ -1,0 +1,163 @@
+<?xml version="1.0" standalone="yes"?>
+<DatasetMsg xmlns="http://tempuri.org/DatasetMsg.xsd">
+  <Message>
+    <Message>Dữ liệu cần được cập nhật !</Message>
+    <ID>1</ID>
+  </Message>
+  <Message>
+    <Message>Thông số kết nối không đúng. Bạn hãy thiết lập lại</Message>
+    <ID>2</ID>
+  </Message>
+  <Message>
+    <Message>Không thể tìm thấy stored procedure "login"</Message>
+    <ID>3</ID>
+  </Message>
+  <Message>
+    <Message>kết nối không thành công. không thể login với user "sa"</Message>
+    <ID>4</ID>
+  </Message>
+  <Message>
+    <Message>Bạn không được phép sử dụng chức năng này !</Message>
+    <ID>5</ID>
+  </Message>
+  <Message>
+    <Message>Bạn có chắc chắn muốn xóa dữ liệu này không?</Message>
+    <ID>8</ID>
+  </Message>
+  <Message>
+    <Message>Dữ liệu kết quả sẽ được chèn, bạn có thực sự muốn cập nhật dữ liệu này không?</Message>
+    <ID>9</ID>
+  </Message>
+  <Message>
+    <Message>Tên truy cập hoặc mật khẩu chưa chính xác!</Message>
+    <ID>18</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa gõ tên truy cập!</Message>
+    <ID>19</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa gõ mật khẩu!</Message>
+    <ID>20</ID>
+  </Message>
+  <Message>
+    <Message>Ngày mà bạn nhập không hợp lệ !</Message>
+    <ID>14</ID>
+  </Message>
+  <Message>
+    <Message>Dữ liệu phải là số!</Message>
+    <ID>12</ID>
+  </Message>
+  <Message>
+    <Message>Dữ liệu cập nhật thành công</Message>
+    <ID>10</ID>
+  </Message>
+  <Message>
+    <Message>Còn chứng chỉ trong đợt chưa được duyệt</Message>
+    <ID>11</ID>
+  </Message>
+  <Message>
+    <Message>Duyệt toàn bộ chứng chỉ trong đợt thành công</Message>
+    <ID>13</ID>
+  </Message>
+  <Message>
+    <Message>Cập nhật thành công</Message>
+    <ID>15</ID>
+  </Message>
+  <Message>
+    <Message>Duyệt chứng chỉ thành công!</Message>
+    <ID>16</ID>
+  </Message>
+  <Message>
+    <Message>Duyệt thông tin chung thành công!</Message>
+    <ID>17</ID>
+  </Message>
+  <Message>
+    <Message>Duyệt phôi thành công!</Message>
+    <ID>21</ID>
+  </Message>
+  <Message>
+    <Message>Đã xảy ra lỗi trong quá trình ghi log hệ thống</Message>
+    <ID>22</ID>
+  </Message>
+  <Message>
+    <Message>Thêm thông tin phôi thành công!</Message>
+    <ID>23</ID>
+  </Message>
+  <Message>
+    <Message>Sửa thông tin phôi thành công!</Message>
+    <ID>24</ID>
+  </Message>
+  <Message>
+    <Message>Duyệt thông tin phôi thành công!</Message>
+    <ID>25</ID>
+  </Message>
+  <Message>
+    <Message>Thêm đợt cấp thành công!</Message>
+    <ID>26</ID>
+  </Message>
+  <Message>
+    <Message>Sửa đợt cấp thành công!</Message>
+    <ID>27</ID>
+  </Message>
+  <Message>
+    <Message>Duyệt đợt cấp thành công!</Message>
+    <ID>28</ID>
+  </Message>
+  <Message>
+    <Message>Cập nhật thông tin chung thành công!</Message>
+    <ID>29</ID>
+  </Message>
+  <Message>
+    <Message>Xuất chứng chỉ ra bản mềm thành công!</Message>
+    <ID>30</ID>
+  </Message>
+  <Message>
+    <Message>Thêm thông tin phôi thành công!</Message>
+    <ID>31</ID>
+  </Message>
+  <Message>
+    <Message>Thêm phôi thành công!</Message>
+    <ID>32</ID>
+  </Message>
+  <Message>
+    <Message>Sửa phôi thành công!</Message>
+    <ID>33</ID>
+  </Message>
+  <Message>
+    <Message>Đợt cấp này đã được xuất ra file ảnh. Việc tiếp tục xuất ra bản mềm sẽ xóa toàn bộ bản mềm cũ đã xuất. Bạn có chắc chắn muốn tiếp tục không?</Message>
+    <ID>34</ID>
+  </Message>
+  <Message>
+    <Message>Xuất toàn bộ chứng chỉ trong đợt ra bản mềm?</Message>
+    <ID>35</ID>
+  </Message>
+  <Message>
+    <Message>Dữ liệu trên lưới không được để trống</Message>
+    <ID>36</ID>
+  </Message>
+  <Message>
+    <Message>Đã load dữ liệu file excel thành công</Message>
+    <ID>37</ID>
+  </Message>
+  <Message>
+    <Message>Cột STT không được trống, kiểm tra lại đi</Message>
+    <ID>38</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa load file Danh sách chứng chỉ</Message>
+    <ID>39</ID>
+  </Message>
+  <Message>
+    <Message>Kiểm tra dữ liệu thành công!</Message>
+    <ID>40</ID>
+  </Message>
+  <Message>
+    <Message>Tồn tại dữ liệu không hợp lệ. Xem thông báo trên lưới</Message>
+    <ID>41</ID>
+  </Message>
+  <Message>
+    <Message>Chưa nhập hoặc chưa nhập đủ thông tin chung trong đợt cấp!</Message>
+    <ID>42</ID>
+  </Message>
+</DatasetMsg>

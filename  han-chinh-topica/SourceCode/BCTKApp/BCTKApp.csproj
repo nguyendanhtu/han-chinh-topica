@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{78272235-1F54-4999-968E-A24136D4F875}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>post_office.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>BCTKApp</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BCTKApp</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>F:\00.TOPICA\02. Projects\II.  PROJECT DA LAM\07. BUU_CUC_THONG_KE\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://210.245.89.37:85/BCTK/</InstallUrl>
+    <ProductName>BCTK</ProductName>
+    <PublisherName>BCTK</PublisherName>
+    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>20AC23CAD5153B65F785A454D9BC4F840FCB6FA1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TCMApp_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BCTKDS\BCTKDS.csproj">
+      <Project>{39DC1A18-A725-4DF1-93CE-467C130CEEF9}</Project>
+      <Name>BCTKDS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCTKUS\BCTKUS.csproj">
+      <Project>{A6E36F4B-6825-44A8-9396-C5BBD8630CB0}</Project>
+      <Name>BCTKUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPBusinessService\IPBusinessService.vbproj">
+      <Project>{73CA732C-2CFB-4A14-B0B9-F43763B1C2F3}</Project>
+      <Name>IPBusinessService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPCommon\IPCommon.vbproj">
+      <Project>{2A74F1D1-C0EE-41FE-A708-A83B285ACCF2}</Project>
+      <Name>IPCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPData\IPData.vbproj">
+      <Project>{9ACEDD70-FDA2-44D8-A004-3A7EAF86A954}</Project>
+      <Name>IPData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPExcelReport\IPExcelReport.vbproj">
+      <Project>{957C06D0-FF42-4C7A-B5E8-7E15C1522B59}</Project>
+      <Name>IPExcelReport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPException\IPException.vbproj">
+      <Project>{B73156C2-7034-4DEA-A308-5E1782FF8DB4}</Project>
+      <Name>IPException</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPSystemAdmin\IPSystemAdmin.vbproj">
+      <Project>{455CD3A5-79BA-480A-B9BD-D4A7DDA397A8}</Project>
+      <Name>IPSystemAdmin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPUserService\IPUserService.vbproj">
+      <Project>{B490EA92-2990-4CBB-B58B-12901AFCCCB5}</Project>
+      <Name>IPUserService</Name>
+    </ProjectReference>
+    <Reference Include="C1.Common, Version=1.0.20031.116, Culture=neutral, PublicKeyToken=e272bb32d11b1948">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid, Version=2.5.20044.189, Culture=neutral, PublicKeyToken=c9c7ad9c0a5706c9">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.Classic">
+      <Name>C1.Win.C1FlexGrid.Classic</Name>
+      <HintPath>..\DLL\C1.Win.C1FlexGrid.Classic.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input">
+      <Name>C1.Win.C1Input</Name>
+      <HintPath>..\DLL\C1.Win.C1Input.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ChartLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <Name>Interop.Excel</Name>
+      <HintPath>..\DLL\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <Name>Interop.Microsoft.Office.Core</Name>
+      <HintPath>..\DLL\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Office">
+      <Name>Interop.Office</Name>
+      <HintPath>..\DLL\Interop.Office.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Word">
+      <Name>Interop.Word</Name>
+      <HintPath>..\DLL\Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="MComboBox">
+      <Name>mcombobox</Name>
+      <HintPath>..\DLL\mcombobox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <Name>Microsoft.Office.Interop.Excel</Name>
+      <HintPath>..\DLL\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorcfg">
+      <Name>mscorcfg</Name>
+    </Reference>
+    <Reference Include="SiSButton">
+      <Name>SiSButton</Name>
+      <HintPath>..\DLL\SiSButton.dll</HintPath>
+    </Reference>
+    <Reference Include="SiSMenu">
+      <Name>SiSMenu</Name>
+      <HintPath>..\DLL\SiSMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="application_certificate.ico" />
+    <Content Include="post_office.ico" />
+    <Content Include="Reports\Output\Readme.txt" />
+    <Content Include="Reports\Templates\Readme.txt" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\Help\help.chm" />
+    <Content Include="App.ico" />
+    <None Include="bin\Debug\Reports\Templates\F260_file_template_import.xls" />
+    <None Include="bin\Debug\Reports\Templates\Temp_CHUNGNHAN-HOU_DTU_TVU_CLB_SV.xls" />
+    <None Include="bin\Debug\Reports\Templates\Temp_PRTT_Temp1_E-learning-04042013_V1.1.xls" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Reports\Templates\BCTK_Chuyen_phat_nhanh.xlsx" />
+    <None Include="Reports\Templates\BCTK_Dang_Ky_Gui.xlsx" />
+    <None Include="Reports\Templates\BCTK_Danh_sach_gui_cuoi_thang.xlsx" />
+    <None Include="Reports\Templates\BCTK_Thong_tin_import_from_excel_can_kiem_tra.xlsx" />
+    <None Include="Resources\report.jpg" />
+    <Compile Include="ApplicationControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Code\HelpUtils.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CChartParameter.cs" />
+    <Compile Include="ChartDataSourceInterface.cs" />
+    <Compile Include="f120_dm_dang_ky_gui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f120_dm_dang_ky_gui_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f120_dm_dang_ky_gui_DE.Designer.cs">
+      <DependentUpon>f120_dm_dang_ky_gui_DE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f001_main_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f121_dm_dang_ky_gui_theo_excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f121_dm_dang_ky_gui_theo_excel.Designer.cs">
+      <DependentUpon>f121_dm_dang_ky_gui_theo_excel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f130_chuc_nang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f130_chuc_nang.Designer.cs">
+      <DependentUpon>f130_chuc_nang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f140_thong_tin_cuoi_thang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f140_thong_tin_cuoi_thang.Designer.cs">
+      <DependentUpon>f140_thong_tin_cuoi_thang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f996_license_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f998_ht_nguoi_su_dung_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f999_ht_nguoi_su_dung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBarChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBarChart.designer.cs">
+      <DependentUpon>frmBarChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPieChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPieChart.designer.cs">
+      <DependentUpon>frmPieChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\f000_confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f000_confirm.Designer.cs">
+      <DependentUpon>f000_confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\f107_ht_tham_so_he_thong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f108_tham_so_he_thong_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f108_tham_so_he_thong_de.Designer.cs">
+      <DependentUpon>f108_tham_so_he_thong_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\f997_ht_nhom_quyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f997_ht_nhom_quyen_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f997_ht_nhom_quyen_de.Designer.cs">
+      <DependentUpon>f997_ht_nhom_quyen_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="f120_dm_dang_ky_gui.resx">
+      <DependentUpon>f120_dm_dang_ky_gui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f120_dm_dang_ky_gui_DE.resx">
+      <DependentUpon>f120_dm_dang_ky_gui_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f001_main_form.resx">
+      <DependentUpon>f001_main_form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f121_dm_dang_ky_gui_theo_excel.resx">
+      <DependentUpon>f121_dm_dang_ky_gui_theo_excel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f130_chuc_nang.resx">
+      <DependentUpon>f130_chuc_nang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f140_thong_tin_cuoi_thang.resx">
+      <DependentUpon>f140_thong_tin_cuoi_thang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.resx">
+      <DependentUpon>f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f996_license_form.resx">
+      <DependentUpon>f996_license_form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f998_ht_nguoi_su_dung_de.resx">
+      <DependentUpon>f998_ht_nguoi_su_dung_de.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f999_ht_nguoi_su_dung.resx">
+      <DependentUpon>f999_ht_nguoi_su_dung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBarChart.resx">
+      <DependentUpon>frmBarChart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPieChart.resx">
+      <DependentUpon>frmPieChart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f000_confirm.resx">
+      <DependentUpon>f000_confirm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f107_ht_tham_so_he_thong.resx">
+      <DependentUpon>f107_ht_tham_so_he_thong.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f108_tham_so_he_thong_de.resx">
+      <DependentUpon>f108_tham_so_he_thong_de.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f997_ht_nhom_quyen.resx">
+      <DependentUpon>f997_ht_nhom_quyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f997_ht_nhom_quyen_de.resx">
+      <DependentUpon>f997_ht_nhom_quyen_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{CF845C55-C321-4742-B673-E6212D061ED9}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaoCao\" />
+    <Folder Include="bin\Debug\Reports\Output\" />
+    <Folder Include="ChucNang\" />
+    <Folder Include="DanhMuc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
