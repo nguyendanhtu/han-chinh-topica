@@ -44,8 +44,8 @@ namespace BCTKApp
                 while (!v_UserWant2ExitFromSystem)
                 {
                     CAppContext_201.InitializeContext(v_obj_login_info);
-                    CAppContext_201.LoadDecentralizationByUserLogin();
-                    f888_main_menu v_frm_main = new f888_main_menu();
+                    CAppContext_201.LoadDecentralizationByUserLogin();		
+                    f001_main_form v_frm_main = new f001_main_form();
                     v_frm_main.display(ref v_exitmode);
                     v_frm_main.Dispose();
                     // sau main form hiện thì login hoặc thóat

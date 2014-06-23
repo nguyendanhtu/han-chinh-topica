@@ -148,16 +148,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_DM_DANG_KY_GUI.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_DM_DANG_KY_GUI.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_DM_PHONG_BAN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_DM_PHONG_BAN.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DS_DOC_COLUMN_COMMENT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,20 +158,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DOC_TABLE_COMMENT.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_GD_DINH_MUC.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_GD_DINH_MUC.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DS_GD_PHAN_HOI.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_PHAN_HOI.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_GD_THONG_KE.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_GD_THONG_KE.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_HT_BACKUP_HISTORY.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -231,21 +211,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_CM_DM_DANG_KY_GUI.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_V_DM_DANG_KY_GUI.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_V_DM_DANG_KY_GUI.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_V_GD_DINH_MUC.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_V_GD_DINH_MUC.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_V_GD_THONG_KE.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_V_GD_THONG_KE.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_HT_LOG_TRUY_CAP.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -315,28 +280,6 @@
     <None Include="DS_CM_DM_TU_DIEN.xss">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
     </None>
-    <None Include="DS_DM_DANG_KY_GUI.xsc">
-      <DependentUpon>DS_DM_DANG_KY_GUI.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_DANG_KY_GUI.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_DM_DANG_KY_GUI.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_DM_DANG_KY_GUI.xss">
-      <DependentUpon>DS_DM_DANG_KY_GUI.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_PHONG_BAN.xsc">
-      <DependentUpon>DS_DM_PHONG_BAN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_PHONG_BAN.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_DM_PHONG_BAN.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_DM_PHONG_BAN.xss">
-      <DependentUpon>DS_DM_PHONG_BAN.xsd</DependentUpon>
-    </None>
     <None Include="DS_DOC_COLUMN_COMMENT.xsc">
       <DependentUpon>DS_DOC_COLUMN_COMMENT.xsd</DependentUpon>
     </None>
@@ -359,17 +302,6 @@
     <None Include="DS_DOC_TABLE_COMMENT.xss">
       <DependentUpon>DS_DOC_TABLE_COMMENT.xsd</DependentUpon>
     </None>
-    <None Include="DS_GD_DINH_MUC.xsc">
-      <DependentUpon>DS_GD_DINH_MUC.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_DINH_MUC.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_GD_DINH_MUC.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_GD_DINH_MUC.xss">
-      <DependentUpon>DS_GD_DINH_MUC.xsd</DependentUpon>
-    </None>
     <None Include="DS_GD_PHAN_HOI.xsc">
       <DependentUpon>DS_GD_PHAN_HOI.xsd</DependentUpon>
     </None>
@@ -380,17 +312,6 @@
     </None>
     <None Include="DS_GD_PHAN_HOI.xss">
       <DependentUpon>DS_GD_PHAN_HOI.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_THONG_KE.xsc">
-      <DependentUpon>DS_GD_THONG_KE.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_THONG_KE.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_GD_THONG_KE.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_GD_THONG_KE.xss">
-      <DependentUpon>DS_GD_THONG_KE.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_BACKUP_HISTORY.xsc">
       <DependentUpon>DS_HT_BACKUP_HISTORY.xsd</DependentUpon>
@@ -490,39 +411,6 @@
     </None>
     <None Include="DS_V_CM_DM_DANG_KY_GUI.xss">
       <DependentUpon>DS_V_CM_DM_DANG_KY_GUI.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_DM_DANG_KY_GUI.xsc">
-      <DependentUpon>DS_V_DM_DANG_KY_GUI.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_DM_DANG_KY_GUI.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_V_DM_DANG_KY_GUI.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_V_DM_DANG_KY_GUI.xss">
-      <DependentUpon>DS_V_DM_DANG_KY_GUI.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_DINH_MUC.xsc">
-      <DependentUpon>DS_V_GD_DINH_MUC.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_DINH_MUC.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_V_GD_DINH_MUC.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_V_GD_DINH_MUC.xss">
-      <DependentUpon>DS_V_GD_DINH_MUC.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_THONG_KE.xsc">
-      <DependentUpon>DS_V_GD_THONG_KE.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_THONG_KE.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_V_GD_THONG_KE.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_V_GD_THONG_KE.xss">
-      <DependentUpon>DS_V_GD_THONG_KE.xsd</DependentUpon>
     </None>
     <None Include="DS_V_HT_LOG_TRUY_CAP.xsc">
       <DependentUpon>DS_V_HT_LOG_TRUY_CAP.xsd</DependentUpon>
