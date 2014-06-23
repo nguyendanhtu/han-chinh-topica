@@ -615,5 +615,35 @@ namespace BCTKDS.CDBNames
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
         public const string TRANG_THAI_THU = "TRANG_THAI_THU";
     }
+    public class V_GD_DINH_MUC
+    {
+        public const string ID = "ID";
+        public const string ID_LOAI_DINH_MUC = "ID_LOAI_DINH_MUC";
+        public const string LOAI_DM = "LOAI_DM";
+        public const string ID_CO_SO_DINH_MUC = "ID_CO_SO_DINH_MUC";
+        public const string CO_SO_DINH_MUC = "CO_SO_DINH_MUC";
+        public const string SO_TIEN_DINH_MUC = "SO_TIEN_DINH_MUC";
+        public const string AP_DUNG_TU_NGAY = "AP_DUNG_TU_NGAY";
+    }
+    public class V_GD_THONG_KE
+    {
+        public const string ID = "ID";
+        public const string ID_LOAI_THONG_KE = "ID_LOAI_THONG_KE";
+        public const string LOAI_TK = "LOAI_TK";
+        public const string TEN_THONG_KE = "TEN_THONG_KE";
+        public const string ID_LOAI_THOI_GIAN = "ID_LOAI_THOI_GIAN";
+        public const string LOAI_THOI_GIAN = "LOAI_THOI_GIAN";
+        public const string TU_NGAY = "TU_NGAY";
+        public const string DEN_NGAY = "DEN_NGAY";
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string GIA_TRI_THONG_KE = "GIA_TRI_THONG_KE";
+        public const string DON_VI_THONG_KE = "DON_VI_THONG_KE";
+        public const string TEN_NGAN = "TEN_NGAN";
+        public const string GHI_CHU_1 = "GHI_CHU_1";
+        public const string GHI_CHU_2 = "GHI_CHU_2";
+        public const string GHI_CHU_3 = "GHI_CHU_3";
+    }
   
 }
