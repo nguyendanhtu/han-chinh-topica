@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_GD_DINH_MUC" targetNamespace="http://tempuri.org/DS_V_GD_DINH_MUC.xsd" xmlns:mstns="http://tempuri.org/DS_V_GD_DINH_MUC.xsd" xmlns="http://tempuri.org/DS_V_GD_DINH_MUC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BUU_CUC_THONG_KEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BUU_CUC_THONG_KEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.BUU_CUC_THONG_KEConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_GD_DINH_MUCTableAdapter" GeneratorDataComponentClassName="V_GD_DINH_MUCTableAdapter" Name="V_GD_DINH_MUC" UserDataComponentName="V_GD_DINH_MUCTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BUU_CUC_THONG_KEConnectionString (Settings)" DbObjectName="ADMIN_SOFT.dbo.V_GD_DINH_MUC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, ID_LOAI_DINH_MUC, LOAI_DM, ID_CO_SO_DINH_MUC, CO_SO_DINH_MUC, SO_TIEN_DINH_MUC, AP_DUNG_TU_NGAY FROM dbo.V_GD_DINH_MUC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ID_LOAI_DINH_MUC" DataSetColumn="ID_LOAI_DINH_MUC" />
+              <Mapping SourceColumn="LOAI_DM" DataSetColumn="LOAI_DM" />
+              <Mapping SourceColumn="ID_CO_SO_DINH_MUC" DataSetColumn="ID_CO_SO_DINH_MUC" />
+              <Mapping SourceColumn="CO_SO_DINH_MUC" DataSetColumn="CO_SO_DINH_MUC" />
+              <Mapping SourceColumn="SO_TIEN_DINH_MUC" DataSetColumn="SO_TIEN_DINH_MUC" />
+              <Mapping SourceColumn="AP_DUNG_TU_NGAY" DataSetColumn="AP_DUNG_TU_NGAY" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_GD_DINH_MUC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_GD_DINH_MUC" msprop:Generator_UserDSName="DS_V_GD_DINH_MUC">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_GD_DINH_MUC" msprop:Generator_TableClassName="V_GD_DINH_MUCDataTable" msprop:Generator_TableVarName="tableV_GD_DINH_MUC" msprop:Generator_TablePropName="V_GD_DINH_MUC" msprop:Generator_RowDeletingName="V_GD_DINH_MUCRowDeleting" msprop:Generator_UserTableName="V_GD_DINH_MUC" msprop:Generator_RowChangingName="V_GD_DINH_MUCRowChanging" msprop:Generator_RowEvHandlerName="V_GD_DINH_MUCRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_DINH_MUCRowDeleted" msprop:Generator_RowEvArgName="V_GD_DINH_MUCRowChangeEvent" msprop:Generator_RowChangedName="V_GD_DINH_MUCRowChanged" msprop:Generator_RowClassName="V_GD_DINH_MUCRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID_LOAI_DINH_MUC" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_DINH_MUC" msprop:Generator_ColumnPropNameInRow="ID_LOAI_DINH_MUC" msprop:Generator_ColumnPropNameInTable="ID_LOAI_DINH_MUCColumn" msprop:Generator_UserColumnName="ID_LOAI_DINH_MUC" type="xs:decimal" />
+              <xs:element name="LOAI_DM" msprop:Generator_ColumnVarNameInTable="columnLOAI_DM" msprop:Generator_ColumnPropNameInRow="LOAI_DM" msprop:Generator_ColumnPropNameInTable="LOAI_DMColumn" msprop:Generator_UserColumnName="LOAI_DM">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_CO_SO_DINH_MUC" msprop:Generator_ColumnVarNameInTable="columnID_CO_SO_DINH_MUC" msprop:Generator_ColumnPropNameInRow="ID_CO_SO_DINH_MUC" msprop:Generator_ColumnPropNameInTable="ID_CO_SO_DINH_MUCColumn" msprop:Generator_UserColumnName="ID_CO_SO_DINH_MUC" type="xs:decimal" />
+              <xs:element name="CO_SO_DINH_MUC" msprop:Generator_ColumnVarNameInTable="columnCO_SO_DINH_MUC" msprop:Generator_ColumnPropNameInRow="CO_SO_DINH_MUC" msprop:Generator_ColumnPropNameInTable="CO_SO_DINH_MUCColumn" msprop:Generator_UserColumnName="CO_SO_DINH_MUC">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SO_TIEN_DINH_MUC" msprop:Generator_ColumnVarNameInTable="columnSO_TIEN_DINH_MUC" msprop:Generator_ColumnPropNameInRow="SO_TIEN_DINH_MUC" msprop:Generator_ColumnPropNameInTable="SO_TIEN_DINH_MUCColumn" msprop:Generator_UserColumnName="SO_TIEN_DINH_MUC" type="xs:decimal" />
+              <xs:element name="AP_DUNG_TU_NGAY" msprop:Generator_ColumnVarNameInTable="columnAP_DUNG_TU_NGAY" msprop:Generator_ColumnPropNameInRow="AP_DUNG_TU_NGAY" msprop:Generator_ColumnPropNameInTable="AP_DUNG_TU_NGAYColumn" msprop:Generator_UserColumnName="AP_DUNG_TU_NGAY" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_GD_DINH_MUC" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
