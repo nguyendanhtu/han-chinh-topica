@@ -1,5 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2011
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPBusinessService", "IPBusinessService\IPBusinessService.vbproj", "{73CA732C-2CFB-4A14-B0B9-F43763B1C2F3}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPCommon", "IPCommon\IPCommon.vbproj", "{2A74F1D1-C0EE-41FE-A708-A83B285ACCF2}"
