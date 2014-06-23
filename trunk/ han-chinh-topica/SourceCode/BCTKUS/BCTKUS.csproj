@@ -132,13 +132,9 @@
     <Compile Include="US_CM_DM_DANG_KY_GUI_DANH_SACH_TUNG_PHONG.cs" />
     <Compile Include="US_CM_DM_TONG_HOP_TIEN_CHUYEN_PHAT_NHANH.cs" />
     <Compile Include="US_CM_DM_TU_DIEN.cs" />
-    <Compile Include="US_DM_DANG_KY_GUI.cs" />
-    <Compile Include="US_DM_PHONG_BAN.cs" />
     <Compile Include="US_DOC_COLUMN_COMMENT.cs" />
     <Compile Include="US_DOC_TABLE_COMMENT.cs" />
-    <Compile Include="US_GD_DINH_MUC.cs" />
     <Compile Include="US_GD_PHAN_HOI.cs" />
-    <Compile Include="US_GD_THONG_KE.cs" />
     <Compile Include="US_HT_BACKUP_HISTORY.cs" />
     <Compile Include="US_HT_BUSINESS_PROCESS_LOCK.cs" />
     <Compile Include="US_HT_NHOM_NGUOI_SU_DUNG.cs" />
@@ -147,9 +143,6 @@
     <Compile Include="US_HT_QUYEN_USER.cs" />
     <Compile Include="US_UT_SEQUENCES.cs" />
     <Compile Include="US_V_CM_DM_DANG_KY_GUI.cs" />
-    <Compile Include="US_V_DM_DANG_KY_GUI.cs" />
-    <Compile Include="US_V_GD_DINH_MUC.cs" />
-    <Compile Include="US_V_GD_THONG_KE.cs" />
     <Compile Include="US_V_HT_LOG_TRUY_CAP.cs" />
   </ItemGroup>
   <ItemGroup>
