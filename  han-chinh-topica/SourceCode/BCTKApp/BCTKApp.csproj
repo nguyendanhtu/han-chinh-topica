@@ -310,6 +310,12 @@
     <Compile Include="f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="f888_main_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f888_main_menu.Designer.cs">
+      <DependentUpon>f888_main_menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="f996_license_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.resx">
       <DependentUpon>f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f888_main_menu.resx">
+      <DependentUpon>f888_main_menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f996_license_form.resx">
       <DependentUpon>f996_license_form.cs</DependentUpon>
