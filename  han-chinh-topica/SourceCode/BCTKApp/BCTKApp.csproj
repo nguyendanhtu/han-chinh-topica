@@ -368,9 +368,11 @@
     </Compile>
     <EmbeddedResource Include="f120_dm_dang_ky_gui.resx">
       <DependentUpon>f120_dm_dang_ky_gui.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f120_dm_dang_ky_gui_DE.resx">
       <DependentUpon>f120_dm_dang_ky_gui_DE.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f001_main_form.resx">
       <DependentUpon>f001_main_form.cs</DependentUpon>
@@ -378,15 +380,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f121_dm_dang_ky_gui_theo_excel.resx">
       <DependentUpon>f121_dm_dang_ky_gui_theo_excel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f130_chuc_nang.resx">
       <DependentUpon>f130_chuc_nang.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f140_thong_tin_cuoi_thang.resx">
       <DependentUpon>f140_thong_tin_cuoi_thang.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.resx">
       <DependentUpon>f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f888_main_menu.resx">
       <DependentUpon>f888_main_menu.cs</DependentUpon>
@@ -425,6 +431,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f997_ht_nhom_quyen.resx">
       <DependentUpon>f997_ht_nhom_quyen.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f997_ht_nhom_quyen_de.resx">
       <DependentUpon>f997_ht_nhom_quyen_de.cs</DependentUpon>
