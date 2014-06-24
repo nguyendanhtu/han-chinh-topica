@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f400_menu_main));
             this.m_rib_control_TAD = new DevComponents.DotNetBar.RibbonControl();
             this.m_rib_pnl_quan_ly_dinh_muc = new DevComponents.DotNetBar.RibbonPanel();
             this.m_rib_pnl_he_thong = new DevComponents.DotNetBar.RibbonPanel();
@@ -74,11 +75,12 @@
             // 
             // m_rib_control_TAD
             // 
+            this.m_rib_control_TAD.BackColor = System.Drawing.Color.Gainsboro;
             // 
             // 
             // 
-            this.m_rib_control_TAD.BackgroundStyle.BackColor = System.Drawing.Color.Firebrick;
-            this.m_rib_control_TAD.BackgroundStyle.BackColor2 = System.Drawing.Color.Firebrick;
+            this.m_rib_control_TAD.BackgroundStyle.BackColor = System.Drawing.Color.Transparent;
+            this.m_rib_control_TAD.BackgroundStyle.BackColor2 = System.Drawing.Color.Transparent;
             this.m_rib_control_TAD.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_control_TAD.CaptionVisible = true;
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_he_thong);
@@ -638,6 +640,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(862, 473);
             this.Controls.Add(this.m_rib_control_TAD);
             this.Name = "f400_menu_main";
