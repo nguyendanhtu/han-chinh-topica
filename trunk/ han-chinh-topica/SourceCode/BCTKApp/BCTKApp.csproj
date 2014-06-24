@@ -195,6 +195,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.Excel">
       <Name>Interop.Excel</Name>
       <HintPath>..\DLL\Interop.Excel.dll</HintPath>
@@ -307,6 +311,12 @@
     <Compile Include="f140_thong_tin_cuoi_thang.Designer.cs">
       <DependentUpon>f140_thong_tin_cuoi_thang.cs</DependentUpon>
     </Compile>
+    <Compile Include="f400_menu_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f400_menu_main.Designer.cs">
+      <DependentUpon>f400_menu_main.cs</DependentUpon>
+    </Compile>
     <Compile Include="f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f140_thong_tin_cuoi_thang.resx">
       <DependentUpon>f140_thong_tin_cuoi_thang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f400_menu_main.resx">
+      <DependentUpon>f400_menu_main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.resx">
       <DependentUpon>f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.cs</DependentUpon>
