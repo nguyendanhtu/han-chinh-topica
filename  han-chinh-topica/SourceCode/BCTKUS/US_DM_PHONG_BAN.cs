@@ -21,70 +21,74 @@ namespace BCTKUS{
 public class US_DM_PHONG_BAN : US_Object
 {
 	private const string c_TableName = "DM_PHONG_BAN";
-#region "Public Properties"
-	public decimal dcID 
-	{
-		get
-		{
-			return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
-		}
-		set	
-		{
-			pm_objDR["ID"] = value;
-		}
-	}
+    #region "Public Properties"
+    public decimal dcID
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID"] = value;
+        }
+    }
 
-	public bool IsIDNull()	{
-		return pm_objDR.IsNull("ID");
-	}
+    public bool IsIDNull()
+    {
+        return pm_objDR.IsNull("ID");
+    }
 
-	public void SetIDNull() {
-		pm_objDR["ID"] = System.Convert.DBNull;
-	}
+    public void SetIDNull()
+    {
+        pm_objDR["ID"] = System.Convert.DBNull;
+    }
 
-	public string strMA_PHONG_BAN 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "MA_PHONG_BAN", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["MA_PHONG_BAN"] = value;
-		}
-	}
+    public string strMA_PHONG_BAN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MA_PHONG_BAN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MA_PHONG_BAN"] = value;
+        }
+    }
 
-	public bool IsMA_PHONG_BANNull() 
-	{
-		return pm_objDR.IsNull("MA_PHONG_BAN");
-	}
+    public bool IsMA_PHONG_BANNull()
+    {
+        return pm_objDR.IsNull("MA_PHONG_BAN");
+    }
 
-	public void SetMA_PHONG_BANNull() {
-		pm_objDR["MA_PHONG_BAN"] = System.Convert.DBNull;
-	}
+    public void SetMA_PHONG_BANNull()
+    {
+        pm_objDR["MA_PHONG_BAN"] = System.Convert.DBNull;
+    }
 
-	public string strTEN_PHONG_BAN 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "TEN_PHONG_BAN", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["TEN_PHONG_BAN"] = value;
-		}
-	}
+    public string strTEN_PHONG_BAN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TEN_PHONG_BAN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TEN_PHONG_BAN"] = value;
+        }
+    }
 
-	public bool IsTEN_PHONG_BANNull() 
-	{
-		return pm_objDR.IsNull("TEN_PHONG_BAN");
-	}
+    public bool IsTEN_PHONG_BANNull()
+    {
+        return pm_objDR.IsNull("TEN_PHONG_BAN");
+    }
 
-	public void SetTEN_PHONG_BANNull() {
-		pm_objDR["TEN_PHONG_BAN"] = System.Convert.DBNull;
-	}
+    public void SetTEN_PHONG_BANNull()
+    {
+        pm_objDR["TEN_PHONG_BAN"] = System.Convert.DBNull;
+    }
 
-#endregion
+    #endregion
 #region "Init Functions"
 	public US_DM_PHONG_BAN() 
 	{

@@ -281,6 +281,9 @@
     </Compile>
     <Compile Include="CChartParameter.cs" />
     <Compile Include="ChartDataSourceInterface.cs" />
+    <Compile Include="DanhMuc\f800_DM_PHONG_BAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="f120_dm_dang_ky_gui.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -370,6 +373,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DanhMuc\f800_DM_PHONG_BAN.resx">
+      <DependentUpon>f800_DM_PHONG_BAN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="f120_dm_dang_ky_gui.resx">
       <DependentUpon>f120_dm_dang_ky_gui.cs</DependentUpon>
     </EmbeddedResource>
@@ -447,7 +453,6 @@
     <Folder Include="BaoCao\" />
     <Folder Include="bin\Debug\Reports\Output\" />
     <Folder Include="ChucNang\" />
-    <Folder Include="DanhMuc\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
