@@ -20,17 +20,17 @@ namespace BCTKDS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DS_DM_PHONG_BAN")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DS_GD_PHONG_BAN_DINH_MUC")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DS_DM_PHONG_BAN : global::System.Data.DataSet {
+    public partial class DS_GD_PHONG_BAN_DINH_MUC : global::System.Data.DataSet {
         
-        private DM_PHONG_BANDataTable tableDM_PHONG_BAN;
+        private GD_PHONG_BAN_DINH_MUCDataTable tableGD_PHONG_BAN_DINH_MUC;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DS_DM_PHONG_BAN() {
+        public DS_GD_PHONG_BAN_DINH_MUC() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace BCTKDS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DS_DM_PHONG_BAN(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DS_GD_PHONG_BAN_DINH_MUC(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace BCTKDS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DM_PHONG_BAN"] != null)) {
-                    base.Tables.Add(new DM_PHONG_BANDataTable(ds.Tables["DM_PHONG_BAN"]));
+                if ((ds.Tables["GD_PHONG_BAN_DINH_MUC"] != null)) {
+                    base.Tables.Add(new GD_PHONG_BAN_DINH_MUCDataTable(ds.Tables["GD_PHONG_BAN_DINH_MUC"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace BCTKDS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DM_PHONG_BANDataTable DM_PHONG_BAN {
+        public GD_PHONG_BAN_DINH_MUCDataTable GD_PHONG_BAN_DINH_MUC {
             get {
-                return this.tableDM_PHONG_BAN;
+                return this.tableGD_PHONG_BAN_DINH_MUC;
             }
         }
         
@@ -127,7 +127,7 @@ namespace BCTKDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DS_DM_PHONG_BAN cln = ((DS_DM_PHONG_BAN)(base.Clone()));
+            DS_GD_PHONG_BAN_DINH_MUC cln = ((DS_GD_PHONG_BAN_DINH_MUC)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace BCTKDS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DM_PHONG_BAN"] != null)) {
-                    base.Tables.Add(new DM_PHONG_BANDataTable(ds.Tables["DM_PHONG_BAN"]));
+                if ((ds.Tables["GD_PHONG_BAN_DINH_MUC"] != null)) {
+                    base.Tables.Add(new GD_PHONG_BAN_DINH_MUCDataTable(ds.Tables["GD_PHONG_BAN_DINH_MUC"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace BCTKDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDM_PHONG_BAN = ((DM_PHONG_BANDataTable)(base.Tables["DM_PHONG_BAN"]));
+            this.tableGD_PHONG_BAN_DINH_MUC = ((GD_PHONG_BAN_DINH_MUCDataTable)(base.Tables["GD_PHONG_BAN_DINH_MUC"]));
             if ((initTable == true)) {
-                if ((this.tableDM_PHONG_BAN != null)) {
-                    this.tableDM_PHONG_BAN.InitVars();
+                if ((this.tableGD_PHONG_BAN_DINH_MUC != null)) {
+                    this.tableGD_PHONG_BAN_DINH_MUC.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace BCTKDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DS_DM_PHONG_BAN";
+            this.DataSetName = "DS_GD_PHONG_BAN_DINH_MUC";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DS_DM_PHONG_BAN.xsd";
+            this.Namespace = "http://tempuri.org/DS_GD_PHONG_BAN_DINH_MUC.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDM_PHONG_BAN = new DM_PHONG_BANDataTable();
-            base.Tables.Add(this.tableDM_PHONG_BAN);
+            this.tableGD_PHONG_BAN_DINH_MUC = new GD_PHONG_BAN_DINH_MUCDataTable();
+            base.Tables.Add(this.tableGD_PHONG_BAN_DINH_MUC);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeDM_PHONG_BAN() {
+        private bool ShouldSerializeGD_PHONG_BAN_DINH_MUC() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace BCTKDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DS_DM_PHONG_BAN ds = new DS_DM_PHONG_BAN();
+            DS_GD_PHONG_BAN_DINH_MUC ds = new DS_GD_PHONG_BAN_DINH_MUC();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,25 +270,25 @@ namespace BCTKDS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DM_PHONG_BANRowChangeEventHandler(object sender, DM_PHONG_BANRowChangeEvent e);
+        public delegate void GD_PHONG_BAN_DINH_MUCRowChangeEventHandler(object sender, GD_PHONG_BAN_DINH_MUCRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DM_PHONG_BANDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class GD_PHONG_BAN_DINH_MUCDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnMA_PHONG_BAN;
+            private global::System.Data.DataColumn columnID_PHONG_BAN;
             
-            private global::System.Data.DataColumn columnTEN_PHONG_BAN;
+            private global::System.Data.DataColumn columnID_CO_SO_DINH_MUC;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_PHONG_BANDataTable() {
-                this.TableName = "DM_PHONG_BAN";
+            public GD_PHONG_BAN_DINH_MUCDataTable() {
+                this.TableName = "GD_PHONG_BAN_DINH_MUC";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +296,7 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DM_PHONG_BANDataTable(global::System.Data.DataTable table) {
+            internal GD_PHONG_BAN_DINH_MUCDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,7 +313,7 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected DM_PHONG_BANDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected GD_PHONG_BAN_DINH_MUCDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -328,17 +328,17 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MA_PHONG_BANColumn {
+            public global::System.Data.DataColumn ID_PHONG_BANColumn {
                 get {
-                    return this.columnMA_PHONG_BAN;
+                    return this.columnID_PHONG_BAN;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TEN_PHONG_BANColumn {
+            public global::System.Data.DataColumn ID_CO_SO_DINH_MUCColumn {
                 get {
-                    return this.columnTEN_PHONG_BAN;
+                    return this.columnID_CO_SO_DINH_MUC;
                 }
             }
             
@@ -353,47 +353,47 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_PHONG_BANRow this[int index] {
+            public GD_PHONG_BAN_DINH_MUCRow this[int index] {
                 get {
-                    return ((DM_PHONG_BANRow)(this.Rows[index]));
+                    return ((GD_PHONG_BAN_DINH_MUCRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DM_PHONG_BANRowChangeEventHandler DM_PHONG_BANRowChanging;
+            public event GD_PHONG_BAN_DINH_MUCRowChangeEventHandler GD_PHONG_BAN_DINH_MUCRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DM_PHONG_BANRowChangeEventHandler DM_PHONG_BANRowChanged;
+            public event GD_PHONG_BAN_DINH_MUCRowChangeEventHandler GD_PHONG_BAN_DINH_MUCRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DM_PHONG_BANRowChangeEventHandler DM_PHONG_BANRowDeleting;
+            public event GD_PHONG_BAN_DINH_MUCRowChangeEventHandler GD_PHONG_BAN_DINH_MUCRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DM_PHONG_BANRowChangeEventHandler DM_PHONG_BANRowDeleted;
+            public event GD_PHONG_BAN_DINH_MUCRowChangeEventHandler GD_PHONG_BAN_DINH_MUCRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddDM_PHONG_BANRow(DM_PHONG_BANRow row) {
+            public void AddGD_PHONG_BAN_DINH_MUCRow(GD_PHONG_BAN_DINH_MUCRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_PHONG_BANRow AddDM_PHONG_BANRow(string MA_PHONG_BAN, string TEN_PHONG_BAN) {
-                DM_PHONG_BANRow rowDM_PHONG_BANRow = ((DM_PHONG_BANRow)(this.NewRow()));
+            public GD_PHONG_BAN_DINH_MUCRow AddGD_PHONG_BAN_DINH_MUCRow(decimal ID_PHONG_BAN, decimal ID_CO_SO_DINH_MUC) {
+                GD_PHONG_BAN_DINH_MUCRow rowGD_PHONG_BAN_DINH_MUCRow = ((GD_PHONG_BAN_DINH_MUCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        MA_PHONG_BAN,
-                        TEN_PHONG_BAN};
-                rowDM_PHONG_BANRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDM_PHONG_BANRow);
-                return rowDM_PHONG_BANRow;
+                        ID_PHONG_BAN,
+                        ID_CO_SO_DINH_MUC};
+                rowGD_PHONG_BAN_DINH_MUCRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGD_PHONG_BAN_DINH_MUCRow);
+                return rowGD_PHONG_BAN_DINH_MUCRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_PHONG_BANRow FindByID(decimal ID) {
-                return ((DM_PHONG_BANRow)(this.Rows.Find(new object[] {
+            public GD_PHONG_BAN_DINH_MUCRow FindByID(decimal ID) {
+                return ((GD_PHONG_BAN_DINH_MUCRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
@@ -406,7 +406,7 @@ namespace BCTKDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DM_PHONG_BANDataTable cln = ((DM_PHONG_BANDataTable)(base.Clone()));
+                GD_PHONG_BAN_DINH_MUCDataTable cln = ((GD_PHONG_BAN_DINH_MUCDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -414,15 +414,15 @@ namespace BCTKDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DM_PHONG_BANDataTable();
+                return new GD_PHONG_BAN_DINH_MUCDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnMA_PHONG_BAN = base.Columns["MA_PHONG_BAN"];
-                this.columnTEN_PHONG_BAN = base.Columns["TEN_PHONG_BAN"];
+                this.columnID_PHONG_BAN = base.Columns["ID_PHONG_BAN"];
+                this.columnID_CO_SO_DINH_MUC = base.Columns["ID_CO_SO_DINH_MUC"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -430,10 +430,10 @@ namespace BCTKDS {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnMA_PHONG_BAN = new global::System.Data.DataColumn("MA_PHONG_BAN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMA_PHONG_BAN);
-                this.columnTEN_PHONG_BAN = new global::System.Data.DataColumn("TEN_PHONG_BAN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTEN_PHONG_BAN);
+                this.columnID_PHONG_BAN = new global::System.Data.DataColumn("ID_PHONG_BAN", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_PHONG_BAN);
+                this.columnID_CO_SO_DINH_MUC = new global::System.Data.DataColumn("ID_CO_SO_DINH_MUC", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_CO_SO_DINH_MUC);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -442,36 +442,34 @@ namespace BCTKDS {
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
-                this.columnMA_PHONG_BAN.AllowDBNull = false;
-                this.columnMA_PHONG_BAN.MaxLength = 15;
-                this.columnTEN_PHONG_BAN.AllowDBNull = false;
-                this.columnTEN_PHONG_BAN.MaxLength = 250;
+                this.columnID_PHONG_BAN.AllowDBNull = false;
+                this.columnID_CO_SO_DINH_MUC.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_PHONG_BANRow NewDM_PHONG_BANRow() {
-                return ((DM_PHONG_BANRow)(this.NewRow()));
+            public GD_PHONG_BAN_DINH_MUCRow NewGD_PHONG_BAN_DINH_MUCRow() {
+                return ((GD_PHONG_BAN_DINH_MUCRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DM_PHONG_BANRow(builder);
+                return new GD_PHONG_BAN_DINH_MUCRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DM_PHONG_BANRow);
+                return typeof(GD_PHONG_BAN_DINH_MUCRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DM_PHONG_BANRowChanged != null)) {
-                    this.DM_PHONG_BANRowChanged(this, new DM_PHONG_BANRowChangeEvent(((DM_PHONG_BANRow)(e.Row)), e.Action));
+                if ((this.GD_PHONG_BAN_DINH_MUCRowChanged != null)) {
+                    this.GD_PHONG_BAN_DINH_MUCRowChanged(this, new GD_PHONG_BAN_DINH_MUCRowChangeEvent(((GD_PHONG_BAN_DINH_MUCRow)(e.Row)), e.Action));
                 }
             }
             
@@ -479,8 +477,8 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DM_PHONG_BANRowChanging != null)) {
-                    this.DM_PHONG_BANRowChanging(this, new DM_PHONG_BANRowChangeEvent(((DM_PHONG_BANRow)(e.Row)), e.Action));
+                if ((this.GD_PHONG_BAN_DINH_MUCRowChanging != null)) {
+                    this.GD_PHONG_BAN_DINH_MUCRowChanging(this, new GD_PHONG_BAN_DINH_MUCRowChangeEvent(((GD_PHONG_BAN_DINH_MUCRow)(e.Row)), e.Action));
                 }
             }
             
@@ -488,8 +486,8 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DM_PHONG_BANRowDeleted != null)) {
-                    this.DM_PHONG_BANRowDeleted(this, new DM_PHONG_BANRowChangeEvent(((DM_PHONG_BANRow)(e.Row)), e.Action));
+                if ((this.GD_PHONG_BAN_DINH_MUCRowDeleted != null)) {
+                    this.GD_PHONG_BAN_DINH_MUCRowDeleted(this, new GD_PHONG_BAN_DINH_MUCRowChangeEvent(((GD_PHONG_BAN_DINH_MUCRow)(e.Row)), e.Action));
                 }
             }
             
@@ -497,14 +495,14 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DM_PHONG_BANRowDeleting != null)) {
-                    this.DM_PHONG_BANRowDeleting(this, new DM_PHONG_BANRowChangeEvent(((DM_PHONG_BANRow)(e.Row)), e.Action));
+                if ((this.GD_PHONG_BAN_DINH_MUCRowDeleting != null)) {
+                    this.GD_PHONG_BAN_DINH_MUCRowDeleting(this, new GD_PHONG_BAN_DINH_MUCRowChangeEvent(((GD_PHONG_BAN_DINH_MUCRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveDM_PHONG_BANRow(DM_PHONG_BANRow row) {
+            public void RemoveGD_PHONG_BAN_DINH_MUCRow(GD_PHONG_BAN_DINH_MUCRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -513,7 +511,7 @@ namespace BCTKDS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_DM_PHONG_BAN ds = new DS_DM_PHONG_BAN();
+                DS_GD_PHONG_BAN_DINH_MUC ds = new DS_GD_PHONG_BAN_DINH_MUC();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -531,7 +529,7 @@ namespace BCTKDS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DM_PHONG_BANDataTable";
+                attribute2.FixedValue = "GD_PHONG_BAN_DINH_MUCDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -575,47 +573,47 @@ namespace BCTKDS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DM_PHONG_BANRow : global::System.Data.DataRow {
+        public partial class GD_PHONG_BAN_DINH_MUCRow : global::System.Data.DataRow {
             
-            private DM_PHONG_BANDataTable tableDM_PHONG_BAN;
+            private GD_PHONG_BAN_DINH_MUCDataTable tableGD_PHONG_BAN_DINH_MUC;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DM_PHONG_BANRow(global::System.Data.DataRowBuilder rb) : 
+            internal GD_PHONG_BAN_DINH_MUCRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDM_PHONG_BAN = ((DM_PHONG_BANDataTable)(this.Table));
+                this.tableGD_PHONG_BAN_DINH_MUC = ((GD_PHONG_BAN_DINH_MUCDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ID {
                 get {
-                    return ((decimal)(this[this.tableDM_PHONG_BAN.IDColumn]));
+                    return ((decimal)(this[this.tableGD_PHONG_BAN_DINH_MUC.IDColumn]));
                 }
                 set {
-                    this[this.tableDM_PHONG_BAN.IDColumn] = value;
+                    this[this.tableGD_PHONG_BAN_DINH_MUC.IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string MA_PHONG_BAN {
+            public decimal ID_PHONG_BAN {
                 get {
-                    return ((string)(this[this.tableDM_PHONG_BAN.MA_PHONG_BANColumn]));
+                    return ((decimal)(this[this.tableGD_PHONG_BAN_DINH_MUC.ID_PHONG_BANColumn]));
                 }
                 set {
-                    this[this.tableDM_PHONG_BAN.MA_PHONG_BANColumn] = value;
+                    this[this.tableGD_PHONG_BAN_DINH_MUC.ID_PHONG_BANColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TEN_PHONG_BAN {
+            public decimal ID_CO_SO_DINH_MUC {
                 get {
-                    return ((string)(this[this.tableDM_PHONG_BAN.TEN_PHONG_BANColumn]));
+                    return ((decimal)(this[this.tableGD_PHONG_BAN_DINH_MUC.ID_CO_SO_DINH_MUCColumn]));
                 }
                 set {
-                    this[this.tableDM_PHONG_BAN.TEN_PHONG_BANColumn] = value;
+                    this[this.tableGD_PHONG_BAN_DINH_MUC.ID_CO_SO_DINH_MUCColumn] = value;
                 }
             }
         }
@@ -624,22 +622,22 @@ namespace BCTKDS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class DM_PHONG_BANRowChangeEvent : global::System.EventArgs {
+        public class GD_PHONG_BAN_DINH_MUCRowChangeEvent : global::System.EventArgs {
             
-            private DM_PHONG_BANRow eventRow;
+            private GD_PHONG_BAN_DINH_MUCRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_PHONG_BANRowChangeEvent(DM_PHONG_BANRow row, global::System.Data.DataRowAction action) {
+            public GD_PHONG_BAN_DINH_MUCRowChangeEvent(GD_PHONG_BAN_DINH_MUCRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_PHONG_BANRow Row {
+            public GD_PHONG_BAN_DINH_MUCRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -655,7 +653,7 @@ namespace BCTKDS {
         }
     }
 }
-namespace BCTKDS.DS_DM_PHONG_BANTableAdapters {
+namespace BCTKDS.DS_GD_PHONG_BAN_DINH_MUCTableAdapters {
     
     
     /// <summary>
@@ -667,7 +665,7 @@ namespace BCTKDS.DS_DM_PHONG_BANTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DM_PHONG_BANTableAdapter : global::System.ComponentModel.Component {
+    public partial class GD_PHONG_BAN_DINH_MUCTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -681,7 +679,7 @@ namespace BCTKDS.DS_DM_PHONG_BANTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DM_PHONG_BANTableAdapter() {
+        public GD_PHONG_BAN_DINH_MUCTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -778,37 +776,38 @@ namespace BCTKDS.DS_DM_PHONG_BANTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DM_PHONG_BAN";
+            tableMapping.DataSetTable = "GD_PHONG_BAN_DINH_MUC";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("MA_PHONG_BAN", "MA_PHONG_BAN");
-            tableMapping.ColumnMappings.Add("TEN_PHONG_BAN", "TEN_PHONG_BAN");
+            tableMapping.ColumnMappings.Add("ID_PHONG_BAN", "ID_PHONG_BAN");
+            tableMapping.ColumnMappings.Add("ID_CO_SO_DINH_MUC", "ID_CO_SO_DINH_MUC");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[DM_PHONG_BAN] WHERE (([ID] = @Original_ID) AND ([MA_PHONG_BAN]" +
-                " = @Original_MA_PHONG_BAN) AND ([TEN_PHONG_BAN] = @Original_TEN_PHONG_BAN))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[GD_PHONG_BAN_DINH_MUC] WHERE (([ID] = @Original_ID) AND ([ID_P" +
+                "HONG_BAN] = @Original_ID_PHONG_BAN) AND ([ID_CO_SO_DINH_MUC] = @Original_ID_CO_S" +
+                "O_DINH_MUC))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MA_PHONG_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHONG_BAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TEN_PHONG_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_PHONG_BAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_CO_SO_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_CO_SO_DINH_MUC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[DM_PHONG_BAN] ([MA_PHONG_BAN], [TEN_PHONG_BAN]) VALUES (@MA_PH" +
-                "ONG_BAN, @TEN_PHONG_BAN);\r\nSELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_" +
-                "BAN WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[GD_PHONG_BAN_DINH_MUC] ([ID_PHONG_BAN], [ID_CO_SO_DINH_MUC]) V" +
+                "ALUES (@ID_PHONG_BAN, @ID_CO_SO_DINH_MUC);\r\nSELECT ID, ID_PHONG_BAN, ID_CO_SO_DI" +
+                "NH_MUC FROM GD_PHONG_BAN_DINH_MUC WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_PHONG_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEN_PHONG_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_CO_SO_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_CO_SO_DINH_MUC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[DM_PHONG_BAN] SET [MA_PHONG_BAN] = @MA_PHONG_BAN, [TEN_PHONG_BAN] = @TEN_PHONG_BAN WHERE (([ID] = @Original_ID) AND ([MA_PHONG_BAN] = @Original_MA_PHONG_BAN) AND ([TEN_PHONG_BAN] = @Original_TEN_PHONG_BAN));
-SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[GD_PHONG_BAN_DINH_MUC] SET [ID_PHONG_BAN] = @ID_PHONG_BAN, [ID_CO_SO_DINH_MUC] = @ID_CO_SO_DINH_MUC WHERE (([ID] = @Original_ID) AND ([ID_PHONG_BAN] = @Original_ID_PHONG_BAN) AND ([ID_CO_SO_DINH_MUC] = @Original_ID_CO_SO_DINH_MUC));
+SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC FROM GD_PHONG_BAN_DINH_MUC WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_PHONG_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEN_PHONG_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_CO_SO_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_CO_SO_DINH_MUC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MA_PHONG_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHONG_BAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TEN_PHONG_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_PHONG_BAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_CO_SO_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_CO_SO_DINH_MUC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -825,7 +824,7 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM dbo.DM_PHONG_BAN";
+            this._commandCollection[0].CommandText = "SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC FROM dbo.GD_PHONG_BAN_DINH_MUC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -833,7 +832,7 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_DM_PHONG_BAN.DM_PHONG_BANDataTable dataTable) {
+        public virtual int Fill(DS_GD_PHONG_BAN_DINH_MUC.GD_PHONG_BAN_DINH_MUCDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -846,9 +845,9 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_DM_PHONG_BAN.DM_PHONG_BANDataTable GetData() {
+        public virtual DS_GD_PHONG_BAN_DINH_MUC.GD_PHONG_BAN_DINH_MUCDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_DM_PHONG_BAN.DM_PHONG_BANDataTable dataTable = new DS_DM_PHONG_BAN.DM_PHONG_BANDataTable();
+            DS_GD_PHONG_BAN_DINH_MUC.GD_PHONG_BAN_DINH_MUCDataTable dataTable = new DS_GD_PHONG_BAN_DINH_MUC.GD_PHONG_BAN_DINH_MUCDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -856,15 +855,15 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_DM_PHONG_BAN.DM_PHONG_BANDataTable dataTable) {
+        public virtual int Update(DS_GD_PHONG_BAN_DINH_MUC.GD_PHONG_BAN_DINH_MUCDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_DM_PHONG_BAN dataSet) {
-            return this.Adapter.Update(dataSet, "DM_PHONG_BAN");
+        public virtual int Update(DS_GD_PHONG_BAN_DINH_MUC dataSet) {
+            return this.Adapter.Update(dataSet, "GD_PHONG_BAN_DINH_MUC");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -886,20 +885,10 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, string Original_MA_PHONG_BAN, string Original_TEN_PHONG_BAN) {
+        public virtual int Delete(decimal Original_ID, decimal Original_ID_PHONG_BAN, decimal Original_ID_CO_SO_DINH_MUC) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
-            if ((Original_MA_PHONG_BAN == null)) {
-                throw new global::System.ArgumentNullException("Original_MA_PHONG_BAN");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_MA_PHONG_BAN));
-            }
-            if ((Original_TEN_PHONG_BAN == null)) {
-                throw new global::System.ArgumentNullException("Original_TEN_PHONG_BAN");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_TEN_PHONG_BAN));
-            }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_ID_PHONG_BAN));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_ID_CO_SO_DINH_MUC));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -920,19 +909,9 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string MA_PHONG_BAN, string TEN_PHONG_BAN) {
-            if ((MA_PHONG_BAN == null)) {
-                throw new global::System.ArgumentNullException("MA_PHONG_BAN");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(MA_PHONG_BAN));
-            }
-            if ((TEN_PHONG_BAN == null)) {
-                throw new global::System.ArgumentNullException("TEN_PHONG_BAN");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(TEN_PHONG_BAN));
-            }
+        public virtual int Insert(decimal ID_PHONG_BAN, decimal ID_CO_SO_DINH_MUC) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID_PHONG_BAN));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(ID_CO_SO_DINH_MUC));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -953,32 +932,12 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MA_PHONG_BAN, string TEN_PHONG_BAN, decimal Original_ID, string Original_MA_PHONG_BAN, string Original_TEN_PHONG_BAN, decimal ID) {
-            if ((MA_PHONG_BAN == null)) {
-                throw new global::System.ArgumentNullException("MA_PHONG_BAN");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(MA_PHONG_BAN));
-            }
-            if ((TEN_PHONG_BAN == null)) {
-                throw new global::System.ArgumentNullException("TEN_PHONG_BAN");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(TEN_PHONG_BAN));
-            }
+        public virtual int Update(decimal ID_PHONG_BAN, decimal ID_CO_SO_DINH_MUC, decimal Original_ID, decimal Original_ID_PHONG_BAN, decimal Original_ID_CO_SO_DINH_MUC, decimal ID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ID_PHONG_BAN));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(ID_CO_SO_DINH_MUC));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Original_ID));
-            if ((Original_MA_PHONG_BAN == null)) {
-                throw new global::System.ArgumentNullException("Original_MA_PHONG_BAN");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_MA_PHONG_BAN));
-            }
-            if ((Original_TEN_PHONG_BAN == null)) {
-                throw new global::System.ArgumentNullException("Original_TEN_PHONG_BAN");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_TEN_PHONG_BAN));
-            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_ID_PHONG_BAN));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_ID_CO_SO_DINH_MUC));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1000,8 +959,8 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MA_PHONG_BAN, string TEN_PHONG_BAN, decimal Original_ID, string Original_MA_PHONG_BAN, string Original_TEN_PHONG_BAN) {
-            return this.Update(MA_PHONG_BAN, TEN_PHONG_BAN, Original_ID, Original_MA_PHONG_BAN, Original_TEN_PHONG_BAN, Original_ID);
+        public virtual int Update(decimal ID_PHONG_BAN, decimal ID_CO_SO_DINH_MUC, decimal Original_ID, decimal Original_ID_PHONG_BAN, decimal Original_ID_CO_SO_DINH_MUC) {
+            return this.Update(ID_PHONG_BAN, ID_CO_SO_DINH_MUC, Original_ID, Original_ID_PHONG_BAN, Original_ID_CO_SO_DINH_MUC, Original_ID);
         }
     }
     
@@ -1017,7 +976,7 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         
         private UpdateOrderOption _updateOrder;
         
-        private DM_PHONG_BANTableAdapter _dM_PHONG_BANTableAdapter;
+        private GD_PHONG_BAN_DINH_MUCTableAdapter _gD_PHONG_BAN_DINH_MUCTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1039,12 +998,12 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public DM_PHONG_BANTableAdapter DM_PHONG_BANTableAdapter {
+        public GD_PHONG_BAN_DINH_MUCTableAdapter GD_PHONG_BAN_DINH_MUCTableAdapter {
             get {
-                return this._dM_PHONG_BANTableAdapter;
+                return this._gD_PHONG_BAN_DINH_MUCTableAdapter;
             }
             set {
-                this._dM_PHONG_BANTableAdapter = value;
+                this._gD_PHONG_BAN_DINH_MUCTableAdapter = value;
             }
         }
         
@@ -1067,9 +1026,9 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._dM_PHONG_BANTableAdapter != null) 
-                            && (this._dM_PHONG_BANTableAdapter.Connection != null))) {
-                    return this._dM_PHONG_BANTableAdapter.Connection;
+                if (((this._gD_PHONG_BAN_DINH_MUCTableAdapter != null) 
+                            && (this._gD_PHONG_BAN_DINH_MUCTableAdapter.Connection != null))) {
+                    return this._gD_PHONG_BAN_DINH_MUCTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1084,7 +1043,7 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._dM_PHONG_BANTableAdapter != null)) {
+                if ((this._gD_PHONG_BAN_DINH_MUCTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1096,14 +1055,14 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DS_DM_PHONG_BAN dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DS_GD_PHONG_BAN_DINH_MUC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._dM_PHONG_BANTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DM_PHONG_BAN.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._gD_PHONG_BAN_DINH_MUCTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.GD_PHONG_BAN_DINH_MUC.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._dM_PHONG_BANTableAdapter.Update(updatedRows));
+                    result = (result + this._gD_PHONG_BAN_DINH_MUCTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1115,13 +1074,13 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DS_DM_PHONG_BAN dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DS_GD_PHONG_BAN_DINH_MUC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._dM_PHONG_BANTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DM_PHONG_BAN.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._gD_PHONG_BAN_DINH_MUCTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.GD_PHONG_BAN_DINH_MUC.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._dM_PHONG_BANTableAdapter.Update(addedRows));
+                    result = (result + this._gD_PHONG_BAN_DINH_MUCTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1133,13 +1092,13 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DS_DM_PHONG_BAN dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DS_GD_PHONG_BAN_DINH_MUC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._dM_PHONG_BANTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DM_PHONG_BAN.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._gD_PHONG_BAN_DINH_MUCTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.GD_PHONG_BAN_DINH_MUC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._dM_PHONG_BANTableAdapter.Update(deletedRows));
+                    result = (result + this._gD_PHONG_BAN_DINH_MUCTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1175,15 +1134,15 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DS_DM_PHONG_BAN dataSet) {
+        public virtual int UpdateAll(DS_GD_PHONG_BAN_DINH_MUC dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._dM_PHONG_BANTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._dM_PHONG_BANTableAdapter.Connection) == false))) {
+            if (((this._gD_PHONG_BAN_DINH_MUCTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._gD_PHONG_BAN_DINH_MUCTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1219,13 +1178,13 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._dM_PHONG_BANTableAdapter != null)) {
-                    revertConnections.Add(this._dM_PHONG_BANTableAdapter, this._dM_PHONG_BANTableAdapter.Connection);
-                    this._dM_PHONG_BANTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._dM_PHONG_BANTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._dM_PHONG_BANTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._dM_PHONG_BANTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._dM_PHONG_BANTableAdapter.Adapter);
+                if ((this._gD_PHONG_BAN_DINH_MUCTableAdapter != null)) {
+                    revertConnections.Add(this._gD_PHONG_BAN_DINH_MUCTableAdapter, this._gD_PHONG_BAN_DINH_MUCTableAdapter.Connection);
+                    this._gD_PHONG_BAN_DINH_MUCTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._gD_PHONG_BAN_DINH_MUCTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._gD_PHONG_BAN_DINH_MUCTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._gD_PHONG_BAN_DINH_MUCTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._gD_PHONG_BAN_DINH_MUCTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1286,9 +1245,9 @@ SELECT ID, MA_PHONG_BAN, TEN_PHONG_BAN FROM DM_PHONG_BAN WHERE (ID = @ID)";
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._dM_PHONG_BANTableAdapter != null)) {
-                    this._dM_PHONG_BANTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dM_PHONG_BANTableAdapter]));
-                    this._dM_PHONG_BANTableAdapter.Transaction = null;
+                if ((this._gD_PHONG_BAN_DINH_MUCTableAdapter != null)) {
+                    this._gD_PHONG_BAN_DINH_MUCTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._gD_PHONG_BAN_DINH_MUCTableAdapter]));
+                    this._gD_PHONG_BAN_DINH_MUCTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
