@@ -309,6 +309,26 @@ namespace BCTKDS.CDBNames
         public const string SO_TIEN = "SO_TIEN";
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
     }
+    public class V_DM_BILL
+    {
+        public const string ID = "ID";
+        public const string NGAY_GUI = "NGAY_GUI";
+        public const string SO_BILL = "SO_BILL";
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string NGUOI_GUI = "NGUOI_GUI";
+        public const string NGUOI_NHAN = "NGUOI_NHAN";
+        public const string NOI_NHAN = "NOI_NHAN";
+        public const string TRONG_NUOC = "TRONG_NUOC";
+        public const string NUOC_NGOAI = "NUOC_NGOAI";
+        public const string NOI_DUNG = "NOI_DUNG";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string TRANG_THAI_THU = "TRANG_THAI_THU";
+        public const string SO_TIEN = "SO_TIEN";
+    }
+
     public class DM_PHONG_BAN
     {
         public const string ID = "ID";
