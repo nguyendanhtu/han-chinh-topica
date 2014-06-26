@@ -23,6 +23,7 @@ using BCTKDS;
 using BCTKDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using BCTKApp.DanhMuc;
 
 namespace BCTKApp
 {
@@ -410,9 +411,9 @@ namespace BCTKApp
 		}
 
 
-		private void insert_dm_phong_ban(){			
-		//	f800_DM_PHONG_BAN_DE v_fDE = new  f800_DM_PHONG_BAN_DE();								
-		//	v_fDE.display();
+		private void insert_dm_phong_ban(){
+            f801_DM_PHONG_BAN_DE v_fDE = new f801_DM_PHONG_BAN_DE();
+            v_fDE.display();
 			load_data_2_grid();
 		}
 
