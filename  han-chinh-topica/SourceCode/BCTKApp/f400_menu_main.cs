@@ -15,6 +15,7 @@ namespace BCTKApp
         {
             InitializeComponent();
             format_controls();
+            set_define_event();
         }
 
        
