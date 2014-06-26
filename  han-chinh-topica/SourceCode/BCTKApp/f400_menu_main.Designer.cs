@@ -185,7 +185,7 @@
             this.m_cmd_dm_trung_tam.Name = "m_cmd_dm_trung_tam";
             this.m_cmd_dm_trung_tam.SubItemsExpandWidth = 14;
             this.m_cmd_dm_trung_tam.Text = "Danh mục trung tâm";
-            this.m_cmd_dm_trung_tam.Click += new System.EventHandler(this.m_cmd_dm_trung_tam_Click_1);
+            this.m_cmd_dm_trung_tam.Click += new System.EventHandler(this.m_cmd_dm_trung_tam_Click);
             // 
             // m_rib_bar_qldm_thong_ke
             // 
