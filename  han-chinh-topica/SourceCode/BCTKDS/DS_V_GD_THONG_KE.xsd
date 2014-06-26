@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="BUU_CUC_THONG_KEConnectionString (Settings)" DbObjectName="ADMIN_SOFT.dbo.V_GD_THONG_KE" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, ID_LOAI_THONG_KE, LOAI_TK, TEN_THONG_KE, ID_LOAI_THOI_GIAN, LOAI_THOI_GIAN, TU_NGAY, DEN_NGAY, ID_PHONG_BAN, MA_PHONG_BAN, TEN_PHONG_BAN, GIA_TRI_THONG_KE, DON_VI_THONG_KE, TEN_NGAN, GHI_CHU_1, GHI_CHU_2, GHI_CHU_3 FROM dbo.V_GD_THONG_KE</CommandText>
+                    <CommandText>SELECT ID, ID_LOAI_THONG_KE, LOAI_TK, TEN_THONG_KE, ID_LOAI_THOI_GIAN, LOAI_THOI_GIAN, TU_NGAY, DEN_NGAY, ID_PHONG_BAN, MA_PHONG_BAN, TEN_PHONG_BAN, GIA_TRI_THONG_KE, ID_DON_VI_THONG_KE, DON_VI_THONG_KE, GHI_CHU_1, GHI_CHU_2, GHI_CHU_3 FROM dbo.V_GD_THONG_KE</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -31,8 +31,8 @@
               <Mapping SourceColumn="MA_PHONG_BAN" DataSetColumn="MA_PHONG_BAN" />
               <Mapping SourceColumn="TEN_PHONG_BAN" DataSetColumn="TEN_PHONG_BAN" />
               <Mapping SourceColumn="GIA_TRI_THONG_KE" DataSetColumn="GIA_TRI_THONG_KE" />
+              <Mapping SourceColumn="ID_DON_VI_THONG_KE" DataSetColumn="ID_DON_VI_THONG_KE" />
               <Mapping SourceColumn="DON_VI_THONG_KE" DataSetColumn="DON_VI_THONG_KE" />
-              <Mapping SourceColumn="TEN_NGAN" DataSetColumn="TEN_NGAN" />
               <Mapping SourceColumn="GHI_CHU_1" DataSetColumn="GHI_CHU_1" />
               <Mapping SourceColumn="GHI_CHU_2" DataSetColumn="GHI_CHU_2" />
               <Mapping SourceColumn="GHI_CHU_3" DataSetColumn="GHI_CHU_3" />
@@ -84,7 +84,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TEN_PHONG_BAN" msprop:Generator_ColumnVarNameInTable="columnTEN_PHONG_BAN" msprop:Generator_ColumnPropNameInRow="TEN_PHONG_BAN" msprop:Generator_ColumnPropNameInTable="TEN_PHONG_BANColumn" msprop:Generator_UserColumnName="TEN_PHONG_BAN" minOccurs="0">
+              <xs:element name="TEN_PHONG_BAN" msprop:Generator_ColumnVarNameInTable="columnTEN_PHONG_BAN" msprop:Generator_ColumnPropNameInRow="TEN_PHONG_BAN" msprop:Generator_ColumnPropNameInTable="TEN_PHONG_BANColumn" msprop:Generator_UserColumnName="TEN_PHONG_BAN">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
@@ -92,8 +92,8 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="GIA_TRI_THONG_KE" msprop:Generator_ColumnVarNameInTable="columnGIA_TRI_THONG_KE" msprop:Generator_ColumnPropNameInRow="GIA_TRI_THONG_KE" msprop:Generator_ColumnPropNameInTable="GIA_TRI_THONG_KEColumn" msprop:Generator_UserColumnName="GIA_TRI_THONG_KE" type="xs:decimal" />
-              <xs:element name="DON_VI_THONG_KE" msprop:Generator_ColumnVarNameInTable="columnDON_VI_THONG_KE" msprop:Generator_ColumnPropNameInRow="DON_VI_THONG_KE" msprop:Generator_ColumnPropNameInTable="DON_VI_THONG_KEColumn" msprop:Generator_UserColumnName="DON_VI_THONG_KE" type="xs:decimal" />
-              <xs:element name="TEN_NGAN" msprop:Generator_ColumnVarNameInTable="columnTEN_NGAN" msprop:Generator_ColumnPropNameInRow="TEN_NGAN" msprop:Generator_ColumnPropNameInTable="TEN_NGANColumn" msprop:Generator_UserColumnName="TEN_NGAN">
+              <xs:element name="ID_DON_VI_THONG_KE" msprop:Generator_ColumnVarNameInTable="columnID_DON_VI_THONG_KE" msprop:Generator_ColumnPropNameInRow="ID_DON_VI_THONG_KE" msprop:Generator_ColumnPropNameInTable="ID_DON_VI_THONG_KEColumn" msprop:Generator_UserColumnName="ID_DON_VI_THONG_KE" type="xs:decimal" />
+              <xs:element name="DON_VI_THONG_KE" msprop:Generator_ColumnVarNameInTable="columnDON_VI_THONG_KE" msprop:Generator_ColumnPropNameInRow="DON_VI_THONG_KE" msprop:Generator_ColumnPropNameInTable="DON_VI_THONG_KEColumn" msprop:Generator_UserColumnName="DON_VI_THONG_KE">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
