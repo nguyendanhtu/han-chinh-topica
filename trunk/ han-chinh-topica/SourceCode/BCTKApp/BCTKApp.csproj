@@ -281,6 +281,12 @@
     </Compile>
     <Compile Include="CChartParameter.cs" />
     <Compile Include="ChartDataSourceInterface.cs" />
+    <Compile Include="ChucNang\f810_DANG_KY_GUI_THEO_BUU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\f810_DANG_KY_GUI_THEO_BUU.Designer.cs">
+      <DependentUpon>f810_DANG_KY_GUI_THEO_BUU.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\f501_THONG_KE_NHAN_SU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -479,7 +485,6 @@
   <ItemGroup>
     <Folder Include="BaoCao\" />
     <Folder Include="bin\Debug\Reports\Output\" />
-    <Folder Include="ChucNang\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
