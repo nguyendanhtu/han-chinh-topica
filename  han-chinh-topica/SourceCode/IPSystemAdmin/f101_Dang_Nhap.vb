@@ -77,7 +77,7 @@ Public Class f101_Dang_Nhap
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.Desktop
+        Me.Panel1.BackColor = System.Drawing.Color.Maroon
         Me.Panel1.Controls.Add(Me.m_btnOK)
         Me.Panel1.Controls.Add(Me.m_btnCancel)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -135,6 +135,7 @@ Public Class f101_Dang_Nhap
         Me.m_txtMatKhau.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.m_txtMatKhau.Size = New System.Drawing.Size(98, 20)
         Me.m_txtMatKhau.TabIndex = 3
+        Me.m_txtMatKhau.Text = "admin"
         '
         'Label2
         '
@@ -166,6 +167,7 @@ Public Class f101_Dang_Nhap
         Me.m_txtTenTruyNhap.Name = "m_txtTenTruyNhap"
         Me.m_txtTenTruyNhap.Size = New System.Drawing.Size(147, 20)
         Me.m_txtTenTruyNhap.TabIndex = 1
+        Me.m_txtTenTruyNhap.Text = "admin"
         '
         'GroupBox1
         '
@@ -184,7 +186,7 @@ Public Class f101_Dang_Nhap
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Yellow
+        Me.Panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 165)
         Me.Panel2.Name = "Panel2"
@@ -194,7 +196,7 @@ Public Class f101_Dang_Nhap
         'f101_Dang_Nhap
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.BackColor = System.Drawing.SystemColors.Desktop
+        Me.BackColor = System.Drawing.Color.Maroon
         Me.ClientSize = New System.Drawing.Size(302, 205)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel2)
