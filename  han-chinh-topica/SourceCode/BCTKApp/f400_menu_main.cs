@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using IP.Core.IPCommon;
+using BCTKApp.ChucNang;
 
 namespace BCTKApp
 {
@@ -33,7 +34,10 @@ namespace BCTKApp
             m_cmd_tk_nhan_su.Click += new EventHandler(m_cmd_tk_nhan_su_Click);
             m_cmd_tk_hv_dang_hoc.Click+=new EventHandler(m_cmd_tk_hv_dang_hoc_Click);
             m_cmd_hv_tuyen_moi.Click+=new EventHandler(m_cmd_hv_tuyen_moi_Click);
+            m_cmd_theo_tung_bill.Click += new EventHandler(m_cmd_theo_tung_bill_Click);
         }
+
+        
         #endregion
         #region Event
         private void m_cmd_dm_trung_tam_Click(object sender, EventArgs e)
@@ -56,7 +60,11 @@ namespace BCTKApp
             f503_THONG_KE_HV_TUYEN_MOI v_frm = new f503_THONG_KE_HV_TUYEN_MOI();
             v_frm.ShowDialog();
         }
-
+        void m_cmd_theo_tung_bill_Click(object sender, EventArgs e)
+        {
+            f810_DANG_KY_GUI_THEO_BUU v_frm = new f810_DANG_KY_GUI_THEO_BUU();
+            v_frm.display();
+        }
         #endregion
 
 

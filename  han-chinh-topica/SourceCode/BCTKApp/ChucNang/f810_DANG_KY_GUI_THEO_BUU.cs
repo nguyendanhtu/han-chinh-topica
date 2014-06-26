@@ -14,5 +14,12 @@ namespace BCTKApp.ChucNang
         {
             InitializeComponent();
         }
+        #region Public Interface
+        public void display()
+        {
+            this.ShowDialog();
+        }
+        #endregion
+        
     }
 }
