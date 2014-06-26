@@ -149,6 +149,7 @@
             // 
             this.m_rib_pnl_quan_ly_dinh_muc.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_pnl_quan_ly_dinh_muc.TabIndex = 2;
+            this.m_rib_pnl_quan_ly_dinh_muc.Visible = true;
             // 
             // m_rib_bar_qldm_danh_muc
             // 
