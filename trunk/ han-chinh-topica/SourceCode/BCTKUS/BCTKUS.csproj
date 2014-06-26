@@ -149,6 +149,7 @@
     <Compile Include="US_UT_SEQUENCES.cs" />
     <Compile Include="US_V_CM_DM_DANG_KY_GUI.cs" />
     <Compile Include="US_V_DM_BILL.cs" />
+    <Compile Include="US_V_GD_THONG_KE.cs" />
     <Compile Include="US_V_HT_LOG_TRUY_CAP.cs" />
   </ItemGroup>
   <ItemGroup>
