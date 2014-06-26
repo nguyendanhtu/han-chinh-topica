@@ -83,8 +83,8 @@
             this.m_rib_control_TAD.BackgroundStyle.BackColor2 = System.Drawing.Color.Transparent;
             this.m_rib_control_TAD.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_control_TAD.CaptionVisible = true;
-            this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_quan_ly_dinh_muc);
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_CPN);
+            this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_quan_ly_dinh_muc);
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_he_thong);
             this.m_rib_control_TAD.Controls.Add(this.ribbonPanel4);
             this.m_rib_control_TAD.Controls.Add(this.ribbonPanel3);
@@ -149,6 +149,7 @@
             // 
             this.m_rib_pnl_quan_ly_dinh_muc.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_pnl_quan_ly_dinh_muc.TabIndex = 2;
+            this.m_rib_pnl_quan_ly_dinh_muc.Visible = false;
             // 
             // m_rib_bar_qldm_danh_muc
             // 
@@ -306,7 +307,6 @@
             // 
             this.m_rib_pnl_CPN.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_pnl_CPN.TabIndex = 3;
-            this.m_rib_pnl_CPN.Visible = false;
             // 
             // m_rib_bar_CPN_thong_ke
             // 
@@ -603,13 +603,13 @@
             // 
             // m_rib_tab_quan_ly_dinh_muc
             // 
-            this.m_rib_tab_quan_ly_dinh_muc.Checked = true;
             this.m_rib_tab_quan_ly_dinh_muc.Name = "m_rib_tab_quan_ly_dinh_muc";
             this.m_rib_tab_quan_ly_dinh_muc.Panel = this.m_rib_pnl_quan_ly_dinh_muc;
             this.m_rib_tab_quan_ly_dinh_muc.Text = "Quản lý định mức";
             // 
             // m_rib_tab_CPN
             // 
+            this.m_rib_tab_CPN.Checked = true;
             this.m_rib_tab_CPN.Name = "m_rib_tab_CPN";
             this.m_rib_tab_CPN.Panel = this.m_rib_pnl_CPN;
             this.m_rib_tab_CPN.Text = "CPN";
