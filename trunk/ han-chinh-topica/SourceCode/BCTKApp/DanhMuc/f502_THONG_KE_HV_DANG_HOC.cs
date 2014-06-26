@@ -23,6 +23,7 @@ using BCTKDS;
 using BCTKDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using IP.Core.IPExcelReport;
 
 namespace BCTKApp
 {
@@ -375,6 +376,7 @@ namespace BCTKApp
 		private void format_controls(){
             //CControlFormat.setFormStyle(this, new CAppContext_201());
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
 			CControlFormat.setC1FlexFormat(m_grv_thong_ke);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_thong_ke);
             			CGridUtils.AddSearch_Handlers(m_grv_thong_ke);
@@ -397,6 +399,7 @@ namespace BCTKApp
             m_us.FillDatasetSearch_hvdanghoc(m_ds, v_str_tu_khoa);
 			m_grv_thong_ke.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_thong_ke, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_grv_thong_ke);
 			m_grv_thong_ke.Redraw = true;
 		}
 		private void grid2us_object(US_V_GD_THONG_KE i_us
@@ -458,6 +461,14 @@ namespace BCTKApp
 		//	f502_THONG_KE_HV_DANG_HOC_DE v_fDE = new f502_THONG_KE_HV_DANG_HOC_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void export_2_excel()
+        {
+            CExcelReport v_obj_excel_report = new CExcelReport("f502_thong_hv_dang_hoc.xlsx", 6, 1);
+            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dtp_tu_thang.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dtp_den_thang.Text);
+            v_obj_excel_report.FindAndReplace(false);
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_grv_thong_ke, 0, m_grv_thong_ke.Cols.Count - 1, true);
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
@@ -539,7 +550,7 @@ namespace BCTKApp
         {
             try
             {
-                view_v_gd_thong_ke();
+                export_2_excel();
             }
             catch (Exception v_e)
             {

@@ -17,7 +17,7 @@ using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
-
+using IP.Core.IPExcelReport;
 using BCTKUS;
 using BCTKDS;
 using BCTKDS.CDBNames;
@@ -375,9 +375,11 @@ namespace BCTKApp
 		private void format_controls(){
             //CControlFormat.setFormStyle(this, new CAppContext_201());
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
 			CControlFormat.setC1FlexFormat(m_grv_thong_ke);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_thong_ke);
-            			CGridUtils.AddSearch_Handlers(m_grv_thong_ke);
+            CGridUtils.AddSearch_Handlers(m_grv_thong_ke);
+            m_grv_thong_ke.Cols[0].Caption = "STT";
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -398,7 +400,9 @@ namespace BCTKApp
             //m_us.FillDataset(m_ds);
 			m_grv_thong_ke.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_thong_ke, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_grv_thong_ke);
 			m_grv_thong_ke.Redraw = true;
+           
 		}
 		private void grid2us_object(US_V_GD_THONG_KE i_us
 			, int i_grid_row) {
@@ -459,6 +463,14 @@ namespace BCTKApp
 		//	f501_THONG_KE_NHAN_SU_DE v_fDE = new f501_THONG_KE_NHAN_SU_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void export_2_excel() 
+        {
+            CExcelReport v_obj_excel_report = new CExcelReport("f501_thong_ke_nhan_su.xlsx",6,1);
+            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dtp_tu_thang.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dtp_den_thang.Text);
+            v_obj_excel_report.FindAndReplace(false);
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_grv_thong_ke,0, m_grv_thong_ke.Cols.Count - 1, true);
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
@@ -523,7 +535,7 @@ namespace BCTKApp
         private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
         {
 			try{
-				view_v_gd_thong_ke();
+                export_2_excel();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
