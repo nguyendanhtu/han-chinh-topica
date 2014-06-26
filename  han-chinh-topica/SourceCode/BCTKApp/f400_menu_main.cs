@@ -31,6 +31,8 @@ namespace BCTKApp
         {
             m_cmd_dm_trung_tam.Click += new EventHandler(m_cmd_dm_trung_tam_Click);
             m_cmd_tk_nhan_su.Click += new EventHandler(m_cmd_tk_nhan_su_Click);
+            m_cmd_tk_hv_dang_hoc.Click+=new EventHandler(m_cmd_tk_hv_dang_hoc_Click);
+            m_cmd_hv_tuyen_moi.Click+=new EventHandler(m_cmd_hv_tuyen_moi_Click);
         }
         #endregion
         #region Event
@@ -44,6 +46,17 @@ namespace BCTKApp
             f501_THONG_KE_NHAN_SU v_frm = new f501_THONG_KE_NHAN_SU();
             v_frm.ShowDialog();
         }
+        private void m_cmd_tk_hv_dang_hoc_Click(object sender, EventArgs e)
+        {
+            f502_THONG_KE_HV_DANG_HOC v_frm = new f502_THONG_KE_HV_DANG_HOC();
+            v_frm.ShowDialog();
+        }
+        private void m_cmd_hv_tuyen_moi_Click(object sender, EventArgs e)
+        {
+            f503_THONG_KE_HV_TUYEN_MOI v_frm = new f503_THONG_KE_HV_TUYEN_MOI();
+            v_frm.ShowDialog();
+        }
+
         #endregion
 
 
