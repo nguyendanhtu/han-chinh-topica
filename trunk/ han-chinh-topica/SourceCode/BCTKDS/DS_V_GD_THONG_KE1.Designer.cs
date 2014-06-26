@@ -303,9 +303,9 @@ namespace BCTKDS {
             
             private global::System.Data.DataColumn columnGIA_TRI_THONG_KE;
             
-            private global::System.Data.DataColumn columnDON_VI_THONG_KE;
+            private global::System.Data.DataColumn columnID_DON_VI_THONG_KE;
             
-            private global::System.Data.DataColumn columnTEN_NGAN;
+            private global::System.Data.DataColumn columnDON_VI_THONG_KE;
             
             private global::System.Data.DataColumn columnGHI_CHU_1;
             
@@ -444,17 +444,17 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DON_VI_THONG_KEColumn {
+            public global::System.Data.DataColumn ID_DON_VI_THONG_KEColumn {
                 get {
-                    return this.columnDON_VI_THONG_KE;
+                    return this.columnID_DON_VI_THONG_KE;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TEN_NGANColumn {
+            public global::System.Data.DataColumn DON_VI_THONG_KEColumn {
                 get {
-                    return this.columnTEN_NGAN;
+                    return this.columnDON_VI_THONG_KE;
                 }
             }
             
@@ -532,8 +532,8 @@ namespace BCTKDS {
                         string MA_PHONG_BAN, 
                         string TEN_PHONG_BAN, 
                         decimal GIA_TRI_THONG_KE, 
-                        decimal DON_VI_THONG_KE, 
-                        string TEN_NGAN, 
+                        decimal ID_DON_VI_THONG_KE, 
+                        string DON_VI_THONG_KE, 
                         string GHI_CHU_1, 
                         string GHI_CHU_2, 
                         string GHI_CHU_3) {
@@ -551,8 +551,8 @@ namespace BCTKDS {
                         MA_PHONG_BAN,
                         TEN_PHONG_BAN,
                         GIA_TRI_THONG_KE,
+                        ID_DON_VI_THONG_KE,
                         DON_VI_THONG_KE,
-                        TEN_NGAN,
                         GHI_CHU_1,
                         GHI_CHU_2,
                         GHI_CHU_3};
@@ -603,8 +603,8 @@ namespace BCTKDS {
                 this.columnMA_PHONG_BAN = base.Columns["MA_PHONG_BAN"];
                 this.columnTEN_PHONG_BAN = base.Columns["TEN_PHONG_BAN"];
                 this.columnGIA_TRI_THONG_KE = base.Columns["GIA_TRI_THONG_KE"];
+                this.columnID_DON_VI_THONG_KE = base.Columns["ID_DON_VI_THONG_KE"];
                 this.columnDON_VI_THONG_KE = base.Columns["DON_VI_THONG_KE"];
-                this.columnTEN_NGAN = base.Columns["TEN_NGAN"];
                 this.columnGHI_CHU_1 = base.Columns["GHI_CHU_1"];
                 this.columnGHI_CHU_2 = base.Columns["GHI_CHU_2"];
                 this.columnGHI_CHU_3 = base.Columns["GHI_CHU_3"];
@@ -637,10 +637,10 @@ namespace BCTKDS {
                 base.Columns.Add(this.columnTEN_PHONG_BAN);
                 this.columnGIA_TRI_THONG_KE = new global::System.Data.DataColumn("GIA_TRI_THONG_KE", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGIA_TRI_THONG_KE);
-                this.columnDON_VI_THONG_KE = new global::System.Data.DataColumn("DON_VI_THONG_KE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnID_DON_VI_THONG_KE = new global::System.Data.DataColumn("ID_DON_VI_THONG_KE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_DON_VI_THONG_KE);
+                this.columnDON_VI_THONG_KE = new global::System.Data.DataColumn("DON_VI_THONG_KE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDON_VI_THONG_KE);
-                this.columnTEN_NGAN = new global::System.Data.DataColumn("TEN_NGAN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTEN_NGAN);
                 this.columnGHI_CHU_1 = new global::System.Data.DataColumn("GHI_CHU_1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGHI_CHU_1);
                 this.columnGHI_CHU_2 = new global::System.Data.DataColumn("GHI_CHU_2", typeof(string), null, global::System.Data.MappingType.Element);
@@ -662,11 +662,12 @@ namespace BCTKDS {
                 this.columnID_PHONG_BAN.AllowDBNull = false;
                 this.columnMA_PHONG_BAN.AllowDBNull = false;
                 this.columnMA_PHONG_BAN.MaxLength = 15;
+                this.columnTEN_PHONG_BAN.AllowDBNull = false;
                 this.columnTEN_PHONG_BAN.MaxLength = 250;
                 this.columnGIA_TRI_THONG_KE.AllowDBNull = false;
+                this.columnID_DON_VI_THONG_KE.AllowDBNull = false;
                 this.columnDON_VI_THONG_KE.AllowDBNull = false;
-                this.columnTEN_NGAN.AllowDBNull = false;
-                this.columnTEN_NGAN.MaxLength = 500;
+                this.columnDON_VI_THONG_KE.MaxLength = 500;
                 this.columnGHI_CHU_1.MaxLength = 250;
                 this.columnGHI_CHU_2.MaxLength = 250;
                 this.columnGHI_CHU_3.MaxLength = 250;
@@ -934,12 +935,7 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEN_PHONG_BAN {
                 get {
-                    try {
-                        return ((string)(this[this.tableV_GD_THONG_KE.TEN_PHONG_BANColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TEN_PHONG_BAN\' in table \'V_GD_THONG_KE\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableV_GD_THONG_KE.TEN_PHONG_BANColumn]));
                 }
                 set {
                     this[this.tableV_GD_THONG_KE.TEN_PHONG_BANColumn] = value;
@@ -959,23 +955,23 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal DON_VI_THONG_KE {
+            public decimal ID_DON_VI_THONG_KE {
                 get {
-                    return ((decimal)(this[this.tableV_GD_THONG_KE.DON_VI_THONG_KEColumn]));
+                    return ((decimal)(this[this.tableV_GD_THONG_KE.ID_DON_VI_THONG_KEColumn]));
                 }
                 set {
-                    this[this.tableV_GD_THONG_KE.DON_VI_THONG_KEColumn] = value;
+                    this[this.tableV_GD_THONG_KE.ID_DON_VI_THONG_KEColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TEN_NGAN {
+            public string DON_VI_THONG_KE {
                 get {
-                    return ((string)(this[this.tableV_GD_THONG_KE.TEN_NGANColumn]));
+                    return ((string)(this[this.tableV_GD_THONG_KE.DON_VI_THONG_KEColumn]));
                 }
                 set {
-                    this[this.tableV_GD_THONG_KE.TEN_NGANColumn] = value;
+                    this[this.tableV_GD_THONG_KE.DON_VI_THONG_KEColumn] = value;
                 }
             }
             
@@ -1049,18 +1045,6 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDEN_NGAYNull() {
                 this[this.tableV_GD_THONG_KE.DEN_NGAYColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTEN_PHONG_BANNull() {
-                return this.IsNull(this.tableV_GD_THONG_KE.TEN_PHONG_BANColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTEN_PHONG_BANNull() {
-                this[this.tableV_GD_THONG_KE.TEN_PHONG_BANColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1271,8 +1255,8 @@ namespace BCTKDS.DS_V_GD_THONG_KETableAdapters {
             tableMapping.ColumnMappings.Add("MA_PHONG_BAN", "MA_PHONG_BAN");
             tableMapping.ColumnMappings.Add("TEN_PHONG_BAN", "TEN_PHONG_BAN");
             tableMapping.ColumnMappings.Add("GIA_TRI_THONG_KE", "GIA_TRI_THONG_KE");
+            tableMapping.ColumnMappings.Add("ID_DON_VI_THONG_KE", "ID_DON_VI_THONG_KE");
             tableMapping.ColumnMappings.Add("DON_VI_THONG_KE", "DON_VI_THONG_KE");
-            tableMapping.ColumnMappings.Add("TEN_NGAN", "TEN_NGAN");
             tableMapping.ColumnMappings.Add("GHI_CHU_1", "GHI_CHU_1");
             tableMapping.ColumnMappings.Add("GHI_CHU_2", "GHI_CHU_2");
             tableMapping.ColumnMappings.Add("GHI_CHU_3", "GHI_CHU_3");
@@ -1292,10 +1276,7 @@ namespace BCTKDS.DS_V_GD_THONG_KETableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, ID_LOAI_THONG_KE, LOAI_TK, TEN_THONG_KE, ID_LOAI_THOI_GIAN, LOAI_THOI_" +
-                "GIAN, TU_NGAY, DEN_NGAY, ID_PHONG_BAN, MA_PHONG_BAN, TEN_PHONG_BAN, GIA_TRI_THON" +
-                "G_KE, DON_VI_THONG_KE, TEN_NGAN, GHI_CHU_1, GHI_CHU_2, GHI_CHU_3 FROM dbo.V_GD_T" +
-                "HONG_KE";
+            this._commandCollection[0].CommandText = @"SELECT ID, ID_LOAI_THONG_KE, LOAI_TK, TEN_THONG_KE, ID_LOAI_THOI_GIAN, LOAI_THOI_GIAN, TU_NGAY, DEN_NGAY, ID_PHONG_BAN, MA_PHONG_BAN, TEN_PHONG_BAN, GIA_TRI_THONG_KE, ID_DON_VI_THONG_KE, DON_VI_THONG_KE, GHI_CHU_1, GHI_CHU_2, GHI_CHU_3 FROM dbo.V_GD_THONG_KE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
