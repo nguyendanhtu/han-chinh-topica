@@ -149,7 +149,6 @@
             // 
             this.m_rib_pnl_quan_ly_dinh_muc.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_pnl_quan_ly_dinh_muc.TabIndex = 2;
-            this.m_rib_pnl_quan_ly_dinh_muc.Visible = true;
             // 
             // m_rib_bar_qldm_danh_muc
             // 
@@ -186,7 +185,6 @@
             this.m_cmd_dm_trung_tam.Name = "m_cmd_dm_trung_tam";
             this.m_cmd_dm_trung_tam.SubItemsExpandWidth = 14;
             this.m_cmd_dm_trung_tam.Text = "Danh mục trung tâm";
-            this.m_cmd_dm_trung_tam.Click += new System.EventHandler(this.m_cmd_dm_trung_tam_Click);
             // 
             // m_rib_bar_qldm_thong_ke
             // 

@@ -15,10 +15,9 @@ namespace BCTKApp
         {
             InitializeComponent();
             format_controls();
-            set_define_event();
         }
 
-       
+
         public void display(ref IPConstants.HowUserWantTo_Exit_MainForm o_exitMode)
         {
             this.ShowDialog();
@@ -31,11 +30,11 @@ namespace BCTKApp
         private void set_define_event()
         {
             m_cmd_dm_trung_tam.Click += new EventHandler(m_cmd_dm_trung_tam_Click);
-            m_cmd_tk_nhan_su.Click+=new EventHandler(m_cmd_tk_nhan_su_Click);
+            m_cmd_tk_nhan_su.Click += new EventHandler(m_cmd_tk_nhan_su_Click);
         }
         #endregion
         #region Event
-         private void m_cmd_dm_trung_tam_Click(object sender, EventArgs e)
+        private void m_cmd_dm_trung_tam_Click(object sender, EventArgs e)
         {
             f800_DM_PHONG_BAN v_frm = new f800_DM_PHONG_BAN();
             v_frm.display();
@@ -46,7 +45,7 @@ namespace BCTKApp
             v_frm.ShowDialog();
         }
         #endregion
-        
-        
+
+
     }
 }
