@@ -48,7 +48,7 @@ namespace BCTKApp
         private DateTimePicker m_dtp_tu_thang;
         private Label label3;
         private Label label2;
-        private Label label1;
+        private Label m_lbl_tieu_de;
 		private System.ComponentModel.IContainer components;
 
 		public f503_THONG_KE_HV_TUYEN_MOI()
@@ -104,7 +104,7 @@ namespace BCTKApp
             this.m_dtp_tu_thang = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_thong_ke)).BeginInit();
             this.m_pnl_top.SuspendLayout();
@@ -245,7 +245,7 @@ namespace BCTKApp
             this.m_pnl_top.Controls.Add(this.m_dtp_tu_thang);
             this.m_pnl_top.Controls.Add(this.label3);
             this.m_pnl_top.Controls.Add(this.label2);
-            this.m_pnl_top.Controls.Add(this.label1);
+            this.m_pnl_top.Controls.Add(this.m_lbl_tieu_de);
             this.m_pnl_top.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_pnl_top.Location = new System.Drawing.Point(0, 0);
             this.m_pnl_top.Name = "m_pnl_top";
@@ -325,15 +325,15 @@ namespace BCTKApp
             this.label2.TabIndex = 1;
             this.label2.Text = "Từ tháng";
             // 
-            // label1
+            // m_lbl_tieu_de
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(323, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "THỐNG KÊ HỌC VIÊN TUYỂN MỚI";
+            this.m_lbl_tieu_de.AutoSize = true;
+            this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tieu_de.Location = new System.Drawing.Point(323, 9);
+            this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(298, 23);
+            this.m_lbl_tieu_de.TabIndex = 0;
+            this.m_lbl_tieu_de.Text = "THỐNG KÊ HỌC VIÊN TUYỂN MỚI";
             // 
             // f503_THONG_KE_HV_TUYEN_MOI
             // 
@@ -375,11 +375,8 @@ namespace BCTKApp
 
 		#region Private Methods
 		private void format_controls(){
-            //CControlFormat.setFormStyle(this, new CAppContext_201());
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			CControlFormat.setC1FlexFormat(m_grv_thong_ke);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_thong_ke);
             			CGridUtils.AddSearch_Handlers(m_grv_thong_ke);
