@@ -369,6 +369,7 @@ namespace BCTKApp
 		ITransferDataRow m_obj_trans;		
 		DS_V_GD_THONG_KE m_ds = new DS_V_GD_THONG_KE();
 		US_V_GD_THONG_KE m_us = new US_V_GD_THONG_KE();
+        private const String m_str_goi_y_tim_kiem = "Nhập Tên đơn vị, Mã đơn vị";
 		#endregion
 
 		#region Private Methods
@@ -376,6 +377,8 @@ namespace BCTKApp
             //CControlFormat.setFormStyle(this, new CAppContext_201());
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
 			CControlFormat.setC1FlexFormat(m_grv_thong_ke);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_thong_ke);
             CGridUtils.AddSearch_Handlers(m_grv_thong_ke);
@@ -394,7 +397,11 @@ namespace BCTKApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){
-            string v_str_tu_khoa = m_txt_tu_khoa.Text;		
+            string v_str_tu_khoa = m_txt_tu_khoa.Text;
+            if (v_str_tu_khoa.Equals(m_str_goi_y_tim_kiem))
+            {
+                v_str_tu_khoa = "";
+            }
 			m_ds = new DS_V_GD_THONG_KE();
             m_us.FillDatasetSearch_nhansu(m_ds, v_str_tu_khoa);
             //m_us.FillDataset(m_ds);
@@ -402,6 +409,7 @@ namespace BCTKApp
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_thong_ke, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_thong_ke);
 			m_grv_thong_ke.Redraw = true;
+            set_search_format_before();
            
 		}
 		private void grid2us_object(US_V_GD_THONG_KE i_us
@@ -471,6 +479,22 @@ namespace BCTKApp
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_grv_thong_ke,0, m_grv_thong_ke.Cols.Count - 1, true);
         }
+        private void set_search_format_before()
+        {
+            if (m_txt_tu_khoa.Text == "")
+            {
+                m_txt_tu_khoa.Text = m_str_goi_y_tim_kiem;
+                m_txt_tu_khoa.ForeColor = Color.Gray;
+            }
+        }
+        private void set_search_format_after()
+        {
+            if (m_txt_tu_khoa.Text == m_str_goi_y_tim_kiem)
+            {
+                m_txt_tu_khoa.Text = "";
+            }
+            m_txt_tu_khoa.ForeColor = Color.Black;
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
@@ -478,6 +502,9 @@ namespace BCTKApp
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_xuat_excel.Click +=new EventHandler(m_cmd_xuat_excel_Click);
             m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
+            m_txt_tu_khoa.KeyDown += m_txt_tu_khoa_KeyDown;
+            m_txt_tu_khoa.MouseClick += m_txt_tu_khoa_MouseClick;
+            m_txt_tu_khoa.Leave += m_txt_tu_khoa_Leave;
 		}
 		#endregion
 
@@ -485,62 +512,80 @@ namespace BCTKApp
 		//
 		//		EVENT HANLDERS
 		//
-		//
-		private void f501_THONG_KE_NHAN_SU_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        //
+        #region Event
+        private void f501_THONG_KE_NHAN_SU_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_gd_thong_ke();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_gd_thong_ke();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_gd_thong_ke();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_gd_thong_ke();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_gd_thong_ke();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_v_gd_thong_ke();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
         {
-			try{
+            try
+            {
                 export_2_excel();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
             try
@@ -552,7 +597,50 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_txt_tu_khoa_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid();
+                }
+                else
+                {
+                    set_search_format_after();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
+        private void m_txt_tu_khoa_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                set_search_format_after();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_tu_khoa_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                set_search_format_before();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion
+        
 	}
 }
 
