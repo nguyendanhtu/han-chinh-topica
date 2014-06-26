@@ -1,10 +1,10 @@
-﻿Option Explicit On 
+﻿Option Explicit On
 Option Strict On
 
 Imports System.Windows.Forms
 
 Public Interface IControlerControl
-    Function CanUseControl( _
+    Function CanUseControl(
                 ByVal ip_strFormName As String _
                 , ByVal ip_strControlName As String _
                 , ByVal ip_strControlType As String) As Boolean
@@ -20,9 +20,7 @@ Public Class CControlFormat
 
 #Region "Constants declaration"
     Private Const C_FontName As String = "Tahoma"
-    Private Const C_FormFontSize As Double = 8.35!
-    Private Const C_GridFontSizeNormal As Double = 8.55!
-    Private Const C_GridFontSize As Double = 10.0!
+    Private Const C_FormFontSize As Double = 8.0!
 #End Region
 
 #Region "Data structures"
@@ -52,11 +50,15 @@ Public Class CControlFormat
     End Function
 
     Private Shared Function getRegularForeColor() As System.Drawing.Color
-        Return System.Drawing.Color.Navy
+        Return System.Drawing.Color.Black
+    End Function
+
+    Private Shared Function getSpecialForeColor() As System.Drawing.Color
+        Return System.Drawing.Color.Maroon
     End Function
 
     Private Shared Function getRegularBackColor() As System.Drawing.Color
-        Return System.Drawing.Color.Gainsboro
+        Return System.Drawing.Color.White
     End Function
 
     Private Shared Function getBoldFont() As System.Drawing.Font
@@ -83,14 +85,14 @@ Public Class CControlFormat
         'End If
         If TypeOf ip_control Is Label Then
             ip_control.Font = getRegularFont()
-            ip_control.ForeColor = getRegularForeColor()
+            ip_control.ForeColor = getSpecialForeColor()
             ip_control.BackColor = getRegularBackColor()
         ElseIf TypeOf ip_control Is TextBox Then
             ip_control.Font = getRegularFont()
             ip_control.ForeColor = getRegularForeColor()
         ElseIf TypeOf ip_control Is GroupBox Then
-            ip_control.Font = getRegularFont()
-            ip_control.ForeColor = getRegularForeColor()
+            ip_control.Font = getBoldFont()
+            ip_control.ForeColor = getSpecialForeColor()
             ip_control.BackColor = getRegularBackColor()
         ElseIf TypeOf ip_control Is ComboBox Then
             ip_control.Font = getRegularFont()
@@ -98,18 +100,56 @@ Public Class CControlFormat
         ElseIf TypeOf ip_control Is CheckBox Then
             ip_control.Font = getRegularFont()
             ip_control.ForeColor = getRegularForeColor()
-        ElseIf TypeOf ip_control Is Button Then
+        ElseIf TypeOf ip_control Is DateTimePicker Then
             ip_control.Font = getRegularFont()
             ip_control.ForeColor = getRegularForeColor()
+        ElseIf TypeOf ip_control Is Button Then
+            ip_control.Font = getBoldFont()
+            ip_control.ForeColor = getSpecialForeColor()
             If (i_objControlerControl.CanUseControl(ip_str_form_name, ip_control.Name, "") = False) Then
                 ip_control.Visible = False
                 ip_control.Enabled = False
             End If
+        ElseIf TypeOf ip_control Is DateTimePicker Then
+            CType(ip_control, DateTimePicker).CalendarForeColor = getRegularForeColor()
+            CType(ip_control, DateTimePicker).CalendarTitleForeColor = getRegularForeColor()
+            CType(ip_control, DateTimePicker).CalendarTrailingForeColor = getRegularForeColor()
+        ElseIf TypeOf ip_control Is MenuStrip Then
+            Dim v_obj_tool_strip As ToolStripMenuItem
+            For Each v_obj_tool_strip In CType(ip_control, MenuStrip).Items
+                formatToolStripMenuItem(ip_str_form_name, i_objControlerControl, v_obj_tool_strip)
+            Next
         End If
+        If TypeOf ip_control Is TabControl Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+        End If
+
         Dim v_control As System.Windows.Forms.Control
         For Each v_control In ip_control.Controls
             formatControlInForms(ip_str_form_name, i_objControlerControl, v_control)
         Next
+
+    End Sub
+
+    Private Shared Sub formatToolStripMenuItem( _
+    ByVal ip_str_form_name As String _
+    , ByVal i_objControlerControl As IControlerControl _
+    , ByVal ip_obj_toolstripMenuItem As System.Windows.Forms.ToolStripMenuItem)
+        If (i_objControlerControl.CanUseControl(ip_str_form_name, ip_obj_toolstripMenuItem.Name, "") = False) Then
+            'v_obj_tool_strip.Visible = False
+            ip_obj_toolstripMenuItem.Enabled = False
+        Else
+
+            Dim v_obj_tool_strip As ToolStripMenuItem
+            For Each v_obj_tool_strip In ip_obj_toolstripMenuItem.DropDownItems
+                formatToolStripMenuItem(ip_str_form_name, i_objControlerControl, v_obj_tool_strip)
+
+            Next
+        End If
+
+        
+
 
     End Sub
 #End Region
@@ -135,11 +175,11 @@ Public Class CControlFormat
                         .MaximizeBox = False
                         .MinimizeBox = False
                         .StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-                        .ShowInTaskbar = False
+                        .ShowInTaskbar = True
                     Case IPFormStyle.DockableTopForm
                         .FormBorderStyle = FormBorderStyle.Sizable
-                        .MaximizeBox = False
-                        .MinimizeBox = False
+                        .MaximizeBox = True
+                        .MinimizeBox = True
                         .StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
                         .ShowInTaskbar = False
                     Case Else
@@ -283,56 +323,31 @@ Public Class CControlFormat
             .SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell
         End With
     End Sub
-    ''' <summary>
-    ''' Dùng để set các property của C1FlexGrid mà có thể Edit row
-    ''' NinhVh sửa Ngày 21/01/2013
-    ''' </summary>
-    ''' <param name="i_fg"></param>
-    ''' <remarks></remarks>
-    Public Shared Sub setC1FlexFormatCanEdit(ByVal i_fg As C1.Win.C1FlexGrid.C1FlexGrid)
-        '***************************************************
-        ' Dùng để set các property của C1FlexGrid
-        '***************************************************
-        With i_fg
-            '.AllowEditing = False
-            '.AllowMerging = C1.Win.C1FlexGrid.AllowMergingEnum.Free
-            '.AutoSearch = C1.Win.C1FlexGrid.AutoSearchEnum.FromTop
-            .BackColor = System.Drawing.SystemColors.Window
-            '.Dock = System.Windows.Forms.DockStyle.Fill
-            .ExtendLastCol = False
-            .ForeColor = System.Drawing.SystemColors.WindowText
-            .Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.Complete
-            .Font = New System.Drawing.Font(C_FontName, C_GridFontSize, Drawing.FontStyle.Regular)
-            .Styles.Fixed.Font = New System.Drawing.Font(C_FontName, C_GridFontSize, Drawing.FontStyle.Bold)
-            .Styles.Fixed.TextAlign = C1.Win.C1FlexGrid.TextAlignEnum.CenterCenter
-            .Styles.Fixed.ForeColor = System.Drawing.SystemColors.Highlight
-            .Styles.Alternate.BackColor = System.Drawing.Color.FromArgb(CType(241, Byte), CType(252, Byte), CType(218, Byte))
-            .Styles.EmptyArea.BackColor = .BackColor
-            .Styles.EmptyArea.Border.Style = C1.Win.C1FlexGrid.BorderStyleEnum.None
-            .Rows.DefaultSize = 28
 
-        End With
-    End Sub
     Public Shared Sub setC1FlexFormat(ByVal i_fg As C1.Win.C1FlexGrid.C1FlexGrid)
         '***************************************************
         ' Dùng để set các property của C1FlexGrid
         '***************************************************
         With i_fg
             .AllowEditing = False
-            '.AllowMerging = C1.Win.C1FlexGrid.AllowMergingEnum.Free
             .AutoSearch = C1.Win.C1FlexGrid.AutoSearchEnum.FromTop
             .BackColor = System.Drawing.SystemColors.Window
             '.Dock = System.Windows.Forms.DockStyle.Fill
             .ExtendLastCol = False
-            .ForeColor = System.Drawing.SystemColors.WindowText
+            .ForeColor = System.Drawing.Color.Black
             .Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.Complete
-            .Font = New System.Drawing.Font(C_FontName, C_GridFontSizeNormal, Drawing.FontStyle.Regular)
+            .Font = New System.Drawing.Font(C_FontName, C_FormFontSize, Drawing.FontStyle.Regular)
             .Styles.Fixed.Font = New System.Drawing.Font(C_FontName, C_FormFontSize, Drawing.FontStyle.Bold)
             .Styles.Fixed.TextAlign = C1.Win.C1FlexGrid.TextAlignEnum.CenterCenter
-            .Styles.Fixed.ForeColor = System.Drawing.SystemColors.Highlight
+            .Styles.Fixed.ForeColor = System.Drawing.Color.White
+            .Styles.Fixed.BackColor = System.Drawing.Color.Maroon
             .Styles.Alternate.BackColor = System.Drawing.Color.FromArgb(CType(241, Byte), CType(252, Byte), CType(218, Byte))
             .Styles.EmptyArea.BackColor = .BackColor
             .Styles.EmptyArea.Border.Style = C1.Win.C1FlexGrid.BorderStyleEnum.None
+            .Styles("subtotal0").BackColor = System.Drawing.Color.DarkKhaki
+            .Styles("subtotal0").ForeColor = System.Drawing.Color.Maroon
+            .Rows(0).Height = 2 * i_fg.Rows.DefaultSize
+            .Styles("Fixed").WordWrap = True
         End With
     End Sub
 
