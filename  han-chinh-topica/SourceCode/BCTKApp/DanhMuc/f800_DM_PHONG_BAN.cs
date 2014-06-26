@@ -248,7 +248,7 @@ namespace BCTKApp
             this.m_lbl_tieu_de.BackColor = System.Drawing.SystemColors.Control;
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tieu_de.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tieu_de.Location = new System.Drawing.Point(167, 18);
+            this.m_lbl_tieu_de.Location = new System.Drawing.Point(205, 9);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
             this.m_lbl_tieu_de.Size = new System.Drawing.Size(291, 22);
             this.m_lbl_tieu_de.TabIndex = 0;
@@ -333,7 +333,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_pnl_tieu_de);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f800_DM_PHONG_BAN";
-            this.Text = "F800 - DM_PHONG_BAN";
+            this.Text = "F800 - Danh mục phòng ban Topica";
             this.Load += new System.EventHandler(this.f800_DM_PHONG_BAN_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -369,6 +369,7 @@ namespace BCTKApp
 		#region Private Methods
 		private void format_controls(){
 			CControlFormat.setFormStyle(this, new CAppContext_201());
+            this.m_lbl_tieu_de.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
             			CGridUtils.AddSearch_Handlers(m_fg);
@@ -413,7 +414,7 @@ namespace BCTKApp
 
 		private void insert_dm_phong_ban(){
             f801_DM_PHONG_BAN_DE v_fDE = new f801_DM_PHONG_BAN_DE();
-            v_fDE.display();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -421,8 +422,8 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f800_DM_PHONG_BAN_DE v_fDE = new f800_DM_PHONG_BAN_DE();
-		//	v_fDE.display(m_us);
+            f801_DM_PHONG_BAN_DE v_fDE = new f801_DM_PHONG_BAN_DE();
+            v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				

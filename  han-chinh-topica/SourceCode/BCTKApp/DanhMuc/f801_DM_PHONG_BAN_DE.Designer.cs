@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f801_DM_PHONG_BAN_DE));
             this.m_lbl_ma_phong_ban = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.m_lbl_ten_phong_ban = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.m_txt_ten_phong_ban = new System.Windows.Forms.TextBox();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_txt_ma_phong_ban = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,13 +50,6 @@
             this.m_lbl_ma_phong_ban.TabIndex = 0;
             this.m_lbl_ma_phong_ban.Text = "Mã phòng ban";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(175, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(133, 20);
-            this.textBox1.TabIndex = 1;
-            // 
             // m_lbl_ten_phong_ban
             // 
             this.m_lbl_ten_phong_ban.AutoSize = true;
@@ -66,12 +59,12 @@
             this.m_lbl_ten_phong_ban.TabIndex = 2;
             this.m_lbl_ten_phong_ban.Text = "Tên phòng ban";
             // 
-            // textBox2
+            // m_txt_ten_phong_ban
             // 
-            this.textBox2.Location = new System.Drawing.Point(175, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(276, 20);
-            this.textBox2.TabIndex = 3;
+            this.m_txt_ten_phong_ban.Location = new System.Drawing.Point(175, 76);
+            this.m_txt_ten_phong_ban.Name = "m_txt_ten_phong_ban";
+            this.m_txt_ten_phong_ban.Size = new System.Drawing.Size(276, 20);
+            this.m_txt_ten_phong_ban.TabIndex = 3;
             // 
             // ImageList
             // 
@@ -141,15 +134,22 @@
             this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Trở về (Esc)";
             // 
+            // m_txt_ma_phong_ban
+            // 
+            this.m_txt_ma_phong_ban.Location = new System.Drawing.Point(175, 35);
+            this.m_txt_ma_phong_ban.Name = "m_txt_ma_phong_ban";
+            this.m_txt_ma_phong_ban.Size = new System.Drawing.Size(143, 20);
+            this.m_txt_ma_phong_ban.TabIndex = 1;
+            // 
             // f801_DM_PHONG_BAN_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 164);
+            this.Controls.Add(this.m_txt_ma_phong_ban);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.m_txt_ten_phong_ban);
             this.Controls.Add(this.m_lbl_ten_phong_ban);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.m_lbl_ma_phong_ban);
             this.Name = "f801_DM_PHONG_BAN_DE";
             this.Text = "F801 - Cập nhật chi tiết thông tin phòng ban";
@@ -162,12 +162,12 @@
         #endregion
 
         private System.Windows.Forms.Label m_lbl_ma_phong_ban;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label m_lbl_ten_phong_ban;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox m_txt_ten_phong_ban;
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private System.Windows.Forms.TextBox m_txt_ma_phong_ban;
     }
 }

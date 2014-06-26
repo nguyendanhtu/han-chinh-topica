@@ -645,7 +645,8 @@
             this.ClientSize = new System.Drawing.Size(862, 473);
             this.Controls.Add(this.m_rib_control_TAD);
             this.Name = "f400_menu_main";
-            this.Text = "f400_menu_main";
+            this.Text = "F400 - TAD";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.m_rib_control_TAD.ResumeLayout(false);
             this.m_rib_control_TAD.PerformLayout();
             this.m_rib_pnl_quan_ly_dinh_muc.ResumeLayout(false);
