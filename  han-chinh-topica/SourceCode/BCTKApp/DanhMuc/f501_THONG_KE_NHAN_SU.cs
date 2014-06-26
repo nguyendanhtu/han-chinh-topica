@@ -38,7 +38,7 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_update;
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+		internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Panel m_pnl_top;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tu_khoa;
@@ -91,19 +91,19 @@ namespace BCTKApp
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_thong_ke = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_top = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.m_dtp_tu_thang = new System.Windows.Forms.DateTimePicker();
-            this.m_dtp_den_thang = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.m_dtp_den_thang = new System.Windows.Forms.DateTimePicker();
+            this.m_dtp_tu_thang = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_thong_ke)).BeginInit();
             this.m_pnl_top.SuspendLayout();
@@ -140,7 +140,7 @@ namespace BCTKApp
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -180,20 +180,20 @@ namespace BCTKApp
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
             // 
-            // m_cmd_view
+            // m_cmd_xuat_excel
             // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 19;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xuat_excel.TabIndex = 21;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
             // m_cmd_delete
             // 
@@ -251,75 +251,6 @@ namespace BCTKApp
             this.m_pnl_top.Size = new System.Drawing.Size(884, 146);
             this.m_pnl_top.TabIndex = 21;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(353, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "THỐNG KÊ NHÂN SỰ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(236, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Từ tháng";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(448, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Đến tháng";
-            // 
-            // m_dtp_tu_thang
-            // 
-            this.m_dtp_tu_thang.CustomFormat = "MM/yyyy";
-            this.m_dtp_tu_thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_tu_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_thang.Location = new System.Drawing.Point(302, 41);
-            this.m_dtp_tu_thang.Name = "m_dtp_tu_thang";
-            this.m_dtp_tu_thang.Size = new System.Drawing.Size(126, 23);
-            this.m_dtp_tu_thang.TabIndex = 3;
-            this.m_dtp_tu_thang.Value = new System.DateTime(2014, 6, 26, 9, 16, 54, 0);
-            // 
-            // m_dtp_den_thang
-            // 
-            this.m_dtp_den_thang.CustomFormat = "MM/yyyy";
-            this.m_dtp_den_thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_den_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_den_thang.Location = new System.Drawing.Point(534, 38);
-            this.m_dtp_den_thang.Name = "m_dtp_den_thang";
-            this.m_dtp_den_thang.Size = new System.Drawing.Size(126, 23);
-            this.m_dtp_den_thang.TabIndex = 4;
-            this.m_dtp_den_thang.Value = new System.DateTime(2014, 6, 26, 9, 16, 54, 0);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(236, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Từ khóa";
-            // 
-            // m_txt_tu_khoa
-            // 
-            this.m_txt_tu_khoa.Location = new System.Drawing.Point(302, 98);
-            this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
-            this.m_txt_tu_khoa.Size = new System.Drawing.Size(200, 20);
-            this.m_txt_tu_khoa.TabIndex = 6;
-            // 
             // m_cmd_search
             // 
             this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -333,6 +264,75 @@ namespace BCTKApp
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 22;
             this.m_cmd_search.Text = "Tìm kiếm";
+            // 
+            // m_txt_tu_khoa
+            // 
+            this.m_txt_tu_khoa.Location = new System.Drawing.Point(302, 98);
+            this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
+            this.m_txt_tu_khoa.Size = new System.Drawing.Size(200, 20);
+            this.m_txt_tu_khoa.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(236, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Từ khóa";
+            // 
+            // m_dtp_den_thang
+            // 
+            this.m_dtp_den_thang.CustomFormat = "MM/yyyy";
+            this.m_dtp_den_thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dtp_den_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_den_thang.Location = new System.Drawing.Point(534, 38);
+            this.m_dtp_den_thang.Name = "m_dtp_den_thang";
+            this.m_dtp_den_thang.Size = new System.Drawing.Size(126, 23);
+            this.m_dtp_den_thang.TabIndex = 4;
+            this.m_dtp_den_thang.Value = new System.DateTime(2014, 6, 26, 9, 16, 54, 0);
+            // 
+            // m_dtp_tu_thang
+            // 
+            this.m_dtp_tu_thang.CustomFormat = "MM/yyyy";
+            this.m_dtp_tu_thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dtp_tu_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_tu_thang.Location = new System.Drawing.Point(302, 41);
+            this.m_dtp_tu_thang.Name = "m_dtp_tu_thang";
+            this.m_dtp_tu_thang.Size = new System.Drawing.Size(126, 23);
+            this.m_dtp_tu_thang.TabIndex = 3;
+            this.m_dtp_tu_thang.Value = new System.DateTime(2014, 6, 26, 9, 16, 54, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(448, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Đến tháng";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(236, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Từ tháng";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(353, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(188, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "THỐNG KÊ NHÂN SỰ";
             // 
             // f501_THONG_KE_NHAN_SU
             // 
@@ -390,9 +390,11 @@ namespace BCTKApp
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_THONG_KE.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_V_GD_THONG_KE();			
-			m_us.FillDataset(m_ds);
+		private void load_data_2_grid(){
+            string v_str_tu_khoa = m_txt_tu_khoa.Text;		
+			m_ds = new DS_V_GD_THONG_KE();
+            m_us.FillDatasetSearch_nhansu(m_ds, v_str_tu_khoa);
+            //m_us.FillDataset(m_ds);
 			m_grv_thong_ke.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_thong_ke, m_obj_trans);
 			m_grv_thong_ke.Redraw = true;
@@ -461,7 +463,8 @@ namespace BCTKApp
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+			m_cmd_xuat_excel.Click +=new EventHandler(m_cmd_xuat_excel_Click);
+            m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
 		}
 		#endregion
 
@@ -516,7 +519,8 @@ namespace BCTKApp
 			}
 		}
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
 			try{
 				view_v_gd_thong_ke();
 			}
@@ -524,6 +528,17 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 	}
 }
