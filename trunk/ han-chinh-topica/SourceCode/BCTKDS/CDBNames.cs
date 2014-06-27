@@ -115,6 +115,16 @@ namespace BCTKDS.CDBNames
         public const string DM_DON_VI_CAP_CC = "Danh mục đơn vị cấp chứng chỉ";
         public const string DM_PHOI_CHUNG_CHI = "Danh mục phôi chứng chỉ";
     }
+    public class V_BANG_CO_SO_DINH_MUC
+    {
+        public const string LOAI_DM = "LOAI_DM";
+        public const string HOC_VIEN_TUYEN_MOI = "HOC_VIEN_TUYEN_MOI";
+        public const string NHAN_VIEN_DON_VI = "NHAN_VIEN_DON_VI";
+        public const string HOC_VIEN_DANG_HOC = "HOC_VIEN_DANG_HOC";
+        public const string SD_CC = "SD_CC";
+        public const string TD_DON_VI = "TD_DON_VI";
+        public const string PM_DON_VI = "PM_DON_VI";
+    }
 
 
     #region HE_THONG
