@@ -97,7 +97,16 @@ namespace BCTKApp
 
         private void m_cmd_dinh_muc_tung_phong_ban_Click(object sender, EventArgs e)
         {
+            try
+            {
+                f702_v_dinh_muc_cpn_tung_phong_ban frm = new f702_v_dinh_muc_cpn_tung_phong_ban();
+                frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
 
