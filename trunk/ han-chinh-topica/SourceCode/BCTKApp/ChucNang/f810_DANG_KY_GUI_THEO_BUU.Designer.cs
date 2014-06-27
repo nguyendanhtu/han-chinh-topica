@@ -34,14 +34,15 @@
             this.m_pnl_tieu_de = new System.Windows.Forms.Panel();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_dat_ngay_gui = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_gui = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.m_cmd_del = new SIS.Controls.Button.SiSButton();
             this.m_pnl_tieu_de.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -81,7 +82,7 @@
             this.m_pnl_tieu_de.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_pnl_tieu_de.Name = "m_pnl_tieu_de";
-            this.m_pnl_tieu_de.Size = new System.Drawing.Size(1000, 42);
+            this.m_pnl_tieu_de.Size = new System.Drawing.Size(1129, 42);
             this.m_pnl_tieu_de.TabIndex = 0;
             // 
             // m_lbl_tieu_de
@@ -89,39 +90,41 @@
             this.m_lbl_tieu_de.AutoSize = true;
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tieu_de.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tieu_de.Location = new System.Drawing.Point(296, 9);
+            this.m_lbl_tieu_de.Location = new System.Drawing.Point(281, 9);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(396, 29);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(553, 29);
             this.m_lbl_tieu_de.TabIndex = 0;
-            this.m_lbl_tieu_de.Text = "ĐĂNG KÝ GỬI THEO TỪNG BƯU";
+            this.m_lbl_tieu_de.Text = "ĐĂNG KÝ GỬI HÀNG NGÀY THEO TỪNG BƯU";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.m_cmd_del);
+            this.panel1.Controls.Add(this.m_dat_ngay_gui);
             this.panel1.Controls.Add(this.m_lbl_ngay_gui);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 56);
+            this.panel1.Size = new System.Drawing.Size(1129, 56);
             this.panel1.TabIndex = 1;
+            // 
+            // m_dat_ngay_gui
+            // 
+            this.m_dat_ngay_gui.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_ngay_gui.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_gui.Location = new System.Drawing.Point(492, 6);
+            this.m_dat_ngay_gui.Name = "m_dat_ngay_gui";
+            this.m_dat_ngay_gui.Size = new System.Drawing.Size(140, 26);
+            this.m_dat_ngay_gui.TabIndex = 2;
             // 
             // m_lbl_ngay_gui
             // 
             this.m_lbl_ngay_gui.AutoSize = true;
-            this.m_lbl_ngay_gui.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ngay_gui.Location = new System.Drawing.Point(316, 18);
+            this.m_lbl_ngay_gui.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ngay_gui.Location = new System.Drawing.Point(389, 9);
             this.m_lbl_ngay_gui.Name = "m_lbl_ngay_gui";
-            this.m_lbl_ngay_gui.Size = new System.Drawing.Size(88, 17);
+            this.m_lbl_ngay_gui.Size = new System.Drawing.Size(97, 20);
             this.m_lbl_ngay_gui.TabIndex = 0;
             this.m_lbl_ngay_gui.Text = "Ngày gửi thư";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(411, 15);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 2;
             // 
             // m_fg
             // 
@@ -130,7 +133,7 @@
             this.m_fg.Location = new System.Drawing.Point(0, 98);
             this.m_fg.Name = "m_fg";
             this.m_fg.Rows.Count = 2;
-            this.m_fg.Size = new System.Drawing.Size(1000, 431);
+            this.m_fg.Size = new System.Drawing.Size(1129, 443);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 4;
             this.m_fg.TabStop = false;
@@ -166,7 +169,7 @@
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(998, 0);
+            this.button1.Location = new System.Drawing.Point(1127, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(0, 31);
             this.button1.TabIndex = 0;
@@ -183,7 +186,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(895, 0);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1024, 0);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(103, 31);
             this.m_cmd_exit.TabIndex = 4;
@@ -198,7 +201,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(783, 0);
+            this.m_cmd_save.Location = new System.Drawing.Point(912, 0);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(112, 31);
             this.m_cmd_save.TabIndex = 0;
@@ -212,23 +215,37 @@
             this.panel2.Controls.Add(this.m_cmd_exit);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 496);
+            this.panel2.Location = new System.Drawing.Point(0, 508);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 33);
+            this.panel2.Size = new System.Drawing.Size(1129, 33);
             this.panel2.TabIndex = 5;
+            // 
+            // m_cmd_del
+            // 
+            this.m_cmd_del.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_del.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_del.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_del.ImageIndex = 4;
+            this.m_cmd_del.ImageList = this.ImageList;
+            this.m_cmd_del.Location = new System.Drawing.Point(3, 27);
+            this.m_cmd_del.Name = "m_cmd_del";
+            this.m_cmd_del.Size = new System.Drawing.Size(83, 26);
+            this.m_cmd_del.TabIndex = 6;
+            this.m_cmd_del.TabStop = false;
+            this.m_cmd_del.Text = "&Xóa hàng";
             // 
             // f810_DANG_KY_GUI_THEO_BUU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 529);
+            this.ClientSize = new System.Drawing.Size(1129, 541);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_tieu_de);
             this.Name = "f810_DANG_KY_GUI_THEO_BUU";
-            this.Text = "F810 - Đăng ký gửi theo từng bưu";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "F810 - Đăng ký gửi hàng ngày theo từng bưu";
             this.m_pnl_tieu_de.ResumeLayout(false);
             this.m_pnl_tieu_de.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -245,7 +262,7 @@
         private System.Windows.Forms.Panel m_pnl_tieu_de;
         private System.Windows.Forms.Label m_lbl_tieu_de;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_gui;
         private System.Windows.Forms.Label m_lbl_ngay_gui;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         internal System.Windows.Forms.ImageList imageList1;
@@ -253,6 +270,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         private System.Windows.Forms.Panel panel2;
+        internal SIS.Controls.Button.SiSButton m_cmd_del;
 
     }
 }
