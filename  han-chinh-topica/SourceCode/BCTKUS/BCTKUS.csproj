@@ -154,6 +154,7 @@
     <Compile Include="US_V_DM_BILL.cs" />
     <Compile Include="US_V_GD_THONG_KE.cs" />
     <Compile Include="US_V_HT_LOG_TRUY_CAP.cs" />
+    <Compile Include="US_V_TONG_HOP_CPN_THEO_PHONG_BAN.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
