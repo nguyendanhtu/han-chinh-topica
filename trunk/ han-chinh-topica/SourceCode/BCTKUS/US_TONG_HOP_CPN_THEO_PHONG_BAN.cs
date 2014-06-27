@@ -237,7 +237,7 @@ public class US_TONG_HOP_CPN_THEO_PHONG_BAN : US_Object
 #region "Init Functions"
 	public US_TONG_HOP_CPN_THEO_PHONG_BAN() 
 	{
-		pm_objDS = new DS_TONG_HOP_CPN_THEO_PHONG_BAN();
+		pm_objDS = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
 		pm_strTableName = c_TableName;
 		pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
 	}
@@ -249,7 +249,7 @@ public class US_TONG_HOP_CPN_THEO_PHONG_BAN : US_Object
 
 	public US_TONG_HOP_CPN_THEO_PHONG_BAN(decimal i_dbID) 
 	{
-		pm_objDS = new DS_TONG_HOP_CPN_THEO_PHONG_BAN();
+		pm_objDS = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
 		pm_strTableName = c_TableName;
 		IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
 		v_objMkCmd.AddCondition("ID", i_dbID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
