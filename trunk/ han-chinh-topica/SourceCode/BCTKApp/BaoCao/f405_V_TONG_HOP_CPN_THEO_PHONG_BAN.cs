@@ -92,12 +92,12 @@ namespace BCTKApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f405_V_TONG_HOP_CPN_THEO_PHONG_BAN));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_lbl_ma_pb = new System.Windows.Forms.Label();
             this.m_lbl_ten_pb = new System.Windows.Forms.Label();
@@ -154,16 +154,6 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(984, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 220);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(984, 371);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
             // 
             // m_cmd_insert
             // 
@@ -240,6 +230,16 @@ namespace BCTKApp
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg.Location = new System.Drawing.Point(0, 220);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(984, 371);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 20;
+            // 
             // m_lbl_header
             // 
             this.m_lbl_header.AutoSize = true;
@@ -308,6 +308,7 @@ namespace BCTKApp
             // 
             // m_cbo_ma_pb
             // 
+            this.m_cbo_ma_pb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_ma_pb.FormattingEnabled = true;
             this.m_cbo_ma_pb.Location = new System.Drawing.Point(211, 60);
             this.m_cbo_ma_pb.Name = "m_cbo_ma_pb";
@@ -316,6 +317,7 @@ namespace BCTKApp
             // 
             // m_cbo_ten_pb
             // 
+            this.m_cbo_ten_pb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_ten_pb.FormattingEnabled = true;
             this.m_cbo_ten_pb.Location = new System.Drawing.Point(502, 60);
             this.m_cbo_ten_pb.Name = "m_cbo_ten_pb";
@@ -345,7 +347,7 @@ namespace BCTKApp
             // 
             // m_cmd_tim_kiem
             // 
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(762, 145);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(766, 149);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(75, 23);
             this.m_cmd_tim_kiem.TabIndex = 26;
