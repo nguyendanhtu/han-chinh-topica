@@ -409,6 +409,7 @@ namespace BCTKApp
 		ITransferDataRow m_obj_trans;		
 		DS_V_TONG_HOP_CPN_THEO_PHONG_BAN m_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
 		US_V_TONG_HOP_CPN_THEO_PHONG_BAN m_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
+        bool trang_thai = false;
 		#endregion
 
 		#region Private Methods
@@ -418,7 +419,9 @@ namespace BCTKApp
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
             			CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
-			this.KeyPreview = true;		
+			this.KeyPreview = true;
+            load_cbo_ma_pb();
+            load_cbo_ten_pb();
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
@@ -464,7 +467,38 @@ namespace BCTKApp
 			i_us.Me2DataRow(v_dr);
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
-
+        private void load_cbo_ma_pb()
+        {
+            US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+            v_us.FillDataset(v_ds);
+            m_cbo_ma_pb.DataSource = v_ds.DM_PHONG_BAN;
+            m_cbo_ma_pb.ValueMember = DM_PHONG_BAN.ID;
+            m_cbo_ma_pb.DisplayMember = DM_PHONG_BAN.MA_PHONG_BAN;
+            DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
+            v_dr[DM_PHONG_BAN.ID] = -1;
+            v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
+            v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
+            v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
+            m_cbo_ma_pb.SelectedIndex = 0;
+            trang_thai = true;
+        }
+        private void load_cbo_ten_pb()
+        {
+            US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+            v_us.FillDataset(v_ds);
+            m_cbo_ten_pb.DataSource = v_ds.DM_PHONG_BAN;
+            m_cbo_ten_pb.ValueMember = DM_PHONG_BAN.ID;
+            m_cbo_ten_pb.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
+            DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
+            v_dr[DM_PHONG_BAN.ID] = -1;
+            v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
+            v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
+            v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
+            m_cbo_ten_pb.SelectedIndex = 0;
+            trang_thai = true;
+        }
 
 		private void insert_v_tong_hop_cpn_theo_phong_ban(){			
 		//	f405_V_TONG_HOP_CPN_THEO_PHONG_BAN_DE v_fDE = new  f405_V_TONG_HOP_CPN_THEO_PHONG_BAN_DE();								
