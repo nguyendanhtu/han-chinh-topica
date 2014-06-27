@@ -67,6 +67,20 @@ namespace BCTKApp
         }
         #endregion
 
+        private void m_cmd_don_gia_dinh_muc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f401_DON_GIA_DINH_MUC frm = new f401_DON_GIA_DINH_MUC();
+                frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
     }
 }
