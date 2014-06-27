@@ -81,6 +81,20 @@ namespace BCTKApp
             }
         }
 
+        private void m_cmd_tong_hop_CPN_theo_phong_ban_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f402_TONG_HOP_CPN_THEO_PHONG_BAN frm = new  f402_TONG_HOP_CPN_THEO_PHONG_BAN();
+                frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
     }
 }
