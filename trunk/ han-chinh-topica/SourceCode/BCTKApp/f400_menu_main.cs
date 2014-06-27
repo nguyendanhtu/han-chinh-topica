@@ -85,8 +85,8 @@ namespace BCTKApp
         {
             try
             {
-                //f402_TONG_HOP_CPN_THEO_PHONG_BAN frm = new  f402_TONG_HOP_CPN_THEO_PHONG_BAN();
-                //frm.ShowDialog();
+                f405_V_TONG_HOP_CPN_THEO_PHONG_BAN frm = new f405_V_TONG_HOP_CPN_THEO_PHONG_BAN ();
+                frm.ShowDialog();
             }
             catch (Exception v_e)
             {
