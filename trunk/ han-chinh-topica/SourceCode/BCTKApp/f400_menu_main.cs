@@ -62,8 +62,8 @@ namespace BCTKApp
         }
         void m_cmd_theo_tung_bill_Click(object sender, EventArgs e)
         {
-            f810_DANG_KY_GUI_THEO_BUU v_frm = new f810_DANG_KY_GUI_THEO_BUU();
-            v_frm.display();
+            //f810_DANG_KY_GUI_THEO_BUU v_frm = new f810_DANG_KY_GUI_THEO_BUU();
+            //v_frm.display();
         }
         #endregion
 
@@ -85,8 +85,8 @@ namespace BCTKApp
         {
             try
             {
-                f402_TONG_HOP_CPN_THEO_PHONG_BAN frm = new  f402_TONG_HOP_CPN_THEO_PHONG_BAN();
-                frm.ShowDialog();
+                //f402_TONG_HOP_CPN_THEO_PHONG_BAN frm = new  f402_TONG_HOP_CPN_THEO_PHONG_BAN();
+                //frm.ShowDialog();
             }
             catch (Exception v_e)
             {

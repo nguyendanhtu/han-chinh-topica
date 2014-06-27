@@ -279,9 +279,6 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaoCao\f402_TONG_HOP_CPN_THEO_PHONG_BAN.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="CChartParameter.cs" />
     <Compile Include="ChartDataSourceInterface.cs" />
     <Compile Include="ChucNang\f401_DON_GIA_DINH_MUC.cs">
@@ -400,9 +397,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BaoCao\f402_TONG_HOP_CPN_THEO_PHONG_BAN.resx">
-      <DependentUpon>f402_TONG_HOP_CPN_THEO_PHONG_BAN.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f401_DON_GIA_DINH_MUC.resx">
       <DependentUpon>f401_DON_GIA_DINH_MUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -498,6 +492,7 @@
     <Service Include="{CF845C55-C321-4742-B673-E6212D061ED9}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="BaoCao\" />
     <Folder Include="bin\Debug\Reports\Output\" />
   </ItemGroup>
   <ItemGroup>
