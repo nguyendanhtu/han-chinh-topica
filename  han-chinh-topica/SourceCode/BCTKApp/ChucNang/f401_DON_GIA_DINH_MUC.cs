@@ -40,6 +40,9 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
         private Label m_lbl_header;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private DateTimePicker m_dat_ngay_ap_dung;
+        private Label label1;
 		private System.ComponentModel.IContainer components;
 
 		public f401_DON_GIA_DINH_MUC()
@@ -88,6 +91,9 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_header = new System.Windows.Forms.Label();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_dat_ngay_ap_dung = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -130,7 +136,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 528);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(788, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(925, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -142,7 +148,7 @@ namespace BCTKApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(432, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(569, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -157,7 +163,7 @@ namespace BCTKApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(520, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(657, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -187,7 +193,7 @@ namespace BCTKApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(608, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(745, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -202,7 +208,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(696, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(833, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -212,9 +218,9 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 155);
+            this.m_fg.Location = new System.Drawing.Point(0, 139);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(788, 373);
+            this.m_fg.Size = new System.Drawing.Size(925, 389);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -224,14 +230,51 @@ namespace BCTKApp
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.Location = new System.Drawing.Point(310, 25);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(259, 22);
+            this.m_lbl_header.Size = new System.Drawing.Size(260, 22);
             this.m_lbl_header.TabIndex = 21;
             this.m_lbl_header.Text = "BẢNG ĐƠN GIÁ ĐỊNH MỨC";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(569, 73);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 2824;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            // 
+            // m_dat_ngay_ap_dung
+            // 
+            this.m_dat_ngay_ap_dung.Checked = false;
+            this.m_dat_ngay_ap_dung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_ngay_ap_dung.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_ap_dung.Location = new System.Drawing.Point(314, 74);
+            this.m_dat_ngay_ap_dung.Name = "m_dat_ngay_ap_dung";
+            this.m_dat_ngay_ap_dung.ShowCheckBox = true;
+            this.m_dat_ngay_ap_dung.Size = new System.Drawing.Size(200, 23);
+            this.m_dat_ngay_ap_dung.TabIndex = 2826;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(208, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 2827;
+            this.label1.Text = "Ngày áp dụng";
             // 
             // f401_DON_GIA_DINH_MUC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(788, 564);
+            this.ClientSize = new System.Drawing.Size(925, 564);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.m_dat_ngay_ap_dung);
+            this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -267,20 +310,28 @@ namespace BCTKApp
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_BANG_CO_SO_DINH_MUC m_ds = new DS_V_BANG_CO_SO_DINH_MUC();
-		US_V_BANG_CO_SO_DINH_MUC m_us = new US_V_BANG_CO_SO_DINH_MUC();
-		#endregion
+        ITransferDataRow m_obj_trans;
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
+        
+        DateTime v_dat_ngay_ap_dung;
+		DS_V_BANG_CO_SO_DINH_MUC m_v_ds = new DS_V_BANG_CO_SO_DINH_MUC();
+		US_V_BANG_CO_SO_DINH_MUC m_v_us = new US_V_BANG_CO_SO_DINH_MUC();
+        #endregion
 
 		#region Private Methods
-		private void format_controls(){
-            //CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_fg);
-			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
-			set_define_events();
-			this.KeyPreview = true;		
-		}
+        
+        private void format_controls()
+        {
+
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_fg);
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            m_fg.Cols[0].Caption = "STT";
+           
+            set_define_events();
+            this.KeyPreview = true;
+        }
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
 			load_data_2_grid();		
@@ -295,16 +346,27 @@ namespace BCTKApp
 			v_htb.Add(V_BANG_CO_SO_DINH_MUC.LOAI_DM, e_col_Number.LOAI_DM);
 			v_htb.Add(V_BANG_CO_SO_DINH_MUC.PM_DON_VI, e_col_Number.PM_DON_VI);
 									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_BANG_CO_SO_DINH_MUC.NewRow());
+			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_v_ds.V_BANG_CO_SO_DINH_MUC.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_V_BANG_CO_SO_DINH_MUC();			
-			m_us.FillDataset(m_ds);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
-		}
+		private void load_data_2_grid(){
+            m_v_ds.Clear();
+            if (!m_dat_ngay_ap_dung.Checked)
+            {
+                v_dat_ngay_ap_dung = new DateTime(2050, 1, 1);
+            }
+            else
+            {
+                v_dat_ngay_ap_dung = m_dat_ngay_ap_dung.Value;
+            }
+            m_v_us.FillDatasetSearch(m_v_ds,v_dat_ngay_ap_dung);
+            CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_fg);
+            //m_fg.DataSource=
+            m_fg.Redraw = true;
+           
+        }
+        
 		private void grid2us_object(US_V_BANG_CO_SO_DINH_MUC i_us
 			, int i_grid_row) {
 			DataRow v_dr;
@@ -331,7 +393,7 @@ namespace BCTKApp
 		private void update_v_bang_co_so_dinh_muc(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
+			grid2us_object(m_v_us, m_fg.Row);
 		//	f401_DON_GIA_DINH_MUC_DE v_fDE = new f401_DON_GIA_DINH_MUC_DE();
 		//	v_fDE.display(m_us);
 			load_data_2_grid();
@@ -360,16 +422,20 @@ namespace BCTKApp
 		private void view_v_bang_co_so_dinh_muc(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
+			grid2us_object(m_v_us, m_fg.Row);
 		//	f401_DON_GIA_DINH_MUC_DE v_fDE = new f401_DON_GIA_DINH_MUC_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void search_v_bang_co_so_dinh_muc(){
+            load_data_2_grid();
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
 		}
 		#endregion
 
@@ -381,6 +447,7 @@ namespace BCTKApp
 		private void f401_DON_GIA_DINH_MUC_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
+              
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
@@ -432,7 +499,16 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
+        private void m_cmd_search_Click(object sender, EventArgs e){
+            try
+            {
+                search_v_bang_co_so_dinh_muc();
+            }
+            catch (System.Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
+        }
 	}
 }
 

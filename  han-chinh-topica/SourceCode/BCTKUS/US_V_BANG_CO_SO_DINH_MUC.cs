@@ -165,6 +165,12 @@ public class US_V_BANG_CO_SO_DINH_MUC : US_Object
 
 #endregion
 #region "Init Functions"
+    public void FillDatasetSearch(DS_V_BANG_CO_SO_DINH_MUC ip_ds,DateTime ip_dat_ngay_ap_dung)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_V_BANG_CO_SO_DINH_MUC_search");
+        v_store_proc.addDatetimeInputParam("@DAT_NGAY_AP_DUNG", ip_dat_ngay_ap_dung);
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
 	public US_V_BANG_CO_SO_DINH_MUC() 
 	{
 		pm_objDS = new DS_V_BANG_CO_SO_DINH_MUC();
