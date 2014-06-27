@@ -73,6 +73,7 @@ namespace BCTKApp.ChucNang
             load_cbo_phong_ban_2_grid();
             load_cbo_trang_thai_2_grid();
             load_cbo_loai_thu_2_grid();
+            load_ten_phong_ban_tuong_ung_2_grid();
         }
 
         private void load_cbo_loai_thu_2_grid()
@@ -98,10 +99,31 @@ namespace BCTKApp.ChucNang
             v_hst.Add(CONST_ID_TRANG_THAI_THU.ID_NOI_BO_NHAN_TRA_LAI, "Nội bộ nhận trả lại");
             return v_hst;
         }
+        private void load_ten_phong_ban_tuong_ung_2_grid()
+        {
+            m_fg.Cols[(int)e_col_Number.TEN_PHONG_BAN].DataMap = get_mapping_col_ten_phong_ban();
+        }
 
+        private IDictionary get_mapping_col_ten_phong_ban()
+        {
+            Hashtable v_hst = new Hashtable();
+
+            US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds_dm_phong_ban = new DS_DM_PHONG_BAN();
+
+            v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban);
+
+
+            foreach (DataRow v_dr in v_ds_dm_phong_ban.DM_PHONG_BAN.Rows)
+            {
+                v_hst.Add(v_dr[DM_PHONG_BAN.ID], v_dr[DM_PHONG_BAN.TEN_PHONG_BAN]);
+            }
+            return v_hst;
+        }
         private void load_cbo_phong_ban_2_grid()
         {
-            m_fg.Cols[(int)e_col_Number.MA_PHONG_BAN].DataMap = get_mapping_col_ma_phong_ban();
+            m_fg.Cols[(int)e_col_Number.MA_PHONG_BAN].DataMap = get_mapping_col_ma_phong_ban();     
+            
         }
 
         private System.Collections.IDictionary get_mapping_col_ma_phong_ban()
@@ -263,9 +285,11 @@ namespace BCTKApp.ChucNang
         }
        
         private void m_fg_AfterEdit(object sender, C1.Win.C1FlexGrid.RowColEventArgs e)
-        {
-            //if(e.Col == (int)(e_col_Number.MA_PHONG_BAN))
-            //    e.Col = e.Col + 1;
+        {         
+            if (m_fg.Col == (int)e_col_Number.MA_PHONG_BAN)
+                m_fg.Rows[m_fg.Row][m_fg.Col + 1] = m_fg.Rows[m_fg.Row][m_fg.Col];
+            if (m_fg.Col == (int)e_col_Number.TEN_PHONG_BAN)
+                m_fg.Rows[m_fg.Row][m_fg.Col - 1] = m_fg.Rows[m_fg.Row][m_fg.Col];          
         }
         private void m_cmd_del_Click(object sender, EventArgs e)
         {
