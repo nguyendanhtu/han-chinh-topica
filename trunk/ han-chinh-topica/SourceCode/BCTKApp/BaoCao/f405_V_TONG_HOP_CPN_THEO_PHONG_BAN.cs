@@ -314,6 +314,7 @@ namespace BCTKApp
             this.m_cbo_ma_pb.Name = "m_cbo_ma_pb";
             this.m_cbo_ma_pb.Size = new System.Drawing.Size(174, 21);
             this.m_cbo_ma_pb.TabIndex = 23;
+            this.m_cbo_ma_pb.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ma_pb_SelectedIndexChanged);
             // 
             // m_cbo_ten_pb
             // 
@@ -330,6 +331,7 @@ namespace BCTKApp
             this.m_dt_tu_ngay.Name = "m_dt_tu_ngay";
             this.m_dt_tu_ngay.Size = new System.Drawing.Size(174, 20);
             this.m_dt_tu_ngay.TabIndex = 24;
+            this.m_dt_tu_ngay.Value = new System.DateTime(2012, 1, 1, 0, 0, 0, 0);
             // 
             // m_dt_den_ngay
             // 
@@ -353,6 +355,8 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.TabIndex = 26;
             this.m_cmd_tim_kiem.Text = "Tìm Kiếm";
             this.m_cmd_tim_kiem.UseVisualStyleBackColor = true;
+            this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
+            this.m_cmd_tim_kiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
             // 
             // f405_V_TONG_HOP_CPN_THEO_PHONG_BAN
             // 
@@ -411,7 +415,7 @@ namespace BCTKApp
 		ITransferDataRow m_obj_trans;		
 		DS_V_TONG_HOP_CPN_THEO_PHONG_BAN m_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
 		US_V_TONG_HOP_CPN_THEO_PHONG_BAN m_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
-        bool trang_thai = false;
+        bool m_trang_thai = false;
 		#endregion
 
 		#region Private Methods
@@ -483,7 +487,7 @@ namespace BCTKApp
             v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
             v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
             m_cbo_ma_pb.SelectedIndex = 0;
-            trang_thai = true;
+            m_trang_thai = true;
         }
         private void load_cbo_ten_pb()
         {
@@ -499,7 +503,7 @@ namespace BCTKApp
             v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
             v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
             m_cbo_ten_pb.SelectedIndex = 0;
-            trang_thai = true;
+            m_trang_thai = true;
         }
 
 		private void insert_v_tong_hop_cpn_theo_phong_ban(){			
@@ -612,6 +616,61 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+        private void m_cbo_ma_pb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (m_trang_thai == true)
+            {
+                string v_str_tu_khoa = m_txt_tim_kiem.Text;
+                decimal v_id_phong_ban = CIPConvert.ToDecimal(m_cbo_ma_pb.SelectedValue);
+                DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
+                DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
+                US_V_TONG_HOP_CPN_THEO_PHONG_BAN v_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
+                DS_V_TONG_HOP_CPN_THEO_PHONG_BAN v_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
+                v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
+                m_fg.Redraw = false;
+                CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
+                m_fg.Redraw = true;
+            }
+        }
+        private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+        {
+            string v_str_tu_khoa = m_txt_tim_kiem.Text;
+            decimal v_id_phong_ban = CIPConvert.ToDecimal(m_cbo_ma_pb.SelectedValue);
+            DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
+            DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
+            US_V_TONG_HOP_CPN_THEO_PHONG_BAN v_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
+            DS_V_TONG_HOP_CPN_THEO_PHONG_BAN v_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
+            v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
+
+        private void m_cmd_tim_kiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    string v_str_tu_khoa = m_txt_tim_kiem.Text;
+                    decimal v_id_phong_ban = CIPConvert.ToDecimal(m_cbo_ma_pb.SelectedValue);
+                    DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
+                    DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
+                    US_V_TONG_HOP_CPN_THEO_PHONG_BAN v_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
+                    DS_V_TONG_HOP_CPN_THEO_PHONG_BAN v_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
+                    v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
+                    m_fg.Redraw = false;
+                    CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
+                    m_fg.Redraw = true;
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 	}
 }
