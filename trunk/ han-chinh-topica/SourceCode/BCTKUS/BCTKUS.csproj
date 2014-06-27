@@ -146,6 +146,7 @@
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_HE_THONG.cs" />
     <Compile Include="US_HT_QUYEN_USER.cs" />
+    <Compile Include="US_TONG_HOP_CPN_THEO_PHONG_BAN.cs" />
     <Compile Include="US_UT_SEQUENCES.cs" />
     <Compile Include="US_V_BANG_CO_SO_DINH_MUC.cs" />
     <Compile Include="US_V_CM_DM_DANG_KY_GUI.cs" />
