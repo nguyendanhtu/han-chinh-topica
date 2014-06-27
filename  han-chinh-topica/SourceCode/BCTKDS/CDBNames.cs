@@ -126,7 +126,19 @@ namespace BCTKDS.CDBNames
         public const string PM_DON_VI = "PM_DON_VI";
     }
 
-
+    public class TONG_HOP_CPN_THEO_PHONG_BAN
+    {
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string NGAY_GUI = "NGAY_GUI";
+        public const string SO_BILL = "SO_BILL";
+        public const string NGUOI_GUI = "NGUOI_GUI";
+        public const string NGUOI_NHAN = "NGUOI_NHAN";
+        public const string TRANG_THAI = "TRANG_THAI";
+        public const string TRONG_NUOC = "TRONG_NUOC";
+        public const string NUOC_NGOAI = "NUOC_NGOAI";
+        public const string GHI_CHU = "GHI_CHU";
+    }
     #region HE_THONG
     public class V_HT_LOG_TRUY_CAP
     {
