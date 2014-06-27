@@ -242,6 +242,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_CM_DM_DANG_KY_GUI.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_DINH_MUC_CPN_TUNG_PHONG_BAN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DINH_MUC_CPN_TUNG_PHONG_BAN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_BILL.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -524,6 +529,17 @@
     </None>
     <None Include="DS_V_CM_DM_DANG_KY_GUI.xss">
       <DependentUpon>DS_V_CM_DM_DANG_KY_GUI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DINH_MUC_CPN_TUNG_PHONG_BAN.xsc">
+      <DependentUpon>DS_V_DINH_MUC_CPN_TUNG_PHONG_BAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DINH_MUC_CPN_TUNG_PHONG_BAN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DINH_MUC_CPN_TUNG_PHONG_BAN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DINH_MUC_CPN_TUNG_PHONG_BAN.xss">
+      <DependentUpon>DS_V_DINH_MUC_CPN_TUNG_PHONG_BAN.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_BILL.xsc">
       <DependentUpon>DS_V_DM_BILL.xsd</DependentUpon>
