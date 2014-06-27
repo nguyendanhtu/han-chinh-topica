@@ -41,6 +41,16 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
         private Label m_lbl_header;
         private Label m_lbl_ma_pb;
+        private Label m_lbl_ten_pb;
+        private Label m_lbl_den_ngay;
+        private Label m_lbl_tu_ngay;
+        private Label m_lbl_tu_khoa;
+        private ComboBox m_cbo_ma_pb;
+        private ComboBox m_cbo_ten_pb;
+        private DateTimePicker m_dt_tu_ngay;
+        private DateTimePicker m_dt_den_ngay;
+        private TextBox m_txt_tim_kiem;
+        private Button m_cmd_tim_kiem;
 		private System.ComponentModel.IContainer components;
 
 		public f405_V_TONG_HOP_CPN_THEO_PHONG_BAN()
@@ -90,6 +100,16 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_lbl_ma_pb = new System.Windows.Forms.Label();
+            this.m_lbl_ten_pb = new System.Windows.Forms.Label();
+            this.m_lbl_den_ngay = new System.Windows.Forms.Label();
+            this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
+            this.m_lbl_tu_khoa = new System.Windows.Forms.Label();
+            this.m_cbo_ma_pb = new System.Windows.Forms.ComboBox();
+            this.m_cbo_ten_pb = new System.Windows.Forms.ComboBox();
+            this.m_dt_tu_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_dt_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+            this.m_cmd_tim_kiem = new System.Windows.Forms.Button();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -242,10 +262,110 @@ namespace BCTKApp
             this.m_lbl_ma_pb.TabIndex = 22;
             this.m_lbl_ma_pb.Text = "Mã PB:";
             // 
+            // m_lbl_ten_pb
+            // 
+            this.m_lbl_ten_pb.AutoSize = true;
+            this.m_lbl_ten_pb.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ten_pb.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_ten_pb.Location = new System.Drawing.Point(420, 66);
+            this.m_lbl_ten_pb.Name = "m_lbl_ten_pb";
+            this.m_lbl_ten_pb.Size = new System.Drawing.Size(49, 15);
+            this.m_lbl_ten_pb.TabIndex = 22;
+            this.m_lbl_ten_pb.Text = "Tên PB:";
+            // 
+            // m_lbl_den_ngay
+            // 
+            this.m_lbl_den_ngay.AutoSize = true;
+            this.m_lbl_den_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_den_ngay.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_den_ngay.Location = new System.Drawing.Point(420, 100);
+            this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
+            this.m_lbl_den_ngay.Size = new System.Drawing.Size(62, 15);
+            this.m_lbl_den_ngay.TabIndex = 22;
+            this.m_lbl_den_ngay.Text = "Đến ngày:";
+            // 
+            // m_lbl_tu_ngay
+            // 
+            this.m_lbl_tu_ngay.AutoSize = true;
+            this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(143, 100);
+            this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
+            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(55, 15);
+            this.m_lbl_tu_ngay.TabIndex = 22;
+            this.m_lbl_tu_ngay.Text = "Từ ngày:";
+            // 
+            // m_lbl_tu_khoa
+            // 
+            this.m_lbl_tu_khoa.AutoSize = true;
+            this.m_lbl_tu_khoa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tu_khoa.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_tu_khoa.Location = new System.Drawing.Point(143, 149);
+            this.m_lbl_tu_khoa.Name = "m_lbl_tu_khoa";
+            this.m_lbl_tu_khoa.Size = new System.Drawing.Size(54, 15);
+            this.m_lbl_tu_khoa.TabIndex = 22;
+            this.m_lbl_tu_khoa.Text = "Từ khóa:";
+            // 
+            // m_cbo_ma_pb
+            // 
+            this.m_cbo_ma_pb.FormattingEnabled = true;
+            this.m_cbo_ma_pb.Location = new System.Drawing.Point(211, 60);
+            this.m_cbo_ma_pb.Name = "m_cbo_ma_pb";
+            this.m_cbo_ma_pb.Size = new System.Drawing.Size(174, 21);
+            this.m_cbo_ma_pb.TabIndex = 23;
+            // 
+            // m_cbo_ten_pb
+            // 
+            this.m_cbo_ten_pb.FormattingEnabled = true;
+            this.m_cbo_ten_pb.Location = new System.Drawing.Point(502, 60);
+            this.m_cbo_ten_pb.Name = "m_cbo_ten_pb";
+            this.m_cbo_ten_pb.Size = new System.Drawing.Size(339, 21);
+            this.m_cbo_ten_pb.TabIndex = 23;
+            // 
+            // m_dt_tu_ngay
+            // 
+            this.m_dt_tu_ngay.Location = new System.Drawing.Point(211, 100);
+            this.m_dt_tu_ngay.Name = "m_dt_tu_ngay";
+            this.m_dt_tu_ngay.Size = new System.Drawing.Size(174, 20);
+            this.m_dt_tu_ngay.TabIndex = 24;
+            // 
+            // m_dt_den_ngay
+            // 
+            this.m_dt_den_ngay.Location = new System.Drawing.Point(502, 100);
+            this.m_dt_den_ngay.Name = "m_dt_den_ngay";
+            this.m_dt_den_ngay.Size = new System.Drawing.Size(174, 20);
+            this.m_dt_den_ngay.TabIndex = 24;
+            // 
+            // m_txt_tim_kiem
+            // 
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(211, 149);
+            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(465, 20);
+            this.m_txt_tim_kiem.TabIndex = 25;
+            // 
+            // m_cmd_tim_kiem
+            // 
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(762, 145);
+            this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
+            this.m_cmd_tim_kiem.Size = new System.Drawing.Size(75, 23);
+            this.m_cmd_tim_kiem.TabIndex = 26;
+            this.m_cmd_tim_kiem.Text = "Tìm Kiếm";
+            this.m_cmd_tim_kiem.UseVisualStyleBackColor = true;
+            // 
             // f405_V_TONG_HOP_CPN_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(984, 627);
+            this.Controls.Add(this.m_cmd_tim_kiem);
+            this.Controls.Add(this.m_txt_tim_kiem);
+            this.Controls.Add(this.m_dt_den_ngay);
+            this.Controls.Add(this.m_dt_tu_ngay);
+            this.Controls.Add(this.m_cbo_ten_pb);
+            this.Controls.Add(this.m_cbo_ma_pb);
+            this.Controls.Add(this.m_lbl_tu_khoa);
+            this.Controls.Add(this.m_lbl_tu_ngay);
+            this.Controls.Add(this.m_lbl_den_ngay);
+            this.Controls.Add(this.m_lbl_ten_pb);
             this.Controls.Add(this.m_lbl_ma_pb);
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_fg);
@@ -293,7 +413,7 @@ namespace BCTKApp
 
 		#region Private Methods
 		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201());
+            //CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
             			CGridUtils.AddSearch_Handlers(m_fg);
