@@ -95,6 +95,11 @@ namespace BCTKApp
             }
         }
 
+        private void m_cmd_dinh_muc_tung_phong_ban_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

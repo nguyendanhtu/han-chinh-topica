@@ -67,6 +67,7 @@
             this.m_rib_tab_tro_giup = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.m_cmd_dinh_muc_tung_phong_ban = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_control_TAD.SuspendLayout();
             this.m_rib_pnl_CPN.SuspendLayout();
             this.m_rib_pnl_quan_ly_dinh_muc.SuspendLayout();
@@ -85,9 +86,9 @@
             this.m_rib_control_TAD.CaptionVisible = true;
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_CPN);
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_quan_ly_dinh_muc);
+            this.m_rib_control_TAD.Controls.Add(this.ribbonPanel3);
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_he_thong);
             this.m_rib_control_TAD.Controls.Add(this.ribbonPanel4);
-            this.m_rib_control_TAD.Controls.Add(this.ribbonPanel3);
             this.m_rib_control_TAD.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_rib_control_TAD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_rib_control_TAD.ForeColor = System.Drawing.Color.DarkOrange;
@@ -167,10 +168,11 @@
             this.m_rib_bar_CPN_thong_ke.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_rib_bar_CPN_thong_ke.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.m_cmd_tong_hop_CPN_theo_phong_ban,
-            this.m_cmd_tra_cuu_trang_thai_CPN});
+            this.m_cmd_tra_cuu_trang_thai_CPN,
+            this.m_cmd_dinh_muc_tung_phong_ban});
             this.m_rib_bar_CPN_thong_ke.Location = new System.Drawing.Point(405, 0);
             this.m_rib_bar_CPN_thong_ke.Name = "m_rib_bar_CPN_thong_ke";
-            this.m_rib_bar_CPN_thong_ke.Size = new System.Drawing.Size(314, 58);
+            this.m_rib_bar_CPN_thong_ke.Size = new System.Drawing.Size(447, 58);
             this.m_rib_bar_CPN_thong_ke.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.m_rib_bar_CPN_thong_ke.TabIndex = 4;
             this.m_rib_bar_CPN_thong_ke.Text = "Thống kê";
@@ -637,6 +639,13 @@
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Blue;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
+            // m_cmd_dinh_muc_tung_phong_ban
+            // 
+            this.m_cmd_dinh_muc_tung_phong_ban.Name = "m_cmd_dinh_muc_tung_phong_ban";
+            this.m_cmd_dinh_muc_tung_phong_ban.SubItemsExpandWidth = 14;
+            this.m_cmd_dinh_muc_tung_phong_ban.Text = "Định mức từng phòng ban";
+            this.m_cmd_dinh_muc_tung_phong_ban.Click += new System.EventHandler(this.m_cmd_dinh_muc_tung_phong_ban_Click);
+            // 
             // f400_menu_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -697,6 +706,7 @@
         private DevComponents.DotNetBar.ButtonItem m_cmd_tra_cuu_trang_thai_CPN;
         private DevComponents.DotNetBar.RibbonBar m_rib_bar_cap_nhat_trang_thai;
         private DevComponents.DotNetBar.ButtonItem m_cmd_trang_thai;
+        private DevComponents.DotNetBar.ButtonItem m_cmd_dinh_muc_tung_phong_ban;
 
     }
 }
