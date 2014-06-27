@@ -287,6 +287,9 @@
     <Compile Include="ChucNang\f401_DON_GIA_DINH_MUC.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ChucNang\f702_v_dinh_muc_cpn_tung_phong_ban.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ChucNang\f810_DANG_KY_GUI_THEO_BUU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f401_DON_GIA_DINH_MUC.resx">
       <DependentUpon>f401_DON_GIA_DINH_MUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\f702_v_dinh_muc_cpn_tung_phong_ban.resx">
+      <DependentUpon>f702_v_dinh_muc_cpn_tung_phong_ban.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f810_DANG_KY_GUI_THEO_BUU.resx">
       <DependentUpon>f810_DANG_KY_GUI_THEO_BUU.cs</DependentUpon>
