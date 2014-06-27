@@ -122,8 +122,7 @@ namespace BCTKApp.ChucNang
         }
         private void load_cbo_phong_ban_2_grid()
         {
-            m_fg.Cols[(int)e_col_Number.MA_PHONG_BAN].DataMap = get_mapping_col_ma_phong_ban();     
-            
+            m_fg.Cols[(int)e_col_Number.MA_PHONG_BAN].DataMap = get_mapping_col_ma_phong_ban();         
         }
 
         private System.Collections.IDictionary get_mapping_col_ma_phong_ban()
