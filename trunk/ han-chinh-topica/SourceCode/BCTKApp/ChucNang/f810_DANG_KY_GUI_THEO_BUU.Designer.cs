@@ -34,6 +34,7 @@
             this.m_pnl_tieu_de = new System.Windows.Forms.Panel();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_del = new SIS.Controls.Button.SiSButton();
             this.m_dat_ngay_gui = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_gui = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -42,7 +43,6 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.m_cmd_del = new SIS.Controls.Button.SiSButton();
             this.m_pnl_tieu_de.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -106,6 +106,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1129, 56);
             this.panel1.TabIndex = 1;
+            // 
+            // m_cmd_del
+            // 
+            this.m_cmd_del.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_del.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_del.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_del.ImageIndex = 4;
+            this.m_cmd_del.ImageList = this.ImageList;
+            this.m_cmd_del.Location = new System.Drawing.Point(3, 27);
+            this.m_cmd_del.Name = "m_cmd_del";
+            this.m_cmd_del.Size = new System.Drawing.Size(83, 26);
+            this.m_cmd_del.TabIndex = 6;
+            this.m_cmd_del.TabStop = false;
+            this.m_cmd_del.Text = "&Xóa hàng";
             // 
             // m_dat_ngay_gui
             // 
@@ -219,21 +234,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1129, 33);
             this.panel2.TabIndex = 5;
-            // 
-            // m_cmd_del
-            // 
-            this.m_cmd_del.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_del.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_del.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_del.ImageIndex = 4;
-            this.m_cmd_del.ImageList = this.ImageList;
-            this.m_cmd_del.Location = new System.Drawing.Point(3, 27);
-            this.m_cmd_del.Name = "m_cmd_del";
-            this.m_cmd_del.Size = new System.Drawing.Size(83, 26);
-            this.m_cmd_del.TabIndex = 6;
-            this.m_cmd_del.TabStop = false;
-            this.m_cmd_del.Text = "&Xóa hàng";
             // 
             // f810_DANG_KY_GUI_THEO_BUU
             // 

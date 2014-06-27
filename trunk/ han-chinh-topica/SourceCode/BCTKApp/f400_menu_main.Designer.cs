@@ -647,7 +647,7 @@
             this.ClientSize = new System.Drawing.Size(862, 473);
             this.Controls.Add(this.m_rib_control_TAD);
             this.Name = "f400_menu_main";
-            this.Text = "F400 - HALACHI Hệ thống quản lý hành chính v1.0 Beta";
+            this.Text = "F400 - iYAHU Hệ thống quản lý hành chính v1.0 Beta";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.m_rib_control_TAD.ResumeLayout(false);
             this.m_rib_control_TAD.PerformLayout();
