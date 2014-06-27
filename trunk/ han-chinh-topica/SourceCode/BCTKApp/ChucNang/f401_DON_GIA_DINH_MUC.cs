@@ -227,10 +227,10 @@ namespace BCTKApp
             // m_lbl_header
             // 
             this.m_lbl_header.AutoSize = true;
-            this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.Location = new System.Drawing.Point(310, 25);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(260, 22);
+            this.m_lbl_header.Size = new System.Drawing.Size(364, 31);
             this.m_lbl_header.TabIndex = 21;
             this.m_lbl_header.Text = "BẢNG ĐƠN GIÁ ĐỊNH MỨC";
             // 

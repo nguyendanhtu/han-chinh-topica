@@ -125,6 +125,13 @@ namespace BCTKDS.CDBNames
         public const string TD_DON_VI = "TD_DON_VI";
         public const string PM_DON_VI = "PM_DON_VI";
     }
+    public class V_DINH_MUC_CPN_TUNG_PHONG_BAN
+    {
+        public const string ID = "ID";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string DINH_MUC_GAN_NHAT = "DINH_MUC_GAN_NHAT";
+    }
 
     public class TONG_HOP_CPN_THEO_PHONG_BAN
     {
