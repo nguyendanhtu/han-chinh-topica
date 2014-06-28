@@ -482,7 +482,7 @@ namespace BCTKApp
             m_fg.Tree.Column = (int)e_col_Number.NGAY_GUI;
             m_fg.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
             m_fg.Cols[0].Caption = "STT";
-            m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
+            m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.CompleteLeaf;
 			set_define_events();
 			this.KeyPreview = true;
             load_cbo_ma_pb();
