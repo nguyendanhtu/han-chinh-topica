@@ -43,6 +43,7 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_tieu_de.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -226,6 +227,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.m_cmd_nhap_excel);
             this.panel2.Controls.Add(this.m_cmd_save);
             this.panel2.Controls.Add(this.m_cmd_exit);
             this.panel2.Controls.Add(this.button1);
@@ -234,6 +236,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1129, 33);
             this.panel2.TabIndex = 5;
+            // 
+            // m_cmd_nhap_excel
+            // 
+            this.m_cmd_nhap_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_nhap_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_nhap_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_nhap_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_nhap_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_nhap_excel.ImageIndex = 19;
+            this.m_cmd_nhap_excel.ImageList = this.ImageList;
+            this.m_cmd_nhap_excel.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_nhap_excel.Name = "m_cmd_nhap_excel";
+            this.m_cmd_nhap_excel.Size = new System.Drawing.Size(93, 31);
+            this.m_cmd_nhap_excel.TabIndex = 5;
+            this.m_cmd_nhap_excel.Text = "Nhập từ Excel";
+            this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
             // 
             // f810_DANG_KY_GUI_THEO_BUU
             // 
@@ -271,6 +289,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         private System.Windows.Forms.Panel panel2;
         internal SIS.Controls.Button.SiSButton m_cmd_del;
+        private SIS.Controls.Button.SiSButton m_cmd_nhap_excel;
 
     }
 }
