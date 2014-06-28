@@ -39,6 +39,16 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private DateTimePicker m_dat_ngay_ap_dung;
+        private DateTimePicker dateTimePicker1;
+        private Label label1;
+        private Label label2;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private TextBox m_txt_tim_kiem;
+        private Label label4;
+        private Label label3;
 		private System.ComponentModel.IContainer components;
 
 		public f702_v_dinh_muc_cpn_tung_phong_ban()
@@ -86,6 +96,16 @@ namespace BCTKApp
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.m_dat_ngay_ap_dung = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -125,10 +145,10 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 439);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(686, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(764, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -140,7 +160,7 @@ namespace BCTKApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(330, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(408, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -155,7 +175,7 @@ namespace BCTKApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(418, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(496, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -185,7 +205,7 @@ namespace BCTKApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(506, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(584, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -200,7 +220,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(594, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(672, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -210,16 +230,129 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 106);
+            this.m_fg.Location = new System.Drawing.Point(0, 200);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(686, 267);
+            this.m_fg.Size = new System.Drawing.Size(764, 239);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(13, 175);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(95, 17);
+            this.radioButton1.TabIndex = 21;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Tất cả kết quả";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(139, 175);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(155, 17);
+            this.radioButton2.TabIndex = 22;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Chỉ hiện định mức gần nhất";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // m_dat_ngay_ap_dung
+            // 
+            this.m_dat_ngay_ap_dung.Checked = false;
+            this.m_dat_ngay_ap_dung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dat_ngay_ap_dung.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_ap_dung.Location = new System.Drawing.Point(173, 126);
+            this.m_dat_ngay_ap_dung.Name = "m_dat_ngay_ap_dung";
+            this.m_dat_ngay_ap_dung.ShowCheckBox = true;
+            this.m_dat_ngay_ap_dung.Size = new System.Drawing.Size(146, 23);
+            this.m_dat_ngay_ap_dung.TabIndex = 2827;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(408, 126);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowCheckBox = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(146, 23);
+            this.dateTimePicker1.TabIndex = 2828;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(337, 133);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 2829;
+            this.label1.Text = "Đến ngày";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(97, 133);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.TabIndex = 2830;
+            this.label2.Text = "Từ ngày";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(525, 81);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 2833;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            // 
+            // m_txt_tim_kiem
+            // 
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(173, 83);
+            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(315, 20);
+            this.m_txt_tim_kiem.TabIndex = 2832;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(107, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 16);
+            this.label4.TabIndex = 2831;
+            this.label4.Text = "Từ khóa";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(626, 177);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.TabIndex = 2834;
+            this.label3.Text = "Đơn vị tính: VNĐ";
             // 
             // f702_v_dinh_muc_cpn_tung_phong_ban
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(686, 409);
+            this.ClientSize = new System.Drawing.Size(764, 475);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.m_cmd_search);
+            this.Controls.Add(this.m_txt_tim_kiem);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.m_dat_ngay_ap_dung);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f702_v_dinh_muc_cpn_tung_phong_ban";
@@ -228,6 +361,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 		#endregion
@@ -258,7 +392,8 @@ namespace BCTKApp
 			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            m_fg.Cols[0].Caption = "STT";
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -275,8 +410,9 @@ namespace BCTKApp
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DINH_MUC_CPN_TUNG_PHONG_BAN.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_V_DINH_MUC_CPN_TUNG_PHONG_BAN();			
+		private void load_data_2_grid(){
+            m_ds.Clear();
+		
 			m_us.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
