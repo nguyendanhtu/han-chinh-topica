@@ -404,22 +404,26 @@ public class US_V_GD_THONG_KE : US_Object
 
 
 
-    public void FillDatasetSearch_nhansu(DS_V_GD_THONG_KE ip_ds, string ip_str_tu_khoa)
+    public void FillDatasetSearch_nhansu(DS_V_GD_THONG_KE ip_ds, string ip_str_tu_khoa,DateTime ip_dat_tai_ngay)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_THONG_KE_NHAN_SU");
         v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
+        v_stored_proc.addDatetimeInputParam("@TAI_NGAY", ip_dat_tai_ngay);
         v_stored_proc.fillDataSetByCommand(this, ip_ds);
     }
-    public void FillDatasetSearch_hvdanghoc(DS_V_GD_THONG_KE ip_ds, string ip_str_tu_khoa)
+    public void FillDatasetSearch_hvdanghoc(DS_V_GD_THONG_KE ip_ds, string ip_str_tu_khoa, DateTime ip_dat_tai_ngay)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_THONG_KE_HV_DANG_HOC");
         v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
+        v_stored_proc.addDatetimeInputParam("@TAI_NGAY", ip_dat_tai_ngay);
         v_stored_proc.fillDataSetByCommand(this, ip_ds);
     }
-    public void FillDatasetSearch_hvtuyenmoi(DS_V_GD_THONG_KE ip_ds, string ip_str_tu_khoa)
+    public void FillDatasetSearch_hvtuyenmoi(DS_V_GD_THONG_KE ip_ds, string ip_str_tu_khoa,DateTime ip_dat_tu_ngay,DateTime ip_dat_den_ngay)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_THONG_KE_HV_TUYEN_MOI");
         v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
+        v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+        v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
         v_stored_proc.fillDataSetByCommand(this, ip_ds);
     }
 }
