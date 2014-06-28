@@ -45,10 +45,10 @@ namespace BCTKApp
         private TextBox m_txt_tu_khoa;
         private Label label4;
         private DateTimePicker m_dtp_den_thang;
-        private DateTimePicker m_dtp_tu_thang;
         private Label label3;
         private Label label2;
         private Label m_lbl_tieu_de;
+        private DateTimePicker m_dtp_tu_thang;
 		private System.ComponentModel.IContainer components;
 
 		public f503_THONG_KE_HV_TUYEN_MOI()
@@ -285,22 +285,26 @@ namespace BCTKApp
             // 
             // m_dtp_den_thang
             // 
-            this.m_dtp_den_thang.CustomFormat = "MM/yyyy";
+            this.m_dtp_den_thang.Checked = false;
+            this.m_dtp_den_thang.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_den_thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_den_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dtp_den_thang.Location = new System.Drawing.Point(534, 38);
             this.m_dtp_den_thang.Name = "m_dtp_den_thang";
+            this.m_dtp_den_thang.ShowCheckBox = true;
             this.m_dtp_den_thang.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_den_thang.TabIndex = 4;
             this.m_dtp_den_thang.Value = new System.DateTime(2014, 6, 26, 9, 16, 54, 0);
             // 
             // m_dtp_tu_thang
             // 
-            this.m_dtp_tu_thang.CustomFormat = "MM/yyyy";
+            this.m_dtp_tu_thang.Checked = false;
+            this.m_dtp_tu_thang.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_tu_thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_tu_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dtp_tu_thang.Location = new System.Drawing.Point(302, 41);
             this.m_dtp_tu_thang.Name = "m_dtp_tu_thang";
+            this.m_dtp_tu_thang.ShowCheckBox = true;
             this.m_dtp_tu_thang.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_tu_thang.TabIndex = 3;
             this.m_dtp_tu_thang.Value = new System.DateTime(2014, 6, 26, 9, 16, 54, 0);
@@ -311,9 +315,9 @@ namespace BCTKApp
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(448, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
+            this.label3.Size = new System.Drawing.Size(65, 16);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Đến tháng";
+            this.label3.Text = "Đến ngày";
             // 
             // label2
             // 
@@ -321,9 +325,9 @@ namespace BCTKApp
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(236, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Từ tháng";
+            this.label2.Text = "Từ ngày";
             // 
             // m_lbl_tieu_de
             // 
@@ -343,7 +347,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_grv_thong_ke);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f503_THONG_KE_HV_TUYEN_MOI";
-            this.Text = "f503_THONG_KE_HV_TUYEN_MOI";
+            this.Text = "F503-Thống kê học viên tuyển mới";
             this.Load += new System.EventHandler(this.f503_THONG_KE_HV_TUYEN_MOI_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_thong_ke)).EndInit();
@@ -395,12 +399,16 @@ namespace BCTKApp
 		}
 		private void load_data_2_grid(){
             string v_str_tu_khoa = m_txt_tu_khoa.Text;
+            DateTime v_dat_tu_ngay=DateTime.Now ;
+            DateTime v_dat_den_ngay = DateTime.Now;
             if (v_str_tu_khoa.Equals(m_str_goi_y_tim_kiem))
             {
                 v_str_tu_khoa = "";
             }
+            if (m_dtp_tu_thang.Checked == true) v_dat_tu_ngay = m_dtp_tu_thang.Value;
+            if (m_dtp_den_thang.Checked == true) v_dat_den_ngay = m_dtp_den_thang.Value;
 			m_ds = new DS_V_GD_THONG_KE();			
-			m_us.FillDatasetSearch_hvtuyenmoi(m_ds,v_str_tu_khoa);
+			m_us.FillDatasetSearch_hvtuyenmoi(m_ds,v_str_tu_khoa,v_dat_tu_ngay,v_dat_den_ngay);
 			m_grv_thong_ke.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_thong_ke, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_thong_ke);
@@ -468,7 +476,7 @@ namespace BCTKApp
 		}
         private void export_2_excel()
         {
-            CExcelReport v_obj_excel_report = new CExcelReport("f503_thong_hv_tuyen_moi.xlsx", 6, 1);
+            CExcelReport v_obj_excel_report = new CExcelReport("f503_thong_ke_hv_tuyen_moi.xlsx", 6, 1);
             v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dtp_tu_thang.Text);
             v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dtp_den_thang.Text);
             v_obj_excel_report.FindAndReplace(false);
@@ -497,6 +505,9 @@ namespace BCTKApp
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
             m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
+            m_txt_tu_khoa.KeyDown += m_txt_tu_khoa_KeyDown;
+            m_txt_tu_khoa.MouseClick += m_txt_tu_khoa_MouseClick;
+            m_txt_tu_khoa.Leave += m_txt_tu_khoa_Leave;
 		}
 		#endregion
 
