@@ -171,11 +171,12 @@ Public Class CControlFormat
                 .ForeColor = getRegularForeColor()
                 Select Case i_form_style
                     Case IPFormStyle.DialogForm
-                        .FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable
+                        .FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
                         .MaximizeBox = False
                         .MinimizeBox = False
                         .StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
                         .ShowInTaskbar = True
+
                     Case IPFormStyle.DockableTopForm
                         .FormBorderStyle = FormBorderStyle.Sizable
                         .MaximizeBox = True
