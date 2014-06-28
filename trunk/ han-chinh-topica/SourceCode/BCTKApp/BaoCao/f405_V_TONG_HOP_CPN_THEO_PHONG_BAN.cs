@@ -337,6 +337,7 @@ namespace BCTKApp
             this.m_cbo_ten_pb.Name = "m_cbo_ten_pb";
             this.m_cbo_ten_pb.Size = new System.Drawing.Size(339, 21);
             this.m_cbo_ten_pb.TabIndex = 23;
+            this.m_cbo_ten_pb.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ten_pb_SelectedIndexChanged);
             // 
             // m_dt_tu_ngay
             // 
@@ -742,9 +743,31 @@ namespace BCTKApp
         {
             if (m_trang_thai == true)
             {
-                
-                    tim_kiem();
-                
+                decimal v_dc_id_phong_ban = CIPConvert.ToDecimal(m_cbo_ma_pb.SelectedValue) ;
+                US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+                DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+                v_us.FillDataset(v_ds,"where id ="+v_dc_id_phong_ban);
+                if (v_ds.Tables[0].Rows.Count != 0)
+                {
+                    //m_cbo_ten_pb.DataSource = v_ds.DM_PHONG_BAN;
+                    //m_cbo_ten_pb.ValueMember = DM_PHONG_BAN.ID;
+                    //m_cbo_ten_pb.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
+                    m_cbo_ten_pb.Text = v_ds.Tables[0].Rows[0][2].ToString();
+                }
+                else
+                {
+                    //DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
+                    //v_dr[DM_PHONG_BAN.ID] = -1;
+                    //v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
+                    //v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
+                    //v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
+                    //m_cbo_ten_pb.DataSource = v_ds.DM_PHONG_BAN;
+                    //m_cbo_ten_pb.ValueMember = DM_PHONG_BAN.ID;
+                    //m_cbo_ten_pb.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
+                    //m_cbo_ten_pb.SelectedIndex = 0;
+                    m_cbo_ten_pb.Text = "Tất cả";
+                }
+                tim_kiem();   
             }
         }
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
@@ -790,6 +813,38 @@ namespace BCTKApp
         {
             if (m_trang_thai == true)
             {
+                tim_kiem();
+            }
+        }
+
+        private void m_cbo_ten_pb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (m_trang_thai == true)
+            {
+                decimal v_dc_id_phong_ban = CIPConvert.ToDecimal(m_cbo_ten_pb.SelectedValue);
+                US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+                DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+                v_us.FillDataset(v_ds, "where id =" + v_dc_id_phong_ban);
+                if (v_ds.Tables[0].Rows.Count != 0)
+                {
+                    //m_cbo_ma_pb.DataSource = v_ds.DM_PHONG_BAN;
+                    //m_cbo_ma_pb.ValueMember = DM_PHONG_BAN.ID;
+                    //m_cbo_ma_pb.DisplayMember = DM_PHONG_BAN.MA_PHONG_BAN;
+                    m_cbo_ma_pb.Text = v_ds.Tables[0].Rows[0][1].ToString();
+                }
+                else
+                {
+                    //DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
+                    //v_dr[DM_PHONG_BAN.ID] = -1;
+                    //v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
+                    //v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
+                    //v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
+                    //m_cbo_ma_pb.DataSource = v_ds.DM_PHONG_BAN;
+                    //m_cbo_ma_pb.ValueMember = DM_PHONG_BAN.ID;
+                    //m_cbo_ma_pb.DisplayMember = DM_PHONG_BAN.MA_PHONG_BAN;
+                    //m_cbo_ma_pb.SelectedIndex = 0;
+                    m_cbo_ma_pb.Text = "Tất cả";
+                }
                 tim_kiem();
             }
         }
