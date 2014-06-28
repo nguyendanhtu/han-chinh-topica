@@ -173,6 +173,7 @@ namespace BCTKApp
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
             this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_insert.Visible = false;
             // 
             // m_cmd_update
             // 
@@ -188,6 +189,7 @@ namespace BCTKApp
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
+            this.m_cmd_update.Visible = false;
             // 
             // m_cmd_view
             // 
@@ -203,6 +205,7 @@ namespace BCTKApp
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem";
+            this.m_cmd_view.Visible = false;
             // 
             // m_cmd_delete
             // 
@@ -218,6 +221,7 @@ namespace BCTKApp
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
             this.m_cmd_delete.Text = "&Xoá";
+            this.m_cmd_delete.Visible = false;
             // 
             // m_cmd_exit
             // 
@@ -402,7 +406,7 @@ namespace BCTKApp
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(176, 21);
             this.m_cbo_trang_thai.TabIndex = 23;
-            //this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
+            this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
             // 
             // f405_V_TONG_HOP_CPN_THEO_PHONG_BAN
             // 
@@ -543,6 +547,7 @@ namespace BCTKApp
 		}
         private void load_cbo_ma_pb()
         {
+            m_trang_thai = false;
             US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
             DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
             v_us.FillDataset(v_ds);
@@ -559,6 +564,7 @@ namespace BCTKApp
         }
         private void load_cbo_trang_thai()
         {
+            m_trang_thai = false;
             BCTKUS.US_CM_DM_TU_DIEN v_us = new BCTKUS.US_CM_DM_TU_DIEN();
             BCTKDS.DS_CM_DM_TU_DIEN v_ds = new BCTKDS.DS_CM_DM_TU_DIEN();
             v_us.FillDataset(v_ds,"where id_loai_tu_dien = "+12);
@@ -578,6 +584,7 @@ namespace BCTKApp
         }
         private void load_cbo_ten_pb()
         {
+            m_trang_thai = false;
             US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
             DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
             v_us.FillDataset(v_ds);
@@ -779,13 +786,13 @@ namespace BCTKApp
             
         }
 
-        //private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (m_trang_thai == true)
-        //    {
-        //        tim_kiem();
-        //    }
-        //}
+        private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (m_trang_thai == true)
+            {
+                tim_kiem();
+            }
+        }
 
 	}
 }
