@@ -618,7 +618,6 @@ namespace BCTKApp
                 , "{0}"
                 );
             m_fg.Redraw = true;
-            m_trang_thai = false;
         }
 
 		private void insert_v_tong_hop_cpn_theo_phong_ban(){			
