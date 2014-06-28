@@ -402,7 +402,7 @@ namespace BCTKApp
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(176, 21);
             this.m_cbo_trang_thai.TabIndex = 23;
-            this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ma_pb_SelectedIndexChanged);
+            //this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
             // 
             // f405_V_TONG_HOP_CPN_THEO_PHONG_BAN
             // 
@@ -596,14 +596,29 @@ namespace BCTKApp
         {
             string v_str_tu_khoa = m_txt_tim_kiem.Text.Trim();
             decimal v_id_phong_ban = CIPConvert.ToDecimal(m_cbo_ma_pb.SelectedValue);
+            decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
             DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
             DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
             US_V_TONG_HOP_CPN_THEO_PHONG_BAN v_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
             DS_V_TONG_HOP_CPN_THEO_PHONG_BAN v_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
-            v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
+            v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_fg);
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+              , 0
+              , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình nhóm
+              , (int)e_col_Number.SO_BILL // chỗ này là tên trường mà mình Count
+              , "{0}"
+              );
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
+                , 0
+                , (int)e_col_Number.TEN_PHONG_BAN
+                , (int)e_col_Number.SO_TIEN
+                , "{0}"
+                );
             m_fg.Redraw = true;
+            m_trang_thai = false;
         }
 
 		private void insert_v_tong_hop_cpn_theo_phong_ban(){			
@@ -764,6 +779,14 @@ namespace BCTKApp
                 tim_kiem();
             
         }
+
+        //private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (m_trang_thai == true)
+        //    {
+        //        tim_kiem();
+        //    }
+        //}
 
 	}
 }
