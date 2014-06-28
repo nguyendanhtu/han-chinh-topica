@@ -43,6 +43,7 @@ namespace BCTKApp
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private DateTimePicker m_dat_ngay_ap_dung;
         private Label label1;
+        private Label label2;
 		private System.ComponentModel.IContainer components;
 
 		public f401_DON_GIA_DINH_MUC()
@@ -94,6 +95,7 @@ namespace BCTKApp
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_dat_ngay_ap_dung = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -216,10 +218,12 @@ namespace BCTKApp
             // 
             // m_fg
             // 
+            this.m_fg.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None;
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg.Location = new System.Drawing.Point(0, 139);
             this.m_fg.Name = "m_fg";
+            this.m_fg.ShowSort = false;
             this.m_fg.Size = new System.Drawing.Size(925, 389);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
@@ -268,10 +272,20 @@ namespace BCTKApp
             this.label1.TabIndex = 2827;
             this.label1.Text = "Ngày áp dụng";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(794, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.TabIndex = 2828;
+            this.label2.Text = "Đơn vị tính: VNĐ";
+            // 
             // f401_DON_GIA_DINH_MUC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(925, 564);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_dat_ngay_ap_dung);
             this.Controls.Add(this.m_cmd_search);
@@ -280,7 +294,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.ForeColor = System.Drawing.Color.Maroon;
             this.Name = "f401_DON_GIA_DINH_MUC";
-            this.Text = "f401_DON_GIA_DINH_MUC";
+            this.Text = "F401 - Bảng đơn giá định mức";
             this.Load += new System.EventHandler(this.f401_DON_GIA_DINH_MUC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -298,10 +312,10 @@ namespace BCTKApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			NHAN_VIEN_DON_VI = 3
+			NHAN_VIEN_DON_VI = 2
 ,TD_DON_VI = 6
 ,SD_CC = 5
-,HOC_VIEN_TUYEN_MOI = 2
+,HOC_VIEN_TUYEN_MOI = 3
 ,HOC_VIEN_DANG_HOC = 4
 ,LOAI_DM = 1
 ,PM_DON_VI = 7
@@ -327,6 +341,8 @@ namespace BCTKApp
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
+            m_lbl_header.Font = new System.Drawing.Font("Tahoma", 18, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			
             m_fg.Cols[0].Caption = "STT";
            
             set_define_events();
