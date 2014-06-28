@@ -199,6 +199,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelLibrary">
+      <HintPath>C:\Users\Nguyen Thanh Tuyen\Downloads\ExcelLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.Excel">
       <Name>Interop.Excel</Name>
       <HintPath>..\DLL\Interop.Excel.dll</HintPath>

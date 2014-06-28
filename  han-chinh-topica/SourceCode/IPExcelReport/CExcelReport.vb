@@ -65,6 +65,7 @@ Public Class CExcelReport
                             , ByVal i_iSheetCol As Integer _
                             , ByVal i_iGridCol As Integer)
         Try
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US")
             m_objExcelApp = New Excel.Application
             m_objExcelApp.Workbooks.Open(m_strTemplateFileNameWithPath)
             m_objExcelApp.Workbooks(1).Worksheets.Select(1)
@@ -72,10 +73,10 @@ Public Class CExcelReport
             Dim v_iGridRow As Integer
             For v_iGridRow = i_fg.Rows.Fixed To i_fg.Rows.Count - 1
                 i_fg(v_iGridRow, i_iGridCol) = _
-                CType(m_objExcelWorksheet.Cells(i_iSheetStartRow + v_iGridRow - i_fg.Rows.Fixed, i_iSheetCol), Excel.Range).Value
-
+                CType(m_objExcelWorksheet.Cells(i_iSheetStartRow + v_iGridRow - i_fg.Rows.Fixed, i_iSheetCol), Excel.Range).Value         
             Next
             m_objExcelApp.Workbooks.Close()
+            m_objExcelApp.Quit()
             Unmount()
         Catch v_e As Exception
             m_objExcelApp.Workbooks.Close()

@@ -11,6 +11,7 @@ using BCTKUS;
 using BCTKDS;
 using BCTKDS.CDBNames;
 using System.Collections;
+using IP.Core.IPExcelReport;
 
 namespace BCTKApp.ChucNang
 {
@@ -44,6 +45,18 @@ namespace BCTKApp.ChucNang
             TRANG_THAI = 10 ,
             GHI_CHU = 11
         }
+        private enum e_col_Excel
+        {         
+            SO_BILL = 2,
+            MA_PHONG_BAN = 3,
+            TEN_PHONG_BAN = 4,
+            NGUOI_GUI = 5,
+            NGUOI_NHAN = 6,
+            NOI_NHAN = 7,
+            LOAI_THU = 8,
+            NOI_DUNG = 9,
+            GHI_CHU = 10
+        }
         #endregion
 
         #region Members
@@ -75,7 +88,16 @@ namespace BCTKApp.ChucNang
             load_cbo_loai_thu_2_grid();
             load_ten_phong_ban_tuong_ung_2_grid();
         }
-
+        //private Hashtable get_mapping_col_excel_grid()
+        //{
+        //    Hashtable v_hst = new Hashtable();
+        //    v_hst.Add((int)e_col_Number.SO_BILL, (int)e_col_ExcelNumber.NHOM_HANG);
+        //    v_hst.Add((int)e_col_Number.TEN_HANG, (int)e_col_ExcelNumber.TEN_HANG);
+        //    v_hst.Add((int)e_col_Number.MA_HANG, (int)e_col_ExcelNumber.MA_HANG);
+        //    v_hst.Add((int)e_col_Number.DON_VI_TINH, (int)e_col_ExcelNumber.DON_VI_TINH);
+        //    v_hst.Add((int)e_col_Number.GIA_NHAP, (int)e_col_ExcelNumber.GIA_NHAP);
+        //    return v_hst;
+        //}
         private void load_cbo_loai_thu_2_grid()
         {
             Hashtable v_hst = new Hashtable();
@@ -255,6 +277,16 @@ namespace BCTKApp.ChucNang
             iop_us_v_dm_bill.SetTEN_PHONG_BANNull();
             iop_us_v_dm_bill.SetTEN_PHONG_BANNull();
         }
+        //private Hashtable get_mapping_col_excel_grid()
+        //{
+        //    Hashtable v_hst = new Hashtable();
+        //    v_hst.Add((int)e_col_Number.SO_BILL, (int)e_col_ExcelNumber.NHOM_HANG);
+        //    v_hst.Add((int)e_col_Number.TEN_HANG, (int)e_col_ExcelNumber.TEN_HANG);
+        //    v_hst.Add((int)e_col_Number.MA_HANG, (int)e_col_ExcelNumber.MA_HANG);
+        //    v_hst.Add((int)e_col_Number.DON_VI_TINH, (int)e_col_ExcelNumber.DON_VI_TINH);
+        //    v_hst.Add((int)e_col_Number.GIA_NHAP, (int)e_col_ExcelNumber.GIA_NHAP);
+        //    return v_hst;
+        //}
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -262,8 +294,10 @@ namespace BCTKApp.ChucNang
             m_fg.AfterEdit += new C1.Win.C1FlexGrid.RowColEventHandler(m_fg_AfterEdit);
             m_cmd_del.Click += new EventHandler(m_cmd_del_Click);
             m_fg.AfterAddRow += new C1.Win.C1FlexGrid.RowColEventHandler(m_fg_AfterAddRow);
+            m_cmd_nhap_excel.Click += new EventHandler(m_cmd_nhap_excel_Click);
         }
-    
+
+        
         #endregion
 
         #region Events
@@ -310,7 +344,23 @@ namespace BCTKApp.ChucNang
         {
             CGridUtils.MakeSoTT(0, m_fg);
         }
+        private void m_cmd_nhap_excel_Click(object sender, EventArgs e)
+        {
+            var m_obj_dialog = new System.Windows.Forms.OpenFileDialog();
+            m_obj_dialog.ShowDialog();
 
+            CExcelReport v_obj_excel_rpt = new CExcelReport(m_obj_dialog.FileName);
+            int v_i_start_excel_row = 7;
+            int v_i_start_excel_col = 2;
+            for (int v_i_cur_col = m_fg.Cols.Fixed; v_i_cur_col < m_fg.Cols.Count; v_i_cur_col++)//
+            {
+                v_obj_excel_rpt.Export2Grid(m_fg, 
+                    v_i_start_excel_row
+                    , v_i_start_excel_col++
+                    ,v_i_cur_col);
+            }
+            
+        }
         #endregion
     }
 }
