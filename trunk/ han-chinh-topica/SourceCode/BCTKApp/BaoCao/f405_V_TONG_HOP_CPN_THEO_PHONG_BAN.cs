@@ -674,18 +674,16 @@ namespace BCTKApp
         {
             if (m_trang_thai == true)
             {
-                if (m_chk_thoi_gian.Checked == true)
-                {
+                
                     tim_kiem();
-                }
+                
             }
         }
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
         {
-            if (m_chk_thoi_gian.Checked == true)
-            {
+            
                 tim_kiem();
-            }
+           
         }
 
         private void m_cmd_tim_kiem_KeyDown(object sender, KeyEventArgs e)
@@ -694,10 +692,9 @@ namespace BCTKApp
             {
                 if (e.KeyData == Keys.Enter)
                 {
-                    if (m_chk_thoi_gian.Checked == true)
-                    {
+                    
                         tim_kiem();
-                    }
+                    
                 }
             }
             catch (Exception v_e)
@@ -709,18 +706,16 @@ namespace BCTKApp
 
         private void m_dt_tu_ngay_ValueChanged(object sender, EventArgs e)
         {
-            if (m_chk_thoi_gian.Checked == true)
-            {
+          
                 tim_kiem();
-            }
+           
         }
 
         private void m_dt_den_ngay_ValueChanged(object sender, EventArgs e)
         {
-            if (m_chk_thoi_gian.Checked == true)
-            {
+          
                 tim_kiem();
-            }
+            
         }
 
 	}
