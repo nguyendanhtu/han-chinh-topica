@@ -46,26 +46,26 @@ namespace BCTKUS
             pm_objDR["ID"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_NHOM_NGUOI_SU_DUNG
+        public decimal dcID_USER_GROUP
         {
             get
             {
-                return CNull.RowNVLDecimal(pm_objDR, "ID_NHOM_NGUOI_SU_DUNG", IPConstants.c_DefaultDecimal);
+                return CNull.RowNVLDecimal(pm_objDR, "ID_USER_GROUP", IPConstants.c_DefaultDecimal);
             }
             set
             {
-                pm_objDR["ID_NHOM_NGUOI_SU_DUNG"] = value;
+                pm_objDR["ID_USER_GROUP"] = value;
             }
         }
 
-        public bool IsID_NHOM_NGUOI_SU_DUNGNull()
+        public bool IsID_USER_GROUPNull()
         {
-            return pm_objDR.IsNull("ID_NHOM_NGUOI_SU_DUNG");
+            return pm_objDR.IsNull("ID_USER_GROUP");
         }
 
-        public void SetID_NHOM_NGUOI_SU_DUNGNull()
+        public void SetID_USER_GROUPNull()
         {
-            pm_objDR["ID_NHOM_NGUOI_SU_DUNG"] = System.Convert.DBNull;
+            pm_objDR["ID_USER_GROUP"] = System.Convert.DBNull;
         }
 
         public decimal dcID_PHAN_QUYEN_HE_THONG
@@ -89,6 +89,7 @@ namespace BCTKUS
         {
             pm_objDR["ID_PHAN_QUYEN_HE_THONG"] = System.Convert.DBNull;
         }
+
 
         #endregion
 
@@ -137,6 +138,14 @@ namespace BCTKUS
             v_obj.ExecuteCommand(this);
         }
         #endregion
+
+        public void FillDatasetByIdUserGroupAndMaPhanQuyen(DS_HT_PHAN_QUYEN_CHO_NHOM op_ds, decimal ip_dc_id, string ip_str)
+        {
+            CStoredProc v_stored_proc = new CStoredProc("pr_HT_PHAN_QUYEN_CHO_NHOM_select_by_ma_pq");
+            v_stored_proc.addNVarcharInputParam("@MA_PHAN_QUYEN", ip_str);
+            v_stored_proc.addDecimalInputParam("@ID_USER_GROUP", ip_dc_id);
+            v_stored_proc.fillDataSetByCommand(this, op_ds);
+        }
     }
 
 }
