@@ -411,5 +411,16 @@ public class US_V_TONG_HOP_CPN_THEO_PHONG_BAN : US_Object
         v_stored_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_v_id_trang_thai);
         v_stored_proc.fillDataSetByCommand(this, ip_v_ds);
     }
+
+    public void FillDataset_chi_tiet_Bill(DS_V_TONG_HOP_CPN_THEO_PHONG_BAN ip_v_ds, decimal ip_v_id_phong_ban, decimal ip_v_id_trang_thai, DateTime ip_v_dt_tu_ngay, DateTime ip_v_dt_den_ngay)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE");
+        v_stored_proc.addNVarcharInputParam("@ID_PHONG_BAN", ip_v_id_phong_ban);
+        v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_v_dt_tu_ngay);
+        v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_v_dt_den_ngay);
+        v_stored_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_v_id_trang_thai);
+        v_stored_proc.fillDataSetByCommand(this, ip_v_ds);
+    }
+    
 }
 }
