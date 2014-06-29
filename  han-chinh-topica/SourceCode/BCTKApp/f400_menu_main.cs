@@ -112,7 +112,16 @@ namespace BCTKApp
 
         private void m_cmd_trang_thai_Click(object sender, EventArgs e)
         {
+            try
+            {
+                f505_CAP_NHAT_TRANG_THAI_CPN v_frm = new f505_CAP_NHAT_TRANG_THAI_CPN();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
 
