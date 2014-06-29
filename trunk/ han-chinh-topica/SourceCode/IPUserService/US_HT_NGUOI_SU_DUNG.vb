@@ -174,22 +174,47 @@ Public Class US_HT_NGUOI_SU_DUNG
         pm_objDR("BUILT_IN_YN") = System.Convert.DBNull
     End Sub
 
-    Public Property dcID_NHOM_NGUOI_DUNG() As Decimal
+    Public Property dcID_USER_GROUP() As Decimal
         Get
-            Return CNull.RowNVLDecimal(pm_objdr, "ID_NHOM_NGUOI_DUNG")
+            Return CNull.RowNVLDecimal(pm_objDR, "ID_USER_GROUP", IPConstants.c_DefaultDecimal)
         End Get
-        Set(ByVal Value As Decimal)
-            pm_objDR.Item("ID_NHOM_NGUOI_DUNG") = Value
+        Set(ByVal value As Decimal)
+            pm_objDR("ID_USER_GROUP") = value
         End Set
     End Property
 
-    Public Function IsID_NHOM_NGUOI_DUNGNull() As Boolean
-        Return pm_objDR.IsNull("ID_NHOM_NGUOI_DUNG")
+    Public Function IsID_USER_GROUPNull() As Boolean
+        Return pm_objDR.IsNull("ID_USER_GROUP")
     End Function
 
-    Public Sub SetID_NHOM_NGUOI_DUNGNull()
-        pm_objDR("ID_NHOM_NGUOI_DUNG") = System.Convert.DBNull
+    Public Sub SetID_USER_GROUPNull()
+        pm_objDR("ID_USER_GROUP") = System.Convert.DBNull
     End Sub
+
+    Public Property dcID_TRAINING_PROJECT() As Decimal
+        Get
+            Return CNull.RowNVLDecimal(pm_objDR, "ID_TRAINING_PROJECT", IPConstants.c_DefaultDecimal)
+        End Get
+        Set(ByVal value As Decimal)
+            pm_objDR("ID_TRAINING_PROJECT") = value
+        End Set
+    End Property
+
+    Public Function IsID_TRAINING_PROJECTNull() As Boolean
+        Return pm_objDR.IsNull("ID_TRAINING_PROJECT")
+    End Function
+
+    Public Sub SetID_TRAINING_PROJECTNull()
+        pm_objDR("ID_TRAINING_PROJECT") = System.Convert.DBNull
+    End Sub
+
+    '=======================================================
+    'Service provided by Telerik (www.telerik.com)
+    'Conversion powered by NRefactory.
+    'Twitter: @telerik
+    'Facebook: facebook.com/telerik
+    '=======================================================
+
 #End Region
 #Region "Init Functions"
     Public Sub New()

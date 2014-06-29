@@ -332,9 +332,6 @@
     <Compile Include="f120_dm_dang_ky_gui_DE.Designer.cs">
       <DependentUpon>f120_dm_dang_ky_gui_DE.cs</DependentUpon>
     </Compile>
-    <Compile Include="f001_main_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="f121_dm_dang_ky_gui_theo_excel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,12 +360,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="f996_license_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="f998_ht_nguoi_su_dung_de.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="f999_ht_nguoi_su_dung.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBarChart.cs">
@@ -451,10 +442,6 @@
     <EmbeddedResource Include="f120_dm_dang_ky_gui_DE.resx">
       <DependentUpon>f120_dm_dang_ky_gui_DE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="f001_main_form.resx">
-      <DependentUpon>f001_main_form.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="f121_dm_dang_ky_gui_theo_excel.resx">
       <DependentUpon>f121_dm_dang_ky_gui_theo_excel.cs</DependentUpon>
     </EmbeddedResource>
@@ -472,14 +459,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f996_license_form.resx">
       <DependentUpon>f996_license_form.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="f998_ht_nguoi_su_dung_de.resx">
-      <DependentUpon>f998_ht_nguoi_su_dung_de.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="f999_ht_nguoi_su_dung.resx">
-      <DependentUpon>f999_ht_nguoi_su_dung.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBarChart.resx">
