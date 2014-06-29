@@ -175,6 +175,13 @@ namespace BCTKDS.CDBNames
     }
 
     #region HE_THONG
+    public class HT_USER_GROUP
+    {
+        public const string ID = "ID";
+        public const string USER_GROUP_NAME = "USER_GROUP_NAME";
+        public const string DESCRIPTION = "DESCRIPTION";
+    }
+
     public class V_HT_LOG_TRUY_CAP
     {
         public const string ID = "ID";
@@ -350,6 +357,7 @@ namespace BCTKDS.CDBNames
     #endregion
 
     #region Version 2
+
     public class DM_BILL
     {
         public const string ID = "ID";
