@@ -150,5 +150,15 @@ public class US_V_TONG_HOP_BILL_THEO_PHONG_BAN : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDatasetSearch(DS_V_TONG_HOP_BILL_THEO_PHONG_BAN ip_v_ds, DateTime ip_v_dt_tu_ngay, DateTime ip_v_dt_den_ngay, decimal ip_v_id_trang_thai, string ip_v_id_tu_khoa)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_TONG_HOP_BILL_THEO_PHONG_BAN");
+        v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_v_dt_tu_ngay);
+        v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_v_dt_den_ngay);
+        v_stored_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_v_id_trang_thai);
+        v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_v_id_tu_khoa);
+        v_stored_proc.fillDataSetByCommand(this, ip_v_ds);
+    }
+}
 }
