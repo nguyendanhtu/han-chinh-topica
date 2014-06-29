@@ -243,6 +243,7 @@ namespace BCTKApp
             this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ForeColor = System.Drawing.Color.Black;
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
@@ -266,6 +267,7 @@ namespace BCTKApp
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(208, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
@@ -275,6 +277,7 @@ namespace BCTKApp
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(794, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
