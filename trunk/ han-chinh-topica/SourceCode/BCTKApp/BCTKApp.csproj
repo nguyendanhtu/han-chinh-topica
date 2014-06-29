@@ -229,6 +229,9 @@
     <Reference Include="mscorcfg">
       <Name>mscorcfg</Name>
     </Reference>
+    <Reference Include="NExcel">
+      <HintPath>C:\Users\Nguyen Thanh Tuyen\Downloads\bin\NExcel.dll</HintPath>
+    </Reference>
     <Reference Include="SiSButton">
       <Name>SiSButton</Name>
       <HintPath>..\DLL\SiSButton.dll</HintPath>

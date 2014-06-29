@@ -12,6 +12,8 @@ using BCTKDS;
 using BCTKDS.CDBNames;
 using System.Collections;
 using IP.Core.IPExcelReport;
+using System.Data.OleDb;
+using NExcel;
 
 namespace BCTKApp.ChucNang
 {
@@ -33,23 +35,21 @@ namespace BCTKApp.ChucNang
 
         #region Data structure
         private enum e_col_Number {
-            NGAY_GUI = 1,
-            SO_BILL = 2,
-            MA_PHONG_BAN = 3,
-            TEN_PHONG_BAN = 4,
-            NGUOI_GUI = 5,
-            NGUOI_NHAN = 6,
-            NOI_NHAN = 7,
-            LOAI_THU = 8,
-            NOI_DUNG = 9,
-            TRANG_THAI = 10 ,
-            GHI_CHU = 11
+            SO_BILL = 1,
+            MA_PHONG_BAN = 2,
+            TEN_PHONG_BAN = 3,
+            NGUOI_GUI = 4,
+            NGUOI_NHAN = 5,
+            NOI_NHAN = 6,
+            LOAI_THU = 7,
+            NOI_DUNG = 8,
+            GHI_CHU = 9
         }
         private enum e_col_Excel
         {         
             SO_BILL = 2,
-            MA_PHONG_BAN = 3,
-            TEN_PHONG_BAN = 4,
+            MA_PHONG_BAN = 12,
+            TEN_PHONG_BAN = 12,
             NGUOI_GUI = 5,
             NGUOI_NHAN = 6,
             NOI_NHAN = 7,
@@ -84,20 +84,24 @@ namespace BCTKApp.ChucNang
         private void set_initial_form_load()
         {
             load_cbo_phong_ban_2_grid();
-            load_cbo_trang_thai_2_grid();
             load_cbo_loai_thu_2_grid();
             load_ten_phong_ban_tuong_ung_2_grid();
         }
-        //private Hashtable get_mapping_col_excel_grid()
-        //{
-        //    Hashtable v_hst = new Hashtable();
-        //    v_hst.Add((int)e_col_Number.SO_BILL, (int)e_col_ExcelNumber.NHOM_HANG);
-        //    v_hst.Add((int)e_col_Number.TEN_HANG, (int)e_col_ExcelNumber.TEN_HANG);
-        //    v_hst.Add((int)e_col_Number.MA_HANG, (int)e_col_ExcelNumber.MA_HANG);
-        //    v_hst.Add((int)e_col_Number.DON_VI_TINH, (int)e_col_ExcelNumber.DON_VI_TINH);
-        //    v_hst.Add((int)e_col_Number.GIA_NHAP, (int)e_col_ExcelNumber.GIA_NHAP);
-        //    return v_hst;
-        //}
+        private Hashtable get_mapping_col_excel_grid()
+        {
+            Hashtable v_hst = new Hashtable();
+            v_hst.Add((int)e_col_Number.SO_BILL, (int)e_col_Excel.SO_BILL);
+            v_hst.Add((int)e_col_Number.MA_PHONG_BAN, (int)e_col_Excel.MA_PHONG_BAN);
+            v_hst.Add((int)e_col_Number.TEN_PHONG_BAN, (int)e_col_Excel.TEN_PHONG_BAN);
+            v_hst.Add((int)e_col_Number.NGUOI_GUI, (int)e_col_Excel.NGUOI_GUI);
+            v_hst.Add((int)e_col_Number.NGUOI_NHAN, (int)e_col_Excel.NGUOI_NHAN);
+            v_hst.Add((int)e_col_Number.NOI_NHAN, (int)e_col_Excel.NOI_NHAN);
+            v_hst.Add((int)e_col_Number.LOAI_THU, (int)e_col_Excel.LOAI_THU);
+            v_hst.Add((int)e_col_Number.NOI_DUNG, (int)e_col_Excel.NOI_DUNG);
+            v_hst.Add((int)e_col_Number.GHI_CHU, (int)e_col_Excel.GHI_CHU);
+
+            return v_hst;
+        }
         private void load_cbo_loai_thu_2_grid()
         {
             Hashtable v_hst = new Hashtable();
@@ -107,25 +111,10 @@ namespace BCTKApp.ChucNang
             m_fg.Cols[(int)e_col_Number.LOAI_THU].DataMap = v_hst;
         }
 
-        private void load_cbo_trang_thai_2_grid()
-        {
-            m_fg.Cols[(int)e_col_Number.TRANG_THAI].DataMap = get_mapping_col_trang_thai();
-        }
-        private IDictionary get_mapping_col_trang_thai()
-        {
-            Hashtable v_hst = new Hashtable();
-            v_hst.Add(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO, "Đã nhận nội bộ");
-            v_hst.Add(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN, "Đã chuyển CPN");
-            v_hst.Add(CONST_ID_TRANG_THAI_THU.ID_DANG_TREN_DUONG, "Đang trên đường");
-            v_hst.Add(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI, "Bị trả lại");
-            v_hst.Add(CONST_ID_TRANG_THAI_THU.ID_NOI_BO_NHAN_TRA_LAI, "Nội bộ nhận trả lại");
-            return v_hst;
-        }
         private void load_ten_phong_ban_tuong_ung_2_grid()
         {
             m_fg.Cols[(int)e_col_Number.TEN_PHONG_BAN].DataMap = get_mapping_col_ten_phong_ban();
         }
-
         private IDictionary get_mapping_col_ten_phong_ban()
         {
             Hashtable v_hst = new Hashtable();
@@ -277,16 +266,7 @@ namespace BCTKApp.ChucNang
             iop_us_v_dm_bill.SetTEN_PHONG_BANNull();
             iop_us_v_dm_bill.SetTEN_PHONG_BANNull();
         }
-        //private Hashtable get_mapping_col_excel_grid()
-        //{
-        //    Hashtable v_hst = new Hashtable();
-        //    v_hst.Add((int)e_col_Number.SO_BILL, (int)e_col_ExcelNumber.NHOM_HANG);
-        //    v_hst.Add((int)e_col_Number.TEN_HANG, (int)e_col_ExcelNumber.TEN_HANG);
-        //    v_hst.Add((int)e_col_Number.MA_HANG, (int)e_col_ExcelNumber.MA_HANG);
-        //    v_hst.Add((int)e_col_Number.DON_VI_TINH, (int)e_col_ExcelNumber.DON_VI_TINH);
-        //    v_hst.Add((int)e_col_Number.GIA_NHAP, (int)e_col_ExcelNumber.GIA_NHAP);
-        //    return v_hst;
-        //}
+        
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -346,19 +326,48 @@ namespace BCTKApp.ChucNang
         }
         private void m_cmd_nhap_excel_Click(object sender, EventArgs e)
         {
-            var m_obj_dialog = new System.Windows.Forms.OpenFileDialog();
-            m_obj_dialog.ShowDialog();
+            //OpenFileDialog fdlg = new OpenFileDialog();
+                //fdlg.Title = "Select file";
+                //fdlg.InitialDirectory = @"c:\";
+                //fdlg.Filter = "Excel Sheet(*.xls)|*.xls|All Files(*.*)|*.*";
+                //fdlg.FilterIndex = 1;
+                //fdlg.RestoreDirectory = true;
+                //if (fdlg.ShowDialog() == DialogResult.OK)
+                //{
+                //    Application.DoEvents();
+                //}
+                //string pathConn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + fdlg.FileName + ";Extended Properties=\"Excel 8.0;HDR=Yes;\";";
+                //OleDbConnection conn = new OleDbConnection(pathConn);
 
-            CExcelReport v_obj_excel_rpt = new CExcelReport(m_obj_dialog.FileName);
-            int v_i_start_excel_row = 7;
-            int v_i_start_excel_col = 2;
-            for (int v_i_cur_col = m_fg.Cols.Fixed; v_i_cur_col < m_fg.Cols.Count; v_i_cur_col++)//
-            {
-                v_obj_excel_rpt.Export2Grid(m_fg, 
-                    v_i_start_excel_row
-                    , v_i_start_excel_col++
-                    ,v_i_cur_col);
-            }
+                //OleDbDataAdapter myDataAdapter = new OleDbDataAdapter("Select * from [Sheet1$]", conn);
+                //DataTable dt = new DataTable();
+                //myDataAdapter.Fill(dt);
+
+                var m_obj_dialog = new System.Windows.Forms.OpenFileDialog();
+                m_obj_dialog.ShowDialog();
+
+                Workbook wb = null;
+                wb = Workbook.getWorkbook(m_obj_dialog.FileName);
+                Sheet sheet = wb.getSheet("Sheet1");
+                //Cái này để thêm hàng vào grid
+                int v_count_row = 7;
+                while (sheet.getCell(2, v_count_row).Contents != "")
+                {
+                    v_count_row = v_count_row + 1;
+                    m_fg.Rows.Add();
+                }
+                wb.close();
+
+                Hashtable v_hst_excel_col = get_mapping_col_excel_grid();
+                CExcelReport v_obj_excel_rpt = new CExcelReport(m_obj_dialog.FileName);
+                int v_i_start_excel_row = 7;
+                for (int v_i_cur_col = m_fg.Cols.Fixed; v_i_cur_col < m_fg.Cols.Count; v_i_cur_col++)//
+                {
+                    v_obj_excel_rpt.Export2Grid(m_fg,
+                        v_i_start_excel_row
+                        , (int)v_hst_excel_col[v_i_cur_col]
+                        , v_i_cur_col);
+                }
             
         }
         #endregion
