@@ -43,15 +43,7 @@ namespace BCTKApp
             m_cmd_phan_quyen_cho_nhom.Click += new EventHandler(m_cmd_phan_quyen_cho_nhom_Click);
             m_cmd_doi_mat_khau.Click += new EventHandler(m_cmd_doi_mat_khau_Click);
         }
-
-        
-
-
-        
-
-
-       
-        
+        s
         #endregion
         #region Event
         void m_cmd_doi_mat_khau_Click(object sender, EventArgs e)
