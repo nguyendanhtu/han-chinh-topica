@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using IP.Core.IPCommon;
 using BCTKApp.ChucNang;
+using BCTKApp.HeThong;
 
 namespace BCTKApp
 {
@@ -36,15 +37,25 @@ namespace BCTKApp
             m_cmd_hv_tuyen_moi.Click+=new EventHandler(m_cmd_hv_tuyen_moi_Click);
             m_cmd_theo_tung_bill.Click += new EventHandler(m_cmd_theo_tung_bill_Click);
             this.m_cmd_trang_thai.Click += new System.EventHandler(this.m_cmd_trang_thai_Click);
+            m_cmd_quan_ly_nguoi_su_dung.Click += new EventHandler(m_cmd_quan_ly_nguoi_su_dung_Click);
         }
 
+       
         
         #endregion
         #region Event
         private void m_cmd_dm_trung_tam_Click(object sender, EventArgs e)
         {
-            f800_DM_PHONG_BAN v_frm = new f800_DM_PHONG_BAN();
-            v_frm.display();
+            try
+            {
+                f800_DM_PHONG_BAN v_frm = new f800_DM_PHONG_BAN();
+                v_frm.display();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         private void m_cmd_tk_nhan_su_Click(object sender, EventArgs e)
         {
@@ -63,8 +74,17 @@ namespace BCTKApp
         }
         void m_cmd_theo_tung_bill_Click(object sender, EventArgs e)
         {
-            f810_DANG_KY_GUI_THEO_BUU v_frm = new f810_DANG_KY_GUI_THEO_BUU();
-            v_frm.display();
+            try
+            {
+                f810_DANG_KY_GUI_THEO_BUU v_frm = new f810_DANG_KY_GUI_THEO_BUU();
+                v_frm.display();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+           
         }
         #endregion
 
@@ -137,7 +157,18 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_cmd_quan_ly_nguoi_su_dung_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f999_ht_nguoi_su_dung v_frm = new f999_ht_nguoi_su_dung();
+                v_frm.display();
+            }
+            catch (Exception v_e)
+            {
 
-
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
