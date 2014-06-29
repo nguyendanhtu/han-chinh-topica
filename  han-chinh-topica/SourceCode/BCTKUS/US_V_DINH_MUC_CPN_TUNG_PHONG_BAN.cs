@@ -106,6 +106,13 @@ public class US_V_DINH_MUC_CPN_TUNG_PHONG_BAN : US_Object
 
 #endregion
 #region "Init Functions"
+    public void FillDatasetSearch(DS_V_DINH_MUC_CPN_TUNG_PHONG_BAN op_ds_bc_da, string i_str_tu_khoa, DateTime i_dat_tu_ngay)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_DINH_MUC_CPN_TUNG_PHONG_BAN_TAI_NGAY_Search");
+        v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_tu_khoa);
+        v_sp.addDatetimeInputParam("@TAI_NGAY", i_dat_tu_ngay);
+        v_sp.fillDataSetByCommand(this, op_ds_bc_da);
+    }
 	public US_V_DINH_MUC_CPN_TUNG_PHONG_BAN() 
 	{
 		pm_objDS = new DS_V_DINH_MUC_CPN_TUNG_PHONG_BAN();
