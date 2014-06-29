@@ -529,7 +529,6 @@
             this.m_cmd_trang_thai.Name = "m_cmd_trang_thai";
             this.m_cmd_trang_thai.SubItemsExpandWidth = 14;
             this.m_cmd_trang_thai.Text = "Cập nhật trạng thái";
-            this.m_cmd_trang_thai.Click += new System.EventHandler(this.m_cmd_trang_thai_Click);
             // 
             // m_rib_bar_nhap_thong_tin_thang
             // 
