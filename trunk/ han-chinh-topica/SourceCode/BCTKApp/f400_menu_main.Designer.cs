@@ -36,6 +36,7 @@
             this.m_cmd_tra_cuu_Bill = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_tra_cuu_trang_thai_CPN = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_dinh_muc_tung_phong_ban = new DevComponents.DotNetBar.ButtonItem();
+            this.m_cmd_tong_hop_bill_theo_phong_ban = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_bar_cap_nhat_trang_thai = new DevComponents.DotNetBar.RibbonBar();
             this.m_cmd_trang_thai = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_bar_nhap_thong_tin_thang = new DevComponents.DotNetBar.RibbonBar();
@@ -69,7 +70,6 @@
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.m_cmd_tong_hop_bill_theo_phong_ban = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_control_TAD.SuspendLayout();
             this.m_rib_pnl_CPN.SuspendLayout();
             this.m_rib_pnl_he_thong.SuspendLayout();
@@ -86,8 +86,8 @@
             this.m_rib_control_TAD.BackgroundStyle.BackColor2 = System.Drawing.Color.Transparent;
             this.m_rib_control_TAD.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_control_TAD.CaptionVisible = true;
-            this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_CPN);
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_he_thong);
+            this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_CPN);
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_quan_ly_dinh_muc);
             this.m_rib_control_TAD.Controls.Add(this.ribbonPanel3);
             this.m_rib_control_TAD.Controls.Add(this.ribbonPanel4);
@@ -154,6 +154,7 @@
             // 
             this.m_rib_pnl_CPN.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_pnl_CPN.TabIndex = 3;
+            this.m_rib_pnl_CPN.Visible = false;
             // 
             // m_rib_bar_CPN_thong_ke
             // 
@@ -217,6 +218,15 @@
             this.m_cmd_dinh_muc_tung_phong_ban.SubItemsExpandWidth = 14;
             this.m_cmd_dinh_muc_tung_phong_ban.Text = "Định mức từng phòng ban";
             this.m_cmd_dinh_muc_tung_phong_ban.Click += new System.EventHandler(this.m_cmd_dinh_muc_tung_phong_ban_Click);
+            // 
+            // m_cmd_tong_hop_bill_theo_phong_ban
+            // 
+            this.m_cmd_tong_hop_bill_theo_phong_ban.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tong_hop_bill_theo_phong_ban.Image")));
+            this.m_cmd_tong_hop_bill_theo_phong_ban.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.m_cmd_tong_hop_bill_theo_phong_ban.Name = "m_cmd_tong_hop_bill_theo_phong_ban";
+            this.m_cmd_tong_hop_bill_theo_phong_ban.SubItemsExpandWidth = 14;
+            this.m_cmd_tong_hop_bill_theo_phong_ban.Text = "Tổng hợp Bill theo phòng ban";
+            this.m_cmd_tong_hop_bill_theo_phong_ban.Click += new System.EventHandler(this.m_cmd_tong_hop_bill_theo_phong_ban_Click);
             // 
             // m_rib_bar_cap_nhat_trang_thai
             // 
@@ -357,7 +367,6 @@
             // 
             this.m_rib_pnl_he_thong.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_pnl_he_thong.TabIndex = 1;
-            this.m_rib_pnl_he_thong.Visible = false;
             // 
             // m_rib_bar_he_thong
             // 
@@ -659,6 +668,7 @@
             // 
             // m_rib_tab_he_thong
             // 
+            this.m_rib_tab_he_thong.Checked = true;
             this.m_rib_tab_he_thong.Name = "m_rib_tab_he_thong";
             this.m_rib_tab_he_thong.NotificationMarkColor = System.Drawing.Color.Maroon;
             this.m_rib_tab_he_thong.Panel = this.m_rib_pnl_he_thong;
@@ -672,7 +682,6 @@
             // 
             // m_rib_tab_CPN
             // 
-            this.m_rib_tab_CPN.Checked = true;
             this.m_rib_tab_CPN.Name = "m_rib_tab_CPN";
             this.m_rib_tab_CPN.Panel = this.m_rib_pnl_CPN;
             this.m_rib_tab_CPN.Text = "CPN";
@@ -701,15 +710,6 @@
             // buttonItem1
             // 
             this.buttonItem1.Name = "buttonItem1";
-            // 
-            // m_cmd_tong_hop_bill_theo_phong_ban
-            // 
-            this.m_cmd_tong_hop_bill_theo_phong_ban.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_tong_hop_bill_theo_phong_ban.Image")));
-            this.m_cmd_tong_hop_bill_theo_phong_ban.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.m_cmd_tong_hop_bill_theo_phong_ban.Name = "m_cmd_tong_hop_bill_theo_phong_ban";
-            this.m_cmd_tong_hop_bill_theo_phong_ban.SubItemsExpandWidth = 14;
-            this.m_cmd_tong_hop_bill_theo_phong_ban.Text = "Tổng hợp Bill theo phòng ban";
-            this.m_cmd_tong_hop_bill_theo_phong_ban.Click += new System.EventHandler(this.m_cmd_tong_hop_bill_theo_phong_ban_Click);
             // 
             // f400_menu_main
             // 

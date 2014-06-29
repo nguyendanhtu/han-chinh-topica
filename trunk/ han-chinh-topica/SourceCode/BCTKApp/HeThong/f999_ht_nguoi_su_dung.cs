@@ -76,6 +76,7 @@ namespace BCTKApp.HeThong
             set_define_events();
             m_fg.AllowEditing = false;
             this.KeyPreview = true;
+
         }
         private void set_initial_form_load()
         {
@@ -177,6 +178,7 @@ namespace BCTKApp.HeThong
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             this.KeyDown += new KeyEventHandler(f999_ht_nguoi_su_dung_KeyDown);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+            this.Load +=new EventHandler(f999_ht_nguoi_su_dung_Load);
         }
 
         #endregion

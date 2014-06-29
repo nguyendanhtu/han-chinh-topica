@@ -38,12 +38,42 @@ namespace BCTKApp
             m_cmd_theo_tung_bill.Click += new EventHandler(m_cmd_theo_tung_bill_Click);
             this.m_cmd_trang_thai.Click += new System.EventHandler(this.m_cmd_trang_thai_Click);
             m_cmd_quan_ly_nguoi_su_dung.Click += new EventHandler(m_cmd_quan_ly_nguoi_su_dung_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_nhom_nguoi_su_dung.Click += new EventHandler(m_cmd_nhom_nguoi_su_dung_Click);
         }
+
+        
+
 
        
         
         #endregion
         #region Event
+        void m_cmd_nhom_nguoi_su_dung_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f306_HT_USER_GROUP v_frm = new f306_HT_USER_GROUP();
+                v_frm.display();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_cmd_dm_trung_tam_Click(object sender, EventArgs e)
         {
             try
