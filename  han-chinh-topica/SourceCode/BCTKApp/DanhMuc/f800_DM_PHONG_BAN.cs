@@ -393,6 +393,7 @@ namespace BCTKApp
 			m_us.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_fg);
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_DM_PHONG_BAN i_us
