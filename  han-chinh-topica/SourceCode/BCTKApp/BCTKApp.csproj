@@ -389,14 +389,17 @@
     <Compile Include="HeThong\f108_tham_so_he_thong_de.Designer.cs">
       <DependentUpon>f108_tham_so_he_thong_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeThong\f997_ht_nhom_quyen.cs">
+    <Compile Include="HeThong\f998_ht_nguoi_su_dung_de.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HeThong\f997_ht_nhom_quyen_de.cs">
+    <Compile Include="HeThong\f998_ht_nguoi_su_dung_de.Designer.cs">
+      <DependentUpon>f998_ht_nguoi_su_dung_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\f999_ht_nguoi_su_dung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HeThong\f997_ht_nhom_quyen_de.Designer.cs">
-      <DependentUpon>f997_ht_nhom_quyen_de.cs</DependentUpon>
+    <Compile Include="HeThong\f999_ht_nguoi_su_dung.Designer.cs">
+      <DependentUpon>f999_ht_nguoi_su_dung.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -481,11 +484,11 @@
       <DependentUpon>f108_tham_so_he_thong_de.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="HeThong\f997_ht_nhom_quyen.resx">
-      <DependentUpon>f997_ht_nhom_quyen.cs</DependentUpon>
+    <EmbeddedResource Include="HeThong\f998_ht_nguoi_su_dung_de.resx">
+      <DependentUpon>f998_ht_nguoi_su_dung_de.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HeThong\f997_ht_nhom_quyen_de.resx">
-      <DependentUpon>f997_ht_nhom_quyen_de.cs</DependentUpon>
+    <EmbeddedResource Include="HeThong\f999_ht_nguoi_su_dung.resx">
+      <DependentUpon>f999_ht_nguoi_su_dung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
