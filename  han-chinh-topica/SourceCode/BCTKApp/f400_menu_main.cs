@@ -35,6 +35,7 @@ namespace BCTKApp
             m_cmd_tk_hv_dang_hoc.Click+=new EventHandler(m_cmd_tk_hv_dang_hoc_Click);
             m_cmd_hv_tuyen_moi.Click+=new EventHandler(m_cmd_hv_tuyen_moi_Click);
             m_cmd_theo_tung_bill.Click += new EventHandler(m_cmd_theo_tung_bill_Click);
+            this.m_cmd_trang_thai.Click += new System.EventHandler(this.m_cmd_trang_thai_Click);
         }
 
         
@@ -107,6 +108,11 @@ namespace BCTKApp
 
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void m_cmd_trang_thai_Click(object sender, EventArgs e)
+        {
+
         }
 
 
