@@ -285,6 +285,9 @@
     <Compile Include="BaoCao\f405_V_TONG_HOP_CPN_THEO_PHONG_BAN.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f406_V_TONG_HOP_BILL_THEO_PHONG_BAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CChartParameter.cs" />
     <Compile Include="ChartDataSourceInterface.cs" />
     <Compile Include="ChucNang\f401_DON_GIA_DINH_MUC.cs">
@@ -411,6 +414,9 @@
     </Compile>
     <EmbeddedResource Include="BaoCao\f405_V_TONG_HOP_CPN_THEO_PHONG_BAN.resx">
       <DependentUpon>f405_V_TONG_HOP_CPN_THEO_PHONG_BAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f406_V_TONG_HOP_BILL_THEO_PHONG_BAN.resx">
+      <DependentUpon>f406_V_TONG_HOP_BILL_THEO_PHONG_BAN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f401_DON_GIA_DINH_MUC.resx">
       <DependentUpon>f401_DON_GIA_DINH_MUC.cs</DependentUpon>
