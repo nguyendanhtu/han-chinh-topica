@@ -42,7 +42,6 @@ namespace BCTKApp
         private Label label1;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
-        private Label label3;
         private Label m_lbl_header;
         private Label label4;
         private DateTimePicker m_dat_tai_ngay;
@@ -96,7 +95,6 @@ namespace BCTKApp
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.m_dat_tai_ngay = new System.Windows.Forms.DateTimePicker();
@@ -261,15 +259,6 @@ namespace BCTKApp
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(279, 20);
             this.m_txt_tim_kiem.TabIndex = 2832;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(605, 123);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 13);
-            this.label3.TabIndex = 2834;
-            this.label3.Text = "Tổng định mức: ....(VNĐ)";
-            // 
             // m_lbl_header
             // 
             this.m_lbl_header.AutoSize = true;
@@ -308,7 +297,6 @@ namespace BCTKApp
             this.Controls.Add(this.m_dat_tai_ngay);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.m_lbl_header);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.label1);
@@ -386,8 +374,25 @@ namespace BCTKApp
 			v_htb.Add(V_DINH_MUC_CPN_TUNG_PHONG_BAN.DINH_MUC_GAN_NHAT, e_col_Number.DINH_MUC_GAN_NHAT);
 									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DINH_MUC_CPN_TUNG_PHONG_BAN.NewRow());
-			return v_obj_trans;			
-		}
+			return v_obj_trans;
+        }
+        private void set_search_format_before()
+        {
+            if (m_txt_tim_kiem.Text == "")
+            {
+                m_txt_tim_kiem.Text = m_str_tim_kiem;
+                m_txt_tim_kiem.ForeColor = Color.Gray;
+            }
+
+        }
+        private void set_search_format_after()
+        {
+            if (m_txt_tim_kiem.Text == m_str_tim_kiem)
+            {
+                m_txt_tim_kiem.Text = "";
+            }
+            m_txt_tim_kiem.ForeColor = Color.Black;
+        }
 		private void load_data_2_grid(){
             m_ds.Clear();
             if (m_dat_tai_ngay.Checked == true)
@@ -397,7 +402,12 @@ namespace BCTKApp
             else v_dat_tai_ngay = new DateTime(2050, 12, 31); ;
             if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") m_us.FillDatasetSearch(m_ds, "",v_dat_tai_ngay);
             else m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim(),v_dat_tai_ngay);
-
+            //decimal v_tong_dinh_muc=0;
+            //for (int i = 1; i <= m_ds.V_DINH_MUC_CPN_TUNG_PHONG_BAN.Count; i++)
+            //{
+            //v_tong_dinh_muc += CIPConvert.ToDecimal(m_ds.Tables[0].Rows[i][BCTKDS.CDBNames.V_DINH_MUC_CPN_TUNG_PHONG_BAN.DINH_MUC_GAN_NHAT]);
+            //}
+            //m_lbl_tong_dinh_muc.Text=CIPConvert.ToStr(v_tong_dinh_muc, "#,###") + "   VNĐ";
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search.Equals(m_str_tim_kiem))
             {
@@ -408,9 +418,11 @@ namespace BCTKApp
             CGridUtils.MakeSoTT(0, m_fg);
            
 			//m_us.FillDataset(m_ds);
+
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
+            set_search_format_before();
 		}
 		private void grid2us_object(US_V_DINH_MUC_CPN_TUNG_PHONG_BAN i_us
 			, int i_grid_row) {
@@ -477,6 +489,10 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
+            m_txt_tim_kiem.KeyDown += m_txt_tim_kiem_KeyDown;
+            m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
+            m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
 		}
 		#endregion
 
@@ -488,13 +504,66 @@ namespace BCTKApp
 		private void f702_v_dinh_muc_cpn_tung_phong_ban_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
+                load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		
 		}
+        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                set_search_format_after();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                set_search_format_before();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid();
+                }
+                else
+                {
+                    set_search_format_after();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
 			try{
 				this.Close();
