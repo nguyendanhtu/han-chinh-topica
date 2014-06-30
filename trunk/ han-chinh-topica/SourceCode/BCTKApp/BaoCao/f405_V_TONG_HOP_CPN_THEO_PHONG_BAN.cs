@@ -370,6 +370,7 @@ namespace BCTKApp
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(176, 20);
             this.m_txt_tim_kiem.TabIndex = 25;
+            this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
             this.m_txt_tim_kiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
             // 
             // m_cmd_tim_kiem
@@ -846,6 +847,19 @@ namespace BCTKApp
                     m_cbo_ma_pb.Text = "Tất cả";
                 }
                 tim_kiem();
+            }
+        }
+
+        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
