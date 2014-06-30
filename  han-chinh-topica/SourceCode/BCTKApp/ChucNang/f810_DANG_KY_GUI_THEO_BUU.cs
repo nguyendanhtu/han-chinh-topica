@@ -286,7 +286,7 @@ namespace BCTKApp.ChucNang
             m_cmd_del.Click += new EventHandler(m_cmd_del_Click);
             m_fg.AfterAddRow += new C1.Win.C1FlexGrid.RowColEventHandler(m_fg_AfterAddRow);
             m_cmd_nhap_excel.Click += new EventHandler(m_cmd_nhap_excel_Click);
-            m_cmd_xem_thu_gui.Click += new EventHandler(m_cmd_xem_thu_gui_Click);
+            //m_cmd_xem_thu_gui.Click += new EventHandler(m_cmd_xem_thu_gui_Click);
         }
 
         

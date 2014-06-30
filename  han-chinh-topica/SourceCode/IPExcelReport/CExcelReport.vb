@@ -281,6 +281,7 @@ Public Class CExcelReport
                                , ByVal i_TableName As String _
                               , ByVal i_iSheetStartRow As Integer)
         Try
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US")
             m_objExcelApp = New Excel.Application
             m_objExcelApp.Workbooks.Open(m_strTemplateFileNameWithPath)
             m_objExcelApp.Workbooks(1).Worksheets.Select(1)
@@ -308,6 +309,7 @@ Public Class CExcelReport
                 End If
             End While
             m_objExcelApp.Workbooks.Close()
+            m_objExcelApp.Quit()
             Unmount()
         Catch v_e As Exception
             m_objExcelApp.Workbooks.Close()
