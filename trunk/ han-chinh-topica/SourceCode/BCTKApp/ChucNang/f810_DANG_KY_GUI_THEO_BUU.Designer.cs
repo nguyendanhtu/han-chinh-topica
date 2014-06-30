@@ -93,11 +93,11 @@
             this.m_lbl_tieu_de.AutoSize = true;
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tieu_de.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tieu_de.Location = new System.Drawing.Point(297, 9);
+            this.m_lbl_tieu_de.Location = new System.Drawing.Point(416, 9);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(553, 29);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(341, 29);
             this.m_lbl_tieu_de.TabIndex = 0;
-            this.m_lbl_tieu_de.Text = "ĐĂNG KÝ GỬI HÀNG NGÀY THEO TỪNG BƯU";
+            this.m_lbl_tieu_de.Text = "ĐĂNG KÝ GỬI HÀNG NGÀY ";
             // 
             // panel1
             // 
