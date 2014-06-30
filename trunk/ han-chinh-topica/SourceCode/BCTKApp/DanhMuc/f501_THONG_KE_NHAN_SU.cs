@@ -160,6 +160,7 @@ namespace BCTKApp
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
             this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_insert.Visible = false;
             // 
             // m_cmd_update
             // 
@@ -175,6 +176,7 @@ namespace BCTKApp
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
+            this.m_cmd_update.Visible = false;
             // 
             // m_cmd_xuat_excel
             // 
@@ -205,6 +207,7 @@ namespace BCTKApp
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
             this.m_cmd_delete.Text = "&Xoá";
+            this.m_cmd_delete.Visible = false;
             // 
             // m_cmd_exit
             // 
