@@ -174,7 +174,7 @@ namespace BCTKApp
             this.m_cmd_insert.Location = new System.Drawing.Point(528, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
+            this.m_cmd_insert.TabIndex = 7;
             this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_update
@@ -189,7 +189,7 @@ namespace BCTKApp
             this.m_cmd_update.Location = new System.Drawing.Point(616, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 13;
+            this.m_cmd_update.TabIndex = 8;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_view
@@ -204,7 +204,7 @@ namespace BCTKApp
             this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_view.Name = "m_cmd_view";
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
+            this.m_cmd_view.TabIndex = 10;
             this.m_cmd_view.Text = "Xem";
             // 
             // m_cmd_delete
@@ -219,7 +219,7 @@ namespace BCTKApp
             this.m_cmd_delete.Location = new System.Drawing.Point(704, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 14;
+            this.m_cmd_delete.TabIndex = 9;
             this.m_cmd_delete.Text = "&Xoá";
             // 
             // m_cmd_exit
@@ -279,7 +279,7 @@ namespace BCTKApp
             this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
             this.m_dtp_den_ngay.ShowCheckBox = true;
             this.m_dtp_den_ngay.Size = new System.Drawing.Size(126, 23);
-            this.m_dtp_den_ngay.TabIndex = 34;
+            this.m_dtp_den_ngay.TabIndex = 2;
             this.m_dtp_den_ngay.Value = new System.DateTime(2014, 6, 30, 9, 16, 0, 0);
             // 
             // m_dtp_tu_ngay
@@ -292,7 +292,7 @@ namespace BCTKApp
             this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
             this.m_dtp_tu_ngay.ShowCheckBox = true;
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(126, 23);
-            this.m_dtp_tu_ngay.TabIndex = 33;
+            this.m_dtp_tu_ngay.TabIndex = 1;
             this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 6, 30, 9, 16, 0, 0);
             // 
             // label6
@@ -320,7 +320,7 @@ namespace BCTKApp
             this.m_txt_phong_ban.Location = new System.Drawing.Point(336, 73);
             this.m_txt_phong_ban.Name = "m_txt_phong_ban";
             this.m_txt_phong_ban.Size = new System.Drawing.Size(190, 20);
-            this.m_txt_phong_ban.TabIndex = 30;
+            this.m_txt_phong_ban.TabIndex = 3;
             // 
             // label3
             // 
@@ -357,7 +357,7 @@ namespace BCTKApp
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(334, 108);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(190, 21);
-            this.m_cbo_trang_thai.TabIndex = 34;
+            this.m_cbo_trang_thai.TabIndex = 4;
             // 
             // label8
             // 
@@ -380,7 +380,7 @@ namespace BCTKApp
             this.m_cmd_search.Location = new System.Drawing.Point(551, 135);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 32;
+            this.m_cmd_search.TabIndex = 6;
             this.m_cmd_search.Text = "Tìm kiếm";
             // 
             // label1
@@ -398,7 +398,7 @@ namespace BCTKApp
             this.m_txt_so_bill.Location = new System.Drawing.Point(334, 143);
             this.m_txt_so_bill.Name = "m_txt_so_bill";
             this.m_txt_so_bill.Size = new System.Drawing.Size(190, 20);
-            this.m_txt_so_bill.TabIndex = 30;
+            this.m_txt_so_bill.TabIndex = 5;
             // 
             // label2
             // 
@@ -484,6 +484,7 @@ namespace BCTKApp
 			m_us.FillDatasetSearch(m_ds,v_str_phong_ban,v_str_so_bill,v_dc_id_trang_thai,v_dat_tu_ngay,v_dat_den_ngay);
 			m_grv_trang_thai.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_grv_trang_thai);
 			m_grv_trang_thai.Redraw = true;
 		}
 		private void grid2us_object(US_V_DM_BILL i_us
