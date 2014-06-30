@@ -252,9 +252,9 @@ namespace BCTKApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(397, 9);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(340, 22);
+            this.m_lbl_header.Size = new System.Drawing.Size(392, 22);
             this.m_lbl_header.TabIndex = 21;
-            this.m_lbl_header.Text = "TỔNG HỢP BILL THEO PHÒNG BAN";
+            this.m_lbl_header.Text = "TỔNG HỢP TIỀN BILL THEO PHÒNG BAN";
             // 
             // m_lbl_tu_ngay
             // 
@@ -388,7 +388,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f406_V_TONG_HOP_BILL_THEO_PHONG_BAN";
-            this.Text = "f406- Tổng hợp Bill theo phòng ban";
+            this.Text = "f406- Tổng hợp tiền Bill theo phòng ban";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
