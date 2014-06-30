@@ -24,6 +24,7 @@ namespace BCTKApp.ChucNang
             InitializeComponent();
             format_control();
             set_initial_form_load(); 
+
         }
 
         #region Public Interface
@@ -102,6 +103,7 @@ namespace BCTKApp.ChucNang
 
             return v_hst;
         }
+
         private void load_cbo_loai_thu_2_grid()
         {
             Hashtable v_hst = new Hashtable();
@@ -165,37 +167,31 @@ namespace BCTKApp.ChucNang
             //Check nội dung các ô xem có null hay không
             for (int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count - 1; v_i_cur_row++)
             {
-                if (m_fg[v_i_cur_row, (int)e_col_Number.SO_BILL] == null)
+                if (m_fg[v_i_cur_row, (int)e_col_Number.SO_BILL] == null /*|| CIPConvert.ToStr(m_fg[v_i_cur_row, (int)e_col_Number.SO_BILL]) == ""*/)
                 {
                     BaseMessages.MsgBox_Infor("Bạn chưa nhập SỐ BILL");
                     m_fg.Select(v_i_cur_row, (int)e_col_Number.SO_BILL);
                     return false;
                 }
-                if (m_fg[v_i_cur_row, (int)e_col_Number.MA_PHONG_BAN] == null)
+                if (m_fg[v_i_cur_row, (int)e_col_Number.MA_PHONG_BAN] == null || CIPConvert.ToStr(m_fg[v_i_cur_row, (int)e_col_Number.MA_PHONG_BAN]) == "")
                 {
                     BaseMessages.MsgBox_Infor("Bạn chưa nhập MÃ PHÒNG BAN");
                     m_fg.Select(v_i_cur_row, (int)e_col_Number.MA_PHONG_BAN);
                     return false;
                 }
-                if (m_fg[v_i_cur_row, (int)e_col_Number.SO_BILL] == null)
-                {
-                    BaseMessages.MsgBox_Infor("Bạn chưa nhập SỐ BILL");
-                    m_fg.Select(v_i_cur_row, (int)e_col_Number.SO_BILL);
-                    return false;
-                }
-                if (m_fg[v_i_cur_row, (int)e_col_Number.NGUOI_GUI] == null)
+                if (m_fg[v_i_cur_row, (int)e_col_Number.NGUOI_GUI] == null || CIPConvert.ToStr(m_fg[v_i_cur_row, (int)e_col_Number.NGUOI_GUI]) == "")
                 {
                     BaseMessages.MsgBox_Infor("Bạn chưa nhập NGƯỜI GỬI THƯ");
                     m_fg.Select(v_i_cur_row, (int)e_col_Number.NGUOI_GUI);
                     return false;
                 }
-                if (m_fg[v_i_cur_row, (int)e_col_Number.NGUOI_NHAN] == null)
+                if (m_fg[v_i_cur_row, (int)e_col_Number.NGUOI_NHAN] == null || CIPConvert.ToStr(m_fg[v_i_cur_row, (int)e_col_Number.NGUOI_NHAN]) == "")
                 {
                     BaseMessages.MsgBox_Infor("Bạn chưa nhập NGƯỜI NHẬN THƯ");
-                    m_fg.Select(v_i_cur_row, (int)e_col_Number.SO_BILL);
+                    m_fg.Select(v_i_cur_row, (int)e_col_Number.NGUOI_NHAN);
                     return false;
                 }
-                if (m_fg[v_i_cur_row, (int)e_col_Number.NOI_NHAN] == null)
+                if (m_fg[v_i_cur_row, (int)e_col_Number.NOI_NHAN] == null || CIPConvert.ToStr(m_fg[v_i_cur_row, (int)e_col_Number.NOI_NHAN]) == "")
                 {
                     BaseMessages.MsgBox_Infor("Bạn chưa nhập NƠI NHẬN THƯ");
                     m_fg.Select(v_i_cur_row, (int)e_col_Number.NOI_NHAN);
@@ -204,6 +200,49 @@ namespace BCTKApp.ChucNang
                           
             }
             return true;
+        }
+        private void grid_row_2_us_v_dm_bill(int ip_grid_row, US_V_DM_BILL iop_us_v_dm_bill)
+        {
+            iop_us_v_dm_bill.datNGAY_GUI
+               = m_dat_ngay_gui.Value;
+
+            iop_us_v_dm_bill.strSO_BILL
+                = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.SO_BILL]);
+
+            iop_us_v_dm_bill.dcID_PHONG_BAN
+                = CIPConvert.ToDecimal(m_fg[ip_grid_row, (int)e_col_Number.MA_PHONG_BAN]);
+
+            iop_us_v_dm_bill.strNGUOI_GUI
+                = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.NGUOI_GUI]);
+
+            iop_us_v_dm_bill.strNGUOI_NHAN
+                = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.NGUOI_NHAN]);
+
+            iop_us_v_dm_bill.strNOI_NHAN
+                = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.NOI_NHAN]);
+
+            if (m_fg[ip_grid_row, (int)e_col_Number.NOI_DUNG] != null)
+                iop_us_v_dm_bill.strNOI_DUNG
+                    = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.NOI_DUNG]);
+            else iop_us_v_dm_bill.SetNOI_DUNGNull();
+
+            if (m_fg[ip_grid_row, (int)e_col_Number.GHI_CHU] != null)
+                iop_us_v_dm_bill.strGHI_CHU
+                = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.GHI_CHU]);
+            else iop_us_v_dm_bill.SetGHI_CHUNull();
+
+            iop_us_v_dm_bill.dcID_TRANG_THAI
+                = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
+
+            if (CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.LOAI_THU]) == "Trong nước")
+                iop_us_v_dm_bill.strTRONG_NUOC = "x";
+            else
+                iop_us_v_dm_bill.strNUOC_NGOAI = "x";
+
+            iop_us_v_dm_bill.SetSO_TIENNull();
+            iop_us_v_dm_bill.SetTRANG_THAI_THUNull();
+            iop_us_v_dm_bill.SetTEN_PHONG_BANNull();
+            iop_us_v_dm_bill.SetTEN_PHONG_BANNull();
         }
         private void save_data()
         {
@@ -235,38 +274,10 @@ namespace BCTKApp.ChucNang
                 throw v_e;
             }
         }
-
-        private void grid_row_2_us_v_dm_bill(int ip_grid_row, US_V_DM_BILL iop_us_v_dm_bill)
+        private void xem_thu_gui_trong_ngay(DateTime i_date)
         {
-            iop_us_v_dm_bill.datNGAY_GUI
-               = m_dat_ngay_gui.Value;
-            iop_us_v_dm_bill.strSO_BILL
-                = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.SO_BILL]);
-            iop_us_v_dm_bill.dcID_PHONG_BAN
-                = CIPConvert.ToDecimal(m_fg[ip_grid_row, (int)e_col_Number.MA_PHONG_BAN]);
-            iop_us_v_dm_bill.strNGUOI_GUI
-                = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.NGUOI_GUI]);
-            iop_us_v_dm_bill.strNGUOI_NHAN
-                = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.NGUOI_NHAN]);
-            iop_us_v_dm_bill.strNOI_NHAN
-                = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.NGUOI_NHAN]);       
-            iop_us_v_dm_bill.strNOI_DUNG
-                = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.NOI_DUNG]);
-            iop_us_v_dm_bill.dcID_TRANG_THAI
-                = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
-            iop_us_v_dm_bill.strGHI_CHU
-                = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.GHI_CHU]);
-            if (CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.LOAI_THU]) == "Trong nước")
-                iop_us_v_dm_bill.strTRONG_NUOC = "x";
-            else
-                iop_us_v_dm_bill.strNUOC_NGOAI = "x";
-
-            iop_us_v_dm_bill.SetSO_TIENNull();
-            iop_us_v_dm_bill.SetTRANG_THAI_THUNull();
-            iop_us_v_dm_bill.SetTEN_PHONG_BANNull();
-            iop_us_v_dm_bill.SetTEN_PHONG_BANNull();
+            
         }
-        
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -275,10 +286,11 @@ namespace BCTKApp.ChucNang
             m_cmd_del.Click += new EventHandler(m_cmd_del_Click);
             m_fg.AfterAddRow += new C1.Win.C1FlexGrid.RowColEventHandler(m_fg_AfterAddRow);
             m_cmd_nhap_excel.Click += new EventHandler(m_cmd_nhap_excel_Click);
+            m_cmd_xem_thu_gui.Click += new EventHandler(m_cmd_xem_thu_gui_Click);
         }
 
         
-        #endregion
+       
 
         #region Events
         private void m_cmd_exit_Click(object sender, EventArgs e)
@@ -296,13 +308,13 @@ namespace BCTKApp.ChucNang
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-       
         private void m_fg_AfterEdit(object sender, C1.Win.C1FlexGrid.RowColEventArgs e)
         {         
             if (m_fg.Col == (int)e_col_Number.MA_PHONG_BAN)
                 m_fg.Rows[m_fg.Row][m_fg.Col + 1] = m_fg.Rows[m_fg.Row][m_fg.Col];
             if (m_fg.Col == (int)e_col_Number.TEN_PHONG_BAN)
-                m_fg.Rows[m_fg.Row][m_fg.Col - 1] = m_fg.Rows[m_fg.Row][m_fg.Col];          
+                m_fg.Rows[m_fg.Row][m_fg.Col - 1] = m_fg.Rows[m_fg.Row][m_fg.Col];
+            m_lbl_tong_so_bill.Text = (m_fg.Rows.Count - 2).ToString();
         }
         private void m_cmd_del_Click(object sender, EventArgs e)
         {
@@ -313,7 +325,8 @@ namespace BCTKApp.ChucNang
                     return;
                 }
                 m_fg.Rows.Remove(m_fg.Row);
-                CGridUtils.MakeSoTT(0, m_fg);
+                //CGridUtils.MakeSoTT(0, m_fg);
+                m_lbl_tong_so_bill.Text = (m_fg.Rows.Count - 2).ToString();
             }
             catch (System.Exception v_e)
             {
@@ -323,6 +336,7 @@ namespace BCTKApp.ChucNang
         private void m_fg_AfterAddRow(object sender, C1.Win.C1FlexGrid.RowColEventArgs e)
         {
             CGridUtils.MakeSoTT(0, m_fg);
+            m_lbl_tong_so_bill.Text = (m_fg.Rows.Count - 2).ToString();
         }
         private void m_cmd_nhap_excel_Click(object sender, EventArgs e)
         {
@@ -361,7 +375,7 @@ namespace BCTKApp.ChucNang
                 Hashtable v_hst_excel_col = get_mapping_col_excel_grid();
                 CExcelReport v_obj_excel_rpt = new CExcelReport(m_obj_dialog.FileName);
                 int v_i_start_excel_row = 7;
-                for (int v_i_cur_col = m_fg.Cols.Fixed; v_i_cur_col < m_fg.Cols.Count; v_i_cur_col++)//
+                for (int v_i_cur_col = m_fg.Cols.Fixed; v_i_cur_col < m_fg.Cols.Count; v_i_cur_col++)
                 {
                     v_obj_excel_rpt.Export2Grid(m_fg,
                         v_i_start_excel_row
@@ -370,6 +384,11 @@ namespace BCTKApp.ChucNang
                 }
             
         }
+        void m_cmd_xem_thu_gui_Click(object sender, EventArgs e)
+        {
+            xem_thu_gui_trong_ngay(m_dat_ngay_gui.Value);
+        }
+        #endregion
         #endregion
     }
 }
