@@ -34,6 +34,8 @@
             this.m_pnl_tieu_de = new System.Windows.Forms.Panel();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_lbl_tong_so_bill = new System.Windows.Forms.Label();
+            this.m_lbl_ = new System.Windows.Forms.Label();
             this.m_cmd_del = new SIS.Controls.Button.SiSButton();
             this.m_dat_ngay_gui = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_gui = new System.Windows.Forms.Label();
@@ -44,9 +46,6 @@
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
-            this.m_lbl_ = new System.Windows.Forms.Label();
-            this.m_lbl_tong_so_bill = new System.Windows.Forms.Label();
-            this.m_cmd_xem_thu_gui = new SIS.Controls.Button.SiSButton();
             this.m_pnl_tieu_de.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -102,7 +101,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_cmd_xem_thu_gui);
             this.panel1.Controls.Add(this.m_lbl_tong_so_bill);
             this.panel1.Controls.Add(this.m_lbl_);
             this.panel1.Controls.Add(this.m_cmd_del);
@@ -113,6 +111,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1151, 56);
             this.panel1.TabIndex = 1;
+            // 
+            // m_lbl_tong_so_bill
+            // 
+            this.m_lbl_tong_so_bill.AutoSize = true;
+            this.m_lbl_tong_so_bill.Location = new System.Drawing.Point(1009, 34);
+            this.m_lbl_tong_so_bill.Name = "m_lbl_tong_so_bill";
+            this.m_lbl_tong_so_bill.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_tong_so_bill.TabIndex = 8;
+            this.m_lbl_tong_so_bill.Text = "...";
+            // 
+            // m_lbl_
+            // 
+            this.m_lbl_.AutoSize = true;
+            this.m_lbl_.Location = new System.Drawing.Point(929, 34);
+            this.m_lbl_.Name = "m_lbl_";
+            this.m_lbl_.Size = new System.Drawing.Size(67, 13);
+            this.m_lbl_.TabIndex = 7;
+            this.m_lbl_.Text = "Tổng số bưu";
             // 
             // m_cmd_del
             // 
@@ -259,39 +275,6 @@
             this.m_cmd_nhap_excel.Text = "Nhập từ Excel";
             this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
             // 
-            // m_lbl_
-            // 
-            this.m_lbl_.AutoSize = true;
-            this.m_lbl_.Location = new System.Drawing.Point(929, 34);
-            this.m_lbl_.Name = "m_lbl_";
-            this.m_lbl_.Size = new System.Drawing.Size(67, 13);
-            this.m_lbl_.TabIndex = 7;
-            this.m_lbl_.Text = "Tổng số bưu";
-            // 
-            // m_lbl_tong_so_bill
-            // 
-            this.m_lbl_tong_so_bill.AutoSize = true;
-            this.m_lbl_tong_so_bill.Location = new System.Drawing.Point(1009, 34);
-            this.m_lbl_tong_so_bill.Name = "m_lbl_tong_so_bill";
-            this.m_lbl_tong_so_bill.Size = new System.Drawing.Size(16, 13);
-            this.m_lbl_tong_so_bill.TabIndex = 8;
-            this.m_lbl_tong_so_bill.Text = "...";
-            // 
-            // m_cmd_xem_thu_gui
-            // 
-            this.m_cmd_xem_thu_gui.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xem_thu_gui.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xem_thu_gui.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xem_thu_gui.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xem_thu_gui.ImageIndex = 14;
-            this.m_cmd_xem_thu_gui.ImageList = this.ImageList;
-            this.m_cmd_xem_thu_gui.Location = new System.Drawing.Point(683, 11);
-            this.m_cmd_xem_thu_gui.Name = "m_cmd_xem_thu_gui";
-            this.m_cmd_xem_thu_gui.Size = new System.Drawing.Size(146, 35);
-            this.m_cmd_xem_thu_gui.TabIndex = 9;
-            this.m_cmd_xem_thu_gui.Text = "Xem thư gửi trong ngày";
-            this.m_cmd_xem_thu_gui.UseVisualStyleBackColor = true;
-            // 
             // f810_DANG_KY_GUI_THEO_BUU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,7 +314,6 @@
         private SIS.Controls.Button.SiSButton m_cmd_nhap_excel;
         private System.Windows.Forms.Label m_lbl_tong_so_bill;
         private System.Windows.Forms.Label m_lbl_;
-        private SIS.Controls.Button.SiSButton m_cmd_xem_thu_gui;
 
     }
 }
