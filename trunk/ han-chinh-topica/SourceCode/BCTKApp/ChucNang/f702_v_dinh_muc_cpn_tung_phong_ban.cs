@@ -356,7 +356,8 @@ namespace BCTKApp
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            
+            m_lbl_header.Font = new System.Drawing.Font("Tahoma", 18, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			
             m_fg.Cols[0].Caption = "STT";
             //m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
 
