@@ -42,6 +42,7 @@ namespace BCTKApp
             m_cmd_nhom_nguoi_su_dung.Click += new EventHandler(m_cmd_nhom_nguoi_su_dung_Click);
             m_cmd_phan_quyen_cho_nhom.Click += new EventHandler(m_cmd_phan_quyen_cho_nhom_Click);
             m_cmd_doi_mat_khau.Click += new EventHandler(m_cmd_doi_mat_khau_Click);
+            m_cmd_tra_cuu_trang_thai_CPN.Click+=new EventHandler(m_cmd_tra_cuu_trang_thai_CPN_Click);
         }
         #endregion
         #region Event
@@ -214,6 +215,19 @@ namespace BCTKApp
             {
                 f999_ht_nguoi_su_dung v_frm = new f999_ht_nguoi_su_dung();
                 v_frm.display();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_tra_cuu_trang_thai_CPN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f511_TRA_CUU_TRANG_THAI_CPN v_frm = new f511_TRA_CUU_TRANG_THAI_CPN();
+                v_frm.ShowDialog();
             }
             catch (Exception v_e)
             {
