@@ -381,5 +381,16 @@ public class US_V_DM_BILL : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDatasetSearch(DS_V_DM_BILL ip_ds, string ip_str_phong_ban, string ip_str_so_bill, decimal ip_dc_id_trang_thai_cu, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_V_DM_BILL_Search_trang_thai");
+        v_store_proc.addNVarcharInputParam("@PHONG_BAN", ip_str_phong_ban);
+        v_store_proc.addNVarcharInputParam("@SO_BILL", ip_str_so_bill);
+        v_store_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_dc_id_trang_thai_cu);
+        v_store_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+        v_store_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
+}
 }
