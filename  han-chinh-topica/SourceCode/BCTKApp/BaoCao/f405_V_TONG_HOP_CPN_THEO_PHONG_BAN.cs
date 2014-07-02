@@ -32,35 +32,7 @@ namespace BCTKApp
 
 	public class f405_V_TONG_HOP_CPN_THEO_PHONG_BAN : System.Windows.Forms.Form
 	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-        internal SIS.Controls.Button.SiSButton m_cmd_exit;
-        private Label m_lbl_header;
-        private Label m_lbl_ma_pb;
-        private Label m_lbl_ten_pb;
-        private Label m_lbl_den_ngay;
-        private Label m_lbl_tu_ngay;
-        private Label m_lbl_tu_khoa;
-        private ComboBox m_cbo_ma_pb;
-        private ComboBox m_cbo_ten_pb;
-        private DateTimePicker m_dt_tu_ngay;
-        private DateTimePicker m_dt_den_ngay;
-        private TextBox m_txt_tim_kiem;
-        internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
-        private Label m_lbl_trang_thai;
-        private ComboBox m_cbo_trang_thai;
-        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
-        private Label label1;
-        private TextBox m_txt_tk_nguoi_nhan;
-        private Label label2;
-        private TextBox m_txt_tk_noi_nhan;
-        private Label label3;
-        private TextBox m_txt_tk_nguoi_gui;
-		private System.ComponentModel.IContainer components;
+
 
 		public f405_V_TONG_HOP_CPN_THEO_PHONG_BAN()
 		{
@@ -95,6 +67,35 @@ namespace BCTKApp
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private Label m_lbl_header;
+        private Label m_lbl_ma_pb;
+        private Label m_lbl_ten_pb;
+        private Label m_lbl_den_ngay;
+        private Label m_lbl_tu_ngay;
+        private Label m_lbl_tu_khoa;
+        private ComboBox m_cbo_ma_pb;
+        private ComboBox m_cbo_ten_pb;
+        private DateTimePicker m_dt_tu_ngay;
+        private DateTimePicker m_dt_den_ngay;
+        private TextBox m_txt_tim_kiem;
+        internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
+        private Label m_lbl_trang_thai;
+        private ComboBox m_cbo_trang_thai;
+        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        private Label label1;
+        private TextBox m_txt_tk_nguoi_nhan;
+        private Label label2;
+        private TextBox m_txt_tk_noi_nhan;
+        private Label label3;
+        private TextBox m_txt_tk_nguoi_gui;
+        private System.ComponentModel.IContainer components;
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
