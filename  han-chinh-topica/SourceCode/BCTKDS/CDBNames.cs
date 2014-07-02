@@ -104,6 +104,17 @@ namespace BCTKDS.CDBNames
         public static string FORMAT_SO_VAO_SO = ConfigurationSettings.AppSettings["FORMAT_SO_VAO_SO"].ToString();
         public static string PATH_CHUNG_CHI = ConfigurationSettings.AppSettings["PATH_CHUNG_CHI"].ToString();
     }
+    public class V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
+    {
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string TONG_SO_BILL = "TONG_SO_BILL";
+        public const string TONG_SO_TIEN = "TONG_SO_TIEN";
+        public const string DINH_MUC = "DINH_MUC";
+        public const string TI_LE_DA_VUOT = "TI_LE_DA_VUOT";
+    }
+
     public class LOG_DOI_TUONG_TAC_DONG
     {
         public const string DANG_NHAP_XUAT = "";
