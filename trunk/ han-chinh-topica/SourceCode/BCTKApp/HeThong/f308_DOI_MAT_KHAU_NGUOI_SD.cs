@@ -19,7 +19,6 @@ namespace BCTKApp.HeThong
         {
             InitializeComponent();
             format_control();
-            load_data_to_cbo_tai_khoan();
         }
         #region Public Interfaces
         public void display()
@@ -30,6 +29,7 @@ namespace BCTKApp.HeThong
 
         #region  Members
         US_HT_NGUOI_SU_DUNG m_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
+        US_HT_NGUOI_SU_DUNG.LogonResult v_logonresult;
         #endregion
 
         #region  Private Methods
@@ -37,15 +37,6 @@ namespace BCTKApp.HeThong
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
             set_define_events();
-        }
-        private void load_data_to_cbo_tai_khoan()
-        {
-            DS_HT_NGUOI_SU_DUNG v_ds_ht_nguoi_su_dung = new DS_HT_NGUOI_SU_DUNG();
-            m_us_ht_nguoi_su_dung.FillDataset(v_ds_ht_nguoi_su_dung);
-
-            m_cbo_tai_khoan.DataSource = v_ds_ht_nguoi_su_dung.Tables[0];
-            m_cbo_tai_khoan.DisplayMember = HT_NGUOI_SU_DUNG.TEN_TRUY_CAP;
-            m_cbo_tai_khoan.ValueMember = HT_NGUOI_SU_DUNG.ID;
         }
         private bool check_validate_data_is_ok()
         {
@@ -72,33 +63,34 @@ namespace BCTKApp.HeThong
             if (!check_validate_data_is_ok())
                 return;
 
-            //Buoc 2: Check mat khau cu co dung voi ten tai khoan khong?
+            //Buoc 2: Check với CSDL
             //Khong dung thi hien thong bao
-            US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG(CIPConvert.ToDecimal(m_cbo_tai_khoan.SelectedValue));
 
-            if (CIPConvert.Deciphering(v_us_ht_nguoi_su_dung.strMAT_KHAU) != m_txt_mat_khau_cu.Text)
+            //Bước 2.1 Check xem tài khoản đã tồn tại hay chưa
+            US_HT_NGUOI_SU_DUNG v_us_check = new US_HT_NGUOI_SU_DUNG();
+            v_us_check.InitByTenTruyCap(m_txt_tai_khoan.Text);
+            //Bước 2.2 Check mat khau cu co dung voi ten tai khoan khong?
+            v_us_check.check_user(m_txt_tai_khoan.Text, CIPConvert.Encoding(m_txt_mat_khau_cu.Text), ref v_logonresult);
+            switch (v_logonresult)
             {
-                BaseMessages.MsgBox_Error("Mật khẩu cũ không đúng!");
-                return;
+                case US_HT_NGUOI_SU_DUNG.LogonResult.User_Is_Locked: return;
+                case US_HT_NGUOI_SU_DUNG.LogonResult.WrongPassword_OR_Name: BaseMessages.MsgBox_Error("Sai tên tài khoản hoặc mật khẩu!");
+                    return;
+                default: break;
             }
-            //Buoc 3: Check mat khau cu va moi co trung nhau hay khong?
+            //Buoc 2.3: Check mat khau moi nhap vao co trung nhau hay khong?
             if (m_txt_mat_khau_moi.Text != m_txt_nhap_lai_mat_khau_moi.Text)
             {
                 BaseMessages.MsgBox_Error("Việc nhập lại mật khẩu mới chưa đúng!");
                 return;
             }
-
+            
+            
             //Buoc 4: Luu
-            try
-            {
-                v_us_ht_nguoi_su_dung.strMAT_KHAU = CIPConvert.Encoding(m_txt_mat_khau_moi.Text);
+                v_us_check.strMAT_KHAU = CIPConvert.Encoding(m_txt_mat_khau_moi.Text);
 
-                v_us_ht_nguoi_su_dung.Update();
-            }
-            catch (System.Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+                v_us_check.Update();
+           
             //Buoc 5: Hien thong bao
             BaseMessages.MsgBox_Infor("Đã đổi mật khẩu thành công!");
             this.Close();
