@@ -656,8 +656,8 @@ namespace BCTKApp
                 int i_grid_row = m_fg.Selection.TopRow;
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
                 v_id_phong_ban = CIPConvert.ToDecimal(v_dr[0]);
-                //f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE frm = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
-                //frm.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);
+                f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE frm = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
+                frm.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);
             }
             catch (Exception v_e)
             {
