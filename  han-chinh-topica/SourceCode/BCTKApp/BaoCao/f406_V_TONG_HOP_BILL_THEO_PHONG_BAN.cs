@@ -559,12 +559,8 @@ namespace BCTKApp
 		}
 		#endregion
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_Load(object sender, System.EventArgs e) {
+        #region Event
+        private void f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
 			}
@@ -667,6 +663,7 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+#endregion
 	}
 }
 
