@@ -12,7 +12,6 @@ Imports IP.Core.IPData
 Imports IP.Core.IPBusinessService
 Imports IP.Core.IPCommon
 
-
 Public Class US_HT_NGUOI_SU_DUNG
     Inherits US_Object
     Private Const c_TableName As String = "HT_NGUOI_SU_DUNG"
@@ -320,7 +319,6 @@ Public Class US_HT_NGUOI_SU_DUNG
         End Try
 
     End Function
-
 #End Region
 
 

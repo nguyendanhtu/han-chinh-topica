@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f308_DOI_MAT_KHAU_NGUOI_SD));
             this.m_lbl_tk = new System.Windows.Forms.Label();
-            this.m_cbo_tai_khoan = new System.Windows.Forms.ComboBox();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_txt_nhap_lai_mat_khau_moi = new System.Windows.Forms.TextBox();
             this.m_txt_mat_khau_moi = new System.Windows.Forms.TextBox();
             this.m_txt_mat_khau_cu = new System.Windows.Forms.TextBox();
             this.m_lbl_nhap_lai_mat_khau_moi = new System.Windows.Forms.Label();
             this.m_lbl_mat_khau_moi = new System.Windows.Forms.Label();
             this.m_lbl_tk_cu = new System.Windows.Forms.Label();
-            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_txt_tai_khoan = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,14 +53,6 @@
             this.m_lbl_tk.Size = new System.Drawing.Size(79, 13);
             this.m_lbl_tk.TabIndex = 15;
             this.m_lbl_tk.Text = "Chọn tài khoản";
-            // 
-            // m_cbo_tai_khoan
-            // 
-            this.m_cbo_tai_khoan.FormattingEnabled = true;
-            this.m_cbo_tai_khoan.Location = new System.Drawing.Point(186, 14);
-            this.m_cbo_tai_khoan.Name = "m_cbo_tai_khoan";
-            this.m_cbo_tai_khoan.Size = new System.Drawing.Size(197, 21);
-            this.m_cbo_tai_khoan.TabIndex = 14;
             // 
             // ImageList
             // 
@@ -100,56 +92,6 @@
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(445, 36);
             this.m_pnl_out_place_dm.TabIndex = 16;
             // 
-            // m_txt_nhap_lai_mat_khau_moi
-            // 
-            this.m_txt_nhap_lai_mat_khau_moi.Location = new System.Drawing.Point(186, 127);
-            this.m_txt_nhap_lai_mat_khau_moi.Name = "m_txt_nhap_lai_mat_khau_moi";
-            this.m_txt_nhap_lai_mat_khau_moi.Size = new System.Drawing.Size(143, 20);
-            this.m_txt_nhap_lai_mat_khau_moi.TabIndex = 22;
-            this.m_txt_nhap_lai_mat_khau_moi.UseSystemPasswordChar = true;
-            // 
-            // m_txt_mat_khau_moi
-            // 
-            this.m_txt_mat_khau_moi.Location = new System.Drawing.Point(186, 90);
-            this.m_txt_mat_khau_moi.Name = "m_txt_mat_khau_moi";
-            this.m_txt_mat_khau_moi.Size = new System.Drawing.Size(143, 20);
-            this.m_txt_mat_khau_moi.TabIndex = 21;
-            this.m_txt_mat_khau_moi.UseSystemPasswordChar = true;
-            // 
-            // m_txt_mat_khau_cu
-            // 
-            this.m_txt_mat_khau_cu.Location = new System.Drawing.Point(186, 53);
-            this.m_txt_mat_khau_cu.Name = "m_txt_mat_khau_cu";
-            this.m_txt_mat_khau_cu.Size = new System.Drawing.Size(143, 20);
-            this.m_txt_mat_khau_cu.TabIndex = 20;
-            // 
-            // m_lbl_nhap_lai_mat_khau_moi
-            // 
-            this.m_lbl_nhap_lai_mat_khau_moi.AutoSize = true;
-            this.m_lbl_nhap_lai_mat_khau_moi.Location = new System.Drawing.Point(49, 130);
-            this.m_lbl_nhap_lai_mat_khau_moi.Name = "m_lbl_nhap_lai_mat_khau_moi";
-            this.m_lbl_nhap_lai_mat_khau_moi.Size = new System.Drawing.Size(112, 13);
-            this.m_lbl_nhap_lai_mat_khau_moi.TabIndex = 19;
-            this.m_lbl_nhap_lai_mat_khau_moi.Text = "Nhập lại mật khẩu mới";
-            // 
-            // m_lbl_mat_khau_moi
-            // 
-            this.m_lbl_mat_khau_moi.AutoSize = true;
-            this.m_lbl_mat_khau_moi.Location = new System.Drawing.Point(49, 93);
-            this.m_lbl_mat_khau_moi.Name = "m_lbl_mat_khau_moi";
-            this.m_lbl_mat_khau_moi.Size = new System.Drawing.Size(71, 13);
-            this.m_lbl_mat_khau_moi.TabIndex = 18;
-            this.m_lbl_mat_khau_moi.Text = "Mật khẩu mới";
-            // 
-            // m_lbl_tk_cu
-            // 
-            this.m_lbl_tk_cu.AutoSize = true;
-            this.m_lbl_tk_cu.Location = new System.Drawing.Point(49, 56);
-            this.m_lbl_tk_cu.Name = "m_lbl_tk_cu";
-            this.m_lbl_tk_cu.Size = new System.Drawing.Size(67, 13);
-            this.m_lbl_tk_cu.TabIndex = 17;
-            this.m_lbl_tk_cu.Text = "Mật khẩu cũ";
-            // 
             // m_cmd_save
             // 
             this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -180,13 +122,71 @@
             this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Trở về (Esc)";
             // 
+            // m_txt_nhap_lai_mat_khau_moi
+            // 
+            this.m_txt_nhap_lai_mat_khau_moi.Location = new System.Drawing.Point(186, 127);
+            this.m_txt_nhap_lai_mat_khau_moi.Name = "m_txt_nhap_lai_mat_khau_moi";
+            this.m_txt_nhap_lai_mat_khau_moi.Size = new System.Drawing.Size(143, 20);
+            this.m_txt_nhap_lai_mat_khau_moi.TabIndex = 22;
+            this.m_txt_nhap_lai_mat_khau_moi.UseSystemPasswordChar = true;
+            // 
+            // m_txt_mat_khau_moi
+            // 
+            this.m_txt_mat_khau_moi.Location = new System.Drawing.Point(186, 90);
+            this.m_txt_mat_khau_moi.Name = "m_txt_mat_khau_moi";
+            this.m_txt_mat_khau_moi.Size = new System.Drawing.Size(143, 20);
+            this.m_txt_mat_khau_moi.TabIndex = 21;
+            this.m_txt_mat_khau_moi.UseSystemPasswordChar = true;
+            // 
+            // m_txt_mat_khau_cu
+            // 
+            this.m_txt_mat_khau_cu.Location = new System.Drawing.Point(186, 53);
+            this.m_txt_mat_khau_cu.Name = "m_txt_mat_khau_cu";
+            this.m_txt_mat_khau_cu.Size = new System.Drawing.Size(143, 20);
+            this.m_txt_mat_khau_cu.TabIndex = 20;
+            this.m_txt_mat_khau_cu.UseSystemPasswordChar = true;
+            // 
+            // m_lbl_nhap_lai_mat_khau_moi
+            // 
+            this.m_lbl_nhap_lai_mat_khau_moi.AutoSize = true;
+            this.m_lbl_nhap_lai_mat_khau_moi.Location = new System.Drawing.Point(49, 130);
+            this.m_lbl_nhap_lai_mat_khau_moi.Name = "m_lbl_nhap_lai_mat_khau_moi";
+            this.m_lbl_nhap_lai_mat_khau_moi.Size = new System.Drawing.Size(112, 13);
+            this.m_lbl_nhap_lai_mat_khau_moi.TabIndex = 19;
+            this.m_lbl_nhap_lai_mat_khau_moi.Text = "Nhập lại mật khẩu mới";
+            // 
+            // m_lbl_mat_khau_moi
+            // 
+            this.m_lbl_mat_khau_moi.AutoSize = true;
+            this.m_lbl_mat_khau_moi.Location = new System.Drawing.Point(49, 93);
+            this.m_lbl_mat_khau_moi.Name = "m_lbl_mat_khau_moi";
+            this.m_lbl_mat_khau_moi.Size = new System.Drawing.Size(71, 13);
+            this.m_lbl_mat_khau_moi.TabIndex = 18;
+            this.m_lbl_mat_khau_moi.Text = "Mật khẩu mới";
+            // 
+            // m_lbl_tk_cu
+            // 
+            this.m_lbl_tk_cu.AutoSize = true;
+            this.m_lbl_tk_cu.Location = new System.Drawing.Point(49, 56);
+            this.m_lbl_tk_cu.Name = "m_lbl_tk_cu";
+            this.m_lbl_tk_cu.Size = new System.Drawing.Size(67, 13);
+            this.m_lbl_tk_cu.TabIndex = 17;
+            this.m_lbl_tk_cu.Text = "Mật khẩu cũ";
+            // 
+            // m_txt_tai_khoan
+            // 
+            this.m_txt_tai_khoan.Location = new System.Drawing.Point(186, 14);
+            this.m_txt_tai_khoan.Name = "m_txt_tai_khoan";
+            this.m_txt_tai_khoan.Size = new System.Drawing.Size(143, 20);
+            this.m_txt_tai_khoan.TabIndex = 23;
+            // 
             // f308_DOI_MAT_KHAU_NGUOI_SD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 232);
+            this.Controls.Add(this.m_txt_tai_khoan);
             this.Controls.Add(this.m_lbl_tk);
-            this.Controls.Add(this.m_cbo_tai_khoan);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_nhap_lai_mat_khau_moi);
             this.Controls.Add(this.m_txt_mat_khau_moi);
@@ -205,7 +205,6 @@
         #endregion
 
         private System.Windows.Forms.Label m_lbl_tk;
-        private System.Windows.Forms.ComboBox m_cbo_tai_khoan;
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
@@ -216,5 +215,6 @@
         private System.Windows.Forms.Label m_lbl_nhap_lai_mat_khau_moi;
         private System.Windows.Forms.Label m_lbl_mat_khau_moi;
         private System.Windows.Forms.Label m_lbl_tk_cu;
+        private System.Windows.Forms.TextBox m_txt_tai_khoan;
     }
 }
