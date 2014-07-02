@@ -54,6 +54,12 @@ namespace BCTKApp
         private Label m_lbl_trang_thai;
         private ComboBox m_cbo_trang_thai;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        private Label label1;
+        private TextBox m_txt_tk_nguoi_nhan;
+        private Label label2;
+        private TextBox m_txt_tk_noi_nhan;
+        private Label label3;
+        private TextBox m_txt_tk_nguoi_gui;
 		private System.ComponentModel.IContainer components;
 
 		public f405_V_TONG_HOP_CPN_THEO_PHONG_BAN()
@@ -95,6 +101,7 @@ namespace BCTKApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f405_V_TONG_HOP_CPN_THEO_PHONG_BAN));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
@@ -114,7 +121,12 @@ namespace BCTKApp
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.m_lbl_trang_thai = new System.Windows.Forms.Label();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
-            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_txt_tk_nguoi_nhan = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.m_txt_tk_noi_nhan = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.m_txt_tk_nguoi_gui = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -159,6 +171,22 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1034, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xuat_excel.TabIndex = 22;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // m_cmd_insert
             // 
@@ -229,9 +257,9 @@ namespace BCTKApp
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Location = new System.Drawing.Point(0, 202);
+            this.m_fg.Location = new System.Drawing.Point(0, 262);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1022, 389);
+            this.m_fg.Size = new System.Drawing.Size(1022, 329);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -254,7 +282,7 @@ namespace BCTKApp
             this.m_lbl_ma_pb.AutoSize = true;
             this.m_lbl_ma_pb.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ma_pb.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_ma_pb.Location = new System.Drawing.Point(255, 59);
+            this.m_lbl_ma_pb.Location = new System.Drawing.Point(264, 64);
             this.m_lbl_ma_pb.Name = "m_lbl_ma_pb";
             this.m_lbl_ma_pb.Size = new System.Drawing.Size(46, 15);
             this.m_lbl_ma_pb.TabIndex = 22;
@@ -265,7 +293,7 @@ namespace BCTKApp
             this.m_lbl_ten_pb.AutoSize = true;
             this.m_lbl_ten_pb.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ten_pb.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_ten_pb.Location = new System.Drawing.Point(603, 63);
+            this.m_lbl_ten_pb.Location = new System.Drawing.Point(612, 68);
             this.m_lbl_ten_pb.Name = "m_lbl_ten_pb";
             this.m_lbl_ten_pb.Size = new System.Drawing.Size(49, 15);
             this.m_lbl_ten_pb.TabIndex = 22;
@@ -276,7 +304,7 @@ namespace BCTKApp
             this.m_lbl_den_ngay.AutoSize = true;
             this.m_lbl_den_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_den_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_den_ngay.Location = new System.Drawing.Point(603, 92);
+            this.m_lbl_den_ngay.Location = new System.Drawing.Point(612, 97);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
             this.m_lbl_den_ngay.Size = new System.Drawing.Size(62, 15);
             this.m_lbl_den_ngay.TabIndex = 22;
@@ -287,7 +315,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.AutoSize = true;
             this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(255, 92);
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(264, 97);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(55, 15);
             this.m_lbl_tu_ngay.TabIndex = 22;
@@ -298,7 +326,7 @@ namespace BCTKApp
             this.m_lbl_tu_khoa.AutoSize = true;
             this.m_lbl_tu_khoa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tu_khoa.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tu_khoa.Location = new System.Drawing.Point(257, 162);
+            this.m_lbl_tu_khoa.Location = new System.Drawing.Point(266, 208);
             this.m_lbl_tu_khoa.Name = "m_lbl_tu_khoa";
             this.m_lbl_tu_khoa.Size = new System.Drawing.Size(44, 15);
             this.m_lbl_tu_khoa.TabIndex = 22;
@@ -308,7 +336,7 @@ namespace BCTKApp
             // 
             this.m_cbo_ma_pb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_ma_pb.FormattingEnabled = true;
-            this.m_cbo_ma_pb.Location = new System.Drawing.Point(336, 57);
+            this.m_cbo_ma_pb.Location = new System.Drawing.Point(345, 62);
             this.m_cbo_ma_pb.Name = "m_cbo_ma_pb";
             this.m_cbo_ma_pb.Size = new System.Drawing.Size(176, 21);
             this.m_cbo_ma_pb.TabIndex = 23;
@@ -318,7 +346,7 @@ namespace BCTKApp
             // 
             this.m_cbo_ten_pb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_ten_pb.FormattingEnabled = true;
-            this.m_cbo_ten_pb.Location = new System.Drawing.Point(685, 57);
+            this.m_cbo_ten_pb.Location = new System.Drawing.Point(694, 62);
             this.m_cbo_ten_pb.Name = "m_cbo_ten_pb";
             this.m_cbo_ten_pb.Size = new System.Drawing.Size(339, 21);
             this.m_cbo_ten_pb.TabIndex = 23;
@@ -329,7 +357,7 @@ namespace BCTKApp
             this.m_dt_tu_ngay.Checked = false;
             this.m_dt_tu_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dt_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dt_tu_ngay.Location = new System.Drawing.Point(336, 92);
+            this.m_dt_tu_ngay.Location = new System.Drawing.Point(345, 97);
             this.m_dt_tu_ngay.Name = "m_dt_tu_ngay";
             this.m_dt_tu_ngay.ShowCheckBox = true;
             this.m_dt_tu_ngay.Size = new System.Drawing.Size(176, 20);
@@ -342,7 +370,7 @@ namespace BCTKApp
             this.m_dt_den_ngay.Checked = false;
             this.m_dt_den_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dt_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dt_den_ngay.Location = new System.Drawing.Point(685, 92);
+            this.m_dt_den_ngay.Location = new System.Drawing.Point(694, 97);
             this.m_dt_den_ngay.Name = "m_dt_den_ngay";
             this.m_dt_den_ngay.ShowCheckBox = true;
             this.m_dt_den_ngay.Size = new System.Drawing.Size(174, 20);
@@ -351,7 +379,7 @@ namespace BCTKApp
             // 
             // m_txt_tim_kiem
             // 
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(336, 160);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(345, 206);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(176, 20);
             this.m_txt_tim_kiem.TabIndex = 25;
@@ -367,7 +395,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 18;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(600, 155);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(620, 201);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_tim_kiem.TabIndex = 28;
@@ -379,7 +407,7 @@ namespace BCTKApp
             this.m_lbl_trang_thai.AutoSize = true;
             this.m_lbl_trang_thai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_trang_thai.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_trang_thai.Location = new System.Drawing.Point(255, 125);
+            this.m_lbl_trang_thai.Location = new System.Drawing.Point(264, 130);
             this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
             this.m_lbl_trang_thai.Size = new System.Drawing.Size(65, 15);
             this.m_lbl_trang_thai.TabIndex = 22;
@@ -389,38 +417,88 @@ namespace BCTKApp
             // 
             this.m_cbo_trang_thai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_trang_thai.FormattingEnabled = true;
-            this.m_cbo_trang_thai.Location = new System.Drawing.Point(336, 125);
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(345, 130);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(176, 21);
             this.m_cbo_trang_thai.TabIndex = 23;
             this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
             // 
-            // m_cmd_xuat_excel
+            // label1
             // 
-            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 19;
-            this.m_cmd_xuat_excel.ImageList = this.ImageList;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_xuat_excel.TabIndex = 22;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
-            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(615, 133);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 15);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Người nhận:";
+            // 
+            // m_txt_tk_nguoi_nhan
+            // 
+            this.m_txt_tk_nguoi_nhan.Location = new System.Drawing.Point(694, 131);
+            this.m_txt_tk_nguoi_nhan.Name = "m_txt_tk_nguoi_nhan";
+            this.m_txt_tk_nguoi_nhan.Size = new System.Drawing.Size(337, 20);
+            this.m_txt_tk_nguoi_nhan.TabIndex = 25;
+            this.m_txt_tk_nguoi_nhan.TextChanged += new System.EventHandler(this.m_txt_nguoi_nhan_TextChanged);
+            this.m_txt_tk_nguoi_nhan.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(617, 170);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 15);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Nơi nhận:";
+            // 
+            // m_txt_tk_noi_nhan
+            // 
+            this.m_txt_tk_noi_nhan.Location = new System.Drawing.Point(696, 168);
+            this.m_txt_tk_noi_nhan.Name = "m_txt_tk_noi_nhan";
+            this.m_txt_tk_noi_nhan.Size = new System.Drawing.Size(335, 20);
+            this.m_txt_tk_noi_nhan.TabIndex = 25;
+            this.m_txt_tk_noi_nhan.TextChanged += new System.EventHandler(this.m_txt_noi_nhan_TextChanged);
+            this.m_txt_tk_noi_nhan.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(266, 170);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 15);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Người gửi:";
+            // 
+            // m_txt_tk_nguoi_gui
+            // 
+            this.m_txt_tk_nguoi_gui.Location = new System.Drawing.Point(345, 168);
+            this.m_txt_tk_nguoi_gui.Name = "m_txt_tk_nguoi_gui";
+            this.m_txt_tk_nguoi_gui.Size = new System.Drawing.Size(176, 20);
+            this.m_txt_tk_nguoi_gui.TabIndex = 25;
+            this.m_txt_tk_nguoi_gui.TextChanged += new System.EventHandler(this.m_txt_nguoi_gui_TextChanged);
+            this.m_txt_tk_nguoi_gui.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
             // 
             // f405_V_TONG_HOP_CPN_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1034, 627);
             this.Controls.Add(this.m_cmd_tim_kiem);
+            this.Controls.Add(this.m_txt_tk_noi_nhan);
+            this.Controls.Add(this.m_txt_tk_nguoi_nhan);
+            this.Controls.Add(this.m_txt_tk_nguoi_gui);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_dt_den_ngay);
             this.Controls.Add(this.m_dt_tu_ngay);
             this.Controls.Add(this.m_cbo_ten_pb);
             this.Controls.Add(this.m_cbo_trang_thai);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.m_cbo_ma_pb);
             this.Controls.Add(this.m_lbl_tu_khoa);
             this.Controls.Add(this.m_lbl_trang_thai);
@@ -617,11 +695,14 @@ namespace BCTKApp
             string v_str_tu_khoa = m_txt_tim_kiem.Text.Trim();
             decimal v_id_phong_ban = CIPConvert.ToDecimal(m_cbo_ma_pb.SelectedValue);
             decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+            string v_nguoi_gui = m_txt_tk_nguoi_gui.Text;
+            string v_nguoi_nhan = m_txt_tk_nguoi_nhan.Text;
+            string v_noi_nhan = m_txt_tk_noi_nhan.Text;
             DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
             DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
             US_V_TONG_HOP_CPN_THEO_PHONG_BAN v_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
             DS_V_TONG_HOP_CPN_THEO_PHONG_BAN v_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
-            v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai);
+            v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai, v_nguoi_gui, v_nguoi_nhan, v_noi_nhan);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
@@ -693,6 +774,9 @@ namespace BCTKApp
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_txt_tk_nguoi_gui.TextChanged += new EventHandler(m_txt_nguoi_gui_TextChanged);
+            m_txt_tk_nguoi_nhan .TextChanged += new EventHandler(m_txt_nguoi_nhan_TextChanged);
+            m_txt_tk_noi_nhan.TextChanged += new EventHandler(m_txt_noi_nhan_TextChanged);
             //m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 		}
 		#endregion
@@ -884,6 +968,43 @@ namespace BCTKApp
             }
             catch (Exception v_e)
             {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_nguoi_gui_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_nguoi_nhan_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_noi_nhan_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
