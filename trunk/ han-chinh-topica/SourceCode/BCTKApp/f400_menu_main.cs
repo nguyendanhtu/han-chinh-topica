@@ -249,6 +249,20 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_cmd_bc_chi_phi_theo_phap_nhan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN v_frm = new f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         
     }
 }
