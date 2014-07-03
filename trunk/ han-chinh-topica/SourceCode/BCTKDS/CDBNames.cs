@@ -184,6 +184,17 @@ namespace BCTKDS.CDBNames
         public const string TONG_SO_BILL = "TONG_SO_BILL";
         public const string TONG_SO_TIEN = "TONG_SO_TIEN";
     }
+    public class V_TONG_TIEN_BILL_THEO_PHONG_BAN
+    {
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string TONG_SO_BILL = "TONG_SO_BILL";
+        public const string TONG_SO_TIEN = "TONG_SO_TIEN";
+        public const string VAT = "VAT";
+        public const string TONG_TIEN_THANH_TOAN = "TONG_TIEN_THANH_TOAN";
+    }
+
 
     #region HE_THONG
     public class HT_USER_GROUP
