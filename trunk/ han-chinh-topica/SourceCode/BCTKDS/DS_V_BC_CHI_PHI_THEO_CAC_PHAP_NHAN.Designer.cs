@@ -287,6 +287,10 @@ namespace BCTKDS {
             
             private global::System.Data.DataColumn columnTONG_SO_BILL;
             
+            private global::System.Data.DataColumn columnTONG_SO_TIEN;
+            
+            private global::System.Data.DataColumn columnVAT;
+            
             private global::System.Data.DataColumn columnTONG_CHI_PHI;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -356,6 +360,22 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TONG_SO_TIENColumn {
+                get {
+                    return this.columnTONG_SO_TIEN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VATColumn {
+                get {
+                    return this.columnVAT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn TONG_CHI_PHIColumn {
                 get {
                     return this.columnTONG_CHI_PHI;
@@ -399,13 +419,15 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_BC_CHI_PHI_THEO_CAC_PHAP_NHANRow AddV_BC_CHI_PHI_THEO_CAC_PHAP_NHANRow(decimal ID_PHAP_NHAN, string TEN_NGAN, string TEN, int TONG_SO_BILL, decimal TONG_CHI_PHI) {
+            public V_BC_CHI_PHI_THEO_CAC_PHAP_NHANRow AddV_BC_CHI_PHI_THEO_CAC_PHAP_NHANRow(decimal ID_PHAP_NHAN, string TEN_NGAN, string TEN, int TONG_SO_BILL, decimal TONG_SO_TIEN, int VAT, decimal TONG_CHI_PHI) {
                 V_BC_CHI_PHI_THEO_CAC_PHAP_NHANRow rowV_BC_CHI_PHI_THEO_CAC_PHAP_NHANRow = ((V_BC_CHI_PHI_THEO_CAC_PHAP_NHANRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_PHAP_NHAN,
                         TEN_NGAN,
                         TEN,
                         TONG_SO_BILL,
+                        TONG_SO_TIEN,
+                        VAT,
                         TONG_CHI_PHI};
                 rowV_BC_CHI_PHI_THEO_CAC_PHAP_NHANRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_BC_CHI_PHI_THEO_CAC_PHAP_NHANRow);
@@ -439,6 +461,8 @@ namespace BCTKDS {
                 this.columnTEN_NGAN = base.Columns["TEN_NGAN"];
                 this.columnTEN = base.Columns["TEN"];
                 this.columnTONG_SO_BILL = base.Columns["TONG_SO_BILL"];
+                this.columnTONG_SO_TIEN = base.Columns["TONG_SO_TIEN"];
+                this.columnVAT = base.Columns["VAT"];
                 this.columnTONG_CHI_PHI = base.Columns["TONG_CHI_PHI"];
             }
             
@@ -453,12 +477,17 @@ namespace BCTKDS {
                 base.Columns.Add(this.columnTEN);
                 this.columnTONG_SO_BILL = new global::System.Data.DataColumn("TONG_SO_BILL", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTONG_SO_BILL);
+                this.columnTONG_SO_TIEN = new global::System.Data.DataColumn("TONG_SO_TIEN", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTONG_SO_TIEN);
+                this.columnVAT = new global::System.Data.DataColumn("VAT", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVAT);
                 this.columnTONG_CHI_PHI = new global::System.Data.DataColumn("TONG_CHI_PHI", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTONG_CHI_PHI);
                 this.columnTEN_NGAN.AllowDBNull = false;
                 this.columnTEN_NGAN.MaxLength = 500;
                 this.columnTEN.AllowDBNull = false;
                 this.columnTEN.MaxLength = 250;
+                this.columnVAT.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -657,6 +686,39 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TONG_SO_TIEN {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.TONG_SO_TIENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TONG_SO_TIEN\' in table \'V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.TONG_SO_TIENColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int VAT {
+                get {
+                    try {
+                        return ((int)(this[this.tableV_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.VATColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VAT\' in table \'V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.VATColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal TONG_CHI_PHI {
                 get {
                     try {
@@ -694,6 +756,30 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTONG_SO_BILLNull() {
                 this[this.tableV_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.TONG_SO_BILLColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTONG_SO_TIENNull() {
+                return this.IsNull(this.tableV_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.TONG_SO_TIENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTONG_SO_TIENNull() {
+                this[this.tableV_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.TONG_SO_TIENColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVATNull() {
+                return this.IsNull(this.tableV_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.VATColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVATNull() {
+                this[this.tableV_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.VATColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -872,6 +958,8 @@ namespace BCTKDS.DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHANTableAdapters {
             tableMapping.ColumnMappings.Add("TEN_NGAN", "TEN_NGAN");
             tableMapping.ColumnMappings.Add("TEN", "TEN");
             tableMapping.ColumnMappings.Add("TONG_SO_BILL", "TONG_SO_BILL");
+            tableMapping.ColumnMappings.Add("TONG_SO_TIEN", "TONG_SO_TIEN");
+            tableMapping.ColumnMappings.Add("VAT", "VAT");
             tableMapping.ColumnMappings.Add("TONG_CHI_PHI", "TONG_CHI_PHI");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -880,7 +968,7 @@ namespace BCTKDS.DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHANTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BCTKDS.Properties.Settings.Default.ADMIN_SOFTConnectionString;
+            this._connection.ConnectionString = global::BCTKDS.Properties.Settings.Default.ADMIN_SOFTConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -889,8 +977,8 @@ namespace BCTKDS.DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHANTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_PHAP_NHAN, TEN_NGAN, TEN, TONG_SO_BILL, TONG_CHI_PHI FROM dbo.V_BC_CHI_" +
-                "PHI_THEO_CAC_PHAP_NHAN";
+            this._commandCollection[0].CommandText = "SELECT ID_PHAP_NHAN, TEN_NGAN, TEN, TONG_SO_BILL, TONG_SO_TIEN, VAT, TONG_CHI_PHI" +
+                " FROM dbo.V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
