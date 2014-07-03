@@ -186,7 +186,7 @@ namespace BCTKApp
         {
             try
             {
-                f505_CAP_NHAT_TRANG_THAI_CPN v_frm = new f505_CAP_NHAT_TRANG_THAI_CPN();
+                F506_CAP_NHAT_TRANG_THAI v_frm = new F506_CAP_NHAT_TRANG_THAI();
                 v_frm.ShowDialog();
             }
             catch (Exception v_e)

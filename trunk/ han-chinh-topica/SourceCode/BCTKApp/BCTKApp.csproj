@@ -312,6 +312,12 @@
     <Compile Include="ChucNang\f505_CAP_NHAT_TRANG_THAI_CPN.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ChucNang\F506_CAP_NHAT_TRANG_THAI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\F506_CAP_NHAT_TRANG_THAI.designer.cs">
+      <DependentUpon>F506_CAP_NHAT_TRANG_THAI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChucNang\f511_TRA_CUU_TRANG_THAI_CPN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -476,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f505_CAP_NHAT_TRANG_THAI_CPN.resx">
       <DependentUpon>f505_CAP_NHAT_TRANG_THAI_CPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\F506_CAP_NHAT_TRANG_THAI.resx">
+      <DependentUpon>F506_CAP_NHAT_TRANG_THAI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f511_TRA_CUU_TRANG_THAI_CPN.resx">
       <DependentUpon>f511_TRA_CUU_TRANG_THAI_CPN.cs</DependentUpon>
