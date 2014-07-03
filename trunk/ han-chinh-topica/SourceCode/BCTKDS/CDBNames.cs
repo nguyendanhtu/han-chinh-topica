@@ -200,6 +200,8 @@ namespace BCTKDS.CDBNames
         public const string TEN_NGAN = "TEN_NGAN";
         public const string TEN = "TEN";
         public const string TONG_SO_BILL = "TONG_SO_BILL";
+        public const string TONG_SO_TIEN = "TONG_SO_TIEN";
+        public const string VAT = "VAT";
         public const string TONG_CHI_PHI = "TONG_CHI_PHI";
     }
 
