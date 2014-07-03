@@ -412,14 +412,16 @@ namespace BCTKApp
 ,TONG_SO_BILL = 4
 ,MA_PHONG_BAN = 2
 ,TONG_SO_TIEN = 5
+,VAT = 6
+,TONG_TIEN_THANH_TOAN = 7
 
 		}			
 		#endregion
 
 		#region Members
 		ITransferDataRow m_obj_trans;		
-		DS_V_TONG_HOP_BILL_THEO_PHONG_BAN m_ds = new DS_V_TONG_HOP_BILL_THEO_PHONG_BAN();
-		US_V_TONG_HOP_BILL_THEO_PHONG_BAN m_us = new US_V_TONG_HOP_BILL_THEO_PHONG_BAN();
+		DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN m_ds = new DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
+		US_V_TONG_TIEN_BILL_THEO_PHONG_BAN m_us = new US_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
         bool m_trang_thai = false;
 		#endregion
 
@@ -440,24 +442,25 @@ namespace BCTKApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_TONG_HOP_BILL_THEO_PHONG_BAN.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
-			v_htb.Add(V_TONG_HOP_BILL_THEO_PHONG_BAN.ID_PHONG_BAN, e_col_Number.ID_PHONG_BAN);
-			v_htb.Add(V_TONG_HOP_BILL_THEO_PHONG_BAN.TONG_SO_BILL, e_col_Number.TONG_SO_BILL);
-			v_htb.Add(V_TONG_HOP_BILL_THEO_PHONG_BAN.MA_PHONG_BAN, e_col_Number.MA_PHONG_BAN);
-			v_htb.Add(V_TONG_HOP_BILL_THEO_PHONG_BAN.TONG_SO_TIEN, e_col_Number.TONG_SO_TIEN);
-									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_TONG_HOP_BILL_THEO_PHONG_BAN.NewRow());
+			v_htb.Add(V_TONG_TIEN_BILL_THEO_PHONG_BAN.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
+			v_htb.Add(V_TONG_TIEN_BILL_THEO_PHONG_BAN.ID_PHONG_BAN, e_col_Number.ID_PHONG_BAN);
+			v_htb.Add(V_TONG_TIEN_BILL_THEO_PHONG_BAN.TONG_SO_BILL, e_col_Number.TONG_SO_BILL);
+			v_htb.Add(V_TONG_TIEN_BILL_THEO_PHONG_BAN.MA_PHONG_BAN, e_col_Number.MA_PHONG_BAN);
+			v_htb.Add(V_TONG_TIEN_BILL_THEO_PHONG_BAN.TONG_SO_TIEN, e_col_Number.TONG_SO_TIEN);
+            v_htb.Add(V_TONG_TIEN_BILL_THEO_PHONG_BAN.VAT, e_col_Number.VAT);
+            v_htb.Add(V_TONG_TIEN_BILL_THEO_PHONG_BAN.TONG_TIEN_THANH_TOAN, e_col_Number.TONG_TIEN_THANH_TOAN);			
+			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_TONG_TIEN_BILL_THEO_PHONG_BAN.NewRow());
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_V_TONG_HOP_BILL_THEO_PHONG_BAN();			
+			m_ds = new DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN();			
 			m_us.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
 			m_fg.Redraw = true;
 		}
-		private void grid2us_object(US_V_TONG_HOP_BILL_THEO_PHONG_BAN i_us
+		private void grid2us_object(US_V_TONG_TIEN_BILL_THEO_PHONG_BAN i_us
 			, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
@@ -466,7 +469,7 @@ namespace BCTKApp
 		}
 
 	
-		private void us_object2grid(US_V_TONG_HOP_BILL_THEO_PHONG_BAN i_us
+		private void us_object2grid(US_V_TONG_TIEN_BILL_THEO_PHONG_BAN i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
@@ -499,8 +502,8 @@ namespace BCTKApp
             decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
             DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
             DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
-            US_V_TONG_HOP_BILL_THEO_PHONG_BAN v_us = new US_V_TONG_HOP_BILL_THEO_PHONG_BAN();
-            DS_V_TONG_HOP_BILL_THEO_PHONG_BAN v_ds = new DS_V_TONG_HOP_BILL_THEO_PHONG_BAN();
+            US_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_us = new US_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
+            DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_ds = new DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
             v_us.FillDatasetSearch(v_ds, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai, v_id_tu_khoa);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
@@ -526,7 +529,7 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_TONG_HOP_BILL_THEO_PHONG_BAN v_us = new US_V_TONG_HOP_BILL_THEO_PHONG_BAN();
+			US_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_us = new US_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
 			grid2us_object(v_us, m_fg.Row);
 			try {			
 				v_us.BeginTransaction();    											
