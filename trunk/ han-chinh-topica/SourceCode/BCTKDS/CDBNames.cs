@@ -194,6 +194,15 @@ namespace BCTKDS.CDBNames
         public const string VAT = "VAT";
         public const string TONG_TIEN_THANH_TOAN = "TONG_TIEN_THANH_TOAN";
     }
+    public class V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN
+    {
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string TEN_NGAN = "TEN_NGAN";
+        public const string TEN = "TEN";
+        public const string TONG_SO_BILL = "TONG_SO_BILL";
+        public const string TONG_CHI_PHI = "TONG_CHI_PHI";
+    }
+
 
 
     #region HE_THONG
