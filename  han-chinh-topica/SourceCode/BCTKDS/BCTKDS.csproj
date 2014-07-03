@@ -94,6 +94,7 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -281,6 +282,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_TONG_HOP_CPN_THEO_PHONG_BAN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -632,6 +638,17 @@
     </None>
     <None Include="DS_V_TONG_HOP_CPN_THEO_PHONG_BAN.xss">
       <DependentUpon>DS_V_TONG_HOP_CPN_THEO_PHONG_BAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN.xsc">
+      <DependentUpon>DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN.xss">
+      <DependentUpon>DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
