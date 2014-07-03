@@ -420,6 +420,7 @@ namespace BCTKDS.CDBNames
         public const string ID = "ID";
         public const string MA_PHONG_BAN = "MA_PHONG_BAN";
         public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
     }
     public class GD_PHONG_BAN_DINH_MUC
     {
