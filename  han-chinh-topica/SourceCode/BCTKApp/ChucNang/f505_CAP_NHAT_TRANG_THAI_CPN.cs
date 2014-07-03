@@ -723,7 +723,18 @@ namespace BCTKApp
                 //    else i++;
                 
                 //}
-                update_v_dm_bill();
+                for (int i = 1; i <= m_grv_cap_nhat_trang_thai.Rows.Count; i++)
+                {
+                    if (m_grv_cap_nhat_trang_thai.Rows[i]["Check"] != null) 
+                    {
+                        if ((bool)m_grv_cap_nhat_trang_thai.Rows[i]["Check"] == true)
+                        {
+                            update_v_dm_bill();
+                        }
+                    }
+                   
+                }
+                
 
             }
             catch (Exception v_e)
