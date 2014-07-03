@@ -44,6 +44,8 @@ namespace BCTKApp
         private DateTimePicker m_dt_tu_ngay;
         private Label m_lbl_den_ngay;
         private Label m_lbl_tu_ngay;
+        private ComboBox m_cbo_trang_thai;
+        private Label m_lbl_trang_thai;
 		private System.ComponentModel.IContainer components;
 
 		public f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN()
@@ -96,6 +98,8 @@ namespace BCTKApp
             this.m_dt_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_den_ngay = new System.Windows.Forms.Label();
             this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
+            this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
+            this.m_lbl_trang_thai = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -135,10 +139,10 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 493);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(686, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(914, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -150,7 +154,7 @@ namespace BCTKApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(330, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(558, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -166,7 +170,7 @@ namespace BCTKApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(418, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(646, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -198,7 +202,7 @@ namespace BCTKApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(506, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(734, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -214,7 +218,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(594, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(822, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -224,9 +228,9 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 127);
+            this.m_fg.Location = new System.Drawing.Point(0, 174);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(686, 246);
+            this.m_fg.Size = new System.Drawing.Size(914, 319);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -235,7 +239,7 @@ namespace BCTKApp
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(230, 9);
+            this.m_lbl_header.Location = new System.Drawing.Point(308, 9);
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(258, 22);
             this.m_lbl_header.TabIndex = 21;
@@ -246,30 +250,32 @@ namespace BCTKApp
             this.m_dt_den_ngay.Checked = false;
             this.m_dt_den_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dt_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dt_den_ngay.Location = new System.Drawing.Point(474, 60);
+            this.m_dt_den_ngay.Location = new System.Drawing.Point(546, 68);
             this.m_dt_den_ngay.Name = "m_dt_den_ngay";
             this.m_dt_den_ngay.ShowCheckBox = true;
             this.m_dt_den_ngay.Size = new System.Drawing.Size(120, 20);
             this.m_dt_den_ngay.TabIndex = 26;
+            this.m_dt_den_ngay.ValueChanged += new System.EventHandler(this.m_dt_den_ngay_ValueChanged);
             // 
             // m_dt_tu_ngay
             // 
             this.m_dt_tu_ngay.Checked = false;
             this.m_dt_tu_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dt_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dt_tu_ngay.Location = new System.Drawing.Point(199, 60);
+            this.m_dt_tu_ngay.Location = new System.Drawing.Point(271, 68);
             this.m_dt_tu_ngay.Name = "m_dt_tu_ngay";
             this.m_dt_tu_ngay.ShowCheckBox = true;
             this.m_dt_tu_ngay.Size = new System.Drawing.Size(120, 20);
             this.m_dt_tu_ngay.TabIndex = 27;
             this.m_dt_tu_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
+            this.m_dt_tu_ngay.ValueChanged += new System.EventHandler(this.m_dt_tu_ngay_ValueChanged);
             // 
             // m_lbl_den_ngay
             // 
             this.m_lbl_den_ngay.AutoSize = true;
             this.m_lbl_den_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_den_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_den_ngay.Location = new System.Drawing.Point(393, 60);
+            this.m_lbl_den_ngay.Location = new System.Drawing.Point(465, 68);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
             this.m_lbl_den_ngay.Size = new System.Drawing.Size(62, 15);
             this.m_lbl_den_ngay.TabIndex = 24;
@@ -280,16 +286,39 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.AutoSize = true;
             this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(119, 60);
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(191, 68);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(55, 15);
             this.m_lbl_tu_ngay.TabIndex = 25;
             this.m_lbl_tu_ngay.Text = "Từ ngày:";
             // 
+            // m_cbo_trang_thai
+            // 
+            this.m_cbo_trang_thai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbo_trang_thai.FormattingEnabled = true;
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(271, 104);
+            this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(176, 21);
+            this.m_cbo_trang_thai.TabIndex = 29;
+            this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
+            // 
+            // m_lbl_trang_thai
+            // 
+            this.m_lbl_trang_thai.AutoSize = true;
+            this.m_lbl_trang_thai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_trang_thai.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_trang_thai.Location = new System.Drawing.Point(190, 104);
+            this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
+            this.m_lbl_trang_thai.Size = new System.Drawing.Size(65, 15);
+            this.m_lbl_trang_thai.TabIndex = 28;
+            this.m_lbl_trang_thai.Text = "Trạng thái:";
+            // 
             // f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(686, 409);
+            this.ClientSize = new System.Drawing.Size(914, 529);
+            this.Controls.Add(this.m_cbo_trang_thai);
+            this.Controls.Add(this.m_lbl_trang_thai);
             this.Controls.Add(this.m_dt_den_ngay);
             this.Controls.Add(this.m_dt_tu_ngay);
             this.Controls.Add(this.m_lbl_den_ngay);
@@ -316,11 +345,13 @@ namespace BCTKApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			TONG_CHI_PHI = 5
-,TEN_NGAN = 2
-,TONG_SO_BILL = 4
-,ID_PHAP_NHAN = 1
-,TEN = 3
+			TONG_SO_TIEN = 5
+            ,TEN_NGAN = 2
+            ,TONG_SO_BILL = 4
+            ,ID_PHAP_NHAN = 1
+            ,TEN = 3
+            ,VAT = 6
+            ,TONG_CHI_PHI = 7
 
 		}			
 		#endregion
@@ -329,6 +360,7 @@ namespace BCTKApp
 		ITransferDataRow m_obj_trans;		
 		DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN m_ds = new DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN();
 		US_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN m_us = new US_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN();
+        bool m_trang_thai = false;
 		#endregion
 
 		#region Private Methods
@@ -338,7 +370,8 @@ namespace BCTKApp
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
             			CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
-			this.KeyPreview = true;		
+			this.KeyPreview = true;
+            load_cbo_trang_thai();
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
@@ -351,6 +384,8 @@ namespace BCTKApp
 			v_htb.Add(V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.TONG_SO_BILL, e_col_Number.TONG_SO_BILL);
 			v_htb.Add(V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.ID_PHAP_NHAN, e_col_Number.ID_PHAP_NHAN);
 			v_htb.Add(V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.TEN, e_col_Number.TEN);
+            v_htb.Add(V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.TONG_SO_TIEN, e_col_Number.TONG_SO_TIEN);
+            v_htb.Add(V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.VAT, e_col_Number.VAT);
 									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.NewRow());
 			return v_obj_trans;			
@@ -428,6 +463,54 @@ namespace BCTKApp
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 		}
+        private void load_cbo_trang_thai()
+        {
+            m_trang_thai = false;
+            BCTKUS.US_CM_DM_TU_DIEN v_us = new BCTKUS.US_CM_DM_TU_DIEN();
+            BCTKDS.DS_CM_DM_TU_DIEN v_ds = new BCTKDS.DS_CM_DM_TU_DIEN();
+            v_us.FillDataset(v_ds, "where id_loai_tu_dien = " + 12);
+            m_cbo_trang_thai.DataSource = v_ds.CM_DM_TU_DIEN;
+            m_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
+            m_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
+            DataRow v_dr = v_ds.CM_DM_TU_DIEN.NewRow();
+            v_dr[CM_DM_TU_DIEN.ID] = -1;
+            v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 12;
+            v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
+            v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "Tất cả";
+            v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "TRANG_THAI_THU";
+            v_dr[CM_DM_TU_DIEN.GHI_CHU] = " ";
+            v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+            m_cbo_trang_thai.SelectedIndex = 0;
+            m_trang_thai = true;
+        }
+        private void tim_kiem()
+        {
+            decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+            DateTime v_dt_tu_ngay;
+            DateTime v_dt_den_ngay;
+            if (!m_dt_tu_ngay.Checked)
+            {
+                v_dt_tu_ngay = new DateTime(1970, 1, 1);
+            }
+            else
+            {
+                v_dt_tu_ngay = m_dt_tu_ngay.Value;
+            }
+            if (!m_dt_den_ngay.Checked)
+            {
+                v_dt_den_ngay = new DateTime(2050, 1, 1);
+            }
+            else
+            {
+                v_dt_den_ngay = m_dt_den_ngay.Value;
+            }
+            US_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_us = new US_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
+            DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_ds = new DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
+            v_us.FillDatasetSearch(v_ds, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
 		#endregion
 
 //
@@ -489,6 +572,58 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+        private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_trang_thai == true)
+                {
+                    tim_kiem();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_dt_tu_ngay_ValueChanged(object sender, EventArgs e)
+        {
+            {
+                try
+                {
+                    if (m_trang_thai == true)
+                    {
+                        tim_kiem();
+                    }
+                }
+                catch (Exception v_e)
+                {
+
+                    CSystemLog_301.ExceptionHandle(v_e);
+                }
+            }
+        }
+
+        private void m_dt_den_ngay_ValueChanged(object sender, EventArgs e)
+        {
+            {
+                try
+                {
+                    if (m_trang_thai == true)
+                    {
+                        tim_kiem();
+                    }
+                }
+                catch (Exception v_e)
+                {
+
+                    CSystemLog_301.ExceptionHandle(v_e);
+                }
+            }
+        }
 
 	}
 }
