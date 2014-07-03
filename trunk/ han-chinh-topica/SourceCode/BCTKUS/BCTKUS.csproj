@@ -159,6 +159,7 @@
     <Compile Include="US_V_HT_LOG_TRUY_CAP.cs" />
     <Compile Include="US_V_TONG_HOP_BILL_THEO_PHONG_BAN.cs" />
     <Compile Include="US_V_TONG_HOP_CPN_THEO_PHONG_BAN.cs" />
+    <Compile Include="US_V_TONG_TIEN_BILL_THEO_PHONG_BAN.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
