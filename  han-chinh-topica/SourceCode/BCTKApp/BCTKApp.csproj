@@ -301,6 +301,9 @@
     <Compile Include="BaoCao\f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BaoCao\f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -473,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE.resx">
       <DependentUpon>f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.resx">
+      <DependentUpon>f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.resx">
       <DependentUpon>f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.cs</DependentUpon>
