@@ -633,13 +633,22 @@ namespace BCTKApp
             {
                 decimal v_id_phap_nhan;
                 decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+                decimal v_tong_bill;
+                decimal v_tong_chi_phi;
                 DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
                 DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
                 int i_grid_row = m_fg.Selection.TopRow;
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
                 v_id_phap_nhan = CIPConvert.ToDecimal(v_dr[0]);
+                v_tong_bill = CIPConvert.ToDecimal(v_dr[3]);
+                if (v_dr[7] != null)
+                {
+                    v_tong_chi_phi = CIPConvert.ToDecimal(v_dr[7]);
+                }
+                else
+                { v_tong_chi_phi = 0; }
                 f411_V_TONG_HOP_CHI_PHI_THEO_PHONG_BAN_VA_PHAP_NHAN frm = new f411_V_TONG_HOP_CHI_PHI_THEO_PHONG_BAN_VA_PHAP_NHAN();
-                frm.Display_for_chi_tiet(v_id_phap_nhan, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);
+                frm.Display_for_chi_tiet(v_id_phap_nhan, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_chi_phi);
             }
             catch (Exception v_e)
             {
