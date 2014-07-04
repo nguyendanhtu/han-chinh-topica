@@ -504,8 +504,8 @@ namespace BCTKApp
             {
                 v_dt_den_ngay = m_dt_den_ngay.Value;
             }
-            US_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_us = new US_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
-            DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_ds = new DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
+            US_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN v_us = new US_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN();
+            DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN v_ds = new DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN();
             v_us.FillDatasetSearch(v_ds, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
