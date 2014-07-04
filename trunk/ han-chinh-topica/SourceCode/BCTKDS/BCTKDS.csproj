@@ -248,6 +248,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_BC_CHI_TIET_DM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_BC_CHI_TIET_DM.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -566,6 +571,17 @@
     </None>
     <None Include="DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.xss">
       <DependentUpon>DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_BC_CHI_TIET_DM.xsc">
+      <DependentUpon>DS_V_BC_CHI_TIET_DM.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_BC_CHI_TIET_DM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_BC_CHI_TIET_DM.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_BC_CHI_TIET_DM.xss">
+      <DependentUpon>DS_V_BC_CHI_TIET_DM.xsd</DependentUpon>
     </None>
     <None Include="DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.xsc">
       <DependentUpon>DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.xsd</DependentUpon>
