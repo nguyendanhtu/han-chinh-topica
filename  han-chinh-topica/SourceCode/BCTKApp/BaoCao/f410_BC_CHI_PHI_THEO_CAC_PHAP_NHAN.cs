@@ -641,9 +641,9 @@ namespace BCTKApp
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
                 v_id_phap_nhan = CIPConvert.ToDecimal(v_dr[0]);
                 v_tong_bill = CIPConvert.ToDecimal(v_dr[3]);
-                if (v_dr[7] != null)
+                if (v_dr[6] != null)
                 {
-                    v_tong_chi_phi = CIPConvert.ToDecimal(v_dr[7]);
+                    v_tong_chi_phi = CIPConvert.ToDecimal(v_dr[6]);
                 }
                 else
                 { v_tong_chi_phi = 0; }
