@@ -550,8 +550,15 @@ namespace BCTKApp
         {
             BCTKUS.US_CM_DM_TU_DIEN v_us = new BCTKUS.US_CM_DM_TU_DIEN();
             BCTKDS.DS_CM_DM_TU_DIEN v_ds = new BCTKDS.DS_CM_DM_TU_DIEN();
-            v_us.FillDataset(v_ds, "where id = " +m_id_trang_thai);
-            m_cbo_trang_thai.Text = v_ds.Tables[0].Rows[0][4].ToString();
+            if (m_id_trang_thai != -1)
+            {
+                v_us.FillDataset(v_ds, "where id = " + m_id_trang_thai);
+                m_cbo_trang_thai.Text = v_ds.Tables[0].Rows[0][4].ToString();
+            }
+            else
+            {
+                m_cbo_trang_thai.Text = "Tất cả";
+            }
         }
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
