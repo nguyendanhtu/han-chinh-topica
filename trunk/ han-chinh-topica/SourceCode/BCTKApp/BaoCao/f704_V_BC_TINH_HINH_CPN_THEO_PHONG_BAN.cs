@@ -232,6 +232,7 @@ namespace BCTKApp
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg.Location = new System.Drawing.Point(0, 181);
             this.m_fg.Name = "m_fg";
+            this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell;
             this.m_fg.Size = new System.Drawing.Size(956, 263);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
@@ -655,6 +656,7 @@ namespace BCTKApp
                 DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
                 int i_grid_row = m_fg.Selection.TopRow;
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+                //Data v_dc = (DataColumn)m_fg.Cols[i_grid_row].UserData;
                 v_id_phong_ban = CIPConvert.ToDecimal(v_dr[0]);
                 f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE frm = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
                 frm.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);

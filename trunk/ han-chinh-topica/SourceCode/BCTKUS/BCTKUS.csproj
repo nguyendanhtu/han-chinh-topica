@@ -152,6 +152,7 @@
     <Compile Include="US_UT_SEQUENCES.cs" />
     <Compile Include="US_V_BANG_CO_SO_DINH_MUC.cs" />
     <Compile Include="US_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.cs" />
+    <Compile Include="US_V_BC_CHI_TIET_DM.cs" />
     <Compile Include="US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.cs" />
     <Compile Include="US_V_CM_DM_DANG_KY_GUI.cs" />
     <Compile Include="US_V_DINH_MUC_CPN_TUNG_PHONG_BAN.cs" />
