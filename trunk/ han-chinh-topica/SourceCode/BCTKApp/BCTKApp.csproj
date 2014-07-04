@@ -286,6 +286,9 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BaoCao\f411_V_TONG_HOP_CHI_PHI_THEO_PHONG_BAN_PHAP_NHAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BaoCao\f404_CHI_TIET_BILL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -465,6 +468,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCao\f411_V_TONG_HOP_CHI_PHI_THEO_PHONG_BAN_PHAP_NHAN.resx">
+      <DependentUpon>f411_V_TONG_HOP_CHI_PHI_THEO_PHONG_BAN_PHAP_NHAN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f404_CHI_TIET_BILL.resx">
       <DependentUpon>f404_CHI_TIET_BILL.cs</DependentUpon>
     </EmbeddedResource>

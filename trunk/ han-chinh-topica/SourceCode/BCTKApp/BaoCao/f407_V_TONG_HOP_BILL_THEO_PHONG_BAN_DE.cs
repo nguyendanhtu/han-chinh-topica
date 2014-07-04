@@ -329,9 +329,38 @@ namespace BCTKApp
 		#endregion
 
 		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
+        public void Display_for_chi_tiet(decimal ip_v_id_phong_ban, decimal ip_v_id_trang_thai, DateTime ip_v_dt_tu_ngay, DateTime ip_v_dt_den_ngay)
+        {
+            m_obj_trans = get_trans_object(m_fg);
+            format_controls();
+            US_DM_PHONG_BAN v_us_dm_pb = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds_dm_pb = new DS_DM_PHONG_BAN();
+            US_V_TONG_HOP_CPN_THEO_PHONG_BAN v_us_tong_hop_CPN = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
+            DS_V_TONG_HOP_CPN_THEO_PHONG_BAN v_ds_tong_hop_CPN = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
+            v_us_dm_pb.FillDataset(v_ds_dm_pb, "where ID =" + ip_v_id_phong_ban);
+            m_lbl_ten_phong_ban.Text = v_ds_dm_pb.Tables[0].Rows[0][2].ToString();
+            m_lbl_tu_ngay.Text = ip_v_dt_tu_ngay.Date.ToShortDateString();
+            m_lbl_den_ngay.Text = ip_v_dt_den_ngay.Date.ToShortDateString();
+            v_us_tong_hop_CPN.FillDataset_chi_tiet_Bill(v_ds_tong_hop_CPN, ip_v_id_phong_ban, ip_v_id_trang_thai, ip_v_dt_tu_ngay, ip_v_dt_den_ngay);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(v_ds_tong_hop_CPN, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_fg);
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+             , 0
+             , (int)e_col_Number.NGAY_GUI // chỗ này là tên trường mà mình nhóm
+             , (int)e_col_Number.TRANG_THAI // chỗ này là tên trường mà mình Count
+             , "{0}"
+             );
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
+                , 0
+                , (int)e_col_Number.NGAY_GUI
+                , (int)e_col_Number.SO_TIEN
+                , "{0}"
+                );
+            m_fg.Redraw = true;
+            this.ShowDialog();
+        }
+
 		#endregion
 
 		#region Data Structure
@@ -534,39 +563,6 @@ namespace BCTKApp
 
         private void Load_data()
         { }
-
-        public void Display_for_chi_tiet(decimal ip_v_id_phong_ban, decimal ip_v_id_trang_thai, DateTime ip_v_dt_tu_ngay, DateTime ip_v_dt_den_ngay)
-        {
-            m_obj_trans = get_trans_object(m_fg);
-            format_controls();
-            US_DM_PHONG_BAN v_us_dm_pb = new US_DM_PHONG_BAN();
-            DS_DM_PHONG_BAN v_ds_dm_pb = new DS_DM_PHONG_BAN();
-            US_V_TONG_HOP_CPN_THEO_PHONG_BAN v_us_tong_hop_CPN = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
-            DS_V_TONG_HOP_CPN_THEO_PHONG_BAN v_ds_tong_hop_CPN = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
-            v_us_dm_pb.FillDataset(v_ds_dm_pb, "where ID =" + ip_v_id_phong_ban);
-            m_lbl_ten_phong_ban.Text = v_ds_dm_pb.Tables[0].Rows[0][2].ToString();
-            m_lbl_tu_ngay.Text = ip_v_dt_tu_ngay.Date.ToShortDateString();
-            m_lbl_den_ngay.Text = ip_v_dt_den_ngay.Date.ToShortDateString();
-            v_us_tong_hop_CPN.FillDataset_chi_tiet_Bill(v_ds_tong_hop_CPN, ip_v_id_phong_ban, ip_v_id_trang_thai, ip_v_dt_tu_ngay, ip_v_dt_den_ngay);
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(v_ds_tong_hop_CPN, m_fg, m_obj_trans);
-            CGridUtils.MakeSoTT(0, m_fg);
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-             , 0
-             , (int)e_col_Number.NGAY_GUI // chỗ này là tên trường mà mình nhóm
-             , (int)e_col_Number.TRANG_THAI // chỗ này là tên trường mà mình Count
-             , "{0}"
-             );
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
-                , 0
-                , (int)e_col_Number.NGAY_GUI
-                , (int)e_col_Number.SO_TIEN
-                , "{0}"
-                );
-            m_fg.Redraw = true;
-            this.ShowDialog();
-        }
-
         private void m_fg_DoubleClick(object sender, EventArgs e)
         {
             try
