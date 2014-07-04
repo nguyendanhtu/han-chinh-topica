@@ -293,6 +293,7 @@ namespace BCTKApp
             // m_cbo_trang_thai
             // 
             this.m_cbo_trang_thai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbo_trang_thai.Enabled = false;
             this.m_cbo_trang_thai.FormattingEnabled = true;
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(400, 90);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
@@ -428,7 +429,7 @@ namespace BCTKApp
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(751, 183);
+            this.label6.Location = new System.Drawing.Point(680, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 19);
             this.label6.TabIndex = 24;
@@ -439,7 +440,7 @@ namespace BCTKApp
             this.m_lbl_tong_chi_phi.AutoSize = true;
             this.m_lbl_tong_chi_phi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tong_chi_phi.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tong_chi_phi.Location = new System.Drawing.Point(865, 183);
+            this.m_lbl_tong_chi_phi.Location = new System.Drawing.Point(794, 183);
             this.m_lbl_tong_chi_phi.Name = "m_lbl_tong_chi_phi";
             this.m_lbl_tong_chi_phi.Size = new System.Drawing.Size(17, 19);
             this.m_lbl_tong_chi_phi.TabIndex = 24;
@@ -498,7 +499,7 @@ namespace BCTKApp
             m_lbl_ten_phap_nhan.Text = v_ds_td.Tables[0].Rows[0][4].ToString();
             m_lbl_tu_ngay.Text = v_dt_tu_ngay.Date.ToShortDateString();
             m_lbl_den_ngay.Text = v_dt_den_ngay.Date.ToShortDateString();
-            m_lbl_tong_bill.Text = v_tong_bill.ToString();
+            m_lbl_tong_bill.Text = CIPConvert.ToStr(v_tong_bill, "#,###");
             m_lbl_tong_chi_phi.Text = CIPConvert.ToStr(v_tong_chi_phi, "#,###") + "   VNĐ";
             v_us_tong_hop.FillDataset_chi_phi_theo_phong_ban(v_ds_tong_hop, v_id_phap_nhan, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);
             m_fg.Redraw = false;
