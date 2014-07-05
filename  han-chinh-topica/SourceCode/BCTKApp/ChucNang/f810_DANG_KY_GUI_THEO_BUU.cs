@@ -340,23 +340,6 @@ namespace BCTKApp.ChucNang
         }
         private void m_cmd_nhap_excel_Click(object sender, EventArgs e)
         {
-            //OpenFileDialog fdlg = new OpenFileDialog();
-                //fdlg.Title = "Select file";
-                //fdlg.InitialDirectory = @"c:\";
-                //fdlg.Filter = "Excel Sheet(*.xls)|*.xls|All Files(*.*)|*.*";
-                //fdlg.FilterIndex = 1;
-                //fdlg.RestoreDirectory = true;
-                //if (fdlg.ShowDialog() == DialogResult.OK)
-                //{
-                //    Application.DoEvents();
-                //}
-                //string pathConn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + fdlg.FileName + ";Extended Properties=\"Excel 8.0;HDR=Yes;\";";
-                //OleDbConnection conn = new OleDbConnection(pathConn);
-
-                //OleDbDataAdapter myDataAdapter = new OleDbDataAdapter("Select * from [Sheet1$]", conn);
-                //DataTable dt = new DataTable();
-                //myDataAdapter.Fill(dt);
-
                 var m_obj_dialog = new System.Windows.Forms.OpenFileDialog();
                 m_obj_dialog.ShowDialog();
 
