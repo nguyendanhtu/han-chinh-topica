@@ -313,6 +313,15 @@ public class US_V_BC_CHI_TIET_DM : US_Object
 
 #endregion
 #region "Init Functions"
+    public void FillDataset_chi_tiet_dm(DS_V_BC_CHI_TIET_DM ip_v_ds, decimal ip_v_id_phong_ban, DateTime ip_v_dt_tu_ngay, DateTime ip_v_dt_den_ngay)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_BC_CHI_TIET_DM_search");
+        v_stored_proc.addNVarcharInputParam("@ID_PHONG_BAN", ip_v_id_phong_ban);
+        v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_v_dt_tu_ngay);
+        v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_v_dt_den_ngay);
+
+        v_stored_proc.fillDataSetByCommand(this, ip_v_ds);
+    }
 	public US_V_BC_CHI_TIET_DM() 
 	{
 		pm_objDS = new DS_V_BC_CHI_TIET_DM();
