@@ -128,7 +128,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAO
-        HwAAAk1TRnQBSQFMAgEBFgEAAVQBAQFUAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        HwAAAk1TRnQBSQFMAgEBFgEAAXQBAQF0AQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAAWADAAEBAQABCAYAARgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -263,12 +263,6 @@
         AQMBgAEPAYEB/wHAAQ8BwAEHAYgBHwHDA/8BwAEPAZ8B/ws=
 </value>
   </data>
-  <data name="m_fg_load_file.ColumnInfo" xml:space="preserve">
-    <value>17,1,0,0,0,85,Columns:0{Width:12;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	1{Width:50;Caption:"ID";DataType:System.Decimal;TextAlign:RightCenter;}	2{Width:49;Caption:"STT";AllowEditing:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Width:144;Caption:"Ngày";DataType:System.DateTime;Format:"d";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	4{Width:95;Caption:"Loại";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	5{Width:157;Caption:"Mã số";DataType:System.String;TextAlign:CenterCenter;TextAlignFixed:CenterCenter;}	6{Width:82;Caption:"Nơi đến";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	7{Width:98;Caption:"trluong";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	8{Width:117;Caption:"Cước";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	9{Width:105;Caption:"Phí";AllowEditing:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	10{Width:112;Caption:"phxd";AllowEditing:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	11{Width:113;Caption:"tienck";DataType:System.Decimal;TextAlign:RightCenter;}	12{Width:80;Caption:"phihk";DataType:System.Decimal;TextAlign:RightCenter;}	13{Width:119;Caption:"Tiền";DataType:System.Decimal;TextAlign:RightCenter;}	14{Width:104;Caption:"Ghi chú";DataType:System.String;TextAlign:LeftCenter;}	15{Caption:"Trạng thái";DataType:System.String;TextAlign:LeftCenter;}	16{Width:270;Caption:"Diễn giải";DataType:System.String;TextAlign:LeftCenter;}	</value>
-  </data>
-  <data name="m_fg_load_file.Styles" xml:space="preserve">
-    <value>Normal{Font:Microsoft Sans Serif, 8.25pt;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:DarkRed;ForeColor:White;}	Subtotal1{BackColor:Desktop;ForeColor:White;}	Subtotal2{BackColor:Desktop;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>
-  </data>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>159, 36</value>
   </metadata>
@@ -277,7 +271,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAO
-        HwAAAk1TRnQBSQFMAgEBFgEAAVQBAQFUAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        HwAAAk1TRnQBSQFMAgEBFgEAAXQBAQF0AQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAAWADAAEBAQABCAYAARgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -415,4 +409,10 @@
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>269, 36</value>
   </metadata>
+  <data name="m_fg.ColumnInfo" xml:space="preserve">
+    <value>13,1,0,0,0,100,Columns:0{Width:36;AllowSorting:False;Caption:"STT";}	1{Width:108;Caption:"soct";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlign:CenterCenter;}	2{Width:131;Caption:"ngay";DataType:System.DateTime;Format:"yyyy-MM-dd";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	3{Width:63;Caption:"loai";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	4{Width:99;Caption:"barcode";DataType:System.Decimal;TextAlign:LeftCenter;}	5{Width:51;Caption:"noiden";DataType:System.String;TextAlign:LeftCenter;}	6{Width:142;Caption:"trluong";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	7{Width:110;Caption:"cuoc";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	8{Width:108;Caption:"phi";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	9{Width:97;Caption:"phixd";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	10{Width:99;Caption:"tienck";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	11{Width:98;Caption:"tien";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	12{Caption:"ghichu";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	</value>
+  </data>
+  <data name="m_fg.Styles" xml:space="preserve">
+    <value>Normal{Font:Microsoft Sans Serif, 10pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>
+  </data>
 </root>
