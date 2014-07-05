@@ -1,5 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPBusinessService", "IPBusinessService\IPBusinessService.vbproj", "{73CA732C-2CFB-4A14-B0B9-F43763B1C2F3}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPCommon", "IPCommon\IPCommon.vbproj", "{2A74F1D1-C0EE-41FE-A708-A83B285ACCF2}"
@@ -20,7 +20,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCTKUS", "BCTKUS\BCTKUS.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCTKApp", "BCTKApp\BCTKApp.csproj", "{78272235-1F54-4999-968E-A24136D4F875}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCTK_W", "BCTK_W\BCTK_W.csproj", "{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "QuanLyTaiSan", "QuanLyTaiSan\", "{40F9203C-F47D-4E9C-AC61-B8DB114BB324}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		ProjectReferences = "{39dc1a18-a725-4df1-93ce-467c130ceef9}|TCMDS.dll;{a6e36f4b-6825-44a8-9396-c5bbd8630cb0}|BondUS.dll;{2A74F1D1-C0EE-41FE-A708-A83B285ACCF2}|IPCommon.dll;{455CD3A5-79BA-480A-B9BD-D4A7DDA397A8}|IPSystemAdmin.dll;{73CA732C-2CFB-4A14-B0B9-F43763B1C2F3}|IPBusinessService.dll;{B73156C2-7034-4DEA-A308-5E1782FF8DB4}|IPException.dll;{9ACEDD70-FDA2-44D8-A004-3A7EAF86A954}|IPData.dll;{B490EA92-2990-4CBB-B58B-12901AFCCCB5}|IPUserService.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/QuanLyTaiSan"
+		Debug.AspNetCompiler.PhysicalPath = "QuanLyTaiSan\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\QuanLyTaiSan\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/QuanLyTaiSan"
+		Release.AspNetCompiler.PhysicalPath = "QuanLyTaiSan\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\QuanLyTaiSan\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2691"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
@@ -348,36 +367,36 @@ Global
 		{78272235-1F54-4999-968E-A24136D4F875}.SIPDebug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{78272235-1F54-4999-968E-A24136D4F875}.SIPDebug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{78272235-1F54-4999-968E-A24136D4F875}.SIPDebug|x86.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.BondDebug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.BondDebug|Any CPU.Build.0 = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.BondDebug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.BondDebug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.BondDebug|x86.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.iFASDebug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.iFASDebug|Any CPU.Build.0 = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.iFASDebug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.iFASDebug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.iFASDebug|x86.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.PersonalBuild|Any CPU.ActiveCfg = Release|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.PersonalBuild|Any CPU.Build.0 = Release|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.PersonalBuild|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.PersonalBuild|Mixed Platforms.Build.0 = Release|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.PersonalBuild|x86.ActiveCfg = Release|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.Release|x86.ActiveCfg = Release|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.SIPDebug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.SIPDebug|Any CPU.Build.0 = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.SIPDebug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.SIPDebug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{8F94A4FF-BEB5-4F0C-934B-0D2547D0EB80}.SIPDebug|x86.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.BondDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.BondDebug|Any CPU.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.BondDebug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.BondDebug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.BondDebug|x86.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.iFASDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.iFASDebug|Any CPU.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.iFASDebug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.iFASDebug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.iFASDebug|x86.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.PersonalBuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.PersonalBuild|Any CPU.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.PersonalBuild|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.PersonalBuild|Mixed Platforms.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.PersonalBuild|x86.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.Release|x86.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.SIPDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.SIPDebug|Any CPU.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.SIPDebug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.SIPDebug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{40F9203C-F47D-4E9C-AC61-B8DB114BB324}.SIPDebug|x86.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

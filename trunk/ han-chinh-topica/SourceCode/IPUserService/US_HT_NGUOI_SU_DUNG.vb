@@ -4,7 +4,7 @@
 '* Goal: Create User Service Class for HT_NGUOI_SU_DUNG
 '************************************************
 
-option Explicit On
+Option Explicit On
 Option Strict On
 
 
@@ -35,7 +35,7 @@ Public Class US_HT_NGUOI_SU_DUNG
 #Region "Public Properties"
     Public Property dcID() As Decimal
         Get
-            Return CNull.RowNVLDecimal(pm_objdr, "ID")
+            Return CNull.RowNVLDecimal(pm_objDR, "ID")
         End Get
         Set(ByVal Value As Decimal)
             pm_objDR.Item("ID") = Value
@@ -152,9 +152,9 @@ Public Class US_HT_NGUOI_SU_DUNG
         pm_objDR("TRANG_THAI") = System.Convert.DBNull
     End Sub
 
-    
 
-    
+
+
 
     Public Property strBUILT_IN_YN() As String
         Get
@@ -231,13 +231,35 @@ Public Class US_HT_NGUOI_SU_DUNG
         pm_objDS = New DS_HT_NGUOI_SU_DUNG
         pm_strTableName = c_TableName
         Me.FillDataset(pm_objDS, "Where ID = " & Str(i_dbID))
-        pm_objDR = getRowClone(pm_objds.Tables(pm_strTableName).Rows(0))
+        pm_objDR = getRowClone(pm_objDS.Tables(pm_strTableName).Rows(0))
     End Sub
 #End Region
 
 
 
 #Region "PUBLIC INTERFACE"
+    '' Created by LinhDH 2012.05.17
+    '' Linhdh created 27/03/2012
+    Public Function CheckByTenTruyCap(ByVal i_strTenTruyCap As String) As Boolean
+        Dim v_ds As New DS_HT_NGUOI_SU_DUNG
+        Dim v_objMakCmd As New CMakeAndSelectCmd(v_ds, v_ds.HT_NGUOI_SU_DUNG.TableName)
+        v_objMakCmd.AddCondition( _
+            IP.Core.IPData.DBNames.HT_NGUOI_SU_DUNG.TEN_TRUY_CAP _
+            , i_strTenTruyCap _
+            , eKieuDuLieu.KieuString _
+            , eKieuSoSanh.Bang)
+        Me.FillDatasetByCommand(v_ds, v_objMakCmd.getSelectCmd)
+        If (v_ds.HT_NGUOI_SU_DUNG.Rows.Count = 0) Then
+            Return False
+        End If
+        Return True
+    End Function
+    Public Function change_pass_word() As Integer
+        Dim v_cstore As New CStoredProc("pr_HT_NGUOI_SU_DUNG_Change_Password")
+        v_cstore.addNVarcharInputParam("@v_str_mat_khau_moi", Me.strMAT_KHAU)
+        v_cstore.addNVarcharInputParam("@v_str_ten_dang_nhap", Me.strTEN_TRUY_CAP)
+        v_cstore.ExecuteCommand(Me)
+    End Function
     Public Sub InitByTenTruyCap(ByVal i_strTenTruyCap As String)
         Dim v_ds As New DS_HT_NGUOI_SU_DUNG
         Dim v_objMakCmd As New CMakeAndSelectCmd(v_ds, v_ds.HT_NGUOI_SU_DUNG.TableName)

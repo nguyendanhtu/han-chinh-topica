@@ -154,6 +154,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_BILL.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_DON_VI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_DON_VI.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DM_PHONG_BAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -199,6 +204,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_BUSINESS_PROCESS_LOCK.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_HT_CHUC_NANG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_CHUC_NANG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_NHOM_NGUOI_SU_DUNG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -217,6 +227,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_PHAN_QUYEN_HE_THONG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_HT_QUAN_HE_SU_DUNG_DU_LIEU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_QUAN_HE_SU_DUNG_DU_LIEU.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_HT_QUYEN_GROUP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_QUYEN_GROUP.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_HT_QUYEN_USER.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -374,6 +394,17 @@
     <None Include="DS_DM_BILL.xss">
       <DependentUpon>DS_DM_BILL.xsd</DependentUpon>
     </None>
+    <None Include="DS_DM_DON_VI.xsc">
+      <DependentUpon>DS_DM_DON_VI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_DON_VI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_DON_VI.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_DON_VI.xss">
+      <DependentUpon>DS_DM_DON_VI.xsd</DependentUpon>
+    </None>
     <None Include="DS_DM_PHONG_BAN.xsc">
       <DependentUpon>DS_DM_PHONG_BAN.xsd</DependentUpon>
     </None>
@@ -473,6 +504,17 @@
     <None Include="DS_HT_BUSINESS_PROCESS_LOCK.xss">
       <DependentUpon>DS_HT_BUSINESS_PROCESS_LOCK.xsd</DependentUpon>
     </None>
+    <None Include="DS_HT_CHUC_NANG.xsc">
+      <DependentUpon>DS_HT_CHUC_NANG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_CHUC_NANG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_CHUC_NANG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_HT_CHUC_NANG.xss">
+      <DependentUpon>DS_HT_CHUC_NANG.xsd</DependentUpon>
+    </None>
     <None Include="DS_HT_NHOM_NGUOI_SU_DUNG.xsc">
       <DependentUpon>DS_HT_NHOM_NGUOI_SU_DUNG.xsd</DependentUpon>
     </None>
@@ -505,6 +547,28 @@
     </None>
     <None Include="DS_HT_PHAN_QUYEN_HE_THONG.xss">
       <DependentUpon>DS_HT_PHAN_QUYEN_HE_THONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_QUAN_HE_SU_DUNG_DU_LIEU.xsc">
+      <DependentUpon>DS_HT_QUAN_HE_SU_DUNG_DU_LIEU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_QUAN_HE_SU_DUNG_DU_LIEU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_QUAN_HE_SU_DUNG_DU_LIEU.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_HT_QUAN_HE_SU_DUNG_DU_LIEU.xss">
+      <DependentUpon>DS_HT_QUAN_HE_SU_DUNG_DU_LIEU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_QUYEN_GROUP.xsc">
+      <DependentUpon>DS_HT_QUYEN_GROUP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_QUYEN_GROUP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_QUYEN_GROUP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_HT_QUYEN_GROUP.xss">
+      <DependentUpon>DS_HT_QUYEN_GROUP.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_QUYEN_USER.xsc">
       <DependentUpon>DS_HT_QUYEN_USER.xsd</DependentUpon>
