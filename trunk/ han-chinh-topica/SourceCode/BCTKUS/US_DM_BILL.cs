@@ -318,5 +318,32 @@ public class US_DM_BILL : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+    public bool is_existed_bill(US_DM_BILL ip_us_dm_bill, string ip_so_bill) {
+        CStoredProc v_proc = new CStoredProc("pr_bool_check_so_bill");
+        v_proc.addNVarcharInputParam("@SO_BILL", ip_so_bill);
+        SqlParameter v_obj_is_existed_bill = v_proc.addDecimalOutputParam("@bool", -1);
+        v_proc.ExecuteCommand(ip_us_dm_bill);
+        if(CIPConvert.ToDecimal(v_obj_is_existed_bill.Value) == 1) {
+            return true;
+        }
+        return false;
+    }
+    public void update_tien_by_so_bill(string ip_str_so_bill, decimal ip_dc_so_tien) {
+        CStoredProc v_proc = new CStoredProc("pr_update_so_tien_dm_bill");
+        v_proc.addNVarcharInputParam("@sobill", ip_str_so_bill);
+        v_proc.addDecimalInputParam("@sotien", ip_dc_so_tien);
+        v_proc.ExecuteCommand(this);
+    }
+    public bool is_so_tien_null(US_DM_BILL ip_us_dm_bill, string ip_so_bill) {
+        CStoredProc v_proc = new CStoredProc("pr_is_so_tien_null");
+        v_proc.addNVarcharInputParam("@SO_BILL", ip_so_bill);
+        SqlParameter v_obj_is_so_tien_null = v_proc.addDecimalOutputParam("@SO_TIEN", -1);
+        v_proc.ExecuteCommand(ip_us_dm_bill);
+        if(v_obj_is_so_tien_null.Value == null) {
+            return true;
+        }
+        return false;
+    }
+    }
+	
 }
