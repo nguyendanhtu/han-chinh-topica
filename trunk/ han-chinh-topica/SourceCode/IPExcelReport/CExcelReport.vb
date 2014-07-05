@@ -1,9 +1,10 @@
-﻿Option Explicit On 
+﻿Option Explicit On
 Option Strict On
 
 Imports C1.Win.C1FlexGrid
 Imports System.IO
 Imports Excel
+Imports System.Threading
 
 
 Public Class CExcelReport
@@ -73,13 +74,16 @@ Public Class CExcelReport
             Dim v_iGridRow As Integer
             For v_iGridRow = i_fg.Rows.Fixed To i_fg.Rows.Count - 1
                 i_fg(v_iGridRow, i_iGridCol) = _
-                CType(m_objExcelWorksheet.Cells(i_iSheetStartRow + v_iGridRow - i_fg.Rows.Fixed, i_iSheetCol), Excel.Range).Value         
+                CType(m_objExcelWorksheet.Cells(i_iSheetStartRow + v_iGridRow - i_fg.Rows.Fixed, i_iSheetCol), Excel.Range).Value
             Next
             m_objExcelApp.Workbooks.Close()
             m_objExcelApp.Quit()
             Unmount()
+
+
         Catch v_e As Exception
             m_objExcelApp.Workbooks.Close()
+            m_objExcelApp.Quit()
             Unmount()
             Throw v_e
         End Try
