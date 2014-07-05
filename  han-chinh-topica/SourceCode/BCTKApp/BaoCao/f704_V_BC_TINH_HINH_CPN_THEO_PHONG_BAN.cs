@@ -438,6 +438,12 @@ namespace BCTKApp
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
+            for (int i = 0; i < m_fg.Rows.Count;i++ )
+            {
+                //if (CIPConvert.ToDecimal(m_fg.Rows[i][5].ToString()) > 0) i++;
+                //    m_fg.Rows[i].Style.BackColor = Color.Red;
+                
+            }
             m_fg.Redraw = true;
         }
         private void load_cbo_trang_thai()
@@ -655,11 +661,18 @@ namespace BCTKApp
                 DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
                 DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
                 int i_grid_row = m_fg.Selection.TopRow;
+                int i_grid_col=m_fg.Selection.LeftCol;
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
                 //Data v_dc = (DataColumn)m_fg.Cols[i_grid_row].UserData;
                 v_id_phong_ban = CIPConvert.ToDecimal(v_dr[0]);
-                f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE frm = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
-                frm.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);
+                if(i_grid_col==5){
+                    f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
+                    v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
+                }
+                else{
+                    f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
+                    v_frm1.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);
+                }
             }
             catch (Exception v_e)
             {

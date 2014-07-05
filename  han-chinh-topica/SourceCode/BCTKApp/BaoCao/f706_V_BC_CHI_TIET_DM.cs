@@ -45,6 +45,8 @@ namespace BCTKApp
         private Label m_lbl_ten_phong_ban;
         private Label label1;
         private Label m_lbl_header;
+        private Label m_lbl_tong_dm;
+        private Label label3;
 		private System.ComponentModel.IContainer components;
 
 		public f706_V_BC_CHI_TIET_DM()
@@ -98,6 +100,8 @@ namespace BCTKApp
             this.m_lbl_ten_phong_ban = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
+            this.m_lbl_tong_dm = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -137,10 +141,10 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 494);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(885, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(912, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -152,7 +156,7 @@ namespace BCTKApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(529, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(556, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -167,7 +171,7 @@ namespace BCTKApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(617, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(644, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -197,7 +201,7 @@ namespace BCTKApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(705, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(732, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -212,7 +216,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(793, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(820, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -222,9 +226,9 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 133);
+            this.m_fg.Location = new System.Drawing.Point(0, 154);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(885, 240);
+            this.m_fg.Size = new System.Drawing.Size(912, 340);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -233,7 +237,7 @@ namespace BCTKApp
             this.m_lbl_den_ngay.AutoSize = true;
             this.m_lbl_den_ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_den_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_den_ngay.Location = new System.Drawing.Point(783, 69);
+            this.m_lbl_den_ngay.Location = new System.Drawing.Point(692, 69);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
             this.m_lbl_den_ngay.Size = new System.Drawing.Size(81, 19);
             this.m_lbl_den_ngay.TabIndex = 27;
@@ -244,7 +248,7 @@ namespace BCTKApp
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(699, 69);
+            this.label2.Location = new System.Drawing.Point(608, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 19);
             this.label2.TabIndex = 28;
@@ -255,7 +259,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.AutoSize = true;
             this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(581, 69);
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(426, 69);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(81, 19);
             this.m_lbl_tu_ngay.TabIndex = 29;
@@ -266,7 +270,7 @@ namespace BCTKApp
             this.m_lbl_ten_phong_ban.AutoSize = true;
             this.m_lbl_ten_phong_ban.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ten_phong_ban.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_ten_phong_ban.Location = new System.Drawing.Point(60, 69);
+            this.m_lbl_ten_phong_ban.Location = new System.Drawing.Point(37, 120);
             this.m_lbl_ten_phong_ban.Name = "m_lbl_ten_phong_ban";
             this.m_lbl_ten_phong_ban.Size = new System.Drawing.Size(106, 19);
             this.m_lbl_ten_phong_ban.TabIndex = 30;
@@ -277,7 +281,7 @@ namespace BCTKApp
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(505, 69);
+            this.label1.Location = new System.Drawing.Point(350, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 19);
             this.label1.TabIndex = 31;
@@ -293,10 +297,34 @@ namespace BCTKApp
             this.m_lbl_header.TabIndex = 26;
             this.m_lbl_header.Text = "CHI TIẾT CÁC ĐỊNH MỨC THEO PHÒNG BAN";
             // 
+            // m_lbl_tong_dm
+            // 
+            this.m_lbl_tong_dm.AutoSize = true;
+            this.m_lbl_tong_dm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tong_dm.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_tong_dm.Location = new System.Drawing.Point(717, 120);
+            this.m_lbl_tong_dm.Name = "m_lbl_tong_dm";
+            this.m_lbl_tong_dm.Size = new System.Drawing.Size(17, 19);
+            this.m_lbl_tong_dm.TabIndex = 32;
+            this.m_lbl_tong_dm.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(573, 120);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 19);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Tổng định mức:";
+            // 
             // f706_V_BC_CHI_TIET_DM
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(885, 409);
+            this.ClientSize = new System.Drawing.Size(912, 530);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.m_lbl_tong_dm);
             this.Controls.Add(this.m_lbl_den_ngay);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.m_lbl_tu_ngay);
@@ -320,6 +348,40 @@ namespace BCTKApp
 		public void display(){			
 			this.ShowDialog();
 		}
+        public void Display_for_chi_tiet(decimal ip_v_id_phong_ban, DateTime ip_v_dt_tu_ngay, DateTime ip_v_dt_den_ngay)
+        {
+            m_obj_trans = get_trans_object(m_fg);
+            format_controls();
+            US_DM_PHONG_BAN v_us_dm_pb = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds_dm_pb = new DS_DM_PHONG_BAN();
+            v_us_dm_pb.FillDataset(v_ds_dm_pb, "where ID =" + ip_v_id_phong_ban);
+            m_lbl_ten_phong_ban.Text = v_ds_dm_pb.Tables[0].Rows[0][2].ToString();
+            m_lbl_tu_ngay.Text = ip_v_dt_tu_ngay.Date.ToShortDateString();
+            m_lbl_den_ngay.Text = ip_v_dt_den_ngay.Date.ToShortDateString();
+            //DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            //US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            //m_us.FillDataset_chi_tiet_dm(m_ds, ip_v_id_phong_ban, ip_v_dt_tu_ngay, ip_v_dt_den_ngay);
+            m_dt_den_ngay = ip_v_dt_den_ngay;
+            m_dt_tu_ngay = ip_v_dt_tu_ngay;
+            m_id_phong_ban = ip_v_id_phong_ban;
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_fg);
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+             , 0
+             , (int)e_col_Number.LOAI_TK // chỗ này là tên trường mà mình nhóm
+             , (int)e_col_Number.GIA_TRI_THONG_KE // chỗ này là tên trường mà mình Count
+             , "{0}"
+             );
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
+                , 0
+                , (int)e_col_Number.LOAI_TK
+                , (int)e_col_Number.DINH_MUC
+                , "{0}"
+                );
+            m_fg.Redraw = true;
+            this.ShowDialog();
+        }
 		#endregion
 
 		#region Data Structure
@@ -337,19 +399,27 @@ namespace BCTKApp
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;		
+		ITransferDataRow m_obj_trans;	
+	    decimal m_id_phong_ban;
+        DateTime m_dt_tu_ngay, m_dt_den_ngay;
 		DS_V_BC_CHI_TIET_DM m_ds = new DS_V_BC_CHI_TIET_DM();
 		US_V_BC_CHI_TIET_DM m_us = new US_V_BC_CHI_TIET_DM();
+        
 		#endregion
 
 		#region Private Methods
 		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_fg);
-			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
-			set_define_events();
-			this.KeyPreview = true;		
+            //CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_fg);
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            //m_fg.Tree.Column = (int)e_col_Number.TEN_THUOC;
+            m_fg.Tree.Column = (int)e_col_Number.LOAI_TK;
+            m_fg.Cols[(int)e_col_Number.LOAI_TK].Visible = false;
+            m_fg.Cols[0].Caption = "STT";
+            m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.Complete;
+            set_define_events();
+            this.KeyPreview = true;
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
@@ -370,10 +440,24 @@ namespace BCTKApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_V_BC_CHI_TIET_DM();			
-			m_us.FillDataset(m_ds);
+			m_ds = new DS_V_BC_CHI_TIET_DM();
+            m_us.FillDataset_chi_tiet_dm(m_ds, m_id_phong_ban, m_dt_tu_ngay, m_dt_den_ngay);
 			m_fg.Redraw = false;
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+            , 0
+            , (int)e_col_Number.LOAI_TK // chỗ này là tên trường mà mình nhóm
+            , (int)e_col_Number.GIA_TRI_THONG_KE // chỗ này là tên trường mà mình Count
+            , "{0}"
+            );
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
+                , 0
+                , (int)e_col_Number.LOAI_TK
+                , (int)e_col_Number.DINH_MUC
+                , "{0}"
+                );
+            m_fg.Redraw = true;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_V_BC_CHI_TIET_DM i_us
