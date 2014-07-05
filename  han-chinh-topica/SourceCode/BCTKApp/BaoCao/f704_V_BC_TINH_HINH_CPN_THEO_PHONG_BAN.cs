@@ -451,10 +451,19 @@ namespace BCTKApp
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
-            for (int i = 0; i < m_fg.Rows.Count;i++ )
+            //DataGridViewRow row =new DataGridViewRow();
+            ////if (Convert.ToInt32(row.Cells[7].Value) < Convert.ToInt32(row.Cells[10].Value))
+            //    //{
+            
+            //        row.DefaultCellStyle.BackColor = Color.Red;
+                
+            for (int i = m_fg.Rows.Fixed; i < m_fg.Rows.Count;i++ )
             {
-                //if (CIPConvert.ToDecimal(m_fg.Rows[i][5].ToString()) > 0) i++;
-                //    m_fg.Rows[i].Style.BackColor = Color.Red;
+                if (m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT] == null) continue;
+                if (!CIPConvert.is_valid_number( m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT])) continue;
+                if (CIPConvert.ToDecimal((m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT]).ToString()) > 20) {
+                    m_fg.Rows[i].Style = m_fg.Styles["CustomStyle1"];
+                }
                 
             }
             m_fg.Redraw = true;
