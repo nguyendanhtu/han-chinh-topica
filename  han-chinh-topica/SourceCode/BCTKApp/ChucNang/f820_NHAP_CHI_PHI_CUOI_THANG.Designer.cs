@@ -32,25 +32,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f820_NHAP_CHI_PHI_CUOI_THANG));
             this.m_dgl_open_file = new System.Windows.Forms.OpenFileDialog();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_fg_load_file = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_lbl_label_tong_sl_tp = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_pnl_bot = new System.Windows.Forms.Panel();
             this.m_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_thoat = new SIS.Controls.Button.SiSButton();
-            this.m_lbl_tong_so_luong = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.m_cmd_luu = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_kiem_tra = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_load_ds = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_lbl_loading = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg_load_file)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.m_cmd_kiem_tra_dl = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_so_sanh = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.m_lbl_danh_sach_loi = new System.Windows.Forms.Label();
+            this.m_lbox_ds_loi = new System.Windows.Forms.ListBox();
+            this.m_pnl_bot.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_dgl_open_file
@@ -84,31 +86,6 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
-            // m_fg_load_file
-            // 
-            this.m_fg_load_file.AllowDelete = true;
-            this.m_fg_load_file.ColumnInfo = resources.GetString("m_fg_load_file.ColumnInfo");
-            this.m_fg_load_file.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg_load_file.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_fg_load_file.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcross;
-            this.m_fg_load_file.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcross;
-            this.m_fg_load_file.Location = new System.Drawing.Point(0, 97);
-            this.m_fg_load_file.Name = "m_fg_load_file";
-            this.m_fg_load_file.Size = new System.Drawing.Size(927, 344);
-            this.m_fg_load_file.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_load_file.Styles"));
-            this.m_fg_load_file.TabIndex = 10;
-            // 
-            // m_lbl_label_tong_sl_tp
-            // 
-            this.m_lbl_label_tong_sl_tp.AutoSize = true;
-            this.m_lbl_label_tong_sl_tp.Enabled = false;
-            this.m_lbl_label_tong_sl_tp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_label_tong_sl_tp.Location = new System.Drawing.Point(512, 24);
-            this.m_lbl_label_tong_sl_tp.Name = "m_lbl_label_tong_sl_tp";
-            this.m_lbl_label_tong_sl_tp.Size = new System.Drawing.Size(211, 16);
-            this.m_lbl_label_tong_sl_tp.TabIndex = 14;
-            this.m_lbl_label_tong_sl_tp.Text = "Tổng số bưu nhập vào từ flie Excel";
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -140,15 +117,15 @@
             // 
             this.openFileDialog1.Filter = "Excel files|*.xls";
             // 
-            // panel1
+            // m_pnl_bot
             // 
-            this.panel1.Controls.Add(this.m_xuat_excel);
-            this.panel1.Controls.Add(this.m_cmd_thoat);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 441);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(927, 40);
-            this.panel1.TabIndex = 11;
+            this.m_pnl_bot.Controls.Add(this.m_xuat_excel);
+            this.m_pnl_bot.Controls.Add(this.m_cmd_thoat);
+            this.m_pnl_bot.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_pnl_bot.Location = new System.Drawing.Point(0, 577);
+            this.m_pnl_bot.Name = "m_pnl_bot";
+            this.m_pnl_bot.Size = new System.Drawing.Size(1253, 40);
+            this.m_pnl_bot.TabIndex = 11;
             // 
             // m_xuat_excel
             // 
@@ -175,85 +152,12 @@
             this.m_cmd_thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_thoat.ImageIndex = 12;
             this.m_cmd_thoat.ImageList = this.imageList1;
-            this.m_cmd_thoat.Location = new System.Drawing.Point(834, 0);
+            this.m_cmd_thoat.Location = new System.Drawing.Point(1160, 0);
             this.m_cmd_thoat.Name = "m_cmd_thoat";
             this.m_cmd_thoat.Size = new System.Drawing.Size(93, 40);
             this.m_cmd_thoat.TabIndex = 1;
             this.m_cmd_thoat.Text = "Thoát";
             this.m_cmd_thoat.UseVisualStyleBackColor = true;
-            // 
-            // m_lbl_tong_so_luong
-            // 
-            this.m_lbl_tong_so_luong.AutoSize = true;
-            this.m_lbl_tong_so_luong.Enabled = false;
-            this.m_lbl_tong_so_luong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tong_so_luong.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tong_so_luong.Location = new System.Drawing.Point(744, 24);
-            this.m_lbl_tong_so_luong.Name = "m_lbl_tong_so_luong";
-            this.m_lbl_tong_so_luong.Size = new System.Drawing.Size(23, 16);
-            this.m_lbl_tong_so_luong.TabIndex = 14;
-            this.m_lbl_tong_so_luong.Text = "...";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.m_lbl_tong_so_luong);
-            this.panel3.Controls.Add(this.m_lbl_label_tong_sl_tp);
-            this.panel3.Controls.Add(this.m_cmd_luu);
-            this.panel3.Controls.Add(this.m_cmd_kiem_tra);
-            this.panel3.Controls.Add(this.m_cmd_load_ds);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 53);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(927, 44);
-            this.panel3.TabIndex = 9;
-            // 
-            // m_cmd_luu
-            // 
-            this.m_cmd_luu.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_luu.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_luu.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_luu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_luu.ImageIndex = 10;
-            this.m_cmd_luu.ImageList = this.imageList1;
-            this.m_cmd_luu.Location = new System.Drawing.Point(340, 0);
-            this.m_cmd_luu.Name = "m_cmd_luu";
-            this.m_cmd_luu.Size = new System.Drawing.Size(142, 44);
-            this.m_cmd_luu.TabIndex = 2;
-            this.m_cmd_luu.Text = "3. Lưu DS bưu";
-            this.m_cmd_luu.UseVisualStyleBackColor = true;
-            // 
-            // m_cmd_kiem_tra
-            // 
-            this.m_cmd_kiem_tra.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_kiem_tra.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_kiem_tra.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_kiem_tra.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_kiem_tra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_kiem_tra.ImageIndex = 13;
-            this.m_cmd_kiem_tra.ImageList = this.imageList1;
-            this.m_cmd_kiem_tra.Location = new System.Drawing.Point(198, 0);
-            this.m_cmd_kiem_tra.Name = "m_cmd_kiem_tra";
-            this.m_cmd_kiem_tra.Size = new System.Drawing.Size(142, 44);
-            this.m_cmd_kiem_tra.TabIndex = 1;
-            this.m_cmd_kiem_tra.Text = "2. Kiểm tra dữ liệu";
-            this.m_cmd_kiem_tra.UseVisualStyleBackColor = true;
-            // 
-            // m_cmd_load_ds
-            // 
-            this.m_cmd_load_ds.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_load_ds.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_load_ds.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_load_ds.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_load_ds.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_load_ds.ImageIndex = 8;
-            this.m_cmd_load_ds.ImageList = this.imageList1;
-            this.m_cmd_load_ds.Location = new System.Drawing.Point(0, 0);
-            this.m_cmd_load_ds.Name = "m_cmd_load_ds";
-            this.m_cmd_load_ds.Size = new System.Drawing.Size(198, 44);
-            this.m_cmd_load_ds.TabIndex = 0;
-            this.m_cmd_load_ds.Text = "1. Nhập DS bưu từ file excel";
-            this.m_cmd_load_ds.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -263,7 +167,7 @@
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(927, 53);
+            this.panel2.Size = new System.Drawing.Size(1253, 36);
             this.panel2.TabIndex = 8;
             // 
             // m_lbl_loading
@@ -271,7 +175,7 @@
             this.m_lbl_loading.AutoSize = true;
             this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
-            this.m_lbl_loading.Location = new System.Drawing.Point(706, 17);
+            this.m_lbl_loading.Location = new System.Drawing.Point(1087, 9);
             this.m_lbl_loading.Name = "m_lbl_loading";
             this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
             this.m_lbl_loading.TabIndex = 14;
@@ -283,28 +187,133 @@
             this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(927, 45);
+            this.m_lbl_header.Size = new System.Drawing.Size(1253, 33);
             this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "F130 - Nhập thông tin chi phí cuối tháng";
+            this.m_lbl_header.Text = "F820 - Nhập chi phí cuối tháng";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.m_cmd_kiem_tra_dl);
+            this.panel3.Controls.Add(this.m_cmd_so_sanh);
+            this.panel3.Controls.Add(this.m_cmd_nhap_excel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 36);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1253, 38);
+            this.panel3.TabIndex = 17;
+            // 
+            // m_cmd_kiem_tra_dl
+            // 
+            this.m_cmd_kiem_tra_dl.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_kiem_tra_dl.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_kiem_tra_dl.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_kiem_tra_dl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_kiem_tra_dl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_kiem_tra_dl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_kiem_tra_dl.ImageIndex = 8;
+            this.m_cmd_kiem_tra_dl.ImageList = this.imageList1;
+            this.m_cmd_kiem_tra_dl.Location = new System.Drawing.Point(128, 0);
+            this.m_cmd_kiem_tra_dl.Name = "m_cmd_kiem_tra_dl";
+            this.m_cmd_kiem_tra_dl.Size = new System.Drawing.Size(181, 38);
+            this.m_cmd_kiem_tra_dl.TabIndex = 1;
+            this.m_cmd_kiem_tra_dl.Text = "2. Kiểm tra dữ liệu đưa vào ";
+            this.m_cmd_kiem_tra_dl.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_so_sanh
+            // 
+            this.m_cmd_so_sanh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_so_sanh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_so_sanh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_so_sanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_so_sanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_so_sanh.ImageIndex = 13;
+            this.m_cmd_so_sanh.ImageList = this.imageList1;
+            this.m_cmd_so_sanh.Location = new System.Drawing.Point(315, 0);
+            this.m_cmd_so_sanh.Name = "m_cmd_so_sanh";
+            this.m_cmd_so_sanh.Size = new System.Drawing.Size(330, 38);
+            this.m_cmd_so_sanh.TabIndex = 2;
+            this.m_cmd_so_sanh.Text = "3. Đối chiếu và cập nhật số tiền từng bưu vào phần mềm";
+            this.m_cmd_so_sanh.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_nhap_excel
+            // 
+            this.m_cmd_nhap_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_nhap_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_nhap_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_nhap_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_nhap_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_nhap_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_nhap_excel.ImageIndex = 8;
+            this.m_cmd_nhap_excel.ImageList = this.imageList1;
+            this.m_cmd_nhap_excel.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_nhap_excel.Name = "m_cmd_nhap_excel";
+            this.m_cmd_nhap_excel.Size = new System.Drawing.Size(128, 38);
+            this.m_cmd_nhap_excel.TabIndex = 0;
+            this.m_cmd_nhap_excel.Text = "1. Nhập từ file excel";
+            this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
+            // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 74);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Rows.Count = 2;
+            this.m_fg.Size = new System.Drawing.Size(1253, 329);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 18;
+            this.m_fg.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.m_lbl_danh_sach_loi);
+            this.panel4.Controls.Add(this.m_lbox_ds_loi);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 403);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1253, 174);
+            this.panel4.TabIndex = 19;
+            // 
+            // m_lbl_danh_sach_loi
+            // 
+            this.m_lbl_danh_sach_loi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_danh_sach_loi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_danh_sach_loi.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_danh_sach_loi.Name = "m_lbl_danh_sach_loi";
+            this.m_lbl_danh_sach_loi.Size = new System.Drawing.Size(1253, 23);
+            this.m_lbl_danh_sach_loi.TabIndex = 3;
+            this.m_lbl_danh_sach_loi.Text = "Danh sách lỗi";
+            this.m_lbl_danh_sach_loi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // m_lbox_ds_loi
+            // 
+            this.m_lbox_ds_loi.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_lbox_ds_loi.FormattingEnabled = true;
+            this.m_lbox_ds_loi.Location = new System.Drawing.Point(0, 27);
+            this.m_lbox_ds_loi.Name = "m_lbox_ds_loi";
+            this.m_lbox_ds_loi.Size = new System.Drawing.Size(1253, 147);
+            this.m_lbox_ds_loi.TabIndex = 2;
             // 
             // f820_NHAP_CHI_PHI_CUOI_THANG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 481);
-            this.Controls.Add(this.m_fg_load_file);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1253, 617);
+            this.Controls.Add(this.m_fg);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.m_pnl_bot);
             this.Controls.Add(this.panel2);
             this.Name = "f820_NHAP_CHI_PHI_CUOI_THANG";
             this.Text = "F820 - Nhập chi phí cuối tháng";
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg_load_file)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.m_pnl_bot.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -313,20 +322,21 @@
 
         private System.Windows.Forms.OpenFileDialog m_dgl_open_file;
         internal System.Windows.Forms.ImageList ImageList;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg_load_file;
-        private System.Windows.Forms.Label m_lbl_label_tong_sl_tp;
         internal System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel m_pnl_bot;
         private SIS.Controls.Button.SiSButton m_xuat_excel;
         private SIS.Controls.Button.SiSButton m_cmd_thoat;
-        private System.Windows.Forms.Label m_lbl_tong_so_luong;
-        private System.Windows.Forms.Panel panel3;
-        private SIS.Controls.Button.SiSButton m_cmd_luu;
-        private SIS.Controls.Button.SiSButton m_cmd_kiem_tra;
-        private SIS.Controls.Button.SiSButton m_cmd_load_ds;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label m_lbl_loading;
         private System.Windows.Forms.Label m_lbl_header;
+        private System.Windows.Forms.Panel panel3;
+        private SIS.Controls.Button.SiSButton m_cmd_nhap_excel;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ListBox m_lbox_ds_loi;
+        private System.Windows.Forms.Label m_lbl_danh_sach_loi;
+        private SIS.Controls.Button.SiSButton m_cmd_kiem_tra_dl;
+        private SIS.Controls.Button.SiSButton m_cmd_so_sanh;
     }
 }
