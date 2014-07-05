@@ -360,7 +360,6 @@ namespace BCTKApp
             m_fg.Redraw = true;
             this.ShowDialog();
         }
-
 		#endregion
 
 		#region Data Structure
@@ -497,7 +496,7 @@ namespace BCTKApp
 		//	v_fDE.display(m_us);
 		}
 		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
