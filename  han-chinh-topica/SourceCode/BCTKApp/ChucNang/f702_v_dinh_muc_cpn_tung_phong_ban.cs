@@ -39,12 +39,13 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_view;
-        private Label label1;
-        internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
         private Label m_lbl_header;
-        private Label label4;
         private DateTimePicker m_dat_tai_ngay;
+        private Label m_lbl_tu_khoa;
+        private Label m_lbl_tu_ngay;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private Label label2;
 		private System.ComponentModel.IContainer components;
 
 		public f702_v_dinh_muc_cpn_tung_phong_ban()
@@ -92,12 +93,13 @@ namespace BCTKApp
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_header = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.m_dat_tai_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_tu_khoa = new System.Windows.Forms.Label();
+            this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -228,30 +230,6 @@ namespace BCTKApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(97, 123);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 2829;
-            this.label1.Text = "Tại ngày";
-            // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_search.ImageIndex = 18;
-            this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(480, 78);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 2833;
-            this.m_cmd_search.Text = "Tìm kiếm";
-            // 
             // m_txt_tim_kiem
             // 
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(173, 83);
@@ -270,16 +248,6 @@ namespace BCTKApp
             this.m_lbl_header.TabIndex = 2835;
             this.m_lbl_header.Text = "ĐỊNH MỨC CHUYỂN PHÁT NHANH TỪNG PHÒNG BAN";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(97, 86);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 2836;
-            this.label4.Text = "Từ khóa";
-            // 
             // m_dat_tai_ngay
             // 
             this.m_dat_tai_ngay.Checked = false;
@@ -290,16 +258,65 @@ namespace BCTKApp
             this.m_dat_tai_ngay.Size = new System.Drawing.Size(150, 20);
             this.m_dat_tai_ngay.TabIndex = 2837;
             // 
+            // m_lbl_tu_khoa
+            // 
+            this.m_lbl_tu_khoa.AutoSize = true;
+            this.m_lbl_tu_khoa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tu_khoa.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_tu_khoa.Location = new System.Drawing.Point(97, 85);
+            this.m_lbl_tu_khoa.Name = "m_lbl_tu_khoa";
+            this.m_lbl_tu_khoa.Size = new System.Drawing.Size(54, 15);
+            this.m_lbl_tu_khoa.TabIndex = 2838;
+            this.m_lbl_tu_khoa.Text = "Từ khóa:";
+            // 
+            // m_lbl_tu_ngay
+            // 
+            this.m_lbl_tu_ngay.AutoSize = true;
+            this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(97, 118);
+            this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
+            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(57, 15);
+            this.m_lbl_tu_ngay.TabIndex = 2839;
+            this.m_lbl_tu_ngay.Text = "Tại ngày:";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ForeColor = System.Drawing.Color.Maroon;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(475, 78);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 2840;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(794, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 15);
+            this.label2.TabIndex = 2841;
+            this.label2.Text = "Đơn vị tính: VNĐ";
+            // 
             // f702_v_dinh_muc_cpn_tung_phong_ban
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(901, 475);
-            this.Controls.Add(this.m_dat_tai_ngay);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.m_lbl_header);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.m_cmd_search);
+            this.Controls.Add(this.m_lbl_tu_ngay);
+            this.Controls.Add(this.m_lbl_tu_khoa);
+            this.Controls.Add(this.m_dat_tai_ngay);
+            this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_txt_tim_kiem);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f702_v_dinh_muc_cpn_tung_phong_ban";
