@@ -443,6 +443,13 @@ namespace BCTKApp
 			m_ds = new DS_V_BC_CHI_TIET_DM();
             m_us.FillDataset_chi_tiet_dm(m_ds, m_id_phong_ban, m_dt_tu_ngay, m_dt_den_ngay);
 			m_fg.Redraw = false;
+            decimal v_dc_tong_doanh_thu = 0;
+            //m_v_us.get_tong_doanh_thu(v_dc_tong_doanh_thu);
+            for (int i = 0; i < m_ds.V_BC_CHI_TIET_DM.Count; i++)
+            {
+                v_dc_tong_doanh_thu += CIPConvert.ToDecimal(m_ds.Tables[0].Rows[i][m_ds.V_BC_CHI_TIET_DM.DINH_MUCColumn]);
+            }
+            m_lbl_tong_dm.Text = CIPConvert.ToStr(v_dc_tong_doanh_thu, "#,###.##") + "   VNĐ";
             //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
             //, 0
             //, (int)e_col_Number.LOAI_TK // chỗ này là tên trường mà mình nhóm
