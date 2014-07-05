@@ -6,6 +6,38 @@ using System.Configuration;
 
 namespace BCTKDS.CDBNames
 {
+    public class HT_CHUC_NANG
+    {
+        public const string ID = "ID";
+        public const string TEN_CHUC_NANG = "TEN_CHUC_NANG";
+        public const string URL_FORM = "URL_FORM";
+        public const string TRANG_THAI_YN = "TRANG_THAI_YN";
+        public const string VI_TRI = "VI_TRI";
+        public const string CHUC_NANG_PARENT_ID = "CHUC_NANG_PARENT_ID";
+        public const string HIEN_THI_YN = "HIEN_THI_YN";
+    }
+    public class HT_QUYEN_GROUP
+    {
+        public const string ID = "ID";
+        public const string ID_USER_GROUP = "ID_USER_GROUP";
+        public const string ID_QUYEN = "ID_QUYEN";
+    }
+    public class DM_DON_VI
+    {
+        public const string ID = "ID";
+        public const string MA_VIET_TAT = "MA_VIET_TAT";
+        public const string TEN_DAY_DU = "TEN_DAY_DU";
+        public const string MA_SO_THUE = "MA_SO_THUE";
+        public const string DIA_CHI = "DIA_CHI";
+        public const string GHI_CHU_1 = "GHI_CHU_1";
+        public const string GHI_CHU_2 = "GHI_CHU_2";
+        public const string GHI_CHU_3 = "GHI_CHU_3";
+        public const string TEN_DON_VI_CAP_TREN = "TEN_DON_VI_CAP_TREN";
+        public const string NGUOI_QUAN_TRI = "NGUOI_QUAN_TRI";
+        public const string NGUOI_DAI_DIEN = "NGUOI_DAI_DIEN";
+        public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
+        public const string ID_LOAI_DON_VI = "ID_LOAI_DON_VI";
+    }
     public class V_BC_CHI_TIET_DM
     {
         public const string ID = "ID";
@@ -111,10 +143,10 @@ namespace BCTKDS.CDBNames
     }
     public class TD_TRANG_THAI_CHUNG_CHI
     {
-        public const decimal DA_NHAP= 21;
-        public const decimal DA_DUYET= 22;
+        public const decimal DA_NHAP = 21;
+        public const decimal DA_DUYET = 22;
         public const decimal KHONG_DUYET = 120;
-        public const decimal DA_EXPORT= 23;
+        public const decimal DA_EXPORT = 23;
     }
     public class CConstant
     {

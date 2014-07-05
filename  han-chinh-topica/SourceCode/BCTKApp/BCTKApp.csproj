@@ -122,6 +122,9 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\BCTKDS\BCTKDS.csproj">
       <Project>{39DC1A18-A725-4DF1-93CE-467C130CEEF9}</Project>
