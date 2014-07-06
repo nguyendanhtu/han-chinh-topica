@@ -27,12 +27,13 @@ namespace BCTKApp
         ITransferDataRow m_obj_trans_1;
         ITransferDataRow m_obj_trans_2;
         private const String m_str_goi_y_so_bill = "Nhập Số bill...";
+        private const String m_str_goi_y_nguoi_nhan = "Nhập tên người nhận...";
+        private const String m_str_goi_y_nguoi_gui = "Nhập tên người gửi...";
         #endregion
         private enum e_col_Number
         {
-            TRANG_THAI_THU = 1
-,
-            TEN_PHONG_BAN = 2
+              TEN_PHONG_BAN = 2
+            ,TRANG_THAI_THU = 1
                 ,
             NGAY_GUI = 3
                 ,
@@ -57,8 +58,8 @@ namespace BCTKApp
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_DM_BILL.TRANG_THAI_THU, e_col_Number.TRANG_THAI_THU);
             v_htb.Add(V_DM_BILL.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
+            v_htb.Add(V_DM_BILL.TRANG_THAI_THU, e_col_Number.TRANG_THAI_THU);
             v_htb.Add(V_DM_BILL.NGAY_GUI, e_col_Number.NGAY_GUI);
             v_htb.Add(V_DM_BILL.NGUOI_NHAN, e_col_Number.NGUOI_NHAN);
             v_htb.Add(V_DM_BILL.NGUOI_GUI, e_col_Number.NGUOI_GUI);
@@ -74,13 +75,19 @@ namespace BCTKApp
             decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai_cu.SelectedValue);
             string v_str_so_bill = m_txt_so_bill.Text;
             if (v_str_so_bill == m_str_goi_y_so_bill) v_str_so_bill = "";
+            string v_str_nguoi_nhan = m_txt_nguoi_nhan.Text;
+            string v_str_nguoi_gui = m_txt_nguoi_gui.Text;
+            if (v_str_nguoi_nhan == m_str_goi_y_nguoi_nhan) v_str_nguoi_nhan = "";
+            if (v_str_nguoi_gui == m_str_goi_y_nguoi_gui) v_str_nguoi_gui = "";
             m_ds = new DS_V_DM_BILL();
-            m_us.FillDatasetSearch_grid(m_ds, v_dat_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai,v_str_so_bill);
+            m_us.FillDatasetSearch_grid(m_ds, v_dat_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai,v_str_so_bill,v_str_nguoi_nhan,v_str_nguoi_gui);
             m_grv_trang_thai_cu.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_cu, m_obj_trans_1);
             CGridUtils.MakeSoTT(0, m_grv_trang_thai_cu);
             m_grv_trang_thai_cu.Redraw = true;
             set_search_so_bill_format_before();
+            set_search_nguoi_gui_format_before();
+            set_search_nguoi_nhan_format_before();
         }
         private void load_data_2_grid_trang_thai_moi()
         {
@@ -89,13 +96,19 @@ namespace BCTKApp
             decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
             string v_str_so_bill = m_txt_so_bill.Text;
             if (v_str_so_bill == m_str_goi_y_so_bill) v_str_so_bill = "";
+            string v_str_nguoi_nhan = m_txt_nguoi_nhan.Text;
+            string v_str_nguoi_gui = m_txt_nguoi_gui.Text;
+            if (v_str_nguoi_nhan == m_str_goi_y_nguoi_nhan) v_str_nguoi_nhan = "";
+            if (v_str_nguoi_gui == m_str_goi_y_nguoi_gui) v_str_nguoi_gui = "";
             m_ds = new DS_V_DM_BILL();
-            m_us.FillDatasetSearch_grid(m_ds, v_dat_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai,v_str_so_bill);
+            m_us.FillDatasetSearch_grid(m_ds, v_dat_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai,v_str_so_bill,v_str_nguoi_nhan,v_str_nguoi_gui);
             m_grv_trang_thai_moi.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_moi, m_obj_trans_2);
             CGridUtils.MakeSoTT(0, m_grv_trang_thai_moi);
             m_grv_trang_thai_moi.Redraw = true;
             set_search_so_bill_format_before();
+            set_search_nguoi_gui_format_before();
+            set_search_nguoi_nhan_format_before();
         }
 
         private void load_data_2_cbo_cu()
@@ -176,65 +189,54 @@ namespace BCTKApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_cu)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_cu, m_grv_trang_thai_cu.Row)) return;
-            //grid_trang_thai_cu_2us_object(m_us, m_grv_trang_thai_cu.Row);
-            //decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
-            //load_data_grid_2_us(m_us, v_dc_id_trang_thai);
-            //load_data_2_grid_trang_thai_moi();
-            //load_data_2_grid_trang_thai_cu();
-            int v_i_grid_row = m_grv_trang_thai_cu.Row;
-            DataRow v_dr = (DataRow)m_grv_trang_thai_cu.Rows[v_i_grid_row].UserData;
-            m_grv_trang_thai_moi.Rows.Add();
-            v_dr.BeginEdit();
-            v_dr.ItemArray.SetValue(m_cbo_trang_thai_moi.Text.Trim(), 14);
-            v_dr.EndEdit();
-            m_obj_trans_2.DataRow2GridRow(v_dr, m_grv_trang_thai_moi.Rows.Count-1);
-            m_grv_trang_thai_cu.Rows.Remove(m_grv_trang_thai_cu.Rows[m_grv_trang_thai_cu.Row]);
-            CGridUtils.MakeSoTT(0, m_grv_trang_thai_cu);
-            CGridUtils.MakeSoTT(0, m_grv_trang_thai_moi);
+            grid_trang_thai_cu_2us_object(m_us, m_grv_trang_thai_cu.Row);
+            decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
+            load_data_grid_2_us(m_us, v_dc_id_trang_thai);
+            load_data_2_grid_trang_thai_moi();
+            load_data_2_grid_trang_thai_cu();         
             
         }
         private void get_data_right_2_left()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_moi)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_moi, m_grv_trang_thai_cu.Row)) return;
-            //grid_trang_thai_cu_2us_object(m_us, m_grv_trang_thai_cu.Row);
-            //decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
-            //load_data_grid_2_us(m_us, v_dc_id_trang_thai);
-            //load_data_2_grid_trang_thai_moi();
-            //load_data_2_grid_trang_thai_cu();
-            int v_i_grid_row = m_grv_trang_thai_moi.Row;
-            DataRow v_dr = (DataRow)m_grv_trang_thai_moi.Rows[v_i_grid_row].UserData;
-            m_grv_trang_thai_cu.Rows.Add();
-            //v_dr.BeginEdit();
-            //v_dr.ItemArray.SetValue(m_cbo_trang_thai_moi.Text.Trim(), 14);
-            //v_dr.EndEdit();
-            m_obj_trans_1.DataRow2GridRow(v_dr, m_grv_trang_thai_cu.Rows.Count - 1);
-            m_grv_trang_thai_moi.Rows.Remove(v_i_grid_row);
-            CGridUtils.MakeSoTT(0, m_grv_trang_thai_cu);
-            CGridUtils.MakeSoTT(0, m_grv_trang_thai_moi);
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_moi, m_grv_trang_thai_moi.Row)) return;
+            grid_trang_thai_moi_2us_object(m_us, m_grv_trang_thai_moi.Row);
+            decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai_cu.SelectedValue);
+            load_data_grid_2_us(m_us, v_dc_id_trang_thai);
+            load_data_2_grid_trang_thai_cu();
+            load_data_2_grid_trang_thai_moi();            
 
         }
         private void get_data_left_2_right_all()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_cu)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_cu, m_grv_trang_thai_cu.Row)) return;
             for (int i = 1; i < m_grv_trang_thai_cu.Rows.Count; i++) 
                 {
-                    DataRow v_dr = (DataRow)m_grv_trang_thai_cu.Rows[i].UserData;
-                    m_grv_trang_thai_moi.Rows.Add();
-                    //v_dr.BeginEdit();
-                    //v_dr.ItemArray.SetValue(m_cbo_trang_thai_moi.Text.Trim(), 14);
-                    //v_dr.EndEdit();
-                    m_obj_trans_2.DataRow2GridRow(v_dr, m_grv_trang_thai_moi.Rows.Count - 1);
-                    CGridUtils.MakeSoTT(0, m_grv_trang_thai_cu);
-                    CGridUtils.MakeSoTT(0, m_grv_trang_thai_moi);
+                    if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_cu)) return;
+                    if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_cu, i)) return;
+                    grid_trang_thai_cu_2us_object(m_us, i);
+                    decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
+                    load_data_grid_2_us(m_us, v_dc_id_trang_thai);
                 }
-            for (int i = 1; i <= m_grv_trang_thai_cu.Rows.Count; i++) { m_grv_trang_thai_cu.Rows.Remove(1); }
-            {
-                
-            }
+            load_data_2_grid_trang_thai_moi();
+            load_data_2_grid_trang_thai_cu();
 
         }
+        private void get_data_right_2_left_all()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_moi)) return;
+            for (int i = 1; i < m_grv_trang_thai_moi.Rows.Count; i++)
+            {
+                if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_moi)) return;
+                if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_moi, i)) return;
+                grid_trang_thai_moi_2us_object(m_us, i);
+                decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai_cu.SelectedValue);
+                load_data_grid_2_us(m_us, v_dc_id_trang_thai);
+            }
+            load_data_2_grid_trang_thai_moi();
+            load_data_2_grid_trang_thai_cu();
+        }
+
         private void load_data_grid_2_us(US_V_DM_BILL ip_us, decimal ip_dc_id_trang_thai) 
         {
            
@@ -286,11 +288,13 @@ namespace BCTKApp
 
         }
         private void set_initial_form_load()
-        {
+        {          
             m_obj_trans_1 = get_trans_object(m_grv_trang_thai_cu);
+            m_cbo_trang_thai_cu.SelectedValue = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
             load_data_2_grid_trang_thai_cu();
             m_obj_trans_2 = get_trans_object(m_grv_trang_thai_moi);
-            load_data_2_grid_trang_thai_cu();
+            m_cbo_trang_thai_moi.SelectedValue = CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN;
+            load_data_2_grid_trang_thai_moi();
         }
         private void set_search_so_bill_format_before()
         {
@@ -308,10 +312,42 @@ namespace BCTKApp
             }
             m_txt_so_bill.ForeColor = Color.Black;
         }
+        private void set_search_nguoi_gui_format_before()
+        {
+            if (m_txt_nguoi_gui.Text == "")
+            {
+                m_txt_nguoi_gui.Text = m_str_goi_y_nguoi_gui;
+                m_txt_nguoi_gui.ForeColor = Color.Gray;
+            }
+        }
+        private void set_search_nguoi_gui_format_after()
+        {
+            if (m_txt_nguoi_gui.Text == m_str_goi_y_nguoi_gui)
+            {
+                m_txt_nguoi_gui.Text = "";
+            }
+            m_txt_nguoi_gui.ForeColor = Color.Black;
+        }
+        private void set_search_nguoi_nhan_format_before()
+        {
+            if (m_txt_nguoi_nhan.Text == "")
+            {
+                m_txt_nguoi_nhan.Text = m_str_goi_y_nguoi_nhan;
+                m_txt_nguoi_nhan.ForeColor = Color.Gray;
+            }
+        }
+        private void set_search_nguoi_nhan_format_after()
+        {
+            if (m_txt_nguoi_nhan.Text == m_str_goi_y_nguoi_nhan)
+            {
+                m_txt_nguoi_nhan.Text = "";
+            }
+            m_txt_nguoi_nhan.ForeColor = Color.Black;
+        }
         private void set_difine_event()
         {
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
-            this.Load+=new EventHandler(Form1_test_Load);
+            this.Load += new EventHandler(F506_CAP_NHAT_TRANG_THAI_Load);
             m_cbo_trang_thai_cu.SelectedIndexChanged += new EventHandler(m_cbo_trang_thai_cu_SelectedIndexChanged);
             m_cbo_trang_thai_moi.SelectedIndexChanged += new EventHandler(m_cbo_trang_thai_moi_SelectedIndexChanged);
             m_cmd_exit.Click+=new EventHandler(m_cmd_exit_Click);
@@ -321,11 +357,18 @@ namespace BCTKApp
             m_cmd_left_2_right.Click+=new EventHandler(m_cmd_left_2_right_Click);
             m_cmd_right_2_left.Click+=new EventHandler(m_cmd_right_2_left_Click);
             m_cmd_left_2_right_all.Click+=new EventHandler(m_cmd_left_2_right_all_Click);
+            m_cmd_right_2_left_all.Click+=new EventHandler(m_cmd_right_2_left_all_Click);
+            m_txt_nguoi_gui.KeyDown+=new KeyEventHandler(m_txt_nguoi_gui_KeyDown);
+            m_txt_nguoi_gui.MouseClick+=new MouseEventHandler(m_txt_nguoi_gui_MouseClick);
+            m_txt_nguoi_gui.Leave+=new EventHandler(m_txt_nguoi_gui_Leave);
+            m_txt_nguoi_nhan.KeyDown+=new KeyEventHandler(m_txt_nguoi_nhan_KeyDown);
+            m_txt_nguoi_nhan.MouseClick+=new MouseEventHandler(m_txt_nguoi_nhan_MouseClick);
+            m_txt_nguoi_nhan.Leave+=new EventHandler(m_txt_nguoi_nhan_Leave);
         }
         #endregion
         #region Event
 
-        private void Form1_test_Load(object sender, EventArgs e)
+        private void F506_CAP_NHAT_TRANG_THAI_Load(object sender, EventArgs e)
         {
             try
             {
@@ -378,6 +421,7 @@ namespace BCTKApp
         {
             try
             {
+                m_grv_trang_thai_cu.Focus();
                 get_data_left_2_right_all();
             }
             catch (Exception v_e)
@@ -386,6 +430,21 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_cmd_right_2_left_all_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_grv_trang_thai_moi.Focus();
+                get_data_right_2_left_all();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
@@ -461,6 +520,92 @@ namespace BCTKApp
             try
             {
                 set_search_so_bill_format_before();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_nguoi_gui_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid_trang_thai_cu();
+                    load_data_2_grid_trang_thai_moi();
+                }
+                else
+                {
+                    set_search_nguoi_gui_format_after();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_nguoi_gui_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                set_search_nguoi_gui_format_after();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_nguoi_gui_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                set_search_nguoi_gui_format_before();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_nguoi_nhan_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid_trang_thai_cu();
+                    load_data_2_grid_trang_thai_moi();
+                }
+                else
+                {
+                    set_search_nguoi_nhan_format_after();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_nguoi_nhan_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                set_search_nguoi_nhan_format_after();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_nguoi_nhan_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                set_search_nguoi_nhan_format_before();
             }
             catch (Exception v_e)
             {
