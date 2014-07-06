@@ -651,14 +651,24 @@ namespace BCTKApp
             try
             {
                 decimal v_id_phong_ban;
+                decimal v_tong_bill;
+                decimal v_tong_tien;
                 decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
                 DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
                 DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
                 int i_grid_row = m_fg.Selection.TopRow;
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
                 v_id_phong_ban = CIPConvert.ToDecimal(v_dr[0]);
+                if (v_dr[3].ToString() != "")
+                    v_tong_bill = CIPConvert.ToDecimal(v_dr[3]);
+                else
+                    v_tong_bill = 0;
+                if (v_dr[4].ToString() != "")
+                    v_tong_tien = CIPConvert.ToDecimal(v_dr[4]);
+                else
+                    v_tong_tien = 0;
                 f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE frm = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
-                frm.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);
+                frm.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
             }
             catch (Exception v_e)
             {
