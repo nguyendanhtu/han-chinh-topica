@@ -41,7 +41,6 @@ namespace BCTKApp
         private DateTimePicker m_dtp_tu_ngay;
         private Label label6;
         private Label label7;
-        private TextBox m_txt_phong_ban;
         private Label label3;
         private Label label4;
         private Label m_lbl_tieu_de;
@@ -51,6 +50,7 @@ namespace BCTKApp
         private Label label1;
         private TextBox m_txt_so_bill;
         private Label label2;
+        private ComboBox m_cbo_trung_tam;
 		private System.ComponentModel.IContainer components;
 
 		public f511_TRA_CUU_TRANG_THAI_CPN()
@@ -106,10 +106,10 @@ namespace BCTKApp
             this.m_txt_so_bill = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.m_txt_phong_ban = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
+            this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai)).BeginInit();
             this.m_pnl_top.SuspendLayout();
@@ -195,6 +195,7 @@ namespace BCTKApp
             // 
             // m_pnl_top
             // 
+            this.m_pnl_top.Controls.Add(this.m_cbo_trung_tam);
             this.m_pnl_top.Controls.Add(this.m_cbo_trang_thai);
             this.m_pnl_top.Controls.Add(this.m_dtp_den_ngay);
             this.m_pnl_top.Controls.Add(this.label8);
@@ -205,7 +206,6 @@ namespace BCTKApp
             this.m_pnl_top.Controls.Add(this.m_txt_so_bill);
             this.m_pnl_top.Controls.Add(this.label7);
             this.m_pnl_top.Controls.Add(this.label2);
-            this.m_pnl_top.Controls.Add(this.m_txt_phong_ban);
             this.m_pnl_top.Controls.Add(this.label3);
             this.m_pnl_top.Controls.Add(this.label4);
             this.m_pnl_top.Controls.Add(this.m_lbl_tieu_de);
@@ -232,6 +232,7 @@ namespace BCTKApp
             this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dtp_den_ngay.Location = new System.Drawing.Point(535, 40);
             this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
+            this.m_dtp_den_ngay.RightToLeftLayout = true;
             this.m_dtp_den_ngay.ShowCheckBox = true;
             this.m_dtp_den_ngay.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_den_ngay.TabIndex = 2;
@@ -241,7 +242,7 @@ namespace BCTKApp
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(202, 113);
+            this.label8.Location = new System.Drawing.Point(239, 113);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 16);
             this.label8.TabIndex = 33;
@@ -272,7 +273,7 @@ namespace BCTKApp
             this.m_dtp_tu_ngay.ShowCheckBox = true;
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_tu_ngay.TabIndex = 1;
-            this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 6, 30, 9, 16, 0, 0);
+            this.m_dtp_tu_ngay.Value = new System.DateTime(2013, 8, 30, 9, 16, 0, 0);
             // 
             // label1
             // 
@@ -280,9 +281,9 @@ namespace BCTKApp
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(251, 147);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
+            this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 31;
-            this.label1.Text = "Số bill";
+            this.label1.Text = "Từ khóa";
             // 
             // label6
             // 
@@ -319,18 +320,11 @@ namespace BCTKApp
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 29;
             // 
-            // m_txt_phong_ban
-            // 
-            this.m_txt_phong_ban.Location = new System.Drawing.Point(336, 73);
-            this.m_txt_phong_ban.Name = "m_txt_phong_ban";
-            this.m_txt_phong_ban.Size = new System.Drawing.Size(190, 20);
-            this.m_txt_phong_ban.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(226, 77);
+            this.label3.Location = new System.Drawing.Point(238, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 29;
@@ -353,6 +347,14 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Size = new System.Drawing.Size(241, 23);
             this.m_lbl_tieu_de.TabIndex = 27;
             this.m_lbl_tieu_de.Text = "TRA CỨU TRẠNG THÁI CPN";
+            // 
+            // m_cbo_trung_tam
+            // 
+            this.m_cbo_trung_tam.FormattingEnabled = true;
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(334, 71);
+            this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
+            this.m_cbo_trung_tam.Size = new System.Drawing.Size(190, 21);
+            this.m_cbo_trung_tam.TabIndex = 34;
             // 
             // f511_TRA_CUU_TRANG_THAI_CPN
             // 
@@ -381,7 +383,7 @@ namespace BCTKApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			NUOC_NGOAI = 10,TEN_PHONG_BAN = 1,SO_BILL = 3,GHI_CHU = 12,NOI_NHAN = 8,NGUOI_NHAN = 7,SO_TIEN = 5,TRONG_NUOC = 9,NOI_DUNG = 6,NGUOI_GUI = 11,TRANG_THAI_THU = 4,NGAY_GUI = 2
+			NUOC_NGOAI = 10,TEN_PHONG_BAN = 1,SO_BILL = 4,GHI_CHU = 12,NOI_NHAN = 8,NGUOI_NHAN = 7,SO_TIEN = 5,TRONG_NUOC = 9,NOI_DUNG = 6,NGUOI_GUI = 11,TRANG_THAI_THU = 2,NGAY_GUI = 3
 		}			
 		#endregion
 
@@ -390,7 +392,7 @@ namespace BCTKApp
 		DS_V_DM_BILL m_ds = new DS_V_DM_BILL();
 		US_V_DM_BILL m_us = new US_V_DM_BILL();
         private const String m_str_goi_y_phong_ban = "Nhập Tên đơn vị...";
-        private const String m_str_goi_y_so_bill = "Nhập Số bill...";
+        private const String m_str_goi_y_so_bill = "Nhập Số bill hoặc tên người gửi, người nhận...";
 		#endregion
 
 		#region Private Methods
@@ -400,9 +402,13 @@ namespace BCTKApp
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_trang_thai);
             CGridUtils.AddSearch_Handlers(m_grv_trang_thai);
+            m_grv_trang_thai.Tree.Column = (int)e_col_Number.TRANG_THAI_THU;
+            m_grv_trang_thai.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
+            m_grv_trang_thai.Cols[0].Caption = "STT";
+            m_grv_trang_thai.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.CompleteLeaf;
             load_data_2_cbo();
+            load_data_2_cbo_trung_tam();
 			set_define_events();
-            set_search_phong_ban_format_before();
             set_search_so_bill_format_before();
 			this.KeyPreview = true;		
 		}
@@ -417,20 +423,25 @@ namespace BCTKApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){
-            string v_str_phong_ban = m_txt_phong_ban.Text;
+            //string v_str_phong_ban = m_txt_phong_ban.Text;
             string v_str_so_bill = m_txt_so_bill.Text;
-            if (v_str_phong_ban == m_str_goi_y_phong_ban) v_str_phong_ban = "";
+            decimal v_dc_id_phong_ban = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             if (v_str_so_bill == m_str_goi_y_so_bill) v_str_so_bill = "";
             decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
             DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value;
             DateTime v_dat_den_ngay = m_dtp_den_ngay.Value;
-            if (m_dtp_tu_ngay.Checked == false) v_dat_tu_ngay = DateTime.Now.Date;
             if (m_dtp_den_ngay.Checked == false) v_dat_den_ngay = DateTime.Now.Date;		
 			m_ds = new DS_V_DM_BILL();			
-			m_us.FillDatasetSearch(m_ds,v_str_phong_ban,v_str_so_bill,v_dc_id_trang_thai,v_dat_tu_ngay,v_dat_den_ngay);
+			m_us.FillDatasetSearch(m_ds,v_dc_id_phong_ban,v_str_so_bill,v_dc_id_trang_thai,v_dat_tu_ngay,v_dat_den_ngay);
 			m_grv_trang_thai.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_trang_thai);
+            m_grv_trang_thai.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+              , 0
+              , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình nhóm
+              , (int)e_col_Number.SO_BILL // chỗ này là tên trường mà mình Count
+              , "{0}"
+              );
 			m_grv_trang_thai.Redraw = true;
 		}
 		private void grid2us_object(US_V_DM_BILL i_us
@@ -511,22 +522,7 @@ namespace BCTKApp
 		//	f511_TRA_CUU_TRANG_THAI_CPN_DE v_fDE = new f511_TRA_CUU_TRANG_THAI_CPN_DE();			
 		//	v_fDE.display(m_us);
 		}
-        private void set_search_phong_ban_format_before()
-        {
-            if (m_txt_phong_ban.Text == "")
-            {
-                m_txt_phong_ban.Text = m_str_goi_y_phong_ban;
-                m_txt_phong_ban.ForeColor = Color.Gray;
-            }
-        }
-        private void set_search_phong_ban_format_after()
-        {
-            if (m_txt_phong_ban.Text == m_str_goi_y_phong_ban)
-            {
-                m_txt_phong_ban.Text = "";
-            }
-            m_txt_phong_ban.ForeColor = Color.Black;
-        }
+        
         private void set_search_so_bill_format_before()
         {
             if (m_txt_so_bill.Text == "")
@@ -543,6 +539,25 @@ namespace BCTKApp
             }
             m_txt_so_bill.ForeColor = Color.Black;
         }
+        private void load_data_2_cbo_trung_tam()
+        {
+            US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+            v_us.FillDataset(v_ds);
+            m_cbo_trung_tam.DataSource = v_ds.DM_PHONG_BAN;
+            m_cbo_trung_tam.ValueMember = DM_PHONG_BAN.ID;
+            m_cbo_trung_tam.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
+
+            DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
+            v_dr[DM_PHONG_BAN.ID] = -1;
+            v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "";
+            v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "-----Tất cả-----";
+            v_dr[DM_PHONG_BAN.ID_PHAP_NHAN] = -1;
+
+            v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
+            m_cbo_trung_tam.SelectedIndex = 0;
+
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             //m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
@@ -550,12 +565,11 @@ namespace BCTKApp
             //m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             //m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
-            m_txt_phong_ban.KeyDown += m_txt_phong_ban_KeyDown;
-            m_txt_phong_ban.MouseClick += m_txt_phong_ban_MouseClick;
-            m_txt_phong_ban.Leave += m_txt_phong_ban_Leave;
             m_txt_so_bill.KeyDown += new KeyEventHandler(m_txt_so_bill_KeyDown);
             m_txt_so_bill.Leave += new EventHandler(m_txt_so_bill_Leave);
             m_txt_so_bill.MouseClick += new MouseEventHandler(m_txt_so_bill_MouseClick);
+            m_cbo_trang_thai.SelectedIndexChanged+=new EventHandler(m_cbo_trang_thai_SelectedIndexChanged);
+            m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
 		}
 		#endregion
 
@@ -638,47 +652,7 @@ namespace BCTKApp
             }
         }
 
-        private void m_txt_phong_ban_KeyDown(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                if (e.KeyData == Keys.Enter)
-                {
-                    load_data_2_grid();
-                }
-                else
-                {
-                    set_search_phong_ban_format_after();
-                }
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-        private void m_txt_phong_ban_MouseClick(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                set_search_phong_ban_format_after();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_txt_phong_ban_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                set_search_phong_ban_format_before();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        
         private void m_txt_so_bill_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -722,6 +696,28 @@ namespace BCTKApp
             }
         }
         private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cbo_trung_tam_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
