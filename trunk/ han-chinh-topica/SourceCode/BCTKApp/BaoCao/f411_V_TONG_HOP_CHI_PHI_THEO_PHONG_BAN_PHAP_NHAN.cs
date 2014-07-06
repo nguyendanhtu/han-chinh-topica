@@ -676,7 +676,7 @@ namespace BCTKApp
 		//	v_fDE.display(m_us);
 		}
 		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
@@ -785,13 +785,13 @@ namespace BCTKApp
                 if (v_dr[3].ToString() != "")
                     v_tong_bill = CIPConvert.ToDecimal(v_dr[3]);
                 else
-                    v_tong_tien = 0;
+                    v_tong_bill = 0;
                 if (v_dr[4].ToString() != "")
                     v_tong_tien = CIPConvert.ToDecimal(v_dr[4]);
                 else
                     v_tong_tien = 0;
                 f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE frm = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
-                frm.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay, v_tong_tien, v_tong_tien);
+                frm.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
             }
             catch (Exception v_e)
             {
