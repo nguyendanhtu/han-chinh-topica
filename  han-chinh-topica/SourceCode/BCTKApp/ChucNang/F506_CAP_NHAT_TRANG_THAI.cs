@@ -30,11 +30,13 @@ namespace BCTKApp
         private const String m_str_goi_y_nguoi_nhan = "Nhập tên người nhận...";
         private const String m_str_goi_y_nguoi_gui = "Nhập tên người gửi...";
         #endregion
+        #region Data Structure
         private enum e_col_Number
         {
-              TEN_PHONG_BAN = 2
-            ,TRANG_THAI_THU = 1
-                ,
+            TEN_PHONG_BAN = 2
+          ,
+            TRANG_THAI_THU = 1
+               ,
             NGAY_GUI = 3
                 ,
             NGUOI_NHAN = 5
@@ -43,6 +45,8 @@ namespace BCTKApp
                 , SO_BILL = 4
 
         }	
+        #endregion
+        
         #region Private Method
         private void format_controls()
         {
