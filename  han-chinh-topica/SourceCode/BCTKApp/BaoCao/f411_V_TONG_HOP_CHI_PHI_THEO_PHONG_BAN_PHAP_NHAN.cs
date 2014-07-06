@@ -255,7 +255,7 @@ namespace BCTKApp
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.m_fg.Size = new System.Drawing.Size(940, 305);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
+            this.m_fg.TabIndex = 16;
             // 
             // m_lbl_header
             // 
@@ -265,7 +265,7 @@ namespace BCTKApp
             this.m_lbl_header.Location = new System.Drawing.Point(397, 9);
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(516, 22);
-            this.m_lbl_header.TabIndex = 21;
+            this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "TỔNG HỢP CHI PHÍ THEO PHÒNG BAN VÀ PHÁP NHÂN";
             // 
             // m_lbl_tu_ngay
@@ -276,7 +276,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.Location = new System.Drawing.Point(397, 54);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(63, 15);
-            this.m_lbl_tu_ngay.TabIndex = 22;
+            this.m_lbl_tu_ngay.TabIndex = 2;
             this.m_lbl_tu_ngay.Text = "01/01/2001";
             // 
             // m_lbl_den_ngay
@@ -287,7 +287,7 @@ namespace BCTKApp
             this.m_lbl_den_ngay.Location = new System.Drawing.Point(602, 54);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
             this.m_lbl_den_ngay.Size = new System.Drawing.Size(63, 15);
-            this.m_lbl_den_ngay.TabIndex = 22;
+            this.m_lbl_den_ngay.TabIndex = 4;
             this.m_lbl_den_ngay.Text = "01/01/2050";
             // 
             // m_cbo_trang_thai
@@ -298,7 +298,7 @@ namespace BCTKApp
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(400, 90);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(176, 21);
-            this.m_cbo_trang_thai.TabIndex = 25;
+            this.m_cbo_trang_thai.TabIndex = 6;
             this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
             // 
             // m_lbl_trang_thai
@@ -309,7 +309,7 @@ namespace BCTKApp
             this.m_lbl_trang_thai.Location = new System.Drawing.Point(320, 90);
             this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
             this.m_lbl_trang_thai.Size = new System.Drawing.Size(65, 15);
-            this.m_lbl_trang_thai.TabIndex = 24;
+            this.m_lbl_trang_thai.TabIndex = 5;
             this.m_lbl_trang_thai.Text = "Trạng thái:";
             // 
             // m_lbl_tu_khoa
@@ -320,7 +320,7 @@ namespace BCTKApp
             this.m_lbl_tu_khoa.Location = new System.Drawing.Point(320, 129);
             this.m_lbl_tu_khoa.Name = "m_lbl_tu_khoa";
             this.m_lbl_tu_khoa.Size = new System.Drawing.Size(54, 15);
-            this.m_lbl_tu_khoa.TabIndex = 24;
+            this.m_lbl_tu_khoa.TabIndex = 7;
             this.m_lbl_tu_khoa.Text = "Từ khóa:";
             // 
             // m_txt_tim_kiem
@@ -328,7 +328,7 @@ namespace BCTKApp
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(401, 124);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(276, 20);
-            this.m_txt_tim_kiem.TabIndex = 26;
+            this.m_txt_tim_kiem.TabIndex = 8;
             this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
             // 
             // m_lbl_chu_thich
@@ -339,7 +339,7 @@ namespace BCTKApp
             this.m_lbl_chu_thich.Location = new System.Drawing.Point(398, 147);
             this.m_lbl_chu_thich.Name = "m_lbl_chu_thich";
             this.m_lbl_chu_thich.Size = new System.Drawing.Size(181, 14);
-            this.m_lbl_chu_thich.TabIndex = 24;
+            this.m_lbl_chu_thich.TabIndex = 17;
             this.m_lbl_chu_thich.Text = "* Nhập mã phòng ban, tên phòng ban";
             // 
             // m_cmd_tim_kiem
@@ -354,7 +354,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.Location = new System.Drawing.Point(707, 119);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_tim_kiem.TabIndex = 29;
+            this.m_cmd_tim_kiem.TabIndex = 9;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
             this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
             // 
@@ -366,7 +366,7 @@ namespace BCTKApp
             this.label2.Location = new System.Drawing.Point(28, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 19);
-            this.label2.TabIndex = 24;
+            this.label2.TabIndex = 10;
             this.label2.Text = "Pháp nhân:";
             // 
             // m_lbl_ten_phap_nhan
@@ -377,7 +377,7 @@ namespace BCTKApp
             this.m_lbl_ten_phap_nhan.Location = new System.Drawing.Point(122, 183);
             this.m_lbl_ten_phap_nhan.Name = "m_lbl_ten_phap_nhan";
             this.m_lbl_ten_phap_nhan.Size = new System.Drawing.Size(21, 19);
-            this.m_lbl_ten_phap_nhan.TabIndex = 24;
+            this.m_lbl_ten_phap_nhan.TabIndex = 11;
             this.m_lbl_ten_phap_nhan.Text = "...";
             // 
             // label1
@@ -388,7 +388,7 @@ namespace BCTKApp
             this.label1.Location = new System.Drawing.Point(320, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 15);
-            this.label1.TabIndex = 22;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Từ ngày:";
             // 
             // label3
@@ -399,7 +399,7 @@ namespace BCTKApp
             this.label3.Location = new System.Drawing.Point(514, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 15);
-            this.label3.TabIndex = 22;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Đến ngày:";
             // 
             // label4
@@ -410,7 +410,7 @@ namespace BCTKApp
             this.label4.Location = new System.Drawing.Point(396, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 19);
-            this.label4.TabIndex = 24;
+            this.label4.TabIndex = 12;
             this.label4.Text = "Tổng số Bill:";
             // 
             // m_lbl_tong_bill
@@ -421,7 +421,7 @@ namespace BCTKApp
             this.m_lbl_tong_bill.Location = new System.Drawing.Point(508, 183);
             this.m_lbl_tong_bill.Name = "m_lbl_tong_bill";
             this.m_lbl_tong_bill.Size = new System.Drawing.Size(17, 19);
-            this.m_lbl_tong_bill.TabIndex = 24;
+            this.m_lbl_tong_bill.TabIndex = 13;
             this.m_lbl_tong_bill.Text = "0";
             // 
             // label6
@@ -432,7 +432,7 @@ namespace BCTKApp
             this.label6.Location = new System.Drawing.Point(680, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 19);
-            this.label6.TabIndex = 24;
+            this.label6.TabIndex = 14;
             this.label6.Text = "Tổng chi phí:";
             // 
             // m_lbl_tong_chi_phi
@@ -443,7 +443,7 @@ namespace BCTKApp
             this.m_lbl_tong_chi_phi.Location = new System.Drawing.Point(794, 183);
             this.m_lbl_tong_chi_phi.Name = "m_lbl_tong_chi_phi";
             this.m_lbl_tong_chi_phi.Size = new System.Drawing.Size(17, 19);
-            this.m_lbl_tong_chi_phi.TabIndex = 24;
+            this.m_lbl_tong_chi_phi.TabIndex = 15;
             this.m_lbl_tong_chi_phi.Text = "0";
             // 
             // f411_V_TONG_HOP_CHI_PHI_THEO_PHONG_BAN_VA_PHAP_NHAN
