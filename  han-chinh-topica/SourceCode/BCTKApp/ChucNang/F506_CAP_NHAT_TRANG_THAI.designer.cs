@@ -56,6 +56,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.m_txt_so_bill = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_txt_nguoi_nhan = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.m_txt_nguoi_gui = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.m_grb_trang_thai_cu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_cu)).BeginInit();
             this.m_grb_trang_thai_moi.SuspendLayout();
@@ -76,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(211, 75);
+            this.label3.Location = new System.Drawing.Point(451, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 44;
@@ -85,7 +91,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(285, 78);
+            this.label4.Location = new System.Drawing.Point(505, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 43;
@@ -94,7 +100,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(238, 38);
+            this.label7.Location = new System.Drawing.Point(102, 37);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 16);
             this.label7.TabIndex = 41;
@@ -146,7 +152,7 @@
             this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(321, 38);
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(162, 37);
             this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
             this.m_dtp_tu_ngay.ShowCheckBox = true;
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(190, 23);
@@ -302,6 +308,7 @@
             this.m_cmd_update.Size = new System.Drawing.Size(88, 29);
             this.m_cmd_update.TabIndex = 10;
             this.m_cmd_update.Text = "&Cập nhật";
+            this.m_cmd_update.Visible = false;
             // 
             // m_cmd_exit
             // 
@@ -321,7 +328,7 @@
             // m_cbo_trung_tam
             // 
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(321, 70);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(541, 37);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(190, 21);
             this.m_cbo_trung_tam.TabIndex = 2;
@@ -340,7 +347,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(236, 108);
+            this.label2.Location = new System.Drawing.Point(244, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 16);
             this.label2.TabIndex = 54;
@@ -348,7 +355,7 @@
             // 
             // m_txt_so_bill
             // 
-            this.m_txt_so_bill.Location = new System.Drawing.Point(321, 106);
+            this.m_txt_so_bill.Location = new System.Drawing.Point(329, 106);
             this.m_txt_so_bill.Name = "m_txt_so_bill";
             this.m_txt_so_bill.Size = new System.Drawing.Size(190, 20);
             this.m_txt_so_bill.TabIndex = 53;
@@ -356,16 +363,72 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(285, 99);
+            this.label5.Location = new System.Drawing.Point(293, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 52;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(70, 76);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 16);
+            this.label6.TabIndex = 57;
+            this.label6.Text = "Người nhận";
+            // 
+            // m_txt_nguoi_nhan
+            // 
+            this.m_txt_nguoi_nhan.Location = new System.Drawing.Point(162, 72);
+            this.m_txt_nguoi_nhan.Name = "m_txt_nguoi_nhan";
+            this.m_txt_nguoi_nhan.Size = new System.Drawing.Size(190, 20);
+            this.m_txt_nguoi_nhan.TabIndex = 56;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(126, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(0, 13);
+            this.label9.TabIndex = 55;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(456, 73);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 16);
+            this.label10.TabIndex = 60;
+            this.label10.Text = "Người gửi";
+            // 
+            // m_txt_nguoi_gui
+            // 
+            this.m_txt_nguoi_gui.Location = new System.Drawing.Point(541, 72);
+            this.m_txt_nguoi_gui.Name = "m_txt_nguoi_gui";
+            this.m_txt_nguoi_gui.Size = new System.Drawing.Size(190, 20);
+            this.m_txt_nguoi_gui.TabIndex = 59;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(505, 64);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 13);
+            this.label11.TabIndex = 58;
             // 
             // F506_CAP_NHAT_TRANG_THAI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 562);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.m_txt_nguoi_gui);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.m_txt_nguoi_nhan);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.m_txt_so_bill);
             this.Controls.Add(this.label5);
@@ -425,5 +488,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox m_txt_so_bill;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox m_txt_nguoi_nhan;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox m_txt_nguoi_gui;
+        private System.Windows.Forms.Label label11;
     }
 }
