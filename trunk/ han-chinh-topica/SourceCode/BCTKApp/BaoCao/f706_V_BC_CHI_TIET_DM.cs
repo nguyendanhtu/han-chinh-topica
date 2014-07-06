@@ -144,7 +144,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 494);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(912, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1086, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -156,7 +156,7 @@ namespace BCTKApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(556, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(730, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -171,7 +171,7 @@ namespace BCTKApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(644, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(818, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -201,7 +201,7 @@ namespace BCTKApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(732, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(906, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -216,7 +216,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(820, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(994, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -228,7 +228,7 @@ namespace BCTKApp
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg.Location = new System.Drawing.Point(0, 154);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(912, 340);
+            this.m_fg.Size = new System.Drawing.Size(1086, 340);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -291,6 +291,7 @@ namespace BCTKApp
             // 
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(350, 25);
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(429, 22);
@@ -302,7 +303,7 @@ namespace BCTKApp
             this.m_lbl_tong_dm.AutoSize = true;
             this.m_lbl_tong_dm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tong_dm.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tong_dm.Location = new System.Drawing.Point(717, 120);
+            this.m_lbl_tong_dm.Location = new System.Drawing.Point(937, 120);
             this.m_lbl_tong_dm.Name = "m_lbl_tong_dm";
             this.m_lbl_tong_dm.Size = new System.Drawing.Size(17, 19);
             this.m_lbl_tong_dm.TabIndex = 32;
@@ -313,7 +314,7 @@ namespace BCTKApp
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(573, 120);
+            this.label3.Location = new System.Drawing.Point(793, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 19);
             this.label3.TabIndex = 33;
@@ -322,7 +323,7 @@ namespace BCTKApp
             // f706_V_BC_CHI_TIET_DM
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(912, 530);
+            this.ClientSize = new System.Drawing.Size(1086, 530);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.m_lbl_tong_dm);
             this.Controls.Add(this.m_lbl_den_ngay);
