@@ -396,23 +396,15 @@ namespace BCTKApp
         private void load_data_2_grid()
         {
             m_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
-            if (!m_dt_tu_ngay.Checked)
-            {
-                v_dt_tu_ngay = new DateTime(1970, 1, 1);
-            }
-            else
-            {
-                v_dt_tu_ngay = m_dt_tu_ngay.Value;
-            }
-            if (!m_dt_den_ngay.Checked)
-            {
-                v_dt_den_ngay = new DateTime(2050, 1, 1);
-            }
-            else
-            {
-                v_dt_den_ngay = m_dt_den_ngay.Value;
-            }
-            m_us.FillDataset(m_ds);
+            m_dt_tu_ngay.Value = new DateTime(DateTime.Now.Year,DateTime.Now.Month,1);
+            m_dt_den_ngay.Value = DateTime.Now.Date;
+            m_dt_den_ngay.Checked = false;
+            m_dt_tu_ngay.Checked = false;
+            string v_id_tu_khoa = m_txt_tim_kiem.Text;
+            decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+            US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            v_us.FillDatasetSearch(v_ds, v_id_trang_thai, v_id_tu_khoa);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
