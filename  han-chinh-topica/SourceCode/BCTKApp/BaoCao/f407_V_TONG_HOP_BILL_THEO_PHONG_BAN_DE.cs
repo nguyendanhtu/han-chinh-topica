@@ -326,7 +326,7 @@ namespace BCTKApp
             this.m_lbl_tong_tien.AutoSize = true;
             this.m_lbl_tong_tien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tong_tien.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tong_tien.Location = new System.Drawing.Point(932, 84);
+            this.m_lbl_tong_tien.Location = new System.Drawing.Point(946, 84);
             this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
             this.m_lbl_tong_tien.Size = new System.Drawing.Size(21, 19);
             this.m_lbl_tong_tien.TabIndex = 25;
@@ -348,7 +348,7 @@ namespace BCTKApp
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(837, 84);
+            this.label4.Location = new System.Drawing.Point(851, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 19);
             this.label4.TabIndex = 25;
