@@ -613,7 +613,5 @@ namespace BCTKApp
             }
         }
         #endregion
-
-        
     }
 }
