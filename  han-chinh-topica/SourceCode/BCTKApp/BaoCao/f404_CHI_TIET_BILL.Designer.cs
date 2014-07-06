@@ -74,7 +74,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(461, 101);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 19);
@@ -85,7 +85,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
             this.label3.Location = new System.Drawing.Point(461, 204);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 19);
@@ -96,7 +96,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label5.ForeColor = System.Drawing.Color.Maroon;
             this.label5.Location = new System.Drawing.Point(70, 206);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 19);
@@ -107,7 +107,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
             this.label7.Location = new System.Drawing.Point(461, 150);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 19);
@@ -118,7 +118,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label4.ForeColor = System.Drawing.Color.Maroon;
             this.label4.Location = new System.Drawing.Point(70, 258);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 19);
@@ -129,7 +129,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
             this.label6.Location = new System.Drawing.Point(68, 311);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 19);
@@ -140,7 +140,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label8.ForeColor = System.Drawing.Color.Maroon;
             this.label8.Location = new System.Drawing.Point(461, 311);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 19);
@@ -151,7 +151,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
             this.label9.Location = new System.Drawing.Point(70, 154);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 19);
@@ -162,7 +162,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label12.ForeColor = System.Drawing.Color.Maroon;
             this.label12.Location = new System.Drawing.Point(68, 358);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 19);
@@ -173,7 +173,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label13.ForeColor = System.Drawing.Color.Maroon;
             this.label13.Location = new System.Drawing.Point(461, 364);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(65, 19);
@@ -184,7 +184,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label11.ForeColor = System.Drawing.Color.Maroon;
             this.label11.Location = new System.Drawing.Point(68, 100);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 19);
@@ -246,108 +246,108 @@
             // 
             // m_txt_phong_ban
             // 
-            this.m_txt_phong_ban.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_phong_ban.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_phong_ban.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_phong_ban.Location = new System.Drawing.Point(173, 94);
             this.m_txt_phong_ban.Name = "m_txt_phong_ban";
-            this.m_txt_phong_ban.Size = new System.Drawing.Size(258, 26);
+            this.m_txt_phong_ban.Size = new System.Drawing.Size(258, 25);
             this.m_txt_phong_ban.TabIndex = 21;
             // 
             // m_txt_ngay_gui
             // 
-            this.m_txt_ngay_gui.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_ngay_gui.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_ngay_gui.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_ngay_gui.Location = new System.Drawing.Point(570, 147);
             this.m_txt_ngay_gui.Name = "m_txt_ngay_gui";
-            this.m_txt_ngay_gui.Size = new System.Drawing.Size(244, 26);
+            this.m_txt_ngay_gui.Size = new System.Drawing.Size(244, 25);
             this.m_txt_ngay_gui.TabIndex = 21;
             // 
             // m_txt_so_bill
             // 
-            this.m_txt_so_bill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_so_bill.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_so_bill.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_so_bill.Location = new System.Drawing.Point(570, 93);
             this.m_txt_so_bill.Name = "m_txt_so_bill";
-            this.m_txt_so_bill.Size = new System.Drawing.Size(244, 26);
+            this.m_txt_so_bill.Size = new System.Drawing.Size(244, 25);
             this.m_txt_so_bill.TabIndex = 21;
             // 
             // m_txt_so_tien
             // 
-            this.m_txt_so_tien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_so_tien.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_so_tien.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_so_tien.Location = new System.Drawing.Point(173, 147);
             this.m_txt_so_tien.Name = "m_txt_so_tien";
-            this.m_txt_so_tien.Size = new System.Drawing.Size(258, 26);
+            this.m_txt_so_tien.Size = new System.Drawing.Size(258, 25);
             this.m_txt_so_tien.TabIndex = 21;
             // 
             // m_txt_nguoi_gui
             // 
-            this.m_txt_nguoi_gui.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_nguoi_gui.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_nguoi_gui.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_nguoi_gui.Location = new System.Drawing.Point(173, 199);
             this.m_txt_nguoi_gui.Name = "m_txt_nguoi_gui";
-            this.m_txt_nguoi_gui.Size = new System.Drawing.Size(258, 26);
+            this.m_txt_nguoi_gui.Size = new System.Drawing.Size(258, 25);
             this.m_txt_nguoi_gui.TabIndex = 21;
             // 
             // m_txt_nguoi_nhan
             // 
-            this.m_txt_nguoi_nhan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_nguoi_nhan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_nguoi_nhan.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_nguoi_nhan.Location = new System.Drawing.Point(570, 197);
             this.m_txt_nguoi_nhan.Name = "m_txt_nguoi_nhan";
-            this.m_txt_nguoi_nhan.Size = new System.Drawing.Size(244, 26);
+            this.m_txt_nguoi_nhan.Size = new System.Drawing.Size(244, 25);
             this.m_txt_nguoi_nhan.TabIndex = 21;
             // 
             // m_txt_noi_nhan
             // 
-            this.m_txt_noi_nhan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_noi_nhan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_noi_nhan.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_noi_nhan.Location = new System.Drawing.Point(173, 251);
             this.m_txt_noi_nhan.Name = "m_txt_noi_nhan";
-            this.m_txt_noi_nhan.Size = new System.Drawing.Size(641, 26);
+            this.m_txt_noi_nhan.Size = new System.Drawing.Size(641, 25);
             this.m_txt_noi_nhan.TabIndex = 21;
             // 
             // m_txt_trang_thai
             // 
-            this.m_txt_trang_thai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_trang_thai.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_trang_thai.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_trang_thai.Location = new System.Drawing.Point(173, 304);
             this.m_txt_trang_thai.Name = "m_txt_trang_thai";
-            this.m_txt_trang_thai.Size = new System.Drawing.Size(258, 26);
+            this.m_txt_trang_thai.Size = new System.Drawing.Size(258, 25);
             this.m_txt_trang_thai.TabIndex = 21;
             // 
             // m_txt_noi_dung
             // 
-            this.m_txt_noi_dung.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_noi_dung.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_noi_dung.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_noi_dung.Location = new System.Drawing.Point(570, 304);
             this.m_txt_noi_dung.Name = "m_txt_noi_dung";
-            this.m_txt_noi_dung.Size = new System.Drawing.Size(244, 26);
+            this.m_txt_noi_dung.Size = new System.Drawing.Size(244, 25);
             this.m_txt_noi_dung.TabIndex = 21;
             // 
             // m_txt_khu_vuc
             // 
-            this.m_txt_khu_vuc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_khu_vuc.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_khu_vuc.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_khu_vuc.Location = new System.Drawing.Point(173, 357);
             this.m_txt_khu_vuc.Name = "m_txt_khu_vuc";
-            this.m_txt_khu_vuc.Size = new System.Drawing.Size(258, 26);
+            this.m_txt_khu_vuc.Size = new System.Drawing.Size(258, 25);
             this.m_txt_khu_vuc.TabIndex = 21;
             // 
             // m_txt_ghi_chu
             // 
-            this.m_txt_ghi_chu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_ghi_chu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_ghi_chu.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_ghi_chu.Location = new System.Drawing.Point(570, 357);
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
-            this.m_txt_ghi_chu.Size = new System.Drawing.Size(244, 26);
+            this.m_txt_ghi_chu.Size = new System.Drawing.Size(244, 25);
             this.m_txt_ghi_chu.TabIndex = 21;
             // 
             // f404_CHI_TIET_BILL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(884, 482);
             this.Controls.Add(this.m_txt_so_bill);
             this.Controls.Add(this.m_txt_ghi_chu);
