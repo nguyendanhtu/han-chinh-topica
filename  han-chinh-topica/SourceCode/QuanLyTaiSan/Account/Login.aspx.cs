@@ -25,7 +25,7 @@ public partial class Account_Login : System.Web.UI.Page
         if (Page.IsValid)
         {
             string strUserName = this.txtUserName.Text.Trim();
-            string strPassWord = this.txtPassWord.Text.Trim();
+            string strPassWord = CIPConvert.Encoding(this.txtPassWord.Text.Trim());
             //strPassWord = FormsAuthentication.HashPasswordForStoringInConfigFile(strPassWord, "SHA1");
             CheckAccount(strUserName, strPassWord);
         }

@@ -8,9 +8,9 @@ using IP.Core.IPCommon;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 
-using WebUS;
-using WebDS;
-using WebDS.CDBNames;
+using BCTKUS;
+using BCTKDS;
+using BCTKDS.CDBNames;
 using System.Data;
 
 public partial class Quantri_F812_QuanLyNhomQuyen : System.Web.UI.Page
@@ -107,7 +107,7 @@ public partial class Quantri_F812_QuanLyNhomQuyen : System.Web.UI.Page
         // thu thập dữ liệu
         form_2_us_obj();
         // Insert
-        m_us_ht_user_group.Insert_nhom_nguoi_dung();
+        m_us_ht_user_group.Insert();
         // Reset lại control
         reset_control();
         // hiển thị lại lên lưới
@@ -150,7 +150,7 @@ public partial class Quantri_F812_QuanLyNhomQuyen : System.Web.UI.Page
         }
         catch (Exception v_e) {
             
-            CSystemLog_301.ExceptionHandle(v_e);
+            CSystemLog_301.ExceptionHandle(this,v_e);
         }
         
     }    
