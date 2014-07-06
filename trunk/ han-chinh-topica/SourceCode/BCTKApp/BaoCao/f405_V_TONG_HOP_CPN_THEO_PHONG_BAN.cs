@@ -278,7 +278,7 @@ namespace BCTKApp
             this.m_lbl_header.Location = new System.Drawing.Point(512, 9);
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(176, 22);
-            this.m_lbl_header.TabIndex = 21;
+            this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "TRA CỨU SỐ BILL";
             // 
             // m_lbl_ma_pb
@@ -289,7 +289,7 @@ namespace BCTKApp
             this.m_lbl_ma_pb.Location = new System.Drawing.Point(264, 64);
             this.m_lbl_ma_pb.Name = "m_lbl_ma_pb";
             this.m_lbl_ma_pb.Size = new System.Drawing.Size(46, 15);
-            this.m_lbl_ma_pb.TabIndex = 22;
+            this.m_lbl_ma_pb.TabIndex = 1;
             this.m_lbl_ma_pb.Text = "Mã PB:";
             // 
             // m_lbl_ten_pb
@@ -300,7 +300,7 @@ namespace BCTKApp
             this.m_lbl_ten_pb.Location = new System.Drawing.Point(612, 68);
             this.m_lbl_ten_pb.Name = "m_lbl_ten_pb";
             this.m_lbl_ten_pb.Size = new System.Drawing.Size(49, 15);
-            this.m_lbl_ten_pb.TabIndex = 22;
+            this.m_lbl_ten_pb.TabIndex = 3;
             this.m_lbl_ten_pb.Text = "Tên PB:";
             // 
             // m_lbl_den_ngay
@@ -311,7 +311,7 @@ namespace BCTKApp
             this.m_lbl_den_ngay.Location = new System.Drawing.Point(612, 97);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
             this.m_lbl_den_ngay.Size = new System.Drawing.Size(62, 15);
-            this.m_lbl_den_ngay.TabIndex = 22;
+            this.m_lbl_den_ngay.TabIndex = 7;
             this.m_lbl_den_ngay.Text = "Đến ngày:";
             // 
             // m_lbl_tu_ngay
@@ -322,7 +322,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.Location = new System.Drawing.Point(264, 97);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(55, 15);
-            this.m_lbl_tu_ngay.TabIndex = 22;
+            this.m_lbl_tu_ngay.TabIndex = 5;
             this.m_lbl_tu_ngay.Text = "Từ ngày:";
             // 
             // m_lbl_tu_khoa
@@ -333,7 +333,7 @@ namespace BCTKApp
             this.m_lbl_tu_khoa.Location = new System.Drawing.Point(266, 208);
             this.m_lbl_tu_khoa.Name = "m_lbl_tu_khoa";
             this.m_lbl_tu_khoa.Size = new System.Drawing.Size(44, 15);
-            this.m_lbl_tu_khoa.TabIndex = 22;
+            this.m_lbl_tu_khoa.TabIndex = 17;
             this.m_lbl_tu_khoa.Text = "Số Bill:";
             // 
             // m_cbo_ma_pb
@@ -343,7 +343,7 @@ namespace BCTKApp
             this.m_cbo_ma_pb.Location = new System.Drawing.Point(345, 62);
             this.m_cbo_ma_pb.Name = "m_cbo_ma_pb";
             this.m_cbo_ma_pb.Size = new System.Drawing.Size(176, 21);
-            this.m_cbo_ma_pb.TabIndex = 23;
+            this.m_cbo_ma_pb.TabIndex = 2;
             this.m_cbo_ma_pb.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ma_pb_SelectedIndexChanged);
             // 
             // m_cbo_ten_pb
@@ -353,7 +353,7 @@ namespace BCTKApp
             this.m_cbo_ten_pb.Location = new System.Drawing.Point(694, 62);
             this.m_cbo_ten_pb.Name = "m_cbo_ten_pb";
             this.m_cbo_ten_pb.Size = new System.Drawing.Size(339, 21);
-            this.m_cbo_ten_pb.TabIndex = 23;
+            this.m_cbo_ten_pb.TabIndex = 4;
             this.m_cbo_ten_pb.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ten_pb_SelectedIndexChanged);
             // 
             // m_dt_tu_ngay
@@ -365,7 +365,7 @@ namespace BCTKApp
             this.m_dt_tu_ngay.Name = "m_dt_tu_ngay";
             this.m_dt_tu_ngay.ShowCheckBox = true;
             this.m_dt_tu_ngay.Size = new System.Drawing.Size(176, 20);
-            this.m_dt_tu_ngay.TabIndex = 24;
+            this.m_dt_tu_ngay.TabIndex = 6;
             this.m_dt_tu_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
             this.m_dt_tu_ngay.ValueChanged += new System.EventHandler(this.m_dt_tu_ngay_ValueChanged);
             // 
@@ -378,7 +378,7 @@ namespace BCTKApp
             this.m_dt_den_ngay.Name = "m_dt_den_ngay";
             this.m_dt_den_ngay.ShowCheckBox = true;
             this.m_dt_den_ngay.Size = new System.Drawing.Size(174, 20);
-            this.m_dt_den_ngay.TabIndex = 24;
+            this.m_dt_den_ngay.TabIndex = 8;
             this.m_dt_den_ngay.ValueChanged += new System.EventHandler(this.m_dt_den_ngay_ValueChanged);
             // 
             // m_txt_tim_kiem
@@ -386,7 +386,7 @@ namespace BCTKApp
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(345, 206);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(176, 20);
-            this.m_txt_tim_kiem.TabIndex = 25;
+            this.m_txt_tim_kiem.TabIndex = 18;
             this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
             this.m_txt_tim_kiem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
             // 
@@ -402,7 +402,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.Location = new System.Drawing.Point(620, 201);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_tim_kiem.TabIndex = 28;
+            this.m_cmd_tim_kiem.TabIndex = 19;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
             this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
             // 
@@ -414,7 +414,7 @@ namespace BCTKApp
             this.m_lbl_trang_thai.Location = new System.Drawing.Point(264, 130);
             this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
             this.m_lbl_trang_thai.Size = new System.Drawing.Size(65, 15);
-            this.m_lbl_trang_thai.TabIndex = 22;
+            this.m_lbl_trang_thai.TabIndex = 9;
             this.m_lbl_trang_thai.Text = "Trạng thái:";
             // 
             // m_cbo_trang_thai
@@ -424,7 +424,7 @@ namespace BCTKApp
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(345, 130);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(176, 21);
-            this.m_cbo_trang_thai.TabIndex = 23;
+            this.m_cbo_trang_thai.TabIndex = 10;
             this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
             // 
             // label1
@@ -435,7 +435,7 @@ namespace BCTKApp
             this.label1.Location = new System.Drawing.Point(615, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 15);
-            this.label1.TabIndex = 22;
+            this.label1.TabIndex = 11;
             this.label1.Text = "Người nhận:";
             // 
             // m_txt_tk_nguoi_nhan
@@ -443,7 +443,7 @@ namespace BCTKApp
             this.m_txt_tk_nguoi_nhan.Location = new System.Drawing.Point(694, 131);
             this.m_txt_tk_nguoi_nhan.Name = "m_txt_tk_nguoi_nhan";
             this.m_txt_tk_nguoi_nhan.Size = new System.Drawing.Size(337, 20);
-            this.m_txt_tk_nguoi_nhan.TabIndex = 25;
+            this.m_txt_tk_nguoi_nhan.TabIndex = 12;
             this.m_txt_tk_nguoi_nhan.TextChanged += new System.EventHandler(this.m_txt_nguoi_nhan_TextChanged);
             this.m_txt_tk_nguoi_nhan.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
             // 
@@ -455,7 +455,7 @@ namespace BCTKApp
             this.label2.Location = new System.Drawing.Point(617, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 15);
-            this.label2.TabIndex = 22;
+            this.label2.TabIndex = 15;
             this.label2.Text = "Nơi nhận:";
             // 
             // m_txt_tk_noi_nhan
@@ -463,7 +463,7 @@ namespace BCTKApp
             this.m_txt_tk_noi_nhan.Location = new System.Drawing.Point(696, 168);
             this.m_txt_tk_noi_nhan.Name = "m_txt_tk_noi_nhan";
             this.m_txt_tk_noi_nhan.Size = new System.Drawing.Size(335, 20);
-            this.m_txt_tk_noi_nhan.TabIndex = 25;
+            this.m_txt_tk_noi_nhan.TabIndex = 16;
             this.m_txt_tk_noi_nhan.TextChanged += new System.EventHandler(this.m_txt_noi_nhan_TextChanged);
             this.m_txt_tk_noi_nhan.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
             // 
@@ -475,7 +475,7 @@ namespace BCTKApp
             this.label3.Location = new System.Drawing.Point(266, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 15);
-            this.label3.TabIndex = 22;
+            this.label3.TabIndex = 13;
             this.label3.Text = "Người gửi:";
             // 
             // m_txt_tk_nguoi_gui
@@ -483,7 +483,7 @@ namespace BCTKApp
             this.m_txt_tk_nguoi_gui.Location = new System.Drawing.Point(345, 168);
             this.m_txt_tk_nguoi_gui.Name = "m_txt_tk_nguoi_gui";
             this.m_txt_tk_nguoi_gui.Size = new System.Drawing.Size(176, 20);
-            this.m_txt_tk_nguoi_gui.TabIndex = 25;
+            this.m_txt_tk_nguoi_gui.TabIndex = 14;
             this.m_txt_tk_nguoi_gui.TextChanged += new System.EventHandler(this.m_txt_nguoi_gui_TextChanged);
             this.m_txt_tk_nguoi_gui.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
             // 
