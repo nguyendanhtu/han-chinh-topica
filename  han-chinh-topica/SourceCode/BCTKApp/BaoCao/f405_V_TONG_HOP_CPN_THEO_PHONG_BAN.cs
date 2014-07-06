@@ -24,6 +24,7 @@ using BCTKDS;
 using BCTKDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using BCTKApp.BaoCao;
 
 namespace BCTKApp
 {
@@ -260,9 +261,11 @@ namespace BCTKApp
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 262);
             this.m_fg.Name = "m_fg";
+            this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
             this.m_fg.Size = new System.Drawing.Size(1022, 329);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
             // m_lbl_header
             // 
@@ -1009,7 +1012,23 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal v_id;
+                int i_grid_row = m_fg.Selection.TopRow;
+                DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+                v_id = CIPConvert.ToDecimal(v_dr[0]);
+                f404_CHI_TIET_BILL frm = new f404_CHI_TIET_BILL();
+                frm.Display_for_chi_tiet(v_id);
+            }
+            catch (Exception v_e)
+            {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         #endregion
 
     }
