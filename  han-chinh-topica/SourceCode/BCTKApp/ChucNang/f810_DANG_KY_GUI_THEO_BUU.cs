@@ -288,10 +288,19 @@ namespace BCTKApp.ChucNang
             m_cmd_nhap_excel.Click += new EventHandler(m_cmd_nhap_excel_Click);
             //m_cmd_xem_thu_gui.Click += new EventHandler(m_cmd_xem_thu_gui_Click);
         }
-
-        
-       
-
+        private Int64 count_record_in_grid(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
+            Int64 v_count = 0;
+            for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count - 1; v_row++) {
+                if(i_fg.Rows[v_row][(int)e_col_Number.SO_BILL] != null && i_fg.Rows[v_row][(int)e_col_Number.SO_BILL].ToString() != "")
+                    v_count = v_count + 1;
+            }
+            return v_count;
+        }
+        private void make_stt(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
+            CGridUtils.MakeSoTT(0, i_fg);
+            i_fg.Rows[i_fg.Rows.Count - 1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
+        }
+        #endregion
         #region Events
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
@@ -314,7 +323,8 @@ namespace BCTKApp.ChucNang
                 m_fg.Rows[m_fg.Row][m_fg.Col + 1] = m_fg.Rows[m_fg.Row][m_fg.Col];
             if (m_fg.Col == (int)e_col_Number.TEN_PHONG_BAN)
                 m_fg.Rows[m_fg.Row][m_fg.Col - 1] = m_fg.Rows[m_fg.Row][m_fg.Col];
-            m_lbl_tong_so_bill.Text = (m_fg.Rows.Count - 2).ToString();
+            m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
+            make_stt(m_fg);
         }
         private void m_cmd_del_Click(object sender, EventArgs e)
         {
@@ -322,11 +332,16 @@ namespace BCTKApp.ChucNang
             {
                 if (m_fg.Rows.Count == 3)
                 {
+                    if(m_fg.Row == 1) {
+                        m_fg.Rows[m_fg.Rows.Fixed].Clear(C1.Win.C1FlexGrid.ClearFlags.All);   
+                    }
+                    m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
                     return;
                 }
                 m_fg.Rows.Remove(m_fg.Row);
                 //CGridUtils.MakeSoTT(0, m_fg);
-                m_lbl_tong_so_bill.Text = (m_fg.Rows.Count - 2).ToString();
+                m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
+                make_stt(m_fg);
             }
             catch (System.Exception v_e)
             {
@@ -335,8 +350,8 @@ namespace BCTKApp.ChucNang
         }
         private void m_fg_AfterAddRow(object sender, C1.Win.C1FlexGrid.RowColEventArgs e)
         {
-            CGridUtils.MakeSoTT(0, m_fg);
-            m_lbl_tong_so_bill.Text = (m_fg.Rows.Count - 2).ToString();
+            m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
+            make_stt(m_fg);
         }
         private void m_cmd_nhap_excel_Click(object sender, EventArgs e)
         {
@@ -365,13 +380,9 @@ namespace BCTKApp.ChucNang
                         , (int)v_hst_excel_col[v_i_cur_col]
                         , v_i_cur_col);
                 }
-            
+                m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
+                make_stt(m_fg);
         }
-        void m_cmd_xem_thu_gui_Click(object sender, EventArgs e)
-        {
-            xem_thu_gui_trong_ngay(m_dat_ngay_gui.Value);
-        }
-        #endregion
         #endregion
     }
 }

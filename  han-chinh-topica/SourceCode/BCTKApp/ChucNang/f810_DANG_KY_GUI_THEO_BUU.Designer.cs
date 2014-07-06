@@ -95,9 +95,9 @@
             this.m_lbl_tieu_de.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_tieu_de.Location = new System.Drawing.Point(416, 9);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(341, 29);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(286, 29);
             this.m_lbl_tieu_de.TabIndex = 0;
-            this.m_lbl_tieu_de.Text = "ĐĂNG KÝ GỬI HÀNG NGÀY ";
+            this.m_lbl_tieu_de.Text = "Nhập thư gửi hàng ngày";
             // 
             // panel1
             // 
@@ -149,16 +149,16 @@
             // 
             this.m_dat_ngay_gui.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.m_dat_ngay_gui.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ngay_gui.Location = new System.Drawing.Point(503, 18);
+            this.m_dat_ngay_gui.Location = new System.Drawing.Point(538, 15);
             this.m_dat_ngay_gui.Name = "m_dat_ngay_gui";
             this.m_dat_ngay_gui.Size = new System.Drawing.Size(140, 20);
-            this.m_dat_ngay_gui.TabIndex = 2;
+            this.m_dat_ngay_gui.TabIndex = 1;
             // 
             // m_lbl_ngay_gui
             // 
             this.m_lbl_ngay_gui.AutoSize = true;
             this.m_lbl_ngay_gui.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lbl_ngay_gui.Location = new System.Drawing.Point(392, 20);
+            this.m_lbl_ngay_gui.Location = new System.Drawing.Point(427, 17);
             this.m_lbl_ngay_gui.Name = "m_lbl_ngay_gui";
             this.m_lbl_ngay_gui.Size = new System.Drawing.Size(93, 13);
             this.m_lbl_ngay_gui.TabIndex = 0;
@@ -173,7 +173,7 @@
             this.m_fg.Rows.Count = 2;
             this.m_fg.Size = new System.Drawing.Size(1151, 521);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 4;
+            this.m_fg.TabIndex = 0;
             this.m_fg.TabStop = false;
             // 
             // imageList1
@@ -227,7 +227,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(1046, 0);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(103, 31);
-            this.m_cmd_exit.TabIndex = 4;
+            this.m_cmd_exit.TabIndex = 2;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_cmd_save
@@ -242,7 +242,7 @@
             this.m_cmd_save.Location = new System.Drawing.Point(934, 0);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(112, 31);
-            this.m_cmd_save.TabIndex = 0;
+            this.m_cmd_save.TabIndex = 1;
             this.m_cmd_save.Text = "&Lưu";
             // 
             // panel2
@@ -271,7 +271,7 @@
             this.m_cmd_nhap_excel.Location = new System.Drawing.Point(0, 0);
             this.m_cmd_nhap_excel.Name = "m_cmd_nhap_excel";
             this.m_cmd_nhap_excel.Size = new System.Drawing.Size(93, 31);
-            this.m_cmd_nhap_excel.TabIndex = 5;
+            this.m_cmd_nhap_excel.TabIndex = 0;
             this.m_cmd_nhap_excel.Text = "Nhập từ Excel";
             this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
             // 
@@ -285,7 +285,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_tieu_de);
             this.Name = "f810_DANG_KY_GUI_THEO_BUU";
-            this.Text = "F810 - Đăng ký gửi hàng ngày theo từng bưu";
+            this.Text = "F810 - Nhập thư gửi hàng ngày ";
             this.m_pnl_tieu_de.ResumeLayout(false);
             this.m_pnl_tieu_de.PerformLayout();
             this.panel1.ResumeLayout(false);
