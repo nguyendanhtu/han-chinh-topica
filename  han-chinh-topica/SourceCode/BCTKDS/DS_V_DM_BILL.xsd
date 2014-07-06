@@ -46,7 +46,7 @@
   <xs:element name="DS_V_DM_BILL" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_BILL" msprop:Generator_UserDSName="DS_V_DM_BILL">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_DM_BILL" msprop:Generator_TableClassName="V_DM_BILLDataTable" msprop:Generator_TableVarName="tableV_DM_BILL" msprop:Generator_TablePropName="V_DM_BILL" msprop:Generator_RowDeletingName="V_DM_BILLRowDeleting" msprop:Generator_RowChangingName="V_DM_BILLRowChanging" msprop:Generator_RowEvHandlerName="V_DM_BILLRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_BILLRowDeleted" msprop:Generator_UserTableName="V_DM_BILL" msprop:Generator_RowChangedName="V_DM_BILLRowChanged" msprop:Generator_RowEvArgName="V_DM_BILLRowChangeEvent" msprop:Generator_RowClassName="V_DM_BILLRow">
+        <xs:element name="V_DM_BILL" msprop:Generator_TableClassName="V_DM_BILLDataTable" msprop:Generator_TableVarName="tableV_DM_BILL" msprop:Generator_TablePropName="V_DM_BILL" msprop:Generator_RowDeletingName="V_DM_BILLRowDeleting" msprop:Generator_UserTableName="V_DM_BILL" msprop:Generator_RowChangingName="V_DM_BILLRowChanging" msprop:Generator_RowEvHandlerName="V_DM_BILLRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_BILLRowDeleted" msprop:Generator_RowEvArgName="V_DM_BILLRowChangeEvent" msprop:Generator_RowChangedName="V_DM_BILLRowChanged" msprop:Generator_RowClassName="V_DM_BILLRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
@@ -66,7 +66,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TEN_PHONG_BAN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTEN_PHONG_BAN" msprop:Generator_ColumnPropNameInRow="TEN_PHONG_BAN" msprop:Generator_ColumnPropNameInTable="TEN_PHONG_BANColumn" msprop:Generator_UserColumnName="TEN_PHONG_BAN" minOccurs="0">
+              <xs:element name="TEN_PHONG_BAN" msprop:Generator_ColumnVarNameInTable="columnTEN_PHONG_BAN" msprop:Generator_ColumnPropNameInRow="TEN_PHONG_BAN" msprop:Generator_ColumnPropNameInTable="TEN_PHONG_BANColumn" msprop:Generator_UserColumnName="TEN_PHONG_BAN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
@@ -123,7 +123,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ID_TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_THAI" msprop:Generator_ColumnPropNameInRow="ID_TRANG_THAI" msprop:Generator_ColumnPropNameInTable="ID_TRANG_THAIColumn" msprop:Generator_UserColumnName="ID_TRANG_THAI" type="xs:decimal" />
-              <xs:element name="TRANG_THAI_THU" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_THU" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_THU" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_THUColumn" msprop:Generator_UserColumnName="TRANG_THAI_THU" minOccurs="0">
+              <xs:element name="TRANG_THAI_THU" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_THU" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_THU" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_THUColumn" msprop:Generator_UserColumnName="TRANG_THAI_THU" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
