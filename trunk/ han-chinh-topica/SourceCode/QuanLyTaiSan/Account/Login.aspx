@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
     <head>
-		<title>Đăng nhập DRVN-QLTS</title>
+		<title>Đăng nhập iZA</title>
         <link href="../Styles/Login.css" rel="stylesheet" type="text/css" />
 	    <style type="text/css">
             .style1
@@ -31,7 +31,7 @@
             }
             </style>
 	</head>
-	<body style="margin:0px 0px 0px 0px;background-color:#3563c1;" onload="ShowTable();">
+	<body style="margin:0px 0px 0px 0px;background-color:maroon;" onload="ShowTable();">
 		<form id="Form2" method="post" runat="server">
 			<table id="tbView" cellspacing="0" cellpadding="0" align="center" style="width:1003px;height:550px;" border="0">
 				<tr>
@@ -42,7 +42,8 @@
 		                        <td align="center" 
                                     style="background-image:url('../Images/Dialog/top-mid.png'); height:35px !important;width:340;" 
                                     valign="middle" >
-			                        <asp:label id="lblPageTitle" Runat="server" CssClass="cssTitleLogin" Text="ĐĂNG NHẬP QUẢN LÝ TÀI SẢN" />
+			                        <asp:label id="lblPageTitle" Runat="server" CssClass="cssTitleLogin" 
+                                        Text="iZA - QUẢN LÝ HÀNH CHÍNH" />
 		                        </td>
 		                        <td valign="top" style="width:7px;height:35px;background-image:url(../Images/Dialog/top-right.png);background-position:right;"></td>
 	                        </tr>
@@ -101,7 +102,7 @@
 		                                    <td colspan="4" align="center" valign="middle" 
                                                 style="height:34px;background-color:#dddddd; color: #0000FF;" 
                                                 class="style1">
-		                                         Tổng cục đường bộ Việt Nam - Bộ GTVT 
+		                                         Tổ hợp công nghệ giáo dục TOPICA 
 		                                    </td>
 	                                    </tr>
                                     </table>
