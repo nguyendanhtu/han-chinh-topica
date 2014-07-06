@@ -43,9 +43,32 @@ namespace BCTKApp
             m_cmd_phan_quyen_cho_nhom.Click += new EventHandler(m_cmd_phan_quyen_cho_nhom_Click);
             m_cmd_doi_mat_khau.Click += new EventHandler(m_cmd_doi_mat_khau_Click);
             m_cmd_tra_cuu_trang_thai_CPN.Click+=new EventHandler(m_cmd_tra_cuu_trang_thai_CPN_Click);
+            m_cmd_thong_tin_thang_excel.Click += new EventHandler(m_cmd_thong_tin_thang_excel_Click);
+            this.Load += new EventHandler(f400_menu_main_Load);
         }
+
+        void f400_menu_main_Load(object sender, EventArgs e)
+        {
+            //string ngay = "01-02-2014";
+            //DateTime v_dat = new DateTime();
+            //v_dat = CIPConvert.ToDatetime(ngay);
+        }
+
+       
         #endregion
         #region Event
+        private void m_cmd_thong_tin_thang_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f820_NHAP_CHI_PHI_CUOI_THANG v_frm = new f820_NHAP_CHI_PHI_CUOI_THANG();
+                v_frm.Display();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         void m_cmd_doi_mat_khau_Click(object sender, EventArgs e)
         {
             try

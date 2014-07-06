@@ -366,33 +366,6 @@
     <Compile Include="DanhMuc\f801_DM_PHONG_BAN_DE.Designer.cs">
       <DependentUpon>f801_DM_PHONG_BAN_DE.cs</DependentUpon>
     </Compile>
-    <Compile Include="f120_dm_dang_ky_gui.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="f120_dm_dang_ky_gui_DE.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="f120_dm_dang_ky_gui_DE.Designer.cs">
-      <DependentUpon>f120_dm_dang_ky_gui_DE.cs</DependentUpon>
-    </Compile>
-    <Compile Include="f121_dm_dang_ky_gui_theo_excel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="f121_dm_dang_ky_gui_theo_excel.Designer.cs">
-      <DependentUpon>f121_dm_dang_ky_gui_theo_excel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="f130_chuc_nang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="f130_chuc_nang.Designer.cs">
-      <DependentUpon>f130_chuc_nang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="f140_thong_tin_cuoi_thang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="f140_thong_tin_cuoi_thang.Designer.cs">
-      <DependentUpon>f140_thong_tin_cuoi_thang.cs</DependentUpon>
-    </Compile>
     <Compile Include="f400_menu_main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -533,21 +506,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f801_DM_PHONG_BAN_DE.resx">
       <DependentUpon>f801_DM_PHONG_BAN_DE.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="f120_dm_dang_ky_gui.resx">
-      <DependentUpon>f120_dm_dang_ky_gui.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="f120_dm_dang_ky_gui_DE.resx">
-      <DependentUpon>f120_dm_dang_ky_gui_DE.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="f121_dm_dang_ky_gui_theo_excel.resx">
-      <DependentUpon>f121_dm_dang_ky_gui_theo_excel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="f130_chuc_nang.resx">
-      <DependentUpon>f130_chuc_nang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="f140_thong_tin_cuoi_thang.resx">
-      <DependentUpon>f140_thong_tin_cuoi_thang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f400_menu_main.resx">
       <DependentUpon>f400_menu_main.cs</DependentUpon>

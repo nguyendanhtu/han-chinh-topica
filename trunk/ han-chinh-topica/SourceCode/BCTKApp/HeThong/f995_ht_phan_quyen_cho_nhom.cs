@@ -97,7 +97,7 @@ namespace BCTKApp.HeThong
         #region Event
         private void f995_ht_phan_quyen_cho_nhom_Load(object sender, EventArgs e)
         {
-            format_control();
+            //format_control();
             load_data_2_cbo();
             m_us_ht_user_group.FillDataset(m_ds_ht_user_group);
             DataRow v_dr = m_ds_ht_user_group.Tables[0].Rows[0];

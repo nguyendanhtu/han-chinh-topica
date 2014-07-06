@@ -128,7 +128,7 @@ namespace BCTKUS
         {
 
             IMakeSelectCmd v_obj_mak_cmd = new CMakeAndSelectCmd(i_ds, i_ds.HT_PHAN_QUYEN_CHO_NHOM.TableName);
-            v_obj_mak_cmd.AddCondition(HT_PHAN_QUYEN_CHO_NHOM.ID_NHOM_NGUOI_SU_DUNG, i_dc_group_user_id, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
+            v_obj_mak_cmd.AddCondition(HT_PHAN_QUYEN_CHO_NHOM.ID_USER_GROUP, i_dc_group_user_id, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
             this.FillDatasetByCommand(i_ds, v_obj_mak_cmd.getSelectCmd());
         }
         public void DeleteAllQuyenOfGroupUser(decimal i_dc_group_user_id)
