@@ -624,6 +624,8 @@ namespace BCTKApp
             try
             {
                 decimal v_id_phong_ban;
+                decimal v_tong_bill;
+                decimal v_tong_tien;
                 decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
                 DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
                 DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
@@ -632,13 +634,21 @@ namespace BCTKApp
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
                 //Data v_dc = (DataColumn)m_fg.Cols[i_grid_row].UserData;
                 v_id_phong_ban = CIPConvert.ToDecimal(v_dr[0]);
+                if (v_dr[3].ToString() != "")
+                    v_tong_bill = CIPConvert.ToDecimal(v_dr[3]);
+                else
+                    v_tong_bill = 0;
+                if (v_dr[4].ToString() != "")
+                    v_tong_tien = CIPConvert.ToDecimal(v_dr[4]);
+                else
+                    v_tong_tien = 0;
                 if(i_grid_col==5){
                     f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
                     v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
                 }
                 else{
                     f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
-                    //v_frm1.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);
+                    v_frm1.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
                 }
             }
             catch (Exception v_e)
