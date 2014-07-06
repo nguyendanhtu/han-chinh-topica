@@ -237,10 +237,10 @@ namespace BCTKApp
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Location = new System.Drawing.Point(0, 92);
+            this.m_fg.Location = new System.Drawing.Point(0, 117);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
-            this.m_fg.Size = new System.Drawing.Size(1068, 531);
+            this.m_fg.Size = new System.Drawing.Size(1068, 506);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
@@ -251,7 +251,7 @@ namespace BCTKApp
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.Location = new System.Drawing.Point(404, 9);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(370, 22);
+            this.m_lbl_header.Size = new System.Drawing.Size(371, 22);
             this.m_lbl_header.TabIndex = 21;
             this.m_lbl_header.Text = "CHI TIẾT CÁC BILL THEO PHÒNG BAN";
             // 
@@ -260,7 +260,7 @@ namespace BCTKApp
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(702, 53);
+            this.label1.Location = new System.Drawing.Point(405, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 19);
             this.label1.TabIndex = 25;
@@ -271,7 +271,7 @@ namespace BCTKApp
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(896, 53);
+            this.label2.Location = new System.Drawing.Point(599, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 19);
             this.label2.TabIndex = 25;
@@ -282,7 +282,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.AutoSize = true;
             this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(778, 53);
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(481, 41);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(81, 19);
             this.m_lbl_tu_ngay.TabIndex = 25;
@@ -293,7 +293,7 @@ namespace BCTKApp
             this.m_lbl_den_ngay.AutoSize = true;
             this.m_lbl_den_ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_den_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_den_ngay.Location = new System.Drawing.Point(980, 53);
+            this.m_lbl_den_ngay.Location = new System.Drawing.Point(683, 41);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
             this.m_lbl_den_ngay.Size = new System.Drawing.Size(81, 19);
             this.m_lbl_den_ngay.TabIndex = 25;
@@ -304,9 +304,9 @@ namespace BCTKApp
             this.m_lbl_ten_phong_ban.AutoSize = true;
             this.m_lbl_ten_phong_ban.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ten_phong_ban.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_ten_phong_ban.Location = new System.Drawing.Point(36, 53);
+            this.m_lbl_ten_phong_ban.Location = new System.Drawing.Point(36, 84);
             this.m_lbl_ten_phong_ban.Name = "m_lbl_ten_phong_ban";
-            this.m_lbl_ten_phong_ban.Size = new System.Drawing.Size(107, 19);
+            this.m_lbl_ten_phong_ban.Size = new System.Drawing.Size(106, 19);
             this.m_lbl_ten_phong_ban.TabIndex = 25;
             this.m_lbl_ten_phong_ban.Text = "Tên phòng ban";
             // 
@@ -315,7 +315,7 @@ namespace BCTKApp
             this.m_lbl_tong_bill.AutoSize = true;
             this.m_lbl_tong_bill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tong_bill.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tong_bill.Location = new System.Drawing.Point(383, 53);
+            this.m_lbl_tong_bill.Location = new System.Drawing.Point(486, 84);
             this.m_lbl_tong_bill.Name = "m_lbl_tong_bill";
             this.m_lbl_tong_bill.Size = new System.Drawing.Size(21, 19);
             this.m_lbl_tong_bill.TabIndex = 25;
@@ -326,7 +326,7 @@ namespace BCTKApp
             this.m_lbl_tong_tien.AutoSize = true;
             this.m_lbl_tong_tien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tong_tien.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tong_tien.Location = new System.Drawing.Point(544, 53);
+            this.m_lbl_tong_tien.Location = new System.Drawing.Point(932, 84);
             this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
             this.m_lbl_tong_tien.Size = new System.Drawing.Size(21, 19);
             this.m_lbl_tong_tien.TabIndex = 25;
@@ -337,7 +337,7 @@ namespace BCTKApp
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(302, 53);
+            this.label3.Location = new System.Drawing.Point(405, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 19);
             this.label3.TabIndex = 25;
@@ -348,7 +348,7 @@ namespace BCTKApp
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(449, 53);
+            this.label4.Location = new System.Drawing.Point(837, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 19);
             this.label4.TabIndex = 25;
