@@ -515,12 +515,8 @@ namespace BCTKApp
         }
 		#endregion
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN_Load(object sender, System.EventArgs e) {
+        #region Event
+        private void f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
 			}
@@ -641,12 +637,12 @@ namespace BCTKApp
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
                 v_id_phap_nhan = CIPConvert.ToDecimal(v_dr[0]);
                 v_tong_bill = CIPConvert.ToDecimal(v_dr[3]);
-                if (v_dr[6] != null)
+                if (v_dr[6].ToString() == "")
                 {
-                    v_tong_chi_phi = CIPConvert.ToDecimal(v_dr[6]);
+                    v_tong_chi_phi = CIPConvert.ToDecimal(0);  
                 }
                 else
-                { v_tong_chi_phi = 0; }
+                { v_tong_chi_phi = CIPConvert.ToDecimal(v_dr[6]); }
                 f411_V_TONG_HOP_CHI_PHI_THEO_PHONG_BAN_VA_PHAP_NHAN frm = new f411_V_TONG_HOP_CHI_PHI_THEO_PHONG_BAN_VA_PHAP_NHAN();
                 frm.Display_for_chi_tiet(v_id_phap_nhan, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_chi_phi);
             }
@@ -656,7 +652,7 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-	}
+        #endregion
+    }
 }
 
