@@ -74,6 +74,61 @@ namespace BCTKApp.BaoCao
             //CControlFormat.setFormStyle(this, new CAppContext_201());
         }
 
+        private void m_txt_phong_ban_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_txt_so_tien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_txt_nguoi_gui_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_txt_noi_nhan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_txt_trang_thai_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_txt_khu_vuc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_txt_ghi_chu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_txt_noi_dung_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_txt_nguoi_nhan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_txt_ngay_gui_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_txt_so_bill_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
