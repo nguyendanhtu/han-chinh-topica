@@ -48,6 +48,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.m_lbl_danh_sach_loi = new System.Windows.Forms.Label();
             this.m_lbox_ds_loi = new System.Windows.Forms.ListBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.m_pnl_bot.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -124,7 +125,7 @@
             this.m_pnl_bot.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_bot.Location = new System.Drawing.Point(0, 577);
             this.m_pnl_bot.Name = "m_pnl_bot";
-            this.m_pnl_bot.Size = new System.Drawing.Size(1253, 40);
+            this.m_pnl_bot.Size = new System.Drawing.Size(1248, 40);
             this.m_pnl_bot.TabIndex = 11;
             // 
             // m_xuat_excel
@@ -152,7 +153,7 @@
             this.m_cmd_thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_thoat.ImageIndex = 12;
             this.m_cmd_thoat.ImageList = this.imageList1;
-            this.m_cmd_thoat.Location = new System.Drawing.Point(1160, 0);
+            this.m_cmd_thoat.Location = new System.Drawing.Point(1155, 0);
             this.m_cmd_thoat.Name = "m_cmd_thoat";
             this.m_cmd_thoat.Size = new System.Drawing.Size(93, 40);
             this.m_cmd_thoat.TabIndex = 1;
@@ -161,13 +162,14 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.progressBar1);
             this.panel2.Controls.Add(this.m_lbl_loading);
             this.panel2.Controls.Add(this.m_lbl_header);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1253, 36);
+            this.panel2.Size = new System.Drawing.Size(1248, 36);
             this.panel2.TabIndex = 8;
             // 
             // m_lbl_loading
@@ -187,7 +189,7 @@
             this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(1253, 33);
+            this.m_lbl_header.Size = new System.Drawing.Size(1248, 33);
             this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "F820 - Nhập chi phí cuối tháng";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,7 +202,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 36);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1253, 38);
+            this.panel3.Size = new System.Drawing.Size(1248, 38);
             this.panel3.TabIndex = 17;
             // 
             // m_cmd_kiem_tra_dl
@@ -260,7 +262,7 @@
             this.m_fg.Location = new System.Drawing.Point(0, 74);
             this.m_fg.Name = "m_fg";
             this.m_fg.Rows.Count = 2;
-            this.m_fg.Size = new System.Drawing.Size(1253, 329);
+            this.m_fg.Size = new System.Drawing.Size(1248, 329);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 18;
             this.m_fg.TabStop = false;
@@ -272,7 +274,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 403);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1253, 174);
+            this.panel4.Size = new System.Drawing.Size(1248, 174);
             this.panel4.TabIndex = 19;
             // 
             // m_lbl_danh_sach_loi
@@ -281,9 +283,9 @@
             this.m_lbl_danh_sach_loi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_danh_sach_loi.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_danh_sach_loi.Name = "m_lbl_danh_sach_loi";
-            this.m_lbl_danh_sach_loi.Size = new System.Drawing.Size(1253, 23);
+            this.m_lbl_danh_sach_loi.Size = new System.Drawing.Size(1248, 23);
             this.m_lbl_danh_sach_loi.TabIndex = 3;
-            this.m_lbl_danh_sach_loi.Text = "Danh sách lỗi";
+            this.m_lbl_danh_sach_loi.Text = "Danh sách lỗi khi đối chiếu";
             this.m_lbl_danh_sach_loi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_lbox_ds_loi
@@ -292,14 +294,22 @@
             this.m_lbox_ds_loi.FormattingEnabled = true;
             this.m_lbox_ds_loi.Location = new System.Drawing.Point(0, 27);
             this.m_lbox_ds_loi.Name = "m_lbox_ds_loi";
-            this.m_lbox_ds_loi.Size = new System.Drawing.Size(1253, 147);
+            this.m_lbox_ds_loi.Size = new System.Drawing.Size(1248, 147);
             this.m_lbox_ds_loi.TabIndex = 2;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(972, 9);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(109, 18);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 15;
             // 
             // f820_NHAP_CHI_PHI_CUOI_THANG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1253, 617);
+            this.ClientSize = new System.Drawing.Size(1248, 617);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -338,5 +348,6 @@
         private System.Windows.Forms.Label m_lbl_danh_sach_loi;
         private SIS.Controls.Button.SiSButton m_cmd_kiem_tra_dl;
         private SIS.Controls.Button.SiSButton m_cmd_so_sanh;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

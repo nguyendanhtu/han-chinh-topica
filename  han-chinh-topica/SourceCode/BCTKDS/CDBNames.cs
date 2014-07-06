@@ -315,12 +315,12 @@ namespace BCTKDS.CDBNames
         public const string GHI_CHU = "GHI_CHU";
         public const string LOAI_PHAN_QUYEN = "LOAI_PHAN_QUYEN";
     }
-    public class HT_PHAN_QUYEN_CHO_NHOM
-    {
+    public class HT_PHAN_QUYEN_CHO_NHOM {
         public const string ID = "ID";
-        public const string ID_NHOM_NGUOI_SU_DUNG = "ID_NHOM_NGUOI_SU_DUNG";
+        public const string ID_USER_GROUP = "ID_USER_GROUP";
         public const string ID_PHAN_QUYEN_HE_THONG = "ID_PHAN_QUYEN_HE_THONG";
     }
+
     public class HT_NHOM_NGUOI_SU_DUNG
     {
         public const string ID = "ID";
@@ -332,8 +332,7 @@ namespace BCTKDS.CDBNames
         public const string ID_LAST_UPDATED_BY = "ID_LAST_UPDATED_BY";
         public const string LAS_UPDATED_DATE = "LAS_UPDATED_DATE";
     }
-    public class HT_NGUOI_SU_DUNG
-    {
+    public class HT_NGUOI_SU_DUNG {
         public const string ID = "ID";
         public const string TEN_TRUY_CAP = "TEN_TRUY_CAP";
         public const string TEN = "TEN";
@@ -342,13 +341,11 @@ namespace BCTKDS.CDBNames
         public const string NGUOI_TAO = "NGUOI_TAO";
         public const string TRANG_THAI = "TRANG_THAI";
         public const string BUILT_IN_YN = "BUILT_IN_YN";
+        public const string ID_USER_GROUP = "ID_USER_GROUP";
+        public const string ID_TRAINING_PROJECT = "ID_TRAINING_PROJECT";
     }
-    public class HT_QUYEN_USER
-    {
-        public const string ID = "ID";
-        public const string ID_USER = "ID_USER";
-        public const string ID_QUYEN = "ID_QUYEN";
-    }
+
+    
     public class HT_THAM_SO_HE_THONG
     {
         public const string ID = "ID";

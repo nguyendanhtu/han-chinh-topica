@@ -79,6 +79,7 @@ namespace BCTKApp.ChucNang {
             m_fg.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.MakeSoTT(0, m_fg);
+            progressBar1.Visible = false;
             set_define_event();
             this.KeyPreview = true;
         }
@@ -119,6 +120,10 @@ namespace BCTKApp.ChucNang {
             int v_i_start_excel_row = 2;
             int v_i_sheet_col = 1;
             for(int v_i_cur_col = m_fg.Cols.Fixed; v_i_cur_col < m_fg.Cols.Count; v_i_cur_col++) {
+                progressBar1.Visible = true;
+                progressBar1.Minimum = 1;
+                progressBar1.Maximum = m_fg.Cols.Count;
+                progressBar1.Value = v_i_cur_col;
                 v_obj_excel_rpt.Export2Grid(m_fg,
                     v_i_start_excel_row
                     , v_i_sheet_col
@@ -127,6 +132,7 @@ namespace BCTKApp.ChucNang {
             }
             m_fg.Rows[m_fg.Rows.Count - 1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
             m_lbl_loading.Visible = false;
+            progressBar1.Visible = false;
         }
         //private void grid_row_2_us_cm_dm_bang_chi_tiet_cuoi_thang(int ip_grid_row, US_CM_DM_BANG_CHI_TIET_CUOI_THANG iop_us_cm_dm_bang_chi_tiet_cuoi_thang) 
         //{
@@ -234,6 +240,7 @@ namespace BCTKApp.ChucNang {
             m_cmd_nhap_excel.Click += new EventHandler(m_cmd_nhap_excel_Click);
             m_cmd_so_sanh.Click += new EventHandler(m_cmd_so_sanh_Click);
             m_cmd_kiem_tra_dl.Click += new EventHandler(m_cmd_kiem_tra_dl_Click);
+
         }
         #endregion
 
