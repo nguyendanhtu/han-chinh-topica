@@ -500,7 +500,7 @@ namespace BCTKApp
             m_lbl_tu_ngay.Text = v_dt_tu_ngay.Date.ToShortDateString();
             m_lbl_den_ngay.Text = v_dt_den_ngay.Date.ToShortDateString();
             m_lbl_tong_bill.Text = CIPConvert.ToStr(v_tong_bill, "#,###");
-            m_lbl_tong_chi_phi.Text = CIPConvert.ToStr(v_tong_chi_phi, "#,###") + "   VNĐ";
+            m_lbl_tong_chi_phi.Text = CIPConvert.ToStr(v_tong_chi_phi, "#,###") + "   (VNĐ)";
             v_us_tong_hop.FillDataset_chi_phi_theo_phong_ban(v_ds_tong_hop, v_id_phap_nhan, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds_tong_hop, m_fg, m_obj_trans);
