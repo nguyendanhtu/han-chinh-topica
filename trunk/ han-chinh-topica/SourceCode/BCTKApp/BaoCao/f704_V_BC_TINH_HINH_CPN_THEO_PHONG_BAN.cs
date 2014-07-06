@@ -361,6 +361,8 @@ namespace BCTKApp
 		DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN m_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
 		US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN m_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
         bool m_trang_thai = false;
+        DateTime v_dt_tu_ngay;
+        DateTime v_dt_den_ngay;
 		#endregion
 
 		#region Private Methods
@@ -394,6 +396,22 @@ namespace BCTKApp
         private void load_data_2_grid()
         {
             m_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            if (!m_dt_tu_ngay.Checked)
+            {
+                v_dt_tu_ngay = new DateTime(1970, 1, 1);
+            }
+            else
+            {
+                v_dt_tu_ngay = m_dt_tu_ngay.Value;
+            }
+            if (!m_dt_den_ngay.Checked)
+            {
+                v_dt_den_ngay = new DateTime(2050, 1, 1);
+            }
+            else
+            {
+                v_dt_den_ngay = m_dt_den_ngay.Value;
+            }
             m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
@@ -439,8 +457,7 @@ namespace BCTKApp
         {
             string v_id_tu_khoa = m_txt_tim_kiem.Text;
             decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
-            DateTime v_dt_tu_ngay ;
-            DateTime v_dt_den_ngay ;
+            
             if (!m_dt_tu_ngay.Checked)
             {
                 v_dt_tu_ngay = new DateTime(1970, 1, 1);
@@ -527,8 +544,8 @@ namespace BCTKApp
         private void export_2_excel()
         {
             CExcelReport v_obj_excel_report = new CExcelReport("f704_bc_tinh_hinh_CPN_theo_phong_ban.xlsx", 7, 1);
-            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dt_tu_ngay.Text);
-            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dt_den_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", v_dt_tu_ngay.ToShortDateString());
+            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", v_dt_den_ngay);
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
         }
@@ -621,7 +638,7 @@ namespace BCTKApp
                 }
                 else{
                     f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
-                    v_frm1.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);
+                    //v_frm1.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay);
                 }
             }
             catch (Exception v_e)
