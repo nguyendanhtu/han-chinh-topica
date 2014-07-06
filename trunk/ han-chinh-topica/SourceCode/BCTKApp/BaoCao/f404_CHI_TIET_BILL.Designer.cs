@@ -56,7 +56,6 @@
             this.m_txt_noi_dung = new System.Windows.Forms.TextBox();
             this.m_txt_khu_vuc = new System.Windows.Forms.TextBox();
             this.m_txt_ghi_chu = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -278,7 +277,7 @@
             this.m_txt_so_tien.ForeColor = System.Drawing.Color.Maroon;
             this.m_txt_so_tien.Location = new System.Drawing.Point(173, 147);
             this.m_txt_so_tien.Name = "m_txt_so_tien";
-            this.m_txt_so_tien.Size = new System.Drawing.Size(198, 26);
+            this.m_txt_so_tien.Size = new System.Drawing.Size(258, 26);
             this.m_txt_so_tien.TabIndex = 21;
             // 
             // m_txt_nguoi_gui
@@ -344,17 +343,6 @@
             this.m_txt_ghi_chu.Size = new System.Drawing.Size(244, 26);
             this.m_txt_ghi_chu.TabIndex = 21;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label2.Location = new System.Drawing.Point(377, 150);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 19);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "(VNĐ)";
-            // 
             // f404_CHI_TIET_BILL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,7 +361,6 @@
             this.Controls.Add(this.m_txt_ngay_gui);
             this.Controls.Add(this.m_txt_phong_ban);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -422,6 +409,5 @@
         private System.Windows.Forms.TextBox m_txt_noi_dung;
         private System.Windows.Forms.TextBox m_txt_khu_vuc;
         private System.Windows.Forms.TextBox m_txt_ghi_chu;
-        private System.Windows.Forms.Label label2;
     }
 }
