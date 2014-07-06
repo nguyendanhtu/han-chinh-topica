@@ -727,7 +727,8 @@ namespace BCTKApp
         private void export_2_excel()
         {
             CExcelReport v_obj_excel_report = new CExcelReport("f405_Tra_cuc_so_Bill.xlsx", 6, 1);
-            //v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dtp_tu_thang.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dt_tu_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dt_den_ngay.Text);
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
         }
