@@ -321,9 +321,6 @@
     <Compile Include="ChucNang\f401_DON_GIA_DINH_MUC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChucNang\f505_CAP_NHAT_TRANG_THAI_CPN.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ChucNang\F506_CAP_NHAT_TRANG_THAI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -473,9 +470,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f401_DON_GIA_DINH_MUC.resx">
       <DependentUpon>f401_DON_GIA_DINH_MUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChucNang\f505_CAP_NHAT_TRANG_THAI_CPN.resx">
-      <DependentUpon>f505_CAP_NHAT_TRANG_THAI_CPN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\F506_CAP_NHAT_TRANG_THAI.resx">
       <DependentUpon>F506_CAP_NHAT_TRANG_THAI.cs</DependentUpon>
