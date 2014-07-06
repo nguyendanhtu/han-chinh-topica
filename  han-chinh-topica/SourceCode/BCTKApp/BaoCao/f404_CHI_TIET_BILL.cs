@@ -41,7 +41,11 @@ namespace BCTKApp.BaoCao
             m_txt_noi_nhan.Text = v_dr["NOI_NHAN"].ToString();
             m_txt_trang_thai.Text = v_dr["TRANG_THAI"].ToString();
             m_txt_noi_dung.Text = v_dr["NOI_DUNG"].ToString();
-            m_txt_so_tien.Text = CIPConvert.ToStr(v_dr["SO_TIEN"], "#,###");
+            if (v_dr["SO_TIEN"].ToString() != "")
+            {
+                m_txt_so_tien.Text = CIPConvert.ToStr(v_dr["SO_TIEN"], "#,###");
+            }
+            else m_txt_so_tien.Text = "0 VNĐ";
             if(v_dr["TRONG_NUOC"].ToString() == "x")
             {
                 m_txt_khu_vuc.Text = "Trong nước";
