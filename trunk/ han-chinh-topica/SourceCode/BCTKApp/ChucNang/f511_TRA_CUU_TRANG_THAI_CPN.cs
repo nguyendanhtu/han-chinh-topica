@@ -97,6 +97,7 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_trang_thai = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_top = new System.Windows.Forms.Panel();
+            this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
             this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -110,7 +111,6 @@ namespace BCTKApp
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai)).BeginInit();
             this.m_pnl_top.SuspendLayout();
@@ -216,6 +216,14 @@ namespace BCTKApp
             this.m_pnl_top.Size = new System.Drawing.Size(884, 180);
             this.m_pnl_top.TabIndex = 21;
             // 
+            // m_cbo_trung_tam
+            // 
+            this.m_cbo_trung_tam.FormattingEnabled = true;
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(334, 71);
+            this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
+            this.m_cbo_trung_tam.Size = new System.Drawing.Size(190, 21);
+            this.m_cbo_trung_tam.TabIndex = 34;
+            // 
             // m_cbo_trang_thai
             // 
             this.m_cbo_trang_thai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -274,7 +282,7 @@ namespace BCTKApp
             this.m_dtp_tu_ngay.ShowCheckBox = true;
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_tu_ngay.TabIndex = 1;
-            this.m_dtp_tu_ngay.Value = new System.DateTime(2013, 8, 30, 9, 16, 0, 0);
+            this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 1, 30, 9, 16, 0, 0);
             // 
             // label1
             // 
@@ -348,14 +356,6 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Size = new System.Drawing.Size(241, 23);
             this.m_lbl_tieu_de.TabIndex = 27;
             this.m_lbl_tieu_de.Text = "TRA CỨU TRẠNG THÁI CPN";
-            // 
-            // m_cbo_trung_tam
-            // 
-            this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(334, 71);
-            this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
-            this.m_cbo_trung_tam.Size = new System.Drawing.Size(190, 21);
-            this.m_cbo_trung_tam.TabIndex = 34;
             // 
             // f511_TRA_CUU_TRANG_THAI_CPN
             // 
