@@ -275,7 +275,7 @@ namespace BCTKApp
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(512, 9);
+            this.m_lbl_header.Location = new System.Drawing.Point(596, 9);
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(176, 22);
             this.m_lbl_header.TabIndex = 0;
@@ -297,7 +297,7 @@ namespace BCTKApp
             this.m_lbl_ten_pb.AutoSize = true;
             this.m_lbl_ten_pb.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ten_pb.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_ten_pb.Location = new System.Drawing.Point(612, 68);
+            this.m_lbl_ten_pb.Location = new System.Drawing.Point(642, 68);
             this.m_lbl_ten_pb.Name = "m_lbl_ten_pb";
             this.m_lbl_ten_pb.Size = new System.Drawing.Size(49, 15);
             this.m_lbl_ten_pb.TabIndex = 3;
@@ -308,7 +308,7 @@ namespace BCTKApp
             this.m_lbl_den_ngay.AutoSize = true;
             this.m_lbl_den_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_den_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_den_ngay.Location = new System.Drawing.Point(612, 97);
+            this.m_lbl_den_ngay.Location = new System.Drawing.Point(642, 97);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
             this.m_lbl_den_ngay.Size = new System.Drawing.Size(62, 15);
             this.m_lbl_den_ngay.TabIndex = 7;
@@ -350,7 +350,7 @@ namespace BCTKApp
             // 
             this.m_cbo_ten_pb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_ten_pb.FormattingEnabled = true;
-            this.m_cbo_ten_pb.Location = new System.Drawing.Point(694, 62);
+            this.m_cbo_ten_pb.Location = new System.Drawing.Point(724, 62);
             this.m_cbo_ten_pb.Name = "m_cbo_ten_pb";
             this.m_cbo_ten_pb.Size = new System.Drawing.Size(339, 21);
             this.m_cbo_ten_pb.TabIndex = 4;
@@ -374,7 +374,7 @@ namespace BCTKApp
             this.m_dt_den_ngay.Checked = false;
             this.m_dt_den_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dt_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dt_den_ngay.Location = new System.Drawing.Point(694, 97);
+            this.m_dt_den_ngay.Location = new System.Drawing.Point(724, 97);
             this.m_dt_den_ngay.Name = "m_dt_den_ngay";
             this.m_dt_den_ngay.ShowCheckBox = true;
             this.m_dt_den_ngay.Size = new System.Drawing.Size(174, 20);
@@ -399,7 +399,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 18;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(620, 201);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(645, 201);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_tim_kiem.TabIndex = 19;
@@ -432,7 +432,7 @@ namespace BCTKApp
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(615, 133);
+            this.label1.Location = new System.Drawing.Point(645, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 11;
@@ -440,7 +440,7 @@ namespace BCTKApp
             // 
             // m_txt_tk_nguoi_nhan
             // 
-            this.m_txt_tk_nguoi_nhan.Location = new System.Drawing.Point(694, 131);
+            this.m_txt_tk_nguoi_nhan.Location = new System.Drawing.Point(724, 131);
             this.m_txt_tk_nguoi_nhan.Name = "m_txt_tk_nguoi_nhan";
             this.m_txt_tk_nguoi_nhan.Size = new System.Drawing.Size(337, 20);
             this.m_txt_tk_nguoi_nhan.TabIndex = 12;
@@ -452,7 +452,7 @@ namespace BCTKApp
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(617, 170);
+            this.label2.Location = new System.Drawing.Point(647, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 15);
             this.label2.TabIndex = 15;
@@ -460,7 +460,7 @@ namespace BCTKApp
             // 
             // m_txt_tk_noi_nhan
             // 
-            this.m_txt_tk_noi_nhan.Location = new System.Drawing.Point(696, 168);
+            this.m_txt_tk_noi_nhan.Location = new System.Drawing.Point(726, 168);
             this.m_txt_tk_noi_nhan.Name = "m_txt_tk_noi_nhan";
             this.m_txt_tk_noi_nhan.Size = new System.Drawing.Size(335, 20);
             this.m_txt_tk_noi_nhan.TabIndex = 16;
@@ -514,7 +514,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f405_V_TONG_HOP_CPN_THEO_PHONG_BAN";
-            this.Text = "f405- Tra cứu số Bill";
+            this.Text = "F405- Tra cứu số Bill";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.f405_V_TONG_HOP_CPN_THEO_PHONG_BAN_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
