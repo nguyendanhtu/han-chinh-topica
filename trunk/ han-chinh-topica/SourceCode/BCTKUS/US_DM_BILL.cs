@@ -337,9 +337,9 @@ public class US_DM_BILL : US_Object
     public bool is_so_tien_null(US_DM_BILL ip_us_dm_bill, string ip_so_bill) {
         CStoredProc v_proc = new CStoredProc("pr_is_so_tien_null");
         v_proc.addNVarcharInputParam("@SO_BILL", ip_so_bill);
-        SqlParameter v_obj_is_so_tien_null = v_proc.addDecimalOutputParam("@SO_TIEN", -1);
+        SqlParameter v_obj_is_so_tien_null = v_proc.addDecimalOutputParam("@SO_TIEN", 0);
         v_proc.ExecuteCommand(ip_us_dm_bill);
-        if(v_obj_is_so_tien_null.Value == null) {
+        if(CIPConvert.ToDecimal(v_obj_is_so_tien_null.Value) == -1) {
             return true;
         }
         return false;
