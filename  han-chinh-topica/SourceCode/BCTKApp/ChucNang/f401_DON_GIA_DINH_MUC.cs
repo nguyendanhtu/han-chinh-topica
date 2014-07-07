@@ -40,7 +40,6 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
         private Label m_lbl_header;
-        internal SIS.Controls.Button.SiSButton m_cmd_search;
         private DateTimePicker m_dat_ngay_ap_dung;
         private Label label1;
         private Label label2;
@@ -92,7 +91,6 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_header = new System.Windows.Forms.Label();
-            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_dat_ngay_ap_dung = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -238,22 +236,6 @@ namespace BCTKApp
             this.m_lbl_header.TabIndex = 21;
             this.m_lbl_header.Text = "BẢNG ĐƠN GIÁ ĐỊNH MỨC";
             // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_search.ForeColor = System.Drawing.Color.Maroon;
-            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_search.ImageIndex = 18;
-            this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(569, 73);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 2824;
-            this.m_cmd_search.Text = "Tìm kiếm";
-            // 
             // m_dat_ngay_ap_dung
             // 
             this.m_dat_ngay_ap_dung.Checked = false;
@@ -264,6 +246,7 @@ namespace BCTKApp
             this.m_dat_ngay_ap_dung.ShowCheckBox = true;
             this.m_dat_ngay_ap_dung.Size = new System.Drawing.Size(200, 23);
             this.m_dat_ngay_ap_dung.TabIndex = 2826;
+            this.m_dat_ngay_ap_dung.ValueChanged += new System.EventHandler(this.m_cmd_search_Click);
             // 
             // label1
             // 
@@ -294,7 +277,6 @@ namespace BCTKApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_dat_ngay_ap_dung);
-            this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -457,8 +439,9 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-            m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
+            //m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
 		}
+        
 		#endregion
 
 //
@@ -521,6 +504,7 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+       
         private void m_cmd_search_Click(object sender, EventArgs e){
             try
             {
