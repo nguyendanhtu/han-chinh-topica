@@ -395,7 +395,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_header);
-            this.Enabled = false;
             this.Name = "f404_CHI_TIET_BILL";
             this.Text = "f404- Chi tiết Bill";
             this.m_pnl_out_place_dm.ResumeLayout(false);
