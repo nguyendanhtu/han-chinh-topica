@@ -24,6 +24,7 @@ using BCTKDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using BCTKApp.BaoCao;
+using IP.Core.IPExcelReport;
 
 namespace BCTKApp
 {
@@ -38,8 +39,7 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
 		internal SIS.Controls.Button.SiSButton m_cmd_update;
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private Label m_lbl_header;
         private Label label1;
         private Label label2;
@@ -50,6 +50,7 @@ namespace BCTKApp
         private Label m_lbl_tong_tien;
         private Label label3;
         private Label label4;
+        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
 		private System.ComponentModel.IContainer components;
 
 		public f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE()
@@ -91,9 +92,9 @@ namespace BCTKApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -140,9 +141,9 @@ namespace BCTKApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -151,6 +152,21 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1068, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xuat_excel.TabIndex = 24;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
             // m_cmd_insert
             // 
@@ -183,22 +199,6 @@ namespace BCTKApp
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
             this.m_cmd_update.Visible = false;
-            // 
-            // m_cmd_view
-            // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xem";
-            this.m_cmd_view.Visible = false;
             // 
             // m_cmd_delete
             // 
@@ -251,9 +251,9 @@ namespace BCTKApp
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.Location = new System.Drawing.Point(404, 9);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(371, 22);
+            this.m_lbl_header.Size = new System.Drawing.Size(354, 22);
             this.m_lbl_header.TabIndex = 21;
-            this.m_lbl_header.Text = "CHI TIẾT CÁC BILL THEO PHÒNG BAN";
+            this.m_lbl_header.Text = "CHI TIẾT CÁC BILL CỦA PHÒNG BAN";
             // 
             // label1
             // 
@@ -306,7 +306,7 @@ namespace BCTKApp
             this.m_lbl_ten_phong_ban.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_ten_phong_ban.Location = new System.Drawing.Point(36, 84);
             this.m_lbl_ten_phong_ban.Name = "m_lbl_ten_phong_ban";
-            this.m_lbl_ten_phong_ban.Size = new System.Drawing.Size(106, 19);
+            this.m_lbl_ten_phong_ban.Size = new System.Drawing.Size(107, 19);
             this.m_lbl_ten_phong_ban.TabIndex = 25;
             this.m_lbl_ten_phong_ban.Text = "Tên phòng ban";
             // 
@@ -373,7 +373,7 @@ namespace BCTKApp
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Maroon;
             this.Name = "f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE";
-            this.Text = "f407 - Chi tiết Bill từng phòng ban";
+            this.Text = "F407 - Chi tiết Bill của phòng ban";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
@@ -558,7 +558,7 @@ namespace BCTKApp
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
 		}
 		#endregion
 
@@ -638,6 +638,29 @@ namespace BCTKApp
             }
         }
         #endregion
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                export_2_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void export_2_excel()
+        {
+            CExcelReport v_obj_excel_report = new CExcelReport("f407_bc_chi_tiet_bill_cua_phong_ban.xlsx", 6, 1);
+            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_lbl_tu_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_lbl_den_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<phong_ban>", m_lbl_ten_phong_ban.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<tong_bill>", m_lbl_tong_bill.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<tong_tien>", m_lbl_tong_tien.Text);
+            v_obj_excel_report.FindAndReplace(false);
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
+        }
     }
 }
 
