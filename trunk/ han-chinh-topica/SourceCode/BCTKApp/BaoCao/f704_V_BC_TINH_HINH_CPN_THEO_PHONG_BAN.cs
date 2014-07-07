@@ -39,9 +39,7 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         private TextBox m_txt_tim_kiem;
-        private ComboBox m_cbo_trang_thai;
         private Label m_lbl_tu_khoa;
-        private Label m_lbl_trang_thai;
         private DateTimePicker m_dt_den_ngay;
         private DateTimePicker m_dt_tu_ngay;
         private Label m_lbl_den_ngay;
@@ -94,9 +92,7 @@ namespace BCTKApp
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
-            this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
             this.m_lbl_tu_khoa = new System.Windows.Forms.Label();
-            this.m_lbl_trang_thai = new System.Windows.Forms.Label();
             this.m_dt_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_dt_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_den_ngay = new System.Windows.Forms.Label();
@@ -195,7 +191,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 18;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(622, 131);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(621, 109);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_tim_kiem.TabIndex = 39;
@@ -204,43 +200,22 @@ namespace BCTKApp
             // 
             // m_txt_tim_kiem
             // 
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(316, 136);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(315, 114);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(276, 20);
             this.m_txt_tim_kiem.TabIndex = 38;
             this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
-            // 
-            // m_cbo_trang_thai
-            // 
-            this.m_cbo_trang_thai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.m_cbo_trang_thai.FormattingEnabled = true;
-            this.m_cbo_trang_thai.Location = new System.Drawing.Point(315, 102);
-            this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
-            this.m_cbo_trang_thai.Size = new System.Drawing.Size(176, 21);
-            this.m_cbo_trang_thai.TabIndex = 37;
-            this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
             // 
             // m_lbl_tu_khoa
             // 
             this.m_lbl_tu_khoa.AutoSize = true;
             this.m_lbl_tu_khoa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tu_khoa.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tu_khoa.Location = new System.Drawing.Point(236, 142);
+            this.m_lbl_tu_khoa.Location = new System.Drawing.Point(235, 120);
             this.m_lbl_tu_khoa.Name = "m_lbl_tu_khoa";
             this.m_lbl_tu_khoa.Size = new System.Drawing.Size(54, 15);
             this.m_lbl_tu_khoa.TabIndex = 35;
             this.m_lbl_tu_khoa.Text = "Từ khóa:";
-            // 
-            // m_lbl_trang_thai
-            // 
-            this.m_lbl_trang_thai.AutoSize = true;
-            this.m_lbl_trang_thai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_trang_thai.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_trang_thai.Location = new System.Drawing.Point(235, 102);
-            this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
-            this.m_lbl_trang_thai.Size = new System.Drawing.Size(65, 15);
-            this.m_lbl_trang_thai.TabIndex = 36;
-            this.m_lbl_trang_thai.Text = "Trạng thái:";
             // 
             // m_dt_den_ngay
             // 
@@ -317,9 +292,7 @@ namespace BCTKApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tim_kiem);
-            this.Controls.Add(this.m_cbo_trang_thai);
             this.Controls.Add(this.m_lbl_tu_khoa);
-            this.Controls.Add(this.m_lbl_trang_thai);
             this.Controls.Add(this.m_dt_den_ngay);
             this.Controls.Add(this.m_dt_tu_ngay);
             this.Controls.Add(this.m_lbl_den_ngay);
@@ -375,7 +348,7 @@ namespace BCTKApp
             m_fg.Cols[0].Caption = "STT";
             set_define_events();
             this.KeyPreview = true;
-            load_cbo_trang_thai();
+            //load_cbo_trang_thai();
         }
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
@@ -395,61 +368,84 @@ namespace BCTKApp
 		}
         private void load_data_2_grid()
         {
-            m_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
-            m_dt_tu_ngay.Value = new DateTime(DateTime.Now.Year,DateTime.Now.Month,1);
-            m_dt_den_ngay.Value = DateTime.Now.Date;
-            m_dt_den_ngay.Checked = false;
-            m_dt_tu_ngay.Checked = false;
-            string v_id_tu_khoa = m_txt_tim_kiem.Text;
-            decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+            //decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+            decimal v_id_trang_thai = -1;
+            v_dt_tu_ngay = new DateTime(1970, 1, 1);
+            v_dt_den_ngay = new DateTime(2050, 1, 1);
+            
             US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
             DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
-            v_us.FillDatasetSearch(v_ds, v_id_trang_thai, v_id_tu_khoa);
+            v_us.FillDatasetSearch(v_ds, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai, "");
             m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
-            //DataGridViewRow row =new DataGridViewRow();
-            ////if (Convert.ToInt32(row.Cells[7].Value) < Convert.ToInt32(row.Cells[10].Value))
-            //    //{
-            
-            //        row.DefaultCellStyle.BackColor = Color.Red;
-                
-            for (int i = m_fg.Rows.Fixed; i < m_fg.Rows.Count;i++ )
+            for (int i = m_fg.Rows.Fixed; i < m_fg.Rows.Count; i++)
             {
                 if (m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT] == null) continue;
-                if (!CIPConvert.is_valid_number( m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT])) continue;
-                if (CIPConvert.ToDecimal((m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT]).ToString()) > 20) {
+                if (!CIPConvert.is_valid_number(m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT])) continue;
+                if (CIPConvert.ToDecimal((m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT]).ToString()) > 20)
+                {
                     m_fg.Rows[i].Style = m_fg.Styles["CustomStyle1"];
                 }
-                
+
             }
             m_fg.Redraw = true;
+            //m_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            ////m_dt_tu_ngay.Value = new DateTime(DateTime.Now.Year,DateTime.Now.Month,1);
+            ////m_dt_den_ngay.Value = DateTime.Now.Date;
+            ////m_dt_den_ngay.Checked = false;
+            ////m_dt_tu_ngay.Checked = false;
+            //string v_id_tu_khoa = m_txt_tim_kiem.Text;
+            //decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+            //US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            //DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            ////v_us.FillDatasetSearch(v_ds, v_id_trang_thai, v_id_tu_khoa);
+            //v_us.FillDataset(v_ds);
+            //m_fg.Redraw = false;
+            //CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            //CGridUtils.MakeSoTT(0, m_fg);
+            ////DataGridViewRow row =new DataGridViewRow();
+            //////if (Convert.ToInt32(row.Cells[7].Value) < Convert.ToInt32(row.Cells[10].Value))
+            ////    //{
+            
+            ////        row.DefaultCellStyle.BackColor = Color.Red;
+                
+            //for (int i = m_fg.Rows.Fixed; i < m_fg.Rows.Count;i++ )
+            //{
+            //    if (m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT] == null) continue;
+            //    if (!CIPConvert.is_valid_number( m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT])) continue;
+            //    if (CIPConvert.ToDecimal((m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT]).ToString()) > 20) {
+            //        m_fg.Rows[i].Style = m_fg.Styles["CustomStyle1"];
+            //    }
+                
+            //}
+            //m_fg.Redraw = true;
         }
-        private void load_cbo_trang_thai()
-        {
-            m_trang_thai = false;
-            BCTKUS.US_CM_DM_TU_DIEN v_us = new BCTKUS.US_CM_DM_TU_DIEN();
-            BCTKDS.DS_CM_DM_TU_DIEN v_ds = new BCTKDS.DS_CM_DM_TU_DIEN();
-            v_us.FillDataset(v_ds, "where id_loai_tu_dien = " + 12);
-            m_cbo_trang_thai.DataSource = v_ds.CM_DM_TU_DIEN;
-            m_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
-            m_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
-            DataRow v_dr = v_ds.CM_DM_TU_DIEN.NewRow();
-            v_dr[CM_DM_TU_DIEN.ID] = -1;
-            v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 12;
-            v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
-            v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "Tất cả";
-            v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "TRANG_THAI_THU";
-            v_dr[CM_DM_TU_DIEN.GHI_CHU] = " ";
-            v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
-            m_cbo_trang_thai.SelectedIndex = 0;
-            m_trang_thai = true;
-        }
+        //private void load_cbo_trang_thai()
+        //{
+        //    m_trang_thai = false;
+        //    BCTKUS.US_CM_DM_TU_DIEN v_us = new BCTKUS.US_CM_DM_TU_DIEN();
+        //    BCTKDS.DS_CM_DM_TU_DIEN v_ds = new BCTKDS.DS_CM_DM_TU_DIEN();
+        //    v_us.FillDataset(v_ds, "where id_loai_tu_dien = " + 12);
+        //    m_cbo_trang_thai.DataSource = v_ds.CM_DM_TU_DIEN;
+        //    m_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
+        //    m_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
+        //    DataRow v_dr = v_ds.CM_DM_TU_DIEN.NewRow();
+        //    v_dr[CM_DM_TU_DIEN.ID] = -1;
+        //    v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 12;
+        //    v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
+        //    v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "Tất cả";
+        //    v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "TRANG_THAI_THU";
+        //    v_dr[CM_DM_TU_DIEN.GHI_CHU] = " ";
+        //    v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+        //    m_cbo_trang_thai.SelectedIndex = 0;
+        //    m_trang_thai = true;
+        //}
         private void tim_kiem()
         {
             string v_id_tu_khoa = m_txt_tim_kiem.Text;
-            decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
-            
+            //decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+            decimal v_id_trang_thai = -1;
             if (!m_dt_tu_ngay.Checked)
             {
                 v_dt_tu_ngay = new DateTime(1970, 1, 1);
@@ -472,6 +468,16 @@ namespace BCTKApp
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
+            for (int i = m_fg.Rows.Fixed; i < m_fg.Rows.Count; i++)
+            {
+                if (m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT] == null) continue;
+                if (!CIPConvert.is_valid_number(m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT])) continue;
+                if (CIPConvert.ToDecimal((m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT]).ToString()) > 20)
+                {
+                    m_fg.Rows[i].Style = m_fg.Styles["CustomStyle1"];
+                }
+
+            }
             m_fg.Redraw = true;
         }
 		private void grid2us_object(US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN i_us
@@ -618,7 +624,7 @@ namespace BCTKApp
                 decimal v_id_phong_ban;
                 decimal v_tong_bill;
                 decimal v_tong_tien;
-                decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+                //decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
                 DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
                 DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
                 int i_grid_row = m_fg.Selection.TopRow;
@@ -640,7 +646,7 @@ namespace BCTKApp
                 }
                 else{
                     f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
-                    v_frm1.Display_for_chi_tiet(v_id_phong_ban, v_id_trang_thai, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
+                    v_frm1.Display_for_chi_tiet(v_id_phong_ban, -1, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
                 }
             }
             catch (Exception v_e)
