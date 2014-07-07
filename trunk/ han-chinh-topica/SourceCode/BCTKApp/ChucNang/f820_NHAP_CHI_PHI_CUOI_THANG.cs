@@ -81,7 +81,7 @@ namespace BCTKApp.ChucNang {
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.MakeSoTT(0, m_fg);
             progressBar1.Visible = false;
-            m_cmd_xuat_excel.Visible = false;
+            
             set_define_event();
             this.KeyPreview = true;
         }
@@ -254,6 +254,7 @@ namespace BCTKApp.ChucNang {
             //update vào pm (do trên phần mềm ko có mã bill đó hoặc nhập sai)
             List<CError> v_listError = new List<CError>();
             int v_amount_row = m_fg.Rows.Count - 1;
+            Int64 count_bill_update = 0;
             for(int v_row = m_fg.Rows.Fixed; v_row < v_amount_row; v_row++) {
                 /* Kiểm tra xem số bill có trên csdl chưa. Nếu không có thì kệ trên lưới, xuất lỗi ra listbox*/
                 if(m_fg[v_row, (int)e_col_Number.barcode] == null || m_fg[v_row, (int)e_col_Number.barcode].ToString() == "") {
@@ -261,23 +262,26 @@ namespace BCTKApp.ChucNang {
                 }
                 string v_so_bill = CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]);
 
-                if(!check_so_bill_in_db(v_so_bill)) {
+                if(!check_so_bill_in_db(CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]))) {
                     CError v_error_exist = new CError();
-                    v_error_exist.name = "Số bill " + v_so_bill + " từ nhà cung cấp không có trong phần mềm!";
-                    v_error_exist.value = v_so_bill;
+                    v_error_exist.name = "Số bill " + CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]) + " từ nhà cung cấp không có trong phần mềm!";
+                    v_error_exist.value = CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]);;
                     v_listError.Add(v_error_exist);
                     continue;
                 }
 
                 US_DM_BILL v_us_dm_bill = new US_DM_BILL();
-                if(!check_so_tien_is_null(v_us_dm_bill, v_so_bill)) {
+                if(!check_so_tien_is_null(v_us_dm_bill, CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]))) {
                     CError v_error_null = new CError();
-                    v_error_null.name = "Số bill " + v_so_bill + " này đã có số tiền trong phần mềm rồi!";
-                    v_error_null.value = v_so_bill;
+                    v_error_null.name = "Số bill " + CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]) +" này đã có số tiền trong phần mềm rồi!";
+                    v_error_null.value = CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]); ;
                     v_listError.Add(v_error_null);
                     continue;
                 }
-                else v_us_dm_bill.update_tien_by_so_bill(v_so_bill, CIPConvert.ToDecimal(m_fg[v_row, (int)e_col_Number.tien]));
+                else { 
+                    v_us_dm_bill.update_tien_by_so_bill(CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]), CIPConvert.ToDecimal(m_fg[v_row, (int)e_col_Number.tien]));
+                    count_bill_update = count_bill_update + 1;
+                }
                 if(m_fg.Rows.Count == 3)
                     m_fg.Rows[1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
                 else {
@@ -285,6 +289,7 @@ namespace BCTKApp.ChucNang {
                     v_row = v_row - 1;
                 }
             }
+            MessageBox.Show("Đã cập nhật số tiền chi phí cho " + count_bill_update + " bill, " + (v_amount_row - 1 - count_bill_update) + " bill chưa cập nhật!");
             m_lbox_ds_loi.DataSource = v_listError;
             m_lbox_ds_loi.DisplayMember = "name";
             m_lbox_ds_loi.ValueMember = "value";
