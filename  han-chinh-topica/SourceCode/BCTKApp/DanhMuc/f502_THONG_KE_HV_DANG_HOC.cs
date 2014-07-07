@@ -184,7 +184,7 @@ namespace BCTKApp
             this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 18;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
             this.m_cmd_xuat_excel.ImageList = this.ImageList;
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
