@@ -256,6 +256,7 @@ namespace BCTKApp
             this.m_fg.Size = new System.Drawing.Size(940, 305);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 16;
+            this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
             // m_lbl_header
             // 
@@ -693,7 +694,6 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
-            m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
 		}
 		#endregion
 
