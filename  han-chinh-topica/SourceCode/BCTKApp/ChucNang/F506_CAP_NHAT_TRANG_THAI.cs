@@ -54,6 +54,7 @@ namespace BCTKApp
             CControlFormat.setC1FlexFormat(m_grv_trang_thai_cu);
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             CControlFormat.setC1FlexFormat(m_grv_trang_thai_moi);
+            m_dtp_tu_ngay.Value = DateTime.Now.Date;
             load_data_2_cbo_cu();
             load_data_2_cbo_moi();
             load_data_2_cbo_trung_tam();
@@ -177,8 +178,8 @@ namespace BCTKApp
         {
             DataRow v_dr;
             v_dr = (DataRow)m_grv_trang_thai_moi.Rows[i_grid_row].UserData;
-            m_obj_trans_2.GridRow2DataRow(1, v_dr);
             i_us.DataRow2Me(v_dr);
+            m_obj_trans_2.GridRow2DataRow(i_grid_row,v_dr);
         }
 
 
