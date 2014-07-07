@@ -123,7 +123,7 @@
             this.m_grv_trang_thai_cu.ColumnInfo = resources.GetString("m_grv_trang_thai_cu.ColumnInfo");
             this.m_grv_trang_thai_cu.Location = new System.Drawing.Point(6, 75);
             this.m_grv_trang_thai_cu.Name = "m_grv_trang_thai_cu";
-            this.m_grv_trang_thai_cu.Size = new System.Drawing.Size(377, 321);
+            this.m_grv_trang_thai_cu.Size = new System.Drawing.Size(377, 302);
             this.m_grv_trang_thai_cu.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_trang_thai_cu.Styles"));
             this.m_grv_trang_thai_cu.TabIndex = 36;
             // 
@@ -158,7 +158,6 @@
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(190, 23);
             this.m_dtp_tu_ngay.TabIndex = 1;
             this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 6, 7, 0, 0, 0, 0);
-            
             // 
             // label1
             // 
@@ -228,7 +227,7 @@
             this.m_grv_trang_thai_moi.ColumnInfo = resources.GetString("m_grv_trang_thai_moi.ColumnInfo");
             this.m_grv_trang_thai_moi.Location = new System.Drawing.Point(6, 72);
             this.m_grv_trang_thai_moi.Name = "m_grv_trang_thai_moi";
-            this.m_grv_trang_thai_moi.Size = new System.Drawing.Size(372, 321);
+            this.m_grv_trang_thai_moi.Size = new System.Drawing.Size(372, 305);
             this.m_grv_trang_thai_moi.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_trang_thai_moi.Styles"));
             this.m_grv_trang_thai_moi.TabIndex = 37;
             // 
