@@ -30,6 +30,7 @@ namespace BCTKApp
         private const String m_str_goi_y_nguoi_nhan = "Nhập tên người nhận...";
         private const String m_str_goi_y_nguoi_gui = "Nhập tên người gửi...";
         #endregion
+
         #region Data Structure
         private enum e_col_Number
         {
@@ -85,7 +86,14 @@ namespace BCTKApp
             if (v_str_nguoi_nhan == m_str_goi_y_nguoi_nhan) v_str_nguoi_nhan = "";
             if (v_str_nguoi_gui == m_str_goi_y_nguoi_gui) v_str_nguoi_gui = "";
             m_ds = new DS_V_DM_BILL();
-            m_us.FillDatasetSearch_grid(m_ds, v_dat_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai,v_str_so_bill,v_str_nguoi_nhan,v_str_nguoi_gui);
+            if (m_dtp_tu_ngay.Checked == true)
+            {
+                m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_so_bill, v_str_nguoi_nhan, v_str_nguoi_gui);
+            }
+            else 
+            {
+                m_us.FillDatasetSearch_grid(m_ds, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_so_bill, v_str_nguoi_nhan, v_str_nguoi_gui);
+            }
             m_grv_trang_thai_cu.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_cu, m_obj_trans_1);
             CGridUtils.MakeSoTT(0, m_grv_trang_thai_cu);
@@ -106,7 +114,14 @@ namespace BCTKApp
             if (v_str_nguoi_nhan == m_str_goi_y_nguoi_nhan) v_str_nguoi_nhan = "";
             if (v_str_nguoi_gui == m_str_goi_y_nguoi_gui) v_str_nguoi_gui = "";
             m_ds = new DS_V_DM_BILL();
-            m_us.FillDatasetSearch_grid(m_ds, v_dat_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai,v_str_so_bill,v_str_nguoi_nhan,v_str_nguoi_gui);
+            if (m_dtp_tu_ngay.Checked == true)
+            {
+                m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_so_bill, v_str_nguoi_nhan, v_str_nguoi_gui);
+            }
+            else
+            {
+                m_us.FillDatasetSearch_grid(m_ds, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_so_bill, v_str_nguoi_nhan, v_str_nguoi_gui);
+            }
             m_grv_trang_thai_moi.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_moi, m_obj_trans_2);
             CGridUtils.MakeSoTT(0, m_grv_trang_thai_moi);
@@ -369,8 +384,11 @@ namespace BCTKApp
             m_txt_nguoi_nhan.KeyDown+=new KeyEventHandler(m_txt_nguoi_nhan_KeyDown);
             m_txt_nguoi_nhan.MouseClick+=new MouseEventHandler(m_txt_nguoi_nhan_MouseClick);
             m_txt_nguoi_nhan.Leave+=new EventHandler(m_txt_nguoi_nhan_Leave);
+            m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
+            this.m_dtp_tu_ngay.ValueChanged += new System.EventHandler(this.m_dtp_tu_ngay_ValueChanged);
         }
         #endregion
+
         #region Event
 
         private void F506_CAP_NHAT_TRANG_THAI_Load(object sender, EventArgs e)
@@ -617,6 +635,33 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_cbo_trung_tam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid_trang_thai_moi();
+                load_data_2_grid_trang_thai_cu();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         #endregion
+
+        private void m_dtp_tu_ngay_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid_trang_thai_cu();
+                load_data_2_grid_trang_thai_moi();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

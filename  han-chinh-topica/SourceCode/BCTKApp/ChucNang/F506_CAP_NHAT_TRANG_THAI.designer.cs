@@ -154,9 +154,11 @@
             this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dtp_tu_ngay.Location = new System.Drawing.Point(162, 37);
             this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
+            this.m_dtp_tu_ngay.ShowCheckBox = true;
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(190, 23);
             this.m_dtp_tu_ngay.TabIndex = 1;
             this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 6, 7, 0, 0, 0, 0);
+            
             // 
             // label1
             // 
