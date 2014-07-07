@@ -510,7 +510,17 @@ namespace BCTKApp
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
 
-
+        private void export_2_excel()
+        {
+            CExcelReport v_obj_excel_report = new CExcelReport("f407_bc_chi_tiet_bill_cua_phong_ban.xlsx", 6, 1);
+            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_lbl_tu_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_lbl_den_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<phong_ban>", m_lbl_ten_phong_ban.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<tong_bill>", m_lbl_tong_bill.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<tong_tien>", m_lbl_tong_tien.Text);
+            v_obj_excel_report.FindAndReplace(false);
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
+        }
 		private void insert_v_tong_hop_cpn_theo_phong_ban(){			
 		//	f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE_DE v_fDE = new  f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE_DE();								
 		//	v_fDE.display();
@@ -637,8 +647,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
-
         private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
         {
             try
@@ -650,17 +658,10 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void export_2_excel()
-        {
-            CExcelReport v_obj_excel_report = new CExcelReport("f407_bc_chi_tiet_bill_cua_phong_ban.xlsx", 6, 1);
-            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_lbl_tu_ngay.Text);
-            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_lbl_den_ngay.Text);
-            v_obj_excel_report.AddFindAndReplaceItem("<phong_ban>", m_lbl_ten_phong_ban.Text);
-            v_obj_excel_report.AddFindAndReplaceItem("<tong_bill>", m_lbl_tong_bill.Text);
-            v_obj_excel_report.AddFindAndReplaceItem("<tong_tien>", m_lbl_tong_tien.Text);
-            v_obj_excel_report.FindAndReplace(false);
-            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
-        }
+        #endregion
+
+       
+       
     }
 }
 
