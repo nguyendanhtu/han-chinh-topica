@@ -92,6 +92,7 @@ namespace BCTKApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f406_V_TONG_HOP_BILL_THEO_PHONG_BAN));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
@@ -108,7 +109,6 @@ namespace BCTKApp
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_chu_thich = new System.Windows.Forms.Label();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -153,6 +153,21 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xuat_excel.TabIndex = 23;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
             // m_cmd_insert
             // 
@@ -355,22 +370,6 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
             this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
             // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 19;
-            this.m_cmd_xuat_excel.ImageList = this.ImageList;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_xuat_excel.TabIndex = 23;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
-           
-            // 
             // f406_V_TONG_HOP_BILL_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -389,7 +388,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f406_V_TONG_HOP_BILL_THEO_PHONG_BAN";
-            this.Text = "f406- Tổng hợp tiền Bill theo phòng ban";
+            this.Text = "F406- Tổng hợp tiền Bill theo phòng ban";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
@@ -501,8 +500,24 @@ namespace BCTKApp
         {
             string v_id_tu_khoa = m_txt_tim_kiem.Text;
             decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
-            DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
-            DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
+            DateTime v_dt_tu_ngay;
+            DateTime v_dt_den_ngay;
+            if (!m_dt_tu_ngay.Checked)
+            {
+                v_dt_tu_ngay = new DateTime(1970, 1, 1);
+            }
+            else
+            {
+                v_dt_tu_ngay = m_dt_tu_ngay.Value;
+            }
+            if (!m_dt_den_ngay.Checked)
+            {
+                v_dt_den_ngay = new DateTime(2050, 1, 1);
+            }
+            else
+            {
+                v_dt_den_ngay = m_dt_den_ngay.Value;
+            }
             US_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_us = new US_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
             DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_ds = new DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
             v_us.FillDatasetSearch(v_ds, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai, v_id_tu_khoa);
