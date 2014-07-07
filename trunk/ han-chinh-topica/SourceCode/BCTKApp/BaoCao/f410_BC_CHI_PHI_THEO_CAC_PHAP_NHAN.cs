@@ -329,7 +329,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN";
-            this.Text = "F410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN";
+            this.Text = "F410-Báo cáo chi phí theo các pháp nhân";
             this.Load += new System.EventHandler(this.f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
