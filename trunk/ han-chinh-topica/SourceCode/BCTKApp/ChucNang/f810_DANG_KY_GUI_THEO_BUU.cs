@@ -391,13 +391,25 @@ namespace BCTKApp.ChucNang {
             }
         }
         private void m_fg_AfterAddRow(object sender, C1.Win.C1FlexGrid.RowColEventArgs e) {
-            m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
-            make_stt(m_fg);
-            set_color_ma_bill_da_ton_tai();
+            try {
+                m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
+                make_stt(m_fg);
+                set_color_ma_bill_da_ton_tai();
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         private void m_cmd_nhap_excel_Click(object sender, EventArgs e) {
-            load_excel_2_grid(m_fg);
-            set_color_ma_bill_da_ton_tai();
+            try {
+                load_excel_2_grid(m_fg);
+                set_color_ma_bill_da_ton_tai();
+            }
+            catch(Exception v_e) {
+                BaseMessages.MsgBox_Error("Bạn chưa chọn file Excel hoặc chọn file Excel chưa đúng mẫu!");
+                //CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         #endregion
     }
