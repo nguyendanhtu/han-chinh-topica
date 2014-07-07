@@ -204,6 +204,22 @@ namespace BCTKApp.ChucNang {
         private bool check_so_tien_is_null(US_DM_BILL ip_us_dm_bill, string ip_so_bill) {
             return ip_us_dm_bill.is_so_tien_null(ip_us_dm_bill, ip_so_bill);        
         }
+        private void hien_thi_tong_tien() {
+            decimal cuoc = 0, phi = 0, phixd = 0, tienck = 0, tien = 0;
+            for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count - 1; v_row++) {
+                cuoc = cuoc + CIPConvert.ToDecimal(m_fg.Rows[v_row][(int) e_col_Number.cuoc]);
+                phi = phi + CIPConvert.ToDecimal(m_fg.Rows[v_row][(int)e_col_Number.phi]);
+                phixd = phixd + CIPConvert.ToDecimal(m_fg.Rows[v_row][(int)e_col_Number.phixd]);
+                tienck = tienck + CIPConvert.ToDecimal(m_fg.Rows[v_row][(int)e_col_Number.tienck]);
+                tien = tien + CIPConvert.ToDecimal(m_fg.Rows[v_row][(int)e_col_Number.tien]);
+            }
+            //Hiển thị
+            m_lbl_cuoc.Text = CIPConvert.ToStr(cuoc, "#,###");
+            m_lbl_phi.Text = CIPConvert.ToStr(phi, "#,###");
+            m_lbl_phi_xd.Text = CIPConvert.ToStr(phixd, "#,###");
+            m_lbl_tienck.Text = CIPConvert.ToStr(tienck, "#,###");
+            m_lbl_tien.Text = CIPConvert.ToStr(tien, "#,###");
+        }
         private void so_sanh() {
             //Concept: Kiểm tra từng số bill ở trong file excel của NCC, 
             //nếu tồn tại trong CSDL (bảng DM bill) thì update số tiền bằng mã bill
@@ -322,6 +338,7 @@ namespace BCTKApp.ChucNang {
                     load_danh_sach_excel();
                     m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
                     m_status = (int)status.ok_import;
+                    hien_thi_tong_tien();
                 }
                 else {
                     if(BaseMessages.MsgBox_Confirm("Bạn có muốn nhập lại từ file Excel?")) {
@@ -330,6 +347,7 @@ namespace BCTKApp.ChucNang {
                         load_danh_sach_excel();
                         m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
                         m_status = (int)status.ok_import;
+                        hien_thi_tong_tien();
                     }
                 }
             }
