@@ -241,11 +241,11 @@ namespace BCTKApp
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(308, 9);
+            this.m_lbl_header.Location = new System.Drawing.Point(272, 9);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(258, 22);
+            this.m_lbl_header.Size = new System.Drawing.Size(304, 22);
             this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "CHI PHÍ THEO PHÁP NHÂN";
+            this.m_lbl_header.Text = "CHI PHÍ THEO CÁC PHÁP NHÂN";
             // 
             // m_dt_den_ngay
             // 
