@@ -543,7 +543,7 @@ namespace BCTKApp
         {
             CExcelReport v_obj_excel_report = new CExcelReport("f704_bc_tinh_hinh_CPN_theo_phong_ban.xlsx", 7, 1);
             v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", v_dt_tu_ngay.ToShortDateString());
-            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", v_dt_den_ngay);
+            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", v_dt_den_ngay.ToShortDateString());
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
         }
