@@ -417,7 +417,15 @@ namespace BCTKApp
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
 
-
+        private void export_2_excel()
+        {
+            CExcelReport v_obj_excel_report = new CExcelReport("f410_bc_chi_phi_theo_phap_nhan.xlsx", 5, 1);
+            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_lbl_tu_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_lbl_den_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<trang_thai>", m_cbo_trang_thai.Text);
+            v_obj_excel_report.FindAndReplace(false);
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
+        }
 		private void insert_v_bc_chi_phi_theo_cac_phap_nhan(){			
 		//	f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN_DE v_fDE = new  f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN_DE();								
 		//	v_fDE.display();
@@ -654,8 +662,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
-
         private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
         {
             try
@@ -667,15 +673,10 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void export_2_excel()
-        {
-            CExcelReport v_obj_excel_report = new CExcelReport("f410_bc_chi_phi_theo_phap_nhan.xlsx", 5, 1);
-            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_lbl_tu_ngay.Text);
-            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_lbl_den_ngay.Text);
-            v_obj_excel_report.AddFindAndReplaceItem("<trang_thai>", m_cbo_trang_thai.Text);
-            v_obj_excel_report.FindAndReplace(false);
-            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
-        }
+        #endregion
+
+      
+        
     }
 }
 
