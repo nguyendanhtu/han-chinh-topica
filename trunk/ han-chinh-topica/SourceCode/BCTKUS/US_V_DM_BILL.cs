@@ -412,7 +412,7 @@ public class US_V_DM_BILL : US_Object
         v_store_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
         v_store_proc.fillDataSetByCommand(this, ip_ds);
     }
-    public void FillDatasetSearch_grid(DS_V_DM_BILL ip_ds, DateTime ip_dat_ngay, decimal ip_dc_id_trung_tam, decimal ip_dc_id_trang_thai, string ip_str_so_bill,string ip_str_nguoi_nhan, string ip_str_nguoi_gui)
+    public void FillDatasetSearch_grid_ngay(DS_V_DM_BILL ip_ds, DateTime ip_dat_ngay, decimal ip_dc_id_trung_tam, decimal ip_dc_id_trang_thai, string ip_str_so_bill,string ip_str_nguoi_nhan, string ip_str_nguoi_gui)
     {
 
         CStoredProc v_store_proc = new CStoredProc("pr_V_DM_BILL_Search_phongban_ngay");
@@ -422,6 +422,17 @@ public class US_V_DM_BILL : US_Object
         v_store_proc.addDecimalInputParam("@ID_TRUNG_TAM", ip_dc_id_trung_tam);
         v_store_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_dc_id_trang_thai);
         v_store_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_ngay);
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
+    public void FillDatasetSearch_grid(DS_V_DM_BILL ip_ds, decimal ip_dc_id_trung_tam, decimal ip_dc_id_trang_thai, string ip_str_so_bill, string ip_str_nguoi_nhan, string ip_str_nguoi_gui)
+    {
+
+        CStoredProc v_store_proc = new CStoredProc("pr_V_DM_BILL_Search_phongban");
+        v_store_proc.addNVarcharInputParam("@SO_BILL", ip_str_so_bill);
+        v_store_proc.addNVarcharInputParam("@NGUOI_NHAN", ip_str_nguoi_nhan);
+        v_store_proc.addNVarcharInputParam("@NGUOI_GUI", ip_str_nguoi_gui);
+        v_store_proc.addDecimalInputParam("@ID_TRUNG_TAM", ip_dc_id_trung_tam);
+        v_store_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_dc_id_trang_thai);
         v_store_proc.fillDataSetByCommand(this, ip_ds);
     }
 }
