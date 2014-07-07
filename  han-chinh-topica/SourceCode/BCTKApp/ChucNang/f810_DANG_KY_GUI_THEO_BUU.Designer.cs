@@ -46,6 +46,8 @@
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.m_lbl_loading = new System.Windows.Forms.Label();
             this.m_pnl_tieu_de.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -85,7 +87,7 @@
             this.m_pnl_tieu_de.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_pnl_tieu_de.Name = "m_pnl_tieu_de";
-            this.m_pnl_tieu_de.Size = new System.Drawing.Size(1151, 42);
+            this.m_pnl_tieu_de.Size = new System.Drawing.Size(1169, 42);
             this.m_pnl_tieu_de.TabIndex = 0;
             // 
             // m_lbl_tieu_de
@@ -101,6 +103,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_lbl_loading);
+            this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.m_lbl_tong_so_bill);
             this.panel1.Controls.Add(this.m_lbl_);
             this.panel1.Controls.Add(this.m_cmd_del);
@@ -109,7 +113,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1151, 56);
+            this.panel1.Size = new System.Drawing.Size(1169, 56);
             this.panel1.TabIndex = 1;
             // 
             // m_lbl_tong_so_bill
@@ -166,12 +170,13 @@
             // 
             // m_fg
             // 
+            this.m_fg.AllowResizing = C1.Win.C1FlexGrid.AllowResizingEnum.Both;
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 98);
             this.m_fg.Name = "m_fg";
             this.m_fg.Rows.Count = 2;
-            this.m_fg.Size = new System.Drawing.Size(1151, 521);
+            this.m_fg.Size = new System.Drawing.Size(1169, 521);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 0;
             this.m_fg.TabStop = false;
@@ -207,7 +212,7 @@
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(1149, 0);
+            this.button1.Location = new System.Drawing.Point(1167, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(0, 31);
             this.button1.TabIndex = 0;
@@ -224,7 +229,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1046, 0);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1064, 0);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(103, 31);
             this.m_cmd_exit.TabIndex = 2;
@@ -239,7 +244,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(934, 0);
+            this.m_cmd_save.Location = new System.Drawing.Point(952, 0);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(112, 31);
             this.m_cmd_save.TabIndex = 1;
@@ -256,7 +261,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 586);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1151, 33);
+            this.panel2.Size = new System.Drawing.Size(1169, 33);
             this.panel2.TabIndex = 5;
             // 
             // m_cmd_nhap_excel
@@ -275,11 +280,31 @@
             this.m_cmd_nhap_excel.Text = "Nhập từ Excel";
             this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.ForeColor = System.Drawing.Color.SpringGreen;
+            this.progressBar1.Location = new System.Drawing.Point(887, 3);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(109, 18);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 16;
+            // 
+            // m_lbl_loading
+            // 
+            this.m_lbl_loading.AutoSize = true;
+            this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
+            this.m_lbl_loading.Location = new System.Drawing.Point(1002, 5);
+            this.m_lbl_loading.Name = "m_lbl_loading";
+            this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
+            this.m_lbl_loading.TabIndex = 17;
+            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
+            // 
             // f810_DANG_KY_GUI_THEO_BUU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 619);
+            this.ClientSize = new System.Drawing.Size(1169, 619);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
@@ -314,6 +339,8 @@
         private SIS.Controls.Button.SiSButton m_cmd_nhap_excel;
         private System.Windows.Forms.Label m_lbl_tong_so_bill;
         private System.Windows.Forms.Label m_lbl_;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label m_lbl_loading;
 
     }
 }

@@ -38,6 +38,7 @@
             this.m_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_thoat = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.m_lbl_loading = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -48,7 +49,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.m_lbl_danh_sach_loi = new System.Windows.Forms.Label();
             this.m_lbox_ds_loi = new System.Windows.Forms.ListBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.m_pnl_bot.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -171,6 +171,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1248, 36);
             this.panel2.TabIndex = 8;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(972, 9);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(109, 18);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 15;
             // 
             // m_lbl_loading
             // 
@@ -296,14 +304,6 @@
             this.m_lbox_ds_loi.Name = "m_lbox_ds_loi";
             this.m_lbox_ds_loi.Size = new System.Drawing.Size(1248, 147);
             this.m_lbox_ds_loi.TabIndex = 2;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(972, 9);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(109, 18);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 15;
             // 
             // f820_NHAP_CHI_PHI_CUOI_THANG
             // 
