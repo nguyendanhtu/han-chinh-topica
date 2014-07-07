@@ -702,8 +702,24 @@ namespace BCTKApp
             string v_nguoi_gui = m_txt_tk_nguoi_gui.Text;
             string v_nguoi_nhan = m_txt_tk_nguoi_nhan.Text;
             string v_noi_nhan = m_txt_tk_noi_nhan.Text;
-            DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
-            DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
+            DateTime v_dt_tu_ngay;
+            DateTime v_dt_den_ngay;
+            if (!m_dt_tu_ngay.Checked)
+            {
+                v_dt_tu_ngay = new DateTime(1970, 1, 1);
+            }
+            else
+            {
+                v_dt_tu_ngay = m_dt_tu_ngay.Value;
+            }
+            if (!m_dt_den_ngay.Checked)
+            {
+                v_dt_den_ngay = new DateTime(2050, 1, 1);
+            }
+            else
+            {
+                v_dt_den_ngay = m_dt_den_ngay.Value;
+            }
             US_V_TONG_HOP_CPN_THEO_PHONG_BAN v_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
             DS_V_TONG_HOP_CPN_THEO_PHONG_BAN v_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
             v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai, v_nguoi_gui, v_nguoi_nhan, v_noi_nhan);
