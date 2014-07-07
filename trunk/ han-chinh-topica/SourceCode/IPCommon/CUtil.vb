@@ -95,7 +95,7 @@ Public Class CUtil
     End Function
     'Chuyển từ Y_N sang Boolean
     Public Shared Function YN2Boolean(ByVal i_strYN As String) As Boolean
-        If i_strYN = "Y" Then
+        If i_strYN.ToUpper() = "Y" Then
             Return True
         Else
             If i_strYN = "N" Then
