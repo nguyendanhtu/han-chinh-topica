@@ -236,6 +236,10 @@ namespace BCTKApp
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(279, 20);
             this.m_txt_tim_kiem.TabIndex = 2832;
+            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            this.m_txt_tim_kiem.MouseEnter += new System.EventHandler(this.m_txt_tim_kiem_Leave);
+            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             // 
             // m_lbl_header
             // 
@@ -361,7 +365,7 @@ namespace BCTKApp
             foreach (DataRow dr in m_ds.V_DINH_MUC_CPN_TUNG_PHONG_BAN)
             {
                 v_acsc_search.Add(dr[V_DINH_MUC_CPN_TUNG_PHONG_BAN.TEN_PHONG_BAN].ToString());
-                v_acsc_search.Add(dr[V_DINH_MUC_CPN_TUNG_PHONG_BAN.MA_PHONG_BAN].ToString());
+                //v_acsc_search.Add(dr[V_DINH_MUC_CPN_TUNG_PHONG_BAN.MA_PHONG_BAN].ToString());
 
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
