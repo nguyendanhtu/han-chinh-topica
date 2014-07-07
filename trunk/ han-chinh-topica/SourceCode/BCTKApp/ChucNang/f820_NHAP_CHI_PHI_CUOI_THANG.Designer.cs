@@ -35,20 +35,22 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_bot = new System.Windows.Forms.Panel();
-            this.m_xuat_excel = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_thoat = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.m_lbl_loading = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.m_cmd_kiem_tra_dl = new SIS.Controls.Button.SiSButton();
             this.m_cmd_so_sanh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel4 = new System.Windows.Forms.Panel();
             this.m_lbl_danh_sach_loi = new System.Windows.Forms.Label();
             this.m_lbox_ds_loi = new System.Windows.Forms.ListBox();
+            this.m_cmd_del = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_ = new System.Windows.Forms.Label();
+            this.m_lbl_tong_so_bill = new System.Windows.Forms.Label();
             this.m_pnl_bot.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -120,7 +122,7 @@
             // 
             // m_pnl_bot
             // 
-            this.m_pnl_bot.Controls.Add(this.m_xuat_excel);
+            this.m_pnl_bot.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_bot.Controls.Add(this.m_cmd_thoat);
             this.m_pnl_bot.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_bot.Location = new System.Drawing.Point(0, 577);
@@ -128,21 +130,21 @@
             this.m_pnl_bot.Size = new System.Drawing.Size(1248, 40);
             this.m_pnl_bot.TabIndex = 11;
             // 
-            // m_xuat_excel
+            // m_cmd_xuat_excel
             // 
-            this.m_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_xuat_excel.ImageIndex = 19;
-            this.m_xuat_excel.ImageList = this.imageList1;
-            this.m_xuat_excel.Location = new System.Drawing.Point(0, 0);
-            this.m_xuat_excel.Name = "m_xuat_excel";
-            this.m_xuat_excel.Size = new System.Drawing.Size(133, 40);
-            this.m_xuat_excel.TabIndex = 0;
-            this.m_xuat_excel.Text = "Xuất Excel";
-            this.m_xuat_excel.UseVisualStyleBackColor = true;
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.imageList1;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(133, 40);
+            this.m_cmd_xuat_excel.TabIndex = 0;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.UseVisualStyleBackColor = true;
             // 
             // m_cmd_thoat
             // 
@@ -204,7 +206,9 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.m_cmd_kiem_tra_dl);
+            this.panel3.Controls.Add(this.m_lbl_tong_so_bill);
+            this.panel3.Controls.Add(this.m_lbl_);
+            this.panel3.Controls.Add(this.m_cmd_del);
             this.panel3.Controls.Add(this.m_cmd_so_sanh);
             this.panel3.Controls.Add(this.m_cmd_nhap_excel);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -213,37 +217,21 @@
             this.panel3.Size = new System.Drawing.Size(1248, 38);
             this.panel3.TabIndex = 17;
             // 
-            // m_cmd_kiem_tra_dl
-            // 
-            this.m_cmd_kiem_tra_dl.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_kiem_tra_dl.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_kiem_tra_dl.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_kiem_tra_dl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_kiem_tra_dl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_kiem_tra_dl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_kiem_tra_dl.ImageIndex = 8;
-            this.m_cmd_kiem_tra_dl.ImageList = this.imageList1;
-            this.m_cmd_kiem_tra_dl.Location = new System.Drawing.Point(128, 0);
-            this.m_cmd_kiem_tra_dl.Name = "m_cmd_kiem_tra_dl";
-            this.m_cmd_kiem_tra_dl.Size = new System.Drawing.Size(181, 38);
-            this.m_cmd_kiem_tra_dl.TabIndex = 1;
-            this.m_cmd_kiem_tra_dl.Text = "2. Kiểm tra dữ liệu đưa vào ";
-            this.m_cmd_kiem_tra_dl.UseVisualStyleBackColor = true;
-            // 
             // m_cmd_so_sanh
             // 
             this.m_cmd_so_sanh.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_so_sanh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_so_sanh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_so_sanh.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_so_sanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_cmd_so_sanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_so_sanh.ImageIndex = 13;
             this.m_cmd_so_sanh.ImageList = this.imageList1;
-            this.m_cmd_so_sanh.Location = new System.Drawing.Point(315, 0);
+            this.m_cmd_so_sanh.Location = new System.Drawing.Point(128, 0);
             this.m_cmd_so_sanh.Name = "m_cmd_so_sanh";
             this.m_cmd_so_sanh.Size = new System.Drawing.Size(330, 38);
             this.m_cmd_so_sanh.TabIndex = 2;
-            this.m_cmd_so_sanh.Text = "3. Đối chiếu và cập nhật số tiền từng bưu vào phần mềm";
+            this.m_cmd_so_sanh.Text = "2. Đối chiếu và cập nhật số tiền từng bưu vào phần mềm";
             this.m_cmd_so_sanh.UseVisualStyleBackColor = true;
             // 
             // m_cmd_nhap_excel
@@ -305,6 +293,40 @@
             this.m_lbox_ds_loi.Size = new System.Drawing.Size(1248, 147);
             this.m_lbox_ds_loi.TabIndex = 2;
             // 
+            // m_cmd_del
+            // 
+            this.m_cmd_del.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_del.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_del.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_del.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_del.ImageIndex = 4;
+            this.m_cmd_del.ImageList = this.ImageList;
+            this.m_cmd_del.Location = new System.Drawing.Point(1139, 0);
+            this.m_cmd_del.Name = "m_cmd_del";
+            this.m_cmd_del.Size = new System.Drawing.Size(109, 38);
+            this.m_cmd_del.TabIndex = 7;
+            this.m_cmd_del.TabStop = false;
+            this.m_cmd_del.Text = "&Xóa hàng";
+            // 
+            // m_lbl_
+            // 
+            this.m_lbl_.AutoSize = true;
+            this.m_lbl_.Location = new System.Drawing.Point(845, 22);
+            this.m_lbl_.Name = "m_lbl_";
+            this.m_lbl_.Size = new System.Drawing.Size(67, 13);
+            this.m_lbl_.TabIndex = 8;
+            this.m_lbl_.Text = "Tổng số bưu";
+            // 
+            // m_lbl_tong_so_bill
+            // 
+            this.m_lbl_tong_so_bill.AutoSize = true;
+            this.m_lbl_tong_so_bill.Location = new System.Drawing.Point(930, 22);
+            this.m_lbl_tong_so_bill.Name = "m_lbl_tong_so_bill";
+            this.m_lbl_tong_so_bill.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_tong_so_bill.TabIndex = 9;
+            this.m_lbl_tong_so_bill.Text = "...";
+            // 
             // f820_NHAP_CHI_PHI_CUOI_THANG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +344,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -335,7 +358,7 @@
         internal System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel m_pnl_bot;
-        private SIS.Controls.Button.SiSButton m_xuat_excel;
+        private SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private SIS.Controls.Button.SiSButton m_cmd_thoat;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label m_lbl_loading;
@@ -346,8 +369,10 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ListBox m_lbox_ds_loi;
         private System.Windows.Forms.Label m_lbl_danh_sach_loi;
-        private SIS.Controls.Button.SiSButton m_cmd_kiem_tra_dl;
         private SIS.Controls.Button.SiSButton m_cmd_so_sanh;
         private System.Windows.Forms.ProgressBar progressBar1;
+        internal SIS.Controls.Button.SiSButton m_cmd_del;
+        private System.Windows.Forms.Label m_lbl_;
+        private System.Windows.Forms.Label m_lbl_tong_so_bill;
     }
 }
