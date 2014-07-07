@@ -197,7 +197,7 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(109, 18);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 15;
+            this.progressBar1.TabIndex = 1;
             // 
             // m_lbl_loading
             // 
@@ -207,7 +207,7 @@
             this.m_lbl_loading.Location = new System.Drawing.Point(1087, 9);
             this.m_lbl_loading.Name = "m_lbl_loading";
             this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
-            this.m_lbl_loading.TabIndex = 14;
+            this.m_lbl_loading.TabIndex = 2;
             this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
             // 
             // m_lbl_header
@@ -244,7 +244,7 @@
             this.m_cmd_so_sanh.Location = new System.Drawing.Point(128, 0);
             this.m_cmd_so_sanh.Name = "m_cmd_so_sanh";
             this.m_cmd_so_sanh.Size = new System.Drawing.Size(330, 32);
-            this.m_cmd_so_sanh.TabIndex = 2;
+            this.m_cmd_so_sanh.TabIndex = 1;
             this.m_cmd_so_sanh.Text = "2. Đối chiếu và cập nhật số tiền từng bưu vào phần mềm";
             this.m_cmd_so_sanh.UseVisualStyleBackColor = true;
             // 
@@ -292,7 +292,7 @@
             this.m_fg.Rows.Count = 2;
             this.m_fg.Size = new System.Drawing.Size(1280, 306);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 18;
+            this.m_fg.TabIndex = 1;
             this.m_fg.TabStop = false;
             // 
             // panel4
@@ -312,7 +312,7 @@
             this.m_lbl_danh_sach_loi.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_danh_sach_loi.Name = "m_lbl_danh_sach_loi";
             this.m_lbl_danh_sach_loi.Size = new System.Drawing.Size(1280, 23);
-            this.m_lbl_danh_sach_loi.TabIndex = 3;
+            this.m_lbl_danh_sach_loi.TabIndex = 0;
             this.m_lbl_danh_sach_loi.Text = "Danh sách lỗi khi đối chiếu";
             this.m_lbl_danh_sach_loi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -323,7 +323,7 @@
             this.m_lbox_ds_loi.Location = new System.Drawing.Point(0, 27);
             this.m_lbox_ds_loi.Name = "m_lbox_ds_loi";
             this.m_lbox_ds_loi.Size = new System.Drawing.Size(1280, 147);
-            this.m_lbox_ds_loi.TabIndex = 2;
+            this.m_lbox_ds_loi.TabIndex = 1;
             // 
             // panel1
             // 
@@ -339,7 +339,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 29);
-            this.panel1.TabIndex = 20;
+            this.panel1.TabIndex = 0;
             // 
             // panel9
             // 
