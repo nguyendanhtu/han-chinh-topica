@@ -331,8 +331,7 @@ namespace BCTKApp.ChucNang {
             make_stt(m_fg);
             m_lbl_loading.Visible = false;
             progressBar1.Visible = false;
-            
-
+            m_fg.Select(0, 0);
         }
         private void set_define_events() {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
