@@ -41,7 +41,6 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Panel m_pnl_top;
-        internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tu_khoa;
         private Label label4;
         private DateTimePicker m_dtp_den_thang;
@@ -97,7 +96,6 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_thong_ke = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_top = new System.Windows.Forms.Panel();
-            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.m_dtp_den_thang = new System.Windows.Forms.DateTimePicker();
@@ -241,7 +239,6 @@ namespace BCTKApp
             // 
             // m_pnl_top
             // 
-            this.m_pnl_top.Controls.Add(this.m_cmd_search);
             this.m_pnl_top.Controls.Add(this.m_txt_tu_khoa);
             this.m_pnl_top.Controls.Add(this.label4);
             this.m_pnl_top.Controls.Add(this.m_dtp_den_thang);
@@ -255,26 +252,16 @@ namespace BCTKApp
             this.m_pnl_top.Size = new System.Drawing.Size(884, 152);
             this.m_pnl_top.TabIndex = 23;
             // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_search.ImageIndex = 18;
-            this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(528, 93);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 22;
-            this.m_cmd_search.Text = "Tìm kiếm";
-            // 
             // m_txt_tu_khoa
             // 
+            this.m_txt_tu_khoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_tu_khoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tu_khoa.Location = new System.Drawing.Point(302, 98);
             this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
-            this.m_txt_tu_khoa.Size = new System.Drawing.Size(200, 20);
+            this.m_txt_tu_khoa.Size = new System.Drawing.Size(358, 20);
             this.m_txt_tu_khoa.TabIndex = 6;
+            this.m_txt_tu_khoa.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tu_khoa_MouseClick);
+            this.m_txt_tu_khoa.MouseLeave += new System.EventHandler(this.m_txt_tu_khoa_Leave);
             // 
             // label4
             // 
@@ -298,6 +285,7 @@ namespace BCTKApp
             this.m_dtp_den_thang.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_den_thang.TabIndex = 4;
             this.m_dtp_den_thang.Value = new System.DateTime(2014, 6, 26, 9, 16, 54, 0);
+            this.m_dtp_den_thang.ValueChanged += new System.EventHandler(this.m_cmd_search_Click);
             // 
             // m_dtp_tu_thang
             // 
@@ -311,6 +299,7 @@ namespace BCTKApp
             this.m_dtp_tu_thang.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_tu_thang.TabIndex = 3;
             this.m_dtp_tu_thang.Value = new System.DateTime(2014, 6, 26, 9, 16, 54, 0);
+            this.m_dtp_tu_thang.ValueChanged += new System.EventHandler(this.m_cmd_search_Click);
             // 
             // label3
             // 
@@ -369,7 +358,16 @@ namespace BCTKApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			LOAI_THOI_GIAN = 5,DON_VI_THONG_KE = 8,MA_PHONG_BAN = 1,DEN_NGAY = 7,TEN_PHONG_BAN = 2,TEN_THONG_KE = 4,TU_NGAY = 6,GIA_TRI_THONG_KE = 9,LOAI_TK = 3
+			LOAI_THOI_GIAN = 5
+,DON_VI_THONG_KE = 8
+,MA_PHONG_BAN = 1
+,DEN_NGAY = 7
+,TEN_PHONG_BAN = 2
+,TEN_THONG_KE = 4
+,TU_NGAY = 6
+,GIA_TRI_THONG_KE = 9
+,LOAI_TK = 3
+
 		}			
 		#endregion
 
@@ -381,6 +379,18 @@ namespace BCTKApp
 		#endregion
 
 		#region Private Methods
+        private void load_custom_source_2_m_txt_tim_kiem()
+        {
+            int count = m_ds.Tables["V_GD_THONG_KE"].Rows.Count;
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in m_ds.V_GD_THONG_KE)
+            {
+                v_acsc_search.Add(dr[V_GD_THONG_KE.TEN_PHONG_BAN].ToString());
+                //v_acsc_search.Add(dr[V_DINH_MUC_CPN_TUNG_PHONG_BAN.MA_PHONG_BAN].ToString());
+
+            }
+            m_txt_tu_khoa.AutoCompleteCustomSource = v_acsc_search;
+        }
 		private void format_controls(){
             CControlFormat.setFormStyle(this, new CAppContext_201());
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -396,7 +406,16 @@ namespace BCTKApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_GD_THONG_KE.LOAI_THOI_GIAN, e_col_Number.LOAI_THOI_GIAN);			v_htb.Add(V_GD_THONG_KE.DON_VI_THONG_KE, e_col_Number.DON_VI_THONG_KE);			v_htb.Add(V_GD_THONG_KE.MA_PHONG_BAN, e_col_Number.MA_PHONG_BAN);			v_htb.Add(V_GD_THONG_KE.DEN_NGAY, e_col_Number.DEN_NGAY);			v_htb.Add(V_GD_THONG_KE.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);			v_htb.Add(V_GD_THONG_KE.TEN_THONG_KE, e_col_Number.TEN_THONG_KE);			v_htb.Add(V_GD_THONG_KE.TU_NGAY, e_col_Number.TU_NGAY);			v_htb.Add(V_GD_THONG_KE.GIA_TRI_THONG_KE, e_col_Number.GIA_TRI_THONG_KE);			v_htb.Add(V_GD_THONG_KE.LOAI_TK, e_col_Number.LOAI_TK);									
+			v_htb.Add(V_GD_THONG_KE.LOAI_THOI_GIAN, e_col_Number.LOAI_THOI_GIAN);
+			v_htb.Add(V_GD_THONG_KE.DON_VI_THONG_KE, e_col_Number.DON_VI_THONG_KE);
+			v_htb.Add(V_GD_THONG_KE.MA_PHONG_BAN, e_col_Number.MA_PHONG_BAN);
+			v_htb.Add(V_GD_THONG_KE.DEN_NGAY, e_col_Number.DEN_NGAY);
+			v_htb.Add(V_GD_THONG_KE.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
+			v_htb.Add(V_GD_THONG_KE.TEN_THONG_KE, e_col_Number.TEN_THONG_KE);
+			v_htb.Add(V_GD_THONG_KE.TU_NGAY, e_col_Number.TU_NGAY);
+			v_htb.Add(V_GD_THONG_KE.GIA_TRI_THONG_KE, e_col_Number.GIA_TRI_THONG_KE);
+			v_htb.Add(V_GD_THONG_KE.LOAI_TK, e_col_Number.LOAI_TK);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_THONG_KE.NewRow());
 			return v_obj_trans;			
 		}
@@ -507,7 +526,7 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
-            m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
+            //m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
             m_txt_tu_khoa.KeyDown += m_txt_tu_khoa_KeyDown;
             m_txt_tu_khoa.MouseClick += m_txt_tu_khoa_MouseClick;
             m_txt_tu_khoa.Leave += m_txt_tu_khoa_Leave;
@@ -525,6 +544,7 @@ namespace BCTKApp
             try
             {
                 set_initial_form_load();
+                load_custom_source_2_m_txt_tim_kiem();
             }
             catch (Exception v_e)
             {
