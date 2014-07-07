@@ -338,6 +338,9 @@ namespace BCTKApp.ChucNang {
             }
         }
         private void m_lbox_ds_loi_Click(object sender, EventArgs e) {
+            if(m_lbox_ds_loi.Items.Count == 0) {
+                return;                
+            }
             for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count - 1; v_row++) {
                 if(m_fg.Rows[v_row][(int)e_col_Number.barcode].ToString() != "" && m_fg.Rows[v_row][(int)e_col_Number.barcode] != null)
                     if(m_lbox_ds_loi.SelectedValue.ToString() == m_fg.Rows[v_row][(int)e_col_Number.barcode].ToString())
