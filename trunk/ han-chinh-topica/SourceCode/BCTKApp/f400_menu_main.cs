@@ -44,6 +44,7 @@ namespace BCTKApp
             m_cmd_doi_mat_khau.Click += new EventHandler(m_cmd_doi_mat_khau_Click);
             m_cmd_tra_cuu_trang_thai_CPN.Click+=new EventHandler(m_cmd_tra_cuu_trang_thai_CPN_Click);
             m_cmd_thong_tin_thang_excel.Click += new EventHandler(m_cmd_thong_tin_thang_excel_Click);
+            m_cmd_tra_cuu_Bill.Click += new EventHandler(m_cmd_tra_cuu_Bill_Click);
             this.Load += new EventHandler(f400_menu_main_Load);
         }
 
