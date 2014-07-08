@@ -510,6 +510,7 @@ namespace BCTKApp
 		#region Private Methods
 		private void format_controls(){
             CControlFormat.setFormStyle(this, new CAppContext_201());
+            this.MinimizeBox = true;
             // label4
             // 
             this.label4.AutoSize = true;
