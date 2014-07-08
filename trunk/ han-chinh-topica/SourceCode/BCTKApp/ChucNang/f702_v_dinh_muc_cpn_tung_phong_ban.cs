@@ -42,6 +42,11 @@ namespace BCTKApp
         private Label label3;
         private Panel panel1;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
+        private Label label2;
+        private DateTimePicker m_dt_den_ngay;
+        private DateTimePicker m_dt_tu_ngay;
+        private Label m_lbl_den_ngay;
+        private Label m_lbl_tu_ngay;
 		private System.ComponentModel.IContainer components;
 
 		public f702_v_dinh_muc_cpn_tung_phong_ban()
@@ -91,7 +96,12 @@ namespace BCTKApp
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
+            this.m_dt_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_dt_tu_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_den_ngay = new System.Windows.Forms.Label();
+            this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -153,9 +163,9 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 122);
+            this.m_fg.Location = new System.Drawing.Point(0, 139);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(901, 317);
+            this.m_fg.Size = new System.Drawing.Size(901, 300);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -163,7 +173,7 @@ namespace BCTKApp
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(373, 10);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(343, 36);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(279, 20);
             this.m_txt_tim_kiem.TabIndex = 2832;
@@ -179,16 +189,16 @@ namespace BCTKApp
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(901, 38);
             this.m_lbl_header.TabIndex = 2835;
-            this.m_lbl_header.Text = "ĐỊNH MỨC CHUYỂN PHÁT NHANH TỪNG PHÒNG BAN";
+            this.m_lbl_header.Text = "TỔNG TIỀN ĐỊNH MỨC CHUYỂN PHÁT NHANH TỪNG TRUNG TÂM - BAN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_dat_tai_ngay
             // 
             this.m_dat_tai_ngay.CustomFormat = "";
             this.m_dat_tai_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_tai_ngay.Location = new System.Drawing.Point(373, 44);
+            this.m_dat_tai_ngay.Location = new System.Drawing.Point(12, 62);
             this.m_dat_tai_ngay.Name = "m_dat_tai_ngay";
-            this.m_dat_tai_ngay.Size = new System.Drawing.Size(150, 20);
+            this.m_dat_tai_ngay.Size = new System.Drawing.Size(192, 20);
             this.m_dat_tai_ngay.TabIndex = 2837;
             this.m_dat_tai_ngay.ValueChanged += new System.EventHandler(this.m_cmd_search_Click);
             // 
@@ -196,7 +206,7 @@ namespace BCTKApp
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(297, 13);
+            this.label1.Location = new System.Drawing.Point(287, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 2842;
@@ -206,7 +216,7 @@ namespace BCTKApp
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(297, 50);
+            this.label3.Location = new System.Drawing.Point(10, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 2843;
@@ -214,6 +224,11 @@ namespace BCTKApp
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_dt_den_ngay);
+            this.panel1.Controls.Add(this.m_dt_tu_ngay);
+            this.panel1.Controls.Add(this.m_lbl_den_ngay);
+            this.panel1.Controls.Add(this.m_lbl_tu_ngay);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.m_cmd_tim_kiem);
             this.panel1.Controls.Add(this.m_txt_tim_kiem);
             this.panel1.Controls.Add(this.label3);
@@ -222,8 +237,17 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(901, 84);
+            this.panel1.Size = new System.Drawing.Size(901, 101);
             this.panel1.TabIndex = 2844;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(248, 13);
+            this.label2.TabIndex = 2845;
+            this.label2.Text = "Nhấp đúp chuột vào mỗi dòng để xem chi tiết nhé!";
             // 
             // m_cmd_tim_kiem
             // 
@@ -234,12 +258,55 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 18;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(564, 37);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(435, 62);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_tim_kiem.TabIndex = 2844;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
             this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_search_Click);
+            // 
+            // m_dt_den_ngay
+            // 
+            this.m_dt_den_ngay.Checked = false;
+            this.m_dt_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dt_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dt_den_ngay.Location = new System.Drawing.Point(558, 10);
+            this.m_dt_den_ngay.Name = "m_dt_den_ngay";
+            this.m_dt_den_ngay.Size = new System.Drawing.Size(120, 20);
+            this.m_dt_den_ngay.TabIndex = 2848;
+            // 
+            // m_dt_tu_ngay
+            // 
+            this.m_dt_tu_ngay.Checked = false;
+            this.m_dt_tu_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dt_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dt_tu_ngay.Location = new System.Drawing.Point(335, 9);
+            this.m_dt_tu_ngay.Name = "m_dt_tu_ngay";
+            this.m_dt_tu_ngay.Size = new System.Drawing.Size(120, 20);
+            this.m_dt_tu_ngay.TabIndex = 2849;
+            this.m_dt_tu_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
+            // 
+            // m_lbl_den_ngay
+            // 
+            this.m_lbl_den_ngay.AutoSize = true;
+            this.m_lbl_den_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_den_ngay.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_den_ngay.Location = new System.Drawing.Point(484, 12);
+            this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
+            this.m_lbl_den_ngay.Size = new System.Drawing.Size(62, 15);
+            this.m_lbl_den_ngay.TabIndex = 2846;
+            this.m_lbl_den_ngay.Text = "Đến ngày:";
+            // 
+            // m_lbl_tu_ngay
+            // 
+            this.m_lbl_tu_ngay.AutoSize = true;
+            this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(266, 11);
+            this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
+            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(55, 15);
+            this.m_lbl_tu_ngay.TabIndex = 2847;
+            this.m_lbl_tu_ngay.Text = "Từ ngày:";
             // 
             // f702_v_dinh_muc_cpn_tung_phong_ban
             // 
@@ -250,7 +317,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f702_v_dinh_muc_cpn_tung_phong_ban";
-            this.Text = "F702- Định mức CPN của từng phòng ban";
+            this.Text = "F702 - Tổng tiền định mức CPN của từng phòng ban";
             this.Load += new System.EventHandler(this.f702_v_dinh_muc_cpn_tung_phong_ban_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -304,7 +371,7 @@ namespace BCTKApp
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_lbl_header.Font = new System.Drawing.Font("Tahoma", 18, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            m_lbl_header.Font = new System.Drawing.Font("Tahoma", 14, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			
             m_fg.Cols[0].Caption = "STT";
             //m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
@@ -314,6 +381,9 @@ namespace BCTKApp
         }
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
+            m_dt_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
+            DateTime temp = (DateTime.Now.Date).AddMonths(1);
+            m_dt_den_ngay.Value = temp.AddDays(-temp.Day);
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
