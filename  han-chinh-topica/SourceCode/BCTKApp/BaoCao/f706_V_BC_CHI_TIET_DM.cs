@@ -275,7 +275,7 @@ namespace BCTKApp
             this.m_lbl_ten_phong_ban.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_ten_phong_ban.Location = new System.Drawing.Point(33, 46);
             this.m_lbl_ten_phong_ban.Name = "m_lbl_ten_phong_ban";
-            this.m_lbl_ten_phong_ban.Size = new System.Drawing.Size(106, 19);
+            this.m_lbl_ten_phong_ban.Size = new System.Drawing.Size(107, 19);
             this.m_lbl_ten_phong_ban.TabIndex = 30;
             this.m_lbl_ten_phong_ban.Text = "Tên phòng ban";
             // 
