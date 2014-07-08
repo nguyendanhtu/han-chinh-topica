@@ -288,11 +288,9 @@ namespace BCTKApp
             this.m_dt_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dt_tu_ngay.Location = new System.Drawing.Point(257, 50);
             this.m_dt_tu_ngay.Name = "m_dt_tu_ngay";
-            this.m_dt_tu_ngay.ShowCheckBox = true;
             this.m_dt_tu_ngay.Size = new System.Drawing.Size(120, 20);
             this.m_dt_tu_ngay.TabIndex = 23;
             this.m_dt_tu_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
-            this.m_dt_tu_ngay.ValueChanged += new System.EventHandler(this.m_dt_tu_ngay_ValueChanged);
             // 
             // m_dt_den_ngay
             // 
@@ -301,10 +299,8 @@ namespace BCTKApp
             this.m_dt_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dt_den_ngay.Location = new System.Drawing.Point(532, 50);
             this.m_dt_den_ngay.Name = "m_dt_den_ngay";
-            this.m_dt_den_ngay.ShowCheckBox = true;
             this.m_dt_den_ngay.Size = new System.Drawing.Size(120, 20);
             this.m_dt_den_ngay.TabIndex = 23;
-            this.m_dt_den_ngay.ValueChanged += new System.EventHandler(this.m_dt_den_ngay_ValueChanged);
             // 
             // m_cbo_trang_thai
             // 
@@ -374,6 +370,10 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.TabIndex = 29;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
             this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 300;
             // 
             // f406_V_TONG_HOP_BILL_THEO_PHONG_BAN
             // 
@@ -454,7 +454,12 @@ namespace BCTKApp
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
+            m_dt_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
+            m_dt_tu_ngay.Checked = true;
+            m_dt_den_ngay.Value = DateTime.Now.Date;
+            m_dt_den_ngay.Checked = true;
+            tim_kiem();
+			//load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -512,27 +517,22 @@ namespace BCTKApp
             m_cbo_trang_thai.SelectedIndex = 0;
             m_trang_thai = true;
         }
-        private void tim_kiem()
-        {
+        private void tim_kiem() {
             string v_id_tu_khoa = m_txt_tim_kiem.Text;
             decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
             DateTime v_dt_tu_ngay;
             DateTime v_dt_den_ngay;
-            if (!m_dt_tu_ngay.Checked)
-            {
+            if(!m_dt_tu_ngay.Checked) {
                 v_dt_tu_ngay = new DateTime(1970, 1, 1);
             }
-            else
-            {
-                v_dt_tu_ngay = m_dt_tu_ngay.Value;
+            else {
+                v_dt_tu_ngay = m_dt_tu_ngay.Value.Date;
             }
-            if (!m_dt_den_ngay.Checked)
-            {
+            if(!m_dt_den_ngay.Checked) {
                 v_dt_den_ngay = new DateTime(2050, 1, 1);
             }
-            else
-            {
-                v_dt_den_ngay = m_dt_den_ngay.Value;
+            else {
+                v_dt_den_ngay = m_dt_den_ngay.Value.Date;
             }
             US_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_us = new US_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
             DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_ds = new DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
@@ -591,6 +591,9 @@ namespace BCTKApp
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
+            this.m_dt_tu_ngay.ValueChanged += new System.EventHandler(this.m_dt_tu_ngay_ValueChanged);
+            this.m_dt_den_ngay.ValueChanged += new System.EventHandler(this.m_dt_den_ngay_ValueChanged);
+            
 		}
 		#endregion
 
@@ -660,12 +663,26 @@ namespace BCTKApp
 
         private void m_dt_tu_ngay_ValueChanged(object sender, EventArgs e)
         {
-            tim_kiem();
+            try {
+                tim_kiem();
+            }
+            catch(Exception v_e) {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+           
         }
 
         private void m_dt_den_ngay_ValueChanged(object sender, EventArgs e)
         {
-            tim_kiem();
+            try {
+                tim_kiem();
+            }
+            catch(Exception v_e) {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+           
         }
 
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
