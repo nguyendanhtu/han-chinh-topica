@@ -67,7 +67,7 @@
             this.m_txt_mo_ta.Multiline = true;
             this.m_txt_mo_ta.Name = "m_txt_mo_ta";
             this.m_txt_mo_ta.Size = new System.Drawing.Size(245, 71);
-            this.m_txt_mo_ta.TabIndex = 28;
+            this.m_txt_mo_ta.TabIndex = 3;
             // 
             // m_lbl_mo_ta
             // 
@@ -75,7 +75,7 @@
             this.m_lbl_mo_ta.Location = new System.Drawing.Point(11, 39);
             this.m_lbl_mo_ta.Name = "m_lbl_mo_ta";
             this.m_lbl_mo_ta.Size = new System.Drawing.Size(34, 13);
-            this.m_lbl_mo_ta.TabIndex = 27;
+            this.m_lbl_mo_ta.TabIndex = 2;
             this.m_lbl_mo_ta.Text = "Mô tả";
             // 
             // m_txt_ten_nhom
@@ -83,7 +83,7 @@
             this.m_txt_ten_nhom.Location = new System.Drawing.Point(170, 12);
             this.m_txt_ten_nhom.Name = "m_txt_ten_nhom";
             this.m_txt_ten_nhom.Size = new System.Drawing.Size(245, 20);
-            this.m_txt_ten_nhom.TabIndex = 26;
+            this.m_txt_ten_nhom.TabIndex = 1;
             // 
             // m_lbl_ten_nhom
             // 
@@ -91,7 +91,7 @@
             this.m_lbl_ten_nhom.Location = new System.Drawing.Point(11, 15);
             this.m_lbl_ten_nhom.Name = "m_lbl_ten_nhom";
             this.m_lbl_ten_nhom.Size = new System.Drawing.Size(125, 13);
-            this.m_lbl_ten_nhom.TabIndex = 25;
+            this.m_lbl_ten_nhom.TabIndex = 0;
             this.m_lbl_ten_nhom.Text = "Tên nhóm người sử dụng";
             // 
             // ImageList
@@ -126,7 +126,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 145);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 134);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(438, 36);
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 181);
+            this.ClientSize = new System.Drawing.Size(438, 170);
             this.Controls.Add(this.m_lbl_mess);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.m_txt_mo_ta);

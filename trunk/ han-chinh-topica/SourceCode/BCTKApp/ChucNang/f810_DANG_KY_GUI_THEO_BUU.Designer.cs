@@ -34,6 +34,8 @@
             this.m_pnl_tieu_de = new System.Windows.Forms.Panel();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_lbl_loading = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.m_lbl_tong_so_bill = new System.Windows.Forms.Label();
             this.m_lbl_ = new System.Windows.Forms.Label();
             this.m_cmd_del = new SIS.Controls.Button.SiSButton();
@@ -46,8 +48,6 @@
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.m_lbl_loading = new System.Windows.Forms.Label();
             this.m_pnl_tieu_de.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -97,9 +97,9 @@
             this.m_lbl_tieu_de.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_tieu_de.Location = new System.Drawing.Point(416, 9);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(286, 29);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(160, 29);
             this.m_lbl_tieu_de.TabIndex = 0;
-            this.m_lbl_tieu_de.Text = "Nhập thư gửi hàng ngày";
+            this.m_lbl_tieu_de.Text = "Nhập thư gửi";
             // 
             // panel1
             // 
@@ -115,6 +115,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1169, 56);
             this.panel1.TabIndex = 1;
+            // 
+            // m_lbl_loading
+            // 
+            this.m_lbl_loading.AutoSize = true;
+            this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
+            this.m_lbl_loading.Location = new System.Drawing.Point(1002, 5);
+            this.m_lbl_loading.Name = "m_lbl_loading";
+            this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
+            this.m_lbl_loading.TabIndex = 17;
+            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.ForeColor = System.Drawing.Color.SpringGreen;
+            this.progressBar1.Location = new System.Drawing.Point(887, 3);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(109, 18);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 16;
             // 
             // m_lbl_tong_so_bill
             // 
@@ -280,26 +300,6 @@
             this.m_cmd_nhap_excel.Text = "Nhập từ Excel";
             this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
             // 
-            // progressBar1
-            // 
-            this.progressBar1.ForeColor = System.Drawing.Color.SpringGreen;
-            this.progressBar1.Location = new System.Drawing.Point(887, 3);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(109, 18);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 16;
-            // 
-            // m_lbl_loading
-            // 
-            this.m_lbl_loading.AutoSize = true;
-            this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
-            this.m_lbl_loading.Location = new System.Drawing.Point(1002, 5);
-            this.m_lbl_loading.Name = "m_lbl_loading";
-            this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
-            this.m_lbl_loading.TabIndex = 17;
-            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
-            // 
             // f810_DANG_KY_GUI_THEO_BUU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,7 +310,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_tieu_de);
             this.Name = "f810_DANG_KY_GUI_THEO_BUU";
-            this.Text = "F810 - Nhập thư gửi hàng ngày ";
+            this.Text = "F810 - Nhập thư gửi";
             this.m_pnl_tieu_de.ResumeLayout(false);
             this.m_pnl_tieu_de.PerformLayout();
             this.panel1.ResumeLayout(false);
