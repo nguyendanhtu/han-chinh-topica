@@ -676,6 +676,9 @@ namespace BCTKApp
         {
             try
             {
+                if(m_fg.Rows[m_fg.Row].IsNode) {
+                    return;
+                }
                 decimal v_id;
                 int i_grid_row = m_fg.Selection.TopRow;
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
