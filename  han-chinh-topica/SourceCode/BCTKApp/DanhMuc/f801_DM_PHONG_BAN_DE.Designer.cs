@@ -38,6 +38,8 @@
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_txt_ma_phong_ban = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,7 +100,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 128);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 161);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(525, 36);
@@ -141,11 +143,30 @@
             this.m_txt_ma_phong_ban.Size = new System.Drawing.Size(143, 20);
             this.m_txt_ma_phong_ban.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(76, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Chọn pháp nhân";
+            // 
+            // m_cbo_phap_nhan
+            // 
+            this.m_cbo_phap_nhan.FormattingEnabled = true;
+            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(175, 120);
+            this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
+            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(258, 21);
+            this.m_cbo_phap_nhan.TabIndex = 6;
+            // 
             // f801_DM_PHONG_BAN_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 164);
+            this.ClientSize = new System.Drawing.Size(525, 197);
+            this.Controls.Add(this.m_cbo_phap_nhan);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.m_txt_ma_phong_ban);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_ten_phong_ban);
@@ -169,5 +190,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.TextBox m_txt_ma_phong_ban;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox m_cbo_phap_nhan;
     }
 }

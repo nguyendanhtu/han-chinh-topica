@@ -157,6 +157,7 @@
     <Compile Include="US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.cs" />
     <Compile Include="US_V_DINH_MUC_CPN_TUNG_PHONG_BAN.cs" />
     <Compile Include="US_V_DM_BILL.cs" />
+    <Compile Include="US_V_DM_PHONG_BAN.cs" />
     <Compile Include="US_V_GD_THONG_KE.cs" />
     <Compile Include="US_V_HT_LOG_TRUY_CAP.cs" />
     <Compile Include="US_V_TONG_HOP_BILL_THEO_PHONG_BAN.cs" />

@@ -171,5 +171,10 @@ public class US_CM_DM_TU_DIEN : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+
+    public void FillDatasetByLoaiTuDien(DS_CM_DM_TU_DIEN ip_ds) {
+        CStoredProc v_store_proc = new CStoredProc("pr_load_ds_phap_nhan");
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
 }
 }

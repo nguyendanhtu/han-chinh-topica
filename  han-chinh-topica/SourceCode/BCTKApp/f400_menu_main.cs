@@ -123,7 +123,7 @@ namespace BCTKApp
         {
             try
             {
-                f800_DM_PHONG_BAN v_frm = new f800_DM_PHONG_BAN();
+                f800_V_DM_PHONG_BAN v_frm = new f800_V_DM_PHONG_BAN();
                 v_frm.display();
             }
             catch (Exception v_e)
