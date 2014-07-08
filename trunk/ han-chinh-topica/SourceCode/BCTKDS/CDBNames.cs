@@ -473,6 +473,14 @@ namespace BCTKDS.CDBNames
         public const string TRANG_THAI_THU = "TRANG_THAI_THU";
         public const string SO_TIEN = "SO_TIEN";
     }
+    public class V_DM_PHONG_BAN {
+        public const string ID = "ID";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string TEN = "TEN";
+    }
+
     public class DM_PHONG_BAN
     {
         public const string ID = "ID";

@@ -360,7 +360,7 @@
     <Compile Include="DanhMuc\f503_THONG_KE_HV_TUYEN_MOI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\f800_DM_PHONG_BAN.cs">
+    <Compile Include="DanhMuc\f800_V_DM_PHONG_BAN.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DanhMuc\f801_DM_PHONG_BAN_DE.cs">
@@ -504,8 +504,8 @@
     <EmbeddedResource Include="DanhMuc\f503_THONG_KE_HV_TUYEN_MOI.resx">
       <DependentUpon>f503_THONG_KE_HV_TUYEN_MOI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\f800_DM_PHONG_BAN.resx">
-      <DependentUpon>f800_DM_PHONG_BAN.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMuc\f800_V_DM_PHONG_BAN.resx">
+      <DependentUpon>f800_V_DM_PHONG_BAN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f801_DM_PHONG_BAN_DE.resx">
       <DependentUpon>f801_DM_PHONG_BAN_DE.cs</DependentUpon>

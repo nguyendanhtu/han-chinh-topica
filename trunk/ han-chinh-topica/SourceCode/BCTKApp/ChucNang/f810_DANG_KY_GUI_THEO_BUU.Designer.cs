@@ -92,14 +92,15 @@
             // 
             // m_lbl_tieu_de
             // 
-            this.m_lbl_tieu_de.AutoSize = true;
+            this.m_lbl_tieu_de.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tieu_de.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tieu_de.Location = new System.Drawing.Point(416, 9);
+            this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(160, 29);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(1169, 29);
             this.m_lbl_tieu_de.TabIndex = 0;
             this.m_lbl_tieu_de.Text = "Nhập thư gửi";
+            this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -173,7 +174,7 @@
             // 
             this.m_dat_ngay_gui.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.m_dat_ngay_gui.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ngay_gui.Location = new System.Drawing.Point(538, 15);
+            this.m_dat_ngay_gui.Location = new System.Drawing.Point(555, 15);
             this.m_dat_ngay_gui.Name = "m_dat_ngay_gui";
             this.m_dat_ngay_gui.Size = new System.Drawing.Size(140, 20);
             this.m_dat_ngay_gui.TabIndex = 1;
@@ -182,7 +183,7 @@
             // 
             this.m_lbl_ngay_gui.AutoSize = true;
             this.m_lbl_ngay_gui.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lbl_ngay_gui.Location = new System.Drawing.Point(427, 17);
+            this.m_lbl_ngay_gui.Location = new System.Drawing.Point(444, 17);
             this.m_lbl_ngay_gui.Name = "m_lbl_ngay_gui";
             this.m_lbl_ngay_gui.Size = new System.Drawing.Size(93, 13);
             this.m_lbl_ngay_gui.TabIndex = 0;
@@ -312,7 +313,6 @@
             this.Name = "f810_DANG_KY_GUI_THEO_BUU";
             this.Text = "F810 - Nhập thư gửi";
             this.m_pnl_tieu_de.ResumeLayout(false);
-            this.m_pnl_tieu_de.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();

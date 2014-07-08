@@ -278,6 +278,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_BILL.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_DM_PHONG_BAN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_PHONG_BAN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_THONG_KE1.Designer.cs">
       <DependentUpon>DS_V_GD_THONG_KE.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -642,6 +647,17 @@
     </None>
     <None Include="DS_V_DM_BILL.xss">
       <DependentUpon>DS_V_DM_BILL.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_PHONG_BAN.xsc">
+      <DependentUpon>DS_V_DM_PHONG_BAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_PHONG_BAN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_PHONG_BAN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_PHONG_BAN.xss">
+      <DependentUpon>DS_V_DM_PHONG_BAN.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_THONG_KE.xsc">
       <DependentUpon>DS_V_GD_THONG_KE.xsd</DependentUpon>
