@@ -95,6 +95,8 @@ namespace BCTKApp
         private TextBox m_txt_tk_noi_nhan;
         private Label label3;
         private TextBox m_txt_tk_nguoi_gui;
+        private ToolTip toolTip1;
+        private Label m_lbl_ghi_chu;
         private System.ComponentModel.IContainer components;
 		private void InitializeComponent()
 		{
@@ -127,6 +129,8 @@ namespace BCTKApp
             this.m_txt_tk_noi_nhan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.m_txt_tk_nguoi_gui = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.m_lbl_ghi_chu = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -264,6 +268,7 @@ namespace BCTKApp
             this.m_fg.Size = new System.Drawing.Size(1022, 418);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.m_fg, "Nhấp đúp chuột vào dòng để xem chi tiết.");
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
             // m_lbl_header
@@ -474,6 +479,21 @@ namespace BCTKApp
             this.m_txt_tk_nguoi_gui.TextChanged += new System.EventHandler(this.m_txt_nguoi_gui_TextChanged);
             this.m_txt_tk_nguoi_gui.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 100;
+            // 
+            // m_lbl_ghi_chu
+            // 
+            this.m_lbl_ghi_chu.AutoSize = true;
+            this.m_lbl_ghi_chu.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ghi_chu.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_ghi_chu.Location = new System.Drawing.Point(1, 154);
+            this.m_lbl_ghi_chu.Name = "m_lbl_ghi_chu";
+            this.m_lbl_ghi_chu.Size = new System.Drawing.Size(201, 14);
+            this.m_lbl_ghi_chu.TabIndex = 15;
+            this.m_lbl_ghi_chu.Text = "Nhấp đúp chuột mỗi dòng để xem chi tiết.";
+            // 
             // f405_V_TONG_HOP_CPN_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -486,6 +506,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_dt_tu_ngay);
             this.Controls.Add(this.m_cbo_ten_pb);
             this.Controls.Add(this.m_cbo_trang_thai);
+            this.Controls.Add(this.m_lbl_ghi_chu);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
@@ -564,7 +585,7 @@ namespace BCTKApp
             m_fg.Tree.Column = (int)e_col_Number.NGAY_GUI;
             m_fg.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
             m_fg.Cols[0].Caption = "STT";
-            m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.CompleteLeaf;
+            m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
 			set_define_events();
 			this.KeyPreview = true;
             //get_thoi_gian();
@@ -576,14 +597,22 @@ namespace BCTKApp
         private void get_thoi_gian()
         {
             DateTime today = DateTime.Today;
+            if(!m_dt_tu_ngay.Checked)
+            {
             DateTime starts =new  DateTime(today.Year, today.Month,1);
-            DateTime last = new DateTime(today.Year, today.Month, DateTime.DaysInMonth(today.Year, today.Month));
-            m_dt_tu_ngay.Value = starts;
-            m_dt_den_ngay.Value = last;
+            m_dt_tu_ngay.Value = starts; 
+            }
+            if (!m_dt_den_ngay.Checked)
+            {
+                DateTime last = new DateTime(today.Year, today.Month, DateTime.DaysInMonth(today.Year, today.Month));
+                m_dt_den_ngay.Value = last;
+            }  
         }
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
+            get_thoi_gian();
+			load_data_2_grid();
+            tim_kiem();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -622,6 +651,7 @@ namespace BCTKApp
                 , "{0}"
                 );
 			m_fg.Redraw = true;
+            m_fg.Tree.Show(0);
 		}
 		private void grid2us_object(US_V_TONG_HOP_CPN_THEO_PHONG_BAN i_us
 			, int i_grid_row) {
@@ -702,22 +732,23 @@ namespace BCTKApp
             string v_noi_nhan = m_txt_tk_noi_nhan.Text;
             DateTime v_dt_tu_ngay;
             DateTime v_dt_den_ngay;
+            DateTime today = DateTime.Today;
             if (!m_dt_tu_ngay.Checked)
             {
-                v_dt_tu_ngay = new DateTime(1970, 1, 1);
-            }
-            else
-            {
-                v_dt_tu_ngay = m_dt_tu_ngay.Value;
+                DateTime starts = new DateTime(today.Year, today.Month, 1);
+                m_dt_tu_ngay.Value = starts;
             }
             if (!m_dt_den_ngay.Checked)
             {
-                v_dt_den_ngay = new DateTime(2050, 1, 1);
-            }
+                DateTime last = new DateTime(today.Year, today.Month, DateTime.DaysInMonth(today.Year, today.Month));
+                m_dt_den_ngay.Value = last;
+            }  
             else
             {
                 v_dt_den_ngay = m_dt_den_ngay.Value;
             }
+            v_dt_tu_ngay = m_dt_tu_ngay.Value;
+            v_dt_den_ngay = m_dt_den_ngay.Value;
             US_V_TONG_HOP_CPN_THEO_PHONG_BAN v_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
             DS_V_TONG_HOP_CPN_THEO_PHONG_BAN v_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
             v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai, v_nguoi_gui, v_nguoi_nhan, v_noi_nhan);
@@ -916,15 +947,33 @@ namespace BCTKApp
 
         private void m_dt_tu_ngay_ValueChanged(object sender, EventArgs e)
         {
-          
+            try
+            {
                 tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+          
+                
            
         }
 
         private void m_dt_den_ngay_ValueChanged(object sender, EventArgs e)
         {
-          
+
+            try
+            {
                 tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+          
             
         }
 
@@ -1033,6 +1082,10 @@ namespace BCTKApp
         {
             try
             {
+                if (m_fg.Rows[m_fg.Row].IsNode)
+                {
+                    return;
+                }
                 decimal v_id;
                 int i_grid_row = m_fg.Selection.TopRow;
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
