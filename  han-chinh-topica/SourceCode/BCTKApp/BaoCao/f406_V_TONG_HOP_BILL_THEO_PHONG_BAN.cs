@@ -724,7 +724,7 @@ namespace BCTKApp
             CExcelReport v_obj_excel_report = new CExcelReport("f406_bc_Tong_hop_bill_theo_phong_ban.xlsx", 5, 1);
             v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dt_tu_ngay.Text);
             v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dt_den_ngay.Text);
-            v_obj_excel_report.AddFindAndReplaceItem("<trang_thai>", m_cbo_trang_thai.Text);
+            //v_obj_excel_report.AddFindAndReplaceItem("<trang_thai>", m_cbo_trang_thai.Text);
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
         }
