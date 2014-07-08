@@ -47,6 +47,7 @@ namespace BCTKApp
         private ComboBox m_cbo_trang_thai;
         private Label m_lbl_trang_thai;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        private ToolTip toolTip1;
 		private System.ComponentModel.IContainer components;
 
 		public f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN()
@@ -101,6 +102,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
             this.m_lbl_trang_thai = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -143,7 +145,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 393);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(764, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(780, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_xuat_excel
@@ -170,7 +172,7 @@ namespace BCTKApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(408, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(424, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -186,7 +188,7 @@ namespace BCTKApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(496, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(512, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -202,7 +204,7 @@ namespace BCTKApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(584, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(600, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -218,7 +220,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(672, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(688, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -231,9 +233,10 @@ namespace BCTKApp
             this.m_fg.Location = new System.Drawing.Point(0, 97);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
-            this.m_fg.Size = new System.Drawing.Size(764, 296);
+            this.m_fg.Size = new System.Drawing.Size(780, 296);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.m_fg, "Nhấp đúp chuột vào các hàng để xem chi tiết nhé!");
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
             // m_lbl_header
@@ -317,10 +320,14 @@ namespace BCTKApp
             this.m_lbl_trang_thai.Text = "Trạng thái:";
             this.m_lbl_trang_thai.Visible = false;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 300;
+            // 
             // f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(764, 429);
+            this.ClientSize = new System.Drawing.Size(780, 429);
             this.Controls.Add(this.m_cbo_trang_thai);
             this.Controls.Add(this.m_lbl_trang_thai);
             this.Controls.Add(this.m_dt_den_ngay);
@@ -395,6 +402,10 @@ namespace BCTKApp
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
+            m_dt_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
+            m_dt_tu_ngay.Checked = true;
+            m_dt_den_ngay.Value = DateTime.Now.Date;
+            m_dt_den_ngay.Checked = true;
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
