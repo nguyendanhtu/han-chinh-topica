@@ -35,6 +35,8 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_bot = new System.Windows.Forms.Panel();
+            this.m_cmd_so_sanh = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_thoat = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -47,6 +49,8 @@
             this.m_lbl_danh_sach_loi = new System.Windows.Forms.Label();
             this.m_lbox_ds_loi = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.m_lbl_tien = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.m_lbl_cuoc = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -55,21 +59,17 @@
             this.m_lbl_phi_xd = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.m_lbl_tienck = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.m_lbl_tien = new System.Windows.Forms.Label();
             this.m_cmd_del = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_so_sanh = new SIS.Controls.Button.SiSButton();
             this.m_pnl_bot.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_dgl_open_file
@@ -145,6 +145,40 @@
             this.m_pnl_bot.Size = new System.Drawing.Size(1316, 40);
             this.m_pnl_bot.TabIndex = 11;
             // 
+            // m_cmd_so_sanh
+            // 
+            this.m_cmd_so_sanh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_so_sanh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_so_sanh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_so_sanh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_so_sanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_so_sanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_so_sanh.ImageIndex = 13;
+            this.m_cmd_so_sanh.ImageList = this.imageList1;
+            this.m_cmd_so_sanh.Location = new System.Drawing.Point(128, 0);
+            this.m_cmd_so_sanh.Name = "m_cmd_so_sanh";
+            this.m_cmd_so_sanh.Size = new System.Drawing.Size(330, 40);
+            this.m_cmd_so_sanh.TabIndex = 3;
+            this.m_cmd_so_sanh.Text = "2. Đối chiếu và cập nhật số tiền từng bưu vào phần mềm";
+            this.m_cmd_so_sanh.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_nhap_excel
+            // 
+            this.m_cmd_nhap_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_nhap_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_nhap_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_nhap_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_nhap_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_nhap_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_nhap_excel.ImageIndex = 8;
+            this.m_cmd_nhap_excel.ImageList = this.imageList1;
+            this.m_cmd_nhap_excel.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_nhap_excel.Name = "m_cmd_nhap_excel";
+            this.m_cmd_nhap_excel.Size = new System.Drawing.Size(128, 40);
+            this.m_cmd_nhap_excel.TabIndex = 2;
+            this.m_cmd_nhap_excel.Text = "1. Nhập từ file excel";
+            this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
+            // 
             // m_cmd_thoat
             // 
             this.m_cmd_thoat.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -206,7 +240,7 @@
             // m_lbl_tong_so_bill
             // 
             this.m_lbl_tong_so_bill.AutoSize = true;
-            this.m_lbl_tong_so_bill.Location = new System.Drawing.Point(1288, 8);
+            this.m_lbl_tong_so_bill.Location = new System.Drawing.Point(416, 8);
             this.m_lbl_tong_so_bill.Name = "m_lbl_tong_so_bill";
             this.m_lbl_tong_so_bill.Size = new System.Drawing.Size(16, 13);
             this.m_lbl_tong_so_bill.TabIndex = 9;
@@ -215,7 +249,7 @@
             // m_lbl_
             // 
             this.m_lbl_.AutoSize = true;
-            this.m_lbl_.Location = new System.Drawing.Point(1215, 8);
+            this.m_lbl_.Location = new System.Drawing.Point(315, 8);
             this.m_lbl_.Name = "m_lbl_";
             this.m_lbl_.Size = new System.Drawing.Size(67, 13);
             this.m_lbl_.TabIndex = 8;
@@ -278,6 +312,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1316, 29);
             this.panel1.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.m_lbl_tien);
+            this.panel5.Location = new System.Drawing.Point(1116, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(93, 23);
+            this.panel5.TabIndex = 16;
+            // 
+            // m_lbl_tien
+            // 
+            this.m_lbl_tien.AutoSize = true;
+            this.m_lbl_tien.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_lbl_tien.Location = new System.Drawing.Point(77, 0);
+            this.m_lbl_tien.Name = "m_lbl_tien";
+            this.m_lbl_tien.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_tien.TabIndex = 15;
+            this.m_lbl_tien.Text = "...";
             // 
             // panel9
             // 
@@ -351,24 +403,6 @@
             this.m_lbl_tienck.TabIndex = 14;
             this.m_lbl_tienck.Text = "...";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.m_lbl_tien);
-            this.panel5.Location = new System.Drawing.Point(1116, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(93, 23);
-            this.panel5.TabIndex = 16;
-            // 
-            // m_lbl_tien
-            // 
-            this.m_lbl_tien.AutoSize = true;
-            this.m_lbl_tien.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_lbl_tien.Location = new System.Drawing.Point(77, 0);
-            this.m_lbl_tien.Name = "m_lbl_tien";
-            this.m_lbl_tien.Size = new System.Drawing.Size(16, 13);
-            this.m_lbl_tien.TabIndex = 15;
-            this.m_lbl_tien.Text = "...";
-            // 
             // m_cmd_del
             // 
             this.m_cmd_del.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -384,40 +418,6 @@
             this.m_cmd_del.TabIndex = 10;
             this.m_cmd_del.TabStop = false;
             this.m_cmd_del.Text = "&Xóa hàng";
-            // 
-            // m_cmd_nhap_excel
-            // 
-            this.m_cmd_nhap_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_nhap_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_nhap_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_nhap_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_nhap_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_nhap_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_nhap_excel.ImageIndex = 8;
-            this.m_cmd_nhap_excel.ImageList = this.imageList1;
-            this.m_cmd_nhap_excel.Location = new System.Drawing.Point(0, 0);
-            this.m_cmd_nhap_excel.Name = "m_cmd_nhap_excel";
-            this.m_cmd_nhap_excel.Size = new System.Drawing.Size(128, 40);
-            this.m_cmd_nhap_excel.TabIndex = 2;
-            this.m_cmd_nhap_excel.Text = "1. Nhập từ file excel";
-            this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
-            // 
-            // m_cmd_so_sanh
-            // 
-            this.m_cmd_so_sanh.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_so_sanh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_so_sanh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_so_sanh.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_so_sanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_so_sanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_so_sanh.ImageIndex = 13;
-            this.m_cmd_so_sanh.ImageList = this.imageList1;
-            this.m_cmd_so_sanh.Location = new System.Drawing.Point(128, 0);
-            this.m_cmd_so_sanh.Name = "m_cmd_so_sanh";
-            this.m_cmd_so_sanh.Size = new System.Drawing.Size(330, 40);
-            this.m_cmd_so_sanh.TabIndex = 3;
-            this.m_cmd_so_sanh.Text = "2. Đối chiếu và cập nhật số tiền từng bưu vào phần mềm";
-            this.m_cmd_so_sanh.UseVisualStyleBackColor = true;
             // 
             // f820_NHAP_CHI_PHI_CUOI_THANG
             // 
@@ -438,6 +438,8 @@
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -446,8 +448,6 @@
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

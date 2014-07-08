@@ -50,9 +50,9 @@
             this.m_lbl_tk.AutoSize = true;
             this.m_lbl_tk.Location = new System.Drawing.Point(49, 17);
             this.m_lbl_tk.Name = "m_lbl_tk";
-            this.m_lbl_tk.Size = new System.Drawing.Size(79, 13);
-            this.m_lbl_tk.TabIndex = 15;
-            this.m_lbl_tk.Text = "Chọn tài khoản";
+            this.m_lbl_tk.Size = new System.Drawing.Size(73, 13);
+            this.m_lbl_tk.TabIndex = 0;
+            this.m_lbl_tk.Text = "Tên tài khoản";
             // 
             // ImageList
             // 
@@ -86,10 +86,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 196);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 166);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(445, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(420, 36);
             this.m_pnl_out_place_dm.TabIndex = 16;
             // 
             // m_cmd_save
@@ -101,7 +101,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(265, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(240, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
@@ -116,7 +116,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(353, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(328, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -127,7 +127,7 @@
             this.m_txt_nhap_lai_mat_khau_moi.Location = new System.Drawing.Point(186, 127);
             this.m_txt_nhap_lai_mat_khau_moi.Name = "m_txt_nhap_lai_mat_khau_moi";
             this.m_txt_nhap_lai_mat_khau_moi.Size = new System.Drawing.Size(143, 20);
-            this.m_txt_nhap_lai_mat_khau_moi.TabIndex = 22;
+            this.m_txt_nhap_lai_mat_khau_moi.TabIndex = 7;
             this.m_txt_nhap_lai_mat_khau_moi.UseSystemPasswordChar = true;
             // 
             // m_txt_mat_khau_moi
@@ -135,7 +135,7 @@
             this.m_txt_mat_khau_moi.Location = new System.Drawing.Point(186, 90);
             this.m_txt_mat_khau_moi.Name = "m_txt_mat_khau_moi";
             this.m_txt_mat_khau_moi.Size = new System.Drawing.Size(143, 20);
-            this.m_txt_mat_khau_moi.TabIndex = 21;
+            this.m_txt_mat_khau_moi.TabIndex = 5;
             this.m_txt_mat_khau_moi.UseSystemPasswordChar = true;
             // 
             // m_txt_mat_khau_cu
@@ -143,7 +143,7 @@
             this.m_txt_mat_khau_cu.Location = new System.Drawing.Point(186, 53);
             this.m_txt_mat_khau_cu.Name = "m_txt_mat_khau_cu";
             this.m_txt_mat_khau_cu.Size = new System.Drawing.Size(143, 20);
-            this.m_txt_mat_khau_cu.TabIndex = 20;
+            this.m_txt_mat_khau_cu.TabIndex = 3;
             this.m_txt_mat_khau_cu.UseSystemPasswordChar = true;
             // 
             // m_lbl_nhap_lai_mat_khau_moi
@@ -152,7 +152,7 @@
             this.m_lbl_nhap_lai_mat_khau_moi.Location = new System.Drawing.Point(49, 130);
             this.m_lbl_nhap_lai_mat_khau_moi.Name = "m_lbl_nhap_lai_mat_khau_moi";
             this.m_lbl_nhap_lai_mat_khau_moi.Size = new System.Drawing.Size(112, 13);
-            this.m_lbl_nhap_lai_mat_khau_moi.TabIndex = 19;
+            this.m_lbl_nhap_lai_mat_khau_moi.TabIndex = 6;
             this.m_lbl_nhap_lai_mat_khau_moi.Text = "Nhập lại mật khẩu mới";
             // 
             // m_lbl_mat_khau_moi
@@ -161,7 +161,7 @@
             this.m_lbl_mat_khau_moi.Location = new System.Drawing.Point(49, 93);
             this.m_lbl_mat_khau_moi.Name = "m_lbl_mat_khau_moi";
             this.m_lbl_mat_khau_moi.Size = new System.Drawing.Size(71, 13);
-            this.m_lbl_mat_khau_moi.TabIndex = 18;
+            this.m_lbl_mat_khau_moi.TabIndex = 4;
             this.m_lbl_mat_khau_moi.Text = "Mật khẩu mới";
             // 
             // m_lbl_tk_cu
@@ -170,7 +170,7 @@
             this.m_lbl_tk_cu.Location = new System.Drawing.Point(49, 56);
             this.m_lbl_tk_cu.Name = "m_lbl_tk_cu";
             this.m_lbl_tk_cu.Size = new System.Drawing.Size(67, 13);
-            this.m_lbl_tk_cu.TabIndex = 17;
+            this.m_lbl_tk_cu.TabIndex = 2;
             this.m_lbl_tk_cu.Text = "Mật khẩu cũ";
             // 
             // m_txt_tai_khoan
@@ -178,13 +178,13 @@
             this.m_txt_tai_khoan.Location = new System.Drawing.Point(186, 14);
             this.m_txt_tai_khoan.Name = "m_txt_tai_khoan";
             this.m_txt_tai_khoan.Size = new System.Drawing.Size(143, 20);
-            this.m_txt_tai_khoan.TabIndex = 23;
+            this.m_txt_tai_khoan.TabIndex = 1;
             // 
             // f308_DOI_MAT_KHAU_NGUOI_SD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 232);
+            this.ClientSize = new System.Drawing.Size(420, 202);
             this.Controls.Add(this.m_txt_tai_khoan);
             this.Controls.Add(this.m_lbl_tk);
             this.Controls.Add(this.m_pnl_out_place_dm);

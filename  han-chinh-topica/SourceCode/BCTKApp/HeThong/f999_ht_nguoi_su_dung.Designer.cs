@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f999_ht_nguoi_su_dung));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -81,16 +81,6 @@
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(719, 36);
             this.m_pnl_out_place_dm.TabIndex = 21;
             // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 0);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(719, 405);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 22;
-            // 
             // m_cmd_insert
             // 
             this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -103,7 +93,7 @@
             this.m_cmd_insert.Location = new System.Drawing.Point(363, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
+            this.m_cmd_insert.TabIndex = 0;
             this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_update
@@ -118,7 +108,7 @@
             this.m_cmd_update.Location = new System.Drawing.Point(451, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 13;
+            this.m_cmd_update.TabIndex = 1;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_delete
@@ -133,7 +123,7 @@
             this.m_cmd_delete.Location = new System.Drawing.Point(539, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 14;
+            this.m_cmd_delete.TabIndex = 2;
             this.m_cmd_delete.Text = "&Xoá";
             // 
             // m_cmd_exit
@@ -148,8 +138,18 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(627, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 3;
             this.m_cmd_exit.Text = "Trở về  (Esc)";
+            // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 0);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(719, 405);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 0;
             // 
             // f999_ht_nguoi_su_dung
             // 

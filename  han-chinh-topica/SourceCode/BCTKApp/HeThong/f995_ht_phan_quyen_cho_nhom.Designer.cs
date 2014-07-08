@@ -55,7 +55,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 48);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 238);
-            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quyền chưa cấp";
             // 
@@ -70,18 +70,18 @@
             // m_cbo_user_group
             // 
             this.m_cbo_user_group.FormattingEnabled = true;
-            this.m_cbo_user_group.Location = new System.Drawing.Point(189, 6);
+            this.m_cbo_user_group.Location = new System.Drawing.Point(231, 12);
             this.m_cbo_user_group.Name = "m_cbo_user_group";
             this.m_cbo_user_group.Size = new System.Drawing.Size(178, 21);
-            this.m_cbo_user_group.TabIndex = 15;
+            this.m_cbo_user_group.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 14);
+            this.label1.Location = new System.Drawing.Point(81, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 13);
-            this.label1.TabIndex = 14;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Chọn nhóm người sử dụng";
             // 
             // groupBox2
@@ -90,7 +90,7 @@
             this.groupBox2.Location = new System.Drawing.Point(324, 48);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 239);
-            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quyền đã cấp";
             // 
@@ -100,7 +100,7 @@
             this.m_lbox_quyen_da_cap.Location = new System.Drawing.Point(6, 20);
             this.m_lbox_quyen_da_cap.Name = "m_lbox_quyen_da_cap";
             this.m_lbox_quyen_da_cap.Size = new System.Drawing.Size(188, 212);
-            this.m_lbox_quyen_da_cap.TabIndex = 1;
+            this.m_lbox_quyen_da_cap.TabIndex = 0;
             // 
             // m_cmd_right_2_left_all
             // 
@@ -112,7 +112,7 @@
             this.m_cmd_right_2_left_all.Location = new System.Drawing.Point(231, 251);
             this.m_cmd_right_2_left_all.Name = "m_cmd_right_2_left_all";
             this.m_cmd_right_2_left_all.Size = new System.Drawing.Size(75, 28);
-            this.m_cmd_right_2_left_all.TabIndex = 21;
+            this.m_cmd_right_2_left_all.TabIndex = 6;
             this.m_cmd_right_2_left_all.Text = "<<";
             // 
             // m_cmd_right_2_left
@@ -125,7 +125,7 @@
             this.m_cmd_right_2_left.Location = new System.Drawing.Point(231, 217);
             this.m_cmd_right_2_left.Name = "m_cmd_right_2_left";
             this.m_cmd_right_2_left.Size = new System.Drawing.Size(75, 28);
-            this.m_cmd_right_2_left.TabIndex = 20;
+            this.m_cmd_right_2_left.TabIndex = 5;
             this.m_cmd_right_2_left.Text = "<";
             // 
             // m_cmd_left_2_right_all
@@ -138,7 +138,7 @@
             this.m_cmd_left_2_right_all.Location = new System.Drawing.Point(231, 101);
             this.m_cmd_left_2_right_all.Name = "m_cmd_left_2_right_all";
             this.m_cmd_left_2_right_all.Size = new System.Drawing.Size(75, 28);
-            this.m_cmd_left_2_right_all.TabIndex = 19;
+            this.m_cmd_left_2_right_all.TabIndex = 4;
             this.m_cmd_left_2_right_all.Text = ">>";
             // 
             // m_cmd_left_2_right
@@ -151,7 +151,7 @@
             this.m_cmd_left_2_right.Location = new System.Drawing.Point(231, 67);
             this.m_cmd_left_2_right.Name = "m_cmd_left_2_right";
             this.m_cmd_left_2_right.Size = new System.Drawing.Size(75, 28);
-            this.m_cmd_left_2_right.TabIndex = 18;
+            this.m_cmd_left_2_right.TabIndex = 3;
             this.m_cmd_left_2_right.Text = ">";
             // 
             // ImageList
