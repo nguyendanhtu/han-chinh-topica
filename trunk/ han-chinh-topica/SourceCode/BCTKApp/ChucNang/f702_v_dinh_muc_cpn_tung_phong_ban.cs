@@ -41,6 +41,7 @@ namespace BCTKApp
         private Label label1;
         private Label label3;
         private Panel panel1;
+        internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
 		private System.ComponentModel.IContainer components;
 
 		public f702_v_dinh_muc_cpn_tung_phong_ban()
@@ -90,6 +91,7 @@ namespace BCTKApp
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -212,6 +214,7 @@ namespace BCTKApp
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_tim_kiem);
             this.panel1.Controls.Add(this.m_txt_tim_kiem);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.m_dat_tai_ngay);
@@ -221,6 +224,22 @@ namespace BCTKApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(901, 84);
             this.panel1.TabIndex = 2844;
+            // 
+            // m_cmd_tim_kiem
+            // 
+            this.m_cmd_tim_kiem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_tim_kiem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_tim_kiem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_tim_kiem.ForeColor = System.Drawing.Color.Maroon;
+            this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_tim_kiem.ImageIndex = 18;
+            this.m_cmd_tim_kiem.ImageList = this.ImageList;
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(564, 37);
+            this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
+            this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_tim_kiem.TabIndex = 2844;
+            this.m_cmd_tim_kiem.Text = "Tìm kiếm";
+            this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
             // f702_v_dinh_muc_cpn_tung_phong_ban
             // 
