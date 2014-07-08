@@ -190,6 +190,7 @@
             this.m_cmd_tra_cuu_Bill.Name = "m_cmd_tra_cuu_Bill";
             this.m_cmd_tra_cuu_Bill.SubItemsExpandWidth = 14;
             this.m_cmd_tra_cuu_Bill.Text = "Bill";
+            this.m_cmd_tra_cuu_Bill.Click += new System.EventHandler(this.m_cmd_tra_cuu_Bill_Click);
             // 
             // m_cmd_tra_cuu_trang_thai_CPN
             // 

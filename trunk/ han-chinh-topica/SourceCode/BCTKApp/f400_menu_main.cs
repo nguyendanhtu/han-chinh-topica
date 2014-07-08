@@ -286,6 +286,20 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_cmd_tra_cuu_Bill_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f405_V_TONG_HOP_CPN_THEO_PHONG_BAN v_frm = new f405_V_TONG_HOP_CPN_THEO_PHONG_BAN();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         
     }
 }
