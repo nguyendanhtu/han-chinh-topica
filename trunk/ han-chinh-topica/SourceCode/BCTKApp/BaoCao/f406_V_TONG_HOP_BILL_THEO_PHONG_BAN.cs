@@ -51,6 +51,7 @@ namespace BCTKApp
         private Label m_lbl_chu_thich;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        private ToolTip toolTip1;
 		private System.ComponentModel.IContainer components;
 
 		public f406_V_TONG_HOP_BILL_THEO_PHONG_BAN()
@@ -109,6 +110,7 @@ namespace BCTKApp
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_chu_thich = new System.Windows.Forms.Label();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -244,6 +246,7 @@ namespace BCTKApp
             this.m_fg.Size = new System.Drawing.Size(884, 395);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.m_fg, "Nháy đúp chuột vào mỗi dòng để xem chi tiết từng bill theo ngày");
             // 
             // m_lbl_header
             // 

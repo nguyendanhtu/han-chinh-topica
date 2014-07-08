@@ -401,6 +401,7 @@ namespace BCTKApp
                 , "{0}"
                 );
             m_fg.Redraw = true;
+            m_fg.Tree.Show(0);
             this.ShowDialog();
         }
 		#endregion
@@ -499,7 +500,7 @@ namespace BCTKApp
             m_fg.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
             m_fg.Cols[(int)e_col_Number.NGAY_GUI].Visible = false;
             m_fg.Cols[0].Caption = "STT";
-            m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.Complete;
+            m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
 			set_define_events();
 			this.KeyPreview = true;
 		}
@@ -532,6 +533,7 @@ namespace BCTKApp
 			m_us.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Tree.Show(0);
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_V_TONG_HOP_CPN_THEO_PHONG_BAN i_us

@@ -342,17 +342,23 @@ namespace BCTKApp
 		#region Private Methods
         private void format_controls()
         {
-            //CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setFormStyle(this, new CAppContext_201());
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
+            m_lbl_header.Font = new System.Drawing.Font("Tahoma", 18, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			
             m_fg.Cols[0].Caption = "STT";
             set_define_events();
             this.KeyPreview = true;
             //load_cbo_trang_thai();
         }
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
+		private void set_initial_form_load(){
+            m_obj_trans = get_trans_object(m_fg);
+            m_dt_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day+1);
+            m_dt_den_ngay.Value = DateTime.Now.Date;
+            m_dt_den_ngay.Checked = true;
+            m_dt_tu_ngay.Checked = true;
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -641,13 +647,16 @@ namespace BCTKApp
                     v_tong_tien = CIPConvert.ToDecimal(v_dr[4]);
                 else
                     v_tong_tien = 0;
-                if(i_grid_col==5){
+                if(i_grid_col==(int)e_col_Number.DINH_MUC){
                     f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
                     v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
                 }
-                else{
+                else if((i_grid_col == (int)e_col_Number.TONG_SO_BILL) || (i_grid_col == (int)e_col_Number.TONG_SO_TIEN)) {
                     f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
                     v_frm1.Display_for_chi_tiet(v_id_phong_ban, -1, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
+                }
+                else {
+                    BaseMessages.MsgBox_Infor("Bạn nhấp đúp chuột vào các cột: tổng số bill, tổng tiền thanh toán, tổng tiền định mức để xem chi tiết");
                 }
             }
             catch (Exception v_e)
