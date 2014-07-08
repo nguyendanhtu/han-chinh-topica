@@ -406,7 +406,8 @@ namespace BCTKApp
             m_dt_tu_ngay.Checked = true;
             m_dt_den_ngay.Value = DateTime.Now.Date;
             m_dt_den_ngay.Checked = true;
-			load_data_2_grid();		
+			load_data_2_grid();
+            tim_kiem();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
