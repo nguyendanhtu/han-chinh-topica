@@ -46,6 +46,7 @@ namespace BCTKApp
         private Label m_lbl_tu_ngay;
         private Label m_lbl_header;
         private Panel panel1;
+        private ToolTip toolTip1;
 		private System.ComponentModel.IContainer components;
 
 		public f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN()
@@ -99,6 +100,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -182,6 +184,8 @@ namespace BCTKApp
             this.m_fg.Size = new System.Drawing.Size(956, 352);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào các cột tổng số bill, tổng tiền thực tế, tổng tiền định mứ" +
+                    "c để xem chi tiết nhé!");
             // 
             // m_cmd_tim_kiem
             // 
@@ -291,6 +295,12 @@ namespace BCTKApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(956, 100);
             this.panel1.TabIndex = 2830;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 4500;
+            this.toolTip1.InitialDelay = 450;
+            this.toolTip1.ReshowDelay = 50;
             // 
             // f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
             // 

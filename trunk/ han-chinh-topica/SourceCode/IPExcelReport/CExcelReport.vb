@@ -141,6 +141,7 @@ Public Class CExcelReport
                                 , ByVal i_iToGridCol As Integer _
                                 , ByVal i_b_show As Boolean)
         Try
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US")
             If Not m_init_successful Then Exit Sub
             Dim v_objFact As New CExportColumnFactory(i_fg, m_objExcelWorksheet)
             Dim v_objExpCol As IExportColumn
