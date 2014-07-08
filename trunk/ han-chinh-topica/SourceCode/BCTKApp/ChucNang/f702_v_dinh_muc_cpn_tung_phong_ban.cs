@@ -317,7 +317,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f702_v_dinh_muc_cpn_tung_phong_ban";
-            this.Text = "F702 - Tổng tiền định mức CPN của từng phòng ban";
+            this.Text = "F702 - Tổng tiền định mức CPN của từng trung tâm - ban";
             this.Load += new System.EventHandler(this.f702_v_dinh_muc_cpn_tung_phong_ban_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
