@@ -1,0 +1,3 @@
+20140705 19:11:32 The DELETE statement conflicted with the REFERENCE constraint "FK_HT_QUYEN_GROUP_HT_CHUC_NANG". The conflict occurred in database "ADMIN_SOFT", table "dbo.HT_QUYEN_GROUP", column 'ID_QUYEN'.
+The statement has been terminated.
+.Net SqlClient Data Provider
