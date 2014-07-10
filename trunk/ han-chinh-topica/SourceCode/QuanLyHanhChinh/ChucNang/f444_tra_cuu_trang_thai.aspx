@@ -95,16 +95,6 @@
                         </asp:DropDownList>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                </tr>
             </table>
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
                 <tr>
@@ -115,12 +105,26 @@
                     </td>
                 </tr>
                 <tr>
+                    <td align="left">
+                        <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssManField" />
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="400px" CssClass="cssTextBox"></asp:TextBox>
+                        &nbsp;
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton" />
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="4">
                         <asp:GridView ID="m_grv_v_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
-                            CellPadding="8" PageSize="20" 
-                            onpageindexchanging="m_grv_v_dm_bill_PageIndexChanging">
+                            CellPadding="8" PageSize="20" OnPageIndexChanging="m_grv_v_dm_bill_PageIndexChanging">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />
@@ -130,7 +134,7 @@
                             <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
                             <HeaderStyle CssClass="GridViewHeaderStyle" />
                             <Columns>
-                               <%-- <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
+                                <%-- <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
                                             OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
