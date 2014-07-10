@@ -119,7 +119,8 @@
                         <asp:GridView ID="m_grv_v_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
-                            CellPadding="8" PageSize="20">
+                            CellPadding="8" PageSize="20" 
+                            onpageindexchanging="m_grv_v_dm_bill_PageIndexChanging">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />
@@ -129,7 +130,7 @@
                             <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
                             <HeaderStyle CssClass="GridViewHeaderStyle" />
                             <Columns>
-                                <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
+                               <%-- <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
                                             OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
@@ -137,13 +138,13 @@
                                         </asp:LinkButton>
                                     </ItemTemplate>
                                     <ItemStyle />
-                                </asp:TemplateField>
-                                <asp:CommandField ItemStyle-Width="1%" EditText="Sửa" EditImageUrl="../Images/Button/edit.png"
+                                </asp:TemplateField>--%>
+                                <%--<asp:CommandField ItemStyle-Width="1%" EditText="Sửa" EditImageUrl="../Images/Button/edit.png"
                                     ShowEditButton="true" ButtonType="Image" HeaderText="Sửa" ItemStyle-HorizontalAlign="Center"
                                     HeaderStyle-HorizontalAlign="Center">
                                     <HeaderStyle HorizontalAlign="Center" />
                                     <ItemStyle HorizontalAlign="Center" Width="1%" />
-                                </asp:CommandField>
+                                </asp:CommandField>--%>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <%# Container.DataItemIndex + 1 %>
@@ -155,7 +156,7 @@
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="7%" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="TRANG_THAI" ItemStyle-HorizontalAlign="Left" HeaderText="TRẠNG THÁI"
+                                <asp:BoundField DataField="TRANG_THAI_THU" ItemStyle-HorizontalAlign="Left" HeaderText="TRẠNG THÁI"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="7%" />
                                 </asp:BoundField>
