@@ -38,7 +38,7 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
     {
         try
         {
-            //load_data_to_grid();
+            load_data_to_grid();
         }
         catch (System.Exception v_e)
         {
@@ -46,4 +46,17 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
         }
     }
     #endregion
+    protected void m_grv_v_dm_bill_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            m_grv_v_dm_bill.PageIndex = e.NewPageIndex;
+            m_grv_v_dm_bill.DataBind();
+        }
+        catch (Exception v_e)
+        {
+            
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
 }
