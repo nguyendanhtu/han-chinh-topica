@@ -104,20 +104,20 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     }
     private void us_object_to_form()
     {
-        US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_hdf_id_bill.Value));
-        m_txt_so_bill.Text = m_us_dm_bill.strSO_BILL.Trim();
-        m_txt_nguoi_nhan.Text = m_us_dm_bill.strNGUOI_NHAN.Trim();
-        m_txt_noi_nhan.Text = m_us_dm_bill.strNOI_NHAN.Trim();
-        m_txt_nguoi_gui.Text = m_us_dm_bill.strNGUOI_GUI.Trim();
-        m_txt_noi_dung.Text = m_us_dm_bill.strNOI_DUNG.Trim();
-        m_txt_ghi_chu.Text = m_us_dm_bill.strGHI_CHU.Trim();
-        m_txt_so_tien.Text = m_us_dm_bill.dcSO_TIEN.ToString();
-        m_dat_ngay_gui.Text = m_us_dm_bill.datNGAY_GUI.ToString();
-        if (m_us_dm_bill.strTRONG_NUOC == "x")
+        US_DM_BILL v_us_dm_bill = new US_DM_BILL(CIPConvert.ToDecimal(m_hdf_id_bill.Value));
+        m_txt_so_bill.Text = v_us_dm_bill.strSO_BILL.Trim();
+        m_txt_nguoi_nhan.Text = v_us_dm_bill.strNGUOI_NHAN.Trim();
+        m_txt_noi_nhan.Text = v_us_dm_bill.strNOI_NHAN.Trim();
+        m_txt_nguoi_gui.Text = v_us_dm_bill.strNGUOI_GUI.Trim();
+        m_txt_noi_dung.Text = v_us_dm_bill.strNOI_DUNG.Trim();
+        m_txt_ghi_chu.Text = v_us_dm_bill.strGHI_CHU.Trim();
+        m_txt_so_tien.Text = v_us_dm_bill.dcSO_TIEN.ToString();
+        m_dat_ngay_gui.Text = v_us_dm_bill.datNGAY_GUI.ToString();
+        if (v_us_dm_bill.strTRONG_NUOC == "x")
         {
             m_rdb_trong_nuoc.Checked = true;
         }
-        if (m_us_dm_bill.strNUOC_NGOAI == "x")
+        if (v_us_dm_bill.strNUOC_NGOAI == "x")
         {
             m_rdb_nuoc_ngoai.Checked = false;
         }
@@ -161,8 +161,8 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     {
         load_title();
         //load_data_to_cbo_don_vi_cap_tren(m_rdb_cong_ty, m_rdb_cong_ty_con, m_rdb_chi_nhanh);
-        //m_cmd_cap_nhat.Visible = false;
-        //m_cmd_tao_moi.Visible = true;
+        m_cmd_sua.Visible = false;
+        m_cmd_them.Visible = true;
         load_data_to_grid();
         thong_bao("", false);
     }
@@ -179,7 +179,8 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_grv_dm_bill.DataSource = m_ds_dm_bill.DM_BILL;
         load_title();
         string v_str_thong_tin = " (Có " + m_ds_dm_bill.DM_BILL.Rows.Count + " bản ghi)";
-        m_lbl_thong_tim_grv_dm_bill.Text += v_str_thong_tin;
+        //m_lbl_thong_tim_grv_dm_bill.Text = "(Có 0 bản ghi)";
+        m_lbl_thong_tim_grv_dm_bill.Text = v_str_thong_tin;
         m_grv_dm_bill.DataBind();
         if (!m_hdf_id_bill.Value.Equals(""))
         {
@@ -214,8 +215,8 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         }
         if (v_form_mode.Equals(LOAI_FORM.SUA))
         {
-            US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_hdf_id_bill.Value));
-            if (!m_txt_so_bill.Text.Equals(m_us_dm_bill.strSO_BILL))
+            US_DM_BILL v_us_dm_bill = new US_DM_BILL(CIPConvert.ToDecimal(m_hdf_id_bill.Value));
+            if (!m_txt_so_bill.Text.Equals(v_us_dm_bill.strSO_BILL))
             {
                 if (m_us_dm_bill.check_is_having_so_bill(m_txt_so_bill.Text))
                 {
@@ -474,6 +475,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
           {
               //m_lbl_mess.Text = "";
               save_data();
+              load_data_to_grid();
           }
           catch (Exception v_e)
           {
@@ -486,6 +488,23 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             //m_lbl_mess.Text = "";
             Huy_thao_tac();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_grv_dm_bill_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        try
+        {
+            m_grv_dm_bill.SelectedIndex = e.NewEditIndex;
+            //m_lbl_mess.Text = "";
+            m_cmd_them.Visible = false;
+            m_cmd_sua.Visible = true;
+            set_form_mode(LOAI_FORM.SUA);
+            m_hdf_id_bill.Value = CIPConvert.ToStr(m_grv_dm_bill.DataKeys[e.NewEditIndex].Value);
+            us_object_to_form();
         }
         catch (Exception v_e)
         {

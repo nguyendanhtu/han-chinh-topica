@@ -122,7 +122,7 @@
                 <tr>
                     <td>
                     </td>
-                    <td colspan="2" align="right">
+                    <td colspan="2" align="center">
                         <asp:Button ID="m_cmd_them" runat="server" Text="Gửi cho TAD" CssClass="cssGoogleButton"
                             OnClick="m_cmd_them_Click" />
                         <asp:Button ID="m_cmd_sua" runat="server" Text="Cập nhật và gửi lại TAD" CssClass="cssGoogleButton"
@@ -177,7 +177,8 @@
                         <asp:GridView ID="m_grv_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
-                            CellPadding="8" PageSize="20">
+                            CellPadding="8" PageSize="20"
+                            OnRowEditing = "m_grv_dm_bill_RowEditing">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />
