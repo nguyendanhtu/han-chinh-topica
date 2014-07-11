@@ -130,11 +130,11 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             case LOAI_FORM.THEM:
                 m_us_dm_bill.Insert();
-                thong_bao("Đã gửi cho TAD!", true);
+                thong_bao("Đã gửi cho TAD!");
                 break;
             case LOAI_FORM.SUA:
                 m_us_dm_bill.Update();
-                thong_bao("Đã cập nhật và gửi cho TAD!", true);
+                thong_bao("Đã cập nhật và gửi cho TAD!");
                 m_cmd_them.Visible = false;
                 m_cmd_sua.Visible = true;
                 set_form_mode(LOAI_FORM.THEM);
@@ -179,7 +179,6 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_grv_dm_bill.DataSource = m_ds_dm_bill.DM_BILL;
         load_title();
         string v_str_thong_tin = " (Có " + m_ds_dm_bill.DM_BILL.Rows.Count + " bản ghi)";
-        //m_lbl_thong_tim_grv_dm_bill.Text = "(Có 0 bản ghi)";
         m_lbl_thong_tim_grv_dm_bill.Text = v_str_thong_tin;
         m_grv_dm_bill.DataBind();
         if (!m_hdf_id_bill.Value.Equals(""))
@@ -198,7 +197,8 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             if (m_txt_so_bill.Text.Trim().Length != 8)
             {
-                m_lbl_popup_mess.Text += "Số Bill gồm 8 chữ số!";
+                //m_lbl_popup_mess.Text += "Số Bill gồm 8 chữ số!";
+                thong_bao("Số Bill gồm 8 chữ số!");
                 m_txt_so_bill.Focus();
                 return false;
             }
@@ -225,42 +225,6 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
                 }
             }
         }
-
-        //if (v_form_mode.Equals(LOAI_FORM.XOA))
-        //{
-        //    // nếu là đơn vị đang được sử dụng thì không cho xoá
-        //    US_GD_NGHIEP_VU v_us_gd_nghiep_vu = new US_GD_NGHIEP_VU();
-        //    DS_GD_NGHIEP_VU v_ds_gd_nghiep_vu = new DS_GD_NGHIEP_VU();
-        //    v_us_gd_nghiep_vu.FillDataset(v_ds_gd_nghiep_vu, "where id_don_vi = " + m_hdf_id_bill.Value);
-        //    if (v_ds_gd_nghiep_vu.GD_NGHIEP_VU.Count > 0)
-        //    {
-        //        thong_bao("Dữ liệu đang được sử dụng, không thể xoá!");
-        //        return false;
-        //    }
-        //}
-
-        ////Kiểm tra nhập trùng Mã Số Thuế
-        //if (check_form_mode(m_hdf_form_mode).Equals(LOAI_FORM.THEM))
-        //{
-        //    if (m_us_phap_nhan.check_is_having_ma_so_thue(m_txt_ma_so_thue.Text))
-        //    {
-        //        thong_bao("Mã số thuế này đã tồn tại! ") ;
-        //        return false;
-        //    }
-        //}
-        //if (check_form_mode(m_hdf_form_mode).Equals(LOAI_FORM.SUA))
-        //{
-        //    US_DM_DON_VI v_us_dm_don_vi = new US_DM_DON_VI(CIPConvert.ToDecimal(m_hdf_id_bill.Value));
-        //    if (!m_txt_ma_so_thue.Text.Equals(v_us_dm_don_vi.strMA_SO_THUE))
-        //    {
-        //        if (m_us_phap_nhan.check_is_having_ma_so_thue(m_txt_ma_so_thue.Text))
-        //        {
-        //            thong_bao("Mã số thuế này đã tồn tại! ");
-        //            return false;
-        //        }
-        //    }
-        //}
-
         return true;
     }
 
@@ -476,6 +440,8 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
               //m_lbl_mess.Text = "";
               save_data();
               load_data_to_grid();
+              m_cmd_sua.Visible = false;
+              m_cmd_them.Visible = true;
           }
           catch (Exception v_e)
           {
@@ -488,6 +454,8 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             //m_lbl_mess.Text = "";
             Huy_thao_tac();
+            m_cmd_sua.Visible = false;
+            m_cmd_them.Visible = true;
         }
         catch (Exception v_e)
         {
