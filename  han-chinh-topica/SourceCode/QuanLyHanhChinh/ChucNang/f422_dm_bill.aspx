@@ -5,6 +5,18 @@
 <%@ Register Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"
     TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <style type="text/css">
+        .style1
+        {
+            width: 15%;
+            height: 24px;
+        }
+        .style2
+        {
+            width: 35%;
+            height: 24px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -58,17 +70,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="right" style="width: 15%">
+                    <td align="right" class="style1">
                         <asp:Label ID="m_lbl_so_bill" runat="Server" CssClass="cssManField" Text="Số bill"></asp:Label>
                     </td>
-                    <td style="width: 35%">
+                    <td class="style2">
                         <asp:TextBox ID="m_txt_so_bill" runat="Server" CssClass="cssTextBox" Width="45%"></asp:TextBox>
                     </td>
-                    <td align="right" style="width: 15%">
+                    <td align="right" class="style1">
                         <asp:Label ID="m_lbl_so_tien" runat="Server" CssClass="cssManField" Text="Số tiền"
                             Width="50%"></asp:Label>
                     </td>
-                    <td style="width: 35%">
+                    <td class="style2">
                         <asp:TextBox ID="m_txt_so_tien" runat="Server" CssClass="cssTextBox" Width="45%"></asp:TextBox>
                     </td>
                 </tr>
