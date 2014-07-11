@@ -344,6 +344,16 @@ public class US_DM_BILL : US_Object
         }
         return false;
     }
+    public bool check_is_having_so_bill(string ip_so_bill)
+    {
+        DS_DM_BILL v_ds_dm_bill = new DS_DM_BILL();
+        CStoredProc v_cstore = new CStoredProc("pr_check_is_having_so_bill");
+        v_cstore.addNVarcharInputParam("@SO_BILL", ip_so_bill);
+        v_cstore.fillDataSetByCommand(this, v_ds_dm_bill);
+        if (v_ds_dm_bill.DM_BILL.Rows.Count == 0)
+            return false;
+        return true;
+    }
     }
 	
 }
