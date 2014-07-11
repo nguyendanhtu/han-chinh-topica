@@ -21,4 +21,16 @@ namespace BCTKUS
         public const decimal ID_BI_TRA_LAI = 161;
         public const decimal ID_NOI_BO_NHAN_TRA_LAI = 162;
     }
+    public class SESSION
+    {
+        public const string UserFullName = "UserFullName";
+        public const string UserName = "UserName";
+        public const string UserID = "UserID";
+
+        public const string AccounLoginYN = "AccounLoginYN";
+        public const string UserQuyen = "user_quyen";
+        //public const string QuyenGV = "QuyenGV";
+        public const string Allow2DeleteDataYN = "Allow2DeleteDataYN";
+        public const string NHOM_PHAN_QUYEN = "NHOM_PHAN_QUYEN";
+    }
 }

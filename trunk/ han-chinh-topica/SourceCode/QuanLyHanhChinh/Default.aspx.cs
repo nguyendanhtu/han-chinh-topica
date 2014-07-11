@@ -9,9 +9,9 @@ using IP.Core.IPCommon;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 
-using WebUS;
-using WebDS;
-using WebDS.CDBNames;
+using BCTKUS;
+using BCTKDS;
+using BCTKDS.CDBNames;
 using System.Data;
 
 public partial class _Default : System.Web.UI.Page

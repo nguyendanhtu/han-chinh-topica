@@ -7,7 +7,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 
-using WebUS;
+using BCTKUS;
 
 public partial class Account_Login : System.Web.UI.Page
 {
@@ -52,30 +52,30 @@ public partial class Account_Login : System.Web.UI.Page
             Session[SESSION.UserFullName] = v_us_nguoi_su_dung.strTEN;
             Session[SESSION.UserID] = v_us_nguoi_su_dung.dcID;
 
-             if (v_us_nguoi_su_dung.dcID_USER_GROUP== ID_USER_GROUP.ADMIN) {
-                 Session[SESSION.Allow2DeleteDataYN] = "Y";
-             }
-             else if (v_us_nguoi_su_dung.dcID_USER_GROUP == ID_USER_GROUP.TONG_CUC) {
-                 Session[SESSION.Allow2DeleteDataYN] = "Y";
-             }
-             else if (v_us_nguoi_su_dung.dcID_USER_GROUP == ID_USER_GROUP.TESTER ) {
-                 Session[SESSION.Allow2DeleteDataYN] = "Y";
-             }
+             //if (v_us_nguoi_su_dung.dcID_USER_GROUP== ID_USER_GROUP.ADMIN) {
+             //    Session[SESSION.Allow2DeleteDataYN] = "Y";
+             //}
+             //else if (v_us_nguoi_su_dung.dcID_USER_GROUP == ID_USER_GROUP.TONG_CUC) {
+             //    Session[SESSION.Allow2DeleteDataYN] = "Y";
+             //}
+             //else if (v_us_nguoi_su_dung.dcID_USER_GROUP == ID_USER_GROUP.TESTER ) {
+             //    Session[SESSION.Allow2DeleteDataYN] = "Y";
+             //}
 
-             else {
-                 Session[SESSION.Allow2DeleteDataYN] = "N";
-             }
+             //else {
+             //    Session[SESSION.Allow2DeleteDataYN] = "N";
+             //}
             
 
             
             decimal v_dc_quyen = load_user_quyen(strUserName);
             Session[SESSION.UserQuyen] = v_dc_quyen;
-            if (v_dc_quyen == LOAI_USER_QUYEN.GROUP30)
-            {
-                Response.Redirect("/QuanLyHanhChinh", false);
-                //Session[SESSION.QuyenGV] = load_user_quyen(strUserName);
-            }
-            else Response.Redirect("../Default.aspx", false);
+            //if (v_dc_quyen == LOAI_USER_QUYEN.GROUP30)
+            //{
+            //    Response.Redirect("/QuanLyHanhChinh", false);
+            //    //Session[SESSION.QuyenGV] = load_user_quyen(strUserName);
+            //}
+            Response.Redirect("../Default.aspx", false);
             
             HttpContext.Current.ApplicationInstance.CompleteRequest();
         }

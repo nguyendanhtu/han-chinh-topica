@@ -6,10 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
-using WebDS.CDBNames;
-using WebDS;
+using BCTKDS;
+using BCTKDS.CDBNames;
 using IP.Core.IPCommon;
-using WebUS;
+using BCTKUS;
 public partial class QuantriF815_PhanQuyenSuDungDuLieuUserGroup : System.Web.UI.Page
 {
     #region Members
@@ -25,21 +25,25 @@ public partial class QuantriF815_PhanQuyenSuDungDuLieuUserGroup : System.Web.UI.
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        try {
-            
-            if (!this.IsPostBack) {
-               
+        try
+        {
+
+            if (!this.IsPostBack)
+            {
+
                 load_cbo_user_group();
                 load_cbo_ds_don_vi_chua_duoc_su_dung();
                 load_cbo_ds_don_vi_duoc_su_dung();
-            }    
-            
-        }catch(Exception v_e){
+            }
+
+        }
+        catch (Exception v_e)
+        {
             this.Response.Write(v_e.ToString());
         }
 
     }
-    
+
 
     private void load_cbo_user_group()
     {
@@ -47,7 +51,7 @@ public partial class QuantriF815_PhanQuyenSuDungDuLieuUserGroup : System.Web.UI.
         {
             US_HT_USER_GROUP v_us_user_group = new US_HT_USER_GROUP();
             DS_HT_USER_GROUP v_ds_user_group = new DS_HT_USER_GROUP();
-            v_us_user_group.FillDataset(v_ds_user_group, " ORDER BY " +HT_USER_GROUP.USER_GROUP_NAME);
+            v_us_user_group.FillDataset(v_ds_user_group, " ORDER BY " + HT_USER_GROUP.USER_GROUP_NAME);
             m_cbo_user_group.DataSource = v_ds_user_group.HT_USER_GROUP;
             m_cbo_user_group.DataTextField = HT_USER_GROUP.USER_GROUP_NAME;
             m_cbo_user_group.DataValueField = CM_DM_LOAI_TD.ID;
@@ -60,39 +64,30 @@ public partial class QuantriF815_PhanQuyenSuDungDuLieuUserGroup : System.Web.UI.
     }
     private void load_cbo_ds_don_vi_chua_duoc_su_dung()
     {
-       
-            US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI();
-            DS_DM_DON_VI v_ds_don_vi = new DS_DM_DON_VI();
-
-            v_us_don_vi.FillDataset(
-                CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue)
-                , false
-                , v_ds_don_vi);
-
-
-
-            m_lst_don_vi.DataSource = v_ds_don_vi.DM_DON_VI;
-            m_lst_don_vi.DataTextField = DM_DON_VI.TEN_DON_VI;
-            m_lst_don_vi.DataValueField = DM_DON_VI.ID;
+        if (m_cbo_user_group.SelectedValue != null)
+        {
+            US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds_dm_phong_ban = new DS_DM_PHONG_BAN();
+            v_us_dm_phong_ban.get_phong_ban_duoc_su_dung_yn(CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue), false, v_ds_dm_phong_ban);
+            m_lst_don_vi.DataSource = v_ds_dm_phong_ban.DM_PHONG_BAN;
+            m_lst_don_vi.DataTextField = DM_PHONG_BAN.TEN_PHONG_BAN;
+            m_lst_don_vi.DataValueField = DM_PHONG_BAN.ID;
             m_lst_don_vi.DataBind();
-       
+        }
+
+
     }
     private void load_cbo_ds_don_vi_duoc_su_dung()
     {
-      
-            US_DM_DON_VI v_us_don_vi = new US_DM_DON_VI();
-            DS_DM_DON_VI v_ds_don_vi = new DS_DM_DON_VI();
 
-            v_us_don_vi.FillDataset(
-                CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue)
-                , true
-                , v_ds_don_vi);
+        US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
+        DS_DM_PHONG_BAN v_ds_dm_phong_ban = new DS_DM_PHONG_BAN();
+        v_us_dm_phong_ban.get_phong_ban_duoc_su_dung_yn(CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue), false, v_ds_dm_phong_ban);
+        m_lst_don_vi_user_group.DataSource = v_ds_dm_phong_ban.DM_PHONG_BAN;
+        m_lst_don_vi_user_group.DataTextField = DM_PHONG_BAN.TEN_PHONG_BAN;
+        m_lst_don_vi_user_group.DataValueField = DM_PHONG_BAN.ID;
+        m_lst_don_vi_user_group.DataBind();
 
-            m_lst_don_vi_user_group.DataSource = v_ds_don_vi.DM_DON_VI;
-            m_lst_don_vi_user_group.DataTextField = DM_DON_VI.TEN_DON_VI;
-            m_lst_don_vi_user_group.DataValueField = DM_DON_VI.ID;
-            m_lst_don_vi_user_group.DataBind();
-       
     }
     private void update_quyen_su_dung_du_lieu()
     {
@@ -106,8 +101,8 @@ public partial class QuantriF815_PhanQuyenSuDungDuLieuUserGroup : System.Web.UI.
                 v_str_id_chuc_nangs += ltTemp.Value + ",";
             }
             US_HT_QUAN_HE_SU_DUNG_DU_LIEU v_us_quan_he_sd_du_lieu = new US_HT_QUAN_HE_SU_DUNG_DU_LIEU();
-            v_us_quan_he_sd_du_lieu.update_quyen_group(CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue),v_str_id_chuc_nangs);
-            m_lbl_mess.Text ="Cập nhật quyền sử dụng chức năng cho nhóm thành công";
+            v_us_quan_he_sd_du_lieu.update_quyen_group(CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue), v_str_id_chuc_nangs);
+            m_lbl_mess.Text = "Cập nhật quyền sử dụng chức năng cho nhóm thành công";
         }
         catch (Exception v_e)
         {
@@ -124,7 +119,7 @@ public partial class QuantriF815_PhanQuyenSuDungDuLieuUserGroup : System.Web.UI.
     //
     //
 
-   
+
     protected void m_cmd_right_Click(object sender, ImageClickEventArgs e)
     {
         try
@@ -136,15 +131,15 @@ public partial class QuantriF815_PhanQuyenSuDungDuLieuUserGroup : System.Web.UI.
                 m_lst_don_vi_user_group.Items.Add(selectedItem);
                 m_lst_don_vi.Items.Remove(selectedItem);
             }
-          
+
         }
         catch (Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
-       
+
     }
-   
+
     protected void m_cmd_right_all_Click(object sender, ImageClickEventArgs e)
     {
         try
@@ -154,14 +149,14 @@ public partial class QuantriF815_PhanQuyenSuDungDuLieuUserGroup : System.Web.UI.
                 this.m_lst_don_vi_user_group.Items.Add(ltTemp);
             }
             this.m_lst_don_vi.Items.Clear();
-            
+
 
         }
         catch (Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
-       
+
     }
     protected void m_cmd_left_Click(object sender, ImageClickEventArgs e)
     {
@@ -180,7 +175,7 @@ public partial class QuantriF815_PhanQuyenSuDungDuLieuUserGroup : System.Web.UI.
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
-       
+
     }
     protected void m_cmd_left_all_Click(object sender, ImageClickEventArgs e)
     {

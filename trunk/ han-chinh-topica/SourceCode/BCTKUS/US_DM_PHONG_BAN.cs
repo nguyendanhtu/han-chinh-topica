@@ -13,122 +13,153 @@ using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
+using BCTKDS.CDBNames;
 
 
-
-namespace BCTKUS{
-
-public class US_DM_PHONG_BAN : US_Object
+namespace BCTKUS
 {
-	private const string c_TableName = "DM_PHONG_BAN";
-#region "Public Properties"
-	public decimal dcID 
-	{
-		get
-		{
-			return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
-		}
-		set	
-		{
-			pm_objDR["ID"] = value;
-		}
-	}
 
-	public bool IsIDNull()	{
-		return pm_objDR.IsNull("ID");
-	}
+    public class US_DM_PHONG_BAN : US_Object
+    {
+        private const string c_TableName = "DM_PHONG_BAN";
+        #region "Public Properties"
+        public decimal dcID
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID"] = value;
+            }
+        }
 
-	public void SetIDNull() {
-		pm_objDR["ID"] = System.Convert.DBNull;
-	}
+        public bool IsIDNull()
+        {
+            return pm_objDR.IsNull("ID");
+        }
 
-	public string strMA_PHONG_BAN 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "MA_PHONG_BAN", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["MA_PHONG_BAN"] = value;
-		}
-	}
+        public void SetIDNull()
+        {
+            pm_objDR["ID"] = System.Convert.DBNull;
+        }
 
-	public bool IsMA_PHONG_BANNull() 
-	{
-		return pm_objDR.IsNull("MA_PHONG_BAN");
-	}
+        public string strMA_PHONG_BAN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "MA_PHONG_BAN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["MA_PHONG_BAN"] = value;
+            }
+        }
 
-	public void SetMA_PHONG_BANNull() {
-		pm_objDR["MA_PHONG_BAN"] = System.Convert.DBNull;
-	}
+        public bool IsMA_PHONG_BANNull()
+        {
+            return pm_objDR.IsNull("MA_PHONG_BAN");
+        }
 
-	public string strTEN_PHONG_BAN 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "TEN_PHONG_BAN", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["TEN_PHONG_BAN"] = value;
-		}
-	}
+        public void SetMA_PHONG_BANNull()
+        {
+            pm_objDR["MA_PHONG_BAN"] = System.Convert.DBNull;
+        }
 
-	public bool IsTEN_PHONG_BANNull() 
-	{
-		return pm_objDR.IsNull("TEN_PHONG_BAN");
-	}
+        public string strTEN_PHONG_BAN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TEN_PHONG_BAN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TEN_PHONG_BAN"] = value;
+            }
+        }
 
-	public void SetTEN_PHONG_BANNull() {
-		pm_objDR["TEN_PHONG_BAN"] = System.Convert.DBNull;
-	}
+        public bool IsTEN_PHONG_BANNull()
+        {
+            return pm_objDR.IsNull("TEN_PHONG_BAN");
+        }
 
-	public decimal dcID_PHAP_NHAN 
-	{
-		get
-		{
-			return CNull.RowNVLDecimal(pm_objDR, "ID_PHAP_NHAN", IPConstants.c_DefaultDecimal);
-		}
-		set	
-		{
-			pm_objDR["ID_PHAP_NHAN"] = value;
-		}
-	}
+        public void SetTEN_PHONG_BANNull()
+        {
+            pm_objDR["TEN_PHONG_BAN"] = System.Convert.DBNull;
+        }
 
-	public bool IsID_PHAP_NHANNull()	{
-		return pm_objDR.IsNull("ID_PHAP_NHAN");
-	}
+        public decimal dcID_PHAP_NHAN
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_PHAP_NHAN", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_PHAP_NHAN"] = value;
+            }
+        }
 
-	public void SetID_PHAP_NHANNull() {
-		pm_objDR["ID_PHAP_NHAN"] = System.Convert.DBNull;
-	}
+        public bool IsID_PHAP_NHANNull()
+        {
+            return pm_objDR.IsNull("ID_PHAP_NHAN");
+        }
 
-#endregion
-#region "Init Functions"
-	public US_DM_PHONG_BAN() 
-	{
-		pm_objDS = new DS_DM_PHONG_BAN();
-		pm_strTableName = c_TableName;
-		pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
-	}
+        public void SetID_PHAP_NHANNull()
+        {
+            pm_objDR["ID_PHAP_NHAN"] = System.Convert.DBNull;
+        }
 
-	public US_DM_PHONG_BAN(DataRow i_objDR): this()
-	{
-		this.DataRow2Me(i_objDR);
-	}
+        #endregion
+        #region "Init Functions"
+        public US_DM_PHONG_BAN()
+        {
+            pm_objDS = new DS_DM_PHONG_BAN();
+            pm_strTableName = c_TableName;
+            pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
+        }
 
-	public US_DM_PHONG_BAN(decimal i_dbID) 
-	{
-		pm_objDS = new DS_DM_PHONG_BAN();
-		pm_strTableName = c_TableName;
-		IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
-		v_objMkCmd.AddCondition("ID", i_dbID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
-		SqlCommand v_cmdSQL;
-		v_cmdSQL = v_objMkCmd.getSelectCmd();
-		this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
-		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
-	}
-#endregion
-	}
+        public US_DM_PHONG_BAN(DataRow i_objDR)
+            : this()
+        {
+            this.DataRow2Me(i_objDR);
+        }
+
+        public US_DM_PHONG_BAN(decimal i_dbID)
+        {
+            pm_objDS = new DS_DM_PHONG_BAN();
+            pm_strTableName = c_TableName;
+            IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
+            v_objMkCmd.AddCondition("ID", i_dbID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
+            SqlCommand v_cmdSQL;
+            v_cmdSQL = v_objMkCmd.getSelectCmd();
+            this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
+            pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
+        }
+        #endregion
+
+        #region "Addtion"
+        public void get_phong_ban_duoc_su_dung_yn(
+            decimal ip_id_user_group
+            , bool is_user_group_using_data
+            , DS_DM_PHONG_BAN op_ds_phong_ban)
+        {
+
+            string v_str_sql_condition = " WHERE " + DM_PHONG_BAN.ID;
+
+
+            if (is_user_group_using_data)
+            {
+                v_str_sql_condition += " IN (SELECT ID_PHONG_BAN FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE ID_USER_GROUP =" + ip_id_user_group.ToString() + ")";
+            }
+            else
+            {
+                v_str_sql_condition += " NOT IN (SELECT ID_PHONG_BAN FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE ID_USER_GROUP =" + ip_id_user_group.ToString() + ")";
+            }
+            this.FillDataset(op_ds_phong_ban, v_str_sql_condition);
+        }
+        #endregion
+
+    }
 }
