@@ -12,6 +12,7 @@
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
                         <asp:Label ID="lblUser" runat="server" CssClass="cssPageTitle" Text="Phân quyền cho nhóm người dùng" />
+                        &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>
                 <tr>

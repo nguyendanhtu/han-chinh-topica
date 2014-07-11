@@ -89,28 +89,6 @@ namespace BCTKUS
             pm_objDR["TEN_PHONG_BAN"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_PHAP_NHAN
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "ID_PHAP_NHAN", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["ID_PHAP_NHAN"] = value;
-            }
-        }
-
-        public bool IsID_PHAP_NHANNull()
-        {
-            return pm_objDR.IsNull("ID_PHAP_NHAN");
-        }
-
-        public void SetID_PHAP_NHANNull()
-        {
-            pm_objDR["ID_PHAP_NHAN"] = System.Convert.DBNull;
-        }
-
         #endregion
         #region "Init Functions"
         public US_DM_PHONG_BAN()
@@ -151,11 +129,11 @@ namespace BCTKUS
 
             if (is_user_group_using_data)
             {
-                v_str_sql_condition += " IN (SELECT ID_PHONG_BAN FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE ID_USER_GROUP =" + ip_id_user_group.ToString() + ")";
+                v_str_sql_condition += " IN (SELECT ID_PHONG_BAN FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE ID_USER_GROUP =" + ip_id_user_group.ToString() + ") ORDER BY TEN_PHONG_BAN";
             }
             else
             {
-                v_str_sql_condition += " NOT IN (SELECT ID_PHONG_BAN FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE ID_USER_GROUP =" + ip_id_user_group.ToString() + ")";
+                v_str_sql_condition += " NOT IN (SELECT ID_PHONG_BAN FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE ID_USER_GROUP =" + ip_id_user_group.ToString() + ") ORDER BY TEN_PHONG_BAN";
             }
             this.FillDataset(op_ds_phong_ban, v_str_sql_condition);
         }
