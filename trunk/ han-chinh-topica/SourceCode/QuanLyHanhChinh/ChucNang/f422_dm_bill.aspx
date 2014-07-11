@@ -210,21 +210,45 @@
                                     </ItemTemplate>
                                     <ItemStyle HorizontalAlign="Center" Width="2%" />
                                 </asp:TemplateField>
-                                <asp:BoundField DataField="NOI_DUNG" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
+                                <asp:BoundField DataField="SO_BILL" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ BILL"
                                     ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                    <ItemStyle HorizontalAlign="Right" Width="5%" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="NOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
-                                    ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                <asp:BoundField DataField="NGAY_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGÀY GỬI"
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:dd/MM/yyyy}">
+                                    <ItemStyle HorizontalAlign="center" Width="5%" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="NGUOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI NHẬN"
-                                    ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                <asp:BoundField DataField="SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ TIỀN (VNĐ)"
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="NGUOI_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI GỬI"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                </asp:BoundField>
+                                   <asp:BoundField DataField="NGUOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI NHẬN"
+                                    ItemStyle-Width="7%">
+                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                </asp:BoundField>
+                                   <asp:BoundField DataField="NOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
+                                    ItemStyle-Width="7%">
+                                    <ItemStyle HorizontalAlign="Left" Width="12%" />
+                                </asp:BoundField>
+                                   <asp:BoundField DataField="NOI_DUNG" ItemStyle-HorizontalAlign="Left" HeaderText="NỘI DUNG"
+                                    ItemStyle-Width="7%">
+                                    <ItemStyle HorizontalAlign="Left" Width="4%" />
+                                </asp:BoundField>
+                                   <asp:BoundField DataField="TRONG_NUOC" ItemStyle-HorizontalAlign="Left" HeaderText="TRONG NƯỚC"
+                                    ItemStyle-Width="7%">
+                                    <ItemStyle HorizontalAlign="center" Width="3%" />
+                                </asp:BoundField>
+                                   <asp:BoundField DataField="NUOC_NGOAI" ItemStyle-HorizontalAlign="Left" HeaderText="NƯỚC NGOÀI"
+                                    ItemStyle-Width="7%">
+                                    <ItemStyle HorizontalAlign="center" Width="3%" />
+                                </asp:BoundField>
+                                   <asp:BoundField DataField="GHI_CHU" ItemStyle-HorizontalAlign="Left" HeaderText="GHI CHÚ"
+                                    ItemStyle-Width="7%">
+                                    <ItemStyle HorizontalAlign="Left" Width="5%" />
                                 </asp:BoundField>
                                 <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
                                     Visible="False">
