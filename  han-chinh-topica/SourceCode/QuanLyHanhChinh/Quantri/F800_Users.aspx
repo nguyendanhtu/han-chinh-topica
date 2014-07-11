@@ -188,7 +188,7 @@
                      <img alt="Xóa" src="../Images/Button/deletered.png" />
                                         </asp:LinkButton>
                                     </ItemTemplate>
-                                    <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                                    <ItemStyle HorizontalAlign="Center" Width="3%"></ItemStyle>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Sửa">
                                     <ItemTemplate>
@@ -197,7 +197,7 @@
                      <img alt="Sửa" src="../Images/Button/edit.png" />
                                         </asp:LinkButton>
                                     </ItemTemplate>
-                                    <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                                    <ItemStyle HorizontalAlign="Center" Width="3%"></ItemStyle>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>

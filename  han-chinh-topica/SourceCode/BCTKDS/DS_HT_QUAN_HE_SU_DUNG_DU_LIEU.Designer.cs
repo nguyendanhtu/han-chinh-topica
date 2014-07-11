@@ -281,9 +281,9 @@ namespace BCTKDS {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnID_DON_VI;
-            
             private global::System.Data.DataColumn columnID_USER_GROUP;
+            
+            private global::System.Data.DataColumn columnID_PHONG_BAN;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -328,17 +328,17 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_DON_VIColumn {
+            public global::System.Data.DataColumn ID_USER_GROUPColumn {
                 get {
-                    return this.columnID_DON_VI;
+                    return this.columnID_USER_GROUP;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_USER_GROUPColumn {
+            public global::System.Data.DataColumn ID_PHONG_BANColumn {
                 get {
-                    return this.columnID_USER_GROUP;
+                    return this.columnID_PHONG_BAN;
                 }
             }
             
@@ -379,12 +379,12 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HT_QUAN_HE_SU_DUNG_DU_LIEURow AddHT_QUAN_HE_SU_DUNG_DU_LIEURow(decimal ID_DON_VI, decimal ID_USER_GROUP) {
+            public HT_QUAN_HE_SU_DUNG_DU_LIEURow AddHT_QUAN_HE_SU_DUNG_DU_LIEURow(decimal ID_USER_GROUP, decimal ID_PHONG_BAN) {
                 HT_QUAN_HE_SU_DUNG_DU_LIEURow rowHT_QUAN_HE_SU_DUNG_DU_LIEURow = ((HT_QUAN_HE_SU_DUNG_DU_LIEURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        ID_DON_VI,
-                        ID_USER_GROUP};
+                        ID_USER_GROUP,
+                        ID_PHONG_BAN};
                 rowHT_QUAN_HE_SU_DUNG_DU_LIEURow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHT_QUAN_HE_SU_DUNG_DU_LIEURow);
                 return rowHT_QUAN_HE_SU_DUNG_DU_LIEURow;
@@ -421,8 +421,8 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnID_DON_VI = base.Columns["ID_DON_VI"];
                 this.columnID_USER_GROUP = base.Columns["ID_USER_GROUP"];
+                this.columnID_PHONG_BAN = base.Columns["ID_PHONG_BAN"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -430,10 +430,10 @@ namespace BCTKDS {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnID_DON_VI = new global::System.Data.DataColumn("ID_DON_VI", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_DON_VI);
                 this.columnID_USER_GROUP = new global::System.Data.DataColumn("ID_USER_GROUP", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_USER_GROUP);
+                this.columnID_PHONG_BAN = new global::System.Data.DataColumn("ID_PHONG_BAN", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_PHONG_BAN);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -442,8 +442,8 @@ namespace BCTKDS {
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
-                this.columnID_DON_VI.AllowDBNull = false;
                 this.columnID_USER_GROUP.AllowDBNull = false;
+                this.columnID_PHONG_BAN.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -597,23 +597,23 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ID_DON_VI {
-                get {
-                    return ((decimal)(this[this.tableHT_QUAN_HE_SU_DUNG_DU_LIEU.ID_DON_VIColumn]));
-                }
-                set {
-                    this[this.tableHT_QUAN_HE_SU_DUNG_DU_LIEU.ID_DON_VIColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ID_USER_GROUP {
                 get {
                     return ((decimal)(this[this.tableHT_QUAN_HE_SU_DUNG_DU_LIEU.ID_USER_GROUPColumn]));
                 }
                 set {
                     this[this.tableHT_QUAN_HE_SU_DUNG_DU_LIEU.ID_USER_GROUPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_PHONG_BAN {
+                get {
+                    return ((decimal)(this[this.tableHT_QUAN_HE_SU_DUNG_DU_LIEU.ID_PHONG_BANColumn]));
+                }
+                set {
+                    this[this.tableHT_QUAN_HE_SU_DUNG_DU_LIEU.ID_PHONG_BANColumn] = value;
                 }
             }
         }
@@ -778,36 +778,36 @@ namespace BCTKDS.DS_HT_QUAN_HE_SU_DUNG_DU_LIEUTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "HT_QUAN_HE_SU_DUNG_DU_LIEU";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("ID_DON_VI", "ID_DON_VI");
             tableMapping.ColumnMappings.Add("ID_USER_GROUP", "ID_USER_GROUP");
+            tableMapping.ColumnMappings.Add("ID_PHONG_BAN", "ID_PHONG_BAN");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[HT_QUAN_HE_SU_DUNG_DU_LIEU] WHERE (([ID] = @Original_ID) AND (" +
-                "[ID_DON_VI] = @Original_ID_DON_VI) AND ([ID_USER_GROUP] = @Original_ID_USER_GROU" +
-                "P))";
+                "[ID_USER_GROUP] = @Original_ID_USER_GROUP) AND ([ID_PHONG_BAN] = @Original_ID_PH" +
+                "ONG_BAN))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_DON_VI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DON_VI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_USER_GROUP", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_USER_GROUP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[HT_QUAN_HE_SU_DUNG_DU_LIEU] ([ID_DON_VI], [ID_USER_GROUP]) VAL" +
-                "UES (@ID_DON_VI, @ID_USER_GROUP);\r\nSELECT ID, ID_DON_VI, ID_USER_GROUP FROM HT_Q" +
-                "UAN_HE_SU_DUNG_DU_LIEU WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[HT_QUAN_HE_SU_DUNG_DU_LIEU] ([ID_USER_GROUP], [ID_PHONG_BAN]) " +
+                "VALUES (@ID_USER_GROUP, @ID_PHONG_BAN);\r\nSELECT ID, ID_USER_GROUP, ID_PHONG_BAN " +
+                "FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_DON_VI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DON_VI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_USER_GROUP", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_USER_GROUP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[HT_QUAN_HE_SU_DUNG_DU_LIEU] SET [ID_DON_VI] = @ID_DON_VI, [ID_USER_GROUP] = @ID_USER_GROUP WHERE (([ID] = @Original_ID) AND ([ID_DON_VI] = @Original_ID_DON_VI) AND ([ID_USER_GROUP] = @Original_ID_USER_GROUP));
-SELECT ID, ID_DON_VI, ID_USER_GROUP FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[HT_QUAN_HE_SU_DUNG_DU_LIEU] SET [ID_USER_GROUP] = @ID_USER_GROUP, [ID_PHONG_BAN] = @ID_PHONG_BAN WHERE (([ID] = @Original_ID) AND ([ID_USER_GROUP] = @Original_ID_USER_GROUP) AND ([ID_PHONG_BAN] = @Original_ID_PHONG_BAN));
+SELECT ID, ID_USER_GROUP, ID_PHONG_BAN FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_DON_VI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DON_VI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_USER_GROUP", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_USER_GROUP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_DON_VI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DON_VI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_USER_GROUP", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_USER_GROUP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -815,7 +815,7 @@ SELECT ID, ID_DON_VI, ID_USER_GROUP FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE (ID = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BCTKDS.Properties.Settings.Default.ADMIN_SOFTConnectionString2;
+            this._connection.ConnectionString = global::BCTKDS.Properties.Settings.Default.ADMIN_SOFTConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -824,7 +824,7 @@ SELECT ID, ID_DON_VI, ID_USER_GROUP FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE (ID = 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, ID_DON_VI, ID_USER_GROUP FROM dbo.HT_QUAN_HE_SU_DUNG_DU_LIEU";
+            this._commandCollection[0].CommandText = "SELECT ID, ID_USER_GROUP, ID_PHONG_BAN FROM dbo.HT_QUAN_HE_SU_DUNG_DU_LIEU";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -885,10 +885,10 @@ SELECT ID, ID_DON_VI, ID_USER_GROUP FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE (ID = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, decimal Original_ID_DON_VI, decimal Original_ID_USER_GROUP) {
+        public virtual int Delete(decimal Original_ID, decimal Original_ID_USER_GROUP, decimal Original_ID_PHONG_BAN) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_ID_DON_VI));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_ID_USER_GROUP));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_ID_USER_GROUP));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_ID_PHONG_BAN));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -909,9 +909,9 @@ SELECT ID, ID_DON_VI, ID_USER_GROUP FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE (ID = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal ID_DON_VI, decimal ID_USER_GROUP) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID_DON_VI));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(ID_USER_GROUP));
+        public virtual int Insert(decimal ID_USER_GROUP, decimal ID_PHONG_BAN) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID_USER_GROUP));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(ID_PHONG_BAN));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -932,12 +932,12 @@ SELECT ID, ID_DON_VI, ID_USER_GROUP FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE (ID = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal ID_DON_VI, decimal ID_USER_GROUP, decimal Original_ID, decimal Original_ID_DON_VI, decimal Original_ID_USER_GROUP, decimal ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ID_DON_VI));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(ID_USER_GROUP));
+        public virtual int Update(decimal ID_USER_GROUP, decimal ID_PHONG_BAN, decimal Original_ID, decimal Original_ID_USER_GROUP, decimal Original_ID_PHONG_BAN, decimal ID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ID_USER_GROUP));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(ID_PHONG_BAN));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_ID_DON_VI));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_ID_USER_GROUP));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_ID_USER_GROUP));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_ID_PHONG_BAN));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -959,8 +959,8 @@ SELECT ID, ID_DON_VI, ID_USER_GROUP FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE (ID = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal ID_DON_VI, decimal ID_USER_GROUP, decimal Original_ID, decimal Original_ID_DON_VI, decimal Original_ID_USER_GROUP) {
-            return this.Update(ID_DON_VI, ID_USER_GROUP, Original_ID, Original_ID_DON_VI, Original_ID_USER_GROUP, Original_ID);
+        public virtual int Update(decimal ID_USER_GROUP, decimal ID_PHONG_BAN, decimal Original_ID, decimal Original_ID_USER_GROUP, decimal Original_ID_PHONG_BAN) {
+            return this.Update(ID_USER_GROUP, ID_PHONG_BAN, Original_ID, Original_ID_USER_GROUP, Original_ID_PHONG_BAN, Original_ID);
         }
     }
     

@@ -6,6 +6,7 @@
 		<td class="cssPageTitleBG" colspan="6">
 		    <asp:label id="lblUser" runat="server" CssClass="cssPageTitle" 
                 Text="Phân quyền cho nhóm người dùng"/>
+            &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
 		</td>
 	</tr>
 	<tr>
@@ -27,9 +28,9 @@
 		<td >
 		    &nbsp;</td>
 		<td >
-			<asp:button id="m_cmd_cap_nhat" accessKey="u" CssClass="cssButton" 
-                runat="server" Width="98px" Text="Cập nhật(u)" 
-                onclick="m_cmd_cap_nhat_Click" Height="22px"  />
+			<asp:button id="m_cmd_cap_nhat" accessKey="u" CssClass="cssGoogleButton" 
+                runat="server"  Text="Cập nhật(u)" 
+                onclick="m_cmd_cap_nhat_Click" />
 		    </td>
 		<td >
 			<asp:customvalidator id="m_cvt_loai_tu_dien" runat="server" 
@@ -61,7 +62,7 @@
 		<td align="right" width="200px">
 			&nbsp;</td>
 		<td width="300px" >
-			<asp:ListBox ID="m_lst_don_vi" runat="server" Width="300px" Height="300px" 
+			<asp:ListBox ID="m_lst_don_vi" runat="server" Width="300px" Height="300px" CssClass="cssTextBox"
                 SelectionMode="Multiple"></asp:ListBox>
 		</td>
 		<td width="10px" align="center">
@@ -79,7 +80,7 @@
                 ImageUrl="~/Images/ListTran/leftAll.gif" onclick="m_cmd_left_all_Click" />
 		    </td>
 		<td width="300px" >
-			<asp:ListBox ID="m_lst_don_vi_user_group" runat="server" Width="300px" 
+			<asp:ListBox ID="m_lst_don_vi_user_group" runat="server" Width="300px"  CssClass="cssTextBox"
                 Height="300px" SelectionMode="Multiple"></asp:ListBox>
 		    </td>
 		<td >

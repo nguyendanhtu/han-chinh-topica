@@ -301,7 +301,7 @@ namespace BCTKApp
             v_dr[DM_PHONG_BAN.ID] = -1;
             v_dr[DM_PHONG_BAN.MA_PHONG_BAN]="";
             v_dr[DM_PHONG_BAN.TEN_PHONG_BAN]="-----Tất cả-----";
-            v_dr[DM_PHONG_BAN.ID_PHAP_NHAN] = -1;
+ 
             
             v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
             m_cbo_trung_tam.SelectedIndex = 0;

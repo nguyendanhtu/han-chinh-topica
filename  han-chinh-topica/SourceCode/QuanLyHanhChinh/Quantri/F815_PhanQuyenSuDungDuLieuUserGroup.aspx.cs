@@ -39,7 +39,7 @@ public partial class QuantriF815_PhanQuyenSuDungDuLieuUserGroup : System.Web.UI.
         }
         catch (Exception v_e)
         {
-            this.Response.Write(v_e.ToString());
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
 
     }
@@ -82,7 +82,7 @@ public partial class QuantriF815_PhanQuyenSuDungDuLieuUserGroup : System.Web.UI.
 
         US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
         DS_DM_PHONG_BAN v_ds_dm_phong_ban = new DS_DM_PHONG_BAN();
-        v_us_dm_phong_ban.get_phong_ban_duoc_su_dung_yn(CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue), false, v_ds_dm_phong_ban);
+        v_us_dm_phong_ban.get_phong_ban_duoc_su_dung_yn(CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue), true, v_ds_dm_phong_ban);
         m_lst_don_vi_user_group.DataSource = v_ds_dm_phong_ban.DM_PHONG_BAN;
         m_lst_don_vi_user_group.DataTextField = DM_PHONG_BAN.TEN_PHONG_BAN;
         m_lst_don_vi_user_group.DataValueField = DM_PHONG_BAN.ID;

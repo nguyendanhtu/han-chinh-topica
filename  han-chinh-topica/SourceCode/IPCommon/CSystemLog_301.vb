@@ -56,11 +56,11 @@ Public Class CSystemLog_301
 
             Select Case m_strRunMode
                 Case IPConstants.C_RUNMODE_TEST
-                    i_page.Response.Redirect("..//MessageError.aspx?Message= Error:" + v_str_msg)
+                    i_page.Response.Redirect("..MessageError.aspx?Message= Error:" + v_str_msg)
                 Case IPConstants.C_RUNMODE_DEVELOP
-                    i_page.Response.Redirect("..//MessageError.aspx?Message= Error:" + v_str_msg)
+                    i_page.Response.Redirect("..MessageError.aspx?Message= Error:" + v_str_msg)
                 Case IPConstants.C_RUNMODE_RUNTIME
-                    i_page.Response.Redirect("MessageError.aspx?Message= Đã xảy ra lỗi trong quá trình cập nhật dữ liệu!")
+                    i_page.Response.Redirect("..MessageError.aspx?Message= Đã xảy ra lỗi trong quá trình cập nhật dữ liệu!")
             End Select
         Catch ex As Exception
             'i_page.Response.Redirect("../MessageError.aspx?mess=Title Website: " + i_page.Title + ". Message: " + i_exp.Message + " Source: " + i_exp.Source)
