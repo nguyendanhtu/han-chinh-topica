@@ -9,9 +9,9 @@ using IP.Core.IPBusinessService;
 using IP.Core.IPCommon;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
-using WebDS;
-using WebDS.CDBNames;
-using WebUS;
+using BCTKDS;
+using BCTKDS.CDBNames;
+using BCTKUS;
 using System.Data;
 
 public partial class SiteMaster : System.Web.UI.MasterPage

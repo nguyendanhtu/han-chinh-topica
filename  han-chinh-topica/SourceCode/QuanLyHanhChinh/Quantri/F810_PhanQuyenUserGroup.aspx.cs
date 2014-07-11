@@ -6,10 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
-using WebDS.CDBNames;
-using WebDS;
+using BCTKDS.CDBNames;
+using BCTKDS;
 using IP.Core.IPCommon;
-using WebUS;
+using BCTKUS;
 using IP.Core.WinFormControls;
 public partial class Quantri_F810_PhanQuyenUserGroup : System.Web.UI.Page
 {

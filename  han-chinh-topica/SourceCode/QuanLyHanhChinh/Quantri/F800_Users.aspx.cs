@@ -6,10 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
-using WebDS.CDBNames;
-using WebDS;
+using BCTKDS.CDBNames;
+using BCTKDS;
 using IP.Core.IPCommon;
-using WebUS;
+using BCTKUS;
 public partial class Quantri_F800_Users : System.Web.UI.Page
 {
     #region Members
@@ -19,40 +19,114 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     #endregion
 
     #region Data Structures
-
+    public class LOAI_FORM
+    {
+        public const string THEM = "THEM";
+        public const string SUA = "SUA";
+        public const string XOA = "XOA";
+    }
     #endregion
 
     #region Private Methods
-
-    private void set_control_by_form_mode() {
-        switch (m_e_form_mode) {
-            case DataEntryFormMode.InsertDataState:
+    public void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible, bool ip_button_ok_visible)
+    {
+        m_mtv_1.SetActiveView(m_view_confirm);
+        m_lbl_popup_mess.Text = ip_str_mess;
+        m_pnl_confirm_tg.Visible = ip_panel_thong_bao_visible;
+        m_cmd_ok.Visible = ip_button_ok_visible;
+    }
+    public void thong_bao(string ip_str_mess)
+    {
+        m_mtv_1.SetActiveView(m_view_confirm);
+        m_lbl_popup_mess.Text = ip_str_mess;
+        m_pnl_confirm_tg.Visible = true;
+        m_cmd_ok.Visible = true;
+    }
+    private string get_form_mode(HiddenField ip_hdf_form_mode)
+    {
+        if (ip_hdf_form_mode.Value.Equals("0"))
+        {
+            return LOAI_FORM.THEM;
+        }
+        if (ip_hdf_form_mode.Value.Equals("1"))
+        {
+            return LOAI_FORM.SUA;
+        }
+        if (ip_hdf_form_mode.Value.Equals("2"))
+        {
+            return LOAI_FORM.XOA;
+        }
+        return LOAI_FORM.THEM;
+    }
+    private void set_form_mode(string ip_loai_form)
+    {
+        if (ip_loai_form.Equals(LOAI_FORM.THEM))
+        {
+            m_hdf_form_mode.Value = "0";
+        }
+        if (ip_loai_form.Equals(LOAI_FORM.SUA))
+        {
+            m_hdf_form_mode.Value = "1";
+        }
+        if (ip_loai_form.Equals(LOAI_FORM.XOA))
+        {
+            m_hdf_form_mode.Value = "2";
+        }
+    }
+    private void set_control_by_form_mode()
+    {
+        switch (get_form_mode(m_hdf_form_mode))
+        {
+            case LOAI_FORM.THEM:
                 m_cmd_cap_nhat.Visible = false;
                 m_cmd_tao_moi.Visible = true;
                 m_txt_ten_dang_nhap.ReadOnly = false;
                 break;
-            case DataEntryFormMode.SelectDataState:
-                break;
-            case DataEntryFormMode.UpdateDataState:
+            case LOAI_FORM.SUA:
                 m_cmd_cap_nhat.Visible = true;
                 m_cmd_tao_moi.Visible = false;
-                m_txt_ten_dang_nhap.ReadOnly = true;
-                break;
-            case DataEntryFormMode.ViewDataState:
+                m_txt_ten_dang_nhap.ReadOnly = false;
                 break;
             default:
                 break;
         }
     }
-    
     private void load_data_2_grid()
     {
-        try {
-            m_us_user.FillDataset(m_ds_user, " WHERE ID_USER_GROUP =" + CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue));
+        try
+        {
+            m_us_user.FillDataset(m_ds_user, " WHERE ID_USER_GROUP =" + CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue) + " order by ten_truy_cap");
             m_grv_dm_tu_dien.DataSource = m_ds_user.HT_NGUOI_SU_DUNG;
+            //if (m_cbo_user_group.SelectedValue != "6")
+            //{
+            //    m_lbl_email_group.Visible = false;
+            //    m_txt_email_group.Visible = false;
+            //}
+            //else
+            //{
+            //    m_lbl_email_group.Visible = true;
+            //    m_txt_email_group.Visible = true;
+            //    m_txt_email_group.Text = "";
+
+            //    for (int i = 0; i < m_ds_user.HT_NGUOI_SU_DUNG.Count - 1; i++)
+            //    {
+            //        m_txt_email_group.Text += m_ds_user.HT_NGUOI_SU_DUNG.Rows[i][1].ToString() + ", ";
+            //    }
+
+            //    m_txt_email_group.Text += m_ds_user.HT_NGUOI_SU_DUNG.Rows[m_ds_user.HT_NGUOI_SU_DUNG.Count - 1][1].ToString();
+            //}
+
             m_grv_dm_tu_dien.DataBind();
+            if (!m_hdf_id_nguoi_su_dung.Value.Equals(""))
+            {
+                m_grv_dm_tu_dien.SelectedIndex = -1;
+                for (int i = 0; i < m_grv_dm_tu_dien.Rows.Count; i++)
+                    if (CIPConvert.ToDecimal(m_grv_dm_tu_dien.DataKeys[i].Value) == CIPConvert.ToDecimal(m_hdf_id_nguoi_su_dung.Value)) m_grv_dm_tu_dien.SelectedIndex = i;
+            }
+
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             throw v_e;
         }
     }
@@ -90,17 +164,18 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
             throw v_e;
         }
     }
-    private void delete_dm_tu_dien(int i_int_row_index) {
+    private void delete_dm_tu_dien()
+    {
         try
         {
             m_lbl_mess.Text = "";
-            decimal v_dc_id_dm_tu_dien = CIPConvert.ToDecimal(m_grv_dm_tu_dien.DataKeys[i_int_row_index].Value);
-            m_us_user.DeleteByID(v_dc_id_dm_tu_dien);
+            m_us_user.DeleteByID(CIPConvert.ToDecimal(m_hdf_id_nguoi_su_dung.Value));
             load_data_2_grid();
-            m_lbl_mess.Text = "Xóa bản ghi thành công.";
+            m_lbl_mess.Text = "Xóa bản ghi thành công!";
         }
         catch (Exception v_e)
         {
+            m_lbl_mess.Text = "Lỗi trong quá trình xóa bản ghi!";
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
@@ -122,26 +197,32 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     {
         try
         {
+            m_grv_dm_tu_dien.SelectedIndex = -1;
             m_grv_dm_tu_dien.EditIndex = -1;
             m_txt_ten_dang_nhap.Text = "";
-            m_txt_mat_khau_go_lai.Text = "";
-            m_txt_mat_khau.Text = "";
+            //m_txt_mat_khau_go_lai.Text = "";
+            //m_txt_mat_khau.Text = "";
             m_lbl_mess.Text = "";
             m_lbl_thong_bao.Text = "";
-            this.m_hdf_id_user_group.Value = "";
+            m_txt_ho_va_ten.Text = "";
+            m_hdf_form_mode.Value = "0";
+            m_hdf_id_user_group.Value = "0";
+            m_hdf_id_nguoi_su_dung.Value = "-1";
+            m_chk_lock_yn.Checked = false;
         }
         catch (Exception v_e)
         {
-            throw v_e;
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    private bool check_validate_is_ok() {
-        if (this.m_cbo_user_group.SelectedItem ==null)
+    private bool check_validate_is_ok()
+    {
+        if (this.m_cbo_user_group.SelectedItem == null)
         {
             this.m_ctv_ma_tu_dien.IsValid = false;
             return false;
         }
-        if ((!CValidateTextBox.IsValid(m_txt_ten_dang_nhap, DataType.StringType, allowNull.NO))&& (m_e_form_mode == DataEntryFormMode.InsertDataState))
+        if ((!CValidateTextBox.IsValid(m_txt_ten_dang_nhap, DataType.StringType, allowNull.NO)) && (m_e_form_mode == DataEntryFormMode.InsertDataState))
         {
             this.m_ctv_ma_tu_dien.IsValid = false;
             return false;
@@ -152,94 +233,87 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
             this.m_ctv_ma_tu_dien0.IsValid = false;
             return false;
         }
-        if ((!CValidateTextBox.IsValid(m_txt_mat_khau, DataType.StringType, allowNull.NO)) && (m_e_form_mode == DataEntryFormMode.InsertDataState)) {
+        if ((!CValidateTextBox.IsValid(m_txt_mat_khau, DataType.StringType, allowNull.NO)) && (m_e_form_mode == DataEntryFormMode.InsertDataState))
+        {
             this.m_ctv_ten_tu_ngan.IsValid = false;
             return false;
         }
-        if ((!CValidateTextBox.IsValid(m_txt_mat_khau_go_lai, DataType.StringType, allowNull.NO))&& (m_e_form_mode == DataEntryFormMode.InsertDataState)) {
+        if ((!CValidateTextBox.IsValid(m_txt_mat_khau_go_lai, DataType.StringType, allowNull.NO)) && (m_e_form_mode == DataEntryFormMode.InsertDataState))
+        {
             this.m_ctv_mk_go_lai.IsValid = false;
             return false;
         }
-        if ((!check_ten_dang_nhap_is_ok()) && (m_e_form_mode == DataEntryFormMode.InsertDataState)) { 
-            m_lbl_mess.Text = "Tên đăng nhập đã tồn tại, vui lòng nhập Tên đăng nhập khác!"; 
-            return false; 
+        if ((!check_ten_dang_nhap_is_ok()) && (m_e_form_mode == DataEntryFormMode.InsertDataState))
+        {
+            m_lbl_mess.Text = "Tên đăng nhập đã tồn tại, vui lòng nhập Tên đăng nhập khác!";
+            return false;
         }
-        if ((this.m_hdf_id_user_group.Value == "") && (m_e_form_mode == DataEntryFormMode.UpdateDataState)) {
-            m_lbl_mess.Text = "Bạn phải chọn Người dùng cần cập nhật!"; return false; 
+        if ((this.m_hdf_id_user_group.Value == "") && (m_e_form_mode == DataEntryFormMode.UpdateDataState))
+        {
+            m_lbl_mess.Text = "Bạn phải chọn Người dùng cần cập nhật!"; return false;
         }
         return true;
     }
-    private bool check_ten_dang_nhap_is_ok() {
-        
-            US_HT_NGUOI_SU_DUNG v_us_ht = new US_HT_NGUOI_SU_DUNG();
-            if (v_us_ht.CheckByTenTruyCap(m_txt_ten_dang_nhap.Text.Trim())) return false;
-             return true;
-        
+    private bool check_ten_dang_nhap_is_ok()
+    {
+
+        US_HT_NGUOI_SU_DUNG v_us_ht = new US_HT_NGUOI_SU_DUNG();
+        if (v_us_ht.CheckByTenTruyCap(m_txt_ten_dang_nhap.Text.Trim())) return false;
+        return true;
+
     }
     private void insert_user()
     {
-        try{
-            m_lbl_mess.Text = "";
-            m_grv_dm_tu_dien.EditIndex = -1;
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
-            if (Page.IsValid) {
-                if (!check_validate_is_ok()) return;
-               
-                form_2_us_object();
-                
-                m_us_user.Insert();
-                clear_data();
-                m_lbl_mess.Text = "Đã tạo mới tài khoản thành công.";
-                
-                load_data_2_grid();
-            }
-        }
-        catch (Exception v_e)
+        m_lbl_mess.Text = "";
+        m_grv_dm_tu_dien.EditIndex = -1;
+        set_form_mode(LOAI_FORM.THEM);
+        if (Page.IsValid)
         {
-            m_lbl_mess.Text = "Lỗi trong quá trình thêm mới bản ghi.";
-            throw v_e;
+            if (!check_validate_is_ok()) return;
+
+            form_2_us_object();
+
+            m_us_user.Insert();
+            clear_data();
+            m_lbl_mess.Text = "Đã tạo mới tài khoản thành công.";
+
+            load_data_2_grid();
         }
     }
     private void update_user()
     {
-        try
+        m_lbl_mess.Text = "";
+        m_grv_dm_tu_dien.EditIndex = -1;
+        set_form_mode(LOAI_FORM.SUA);
+        if (Page.IsValid)
         {
-            m_lbl_mess.Text = "";
+
+            if (!check_validate_is_ok()) return;
+            form_2_us_object();
+
+            m_us_user.dcID = CIPConvert.ToDecimal(this.m_hdf_id_user_group.Value);
+            m_us_user.Update();
+            clear_data();
+            m_lbl_mess.Text = "Đã cập nhật tài khoản thành công!";
+
             m_grv_dm_tu_dien.EditIndex = -1;
-            m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            if (Page.IsValid)
-            {
-                
-                if (!check_validate_is_ok()) return;
-                form_2_us_object();
-                
-                m_us_user.dcID = CIPConvert.ToDecimal(this.m_hdf_id_user_group.Value);
-                m_us_user.Update();
-                clear_data();
-                m_lbl_mess.Text = "Đã cập nhật tài khoản thành công!";
-                
-                m_grv_dm_tu_dien.EditIndex = -1;
-                load_data_2_grid();
-                m_e_form_mode = DataEntryFormMode.InsertDataState;
-                set_control_by_form_mode();
-            }
-        }
-        catch (Exception v_e)
-        {
-            m_lbl_mess.Text = "Lỗi trong quá trình cập nhật bản ghi!";
-            throw v_e;
+            m_grv_dm_tu_dien.SelectedIndex = -1;
+            load_data_2_grid();
+            set_control_by_form_mode();
         }
     }
-    private void us_object_2_form(US_HT_NGUOI_SU_DUNG i_us_user) {
+    private void us_object_2_form(US_HT_NGUOI_SU_DUNG i_us_user)
+    {
         m_cbo_user_group.SelectedValue = CIPConvert.ToStr(i_us_user.dcID_USER_GROUP);
         m_txt_ho_va_ten.Text = i_us_user.strTEN;
         m_txt_ten_dang_nhap.Text = i_us_user.strTEN_TRUY_CAP;
         m_hdf_pw.Value = i_us_user.strMAT_KHAU;
-        
+
         if (i_us_user.strTRANG_THAI == "1") { m_chk_lock_yn.Checked = true; }
-        else m_chk_lock_yn.Checked = false; 
+        else m_chk_lock_yn.Checked = false;
     }
-    private void form_2_us_object() {
+    private void form_2_us_object()
+    {
         m_us_user.dcID_USER_GROUP = CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue);
         m_us_user.strTEN_TRUY_CAP = m_txt_ten_dang_nhap.Text.TrimEnd();
         m_us_user.strTEN = m_txt_ho_va_ten.Text.TrimEnd();
@@ -248,6 +322,7 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
         else m_us_user.strTRANG_THAI = "0";
         if (m_txt_mat_khau.Text.Length > 0) m_us_user.strMAT_KHAU = m_txt_mat_khau.Text.TrimEnd();
         else m_us_user.strMAT_KHAU = m_hdf_pw.Value;
+        m_us_user.strBUILT_IN_YN = "Y";
     }
     private decimal get_id_from_ma(string ip_str_ma)
     {
@@ -256,23 +331,27 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     }
     #endregion
 
-
     #region events
 
-    protected void Page_Load(object sender, EventArgs e) {
-        try {
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
 
-            if (!this.IsPostBack) {
+            if (!this.IsPostBack)
+            {
+                thong_bao("", false, false);
                 m_txt_ten_dang_nhap.ReadOnly = false;
                 load_cbo_user_group();
                 load_cbo_user_group_grv();
                 load_data_2_grid();
-                m_e_form_mode = DataEntryFormMode.InsertDataState;
+                set_form_mode(LOAI_FORM.THEM);
                 set_control_by_form_mode();
             }
 
         }
-        catch (Exception v_e) {
+        catch (Exception v_e)
+        {
             this.Response.Write(v_e.ToString());
         }
 
@@ -304,34 +383,6 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_grv_dm_tu_dien_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    {
-        try
-        {
-            
-            delete_dm_tu_dien(e.RowIndex);
-        }
-        catch (Exception v_e)
-        {
-            // de su dung CsystemLog_301 bat buoc Site phai dat trong thu muc cap 1. Vi du: DanhMuc/Dictionary.aspx
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_grv_dm_tu_dien_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
-    {
-        try
-        {
-            m_lbl_mess.Text = "";
-            
-            load_update_user(e.NewSelectedIndex);
-            m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            set_control_by_form_mode();
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
     protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
     {
         try
@@ -350,10 +401,21 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
         {
             m_lbl_mess.Text = "";
             clear_data();
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            set_form_mode(LOAI_FORM.THEM);
             set_control_by_form_mode();
         }
         catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cmd_ok_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            thong_bao("", false, false);
+        }
+        catch (System.Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
@@ -362,9 +424,99 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     {
         try
         {
-            
+
             update_user();
-            
+
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            m_us_user.FillDataset(m_ds_user, " WHERE ID_USER_GROUP =" + CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue));
+            //+ "and (ten_truy_cap like N'%" + m_txt_tu_khoa.Text.Trim() + "%' or ten like N'%" + m_txt_tu_khoa.Text.Trim() + "%')");
+            m_grv_dm_tu_dien.DataSource = m_ds_user.HT_NGUOI_SU_DUNG;
+            //if (m_cbo_user_group.SelectedValue != "6")
+            //{
+            //    m_lbl_email_group.Visible = false;
+            //    m_txt_email_group.Visible = false;
+            //}
+            //else
+            //{
+            //    m_lbl_email_group.Visible = true;
+            //    m_txt_email_group.Visible = true;
+            //    m_txt_email_group.Text = "";
+
+            //    for (int i = 0; i < m_ds_user.HT_NGUOI_SU_DUNG.Count - 1; i++)
+            //    {
+            //        m_txt_email_group.Text += m_ds_user.HT_NGUOI_SU_DUNG.Rows[i][1].ToString() + ", ";
+            //    }
+
+            //    m_txt_email_group.Text += m_ds_user.HT_NGUOI_SU_DUNG.Rows[m_ds_user.HT_NGUOI_SU_DUNG.Count - 1][1].ToString();
+            //}
+
+            m_grv_dm_tu_dien.DataBind();
+            if (!m_hdf_id_nguoi_su_dung.Value.Equals(""))
+            {
+                m_grv_dm_tu_dien.SelectedIndex = -1;
+                for (int i = 0; i < m_grv_dm_tu_dien.Rows.Count; i++)
+                    if (CIPConvert.ToDecimal(m_grv_dm_tu_dien.DataKeys[i].Value) == CIPConvert.ToDecimal(m_hdf_id_nguoi_su_dung.Value)) m_grv_dm_tu_dien.SelectedIndex = i;
+            }
+
+        }
+
+        catch (System.Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+
+    protected void m_grv_dm_tu_dien_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            load_data_2_grid();
+            m_grv_dm_tu_dien.SelectedIndex = -1;
+            m_grv_dm_tu_dien.PageIndex = e.NewPageIndex;
+            m_grv_dm_tu_dien.DataBind();
+            if (m_hdf_id_nguoi_su_dung.Value.Equals("")) return;
+            for (int i = 0; i < m_grv_dm_tu_dien.Rows.Count; i++)
+                if (CIPConvert.ToDecimal(m_grv_dm_tu_dien.DataKeys[i].Value) == CIPConvert.ToDecimal(m_hdf_id_nguoi_su_dung.Value)) m_grv_dm_tu_dien.SelectedIndex = i;
+
+        }
+        catch (System.Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_grv_dm_tu_dien_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        try
+        {
+            set_form_mode(LOAI_FORM.XOA);
+            m_hdf_id_nguoi_su_dung.Value = CIPConvert.ToStr(m_grv_dm_tu_dien.DataKeys[e.RowIndex].Value);
+            delete_dm_tu_dien();
+            clear_data();
+        }
+        catch (Exception v_e)
+        {
+            // de su dung CsystemLog_301 bat buoc Site phai dat trong thu muc cap 1. Vi du: DanhMuc/Dictionary.aspx
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_grv_dm_tu_dien_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+    {
+        try
+        {
+            m_lbl_mess.Text = "";
+            set_form_mode(LOAI_FORM.SUA);
+            m_hdf_id_nguoi_su_dung.Value = CIPConvert.ToStr(m_grv_dm_tu_dien.DataKeys[e.NewSelectedIndex].Value);
+            load_update_user(e.NewSelectedIndex);
+            set_control_by_form_mode();
         }
         catch (Exception v_e)
         {
@@ -372,4 +524,5 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
         }
     }
     #endregion
+
 }

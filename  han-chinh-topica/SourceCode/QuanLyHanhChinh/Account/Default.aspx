@@ -94,5 +94,4 @@
         <SelectedRowStyle CssClass="cssSelectedRow" BackColor="#C5BBAF" Font-Bold="True"
             ForeColor="#333333"></SelectedRowStyle>
     </asp:GridView>
-    <asp:Button ID="m_cmd_hien_thi_id" runat="server" Text="Click" OnClick="m_cmd_hien_thi_id_Click" />
 </asp:Content>

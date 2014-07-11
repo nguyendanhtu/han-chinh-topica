@@ -228,6 +228,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_QUAN_HE_SU_DUNG_DU_LIEU.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_HT_QUYEN_GROUP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_QUYEN_GROUP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_THAM_SO_HE_THONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -537,6 +542,17 @@
     </None>
     <None Include="DS_HT_QUAN_HE_SU_DUNG_DU_LIEU.xss">
       <DependentUpon>DS_HT_QUAN_HE_SU_DUNG_DU_LIEU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_QUYEN_GROUP.xsc">
+      <DependentUpon>DS_HT_QUYEN_GROUP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_QUYEN_GROUP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_QUYEN_GROUP.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_HT_QUYEN_GROUP.xss">
+      <DependentUpon>DS_HT_QUYEN_GROUP.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_THAM_SO_HE_THONG.xsc">
       <DependentUpon>DS_HT_THAM_SO_HE_THONG.xsd</DependentUpon>

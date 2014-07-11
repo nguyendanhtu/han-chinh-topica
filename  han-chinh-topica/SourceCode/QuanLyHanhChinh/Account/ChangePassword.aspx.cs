@@ -11,9 +11,9 @@ using IP.Core.IPBusinessService;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 
-using WebDS;
-using WebUS;
-using WebDS.CDBNames;
+using BCTKDS;
+using BCTKUS;
+using BCTKDS.CDBNames;
 
 public partial class Account_ChangePassword : System.Web.UI.Page
 {

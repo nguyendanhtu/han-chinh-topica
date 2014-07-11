@@ -1,5 +1,5 @@
 ﻿Option Strict On
-Option Explicit On 
+Option Explicit On
 'Imports environment
 Public Class CSystemLog_301
 
@@ -56,9 +56,9 @@ Public Class CSystemLog_301
 
             Select Case m_strRunMode
                 Case IPConstants.C_RUNMODE_TEST
-                    i_page.Response.Redirect("MessageError.aspx?Message= Error:" + v_str_msg)
+                    i_page.Response.Redirect("..//MessageError.aspx?Message= Error:" + v_str_msg)
                 Case IPConstants.C_RUNMODE_DEVELOP
-                    i_page.Response.Redirect("MessageError.aspx?Message= Error:" + v_str_msg)
+                    i_page.Response.Redirect("..//MessageError.aspx?Message= Error:" + v_str_msg)
                 Case IPConstants.C_RUNMODE_RUNTIME
                     i_page.Response.Redirect("MessageError.aspx?Message= Đã xảy ra lỗi trong quá trình cập nhật dữ liệu!")
             End Select

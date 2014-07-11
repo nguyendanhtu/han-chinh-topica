@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
-using WebDS.CDBNames;
+using BCTKDS.CDBNames;
 using IP.Core.IPCommon;
 using System.Threading;
 
