@@ -3,8 +3,6 @@
 /// Date: 12/07/2014 12:26:58
 /// Goal: Create Form for V_GD_PHONG_BAN_DINH_MUC
 ///************************************************
-
-
 using System;
 using System.Data;
 using System.Drawing;
@@ -17,10 +15,13 @@ using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
+using IP.Core.IPExcelReport;
 
 using BCTKUS;
 using BCTKDS;
 using BCTKDS.CDBNames;
+
+using BCTKApp.DanhMuc;
 
 using C1.Win.C1FlexGrid;
 
@@ -191,6 +192,7 @@ namespace BCTKApp
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem";
+            this.m_cmd_view.Visible = false;
             // 
             // m_cmd_delete
             // 
@@ -226,9 +228,9 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 149);
+            this.m_fg.Location = new System.Drawing.Point(0, 138);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(903, 322);
+            this.m_fg.Size = new System.Drawing.Size(903, 333);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -263,7 +265,7 @@ namespace BCTKApp
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(554, 57);
+            this.comboBox2.Location = new System.Drawing.Point(531, 57);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(208, 21);
             this.comboBox2.TabIndex = 23;
@@ -271,7 +273,7 @@ namespace BCTKApp
             // m_lbl_trung_tam
             // 
             this.m_lbl_trung_tam.AutoSize = true;
-            this.m_lbl_trung_tam.Location = new System.Drawing.Point(475, 65);
+            this.m_lbl_trung_tam.Location = new System.Drawing.Point(452, 65);
             this.m_lbl_trung_tam.Name = "m_lbl_trung_tam";
             this.m_lbl_trung_tam.Size = new System.Drawing.Size(58, 13);
             this.m_lbl_trung_tam.TabIndex = 22;
@@ -280,15 +282,15 @@ namespace BCTKApp
             // m_cbo_trung_tam
             // 
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(554, 57);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(531, 57);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
-            this.m_cbo_trung_tam.Size = new System.Drawing.Size(208, 21);
+            this.m_cbo_trung_tam.Size = new System.Drawing.Size(280, 21);
             this.m_cbo_trung_tam.TabIndex = 23;
             // 
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(135, 97);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(259, 119);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(50, 13);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -296,9 +298,9 @@ namespace BCTKApp
             // 
             // m_txt_tim_kiem
             // 
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(191, 90);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(315, 112);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(208, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(282, 20);
             this.m_txt_tim_kiem.TabIndex = 25;
             // 
             // f446_DM_V_GD_PHONG_BAN_DINH_MUC
@@ -377,6 +379,7 @@ namespace BCTKApp
             this.m_lbl_header.Text = "CƠ SỞ ĐỊNH MỨC THEO TRUNG TÂM";
             // 
             load_cbo_trung_tam();
+            load_cbo_loai_dinh_muc();
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -409,6 +412,7 @@ namespace BCTKApp
 			m_us.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_fg);
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_V_GD_PHONG_BAN_DINH_MUC i_us
@@ -444,9 +448,28 @@ namespace BCTKApp
             m_cbo_trung_tam.SelectedIndex = 0;
             m_trang_thai = true;
         }
-		private void insert_v_gd_phong_ban_dinh_muc(){			
-		//	f446_DM_V_GD_PHONG_BAN_DINH_MUC_DE v_fDE = new  f446_DM_V_GD_PHONG_BAN_DINH_MUC_DE();								
-		//	v_fDE.display();
+        private void load_cbo_loai_dinh_muc()
+        {
+            m_trang_thai = false;
+            BCTKUS.US_CM_DM_TU_DIEN v_us = new BCTKUS.US_CM_DM_TU_DIEN();
+            BCTKDS.DS_CM_DM_TU_DIEN v_ds = new BCTKDS.DS_CM_DM_TU_DIEN();
+            v_us.FillDataset(v_ds,"where id_loai_tu_dien =" +17);
+            m_cbo_loai_dm.DataSource = v_ds.CM_DM_TU_DIEN;
+            m_cbo_loai_dm.ValueMember = CM_DM_TU_DIEN.ID;
+            m_cbo_loai_dm.DisplayMember = CM_DM_TU_DIEN.TEN;
+            DataRow v_dr = v_ds.CM_DM_TU_DIEN.NewRow();
+            v_dr[CM_DM_TU_DIEN.ID] = -1;
+            v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 17;
+            v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = " ";
+            v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
+            v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "Tất cả";
+            v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+            m_cbo_loai_dm.SelectedIndex = 0;
+            m_trang_thai = true;
+        }
+		private void insert_v_gd_phong_ban_dinh_muc(){
+            f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE v_frm = new f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE();
+            v_frm.Display();
 			load_data_2_grid();
 		}
 
@@ -454,9 +477,9 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f446_DM_V_GD_PHONG_BAN_DINH_MUC_DE v_fDE = new f446_DM_V_GD_PHONG_BAN_DINH_MUC_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
+            f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE v_fDE = new f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE();
+            v_fDE.display(m_us);
+            load_data_2_grid();
 		}
 				
 		private void delete_v_gd_phong_ban_dinh_muc(){
