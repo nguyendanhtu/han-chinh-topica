@@ -399,6 +399,9 @@
     <Compile Include="DanhMuc\f801_DM_PHONG_BAN_DE.Designer.cs">
       <DependentUpon>f801_DM_PHONG_BAN_DE.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f488_V_GD_PHONG_BAN_PHAP_NHAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="f400_menu_main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,6 +563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f801_DM_PHONG_BAN_DE.resx">
       <DependentUpon>f801_DM_PHONG_BAN_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f488_V_GD_PHONG_BAN_PHAP_NHAN.resx">
+      <DependentUpon>f488_V_GD_PHONG_BAN_PHAP_NHAN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f400_menu_main.resx">
       <DependentUpon>f400_menu_main.cs</DependentUpon>
