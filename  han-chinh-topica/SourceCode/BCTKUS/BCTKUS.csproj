@@ -135,6 +135,7 @@
     <Compile Include="US_CM_DM_TU_DIEN.cs" />
     <Compile Include="US_DM_BILL.cs" />
     <Compile Include="US_DM_CO_SO.cs" />
+    <Compile Include="US_DM_CO_SO_DINH_MUC.cs" />
     <Compile Include="US_DM_DON_VI.cs" />
     <Compile Include="US_DM_PHONG_BAN.cs" />
     <Compile Include="US_DOC_COLUMN_COMMENT.cs" />
@@ -160,6 +161,7 @@
     <Compile Include="US_V_DINH_MUC_CPN_TUNG_PHONG_BAN.cs" />
     <Compile Include="US_V_DM_BILL.cs" />
     <Compile Include="US_V_DM_CO_SO.cs" />
+    <Compile Include="US_V_DM_CO_SO_DINH_MUC.cs" />
     <Compile Include="US_V_DM_PHONG_BAN.cs" />
     <Compile Include="US_V_GD_PHONG_BAN_DINH_MUC.cs" />
     <Compile Include="US_V_GD_THONG_KE.cs" />
