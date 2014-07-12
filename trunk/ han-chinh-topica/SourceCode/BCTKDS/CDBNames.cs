@@ -535,6 +535,20 @@ namespace BCTKDS.CDBNames
         public const string GHI_CHU_2 = "GHI_CHU_2";
         public const string GHI_CHU_3 = "GHI_CHU_3";
     }
-
+    public class DM_CO_SO
+    {
+        public const string ID = "ID";
+        public const string MA = "MA";
+        public const string MO_TA = "MO_TA";
+        public const string ID_LOAI_CO_SO = "ID_LOAI_CO_SO";
+    }
+    public class V_DM_CO_SO
+    {
+        public const string ID = "ID";
+        public const string MA = "MA";
+        public const string MO_TA = "MO_TA";
+        public const string ID_LOAI_CO_SO = "ID_LOAI_CO_SO";
+        public const string TEN_LOAI_CO_SO = "TEN_LOAI_CO_SO";
+    }
     #endregion
 }
