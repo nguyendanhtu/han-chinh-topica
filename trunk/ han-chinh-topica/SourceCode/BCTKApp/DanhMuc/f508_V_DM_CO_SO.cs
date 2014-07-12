@@ -185,11 +185,11 @@ namespace BCTKApp
             // 
             this.m_lbl_tieu_de.AutoSize = true;
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tieu_de.Location = new System.Drawing.Point(217, 7);
+            this.m_lbl_tieu_de.Location = new System.Drawing.Point(275, 7);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(244, 19);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(144, 19);
             this.m_lbl_tieu_de.TabIndex = 0;
-            this.m_lbl_tieu_de.Text = "DANH SÁCH THÔNG TIN CƠ SỞ";
+            this.m_lbl_tieu_de.Text = "DANH MỤC CƠ SỞ";
             // 
             // m_cmd_search
             // 
