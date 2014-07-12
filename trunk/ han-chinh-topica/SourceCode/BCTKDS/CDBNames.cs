@@ -281,7 +281,7 @@ namespace BCTKDS.CDBNames
         public const string TEN_LOAI_CO_SO = "TEN_LOAI_CO_SO";
         public const string TEN_LOAI_DINH_MUC = "TEN_LOAI_DINH_MUC";
     }
-    public class v_DM_PHONG_BAN_PHAP_NHAN
+    public class V_DM_PHONG_BAN_PHAP_NHAN
     {
         public const string ID = "ID";
         public const string ID_PHONG_BAN = "ID_PHONG_BAN";
