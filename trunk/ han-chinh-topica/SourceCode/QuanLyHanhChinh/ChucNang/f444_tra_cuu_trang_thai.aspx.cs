@@ -30,6 +30,10 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
         m_grv_v_dm_bill.DataSource = v_ds_v_dm_bill.V_DM_BILL;
         m_grv_v_dm_bill.DataBind();
     }
+    private void load_cbo_trang_thai()
+    {
+        
+    }
     #endregion
 
     #region Events
@@ -38,6 +42,7 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
         try
         {
             load_data_to_grid();
+            load_cbo_trang_thai();
         }
         catch (System.Exception v_e)
         {
