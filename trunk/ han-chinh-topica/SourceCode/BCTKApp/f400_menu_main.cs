@@ -171,8 +171,8 @@ namespace BCTKApp
         {
             try
             {
-                f401_DON_GIA_DINH_MUC frm = new f401_DON_GIA_DINH_MUC();
-                frm.ShowDialog();
+                f850_RPT_BANG_DINH_MUC v_frm = new f850_RPT_BANG_DINH_MUC();
+                v_frm.ShowDialog();
             }
             catch (Exception v_e)
             {

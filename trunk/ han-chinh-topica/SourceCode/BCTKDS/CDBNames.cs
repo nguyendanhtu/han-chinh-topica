@@ -38,6 +38,14 @@ namespace BCTKDS.CDBNames
         public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
         public const string ID_LOAI_DON_VI = "ID_LOAI_DON_VI";
     }
+    public class RPT_BANG_DINH_MUC {
+        public const string ID = "ID";
+        public const string NOI_DUNG = "NOI_DUNG";
+        public const string L8 = "L8";
+        public const string NHAN_VIEN = "NHAN_VIEN";
+        public const string HOC_VIEN_DANG_HOC = "HOC_VIEN_DANG_HOC";
+    }
+
     public class V_BC_CHI_TIET_DM
     {
         public const string ID = "ID";
