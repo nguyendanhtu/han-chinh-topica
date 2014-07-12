@@ -153,27 +153,44 @@ namespace BCTKApp.DanhMuc
             load_cbo_trung_tam();
             load_cbo_loai_dinh_muc();
         } 
-        private void m_cmd_cap_nhat_Click(object sender, EventArgs e)
-        {
-            //if (!check_validate()) return;
-            m_form_to_us_obj();
-            switch (m_e)
-            {
-                case DataEntryFormMode.InsertDataState:
-                    m_us_gd_pbdm.Insert();
-                    break;
-                case DataEntryFormMode.UpdateDataState:
-                    m_us_gd_pbdm.Update();
-                    break;
-                default: m_us_gd_pbdm.Insert();
-                    break;
-            }
-            this.Close();
-        }
-        private void m_cmd_huy_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+ 
+   
         #endregion
+
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_form_to_us_obj();
+                switch (m_e)
+                {
+                    case DataEntryFormMode.InsertDataState:
+                        m_us_gd_pbdm.Insert();
+                        break;
+                    case DataEntryFormMode.UpdateDataState:
+                        m_us_gd_pbdm.Update();
+                        break;
+                    default: m_us_gd_pbdm.Insert();
+                        break;
+                }
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
