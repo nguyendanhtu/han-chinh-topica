@@ -152,7 +152,7 @@
             this.Controls.Add(this.m_lbl_ten_phong_ban);
             this.Controls.Add(this.m_lbl_ma_phong_ban);
             this.Name = "f801_DM_PHONG_BAN_DE";
-            this.Text = "F801 - Cập nhật chi tiết thông tin phòng ban";
+            this.Text = "F801 - Cập nhật chi tiết thông tin trung tâm";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
