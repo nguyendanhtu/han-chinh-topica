@@ -256,11 +256,13 @@ namespace BCTKApp
             // 
             // m_cbo_loai_dm
             // 
+            this.m_cbo_loai_dm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_loai_dm.FormattingEnabled = true;
             this.m_cbo_loai_dm.Location = new System.Drawing.Point(191, 57);
             this.m_cbo_loai_dm.Name = "m_cbo_loai_dm";
             this.m_cbo_loai_dm.Size = new System.Drawing.Size(208, 21);
             this.m_cbo_loai_dm.TabIndex = 23;
+            
             // 
             // comboBox2
             // 
@@ -281,11 +283,13 @@ namespace BCTKApp
             // 
             // m_cbo_trung_tam
             // 
+            this.m_cbo_trung_tam.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_trung_tam.FormattingEnabled = true;
             this.m_cbo_trung_tam.Location = new System.Drawing.Point(531, 57);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(280, 21);
             this.m_cbo_trung_tam.TabIndex = 23;
+            
             // 
             // m_lbl_tim_kiem
             // 
@@ -367,6 +371,10 @@ namespace BCTKApp
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
+            m_fg.Tree.Column = (int)e_col_Number.TEN_LOAI_DINH_MUC;
+            m_fg.Cols[(int)e_col_Number.TEN_LOAI_DINH_MUC].Visible = true;
+            m_fg.Cols[0].Caption = "STT";
+            m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
             // m_lbl_header
             // 
             this.m_lbl_header.AutoSize = true;
@@ -407,13 +415,23 @@ namespace BCTKApp
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_PHONG_BAN_DINH_MUC.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){						
+		private void load_data_2_grid(){
+            string v_str_tim_kiem = m_txt_tim_kiem.Text.Trim();
+            decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
+            decimal v_dc_id_loai_dm = CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue);
 			m_ds = new DS_V_GD_PHONG_BAN_DINH_MUC();			
-			m_us.FillDataset(m_ds);
+			m_us.FillDataset(m_ds, v_dc_id_trung_tam, v_dc_id_loai_dm, v_str_tim_kiem);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+            , 0
+            , (int)e_col_Number.TEN_LOAI_DINH_MUC // chỗ này là tên trường mà mình nhóm
+            , (int)e_col_Number.MA_PHONG_BAN // chỗ này là tên trường mà mình Count
+            , "{0}"
+            );
 			m_fg.Redraw = true;
+            m_fg.Tree.Show(0);
 		}
 		private void grid2us_object(US_V_GD_PHONG_BAN_DINH_MUC i_us
 			, int i_grid_row) {
@@ -430,7 +448,24 @@ namespace BCTKApp
 			i_us.Me2DataRow(v_dr);
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
-
+        private void tim_kiem()
+        {
+            string v_str_tim_kiem = m_txt_tim_kiem.Text.Trim();
+            decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
+            decimal v_dc_id_loai_dm = CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue);
+            m_ds = new DS_V_GD_PHONG_BAN_DINH_MUC();
+            m_us.FillDataset(m_ds, v_dc_id_trung_tam, v_dc_id_loai_dm, v_str_tim_kiem);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_fg);
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+            , 0
+            , (int)e_col_Number.TEN_LOAI_DINH_MUC // chỗ này là tên trường mà mình nhóm
+            , (int)e_col_Number.MA_PHONG_BAN // chỗ này là tên trường mà mình Count
+            , "{0}"
+            );
+            m_fg.Redraw = true;
+        }
         private void load_cbo_trung_tam()
         {
             m_trang_thai = false;
@@ -515,6 +550,9 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
+            m_cbo_trung_tam.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trung_tam_SelectedIndexChanged);
+            m_cbo_loai_dm.SelectedIndexChanged += new System.EventHandler(this.m_cbo_loai_dm_SelectedIndexChanged);
 		}
 		#endregion
 
@@ -522,8 +560,9 @@ namespace BCTKApp
 		//
 		//		EVENT HANLDERS
 		//
-		//
-		private void f446_DM_V_GD_PHONG_BAN_DINH_MUC_Load(object sender, System.EventArgs e) {
+        //
+        #region Event
+        private void f446_DM_V_GD_PHONG_BAN_DINH_MUC_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
 			}
@@ -578,6 +617,45 @@ namespace BCTKApp
 			}
 		}
 
-	}
+        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_loai_dm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_trang_thai == true)
+                    tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_trung_tam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_trang_thai == true)
+                    tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion
+
+    }
 }
 
