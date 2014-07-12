@@ -46,6 +46,7 @@ namespace BCTKApp
             m_cmd_thong_tin_thang_excel.Click += new EventHandler(m_cmd_thong_tin_thang_excel_Click);
             m_cmd_tra_cuu_Bill.Click += new EventHandler(m_cmd_tra_cuu_Bill_Click);
             this.Load += new EventHandler(f400_menu_main_Load);
+            m_cmd_dm_co_so.Click+=new EventHandler(m_cmd_dm_co_so_Click);
         }
 
         void f400_menu_main_Load(object sender, EventArgs e)
@@ -301,6 +302,18 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        
+        private void m_cmd_dm_co_so_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f508_V_DM_CO_SO v_frm = new f508_V_DM_CO_SO();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
