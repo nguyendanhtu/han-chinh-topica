@@ -138,6 +138,12 @@ namespace BCTKUS
             this.FillDataset(op_ds_phong_ban, v_str_sql_condition);
         }
         #endregion
+        public void FillDatasetSearch(DS_DM_PHONG_BAN ip_ds, string ip_str_tu_khoa)
+        {
+            CStoredProc v_stored_proc = new CStoredProc("pr_DM_PHONG_BAN_Search");
+            v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
+            v_stored_proc.fillDataSetByCommand(this, ip_ds);
+        }
 
     }
 }
