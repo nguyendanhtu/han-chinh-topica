@@ -48,6 +48,7 @@ namespace BCTKApp
             this.Load += new EventHandler(f400_menu_main_Load);
             m_cmd_dm_co_so.Click+=new EventHandler(m_cmd_dm_co_so_Click);
             m_cmd_co_dinh_muc_trung_tam.Click += new EventHandler(m_cmd_co_dinh_muc_trung_tam_Click);
+            m_cmd_co_so_dinh_muc.Click+=new EventHandler(m_cmd_co_so_dinh_muc_Click);
         }
 
         void f400_menu_main_Load(object sender, EventArgs e)
@@ -320,6 +321,19 @@ namespace BCTKApp
             try
             {
                 f446_DM_V_GD_PHONG_BAN_DINH_MUC v_frm = new f446_DM_V_GD_PHONG_BAN_DINH_MUC();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_co_so_dinh_muc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f518_V_DM_CO_SO_DINH_MUC v_frm = new f518_V_DM_CO_SO_DINH_MUC();
                 v_frm.ShowDialog();
             }
             catch (Exception v_e)
