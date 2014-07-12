@@ -49,6 +49,7 @@
             // 
             // m_cbo_tinh_theo_co_so
             // 
+            this.m_cbo_tinh_theo_co_so.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_tinh_theo_co_so.FormattingEnabled = true;
             this.m_cbo_tinh_theo_co_so.Location = new System.Drawing.Point(222, 164);
             this.m_cbo_tinh_theo_co_so.Name = "m_cbo_tinh_theo_co_so";
@@ -57,6 +58,7 @@
             // 
             // m_cbo_trung_tam
             // 
+            this.m_cbo_trung_tam.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_trung_tam.FormattingEnabled = true;
             this.m_cbo_trung_tam.Location = new System.Drawing.Point(222, 110);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
@@ -91,6 +93,7 @@
             // 
             // m_cbo_co_so_tinh_dm
             // 
+            this.m_cbo_co_so_tinh_dm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_co_so_tinh_dm.FormattingEnabled = true;
             this.m_cbo_co_so_tinh_dm.Location = new System.Drawing.Point(222, 136);
             this.m_cbo_co_so_tinh_dm.Name = "m_cbo_co_so_tinh_dm";
@@ -108,6 +111,7 @@
             // 
             // m_cbo_loai_dm
             // 
+            this.m_cbo_loai_dm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_loai_dm.FormattingEnabled = true;
             this.m_cbo_loai_dm.Location = new System.Drawing.Point(222, 83);
             this.m_cbo_loai_dm.Name = "m_cbo_loai_dm";
