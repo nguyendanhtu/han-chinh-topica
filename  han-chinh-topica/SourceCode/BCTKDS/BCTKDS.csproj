@@ -154,6 +154,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_BILL.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_CO_SO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_CO_SO.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DM_DON_VI.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -283,6 +288,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_BILL.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_DM_CO_SO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_CO_SO.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_PHONG_BAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -388,6 +398,17 @@
     </None>
     <None Include="DS_DM_BILL.xss">
       <DependentUpon>DS_DM_BILL.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_CO_SO.xsc">
+      <DependentUpon>DS_DM_CO_SO.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_CO_SO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_CO_SO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_CO_SO.xss">
+      <DependentUpon>DS_DM_CO_SO.xsd</DependentUpon>
     </None>
     <None Include="DS_DM_DON_VI.xsc">
       <DependentUpon>DS_DM_DON_VI.xsd</DependentUpon>
@@ -663,6 +684,17 @@
     </None>
     <None Include="DS_V_DM_BILL.xss">
       <DependentUpon>DS_V_DM_BILL.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_CO_SO.xsc">
+      <DependentUpon>DS_V_DM_CO_SO.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_CO_SO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_CO_SO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_CO_SO.xss">
+      <DependentUpon>DS_V_DM_CO_SO.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_PHONG_BAN.xsc">
       <DependentUpon>DS_V_DM_PHONG_BAN.xsd</DependentUpon>
