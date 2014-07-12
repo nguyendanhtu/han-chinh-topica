@@ -253,6 +253,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_BANG_DINH_MUC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_BANG_DINH_MUC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_UT_SEQUENCES.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -622,6 +627,17 @@
     </None>
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_BANG_DINH_MUC.xsc">
+      <DependentUpon>DS_RPT_BANG_DINH_MUC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_BANG_DINH_MUC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_BANG_DINH_MUC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_BANG_DINH_MUC.xss">
+      <DependentUpon>DS_RPT_BANG_DINH_MUC.xsd</DependentUpon>
     </None>
     <None Include="DS_UT_SEQUENCES.xsc">
       <DependentUpon>DS_UT_SEQUENCES.xsd</DependentUpon>

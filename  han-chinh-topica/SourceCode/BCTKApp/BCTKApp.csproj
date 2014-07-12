@@ -316,6 +316,9 @@
     <Compile Include="BaoCao\f706_V_BC_CHI_TIET_DM.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f850_RPT_BANG_DINH_MUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CChartParameter.cs" />
     <Compile Include="ChartDataSourceInterface.cs" />
     <Compile Include="ChucNang\f401_DON_GIA_DINH_MUC.cs">
@@ -500,6 +503,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f706_V_BC_CHI_TIET_DM.resx">
       <DependentUpon>f706_V_BC_CHI_TIET_DM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f850_RPT_BANG_DINH_MUC.resx">
+      <DependentUpon>f850_RPT_BANG_DINH_MUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f401_DON_GIA_DINH_MUC.resx">
       <DependentUpon>f401_DON_GIA_DINH_MUC.cs</DependentUpon>
