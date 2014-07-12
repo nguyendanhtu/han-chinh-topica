@@ -363,6 +363,12 @@
     <Compile Include="DanhMuc\f508_V_DM_CO_SO.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DanhMuc\f509_V_DM_CO_SO_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f509_V_DM_CO_SO_DE.Designer.cs">
+      <DependentUpon>f509_V_DM_CO_SO_DE.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\f800_V_DM_PHONG_BAN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -509,6 +515,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f508_V_DM_CO_SO.resx">
       <DependentUpon>f508_V_DM_CO_SO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f509_V_DM_CO_SO_DE.resx">
+      <DependentUpon>f509_V_DM_CO_SO_DE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f800_V_DM_PHONG_BAN.resx">
       <DependentUpon>f800_V_DM_PHONG_BAN.cs</DependentUpon>
