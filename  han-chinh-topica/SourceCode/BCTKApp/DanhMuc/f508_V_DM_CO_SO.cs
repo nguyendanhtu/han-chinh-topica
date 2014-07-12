@@ -441,6 +441,7 @@ namespace BCTKApp
             m_txt_tu_khoa.KeyDown+=new KeyEventHandler(m_txt_tu_khoa_KeyDown);
             m_txt_tu_khoa.Leave+=new EventHandler(m_txt_tu_khoa_Leave);
             m_txt_tu_khoa.MouseClick+=new MouseEventHandler(m_txt_tu_khoa_MouseClick);
+            m_grv_dm_co_so.DoubleClick+=new EventHandler(m_grv_dm_co_so_DoubleClick);
 		}
 		#endregion
 
@@ -539,6 +540,17 @@ namespace BCTKApp
             try
             {
                 set_search_format_before();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_grv_dm_co_so_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_dm_co_so();
             }
             catch (Exception v_e)
             {
