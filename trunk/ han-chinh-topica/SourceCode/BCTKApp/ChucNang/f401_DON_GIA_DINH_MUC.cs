@@ -27,8 +27,6 @@ using C1.Win.C1FlexGrid;
 namespace BCTKApp
 {
 
-
-
 	public class f401_DON_GIA_DINH_MUC : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
@@ -136,7 +134,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 369);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 464);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(915, 36);
@@ -242,11 +240,11 @@ namespace BCTKApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(332, 18);
+            this.label1.Location = new System.Drawing.Point(293, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 2829;
-            this.label1.Text = "Tại ngày";
+            this.label1.Text = "Áp dụng trước ngày";
             // 
             // label2
             // 
@@ -265,7 +263,7 @@ namespace BCTKApp
             this.m_fg.Location = new System.Drawing.Point(0, 92);
             this.m_fg.Name = "m_fg";
             this.m_fg.ShowSort = false;
-            this.m_fg.Size = new System.Drawing.Size(915, 277);
+            this.m_fg.Size = new System.Drawing.Size(915, 372);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -283,7 +281,7 @@ namespace BCTKApp
             // f401_DON_GIA_DINH_MUC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(915, 405);
+            this.ClientSize = new System.Drawing.Size(915, 500);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_lbl_header);
