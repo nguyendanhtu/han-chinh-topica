@@ -42,11 +42,7 @@ namespace BCTKApp
         private Label m_lbl_header;
         private Label m_lbl_loai_dm;
         private ComboBox m_cbo_loai_dm;
-        private Label m_lbl_co_so_tinh_dm;
-        private ComboBox m_cbo_co_so_tinh_dm;
         private ComboBox comboBox2;
-        private Label m_lbl_tinh_theo_co_so;
-        private ComboBox m_cbo_tinh_theo_co_so;
         private Label m_lbl_trung_tam;
         private ComboBox m_cbo_trung_tam;
         private Label m_lbl_tim_kiem;
@@ -101,11 +97,7 @@ namespace BCTKApp
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_lbl_loai_dm = new System.Windows.Forms.Label();
             this.m_cbo_loai_dm = new System.Windows.Forms.ComboBox();
-            this.m_lbl_co_so_tinh_dm = new System.Windows.Forms.Label();
-            this.m_cbo_co_so_tinh_dm = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.m_lbl_tinh_theo_co_so = new System.Windows.Forms.Label();
-            this.m_cbo_tinh_theo_co_so = new System.Windows.Forms.ComboBox();
             this.m_lbl_trung_tam = new System.Windows.Forms.Label();
             this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
@@ -234,27 +226,27 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 175);
+            this.m_fg.Location = new System.Drawing.Point(0, 149);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(903, 296);
+            this.m_fg.Size = new System.Drawing.Size(903, 322);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
             // m_lbl_header
             // 
             this.m_lbl_header.AutoSize = true;
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(219, 9);
+            this.m_lbl_header.Location = new System.Drawing.Point(273, 9);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(372, 24);
+            this.m_lbl_header.Size = new System.Drawing.Size(359, 22);
             this.m_lbl_header.TabIndex = 21;
             this.m_lbl_header.Text = "CƠ SỞ ĐỊNH MỨC THEO TRUNG TÂM";
             // 
             // m_lbl_loai_dm
             // 
             this.m_lbl_loai_dm.AutoSize = true;
-            this.m_lbl_loai_dm.Location = new System.Drawing.Point(88, 65);
+            this.m_lbl_loai_dm.Location = new System.Drawing.Point(108, 65);
             this.m_lbl_loai_dm.Name = "m_lbl_loai_dm";
             this.m_lbl_loai_dm.Size = new System.Drawing.Size(77, 13);
             this.m_lbl_loai_dm.TabIndex = 22;
@@ -268,52 +260,18 @@ namespace BCTKApp
             this.m_cbo_loai_dm.Size = new System.Drawing.Size(208, 21);
             this.m_cbo_loai_dm.TabIndex = 23;
             // 
-            // m_lbl_co_so_tinh_dm
-            // 
-            this.m_lbl_co_so_tinh_dm.AutoSize = true;
-            this.m_lbl_co_so_tinh_dm.Location = new System.Drawing.Point(475, 65);
-            this.m_lbl_co_so_tinh_dm.Name = "m_lbl_co_so_tinh_dm";
-            this.m_lbl_co_so_tinh_dm.Size = new System.Drawing.Size(106, 13);
-            this.m_lbl_co_so_tinh_dm.TabIndex = 22;
-            this.m_lbl_co_so_tinh_dm.Text = "Cơ sở tính định mức:";
-            // 
-            // m_cbo_co_so_tinh_dm
-            // 
-            this.m_cbo_co_so_tinh_dm.FormattingEnabled = true;
-            this.m_cbo_co_so_tinh_dm.Location = new System.Drawing.Point(600, 57);
-            this.m_cbo_co_so_tinh_dm.Name = "m_cbo_co_so_tinh_dm";
-            this.m_cbo_co_so_tinh_dm.Size = new System.Drawing.Size(183, 21);
-            this.m_cbo_co_so_tinh_dm.TabIndex = 23;
-            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(191, 84);
+            this.comboBox2.Location = new System.Drawing.Point(554, 57);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(208, 21);
             this.comboBox2.TabIndex = 23;
             // 
-            // m_lbl_tinh_theo_co_so
-            // 
-            this.m_lbl_tinh_theo_co_so.AutoSize = true;
-            this.m_lbl_tinh_theo_co_so.Location = new System.Drawing.Point(475, 92);
-            this.m_lbl_tinh_theo_co_so.Name = "m_lbl_tinh_theo_co_so";
-            this.m_lbl_tinh_theo_co_so.Size = new System.Drawing.Size(86, 13);
-            this.m_lbl_tinh_theo_co_so.TabIndex = 22;
-            this.m_lbl_tinh_theo_co_so.Text = "Tính theo cơ sở:";
-            // 
-            // m_cbo_tinh_theo_co_so
-            // 
-            this.m_cbo_tinh_theo_co_so.FormattingEnabled = true;
-            this.m_cbo_tinh_theo_co_so.Location = new System.Drawing.Point(600, 84);
-            this.m_cbo_tinh_theo_co_so.Name = "m_cbo_tinh_theo_co_so";
-            this.m_cbo_tinh_theo_co_so.Size = new System.Drawing.Size(183, 21);
-            this.m_cbo_tinh_theo_co_so.TabIndex = 23;
-            // 
             // m_lbl_trung_tam
             // 
             this.m_lbl_trung_tam.AutoSize = true;
-            this.m_lbl_trung_tam.Location = new System.Drawing.Point(88, 92);
+            this.m_lbl_trung_tam.Location = new System.Drawing.Point(475, 65);
             this.m_lbl_trung_tam.Name = "m_lbl_trung_tam";
             this.m_lbl_trung_tam.Size = new System.Drawing.Size(58, 13);
             this.m_lbl_trung_tam.TabIndex = 22;
@@ -322,7 +280,7 @@ namespace BCTKApp
             // m_cbo_trung_tam
             // 
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(191, 84);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(554, 57);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(208, 21);
             this.m_cbo_trung_tam.TabIndex = 23;
@@ -330,7 +288,7 @@ namespace BCTKApp
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(284, 141);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(135, 97);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(50, 13);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -338,9 +296,9 @@ namespace BCTKApp
             // 
             // m_txt_tim_kiem
             // 
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(340, 138);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(191, 90);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(260, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(208, 20);
             this.m_txt_tim_kiem.TabIndex = 25;
             // 
             // f446_DM_V_GD_PHONG_BAN_DINH_MUC
@@ -349,13 +307,9 @@ namespace BCTKApp
             this.ClientSize = new System.Drawing.Size(903, 507);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_lbl_tim_kiem);
-            this.Controls.Add(this.m_cbo_tinh_theo_co_so);
             this.Controls.Add(this.m_cbo_trung_tam);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.m_lbl_trung_tam);
-            this.Controls.Add(this.m_lbl_tinh_theo_co_so);
-            this.Controls.Add(this.m_cbo_co_so_tinh_dm);
-            this.Controls.Add(this.m_lbl_co_so_tinh_dm);
             this.Controls.Add(this.m_cbo_loai_dm);
             this.Controls.Add(this.m_lbl_loai_dm);
             this.Controls.Add(this.m_lbl_header);
@@ -402,6 +356,7 @@ namespace BCTKApp
 		ITransferDataRow m_obj_trans;		
 		DS_V_GD_PHONG_BAN_DINH_MUC m_ds = new DS_V_GD_PHONG_BAN_DINH_MUC();
 		US_V_GD_PHONG_BAN_DINH_MUC m_us = new US_V_GD_PHONG_BAN_DINH_MUC();
+        bool m_trang_thai = false;
 		#endregion
 
 		#region Private Methods
@@ -409,7 +364,19 @@ namespace BCTKApp
 			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            // m_lbl_header
+            // 
+            this.m_lbl_header.AutoSize = true;
+            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_header.Location = new System.Drawing.Point(273, 9);
+            this.m_lbl_header.Name = "m_lbl_header";
+            this.m_lbl_header.Size = new System.Drawing.Size(372, 24);
+            this.m_lbl_header.TabIndex = 21;
+            this.m_lbl_header.Text = "CƠ SỞ ĐỊNH MỨC THEO TRUNG TÂM";
+            // 
+            load_cbo_trung_tam();
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -460,7 +427,23 @@ namespace BCTKApp
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
 
-
+        private void load_cbo_trung_tam()
+        {
+            m_trang_thai = false;
+            US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+            v_us.FillDataset(v_ds);
+            m_cbo_trung_tam.DataSource = v_ds.DM_PHONG_BAN;
+            m_cbo_trung_tam.ValueMember = DM_PHONG_BAN.ID;
+            m_cbo_trung_tam.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
+            DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
+            v_dr[DM_PHONG_BAN.ID] = -1;
+            v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
+            v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
+            v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
+            m_cbo_trung_tam.SelectedIndex = 0;
+            m_trang_thai = true;
+        }
 		private void insert_v_gd_phong_ban_dinh_muc(){			
 		//	f446_DM_V_GD_PHONG_BAN_DINH_MUC_DE v_fDE = new  f446_DM_V_GD_PHONG_BAN_DINH_MUC_DE();								
 		//	v_fDE.display();
