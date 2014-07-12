@@ -288,7 +288,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_grv_co_so_dinh_muc);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f518_V_DM_CO_SO_DINH_MUC";
-            this.Text = "f518_V_DM_CO_SO_DINH_MUC";
+            this.Text = "F518 - Danh mục cơ sở tính định mức";
             this.Load += new System.EventHandler(this.f518_V_DM_CO_SO_DINH_MUC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_co_so_dinh_muc)).EndInit();
@@ -351,6 +351,14 @@ namespace BCTKApp
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
+        private void dm_grid2us_object(US_DM_CO_SO_DINH_MUC i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_grv_co_so_dinh_muc.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
 	
 		private void us_object2grid(US_V_DM_CO_SO_DINH_MUC i_us
@@ -361,9 +369,9 @@ namespace BCTKApp
 		}
 
 
-		private void insert_v_dm_co_so_dinh_muc(){			
-		//	f518_V_DM_CO_SO_DINH_MUC_DE v_fDE = new  f518_V_DM_CO_SO_DINH_MUC_DE();								
-		//	v_fDE.display();
+		private void insert_v_dm_co_so_dinh_muc(){
+            f519_V_DM_CO_SO_DINH_MUC_DE v_fDE = new f519_V_DM_CO_SO_DINH_MUC_DE();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -371,8 +379,8 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_co_so_dinh_muc)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_co_so_dinh_muc, m_grv_co_so_dinh_muc.Row)) return;			
 			grid2us_object(m_us, m_grv_co_so_dinh_muc.Row);
-		//	f518_V_DM_CO_SO_DINH_MUC_DE v_fDE = new f518_V_DM_CO_SO_DINH_MUC_DE();
-		//	v_fDE.display(m_us);
+            f519_V_DM_CO_SO_DINH_MUC_DE v_fDE = new f519_V_DM_CO_SO_DINH_MUC_DE();
+            v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
@@ -380,8 +388,8 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_co_so_dinh_muc)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_co_so_dinh_muc, m_grv_co_so_dinh_muc.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_DM_CO_SO_DINH_MUC v_us = new US_V_DM_CO_SO_DINH_MUC();
-			grid2us_object(v_us, m_grv_co_so_dinh_muc.Row);
+			US_DM_CO_SO_DINH_MUC v_us = new US_DM_CO_SO_DINH_MUC();
+			dm_grid2us_object(v_us, m_grv_co_so_dinh_muc.Row);
 			try {			
 				v_us.BeginTransaction();    											
 				v_us.Delete();                      								
