@@ -47,6 +47,7 @@ namespace BCTKApp
             m_cmd_tra_cuu_Bill.Click += new EventHandler(m_cmd_tra_cuu_Bill_Click);
             this.Load += new EventHandler(f400_menu_main_Load);
             m_cmd_dm_co_so.Click+=new EventHandler(m_cmd_dm_co_so_Click);
+            m_cmd_co_dinh_muc_trung_tam.Click += new EventHandler(m_cmd_co_dinh_muc_trung_tam_Click);
         }
 
         void f400_menu_main_Load(object sender, EventArgs e)
@@ -288,7 +289,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_tra_cuu_Bill_Click(object sender, EventArgs e)
         {
             try
@@ -307,6 +307,19 @@ namespace BCTKApp
             try
             {
                 f508_V_DM_CO_SO v_frm = new f508_V_DM_CO_SO();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_co_dinh_muc_trung_tam_Click (object sender, EventArgs e)
+        {
+            try
+            {
+                f446_DM_V_GD_PHONG_BAN_DINH_MUC v_frm = new f446_DM_V_GD_PHONG_BAN_DINH_MUC();
                 v_frm.ShowDialog();
             }
             catch (Exception v_e)
