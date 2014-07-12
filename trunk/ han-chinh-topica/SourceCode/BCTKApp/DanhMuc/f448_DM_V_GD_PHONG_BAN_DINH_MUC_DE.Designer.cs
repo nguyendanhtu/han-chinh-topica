@@ -225,6 +225,7 @@
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_lbl_loai_dm);
             this.Name = "f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F448 - Thêm cơ sở định mức cho trung tâm";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);

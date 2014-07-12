@@ -145,14 +145,10 @@ namespace BCTKApp.DanhMuc
             v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
             m_cbo_loai_dm.SelectedIndex = 0; 
         }
-        //private bool check_validate()
-        //{
-
-        //    if (!CValidateTextBox.IsValid(m_txt_ho_ten, DataType.StringType, allowNull.NO, true)) return false;
-        //    if (!CValidateTextBox.IsValid(m_txt_dia_chi, DataType.StringType, allowNull.NO, true)) return false;
-        //    if (!CValidateTextBox.IsValid(m_txt_dien_thoai, DataType.StringType, allowNull.NO, true)) return false;
-        //    return true;
-        //}
+        private bool check_validate()
+        {
+            return true;
+        }
         #endregion
 
         #region Event
