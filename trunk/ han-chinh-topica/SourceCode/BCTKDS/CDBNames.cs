@@ -270,7 +270,7 @@ namespace BCTKDS.CDBNames
         public const string ID_LOAI_CO_SO = "ID_LOAI_CO_SO";
         public const string MA_PHONG_BAN = "MA_PHONG_BAN";
         public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
-        public const string TEN_LOAI_CO_SO = " TEN_LOAI_CO_SO";
+        public const string TEN_LOAI_CO_SO = "TEN_LOAI_CO_SO";
         public const string TEN_LOAI_DINH_MUC = "TEN_LOAI_DINH_MUC";
     }
 
