@@ -46,7 +46,7 @@ namespace BCTKApp
             CControlFormat.setFormStyle(this, new CAppContext_201());
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             load_data_2_cbo();
-            set_define_events();
+            set_define_events();          
         }
         private void form_2_us_obj()
         {
@@ -89,12 +89,13 @@ namespace BCTKApp
         }
         private void load_data_2_cbo()
         {
-            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
-            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
-            v_us.FillDataset(v_ds, "Where id_loai_tu_dien=16");
-            m_cbo_loai_co_so.DataSource = v_ds.CM_DM_TU_DIEN;
+            US_CM_DM_TU_DIEN v_us_td = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds_td = new DS_CM_DM_TU_DIEN();
+            v_us_td.FillDataset(v_ds_td," where id_loai_tu_dien= 16 ");
             m_cbo_loai_co_so.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_cbo_loai_co_so.ValueMember = CM_DM_TU_DIEN.ID;
+            m_cbo_loai_co_so.DataSource = v_ds_td.CM_DM_TU_DIEN;
+           
         }
         private void set_define_events()
         {
