@@ -38,13 +38,14 @@
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_txt_ma_phong_ban = new System.Windows.Forms.TextBox();
+            this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_lbl_ma_phong_ban
             // 
             this.m_lbl_ma_phong_ban.AutoSize = true;
-            this.m_lbl_ma_phong_ban.Location = new System.Drawing.Point(72, 38);
+            this.m_lbl_ma_phong_ban.Location = new System.Drawing.Point(87, 50);
             this.m_lbl_ma_phong_ban.Name = "m_lbl_ma_phong_ban";
             this.m_lbl_ma_phong_ban.Size = new System.Drawing.Size(69, 13);
             this.m_lbl_ma_phong_ban.TabIndex = 0;
@@ -53,7 +54,7 @@
             // m_lbl_ten_phong_ban
             // 
             this.m_lbl_ten_phong_ban.AutoSize = true;
-            this.m_lbl_ten_phong_ban.Location = new System.Drawing.Point(72, 79);
+            this.m_lbl_ten_phong_ban.Location = new System.Drawing.Point(87, 101);
             this.m_lbl_ten_phong_ban.Name = "m_lbl_ten_phong_ban";
             this.m_lbl_ten_phong_ban.Size = new System.Drawing.Size(73, 13);
             this.m_lbl_ten_phong_ban.TabIndex = 2;
@@ -61,7 +62,7 @@
             // 
             // m_txt_ten_phong_ban
             // 
-            this.m_txt_ten_phong_ban.Location = new System.Drawing.Point(175, 76);
+            this.m_txt_ten_phong_ban.Location = new System.Drawing.Point(190, 98);
             this.m_txt_ten_phong_ban.Name = "m_txt_ten_phong_ban";
             this.m_txt_ten_phong_ban.Size = new System.Drawing.Size(276, 20);
             this.m_txt_ten_phong_ban.TabIndex = 3;
@@ -136,16 +137,28 @@
             // 
             // m_txt_ma_phong_ban
             // 
-            this.m_txt_ma_phong_ban.Location = new System.Drawing.Point(175, 35);
+            this.m_txt_ma_phong_ban.Location = new System.Drawing.Point(190, 47);
             this.m_txt_ma_phong_ban.Name = "m_txt_ma_phong_ban";
             this.m_txt_ma_phong_ban.Size = new System.Drawing.Size(143, 20);
             this.m_txt_ma_phong_ban.TabIndex = 1;
+            // 
+            // m_lbl_tieu_de
+            // 
+            this.m_lbl_tieu_de.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(525, 29);
+            this.m_lbl_tieu_de.TabIndex = 19;
+            this.m_lbl_tieu_de.Text = "Cập nhật thông tin trung tâm";
+            this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // f801_DM_PHONG_BAN_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 197);
+            this.Controls.Add(this.m_lbl_tieu_de);
             this.Controls.Add(this.m_txt_ma_phong_ban);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_ten_phong_ban);
@@ -169,5 +182,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.TextBox m_txt_ma_phong_ban;
+        private System.Windows.Forms.Label m_lbl_tieu_de;
     }
 }

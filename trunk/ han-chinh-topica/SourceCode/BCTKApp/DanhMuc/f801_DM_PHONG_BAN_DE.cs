@@ -49,8 +49,10 @@ namespace BCTKApp.DanhMuc
         #region Private Methods
         private void format_control()
         {
-            set_define_events();
+            
             CControlFormat.setFormStyle(this, new CAppContext_201());
+            m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            set_define_events();
         }
         
         private bool validate_data_is_ok()
