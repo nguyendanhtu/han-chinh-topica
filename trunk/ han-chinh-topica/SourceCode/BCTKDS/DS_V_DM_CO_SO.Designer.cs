@@ -474,7 +474,6 @@ namespace BCTKDS {
                 this.columnMA.MaxLength = 50;
                 this.columnMO_TA.MaxLength = 250;
                 this.columnID_LOAI_CO_SO.AllowDBNull = false;
-                this.columnTEN_LOAI_CO_SO.ReadOnly = true;
                 this.columnTEN_LOAI_CO_SO.MaxLength = 250;
             }
             

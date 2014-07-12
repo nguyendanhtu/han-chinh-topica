@@ -54,7 +54,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ID_LOAI_CO_SO" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_CO_SO" msprop:Generator_ColumnPropNameInRow="ID_LOAI_CO_SO" msprop:Generator_ColumnPropNameInTable="ID_LOAI_CO_SOColumn" msprop:Generator_UserColumnName="ID_LOAI_CO_SO" type="xs:decimal" />
-              <xs:element name="TEN_LOAI_CO_SO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTEN_LOAI_CO_SO" msprop:Generator_ColumnPropNameInRow="TEN_LOAI_CO_SO" msprop:Generator_ColumnPropNameInTable="TEN_LOAI_CO_SOColumn" msprop:Generator_UserColumnName="TEN_LOAI_CO_SO" minOccurs="0">
+              <xs:element name="TEN_LOAI_CO_SO" msprop:Generator_ColumnVarNameInTable="columnTEN_LOAI_CO_SO" msprop:Generator_ColumnPropNameInRow="TEN_LOAI_CO_SO" msprop:Generator_ColumnPropNameInTable="TEN_LOAI_CO_SOColumn" msprop:Generator_UserColumnName="TEN_LOAI_CO_SO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
