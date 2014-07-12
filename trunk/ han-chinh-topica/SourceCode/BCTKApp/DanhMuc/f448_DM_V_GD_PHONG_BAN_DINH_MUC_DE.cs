@@ -36,6 +36,7 @@ namespace BCTKApp.DanhMuc
             m_e = DataEntryFormMode.UpdateDataState;
             m_us_v_gd_pbdm = ip_v_m_us;
             m_us_obj_to_form();
+            m_id = ip_v_m_us.dcID;
             this.ShowDialog();
         }
         #endregion
@@ -45,6 +46,7 @@ namespace BCTKApp.DanhMuc
         DS_GD_PHONG_BAN_DINH_MUC m_ds_gd_pbdm = new DS_GD_PHONG_BAN_DINH_MUC();
         DS_V_GD_PHONG_BAN_DINH_MUC m_ds_v_gd_pbdm = new DS_V_GD_PHONG_BAN_DINH_MUC();
         US_V_GD_PHONG_BAN_DINH_MUC m_us_v_gd_pbdm = new US_V_GD_PHONG_BAN_DINH_MUC();
+        decimal m_id;
         DataEntryFormMode m_e = new DataEntryFormMode();
         #endregion
 
@@ -88,11 +90,11 @@ namespace BCTKApp.DanhMuc
             m_cbo_tinh_theo_co_so.DataSource = v_ds.DM_CO_SO;
             m_cbo_tinh_theo_co_so.ValueMember = DM_CO_SO.ID;
             m_cbo_tinh_theo_co_so.DisplayMember = DM_CO_SO.MA;
-            DataRow v_dr = v_ds.DM_CO_SO.NewRow();
-            v_dr[DM_CO_SO.ID] = -1;
-            v_dr[DM_CO_SO.MA] = "Tất cả";
-            v_dr[DM_CO_SO.ID_LOAI_CO_SO] = -1;
-            v_ds.DM_CO_SO.Rows.InsertAt(v_dr, 0);
+            //DataRow v_dr = v_ds.DM_CO_SO.NewRow();
+            //v_dr[DM_CO_SO.ID] = -1;
+            //v_dr[DM_CO_SO.MA] = "Tất cả";
+            //v_dr[DM_CO_SO.ID_LOAI_CO_SO] = -1;
+            //v_ds.DM_CO_SO.Rows.InsertAt(v_dr, 0);
             m_cbo_tinh_theo_co_so.SelectedIndex = 0;
         }
         private void load_cbo_co_tinh_dinh_muc()
@@ -103,12 +105,12 @@ namespace BCTKApp.DanhMuc
             m_cbo_co_so_tinh_dm.DataSource = v_ds.DM_CO_SO_DINH_MUC;
             m_cbo_co_so_tinh_dm.ValueMember = DM_CO_SO_DINH_MUC.ID;
             m_cbo_co_so_tinh_dm.DisplayMember = DM_CO_SO_DINH_MUC.TEN_CO_SO_DINH_MUC;
-            DataRow v_dr = v_ds.DM_CO_SO_DINH_MUC.NewRow();
-            v_dr[DM_CO_SO_DINH_MUC.ID] = -1;
-            v_dr[DM_CO_SO_DINH_MUC.TEN_CO_SO_DINH_MUC] = "Tất cả";
-            v_dr[DM_CO_SO_DINH_MUC.MA_CO_SO_DINH_MUC] = "";
-            v_dr[DM_CO_SO_DINH_MUC.ID_LOAI_CO_SO_DINH_MUC] = -1;
-            v_ds.DM_CO_SO_DINH_MUC.Rows.InsertAt(v_dr, 0);
+            //DataRow v_dr = v_ds.DM_CO_SO_DINH_MUC.NewRow();
+            //v_dr[DM_CO_SO_DINH_MUC.ID] = -1;
+            //v_dr[DM_CO_SO_DINH_MUC.TEN_CO_SO_DINH_MUC] = "Tất cả";
+            //v_dr[DM_CO_SO_DINH_MUC.MA_CO_SO_DINH_MUC] = "";
+            //v_dr[DM_CO_SO_DINH_MUC.ID_LOAI_CO_SO_DINH_MUC] = -1;
+            //v_ds.DM_CO_SO_DINH_MUC.Rows.InsertAt(v_dr, 0);
             m_cbo_co_so_tinh_dm.SelectedIndex = 0;
         }
         private void load_cbo_trung_tam()
@@ -119,11 +121,11 @@ namespace BCTKApp.DanhMuc
             m_cbo_trung_tam.DataSource = v_ds.DM_PHONG_BAN;
             m_cbo_trung_tam.ValueMember = DM_PHONG_BAN.ID;
             m_cbo_trung_tam.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
-            DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
-            v_dr[DM_PHONG_BAN.ID] = -1;
-            v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
-            v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
-            v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
+            //DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
+            //v_dr[DM_PHONG_BAN.ID] = -1;
+            //v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
+            //v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
+            //v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
             m_cbo_trung_tam.SelectedIndex = 0;
         
         }
@@ -136,18 +138,24 @@ namespace BCTKApp.DanhMuc
             m_cbo_loai_dm.DataSource = v_ds.CM_DM_TU_DIEN;
             m_cbo_loai_dm.ValueMember = CM_DM_TU_DIEN.ID;
             m_cbo_loai_dm.DisplayMember = CM_DM_TU_DIEN.TEN;
-            DataRow v_dr = v_ds.CM_DM_TU_DIEN.NewRow();
-            v_dr[CM_DM_TU_DIEN.ID] = -1;
-            v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 17;
-            v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = " ";
-            v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
-            v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "Tất cả";
-            v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+            //DataRow v_dr = v_ds.CM_DM_TU_DIEN.NewRow();
+            //v_dr[CM_DM_TU_DIEN.ID] = -1;
+            //v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 17;
+            //v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = " ";
+            //v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
+            //v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "Tất cả";
+            //v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
             m_cbo_loai_dm.SelectedIndex = 0; 
         }
-        private bool check_validate()
+        private bool check_trung_tam(decimal ip_id_trung_tam, decimal ip_loai_dm)
         {
-            return true;
+            US_V_GD_PHONG_BAN_DINH_MUC v_us = new US_V_GD_PHONG_BAN_DINH_MUC();
+            DS_V_GD_PHONG_BAN_DINH_MUC v_ds = new DS_V_GD_PHONG_BAN_DINH_MUC();
+            v_us.FillDataset(v_ds, "where id_phong_ban="+ip_id_trung_tam + "and id_loai_dinh_muc ="+ip_loai_dm);
+            if (v_ds.Tables[0].Rows.Count != 0)
+                return false;
+            else
+                return true;
         }
         #endregion
 
@@ -159,11 +167,7 @@ namespace BCTKApp.DanhMuc
             load_cbo_dm_co_co();
             load_cbo_trung_tam();
             load_cbo_loai_dinh_muc();
-        } 
- 
-   
-        #endregion
-
+        }
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
@@ -184,10 +188,18 @@ namespace BCTKApp.DanhMuc
                 switch (m_e)
                 {
                     case DataEntryFormMode.InsertDataState:
+                        if (!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue)))
+                        {
+                            BaseMessages.MsgBox_Error("Đã tồn tại cơ sở định mức của trung tâm này!");
+                            return;
+                        }
                         m_us_gd_pbdm.Insert();
+                        BaseMessages.MsgBox_Infor("Thêm mới thành công!");
                         break;
                     case DataEntryFormMode.UpdateDataState:
+                        m_us_gd_pbdm.dcID = m_id;
                         m_us_gd_pbdm.Update();
+                        BaseMessages.MsgBox_Infor("Cập nhật thành công!");
                         break;
                     default: m_us_gd_pbdm.Insert();
                         break;
@@ -199,5 +211,9 @@ namespace BCTKApp.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+   
+        #endregion
+
+  
     }
 }
