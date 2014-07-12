@@ -82,6 +82,7 @@ namespace BCTKApp
             m_ds = new DS_V_DM_BILL();
             if (m_dtp_tu_ngay.Checked == true)
             {
+                v_dat_ngay = m_dtp_tu_ngay.Value.Date;
                 m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
             }
             else
