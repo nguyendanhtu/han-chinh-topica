@@ -281,6 +281,18 @@ namespace BCTKDS.CDBNames
         public const string TEN_LOAI_CO_SO = "TEN_LOAI_CO_SO";
         public const string TEN_LOAI_DINH_MUC = "TEN_LOAI_DINH_MUC";
     }
+    public class v_DM_PHONG_BAN_PHAP_NHAN
+    {
+        public const string ID = "ID";
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string TY_TRONG = "TY_TRONG";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
+        public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
+    }
+
 
     #region HE_THONG
     public class HT_USER_GROUP
