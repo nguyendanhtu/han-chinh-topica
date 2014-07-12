@@ -74,31 +74,31 @@ namespace BCTKApp.DanhMuc
             US_DM_CO_SO v_us = new US_DM_CO_SO();
             DS_DM_CO_SO v_ds = new DS_DM_CO_SO();
             v_us.FillDataset(v_ds);
-            m_cbo_trung_tam.DataSource = v_ds.DM_CO_SO;
-            m_cbo_trung_tam.ValueMember = DM_CO_SO.ID;
-            m_cbo_trung_tam.DisplayMember = DM_CO_SO.MA;
+            m_cbo_tinh_theo_co_so.DataSource = v_ds.DM_CO_SO;
+            m_cbo_tinh_theo_co_so.ValueMember = DM_CO_SO.ID;
+            m_cbo_tinh_theo_co_so.DisplayMember = DM_CO_SO.MA;
             DataRow v_dr = v_ds.DM_CO_SO.NewRow();
             v_dr[DM_CO_SO.ID] = -1;
             v_dr[DM_CO_SO.MA] = "Tất cả";
             v_dr[DM_CO_SO.ID_LOAI_CO_SO] = -1;
             v_ds.DM_CO_SO.Rows.InsertAt(v_dr, 0);
-            m_cbo_trung_tam.SelectedIndex = 0;
+            m_cbo_tinh_theo_co_so.SelectedIndex = 0;
         }
         private void load_cbo_co_tinh_dinh_muc()
         {
             US_DM_CO_SO_DINH_MUC v_us = new US_DM_CO_SO_DINH_MUC();
             DS_DM_CO_SO_DINH_MUC v_ds = new DS_DM_CO_SO_DINH_MUC();
             v_us.FillDataset(v_ds);
-            m_cbo_trung_tam.DataSource = v_ds.DM_CO_SO_DINH_MUC;
-            m_cbo_trung_tam.ValueMember = DM_CO_SO_DINH_MUC.ID;
-            m_cbo_trung_tam.DisplayMember = DM_CO_SO_DINH_MUC.TEN_CO_SO_DINH_MUC;
+            m_cbo_co_so_tinh_dm.DataSource = v_ds.DM_CO_SO_DINH_MUC;
+            m_cbo_co_so_tinh_dm.ValueMember = DM_CO_SO_DINH_MUC.ID;
+            m_cbo_co_so_tinh_dm.DisplayMember = DM_CO_SO_DINH_MUC.TEN_CO_SO_DINH_MUC;
             DataRow v_dr = v_ds.DM_CO_SO_DINH_MUC.NewRow();
             v_dr[DM_CO_SO_DINH_MUC.ID] = -1;
             v_dr[DM_CO_SO_DINH_MUC.TEN_CO_SO_DINH_MUC] = "Tất cả";
             v_dr[DM_CO_SO_DINH_MUC.MA_CO_SO_DINH_MUC] = "";
             v_dr[DM_CO_SO_DINH_MUC.ID_LOAI_CO_SO_DINH_MUC] = -1;
             v_ds.DM_CO_SO_DINH_MUC.Rows.InsertAt(v_dr, 0);
-            m_cbo_trung_tam.SelectedIndex = 0;
+            m_cbo_co_so_tinh_dm.SelectedIndex = 0;
         }
         private void load_cbo_trung_tam()
         {
