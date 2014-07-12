@@ -78,14 +78,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="right">
+                 <%--   <td align="right">
                         <asp:Label ID="m_lbl_trung_tam" runat="server" Text="Chọn trung tâm: " CssClass="cssManField"></asp:Label>
                     </td>
                     <td>
                         <asp:DropDownList ID="m_cbo_trung_tam" runat="server" CssClass="cssDorpdownlistDefault"
                             Width="91%">
                         </asp:DropDownList>
-                    </td>
+                    </td>--%>
                     <td align="right">
                         <asp:Label ID="m_lbl_trang_thai" runat="server" Text="Trạng thái: " CssClass="cssManField"></asp:Label>
                     </td>
