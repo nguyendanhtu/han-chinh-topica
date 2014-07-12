@@ -149,5 +149,9 @@ public class US_RPT_BANG_DINH_MUC : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    public void ExecuteProc() {
+        CStoredProc v_proc = new CStoredProc("pr_rpt_bang_dinh_muc");
+        v_proc.ExecuteCommand(this);
+    }
 	}
 }

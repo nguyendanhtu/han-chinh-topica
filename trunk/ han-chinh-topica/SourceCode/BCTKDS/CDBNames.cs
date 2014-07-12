@@ -474,6 +474,16 @@ namespace BCTKDS.CDBNames
     #endregion
 
     #region Version 2
+    public class RPT_TONG_TIEN_DINH_MUC {
+        public const string ID = "ID";
+        public const string ID_LOAI_DINH_MUC = "ID_LOAI_DINH_MUC";
+        public const string TEN_NGAN = "TEN_NGAN";
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string TONG_TIEN_DINH_MUC = "TONG_TIEN_DINH_MUC";
+    }
+
 
     public class DM_BILL
     {
