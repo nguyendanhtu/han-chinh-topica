@@ -285,6 +285,10 @@ namespace BCTKDS {
             
             private global::System.Data.DataColumn columnID_CO_SO_DINH_MUC;
             
+            private global::System.Data.DataColumn columnID_LOAI_DINH_MUC;
+            
+            private global::System.Data.DataColumn columnID_DM_CO_SO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public GD_PHONG_BAN_DINH_MUCDataTable() {
@@ -344,6 +348,22 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_LOAI_DINH_MUCColumn {
+                get {
+                    return this.columnID_LOAI_DINH_MUC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_DM_CO_SOColumn {
+                get {
+                    return this.columnID_DM_CO_SO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -379,12 +399,14 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GD_PHONG_BAN_DINH_MUCRow AddGD_PHONG_BAN_DINH_MUCRow(decimal ID_PHONG_BAN, decimal ID_CO_SO_DINH_MUC) {
+            public GD_PHONG_BAN_DINH_MUCRow AddGD_PHONG_BAN_DINH_MUCRow(decimal ID_PHONG_BAN, decimal ID_CO_SO_DINH_MUC, decimal ID_LOAI_DINH_MUC, decimal ID_DM_CO_SO) {
                 GD_PHONG_BAN_DINH_MUCRow rowGD_PHONG_BAN_DINH_MUCRow = ((GD_PHONG_BAN_DINH_MUCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         ID_PHONG_BAN,
-                        ID_CO_SO_DINH_MUC};
+                        ID_CO_SO_DINH_MUC,
+                        ID_LOAI_DINH_MUC,
+                        ID_DM_CO_SO};
                 rowGD_PHONG_BAN_DINH_MUCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGD_PHONG_BAN_DINH_MUCRow);
                 return rowGD_PHONG_BAN_DINH_MUCRow;
@@ -423,6 +445,8 @@ namespace BCTKDS {
                 this.columnID = base.Columns["ID"];
                 this.columnID_PHONG_BAN = base.Columns["ID_PHONG_BAN"];
                 this.columnID_CO_SO_DINH_MUC = base.Columns["ID_CO_SO_DINH_MUC"];
+                this.columnID_LOAI_DINH_MUC = base.Columns["ID_LOAI_DINH_MUC"];
+                this.columnID_DM_CO_SO = base.Columns["ID_DM_CO_SO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -434,6 +458,10 @@ namespace BCTKDS {
                 base.Columns.Add(this.columnID_PHONG_BAN);
                 this.columnID_CO_SO_DINH_MUC = new global::System.Data.DataColumn("ID_CO_SO_DINH_MUC", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_CO_SO_DINH_MUC);
+                this.columnID_LOAI_DINH_MUC = new global::System.Data.DataColumn("ID_LOAI_DINH_MUC", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_LOAI_DINH_MUC);
+                this.columnID_DM_CO_SO = new global::System.Data.DataColumn("ID_DM_CO_SO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_DM_CO_SO);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -443,7 +471,8 @@ namespace BCTKDS {
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnID_PHONG_BAN.AllowDBNull = false;
-                this.columnID_CO_SO_DINH_MUC.AllowDBNull = false;
+                this.columnID_LOAI_DINH_MUC.AllowDBNull = false;
+                this.columnID_DM_CO_SO.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -610,11 +639,51 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ID_CO_SO_DINH_MUC {
                 get {
-                    return ((decimal)(this[this.tableGD_PHONG_BAN_DINH_MUC.ID_CO_SO_DINH_MUCColumn]));
+                    try {
+                        return ((decimal)(this[this.tableGD_PHONG_BAN_DINH_MUC.ID_CO_SO_DINH_MUCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_CO_SO_DINH_MUC\' in table \'GD_PHONG_BAN_DINH_MUC\' is DBNu" +
+                                "ll.", e);
+                    }
                 }
                 set {
                     this[this.tableGD_PHONG_BAN_DINH_MUC.ID_CO_SO_DINH_MUCColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_LOAI_DINH_MUC {
+                get {
+                    return ((decimal)(this[this.tableGD_PHONG_BAN_DINH_MUC.ID_LOAI_DINH_MUCColumn]));
+                }
+                set {
+                    this[this.tableGD_PHONG_BAN_DINH_MUC.ID_LOAI_DINH_MUCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_DM_CO_SO {
+                get {
+                    return ((decimal)(this[this.tableGD_PHONG_BAN_DINH_MUC.ID_DM_CO_SOColumn]));
+                }
+                set {
+                    this[this.tableGD_PHONG_BAN_DINH_MUC.ID_DM_CO_SOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_CO_SO_DINH_MUCNull() {
+                return this.IsNull(this.tableGD_PHONG_BAN_DINH_MUC.ID_CO_SO_DINH_MUCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_CO_SO_DINH_MUCNull() {
+                this[this.tableGD_PHONG_BAN_DINH_MUC.ID_CO_SO_DINH_MUCColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -780,34 +849,43 @@ namespace BCTKDS.DS_GD_PHONG_BAN_DINH_MUCTableAdapters {
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("ID_PHONG_BAN", "ID_PHONG_BAN");
             tableMapping.ColumnMappings.Add("ID_CO_SO_DINH_MUC", "ID_CO_SO_DINH_MUC");
+            tableMapping.ColumnMappings.Add("ID_LOAI_DINH_MUC", "ID_LOAI_DINH_MUC");
+            tableMapping.ColumnMappings.Add("ID_DM_CO_SO", "ID_DM_CO_SO");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[GD_PHONG_BAN_DINH_MUC] WHERE (([ID] = @Original_ID) AND ([ID_P" +
-                "HONG_BAN] = @Original_ID_PHONG_BAN) AND ([ID_CO_SO_DINH_MUC] = @Original_ID_CO_S" +
-                "O_DINH_MUC))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[GD_PHONG_BAN_DINH_MUC] WHERE (([ID] = @Original_ID) AND ([ID_PHONG_BAN] = @Original_ID_PHONG_BAN) AND ((@IsNull_ID_CO_SO_DINH_MUC = 1 AND [ID_CO_SO_DINH_MUC] IS NULL) OR ([ID_CO_SO_DINH_MUC] = @Original_ID_CO_SO_DINH_MUC)) AND ([ID_LOAI_DINH_MUC] = @Original_ID_LOAI_DINH_MUC) AND ([ID_DM_CO_SO] = @Original_ID_DM_CO_SO))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_CO_SO_DINH_MUC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_CO_SO_DINH_MUC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_CO_SO_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_CO_SO_DINH_MUC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_LOAI_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_DINH_MUC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_DM_CO_SO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DM_CO_SO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[GD_PHONG_BAN_DINH_MUC] ([ID_PHONG_BAN], [ID_CO_SO_DINH_MUC]) V" +
-                "ALUES (@ID_PHONG_BAN, @ID_CO_SO_DINH_MUC);\r\nSELECT ID, ID_PHONG_BAN, ID_CO_SO_DI" +
-                "NH_MUC FROM GD_PHONG_BAN_DINH_MUC WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[GD_PHONG_BAN_DINH_MUC] ([ID_PHONG_BAN], [ID_CO_SO_DINH_MUC], [ID_LOAI_DINH_MUC], [ID_DM_CO_SO]) VALUES (@ID_PHONG_BAN, @ID_CO_SO_DINH_MUC, @ID_LOAI_DINH_MUC, @ID_DM_CO_SO);
+SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC, ID_LOAI_DINH_MUC, ID_DM_CO_SO FROM GD_PHONG_BAN_DINH_MUC WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_CO_SO_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_CO_SO_DINH_MUC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_LOAI_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_DINH_MUC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_DM_CO_SO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DM_CO_SO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[GD_PHONG_BAN_DINH_MUC] SET [ID_PHONG_BAN] = @ID_PHONG_BAN, [ID_CO_SO_DINH_MUC] = @ID_CO_SO_DINH_MUC WHERE (([ID] = @Original_ID) AND ([ID_PHONG_BAN] = @Original_ID_PHONG_BAN) AND ([ID_CO_SO_DINH_MUC] = @Original_ID_CO_SO_DINH_MUC));
-SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC FROM GD_PHONG_BAN_DINH_MUC WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[GD_PHONG_BAN_DINH_MUC] SET [ID_PHONG_BAN] = @ID_PHONG_BAN, [ID_CO_SO_DINH_MUC] = @ID_CO_SO_DINH_MUC, [ID_LOAI_DINH_MUC] = @ID_LOAI_DINH_MUC, [ID_DM_CO_SO] = @ID_DM_CO_SO WHERE (([ID] = @Original_ID) AND ([ID_PHONG_BAN] = @Original_ID_PHONG_BAN) AND ((@IsNull_ID_CO_SO_DINH_MUC = 1 AND [ID_CO_SO_DINH_MUC] IS NULL) OR ([ID_CO_SO_DINH_MUC] = @Original_ID_CO_SO_DINH_MUC)) AND ([ID_LOAI_DINH_MUC] = @Original_ID_LOAI_DINH_MUC) AND ([ID_DM_CO_SO] = @Original_ID_DM_CO_SO));
+SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC, ID_LOAI_DINH_MUC, ID_DM_CO_SO FROM GD_PHONG_BAN_DINH_MUC WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_CO_SO_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_CO_SO_DINH_MUC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_LOAI_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_DINH_MUC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_DM_CO_SO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DM_CO_SO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PHONG_BAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHONG_BAN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_CO_SO_DINH_MUC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_CO_SO_DINH_MUC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_CO_SO_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_CO_SO_DINH_MUC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_LOAI_DINH_MUC", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LOAI_DINH_MUC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_DM_CO_SO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_DM_CO_SO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -824,7 +902,8 @@ SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC FROM GD_PHONG_BAN_DINH_MUC WHERE (ID 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC FROM dbo.GD_PHONG_BAN_DINH_MUC";
+            this._commandCollection[0].CommandText = "SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC, ID_LOAI_DINH_MUC, ID_DM_CO_SO FROM db" +
+                "o.GD_PHONG_BAN_DINH_MUC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -885,10 +964,19 @@ SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC FROM GD_PHONG_BAN_DINH_MUC WHERE (ID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, decimal Original_ID_PHONG_BAN, decimal Original_ID_CO_SO_DINH_MUC) {
+        public virtual int Delete(decimal Original_ID, decimal Original_ID_PHONG_BAN, global::System.Nullable<decimal> Original_ID_CO_SO_DINH_MUC, decimal Original_ID_LOAI_DINH_MUC, decimal Original_ID_DM_CO_SO) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_ID_PHONG_BAN));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_ID_CO_SO_DINH_MUC));
+            if ((Original_ID_CO_SO_DINH_MUC.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_ID_CO_SO_DINH_MUC.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_ID_LOAI_DINH_MUC));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_ID_DM_CO_SO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -909,9 +997,16 @@ SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC FROM GD_PHONG_BAN_DINH_MUC WHERE (ID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal ID_PHONG_BAN, decimal ID_CO_SO_DINH_MUC) {
+        public virtual int Insert(decimal ID_PHONG_BAN, global::System.Nullable<decimal> ID_CO_SO_DINH_MUC, decimal ID_LOAI_DINH_MUC, decimal ID_DM_CO_SO) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID_PHONG_BAN));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(ID_CO_SO_DINH_MUC));
+            if ((ID_CO_SO_DINH_MUC.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(ID_CO_SO_DINH_MUC.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(ID_LOAI_DINH_MUC));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(ID_DM_CO_SO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -932,13 +1027,29 @@ SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC FROM GD_PHONG_BAN_DINH_MUC WHERE (ID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal ID_PHONG_BAN, decimal ID_CO_SO_DINH_MUC, decimal Original_ID, decimal Original_ID_PHONG_BAN, decimal Original_ID_CO_SO_DINH_MUC, decimal ID) {
+        public virtual int Update(decimal ID_PHONG_BAN, global::System.Nullable<decimal> ID_CO_SO_DINH_MUC, decimal ID_LOAI_DINH_MUC, decimal ID_DM_CO_SO, decimal Original_ID, decimal Original_ID_PHONG_BAN, global::System.Nullable<decimal> Original_ID_CO_SO_DINH_MUC, decimal Original_ID_LOAI_DINH_MUC, decimal Original_ID_DM_CO_SO, decimal ID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ID_PHONG_BAN));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(ID_CO_SO_DINH_MUC));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_ID_PHONG_BAN));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_ID_CO_SO_DINH_MUC));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(ID));
+            if ((ID_CO_SO_DINH_MUC.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(ID_CO_SO_DINH_MUC.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(ID_LOAI_DINH_MUC));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(ID_DM_CO_SO));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_ID_PHONG_BAN));
+            if ((Original_ID_CO_SO_DINH_MUC.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_ID_CO_SO_DINH_MUC.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_ID_LOAI_DINH_MUC));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_ID_DM_CO_SO));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -959,8 +1070,8 @@ SELECT ID, ID_PHONG_BAN, ID_CO_SO_DINH_MUC FROM GD_PHONG_BAN_DINH_MUC WHERE (ID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal ID_PHONG_BAN, decimal ID_CO_SO_DINH_MUC, decimal Original_ID, decimal Original_ID_PHONG_BAN, decimal Original_ID_CO_SO_DINH_MUC) {
-            return this.Update(ID_PHONG_BAN, ID_CO_SO_DINH_MUC, Original_ID, Original_ID_PHONG_BAN, Original_ID_CO_SO_DINH_MUC, Original_ID);
+        public virtual int Update(decimal ID_PHONG_BAN, global::System.Nullable<decimal> ID_CO_SO_DINH_MUC, decimal ID_LOAI_DINH_MUC, decimal ID_DM_CO_SO, decimal Original_ID, decimal Original_ID_PHONG_BAN, global::System.Nullable<decimal> Original_ID_CO_SO_DINH_MUC, decimal Original_ID_LOAI_DINH_MUC, decimal Original_ID_DM_CO_SO) {
+            return this.Update(ID_PHONG_BAN, ID_CO_SO_DINH_MUC, ID_LOAI_DINH_MUC, ID_DM_CO_SO, Original_ID, Original_ID_PHONG_BAN, Original_ID_CO_SO_DINH_MUC, Original_ID_LOAI_DINH_MUC, Original_ID_DM_CO_SO, Original_ID);
         }
     }
     
