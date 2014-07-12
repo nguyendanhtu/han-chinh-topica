@@ -47,7 +47,7 @@
             // m_cbo_loai_co_so
             // 
             this.m_cbo_loai_co_so.FormattingEnabled = true;
-            this.m_cbo_loai_co_so.Location = new System.Drawing.Point(212, 176);
+            this.m_cbo_loai_co_so.Location = new System.Drawing.Point(182, 131);
             this.m_cbo_loai_co_so.Name = "m_cbo_loai_co_so";
             this.m_cbo_loai_co_so.Size = new System.Drawing.Size(276, 21);
             this.m_cbo_loai_co_so.TabIndex = 20;
@@ -55,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(109, 185);
+            this.label1.Location = new System.Drawing.Point(79, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 19;
@@ -63,13 +63,14 @@
             // 
             // m_lbl_tieu_de
             // 
-            this.m_lbl_tieu_de.AutoSize = true;
+            this.m_lbl_tieu_de.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tieu_de.Location = new System.Drawing.Point(169, 5);
+            this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(287, 19);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(543, 26);
             this.m_lbl_tieu_de.TabIndex = 18;
             this.m_lbl_tieu_de.Text = "Cập nhật thông tin cơ sở tính định mức";
+            this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // m_cmd_save
             // 
@@ -80,7 +81,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(404, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(363, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
@@ -115,7 +116,7 @@
             // 
             // m_txt_ma_co_so
             // 
-            this.m_txt_ma_co_so.Location = new System.Drawing.Point(212, 87);
+            this.m_txt_ma_co_so.Location = new System.Drawing.Point(182, 48);
             this.m_txt_ma_co_so.Name = "m_txt_ma_co_so";
             this.m_txt_ma_co_so.Size = new System.Drawing.Size(143, 20);
             this.m_txt_ma_co_so.TabIndex = 14;
@@ -125,10 +126,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 252);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 183);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(584, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(543, 36);
             this.m_pnl_out_place_dm.TabIndex = 17;
             // 
             // m_cmd_exit
@@ -140,7 +141,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(492, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(451, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -148,7 +149,7 @@
             // 
             // m_txt_ten_co_so
             // 
-            this.m_txt_ten_co_so.Location = new System.Drawing.Point(212, 128);
+            this.m_txt_ten_co_so.Location = new System.Drawing.Point(182, 89);
             this.m_txt_ten_co_so.Name = "m_txt_ten_co_so";
             this.m_txt_ten_co_so.Size = new System.Drawing.Size(276, 20);
             this.m_txt_ten_co_so.TabIndex = 16;
@@ -156,7 +157,7 @@
             // m_lbl_ma_phong_ban
             // 
             this.m_lbl_ma_phong_ban.AutoSize = true;
-            this.m_lbl_ma_phong_ban.Location = new System.Drawing.Point(109, 90);
+            this.m_lbl_ma_phong_ban.Location = new System.Drawing.Point(79, 51);
             this.m_lbl_ma_phong_ban.Name = "m_lbl_ma_phong_ban";
             this.m_lbl_ma_phong_ban.Size = new System.Drawing.Size(51, 13);
             this.m_lbl_ma_phong_ban.TabIndex = 13;
@@ -165,7 +166,7 @@
             // m_lbl_ten_phong_ban
             // 
             this.m_lbl_ten_phong_ban.AutoSize = true;
-            this.m_lbl_ten_phong_ban.Location = new System.Drawing.Point(109, 131);
+            this.m_lbl_ten_phong_ban.Location = new System.Drawing.Point(79, 92);
             this.m_lbl_ten_phong_ban.Name = "m_lbl_ten_phong_ban";
             this.m_lbl_ten_phong_ban.Size = new System.Drawing.Size(55, 13);
             this.m_lbl_ten_phong_ban.TabIndex = 15;
@@ -175,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 288);
+            this.ClientSize = new System.Drawing.Size(543, 219);
             this.Controls.Add(this.m_cbo_loai_co_so);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_tieu_de);
