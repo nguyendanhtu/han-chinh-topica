@@ -128,7 +128,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CConstantValues.cs" />
-    <Compile Include="US_ V_DM_PHONG_BAN_PHAP_NHAN.cs" />
     <Compile Include="US_CM_DM_BANG_CHI_TIET_CUOI_THANG.cs" />
     <Compile Include="US_CM_DM_DANG_KY_GUI.cs" />
     <Compile Include="US_CM_DM_DANG_KY_GUI_DANH_SACH_TUNG_PHONG.cs" />
@@ -165,6 +164,7 @@
     <Compile Include="US_V_DM_CO_SO.cs" />
     <Compile Include="US_V_DM_CO_SO_DINH_MUC.cs" />
     <Compile Include="US_V_DM_PHONG_BAN.cs" />
+    <Compile Include="US_V_DM_PHONG_BAN_PHAP_NHAN.cs" />
     <Compile Include="US_V_GD_PHONG_BAN_DINH_MUC.cs" />
     <Compile Include="US_V_GD_THONG_KE.cs" />
     <Compile Include="US_V_HT_LOG_TRUY_CAP.cs" />
