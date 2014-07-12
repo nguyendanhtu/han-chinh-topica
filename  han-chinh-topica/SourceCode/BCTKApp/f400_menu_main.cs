@@ -199,7 +199,7 @@ namespace BCTKApp
         {
             try
             {
-                f702_v_dinh_muc_cpn_tung_phong_ban frm = new f702_v_dinh_muc_cpn_tung_phong_ban();
+                f860_RPT_TONG_TIEN_DINH_MUC frm = new f860_RPT_TONG_TIEN_DINH_MUC();
                 frm.ShowDialog();
             }
             catch (Exception v_e)

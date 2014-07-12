@@ -261,7 +261,7 @@
 </value>
   </data>
   <data name="m_fg.ColumnInfo" xml:space="preserve">
-    <value>5,1,0,0,0,85,Columns:0{Width:13;}	1{Width:173;Caption:"Loại định mức";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Width:128;Caption:"L8";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Width:130;Caption:"Nhân viên
+    <value>5,1,0,0,0,85,Columns:0{Width:34;AllowSorting:False;Caption:"STT";TextAlign:CenterCenter;TextAlignFixed:CenterCenter;}	1{Width:158;Caption:"Loại định mức";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Width:128;Caption:"L8";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Width:130;Caption:"Nhân viên
  (trừ TVTS và QLHT ) ";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	4{Width:139;Caption:"Học viên đang học";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	</value>
   </data>
   <data name="m_fg.Styles" xml:space="preserve">
