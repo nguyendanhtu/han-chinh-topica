@@ -47,6 +47,7 @@ namespace BCTKApp
         private Label m_lbl_header;
         private Panel panel1;
         private ToolTip toolTip1;
+        private Label label1;
 		private System.ComponentModel.IContainer components;
 
 		public f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN()
@@ -101,6 +102,7 @@ namespace BCTKApp
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -283,6 +285,7 @@ namespace BCTKApp
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_dt_den_ngay);
             this.panel1.Controls.Add(this.m_lbl_tu_ngay);
             this.panel1.Controls.Add(this.m_cmd_tim_kiem);
@@ -301,6 +304,15 @@ namespace BCTKApp
             this.toolTip1.AutoPopDelay = 4500;
             this.toolTip1.InitialDelay = 450;
             this.toolTip1.ReshowDelay = 50;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(786, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 13);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Tổng tiền định mức đã tính VAT";
             // 
             // f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
             // 
