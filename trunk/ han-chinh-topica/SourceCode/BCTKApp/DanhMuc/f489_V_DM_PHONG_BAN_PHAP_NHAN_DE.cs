@@ -72,7 +72,7 @@ namespace BCTKApp.DanhMuc
         {
             m_cbo_phap_nhan.Text = m_us_v.strTEN_PHAP_NHAN;
             m_cbo_trung_tam.Text = m_us_v.strTEN_PHONG_BAN;
-            m_txt_ty_trong.Text = m_us_v.dcTY_TRONG.ToString();
+            m_txt_ty_trong.Text = CIPConvert.ToStr(m_us_v.dcTY_TRONG, "#,#");
         }
       
         private void m_form_to_us_obj()
@@ -111,11 +111,11 @@ namespace BCTKApp.DanhMuc
             //v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
             m_cbo_trung_tam.SelectedIndex = 0;
         }
-        private bool check_trung_tam(decimal ip_id_trung_tam, decimal ip_loai_dm)
+        private bool check_trung_tam(decimal ip_id_trung_tam, decimal ip_id_phap_nhan)
         {
-            US_V_GD_PHONG_BAN_DINH_MUC v_us = new US_V_GD_PHONG_BAN_DINH_MUC();
-            DS_V_GD_PHONG_BAN_DINH_MUC v_ds = new DS_V_GD_PHONG_BAN_DINH_MUC();
-            v_us.FillDataset(v_ds, "where id_phong_ban="+ip_id_trung_tam + "and id_loai_dinh_muc ="+ip_loai_dm);
+            US_V_DM_PHONG_BAN_PHAP_NHAN v_us = new US_V_DM_PHONG_BAN_PHAP_NHAN();
+            DS_V_DM_PHONG_BAN_PHAP_NHAN v_ds = new DS_V_DM_PHONG_BAN_PHAP_NHAN();
+            v_us.FillDataset(v_ds, "where id_phong_ban="+ip_id_trung_tam + "and id_loai_phap_nhan ="+ip_id_phap_nhan);
             if (v_ds.Tables[0].Rows.Count != 0)
                 return false;
             else
@@ -150,11 +150,10 @@ namespace BCTKApp.DanhMuc
                 switch (m_e)
                 {
                     case DataEntryFormMode.InsertDataState:
-                        //if (!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue)))
-                        //{
-                        //    BaseMessages.MsgBox_Error("Đã tồn tại cơ sở định mức của trung tâm này!");
-                        //    return;
-                        //}
+                        if(!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue))) {
+                            BaseMessages.MsgBox_Error("Đã tồn tại trung tâm của pháp nhân này!");
+                            return;
+                        }
                         m_us.Insert();
                         BaseMessages.MsgBox_Infor("Thêm mới thành công!");
                         break;
