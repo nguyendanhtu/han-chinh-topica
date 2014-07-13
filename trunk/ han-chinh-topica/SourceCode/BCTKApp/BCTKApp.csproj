@@ -393,6 +393,15 @@
     <Compile Include="DanhMuc\f509_V_DM_CO_SO_DE.Designer.cs">
       <DependentUpon>f509_V_DM_CO_SO_DE.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f516_V_DM_BILL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f517_V_DM_BILL_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f517_V_DM_BILL_DE.Designer.cs">
+      <DependentUpon>f517_V_DM_BILL_DE.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\f518_V_DM_CO_SO_DINH_MUC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -572,6 +581,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f509_V_DM_CO_SO_DE.resx">
       <DependentUpon>f509_V_DM_CO_SO_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f516_V_DM_BILL.resx">
+      <DependentUpon>f516_V_DM_BILL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f517_V_DM_BILL_DE.resx">
+      <DependentUpon>f517_V_DM_BILL_DE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f518_V_DM_CO_SO_DINH_MUC.resx">
       <DependentUpon>f518_V_DM_CO_SO_DINH_MUC.cs</DependentUpon>
