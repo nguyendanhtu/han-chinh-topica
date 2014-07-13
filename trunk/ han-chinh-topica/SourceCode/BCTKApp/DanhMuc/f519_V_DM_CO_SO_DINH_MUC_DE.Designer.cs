@@ -41,6 +41,7 @@
             this.m_txt_ten_co_so = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_phong_ban = new System.Windows.Forms.Label();
             this.m_lbl_ten_phong_ban = new System.Windows.Forms.Label();
+            this.m_chk_close_form = new System.Windows.Forms.CheckBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,7 +127,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 183);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 208);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(543, 36);
@@ -172,11 +173,22 @@
             this.m_lbl_ten_phong_ban.TabIndex = 15;
             this.m_lbl_ten_phong_ban.Text = "Tên cơ sở";
             // 
+            // m_chk_close_form
+            // 
+            this.m_chk_close_form.AutoSize = true;
+            this.m_chk_close_form.Location = new System.Drawing.Point(183, 175);
+            this.m_chk_close_form.Name = "m_chk_close_form";
+            this.m_chk_close_form.Size = new System.Drawing.Size(196, 17);
+            this.m_chk_close_form.TabIndex = 21;
+            this.m_chk_close_form.Text = "Chọn để khi lưu không tắt hộp thoại";
+            this.m_chk_close_form.UseVisualStyleBackColor = true;
+            // 
             // f519_V_DM_CO_SO_DINH_MUC_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 219);
+            this.ClientSize = new System.Drawing.Size(543, 244);
+            this.Controls.Add(this.m_chk_close_form);
             this.Controls.Add(this.m_cbo_loai_co_so);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_tieu_de);
@@ -206,5 +218,6 @@
         private System.Windows.Forms.TextBox m_txt_ten_co_so;
         private System.Windows.Forms.Label m_lbl_ma_phong_ban;
         private System.Windows.Forms.Label m_lbl_ten_phong_ban;
+        private System.Windows.Forms.CheckBox m_chk_close_form;
     }
 }

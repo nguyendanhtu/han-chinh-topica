@@ -52,6 +52,8 @@ namespace BCTKApp.DanhMuc
             
             CControlFormat.setFormStyle(this, new CAppContext_201());
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            m_chk_close_form.Font = new System.Drawing.Font("Tahoma", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            m_chk_close_form.ForeColor = Color.Maroon;
             set_define_events();
         }
         
@@ -90,7 +92,20 @@ namespace BCTKApp.DanhMuc
                     break;
             }
             BaseMessages.MsgBox_Infor("Đã lưu thành công!");
-            this.Close();
+            if (m_chk_close_form.Checked == true)
+            {
+                xoa_trang();
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+        private void xoa_trang()
+        {
+            m_txt_ma_phong_ban.Clear();
+            m_txt_ten_phong_ban.Clear();
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
         }
         private void set_define_events()
         {

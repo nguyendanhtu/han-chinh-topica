@@ -502,6 +502,7 @@ namespace BCTKApp
 		private void m_cmd_delete_Click(object sender, EventArgs e) {
 			try{
 				delete_dm_phong_ban();
+                CGridUtils.MakeSoTT(0, m_fg);
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);

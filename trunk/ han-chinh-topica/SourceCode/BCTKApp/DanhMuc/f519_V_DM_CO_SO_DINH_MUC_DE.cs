@@ -46,6 +46,8 @@ namespace BCTKApp
             CControlFormat.setFormStyle(this, new CAppContext_201());
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             load_data_2_cbo();
+            m_chk_close_form.Font = new System.Drawing.Font("Tahoma", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            m_chk_close_form.ForeColor = Color.Maroon;
             set_define_events();          
         }
         private void form_2_us_obj()
@@ -76,9 +78,22 @@ namespace BCTKApp
                     break;
             }
             BaseMessages.MsgBox_Infor("Đã lưu thành công!");
-            this.Close();
+            if (m_chk_close_form.Checked == true)
+            {
+                xoa_trang();
+            }
+            else
+            {
+                this.Close();
+            }
         }
-
+        private void xoa_trang()
+        {
+            m_txt_ma_co_so.Clear();
+            m_txt_ten_co_so.Clear();
+            m_cbo_loai_co_so.SelectedIndex = 1;
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+        }
         private bool validate_data_is_ok()
         {
             if (!CValidateTextBox.IsValid(m_txt_ma_co_so, DataType.StringType, allowNull.NO, true))

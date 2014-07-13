@@ -491,6 +491,7 @@ namespace BCTKApp
 		private void m_cmd_delete_Click(object sender, EventArgs e) {
 			try{
 				delete_v_dm_co_so_dinh_muc();
+                CGridUtils.MakeSoTT(0, m_grv_co_so_dinh_muc);
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
