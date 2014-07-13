@@ -52,7 +52,7 @@ namespace BCTKApp
             m_cmd_co_so_dinh_muc.Click+=new EventHandler(m_cmd_co_so_dinh_muc_Click);
             m_cmd_phong_ban_phap_nhan.Click += new System.EventHandler(this.m_cmd_phong_ban_phap_nhan_Click);
             m_cmd_bc_thu_tra_lai.Click+=new EventHandler(m_cmd_bc_thu_tra_lai_Click);
-            m_cmd_dm_bill.Click+=new EventHandler(m_cmd_dm_bill_Click);
+            m_cmd_dinh_muc_tung_phong_ban.Click += new EventHandler(m_cmd_dinh_muc_tung_phong_ban_Click);
         }
 
         void f400_menu_main_Load(object sender, EventArgs e)
@@ -204,7 +204,7 @@ namespace BCTKApp
             try
             {
                 f860_RPT_TONG_TIEN_DINH_MUC frm = new f860_RPT_TONG_TIEN_DINH_MUC();
-                frm.ShowDialog();
+                frm.display();
             }
             catch (Exception v_e)
             {
