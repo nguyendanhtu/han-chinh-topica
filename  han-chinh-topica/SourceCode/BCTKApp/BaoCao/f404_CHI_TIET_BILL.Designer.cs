@@ -396,7 +396,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_header);
             this.Name = "f404_CHI_TIET_BILL";
-            this.Text = "f404- Chi tiết Bill";
+            this.Text = "F404- Chi tiết Bill";
             this.Load += new System.EventHandler(this.f404_CHI_TIET_BILL_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
