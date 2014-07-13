@@ -439,5 +439,14 @@ public class US_V_DM_BILL : US_Object
         v_store_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
         v_store_proc.fillDataSetByCommand(this, ip_ds);
     }
+    public void FillDatasetSearch_bill(DS_V_DM_BILL ip_ds, decimal ip_dc_id_phong_ban, string ip_str_tu_khoa, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_V_DM_BILL_Search");
+        v_store_proc.addDecimalInputParam("@ID_TRUNG_TAM", ip_dc_id_phong_ban);
+        v_store_proc.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
+        v_store_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+        v_store_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
 }
 }
