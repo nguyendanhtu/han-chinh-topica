@@ -431,5 +431,13 @@ public class US_V_DM_BILL : US_Object
         v_store_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_dc_id_trang_thai);
         v_store_proc.fillDataSetByCommand(this, ip_ds);
     }
+    public void FillDatasetSearch_bitralai(DS_V_DM_BILL ip_ds,decimal ip_dc_id_trang_thai, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_V_DM_BILL_Search_trang_thai_tra_lai");
+        v_store_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_dc_id_trang_thai);
+        v_store_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+        v_store_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
 }
 }
