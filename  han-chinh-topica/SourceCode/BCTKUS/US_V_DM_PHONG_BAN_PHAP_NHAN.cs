@@ -212,5 +212,13 @@ public class US_V_DM_PHONG_BAN_PHAP_NHAN : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDataset(DS_V_DM_PHONG_BAN_PHAP_NHAN ip_m_ds, decimal ip_v_id_phap_nhan, string ip_v_str_tu_khoa)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_PHONG_BAN_PHAP_NHAN_Search");
+        v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tu_khoa);
+        v_stored_proc.addDecimalInputParam("@ID_PHAP_NHAN", ip_v_id_phap_nhan);
+        v_stored_proc.fillDataSetByCommand(this, ip_m_ds);
+    }
+}
 }
