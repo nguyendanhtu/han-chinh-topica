@@ -487,7 +487,11 @@ namespace BCTKApp
             CGridUtils.MakeSoTT(0, m_fg);
             for (int i = m_fg.Rows.Fixed; i < m_fg.Rows.Count; i++)
             {
-                if (m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT] == null) continue;
+                if (m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT] == null || CIPConvert.ToDecimal(m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT].ToString()) <0)
+                    {
+                        m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT] = 0;
+                        continue;
+                    }
                 if (!CIPConvert.is_valid_number(m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT])) continue;
                 if (CIPConvert.ToDecimal((m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT]).ToString()) > 20)
                 {
@@ -495,6 +499,7 @@ namespace BCTKApp
                 }
 
             }
+
             m_fg.Redraw = true;
         }
 		private void grid2us_object(US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN i_us
@@ -657,11 +662,12 @@ namespace BCTKApp
                     v_tong_tien = CIPConvert.ToDecimal(v_dr[4]);
                 else
                     v_tong_tien = 0;
-                if(i_grid_col==(int)e_col_Number.DINH_MUC){
-                    f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
-                    v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
-                }
-                else if((i_grid_col == (int)e_col_Number.TONG_SO_BILL) || (i_grid_col == (int)e_col_Number.TONG_SO_TIEN)) {
+                //if(i_grid_col==(int)e_col_Number.DINH_MUC){
+                //    f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
+                //    v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
+                //}
+                //else 
+                    if((i_grid_col == (int)e_col_Number.TONG_SO_BILL) || (i_grid_col == (int)e_col_Number.TONG_SO_TIEN)) {
                     f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
                     v_frm1.Display_for_chi_tiet(v_id_phong_ban, -1, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
                 }
