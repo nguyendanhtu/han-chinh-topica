@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using IP.Core.IPCommon;
 using BCTKApp.ChucNang;
 using BCTKApp.HeThong;
+using BCTKApp.DanhMuc;
 
 namespace BCTKApp
 {
@@ -49,6 +50,7 @@ namespace BCTKApp
             m_cmd_dm_co_so.Click+=new EventHandler(m_cmd_dm_co_so_Click);
             m_cmd_co_dinh_muc_trung_tam.Click += new EventHandler(m_cmd_co_dinh_muc_trung_tam_Click);
             m_cmd_co_so_dinh_muc.Click+=new EventHandler(m_cmd_co_so_dinh_muc_Click);
+            m_cmd_phong_ban_phap_nhan.Click += new System.EventHandler(this.m_cmd_phong_ban_phap_nhan_Click);
         }
 
         void f400_menu_main_Load(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace BCTKApp
             //v_dat = CIPConvert.ToDatetime(ngay);
         }
 
-       
+     
         #endregion
         #region Event
         private void m_cmd_thong_tin_thang_excel_Click(object sender, EventArgs e)
@@ -334,6 +336,20 @@ namespace BCTKApp
             try
             {
                 f518_V_DM_CO_SO_DINH_MUC v_frm = new f518_V_DM_CO_SO_DINH_MUC();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_phong_ban_phap_nhan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f488_V_GD_PHONG_BAN_PHAP_NHAN v_frm = new f488_V_GD_PHONG_BAN_PHAP_NHAN();
                 v_frm.ShowDialog();
             }
             catch (Exception v_e)
