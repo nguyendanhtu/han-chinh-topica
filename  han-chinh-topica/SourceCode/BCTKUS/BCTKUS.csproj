@@ -137,6 +137,7 @@
     <Compile Include="US_DM_CO_SO.cs" />
     <Compile Include="US_DM_CO_SO_DINH_MUC.cs" />
     <Compile Include="US_DM_DON_VI.cs" />
+    <Compile Include="US_DM_PHAP_NHAN.cs" />
     <Compile Include="US_DM_PHONG_BAN.cs" />
     <Compile Include="US_DOC_COLUMN_COMMENT.cs" />
     <Compile Include="US_DOC_TABLE_COMMENT.cs" />
