@@ -364,6 +364,7 @@ namespace BCTKApp
             this.label5.Size = new System.Drawing.Size(100, 13);
             this.label5.TabIndex = 27;
             this.label5.Text = "Tổng tiền:";
+            
             // 
             // f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE
             // 
@@ -517,7 +518,7 @@ namespace BCTKApp
             // 
             // m_lbl_td_tong_tien
             // 
-            this.m_lbl_td_tong_tien.AutoSize = true;
+            //this.m_lbl_td_tong_tien.AutoSize = true;
             this.m_lbl_td_tong_tien.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_td_tong_tien.ForeColor = System.Drawing.Color.Maroon;
             //this.m_lbl_td_tong_tien.Size = new System.Drawing.Size(60, 13);
@@ -525,9 +526,9 @@ namespace BCTKApp
             this.m_lbl_td_tong_tien.Name = "m_lbl_td_tong_tien";
             
             this.m_lbl_td_tong_tien.TabIndex = 25;
-            this.m_lbl_td_tong_tien.Text = "Tổng tiền:";
+            //this.m_lbl_td_tong_tien.Text = "Tổng tiền:";
             //
-
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_chua_tinh_vat.AutoSize = true;
             this.m_lbl_chua_tinh_vat.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_chua_tinh_vat.ForeColor = System.Drawing.Color.Maroon;
