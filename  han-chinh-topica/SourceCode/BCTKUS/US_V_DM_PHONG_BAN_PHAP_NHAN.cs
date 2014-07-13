@@ -218,7 +218,7 @@ public class US_V_DM_PHONG_BAN_PHAP_NHAN : US_Object
         CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_PHONG_BAN_PHAP_NHAN_Search");
         v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tu_khoa);
         v_stored_proc.addDecimalInputParam("@ID_PHAP_NHAN", ip_v_id_phap_nhan);
-        v_stored_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_v_id_phap_nhan);
+        v_stored_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_v_id_trung_tam);
         v_stored_proc.fillDataSetByCommand(this, ip_m_ds);
     }
 }
