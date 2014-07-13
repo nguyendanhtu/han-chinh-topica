@@ -442,7 +442,7 @@ this.PerformLayout();
             string v_str_tu_khoa = m_txt_tim_kiem.Text.Trim();
             decimal v_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             m_ds = new DS_V_DM_PHONG_BAN_PHAP_NHAN();
-            m_us.FillDataset(m_ds, v_id_phap_nhan, v_str_tu_khoa);
+            m_us.FillDataset(m_ds, v_id_phap_nhan, v_str_tu_khoa, v_id_trung_tam);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
@@ -619,7 +619,7 @@ this.PerformLayout();
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        }
+        
 
 	}
 }
