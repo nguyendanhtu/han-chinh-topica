@@ -292,6 +292,14 @@ namespace BCTKDS.CDBNames
         public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
         public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
     }
+    public class DM_PHAP_NHAN
+    {
+        public const string ID = "ID";
+        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
+        public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
+        public const string GHI_CHU = "GHI_CHU";
+    }
+
 
 
     #region HE_THONG
