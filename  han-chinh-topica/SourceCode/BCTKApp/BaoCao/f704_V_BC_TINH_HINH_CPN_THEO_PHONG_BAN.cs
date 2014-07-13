@@ -186,8 +186,8 @@ namespace BCTKApp
             this.m_fg.Size = new System.Drawing.Size(956, 352);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào các cột tổng số bill, tổng tiền thực tế, tổng tiền định mứ" +
-                    "c để xem chi tiết nhé!");
+            this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào các cột tổng số bill, tổng tiền thực tế" +
+                    " để xem chi tiết nhé!");
             // 
             // m_cmd_tim_kiem
             // 
