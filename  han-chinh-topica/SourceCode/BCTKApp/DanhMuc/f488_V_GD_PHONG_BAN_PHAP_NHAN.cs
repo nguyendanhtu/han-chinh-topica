@@ -30,7 +30,7 @@ namespace BCTKApp
 
 
 
-	public class frm_V_GD_PHONG_BAN_PHAP_NHAN : System.Windows.Forms.Form
+	public class f488_V_GD_PHONG_BAN_PHAP_NHAN : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
 		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
@@ -42,7 +42,7 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
 		private System.ComponentModel.IContainer components;
 
-		public frm_V_GD_PHONG_BAN_PHAP_NHAN()
+		public f488_V_GD_PHONG_BAN_PHAP_NHAN()
 		{
 			//
 			// Required for Windows Form Designer support
@@ -78,7 +78,7 @@ namespace BCTKApp
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(frm_V_GD_PHONG_BAN_PHAP_NHAN));
+			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(f488_V_GD_PHONG_BAN_PHAP_NHAN));
 			this.ImageList = new System.Windows.Forms.ImageList(this.components);
 			this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
 			this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
