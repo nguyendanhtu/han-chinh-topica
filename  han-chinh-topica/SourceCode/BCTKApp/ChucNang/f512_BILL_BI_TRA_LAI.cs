@@ -347,15 +347,12 @@ namespace BCTKApp
             m_grv_bill.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
             m_grv_bill.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.CompleteLeaf;
 			set_define_events();
-            DateTime v_dat_tu_ngay = new DateTime(2014, 1, 30);
-            m_dtp_tu_ngay.Value = v_dat_tu_ngay.Date;
-            //DateTime v_dat_den_ngay = new DateTime();
-            //v_dat_den_ngay = DateTime.Now;
-            //m_dtp_den_ngay.Value = v_dat_den_ngay.Date;
 			this.KeyPreview = true;		
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_bill);
+            m_dtp_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
+            m_dtp_den_ngay.Value = DateTime.Now.Date;
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
