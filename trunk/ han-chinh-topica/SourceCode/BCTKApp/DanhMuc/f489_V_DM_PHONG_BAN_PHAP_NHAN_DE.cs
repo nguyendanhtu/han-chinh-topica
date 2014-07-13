@@ -37,6 +37,7 @@ namespace BCTKApp.DanhMuc
             m_us_v = ip_v_m_us;
             m_us_obj_to_form();
             m_id = ip_v_m_us.dcID;
+            m_cbo_phap_nhan.Enabled = false;
             this.ShowDialog();
         }
         #endregion
@@ -54,19 +55,31 @@ namespace BCTKApp.DanhMuc
         private void format_control()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
-             // m_lbl_header
+            // m_lbl_header
             // 
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(24, 9);
+            this.m_lbl_header.Location = new System.Drawing.Point(96, 9);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(408, 19);
+            this.m_lbl_header.Size = new System.Drawing.Size(175, 19);
             this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "CẬP NHẬT TỶ LỆ ĐINH MỨC TRUNG TÂM THEO PHÁP NHÂN";
+            this.m_lbl_header.Text = "CẬP NHẬT THÔNG TIN";
+            // 
+            // m_lbl_header2
+            // 
+            this.m_lbl_header2.AutoSize = true;
+            this.m_lbl_header2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header2.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_header2.Location = new System.Drawing.Point(65, 28);
+            this.m_lbl_header2.Name = "m_lbl_header2";
+            this.m_lbl_header2.Size = new System.Drawing.Size(242, 19);
+            this.m_lbl_header2.TabIndex = 0;
+            this.m_lbl_header2.Text = " TRUNG TÂM THEO PHÁP NHÂN";
             // 
             load_cbo_phap_nhan();
             load_cbo_trung_tam();
+            m_cbo_phap_nhan.Enabled = true;
         }
         private void m_us_obj_to_form()
         {
@@ -115,7 +128,7 @@ namespace BCTKApp.DanhMuc
         {
             US_V_DM_PHONG_BAN_PHAP_NHAN v_us = new US_V_DM_PHONG_BAN_PHAP_NHAN();
             DS_V_DM_PHONG_BAN_PHAP_NHAN v_ds = new DS_V_DM_PHONG_BAN_PHAP_NHAN();
-            v_us.FillDataset(v_ds, "where id_phong_ban="+ip_id_trung_tam + "and id_loai_phap_nhan ="+ip_id_phap_nhan);
+            v_us.FillDataset(v_ds, "where id_phong_ban="+ip_id_trung_tam + "and id_phap_nhan ="+ip_id_phap_nhan);
             if (v_ds.Tables[0].Rows.Count != 0)
                 return false;
             else
@@ -159,6 +172,10 @@ namespace BCTKApp.DanhMuc
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         m_us.dcID = m_id;
+                        if(!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue))) {
+                            BaseMessages.MsgBox_Error("Đã tồn tại trung tâm của pháp nhân này!");
+                            return;
+                        }
                         m_us.Update();
                         BaseMessages.MsgBox_Infor("Cập nhật thành công!");
                         break;
