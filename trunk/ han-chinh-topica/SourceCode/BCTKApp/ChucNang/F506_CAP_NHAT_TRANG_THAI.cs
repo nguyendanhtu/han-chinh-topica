@@ -24,8 +24,7 @@ namespace BCTKApp
         #region Member
         US_V_DM_BILL m_us = new US_V_DM_BILL();
         DS_V_DM_BILL m_ds = new DS_V_DM_BILL();
-        ITransferDataRow m_obj_trans_1;
-        ITransferDataRow m_obj_trans_2;
+        ITransferDataRow m_obj_trans;
         private const String m_str_goi_y_so_bill = "Nhập Số bill, tên người nhận hoặc tên người gửi!";
         #endregion
 
@@ -44,15 +43,19 @@ namespace BCTKApp
                 , SO_BILL = 3
 
         }
+
+     
         #endregion
 
         #region Private Method
         private void format_controls()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
-            CControlFormat.setC1FlexFormat(m_grv_trang_thai_cu);
+            CControlFormat.setC1FlexFormat(m_grv_da_nhan);
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            CControlFormat.setC1FlexFormat(m_grv_trang_thai_moi);
+            CControlFormat.setC1FlexFormat(m_grv_da_chuyen);
+            CControlFormat.setC1FlexFormat(m_grv_bi_tra_lai);
+            CControlFormat.setC1FlexFormat(m_grv_noi_bo_nhan_tra_lai);
             m_dtp_tu_ngay.Value = DateTime.Now.Date;
             //load_data_2_cbo_cu()é
             //load_data_2_cbo_moi();
@@ -72,11 +75,11 @@ namespace BCTKApp
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_BILL.NewRow());
             return v_obj_trans;
         }
-        private void load_data_2_grid_trang_thai_cu()
+        private void load_data_2_grid(decimal ip_dc_trang_thai, C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             DateTime v_dat_ngay = m_dtp_tu_ngay.Value.Date;
             decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
-            decimal v_dc_id_trang_thai = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO; //CIPConvert.ToDecimal(m_cbo_trang_thai_cu.SelectedValue);
+            decimal v_dc_id_trang_thai = ip_dc_trang_thai; //CIPConvert.ToDecimal(m_cbo_trang_thai_cu.SelectedValue);
             string v_str_key_word = m_txt_key_word.Text;
             if (v_str_key_word == m_str_goi_y_so_bill) v_str_key_word = "";
             m_ds = new DS_V_DM_BILL();
@@ -89,121 +92,65 @@ namespace BCTKApp
             {
                 m_us.FillDatasetSearch_grid(m_ds, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
             }
-            m_grv_trang_thai_cu.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_cu, m_obj_trans_1);
-            CGridUtils.MakeSoTT(0, m_grv_trang_thai_cu);
-            m_grv_trang_thai_cu.Redraw = true;
+            i_fg.Redraw = false;
+            m_obj_trans = get_trans_object(i_fg);
+            CGridUtils.Dataset2C1Grid(m_ds, i_fg, m_obj_trans);
+            CGridUtils.MakeSoTT(0, i_fg);
+            i_fg.Redraw = true;
             set_textbox_keyword_format_before();
 
         }
-        private void load_data_2_grid_trang_thai_moi()
-        {
-            DateTime v_dat_ngay = m_dtp_tu_ngay.Value.Date;
-            decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
-            decimal v_dc_id_trang_thai = CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN; // CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
-            string v_str_key_word = m_txt_key_word.Text;
-            if (v_str_key_word == m_str_goi_y_so_bill) v_str_key_word = "";
-            m_ds = new DS_V_DM_BILL();
-            if (m_dtp_tu_ngay.Checked == true)
-            {
-                m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
-            }
-            else
-            {
-                m_us.FillDatasetSearch_grid(m_ds, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
-            }
-            m_grv_trang_thai_moi.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_moi, m_obj_trans_2);
-            CGridUtils.MakeSoTT(0, m_grv_trang_thai_moi);
-            m_grv_trang_thai_moi.Redraw = true;
-            set_textbox_keyword_format_before();
-        }
-        private void grid_trang_thai_cu_2us_object(US_V_DM_BILL i_us
-            , int i_grid_row)
+
+        private void grid_2us_object(US_V_DM_BILL i_us
+            , int i_grid_row,C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             DataRow v_dr;
-            v_dr = (DataRow)m_grv_trang_thai_cu.Rows[i_grid_row].UserData;
-            m_obj_trans_1.GridRow2DataRow(i_grid_row, v_dr);
+            v_dr = (DataRow)i_fg.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
             i_us.DataRow2Me(v_dr);
         }
 
 
-        private void us_object2grid_trang_thai_cu(US_V_DM_BILL i_us
-            , int i_grid_row)
+        private void us_object2grid(US_V_DM_BILL i_us
+            , int i_grid_row,C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
-            DataRow v_dr = (DataRow)m_grv_trang_thai_cu.Rows[i_grid_row].UserData;
+            DataRow v_dr = (DataRow)i_fg.Rows[i_grid_row].UserData;
             i_us.Me2DataRow(v_dr);
-            m_obj_trans_1.DataRow2GridRow(v_dr, i_grid_row);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
         }
-        private void grid_trang_thai_moi_2us_object(US_V_DM_BILL i_us
-            , int i_grid_row)
+       
+        
+        private void change_state_only_1(decimal ip_id_trang_thai_cu,decimal ip_id_trang_thai_moi, C1.Win.C1FlexGrid.C1FlexGrid i_fg_left, C1.Win.C1FlexGrid.C1FlexGrid i_fg_right, string ip_str_message)
         {
-            DataRow v_dr;
-            v_dr = (DataRow)m_grv_trang_thai_moi.Rows[i_grid_row].UserData;
-            i_us.DataRow2Me(v_dr);
-            m_obj_trans_2.GridRow2DataRow(i_grid_row, v_dr);
-        }
-
-
-        private void us_object2grid_trang_thai_moi(US_V_DM_BILL i_us
-            , int i_grid_row)
-        {
-            DataRow v_dr = (DataRow)m_grv_trang_thai_moi.Rows[i_grid_row].UserData;
-            i_us.Me2DataRow(v_dr);
-            m_obj_trans_2.DataRow2GridRow(v_dr, i_grid_row);
-        }
-        private void set_data_left_2_right()
-        {
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_cu)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_cu, m_grv_trang_thai_cu.Row)) return;
-            grid_trang_thai_cu_2us_object(m_us, m_grv_trang_thai_cu.Row);
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(i_fg_left)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(i_fg_left, i_fg_left.Row)) return;
+            grid_2us_object(m_us, i_fg_left.Row,i_fg_left);
             //chuyen tu trang thai 1-Da nhan noi bo -> 2-Da chuyen cho CPN
-            change_state_of_bill(m_us.dcID, CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN);
-            load_data_2_grid_trang_thai_moi();
-            load_data_2_grid_trang_thai_cu();
-            BaseMessages.MsgBox_Infor("Bill đã được chuyển cho CPN!");
+            change_state_of_bill(m_us.dcID, ip_id_trang_thai_moi);
+            load_data_2_grid(ip_id_trang_thai_cu, i_fg_left);
+            load_data_2_grid(ip_id_trang_thai_moi, i_fg_right);
+            
+            BaseMessages.MsgBox_Infor(ip_str_message);
 
         }
-        private void set_data_right_2_left()
-        {
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_moi)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_moi, m_grv_trang_thai_moi.Row)) return;
-            grid_trang_thai_moi_2us_object(m_us, m_grv_trang_thai_moi.Row);
-            //chuyen tu trang thai 2-Da chuyen cho CPN -> 1-Da nhan noi bo
-            change_state_of_bill(m_us.dcID, CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO);
-            load_data_2_grid_trang_thai_cu();
-            load_data_2_grid_trang_thai_moi();
 
-        }
-        private void set_data_left_2_right_all()
+        private void change_state_all(decimal ip_id_trang_thai_cu, decimal ip_id_trang_thai_moi, C1.Win.C1FlexGrid.C1FlexGrid i_fg_left, C1.Win.C1FlexGrid.C1FlexGrid i_fg_right, string ip_str_message)
         {
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_cu)) return;
-            for (int i = 1; i < m_grv_trang_thai_cu.Rows.Count; i++)
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(i_fg_left)) return;
+            for (int i = 1; i < i_fg_left.Rows.Count; i++)
             {
-                if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_cu)) return;
-                if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_cu, i)) return;
-                grid_trang_thai_cu_2us_object(m_us, i);
+                if (!CGridUtils.IsThere_Any_NonFixed_Row(i_fg_left)) return;
+                if (!CGridUtils.isValid_NonFixed_RowIndex(i_fg_left, i_fg_left.Row)) return;
+                m_obj_trans = get_trans_object(i_fg_left);
+                m_us = new US_V_DM_BILL();
+                grid_2us_object(m_us, i,i_fg_left);
                 //chuyen tu trang thai 1-Da nhan noi bo -> 2-Da chuyen cho CPN
-                change_state_of_bill(m_us.dcID, CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN);
+                change_state_of_bill(m_us.dcID, ip_id_trang_thai_moi);
             }
-            BaseMessages.MsgBox_Infor("Tất cả Bill đã được chuyển cho CPN!");
-            load_data_2_grid_trang_thai_moi();
-            load_data_2_grid_trang_thai_cu();
+            load_data_2_grid(ip_id_trang_thai_cu, i_fg_left);
+            load_data_2_grid(ip_id_trang_thai_moi, i_fg_right);
+            BaseMessages.MsgBox_Infor(ip_str_message);
 
-        }
-        private void set_data_right_2_left_all()
-        {
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_moi)) return;
-            for (int i = 1; i < m_grv_trang_thai_moi.Rows.Count; i++)
-            {
-                if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_moi)) return;
-                if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_moi, i)) return;
-                grid_trang_thai_moi_2us_object(m_us, i);
-                //chuyen tu trang thai 2-Da chuyen cho CPN -> 1-Da nhan noi bo
-                change_state_of_bill(m_us.dcID, CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO);
-            }
-            load_data_2_grid_trang_thai_moi();
-            load_data_2_grid_trang_thai_cu();
         }
 
         private void change_state_of_bill(decimal ip_dc_id_bill, decimal ip_dc_id_trang_thai)
@@ -233,10 +180,10 @@ namespace BCTKApp
         }
         private void set_initial_form_load()
         {
-            m_obj_trans_1 = get_trans_object(m_grv_trang_thai_cu);
-            load_data_2_grid_trang_thai_cu();
-            m_obj_trans_2 = get_trans_object(m_grv_trang_thai_moi);
-            load_data_2_grid_trang_thai_moi();
+            load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO,m_grv_da_nhan);
+            load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN,m_grv_da_chuyen);
+            load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI,m_grv_bi_tra_lai);
+            load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_NOI_BO_NHAN_TRA_LAI, m_grv_noi_bo_nhan_tra_lai);
         }
         private void set_textbox_keyword_format_before()
         {
@@ -271,6 +218,11 @@ namespace BCTKApp
             m_cmd_right_2_left_all.Click += new EventHandler(m_cmd_right_2_left_all_Click);
             m_cbo_trung_tam.SelectedIndexChanged += new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
             this.m_dtp_tu_ngay.ValueChanged += new System.EventHandler(this.m_dtp_tu_ngay_ValueChanged);
+            m_cmd_da_chuyen_2_tra_lai.Click+=new EventHandler(m_cmd_da_chuyen_2_tra_lai_Click);
+            m_cmd_tra_lai_2_noi_bo_nhan_tl.Click+=new EventHandler(m_cmd_tra_lai_2_noi_bo_nhan_tl_Click);
+            m_cmd_tra_lai_2_da_chuyen.Click+=new EventHandler(m_cmd_tra_lai_2_da_chuyen_Click);
+            m_cmd_nhan_tra_lai_2_tra_lai.Click+=new EventHandler(m_cmd_nhan_tra_lai_2_tra_lai_Click);
+            m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Click+=new EventHandler(m_cmd_tra_lai_2_noi_bo_nhan_tl_all_Click);
         }
 
         private void m_cmd_xem_ds_bill_da_nhan_Click(object sender, EventArgs e)
@@ -317,8 +269,9 @@ namespace BCTKApp
         {
             try
             {
-                load_data_2_grid_trang_thai_cu();
-                load_data_2_grid_trang_thai_moi();
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO,m_grv_da_nhan);
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN,m_grv_da_chuyen);
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI,m_grv_bi_tra_lai);
             }
             catch (Exception v_e)
             {
@@ -330,7 +283,7 @@ namespace BCTKApp
         {
             try
             {
-                set_data_left_2_right();
+                change_state_only_1(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO,CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN,m_grv_da_nhan,m_grv_da_chuyen,"Bill đã được chuyển cho CPN!");
             }
             catch (Exception v_e)
             {
@@ -342,7 +295,7 @@ namespace BCTKApp
         {
             try
             {
-                set_data_right_2_left();
+                change_state_only_1(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN, CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO, m_grv_da_chuyen, m_grv_da_nhan, "Bill đã được chuyển về trạng thái đã nhận nội bộ!");
             }
             catch (Exception v_e)
             {
@@ -354,21 +307,23 @@ namespace BCTKApp
         {
             try
             {
-                m_grv_trang_thai_cu.Focus();
-                set_data_left_2_right_all();
+                m_grv_da_nhan.Focus();
+                change_state_all(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO, CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN, m_grv_da_nhan, m_grv_da_chuyen, "Tất cả Bill đã được chuyển cho CPN!");
             }
             catch (Exception v_e)
             {
 
                 CSystemLog_301.ExceptionHandle(v_e);
+                
             }
         }
         private void m_cmd_right_2_left_all_Click(object sender, EventArgs e)
         {
             try
             {
-                m_grv_trang_thai_moi.Focus();
-                set_data_right_2_left_all();
+                m_grv_da_chuyen.Focus();
+                change_state_all(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN, CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO, m_grv_da_chuyen, m_grv_da_nhan, "tất cả Bill đã được chuyển về trạng thái đã nhận nội bộ!");
+
             }
             catch (Exception v_e)
             {
@@ -397,8 +352,8 @@ namespace BCTKApp
             {
                 if (e.KeyData == Keys.Enter)
                 {
-                    load_data_2_grid_trang_thai_cu();
-                    load_data_2_grid_trang_thai_moi();
+                    //load_data_2_grid_da_nhan();
+                    //load_data_2_grid_da_chuyen();
                 }
                 else
                 {
@@ -441,8 +396,8 @@ namespace BCTKApp
         {
             try
             {
-                load_data_2_grid_trang_thai_moi();
-                load_data_2_grid_trang_thai_cu();
+                //load_data_2_grid_da_chuyen();
+                //load_data_2_grid_da_nhan();
             }
             catch (Exception v_e)
             {
@@ -456,8 +411,69 @@ namespace BCTKApp
         {
             try
             {
-                load_data_2_grid_trang_thai_cu();
-                load_data_2_grid_trang_thai_moi();
+                //load_data_2_grid_da_nhan();
+                //load_data_2_grid_da_chuyen();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_da_chuyen_2_tra_lai_Click(object sender, EventArgs e) 
+        {
+            try
+            {
+                change_state_only_1(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN, CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI, m_grv_da_chuyen, m_grv_bi_tra_lai, "Bạn đã cập nhật trạng thái thành công!");
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_tra_lai_2_noi_bo_nhan_tl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                change_state_only_1(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI, CONST_ID_TRANG_THAI_THU.ID_NOI_BO_NHAN_TRA_LAI, m_grv_bi_tra_lai, m_grv_noi_bo_nhan_tra_lai, "Bạn đã cập nhật trạng thái thành công!");
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_tra_lai_2_da_chuyen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                change_state_only_1(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI, CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN, m_grv_bi_tra_lai, m_grv_da_chuyen, "Bạn đã cập nhật trạng thái thành công!");
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_nhan_tra_lai_2_tra_lai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                change_state_only_1(CONST_ID_TRANG_THAI_THU.ID_NOI_BO_NHAN_TRA_LAI, CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI, m_grv_noi_bo_nhan_tra_lai, m_grv_bi_tra_lai, "Bạn đã cập nhật trạng thái thành công!");
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_tra_lai_2_noi_bo_nhan_tl_all_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_grv_bi_tra_lai.Focus();
+                change_state_all(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI, CONST_ID_TRANG_THAI_THU.ID_NOI_BO_NHAN_TRA_LAI, m_grv_bi_tra_lai, m_grv_noi_bo_nhan_tra_lai, "Tất cả bill đã cập nhật trạng thái thành công!");
             }
             catch (Exception v_e)
             {

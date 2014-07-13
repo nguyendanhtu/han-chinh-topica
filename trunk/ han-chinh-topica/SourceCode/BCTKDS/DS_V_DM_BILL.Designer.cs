@@ -627,7 +627,6 @@ namespace BCTKDS {
                 this.columnSO_BILL.AllowDBNull = false;
                 this.columnSO_BILL.MaxLength = 50;
                 this.columnID_PHONG_BAN.AllowDBNull = false;
-                this.columnMA_PHONG_BAN.ReadOnly = true;
                 this.columnMA_PHONG_BAN.MaxLength = 15;
                 this.columnTEN_PHONG_BAN.MaxLength = 250;
                 this.columnNGUOI_GUI.MaxLength = 50;
