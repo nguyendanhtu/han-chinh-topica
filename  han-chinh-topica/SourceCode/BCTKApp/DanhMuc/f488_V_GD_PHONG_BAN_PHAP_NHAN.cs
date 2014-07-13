@@ -471,9 +471,9 @@ this.PerformLayout();
 		}
 
 
-		private void insert_v_dm_phong_ban_phap_nhan(){			
-		//	frm_V_GD_PHONG_BAN_PHAP_NHAN_DE v_fDE = new  frm_V_GD_PHONG_BAN_PHAP_NHAN_DE();								
-		//	v_fDE.display();
+		private void insert_v_dm_phong_ban_phap_nhan(){
+            f489_V_DM_PHONG_BAN_PHAP_NHAN_DE v_fDE = new f489_V_DM_PHONG_BAN_PHAP_NHAN_DE();
+            v_fDE.Display();
 			load_data_2_grid();
 		}
 
@@ -481,8 +481,8 @@ this.PerformLayout();
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	frm_V_GD_PHONG_BAN_PHAP_NHAN_DE v_fDE = new frm_V_GD_PHONG_BAN_PHAP_NHAN_DE();
-		//	v_fDE.display(m_us);
+            f489_V_DM_PHONG_BAN_PHAP_NHAN_DE v_fDE = new f489_V_DM_PHONG_BAN_PHAP_NHAN_DE();
+            v_fDE.display(m_us);
 			load_data_2_grid();
 		}
 				
