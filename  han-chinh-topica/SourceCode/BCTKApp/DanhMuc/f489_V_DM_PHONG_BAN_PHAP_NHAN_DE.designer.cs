@@ -42,6 +42,7 @@
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_header2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,16 +51,16 @@
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(12, 9);
+            this.m_lbl_header.Location = new System.Drawing.Point(96, 9);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(408, 19);
+            this.m_lbl_header.Size = new System.Drawing.Size(175, 19);
             this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "CẬP NHẬT THÔNG TIN TRUNG TÂM THEO PHÁP NHÂN";
+            this.m_lbl_header.Text = "CẬP NHẬT THÔNG TIN";
             // 
             // m_lbl_phap_nhan
             // 
             this.m_lbl_phap_nhan.AutoSize = true;
-            this.m_lbl_phap_nhan.Location = new System.Drawing.Point(64, 74);
+            this.m_lbl_phap_nhan.Location = new System.Drawing.Point(32, 75);
             this.m_lbl_phap_nhan.Name = "m_lbl_phap_nhan";
             this.m_lbl_phap_nhan.Size = new System.Drawing.Size(59, 13);
             this.m_lbl_phap_nhan.TabIndex = 0;
@@ -68,7 +69,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 115);
+            this.label3.Location = new System.Drawing.Point(32, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 0;
@@ -77,7 +78,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(64, 159);
+            this.label4.Location = new System.Drawing.Point(32, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 0;
@@ -86,7 +87,7 @@
             // m_cbo_phap_nhan
             // 
             this.m_cbo_phap_nhan.FormattingEnabled = true;
-            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(129, 71);
+            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(100, 72);
             this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
             this.m_cbo_phap_nhan.Size = new System.Drawing.Size(223, 21);
             this.m_cbo_phap_nhan.TabIndex = 1;
@@ -94,14 +95,14 @@
             // m_cbo_trung_tam
             // 
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(129, 112);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(100, 99);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(223, 21);
             this.m_cbo_trung_tam.TabIndex = 1;
             // 
             // m_txt_ty_trong
             // 
-            this.m_txt_ty_trong.Location = new System.Drawing.Point(129, 156);
+            this.m_txt_ty_trong.Location = new System.Drawing.Point(100, 126);
             this.m_txt_ty_trong.Name = "m_txt_ty_trong";
             this.m_txt_ty_trong.Size = new System.Drawing.Size(79, 20);
             this.m_txt_ty_trong.TabIndex = 2;
@@ -138,10 +139,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 225);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 188);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(455, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(359, 36);
             this.m_pnl_out_place_dm.TabIndex = 34;
             // 
             // m_cmd_save
@@ -153,7 +154,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(275, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(179, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
@@ -169,7 +170,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(363, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(267, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -179,17 +180,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(211, 159);
+            this.label1.Location = new System.Drawing.Point(179, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "(%)";
             // 
+            // m_lbl_header2
+            // 
+            this.m_lbl_header2.AutoSize = true;
+            this.m_lbl_header2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header2.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_header2.Location = new System.Drawing.Point(65, 28);
+            this.m_lbl_header2.Name = "m_lbl_header2";
+            this.m_lbl_header2.Size = new System.Drawing.Size(242, 19);
+            this.m_lbl_header2.TabIndex = 0;
+            this.m_lbl_header2.Text = " TRUNG TÂM THEO PHÁP NHÂN";
+            // 
             // f489_V_DM_PHONG_BAN_PHAP_NHAN_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 261);
+            this.ClientSize = new System.Drawing.Size(359, 224);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_ty_trong);
             this.Controls.Add(this.m_cbo_trung_tam);
@@ -198,12 +210,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.m_lbl_phap_nhan);
+            this.Controls.Add(this.m_lbl_header2);
             this.Controls.Add(this.m_lbl_header);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(471, 300);
-            this.MinimumSize = new System.Drawing.Size(471, 300);
+            this.MinimumSize = new System.Drawing.Size(375, 263);
             this.Name = "f489_V_DM_PHONG_BAN_PHAP_NHAN_DE";
-            this.Text = "F489 - Cập nhật thông tin trung tâm theo pháp nhân";
+            this.Text = "F489 - Cập nhật thông tin TTPN ";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,5 +237,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label m_lbl_header2;
     }
 }
