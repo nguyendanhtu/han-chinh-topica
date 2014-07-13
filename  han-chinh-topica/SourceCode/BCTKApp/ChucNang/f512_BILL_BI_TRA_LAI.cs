@@ -254,7 +254,7 @@ namespace BCTKApp
             this.m_dtp_den_ngay.RightToLeftLayout = true;
             this.m_dtp_den_ngay.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_den_ngay.TabIndex = 2;
-            this.m_dtp_den_ngay.Value = new System.DateTime(2014, 7, 12, 23, 56, 5, 0);
+            this.m_dtp_den_ngay.Value = new System.DateTime(2014, 7, 12, 0, 0, 0, 0);
             // 
             // m_dtp_tu_ngay
             // 
@@ -346,9 +346,12 @@ namespace BCTKApp
             m_grv_bill.Tree.Column = (int)e_col_Number.NGAY_GUI;
             m_grv_bill.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
             m_grv_bill.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.CompleteLeaf;
-            m_dtp_den_ngay.Text = m_dtp_den_ngay.Value.ToString();
-            m_dtp_tu_ngay.Text = m_dtp_tu_ngay.Value.ToString();
 			set_define_events();
+            DateTime v_dat_tu_ngay = new DateTime(2014, 1, 30);
+            m_dtp_tu_ngay.Value = v_dat_tu_ngay.Date;
+            //DateTime v_dat_den_ngay = new DateTime();
+            //v_dat_den_ngay = DateTime.Now;
+            //m_dtp_den_ngay.Value = v_dat_den_ngay.Date;
 			this.KeyPreview = true;		
 		}
 		private void set_initial_form_load(){						
