@@ -39,6 +39,7 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_txt_ma_phong_ban = new System.Windows.Forms.TextBox();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
+            this.m_chk_close_form = new System.Windows.Forms.CheckBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +100,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 161);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 174);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(525, 36);
@@ -153,11 +154,22 @@
             this.m_lbl_tieu_de.Text = "Cập nhật thông tin trung tâm";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // m_chk_close_form
+            // 
+            this.m_chk_close_form.AutoSize = true;
+            this.m_chk_close_form.Location = new System.Drawing.Point(190, 141);
+            this.m_chk_close_form.Name = "m_chk_close_form";
+            this.m_chk_close_form.Size = new System.Drawing.Size(196, 17);
+            this.m_chk_close_form.TabIndex = 22;
+            this.m_chk_close_form.Text = "Chọn để khi lưu không tắt hộp thoại";
+            this.m_chk_close_form.UseVisualStyleBackColor = true;
+            // 
             // f801_DM_PHONG_BAN_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 197);
+            this.ClientSize = new System.Drawing.Size(525, 210);
+            this.Controls.Add(this.m_chk_close_form);
             this.Controls.Add(this.m_lbl_tieu_de);
             this.Controls.Add(this.m_txt_ma_phong_ban);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -183,5 +195,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.TextBox m_txt_ma_phong_ban;
         private System.Windows.Forms.Label m_lbl_tieu_de;
+        private System.Windows.Forms.CheckBox m_chk_close_form;
     }
 }
