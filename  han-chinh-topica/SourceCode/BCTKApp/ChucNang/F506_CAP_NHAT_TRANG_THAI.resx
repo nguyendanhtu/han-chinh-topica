@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="m_grv_trang_thai_cu.ColumnInfo" xml:space="preserve">
+  <data name="m_grv_da_nhan.ColumnInfo" xml:space="preserve">
     <value>6,1,0,0,0,85,Columns:0{Width:33;Caption:"STT";TextAlign:CenterCenter;TextAlignFixed:CenterCenter;}	1{Width:200;Name:"TEN_PHONG_BAN";Caption:"Tên trung tâm";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Name:"NGAY_GUI";Caption:"Ngày gửi";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Name:"SO_BILL";Caption:"Số bill";DataType:System.String;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	4{Width:120;Name:"NGUOI_NHAN";Caption:"Người nhận";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	5{Width:120;Name:"NGUOI_GUI";Caption:"Người gửi";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	</value>
   </data>
-  <data name="m_grv_trang_thai_cu.Styles" xml:space="preserve">
+  <data name="m_grv_da_nhan.Styles" xml:space="preserve">
     <value>Normal{Font:Arial, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>
   </data>
   <metadata name="ImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -128,10 +128,10 @@
   </metadata>
   <data name="ImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAO
-        HwAAAk1TRnQBSQFMAgEBFgEAAbwBAAG8AQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        HwAAAk1TRnQBSQFMAgEBFgEAAcwBAAHMAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAAWADAAEBAQABCAYAARgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -266,10 +266,22 @@
         AQMBgAEPAYEB/wHAAQ8BwAEHAYgBHwHDA/8BwAEPAZ8B/ws=
 </value>
   </data>
-  <data name="m_grv_trang_thai_moi.ColumnInfo" xml:space="preserve">
+  <data name="m_grv_da_chuyen.ColumnInfo" xml:space="preserve">
     <value>6,1,0,0,0,85,Columns:0{Width:29;Caption:"STT";TextAlign:CenterCenter;TextAlignFixed:CenterCenter;}	1{Width:200;Name:"TEN_PHONG_BAN";Caption:"Tên trung tâm";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Name:"NGAY_GUI";Caption:"Ngày gửi";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Name:"SO_BILL";Caption:"Số bill";DataType:System.String;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	4{Width:120;Name:"NGUOI_NHAN";Caption:"Người nhận";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	5{Width:120;Name:"NGUOI_GUI";Caption:"Người gửi";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	</value>
   </data>
-  <data name="m_grv_trang_thai_moi.Styles" xml:space="preserve">
+  <data name="m_grv_da_chuyen.Styles" xml:space="preserve">
+    <value>Normal{Font:Arial, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>
+  </data>
+  <data name="m_grv_noi_bo_nhan_tra_lai.ColumnInfo" xml:space="preserve">
+    <value>6,1,0,0,0,85,Columns:0{Width:29;Caption:"STT";TextAlign:CenterCenter;TextAlignFixed:CenterCenter;}	1{Width:200;Name:"TEN_PHONG_BAN";Caption:"Tên trung tâm";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Name:"NGAY_GUI";Caption:"Ngày gửi";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Name:"SO_BILL";Caption:"Số bill";DataType:System.String;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	4{Width:120;Name:"NGUOI_NHAN";Caption:"Người nhận";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	5{Width:120;Name:"NGUOI_GUI";Caption:"Người gửi";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	</value>
+  </data>
+  <data name="m_grv_noi_bo_nhan_tra_lai.Styles" xml:space="preserve">
+    <value>Normal{Font:Arial, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>
+  </data>
+  <data name="m_grv_bi_tra_lai.ColumnInfo" xml:space="preserve">
+    <value>6,1,0,0,0,85,Columns:0{Width:29;Caption:"STT";TextAlign:CenterCenter;TextAlignFixed:CenterCenter;}	1{Width:200;Name:"TEN_PHONG_BAN";Caption:"Tên trung tâm";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Name:"NGAY_GUI";Caption:"Ngày gửi";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Name:"SO_BILL";Caption:"Số bill";DataType:System.String;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	4{Width:120;Name:"NGUOI_NHAN";Caption:"Người nhận";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	5{Width:120;Name:"NGUOI_GUI";Caption:"Người gửi";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	</value>
+  </data>
+  <data name="m_grv_bi_tra_lai.Styles" xml:space="preserve">
     <value>Normal{Font:Arial, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
