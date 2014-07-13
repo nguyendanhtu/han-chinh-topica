@@ -58,38 +58,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BCTKApp.exe" size="5296128">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BCTKApp.exe" size="5640192">
       <assemblyIdentity name="BCTKApp" version="1.0.0.2" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>9u82vxGNj9kRLY8vlC/3IYYVH4U=</dsig:DigestValue>
+        <dsig:DigestValue>YckvjZsurqW2nxbNprGNm+LRuuQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BCTKDS.dll" size="1040384">
-      <assemblyIdentity name="BCTKDS" version="1.0.5307.5386" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BCTKDS.dll" size="1101824">
+      <assemblyIdentity name="BCTKDS" version="1.0.5307.34622" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>/67T0uacFhEda9798NHk9BmVR7A=</dsig:DigestValue>
+        <dsig:DigestValue>acZtaw0WajVFistA3ijgQ2Tj/to=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BCTKUS.dll" size="135168">
-      <assemblyIdentity name="BCTKUS" version="1.0.5307.5389" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BCTKUS.dll" size="139264">
+      <assemblyIdentity name="BCTKUS" version="1.0.5307.34626" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>fZJgdAnToXdLRIHk51a5XxE2FhE=</dsig:DigestValue>
+        <dsig:DigestValue>6pCQnym/O9LI3cF6mQb8JzQfmxU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -269,7 +269,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>MgpsZZbeFr+g3DxCCBdRMASD2pg=</dsig:DigestValue>
+        <dsig:DigestValue>63o1RZb2g9g5Vx94g3IlArxKfLM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -281,7 +281,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>f3y7kBrnD4TJ8ZixHiGkFZjOMDM=</dsig:DigestValue>
+        <dsig:DigestValue>RzGSTeUAZcGmvdJd1ww7nY2kHiI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -293,7 +293,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ggDQQ+6o5K86gbWF6SBfbTwfmm4=</dsig:DigestValue>
+        <dsig:DigestValue>eAQnYj/K+XJTAuhSC3fSVOCJzrs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -305,7 +305,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>2AabRxcQUvMt6cB3g0M2O+54NVA=</dsig:DigestValue>
+        <dsig:DigestValue>GPuzppERrjUBp/7GsqsXbDxacOA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -317,7 +317,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>bpwMzgJdYRxL9ycmTenaTxgxWGw=</dsig:DigestValue>
+        <dsig:DigestValue>s6t53/BCdFisaEFRsUfLeF3/NMA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -329,7 +329,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>/uI4b5F8rkZwLkE+Rj47jPvYHKg=</dsig:DigestValue>
+        <dsig:DigestValue>DHVi+Or+ahPapUcwcXKpLFZgq1c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -341,7 +341,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Wm9idUKkY0MPin/40rRdqEJkl+U=</dsig:DigestValue>
+        <dsig:DigestValue>eA9n8Ju37XxoohzgkMoy697Wh6c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

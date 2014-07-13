@@ -11,14 +11,14 @@
     <deploymentProvider codebase="http://210.245.89.37:85/BCTK/BCTKApp.application" />
   </deployment>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="BCTKApp.exe.manifest" size="23877">
+    <dependentAssembly dependencyType="install" codebase="BCTKApp.exe.manifest" size="23879">
       <assemblyIdentity name="BCTKApp.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>HN/n1pc1Kl764PiEXcdvJh9XyW0=</dsig:DigestValue>
+        <dsig:DigestValue>GklibxmUm6K5bCSyGMSovDTBPHE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

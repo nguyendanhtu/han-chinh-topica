@@ -53,6 +53,9 @@ namespace BCTKApp
             m_cmd_phong_ban_phap_nhan.Click += new System.EventHandler(this.m_cmd_phong_ban_phap_nhan_Click);
             m_cmd_bc_thu_tra_lai.Click+=new EventHandler(m_cmd_bc_thu_tra_lai_Click);
             m_cmd_dinh_muc_tung_phong_ban.Click += new EventHandler(m_cmd_dinh_muc_tung_phong_ban_Click);
+            m_cmd_tong_hop_bill_theo_phong_ban.Click += new EventHandler(m_cmd_tong_hop_bill_theo_phong_ban_Click);
+            m_cmd_bc_tinh_hinh_CPN.Click += new EventHandler(m_cmd_bc_tinh_hinh_CPN_Click);
+            m_cmd_bc_chi_phi_theo_phap_nhan.Click += new EventHandler(m_cmd_bc_chi_phi_theo_phap_nhan_Click);
         }
 
         void f400_menu_main_Load(object sender, EventArgs e)
