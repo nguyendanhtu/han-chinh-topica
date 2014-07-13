@@ -45,6 +45,8 @@ namespace BCTKApp
         private Label m_lbl_ten_phap_nhan;
         private Label m_lbl_tu_khoa;
         private TextBox m_txt_tim_kiem;
+        private ComboBox m_cbo_trung_tam;
+        private Label label1;
 		private System.ComponentModel.IContainer components;
 
 		public f488_V_GD_PHONG_BAN_PHAP_NHAN()
@@ -82,213 +84,235 @@ namespace BCTKApp
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f488_V_GD_PHONG_BAN_PHAP_NHAN));
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_lbl_header = new System.Windows.Forms.Label();
-            this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
-            this.m_lbl_ten_phap_nhan = new System.Windows.Forms.Label();
-            this.m_lbl_tu_khoa = new System.Windows.Forms.Label();
-            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
-            this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // ImageList
-            // 
-            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList.Images.SetKeyName(0, "");
-            this.ImageList.Images.SetKeyName(1, "");
-            this.ImageList.Images.SetKeyName(2, "");
-            this.ImageList.Images.SetKeyName(3, "");
-            this.ImageList.Images.SetKeyName(4, "");
-            this.ImageList.Images.SetKeyName(5, "");
-            this.ImageList.Images.SetKeyName(6, "");
-            this.ImageList.Images.SetKeyName(7, "");
-            this.ImageList.Images.SetKeyName(8, "");
-            this.ImageList.Images.SetKeyName(9, "");
-            this.ImageList.Images.SetKeyName(10, "");
-            this.ImageList.Images.SetKeyName(11, "");
-            this.ImageList.Images.SetKeyName(12, "");
-            this.ImageList.Images.SetKeyName(13, "");
-            this.ImageList.Images.SetKeyName(14, "");
-            this.ImageList.Images.SetKeyName(15, "");
-            this.ImageList.Images.SetKeyName(16, "");
-            this.ImageList.Images.SetKeyName(17, "");
-            this.ImageList.Images.SetKeyName(18, "");
-            this.ImageList.Images.SetKeyName(19, "");
-            this.ImageList.Images.SetKeyName(20, "");
-            this.ImageList.Images.SetKeyName(21, "");
-            // 
-            // m_pnl_out_place_dm
-            // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
-            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
-            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(698, 36);
-            this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(342, 4);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
-            this.m_cmd_insert.Text = "&Thêm";
-            // 
-            // m_cmd_update
-            // 
-            this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_update.ImageIndex = 3;
-            this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(430, 4);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 13;
-            this.m_cmd_update.Text = "&Sửa";
-            // 
-            // m_cmd_view
-            // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xem";
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_delete.ImageIndex = 4;
-            this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(518, 4);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 14;
-            this.m_cmd_delete.Text = "&Xoá";
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(606, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
-            this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 112);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(698, 261);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
-            // 
-            // m_lbl_header
-            // 
-            this.m_lbl_header.AutoSize = true;
-            this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(146, 9);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(410, 22);
-            this.m_lbl_header.TabIndex = 21;
-            this.m_lbl_header.Text = "DANH MỤC PHÒNG BAN THEO PHÁP NHÂN";
-            // 
-            // m_cbo_phap_nhan
-            // 
-            this.m_cbo_phap_nhan.FormattingEnabled = true;
-            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(221, 53);
-            this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
-            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(272, 21);
-            this.m_cbo_phap_nhan.TabIndex = 22;
-            // 
-            // m_lbl_ten_phap_nhan
-            // 
-            this.m_lbl_ten_phap_nhan.AutoSize = true;
-            this.m_lbl_ten_phap_nhan.Location = new System.Drawing.Point(147, 56);
-            this.m_lbl_ten_phap_nhan.Name = "m_lbl_ten_phap_nhan";
-            this.m_lbl_ten_phap_nhan.Size = new System.Drawing.Size(59, 13);
-            this.m_lbl_ten_phap_nhan.TabIndex = 23;
-            this.m_lbl_ten_phap_nhan.Text = "Pháp nhân";
-            // 
-            // m_lbl_tu_khoa
-            // 
-            this.m_lbl_tu_khoa.AutoSize = true;
-            this.m_lbl_tu_khoa.Location = new System.Drawing.Point(147, 89);
-            this.m_lbl_tu_khoa.Name = "m_lbl_tu_khoa";
-            this.m_lbl_tu_khoa.Size = new System.Drawing.Size(47, 13);
-            this.m_lbl_tu_khoa.TabIndex = 23;
-            this.m_lbl_tu_khoa.Text = "Từ khóa";
-            // 
-            // m_txt_tim_kiem
-            // 
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(221, 86);
-            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
-            this.m_txt_tim_kiem.TabIndex = 24;
-            // 
-            // f488_V_GD_PHONG_BAN_PHAP_NHAN
-            // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(698, 409);
-            this.Controls.Add(this.m_txt_tim_kiem);
-            this.Controls.Add(this.m_lbl_tu_khoa);
-            this.Controls.Add(this.m_lbl_ten_phap_nhan);
-            this.Controls.Add(this.m_cbo_phap_nhan);
-            this.Controls.Add(this.m_lbl_header);
-            this.Controls.Add(this.m_fg);
-            this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Name = "f488_V_GD_PHONG_BAN_PHAP_NHAN";
-            this.Text = "F488- Danh mục phòng ban theo pháp nhân";
-            this.Load += new System.EventHandler(this.frm_V_GD_PHONG_BAN_PHAP_NHAN_Load);
-            this.m_pnl_out_place_dm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+this.components = new System.ComponentModel.Container();
+System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f488_V_GD_PHONG_BAN_PHAP_NHAN));
+this.ImageList = new System.Windows.Forms.ImageList(this.components);
+this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
+this.m_cmd_update = new SIS.Controls.Button.SiSButton();
+this.m_cmd_view = new SIS.Controls.Button.SiSButton();
+this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
+this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+this.m_lbl_header = new System.Windows.Forms.Label();
+this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
+this.m_lbl_ten_phap_nhan = new System.Windows.Forms.Label();
+this.m_lbl_tu_khoa = new System.Windows.Forms.Label();
+this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
+this.label1 = new System.Windows.Forms.Label();
+this.m_pnl_out_place_dm.SuspendLayout();
+((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+this.SuspendLayout();
+// 
+// ImageList
+// 
+this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+this.ImageList.Images.SetKeyName(0, "");
+this.ImageList.Images.SetKeyName(1, "");
+this.ImageList.Images.SetKeyName(2, "");
+this.ImageList.Images.SetKeyName(3, "");
+this.ImageList.Images.SetKeyName(4, "");
+this.ImageList.Images.SetKeyName(5, "");
+this.ImageList.Images.SetKeyName(6, "");
+this.ImageList.Images.SetKeyName(7, "");
+this.ImageList.Images.SetKeyName(8, "");
+this.ImageList.Images.SetKeyName(9, "");
+this.ImageList.Images.SetKeyName(10, "");
+this.ImageList.Images.SetKeyName(11, "");
+this.ImageList.Images.SetKeyName(12, "");
+this.ImageList.Images.SetKeyName(13, "");
+this.ImageList.Images.SetKeyName(14, "");
+this.ImageList.Images.SetKeyName(15, "");
+this.ImageList.Images.SetKeyName(16, "");
+this.ImageList.Images.SetKeyName(17, "");
+this.ImageList.Images.SetKeyName(18, "");
+this.ImageList.Images.SetKeyName(19, "");
+this.ImageList.Images.SetKeyName(20, "");
+this.ImageList.Images.SetKeyName(21, "");
+// 
+// m_pnl_out_place_dm
+// 
+this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
+this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
+this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
+this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
+this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
+this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
+this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
+this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
+this.m_pnl_out_place_dm.Size = new System.Drawing.Size(698, 36);
+this.m_pnl_out_place_dm.TabIndex = 19;
+// 
+// m_cmd_insert
+// 
+this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
+this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+this.m_cmd_insert.ImageIndex = 2;
+this.m_cmd_insert.ImageList = this.ImageList;
+this.m_cmd_insert.Location = new System.Drawing.Point(342, 4);
+this.m_cmd_insert.Name = "m_cmd_insert";
+this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
+this.m_cmd_insert.TabIndex = 12;
+this.m_cmd_insert.Text = "&Thêm";
+// 
+// m_cmd_update
+// 
+this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
+this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+this.m_cmd_update.ImageIndex = 3;
+this.m_cmd_update.ImageList = this.ImageList;
+this.m_cmd_update.Location = new System.Drawing.Point(430, 4);
+this.m_cmd_update.Name = "m_cmd_update";
+this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
+this.m_cmd_update.TabIndex = 13;
+this.m_cmd_update.Text = "&Sửa";
+// 
+// m_cmd_view
+// 
+this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
+this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
+this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+this.m_cmd_view.ImageIndex = 18;
+this.m_cmd_view.ImageList = this.ImageList;
+this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
+this.m_cmd_view.Name = "m_cmd_view";
+this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
+this.m_cmd_view.TabIndex = 21;
+this.m_cmd_view.Text = "Xem";
+this.m_cmd_view.Visible = false;
+// 
+// m_cmd_delete
+// 
+this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
+this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+this.m_cmd_delete.ImageIndex = 4;
+this.m_cmd_delete.ImageList = this.ImageList;
+this.m_cmd_delete.Location = new System.Drawing.Point(518, 4);
+this.m_cmd_delete.Name = "m_cmd_delete";
+this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
+this.m_cmd_delete.TabIndex = 14;
+this.m_cmd_delete.Text = "&Xoá";
+// 
+// m_cmd_exit
+// 
+this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+this.m_cmd_exit.ImageIndex = 12;
+this.m_cmd_exit.ImageList = this.ImageList;
+this.m_cmd_exit.Location = new System.Drawing.Point(606, 4);
+this.m_cmd_exit.Name = "m_cmd_exit";
+this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+this.m_cmd_exit.TabIndex = 11;
+this.m_cmd_exit.Text = "Thoát (Esc)";
+// 
+// m_fg
+// 
+this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+this.m_fg.Location = new System.Drawing.Point(0, 112);
+this.m_fg.Name = "m_fg";
+this.m_fg.Size = new System.Drawing.Size(698, 261);
+this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+this.m_fg.TabIndex = 20;
+// 
+// m_lbl_header
+// 
+this.m_lbl_header.AutoSize = true;
+this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
+this.m_lbl_header.Location = new System.Drawing.Point(146, 9);
+this.m_lbl_header.Name = "m_lbl_header";
+this.m_lbl_header.Size = new System.Drawing.Size(410, 22);
+this.m_lbl_header.TabIndex = 21;
+this.m_lbl_header.Text = "DANH MỤC PHÒNG BAN THEO PHÁP NHÂN";
+// 
+// m_cbo_phap_nhan
+// 
+this.m_cbo_phap_nhan.FormattingEnabled = true;
+this.m_cbo_phap_nhan.Location = new System.Drawing.Point(107, 45);
+this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
+this.m_cbo_phap_nhan.Size = new System.Drawing.Size(193, 21);
+this.m_cbo_phap_nhan.TabIndex = 22;
+// 
+// m_lbl_ten_phap_nhan
+// 
+this.m_lbl_ten_phap_nhan.AutoSize = true;
+this.m_lbl_ten_phap_nhan.Location = new System.Drawing.Point(33, 48);
+this.m_lbl_ten_phap_nhan.Name = "m_lbl_ten_phap_nhan";
+this.m_lbl_ten_phap_nhan.Size = new System.Drawing.Size(59, 13);
+this.m_lbl_ten_phap_nhan.TabIndex = 23;
+this.m_lbl_ten_phap_nhan.Text = "Pháp nhân";
+// 
+// m_lbl_tu_khoa
+// 
+this.m_lbl_tu_khoa.AutoSize = true;
+this.m_lbl_tu_khoa.Location = new System.Drawing.Point(147, 89);
+this.m_lbl_tu_khoa.Name = "m_lbl_tu_khoa";
+this.m_lbl_tu_khoa.Size = new System.Drawing.Size(47, 13);
+this.m_lbl_tu_khoa.TabIndex = 23;
+this.m_lbl_tu_khoa.Text = "Từ khóa";
+// 
+// m_txt_tim_kiem
+// 
+this.m_txt_tim_kiem.Location = new System.Drawing.Point(221, 86);
+this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
+this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
+this.m_txt_tim_kiem.TabIndex = 24;
+// 
+// m_cbo_trung_tam
+// 
+this.m_cbo_trung_tam.FormattingEnabled = true;
+this.m_cbo_trung_tam.Location = new System.Drawing.Point(413, 45);
+this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
+this.m_cbo_trung_tam.Size = new System.Drawing.Size(244, 21);
+this.m_cbo_trung_tam.TabIndex = 22;
+// 
+// label1
+// 
+this.label1.AutoSize = true;
+this.label1.Location = new System.Drawing.Point(339, 48);
+this.label1.Name = "label1";
+this.label1.Size = new System.Drawing.Size(55, 13);
+this.label1.TabIndex = 23;
+this.label1.Text = "Trung tâm";
+// 
+// f488_V_GD_PHONG_BAN_PHAP_NHAN
+// 
+this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+this.ClientSize = new System.Drawing.Size(698, 409);
+this.Controls.Add(this.m_txt_tim_kiem);
+this.Controls.Add(this.m_lbl_tu_khoa);
+this.Controls.Add(this.label1);
+this.Controls.Add(this.m_lbl_ten_phap_nhan);
+this.Controls.Add(this.m_cbo_trung_tam);
+this.Controls.Add(this.m_cbo_phap_nhan);
+this.Controls.Add(this.m_lbl_header);
+this.Controls.Add(this.m_fg);
+this.Controls.Add(this.m_pnl_out_place_dm);
+this.Name = "f488_V_GD_PHONG_BAN_PHAP_NHAN";
+this.Text = "F488- Danh mục phòng ban theo pháp nhân";
+this.Load += new System.EventHandler(this.frm_V_GD_PHONG_BAN_PHAP_NHAN_Load);
+this.m_pnl_out_place_dm.ResumeLayout(false);
+((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+this.ResumeLayout(false);
+this.PerformLayout();
 
 		}
 		#endregion
@@ -343,6 +367,7 @@ namespace BCTKApp
 			set_define_events();
 			this.KeyPreview = true;
             load_cbo_phap_nhan();
+            load_cbo_trung_tam();
 		}
 
         private void load_cbo_phap_nhan()
@@ -360,6 +385,23 @@ namespace BCTKApp
             v_dr[DM_PHAP_NHAN.TEN_PHAP_NHAN] = "Tất cả";
             v_ds.DM_PHAP_NHAN.Rows.InsertAt(v_dr, 0);
             m_cbo_phap_nhan.SelectedIndex = 0;
+            flag = true;
+        }
+        private void load_cbo_trung_tam()
+        {
+            flag = false;
+            US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+            v_us.FillDataset(v_ds);
+            m_cbo_trung_tam.DataSource = v_ds.DM_PHONG_BAN;
+            m_cbo_trung_tam.ValueMember = DM_PHONG_BAN.ID;
+            m_cbo_trung_tam.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
+            DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
+            v_dr[DM_PHONG_BAN.ID] = -1;
+            v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
+            v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
+            v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
+            m_cbo_trung_tam.SelectedIndex = 0;
             flag = true;
         }
 		private void set_initial_form_load(){						
@@ -398,6 +440,7 @@ namespace BCTKApp
         {
             decimal v_id_phap_nhan = CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue);
             string v_str_tu_khoa = m_txt_tim_kiem.Text.Trim();
+            decimal v_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             m_ds = new DS_V_DM_PHONG_BAN_PHAP_NHAN();
             m_us.FillDataset(m_ds, v_id_phap_nhan, v_str_tu_khoa);
             m_fg.Redraw = false;
@@ -478,6 +521,7 @@ namespace BCTKApp
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cbo_phap_nhan.SelectedValueChanged += new EventHandler(m_cbo_phap_nhan_SelectedValueChanged);
             m_txt_tim_kiem.TextChanged += new EventHandler(m_txt_tim_kiem_TextChanged);
+            m_cbo_trung_tam.SelectedValueChanged += new EventHandler(m_cbo_trung_tam_SelectedValueChanged);
 		}
 		#endregion
 
@@ -562,6 +606,19 @@ namespace BCTKApp
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             } 
+        }
+        private void m_cbo_trung_tam_SelectedValueChanged(object sender, EventArgs e)
+        {
+               try
+            {
+                if(flag == true)
+                tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         }
 
 	}
