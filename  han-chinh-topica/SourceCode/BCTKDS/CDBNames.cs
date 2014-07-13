@@ -300,6 +300,13 @@ namespace BCTKDS.CDBNames
         public const string GHI_CHU = "GHI_CHU";
     }
 
+    public class DM_PHONG_BAN_PHAP_NHAN
+    {
+        public const string ID = "ID";
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string TY_TRONG = "TY_TRONG";
+    }
 
 
     #region HE_THONG

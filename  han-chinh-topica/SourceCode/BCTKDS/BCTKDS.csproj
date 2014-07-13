@@ -179,6 +179,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_PHONG_BAN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_PHONG_BAN_PHAP_NHAN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_PHONG_BAN_PHAP_NHAN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DOC_COLUMN_COMMENT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -488,6 +493,17 @@
     </None>
     <None Include="DS_DM_PHONG_BAN.xss">
       <DependentUpon>DS_DM_PHONG_BAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_PHONG_BAN_PHAP_NHAN.xsc">
+      <DependentUpon>DS_DM_PHONG_BAN_PHAP_NHAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_PHONG_BAN_PHAP_NHAN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_PHONG_BAN_PHAP_NHAN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_PHONG_BAN_PHAP_NHAN.xss">
+      <DependentUpon>DS_DM_PHONG_BAN_PHAP_NHAN.xsd</DependentUpon>
     </None>
     <None Include="DS_DOC_COLUMN_COMMENT.xsc">
       <DependentUpon>DS_DOC_COLUMN_COMMENT.xsd</DependentUpon>
