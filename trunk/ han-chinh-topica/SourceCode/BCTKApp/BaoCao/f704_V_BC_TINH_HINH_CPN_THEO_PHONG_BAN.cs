@@ -386,11 +386,12 @@ namespace BCTKApp
         }
 		private void set_initial_form_load(){
             m_obj_trans = get_trans_object(m_fg);
-            m_dt_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day+1);
-            m_dt_den_ngay.Value = DateTime.Now.Date;
-            m_dt_den_ngay.Checked = true;
-            m_dt_tu_ngay.Checked = true;
-			load_data_2_grid();		
+            m_dt_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
+            DateTime temp = DateTime.Now.Date;
+            temp = temp.AddMonths(1);
+            temp = temp.AddDays(-(temp.Day));
+            m_dt_den_ngay.Value = temp;
+            load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -625,7 +626,7 @@ namespace BCTKApp
                 //    v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
                 //}
                 //else 
-                if (((i_grid_col == (int)e_col_Number.TONG_SO_BILL) || (i_grid_col == (int)e_col_Number.TONG_SO_TIEN)) && v_dr[4].ToString() != "")
+                if (((i_grid_col == (int)e_col_Number.TONG_SO_BILL) || (i_grid_col == (int)e_col_Number.TONG_SO_TIEN)))// && v_dr[4].ToString() != "")
                 {
                     f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
                     v_frm1.Display_for_chi_tiet(v_id_phong_ban, -1, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
