@@ -313,6 +313,7 @@ namespace BCTKApp
             this.Name = "f488_V_GD_PHONG_BAN_PHAP_NHAN";
             this.Text = "F488- Tỷ trọng định mức trung tâm theo pháp nhân";
             this.Load += new System.EventHandler(this.frm_V_GD_PHONG_BAN_PHAP_NHAN_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f488_V_GD_PHONG_BAN_PHAP_NHAN_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
@@ -633,6 +634,34 @@ namespace BCTKApp
             }
         }
         #endregion
+
+        private void f488_V_GD_PHONG_BAN_PHAP_NHAN_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+                if (e.KeyData == Keys.T)
+                {
+                    insert_v_dm_phong_ban_phap_nhan();
+                }
+                if (e.KeyData == Keys.S)
+                {
+                    update_v_dm_phong_ban_phap_nhan();
+                }
+                if (e.KeyData == Keys.X)
+                {
+                    delete_v_dm_phong_ban_phap_nhan();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
     }
 }

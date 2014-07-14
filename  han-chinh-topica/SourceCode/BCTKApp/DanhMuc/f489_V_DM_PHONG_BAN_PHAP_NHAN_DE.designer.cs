@@ -221,6 +221,7 @@
             this.MinimumSize = new System.Drawing.Size(375, 263);
             this.Name = "f489_V_DM_PHONG_BAN_PHAP_NHAN_DE";
             this.Text = "F489 - Cập nhật thông tin TTPN ";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f489_V_DM_PHONG_BAN_PHAP_NHAN_DE_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -124,6 +124,37 @@ namespace BCTKApp.DanhMuc
             //v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
             m_cbo_trung_tam.SelectedIndex = 0;
         }
+        private void save_data()
+        {
+            if (!validate_data_is_ok())
+            { BaseMessages.MsgBox_Error("Bạn chưa nhập tỷ trọng!"); m_txt_ty_trong.Focus(); return; }
+            m_form_to_us_obj();
+            switch (m_e)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    if (!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue)))
+                    {
+                        BaseMessages.MsgBox_Error("Đã tồn tại trung tâm của pháp nhân này!");
+                        return;
+                    }
+                    m_us.Insert();
+                    BaseMessages.MsgBox_Infor("Thêm mới thành công!");
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    m_us.dcID = m_id;
+                    if (!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue)))
+                    {
+                        BaseMessages.MsgBox_Error("Đã tồn tại trung tâm của pháp nhân này!");
+                        return;
+                    }
+                    m_us.Update();
+                    BaseMessages.MsgBox_Infor("Cập nhật thành công!");
+                    break;
+                default: m_us.Insert();
+                    break;
+            }
+            this.Close();
+        }
         private bool check_trung_tam(decimal ip_id_trung_tam, decimal ip_id_phap_nhan)
         {
             US_V_DM_PHONG_BAN_PHAP_NHAN v_us = new US_V_DM_PHONG_BAN_PHAP_NHAN();
@@ -176,32 +207,7 @@ namespace BCTKApp.DanhMuc
         {
             try
             {
-                if (!validate_data_is_ok())
-                { BaseMessages.MsgBox_Error("Bạn chưa nhập tỷ trọng!"); m_txt_ty_trong.Focus(); return; }
-                m_form_to_us_obj();
-                switch (m_e)
-                {
-                    case DataEntryFormMode.InsertDataState:
-                        if(!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue))) {
-                            BaseMessages.MsgBox_Error("Đã tồn tại trung tâm của pháp nhân này!");
-                            return;
-                        }
-                        m_us.Insert();
-                        BaseMessages.MsgBox_Infor("Thêm mới thành công!");
-                        break;
-                    case DataEntryFormMode.UpdateDataState:
-                        m_us.dcID = m_id;
-                        if(!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue))) {
-                            BaseMessages.MsgBox_Error("Đã tồn tại trung tâm của pháp nhân này!");
-                            return;
-                        }
-                        m_us.Update();
-                        BaseMessages.MsgBox_Infor("Cập nhật thành công!");
-                        break;
-                    default: m_us.Insert();
-                        break;
-                }
-                this.Close();
+                save_data();
             }
             catch (Exception v_e)
             {
@@ -236,8 +242,28 @@ namespace BCTKApp.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-   
+        private void f489_V_DM_PHONG_BAN_PHAP_NHAN_DE_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+                if (e.KeyData == Keys.L)
+                {
+                    save_data();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         #endregion
+
+        
       
     }
 }
