@@ -712,8 +712,8 @@ namespace BCTKApp
                     v_tong_bill = CIPConvert.ToDecimal(v_dr[3]);
                 else
                     v_tong_bill = 0;
-                if (v_dr[4].ToString() != "")
-                    v_tong_tien = CIPConvert.ToDecimal(v_dr[4]);
+                if (v_dr[6].ToString() != "")
+                    v_tong_tien = CIPConvert.ToDecimal(v_dr[6]);
                 else
                     v_tong_tien = 0;
                 f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE frm = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
