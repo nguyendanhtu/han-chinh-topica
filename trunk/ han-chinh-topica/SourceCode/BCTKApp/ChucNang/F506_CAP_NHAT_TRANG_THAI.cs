@@ -77,6 +77,7 @@ namespace BCTKApp
         }
         private void load_data_2_grid(decimal ip_dc_trang_thai, C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
+            i_fg.DataSource = null;
             DateTime v_dat_ngay = m_dtp_tu_ngay.Value.Date;
             decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             decimal v_dc_id_trang_thai = ip_dc_trang_thai; //CIPConvert.ToDecimal(m_cbo_trang_thai_cu.SelectedValue);
@@ -352,8 +353,10 @@ namespace BCTKApp
             {
                 if (e.KeyData == Keys.Enter)
                 {
-                    //load_data_2_grid_da_nhan();
-                    //load_data_2_grid_da_chuyen();
+                    load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO, m_grv_da_nhan);
+                    load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN, m_grv_da_chuyen);
+                    load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI, m_grv_bi_tra_lai);
+                    load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_NOI_BO_NHAN_TRA_LAI, m_grv_noi_bo_nhan_tra_lai);
                 }
                 else
                 {
@@ -411,8 +414,10 @@ namespace BCTKApp
         {
             try
             {
-                //load_data_2_grid_da_nhan();
-                //load_data_2_grid_da_chuyen();
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO, m_grv_da_nhan);
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN, m_grv_da_chuyen);
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI, m_grv_bi_tra_lai);
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_NOI_BO_NHAN_TRA_LAI, m_grv_noi_bo_nhan_tra_lai);
             }
             catch (Exception v_e)
             {
