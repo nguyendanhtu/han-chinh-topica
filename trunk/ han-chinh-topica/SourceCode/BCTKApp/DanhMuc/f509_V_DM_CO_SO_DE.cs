@@ -128,8 +128,6 @@ namespace BCTKApp
         {
             if (!CValidateTextBox.IsValid(m_txt_ma_co_so, DataType.StringType, allowNull.NO, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_ten_co_so, DataType.StringType, allowNull.NO, true))
-                return false;
             return true;
         }
         private void load_data_2_cbo() 
