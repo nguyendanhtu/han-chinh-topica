@@ -98,16 +98,16 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_bill = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_top = new System.Windows.Forms.Panel();
+            this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_bill)).BeginInit();
             this.m_pnl_top.SuspendLayout();
@@ -257,6 +257,55 @@ namespace BCTKApp
             this.m_pnl_top.Size = new System.Drawing.Size(884, 183);
             this.m_pnl_top.TabIndex = 23;
             // 
+            // m_txt_tu_khoa
+            // 
+            this.m_txt_tu_khoa.Location = new System.Drawing.Point(320, 136);
+            this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
+            this.m_txt_tu_khoa.Size = new System.Drawing.Size(261, 20);
+            this.m_txt_tu_khoa.TabIndex = 36;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(225, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Từ khóa";
+            // 
+            // m_cbo_trung_tam
+            // 
+            this.m_cbo_trung_tam.FormattingEnabled = true;
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(320, 96);
+            this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
+            this.m_cbo_trung_tam.Size = new System.Drawing.Size(261, 21);
+            this.m_cbo_trung_tam.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(225, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 16);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Trung tâm";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(601, 129);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 22;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            // 
             // m_dtp_den_ngay
             // 
             this.m_dtp_den_ngay.Checked = false;
@@ -313,55 +362,6 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Text = "DANH SÁCH BILL";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_search.ImageIndex = 18;
-            this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(568, 129);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 22;
-            this.m_cmd_search.Text = "Tìm kiếm";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(225, 101);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Trung tâm";
-            // 
-            // m_cbo_trung_tam
-            // 
-            this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(320, 96);
-            this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
-            this.m_cbo_trung_tam.Size = new System.Drawing.Size(228, 21);
-            this.m_cbo_trung_tam.TabIndex = 34;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(225, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Từ khóa";
-            // 
-            // m_txt_tu_khoa
-            // 
-            this.m_txt_tu_khoa.Location = new System.Drawing.Point(320, 136);
-            this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
-            this.m_txt_tu_khoa.Size = new System.Drawing.Size(228, 20);
-            this.m_txt_tu_khoa.TabIndex = 36;
-            // 
             // f516_V_DM_BILL
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -397,7 +397,7 @@ namespace BCTKApp
 		ITransferDataRow m_obj_trans;		
 		DS_V_DM_BILL m_ds = new DS_V_DM_BILL();
 		US_V_DM_BILL m_us = new US_V_DM_BILL();
-        private const String m_str_goi_y_tim_kiem = "Nhập số bill,trạng thái,tên người nhận..... ";
+        private const String m_str_goi_y_tim_kiem = "Nhập số bill,trạng thái,tên người nhận,người gửi";
 		#endregion
 
 		#region Private Methods
