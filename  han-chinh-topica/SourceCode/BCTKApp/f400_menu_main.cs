@@ -29,6 +29,7 @@ namespace BCTKApp
         private void format_controls()
         {
             set_define_event();
+            m_rib_bar_qldm_thong_ke.Visible = false;
         }
         private void set_define_event()
         {
