@@ -169,7 +169,7 @@ namespace BCTKApp
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_xuat_excel.TabIndex = 23;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Text = "Xuất &Excel";
             // 
             // m_cmd_insert
             // 
@@ -756,19 +756,7 @@ namespace BCTKApp
                 {
                     this.Close();
                 }
-                if (e.KeyData == Keys.F1)
-                {
-                    insert_v_tong_hop_bill_theo_phong_ban();
-                }
-                if (e.KeyData == Keys.F2)
-                {
-                    update_v_tong_hop_bill_theo_phong_ban();
-                }
-                if (e.KeyData == Keys.F4)
-                {
-                    delete_v_tong_hop_bill_theo_phong_ban();
-                }
-                if (e.KeyData == Keys.F3)
+                if (e.KeyData == Keys.E)
                 {
                     export_2_excel();
                 }
