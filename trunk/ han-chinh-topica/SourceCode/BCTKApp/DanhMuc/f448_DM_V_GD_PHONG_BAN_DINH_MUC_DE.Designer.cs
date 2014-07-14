@@ -51,7 +51,7 @@
             // 
             this.m_cbo_tinh_theo_co_so.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_tinh_theo_co_so.FormattingEnabled = true;
-            this.m_cbo_tinh_theo_co_so.Location = new System.Drawing.Point(222, 164);
+            this.m_cbo_tinh_theo_co_so.Location = new System.Drawing.Point(173, 150);
             this.m_cbo_tinh_theo_co_so.Name = "m_cbo_tinh_theo_co_so";
             this.m_cbo_tinh_theo_co_so.Size = new System.Drawing.Size(208, 21);
             this.m_cbo_tinh_theo_co_so.TabIndex = 28;
@@ -60,7 +60,7 @@
             // 
             this.m_cbo_trung_tam.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(222, 110);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(173, 96);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(208, 21);
             this.m_cbo_trung_tam.TabIndex = 31;
@@ -68,7 +68,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(222, 110);
+            this.comboBox2.Location = new System.Drawing.Point(173, 96);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(208, 21);
             this.comboBox2.TabIndex = 30;
@@ -76,7 +76,7 @@
             // m_lbl_trung_tam
             // 
             this.m_lbl_trung_tam.AutoSize = true;
-            this.m_lbl_trung_tam.Location = new System.Drawing.Point(97, 118);
+            this.m_lbl_trung_tam.Location = new System.Drawing.Point(60, 99);
             this.m_lbl_trung_tam.Name = "m_lbl_trung_tam";
             this.m_lbl_trung_tam.Size = new System.Drawing.Size(58, 13);
             this.m_lbl_trung_tam.TabIndex = 24;
@@ -85,7 +85,7 @@
             // m_lbl_tinh_theo_co_so
             // 
             this.m_lbl_tinh_theo_co_so.AutoSize = true;
-            this.m_lbl_tinh_theo_co_so.Location = new System.Drawing.Point(97, 172);
+            this.m_lbl_tinh_theo_co_so.Location = new System.Drawing.Point(60, 153);
             this.m_lbl_tinh_theo_co_so.Name = "m_lbl_tinh_theo_co_so";
             this.m_lbl_tinh_theo_co_so.Size = new System.Drawing.Size(86, 13);
             this.m_lbl_tinh_theo_co_so.TabIndex = 27;
@@ -95,7 +95,7 @@
             // 
             this.m_cbo_co_so_tinh_dm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_co_so_tinh_dm.FormattingEnabled = true;
-            this.m_cbo_co_so_tinh_dm.Location = new System.Drawing.Point(222, 136);
+            this.m_cbo_co_so_tinh_dm.Location = new System.Drawing.Point(173, 122);
             this.m_cbo_co_so_tinh_dm.Name = "m_cbo_co_so_tinh_dm";
             this.m_cbo_co_so_tinh_dm.Size = new System.Drawing.Size(208, 21);
             this.m_cbo_co_so_tinh_dm.TabIndex = 32;
@@ -103,7 +103,7 @@
             // m_lbl_co_so_tinh_dm
             // 
             this.m_lbl_co_so_tinh_dm.AutoSize = true;
-            this.m_lbl_co_so_tinh_dm.Location = new System.Drawing.Point(97, 144);
+            this.m_lbl_co_so_tinh_dm.Location = new System.Drawing.Point(60, 125);
             this.m_lbl_co_so_tinh_dm.Name = "m_lbl_co_so_tinh_dm";
             this.m_lbl_co_so_tinh_dm.Size = new System.Drawing.Size(106, 13);
             this.m_lbl_co_so_tinh_dm.TabIndex = 26;
@@ -113,7 +113,7 @@
             // 
             this.m_cbo_loai_dm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_loai_dm.FormattingEnabled = true;
-            this.m_cbo_loai_dm.Location = new System.Drawing.Point(222, 83);
+            this.m_cbo_loai_dm.Location = new System.Drawing.Point(173, 69);
             this.m_cbo_loai_dm.Name = "m_cbo_loai_dm";
             this.m_cbo_loai_dm.Size = new System.Drawing.Size(208, 21);
             this.m_cbo_loai_dm.TabIndex = 29;
@@ -121,7 +121,7 @@
             // m_lbl_loai_dm
             // 
             this.m_lbl_loai_dm.AutoSize = true;
-            this.m_lbl_loai_dm.Location = new System.Drawing.Point(97, 91);
+            this.m_lbl_loai_dm.Location = new System.Drawing.Point(60, 72);
             this.m_lbl_loai_dm.Name = "m_lbl_loai_dm";
             this.m_lbl_loai_dm.Size = new System.Drawing.Size(77, 13);
             this.m_lbl_loai_dm.TabIndex = 25;
@@ -132,7 +132,7 @@
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(61, 9);
+            this.m_lbl_header.Location = new System.Drawing.Point(37, 9);
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(410, 22);
             this.m_lbl_header.TabIndex = 25;
@@ -143,10 +143,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 256);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 223);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(507, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(462, 36);
             this.m_pnl_out_place_dm.TabIndex = 33;
             // 
             // m_cmd_save
@@ -158,7 +158,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(327, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(282, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
@@ -201,7 +201,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(415, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(370, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -212,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 292);
+            this.ClientSize = new System.Drawing.Size(462, 259);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_cbo_tinh_theo_co_so);
             this.Controls.Add(this.m_cbo_trung_tam);
