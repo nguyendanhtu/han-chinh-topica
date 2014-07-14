@@ -395,6 +395,7 @@ namespace BCTKApp
             this.Name = "f406_V_TONG_HOP_BILL_THEO_PHONG_BAN";
             this.Text = "F406- Tổng hợp tiền Bill theo phòng ban";
             this.Load += new System.EventHandler(this.f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
@@ -725,8 +726,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-#endregion
-
         private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
         {
             try
@@ -748,6 +747,41 @@ namespace BCTKApp
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
         }
+
+        private void f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+                if (e.KeyData == Keys.F1)
+                {
+                    insert_v_tong_hop_bill_theo_phong_ban();
+                }
+                if (e.KeyData == Keys.F2)
+                {
+                    update_v_tong_hop_bill_theo_phong_ban();
+                }
+                if (e.KeyData == Keys.F4)
+                {
+                    delete_v_tong_hop_bill_theo_phong_ban();
+                }
+                if (e.KeyData == Keys.F3)
+                {
+                    export_2_excel();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+#endregion
+
+     
 	}
 }
 
