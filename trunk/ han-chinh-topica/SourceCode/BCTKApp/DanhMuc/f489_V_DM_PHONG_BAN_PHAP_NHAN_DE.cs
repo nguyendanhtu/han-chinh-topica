@@ -134,6 +134,23 @@ namespace BCTKApp.DanhMuc
             else
                 return true;
         }
+        private bool check_ty_trong()
+        {
+            decimal num;
+            bool isNumberic = decimal.TryParse(m_txt_ty_trong.Text, out num);
+
+            if (!isNumberic)
+            {
+                return false;
+            }
+            else return true;
+        }
+        private bool validate_data_is_ok()
+        {
+            if (!CValidateTextBox.IsValid(m_txt_ty_trong, DataType.StringType, allowNull.NO, true))
+            return false;
+            return true;
+        }
         #endregion
 
         #region Event
@@ -159,6 +176,8 @@ namespace BCTKApp.DanhMuc
         {
             try
             {
+                if (!validate_data_is_ok())
+                { BaseMessages.MsgBox_Error("Bạn chưa nhập tỷ trọng!"); m_txt_ty_trong.Focus(); return; }
                 m_form_to_us_obj();
                 switch (m_e)
                 {
@@ -189,7 +208,36 @@ namespace BCTKApp.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_txt_ty_trong_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter || e.KeyData == Keys.Tab)
+                {
+                    if (!check_ty_trong()) { BaseMessages.MsgBox_Error("Bạn phải nhập kiểu số"); m_txt_ty_trong.Text = "100"; m_txt_ty_trong.Focus(); return; }
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_ty_trong_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!check_ty_trong()) { BaseMessages.MsgBox_Error("Bạn phải nhập kiểu số"); m_txt_ty_trong.Text = "100"; m_txt_ty_trong.Focus(); return; }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
    
         #endregion
+      
     }
 }

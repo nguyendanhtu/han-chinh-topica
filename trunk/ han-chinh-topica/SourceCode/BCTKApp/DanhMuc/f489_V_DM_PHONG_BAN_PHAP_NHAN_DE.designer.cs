@@ -104,8 +104,12 @@
             // 
             this.m_txt_ty_trong.Location = new System.Drawing.Point(100, 126);
             this.m_txt_ty_trong.Name = "m_txt_ty_trong";
-            this.m_txt_ty_trong.Size = new System.Drawing.Size(79, 20);
+            this.m_txt_ty_trong.Size = new System.Drawing.Size(64, 20);
             this.m_txt_ty_trong.TabIndex = 2;
+            this.m_txt_ty_trong.Text = "100";
+            this.m_txt_ty_trong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_txt_ty_trong.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_txt_ty_trong_KeyDown);
+            this.m_txt_ty_trong.Leave += new System.EventHandler(this.m_txt_ty_trong_Leave);
             // 
             // ImageList
             // 
@@ -180,7 +184,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 129);
+            this.label1.Location = new System.Drawing.Point(168, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 0;
