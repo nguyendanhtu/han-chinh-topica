@@ -494,6 +494,7 @@ namespace BCTKApp
 		private void delete_v_dm_phong_ban_phap_nhan(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
 			US_V_DM_PHONG_BAN_PHAP_NHAN v_us = new US_V_DM_PHONG_BAN_PHAP_NHAN();
 			grid2us_object(v_us, m_fg.Row);
