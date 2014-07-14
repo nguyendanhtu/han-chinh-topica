@@ -398,6 +398,7 @@
             this.Name = "f404_CHI_TIET_BILL";
             this.Text = "F404- Chi tiết Bill";
             this.Load += new System.EventHandler(this.f404_CHI_TIET_BILL_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f404_CHI_TIET_BILL_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
