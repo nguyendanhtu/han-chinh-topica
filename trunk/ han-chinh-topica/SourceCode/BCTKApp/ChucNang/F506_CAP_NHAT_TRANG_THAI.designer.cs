@@ -123,7 +123,7 @@
             this.m_dtp_tu_ngay.ShowCheckBox = true;
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(148, 23);
             this.m_dtp_tu_ngay.TabIndex = 1;
-            this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 6, 7, 0, 0, 0, 0);
+            this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 7, 14, 0, 0, 0, 0);
             // 
             // m_cmd_search
             // 
@@ -349,7 +349,7 @@
             this.m_tm_bill_da_chuyen_cho_cpn.Location = new System.Drawing.Point(4, 22);
             this.m_tm_bill_da_chuyen_cho_cpn.Name = "m_tm_bill_da_chuyen_cho_cpn";
             this.m_tm_bill_da_chuyen_cho_cpn.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_bill_da_chuyen_cho_cpn.Size = new System.Drawing.Size(916, 352);
+            this.m_tm_bill_da_chuyen_cho_cpn.Size = new System.Drawing.Size(916, 360);
             this.m_tm_bill_da_chuyen_cho_cpn.TabIndex = 1;
             this.m_tm_bill_da_chuyen_cho_cpn.Text = "DS bill đã chuyển cho CPN";
             this.m_tm_bill_da_chuyen_cho_cpn.UseVisualStyleBackColor = true;
@@ -389,7 +389,7 @@
             this.m_tm_bill_bi_tra_lai.Location = new System.Drawing.Point(4, 22);
             this.m_tm_bill_bi_tra_lai.Name = "m_tm_bill_bi_tra_lai";
             this.m_tm_bill_bi_tra_lai.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_bill_bi_tra_lai.Size = new System.Drawing.Size(916, 352);
+            this.m_tm_bill_bi_tra_lai.Size = new System.Drawing.Size(916, 360);
             this.m_tm_bill_bi_tra_lai.TabIndex = 2;
             this.m_tm_bill_bi_tra_lai.Text = "DS bill bị trả lại";
             this.m_tm_bill_bi_tra_lai.UseVisualStyleBackColor = true;
@@ -436,6 +436,7 @@
             // m_grv_bi_tra_lai
             // 
             this.m_grv_bi_tra_lai.ColumnInfo = resources.GetString("m_grv_bi_tra_lai.ColumnInfo");
+            this.m_grv_bi_tra_lai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_bi_tra_lai.Location = new System.Drawing.Point(6, 17);
             this.m_grv_bi_tra_lai.Name = "m_grv_bi_tra_lai";
             this.m_grv_bi_tra_lai.Size = new System.Drawing.Size(749, 322);
@@ -449,7 +450,7 @@
             this.m_tm_noi_bo_nhan_tra_lai.Location = new System.Drawing.Point(4, 22);
             this.m_tm_noi_bo_nhan_tra_lai.Name = "m_tm_noi_bo_nhan_tra_lai";
             this.m_tm_noi_bo_nhan_tra_lai.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(916, 352);
+            this.m_tm_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(916, 360);
             this.m_tm_noi_bo_nhan_tra_lai.TabIndex = 3;
             this.m_tm_noi_bo_nhan_tra_lai.Text = "DS bill nội bộ đã nhận trả lại";
             this.m_tm_noi_bo_nhan_tra_lai.UseVisualStyleBackColor = true;
@@ -470,6 +471,7 @@
             // m_grv_noi_bo_nhan_tra_lai
             // 
             this.m_grv_noi_bo_nhan_tra_lai.ColumnInfo = resources.GetString("m_grv_noi_bo_nhan_tra_lai.ColumnInfo");
+            this.m_grv_noi_bo_nhan_tra_lai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_noi_bo_nhan_tra_lai.Location = new System.Drawing.Point(6, 17);
             this.m_grv_noi_bo_nhan_tra_lai.Name = "m_grv_noi_bo_nhan_tra_lai";
             this.m_grv_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(749, 322);

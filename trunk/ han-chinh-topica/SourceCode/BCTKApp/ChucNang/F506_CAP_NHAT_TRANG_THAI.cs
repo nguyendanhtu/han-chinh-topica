@@ -123,6 +123,7 @@ namespace BCTKApp
         
         private void change_state_only_1(decimal ip_id_trang_thai_cu,decimal ip_id_trang_thai_moi, C1.Win.C1FlexGrid.C1FlexGrid i_fg_left, C1.Win.C1FlexGrid.C1FlexGrid i_fg_right, string ip_str_message)
         {
+            int v_i = i_fg_left.Rows.Count;
             if (!CGridUtils.IsThere_Any_NonFixed_Row(i_fg_left)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(i_fg_left, i_fg_left.Row)) return;
             grid_2us_object(m_us, i_fg_left.Row,i_fg_left);
@@ -181,6 +182,7 @@ namespace BCTKApp
         }
         private void set_initial_form_load()
         {
+            m_dtp_tu_ngay.Value = DateTime.Now.Date;
             load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO,m_grv_da_nhan);
             load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN,m_grv_da_chuyen);
             load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI,m_grv_bi_tra_lai);
@@ -273,6 +275,7 @@ namespace BCTKApp
                 load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO,m_grv_da_nhan);
                 load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN,m_grv_da_chuyen);
                 load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI,m_grv_bi_tra_lai);
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_NOI_BO_NHAN_TRA_LAI, m_grv_noi_bo_nhan_tra_lai);
             }
             catch (Exception v_e)
             {
@@ -399,8 +402,10 @@ namespace BCTKApp
         {
             try
             {
-                //load_data_2_grid_da_chuyen();
-                //load_data_2_grid_da_nhan();
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO, m_grv_da_nhan);
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN, m_grv_da_chuyen);
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI, m_grv_bi_tra_lai);
+                load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_NOI_BO_NHAN_TRA_LAI, m_grv_noi_bo_nhan_tra_lai);
             }
             catch (Exception v_e)
             {
