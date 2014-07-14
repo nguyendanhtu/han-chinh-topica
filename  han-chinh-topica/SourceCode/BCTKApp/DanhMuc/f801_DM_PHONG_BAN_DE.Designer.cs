@@ -66,7 +66,7 @@
             this.m_txt_ten_phong_ban.Location = new System.Drawing.Point(134, 69);
             this.m_txt_ten_phong_ban.Name = "m_txt_ten_phong_ban";
             this.m_txt_ten_phong_ban.Size = new System.Drawing.Size(269, 20);
-            this.m_txt_ten_phong_ban.TabIndex = 3;
+            this.m_txt_ten_phong_ban.TabIndex = 1;
             // 
             // ImageList
             // 
@@ -141,7 +141,7 @@
             this.m_txt_ma_phong_ban.Location = new System.Drawing.Point(134, 33);
             this.m_txt_ma_phong_ban.Name = "m_txt_ma_phong_ban";
             this.m_txt_ma_phong_ban.Size = new System.Drawing.Size(143, 20);
-            this.m_txt_ma_phong_ban.TabIndex = 1;
+            this.m_txt_ma_phong_ban.TabIndex = 0;
             // 
             // m_lbl_tieu_de
             // 
@@ -160,7 +160,7 @@
             this.m_chk_close_form.Location = new System.Drawing.Point(34, 111);
             this.m_chk_close_form.Name = "m_chk_close_form";
             this.m_chk_close_form.Size = new System.Drawing.Size(196, 17);
-            this.m_chk_close_form.TabIndex = 22;
+            this.m_chk_close_form.TabIndex = 2;
             this.m_chk_close_form.Text = "Chọn để khi lưu không tắt hộp thoại";
             this.m_chk_close_form.UseVisualStyleBackColor = true;
             // 
