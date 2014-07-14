@@ -69,6 +69,12 @@ namespace BCTKApp
         {
             if (!validate_data_is_ok())
                 return;
+            if (!validate_ma_insert(m_txt_ma_co_so.Text.Trim()))
+            {
+                BaseMessages.MsgBox_Infor("Mã cơ sở đã tồn tại");
+                xoa_trang();
+                return;
+            }
             form_2_us_obj();
             switch (m_e_form_mode)
             {
@@ -76,6 +82,12 @@ namespace BCTKApp
                     m_us.Insert();
                     break;
                 case DataEntryFormMode.UpdateDataState:
+                    if (!validate_ma_update(m_txt_ma_co_so.Text.Trim(), m_us.dcID))
+                    {
+                        BaseMessages.MsgBox_Infor("Mã cơ sở đã tồn tại");
+                        m_txt_ma_co_so.Focus();
+                        return;
+                    }
                     m_us.Update();
                     break;
             }
@@ -88,6 +100,22 @@ namespace BCTKApp
             {
                 this.Close();
             }
+        }
+        private bool validate_ma_insert(string v_str_ma)
+        {
+            US_DM_CO_SO_DINH_MUC v_us= new US_DM_CO_SO_DINH_MUC();
+            DS_DM_CO_SO_DINH_MUC v_ds = new DS_DM_CO_SO_DINH_MUC();
+            v_us.FillDataset(v_ds, "where ma_co_so_dinh_muc='" + v_str_ma + "'");
+            if (v_ds.DM_CO_SO_DINH_MUC.Count != 0 && m_e_form_mode == DataEntryFormMode.InsertDataState) return false;
+            return true;
+        }
+        private bool validate_ma_update(string ip_str_ma, decimal ip_dc_id)
+        {
+            US_DM_CO_SO_DINH_MUC v_us = new US_DM_CO_SO_DINH_MUC();
+            DS_DM_CO_SO_DINH_MUC v_ds = new DS_DM_CO_SO_DINH_MUC();
+            v_us.FillDataset(v_ds, "where ma_co_so_dinh_muc='" + ip_str_ma + "' or id=" + ip_dc_id);
+            if (v_ds.DM_CO_SO_DINH_MUC.Count != 1) return false;
+            return true;
         }
         private void xoa_trang()
         {
