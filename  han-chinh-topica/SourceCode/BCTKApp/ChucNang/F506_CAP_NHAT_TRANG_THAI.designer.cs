@@ -62,6 +62,7 @@
             this.m_tm_noi_bo_nhan_tra_lai = new System.Windows.Forms.TabPage();
             this.m_cmd_nhan_tra_lai_2_tra_lai = new SIS.Controls.Button.SiSButton();
             this.m_grv_noi_bo_nhan_tra_lai = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_da_nhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_da_chuyen)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -78,7 +79,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(135, 61);
+            this.label3.Location = new System.Drawing.Point(135, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 44;
@@ -87,7 +88,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(184, 68);
+            this.label4.Location = new System.Drawing.Point(184, 59);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 43;
@@ -96,7 +97,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(502, 61);
+            this.label7.Location = new System.Drawing.Point(502, 52);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 16);
             this.label7.TabIndex = 41;
@@ -117,7 +118,7 @@
             this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(565, 59);
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(565, 50);
             this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
             this.m_dtp_tu_ngay.ShowCheckBox = true;
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(148, 23);
@@ -132,7 +133,7 @@
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(516, 108);
+            this.m_cmd_search.Location = new System.Drawing.Point(521, 91);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 5;
@@ -274,24 +275,25 @@
             // 
             this.m_cbo_trung_tam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(209, 60);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(209, 51);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(277, 21);
             this.m_cbo_trung_tam.TabIndex = 2;
             // 
             // m_lbl_tieu_de
             // 
-            this.m_lbl_tieu_de.AutoSize = true;
+            this.m_lbl_tieu_de.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tieu_de.Location = new System.Drawing.Point(304, 6);
+            this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(214, 23);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(924, 31);
             this.m_lbl_tieu_de.TabIndex = 51;
-            this.m_lbl_tieu_de.Text = "Cập nhật trạng thái CPN";
+            this.m_lbl_tieu_de.Text = "CẬP NHẬT TRẠNG THÁI CPN";
+            this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_txt_key_word
             // 
-            this.m_txt_key_word.Location = new System.Drawing.Point(209, 111);
+            this.m_txt_key_word.Location = new System.Drawing.Point(214, 94);
             this.m_txt_key_word.Name = "m_txt_key_word";
             this.m_txt_key_word.Size = new System.Drawing.Size(277, 20);
             this.m_txt_key_word.TabIndex = 53;
@@ -303,10 +305,10 @@
             this.m_tab_main.Controls.Add(this.m_tm_bill_bi_tra_lai);
             this.m_tab_main.Controls.Add(this.m_tm_noi_bo_nhan_tra_lai);
             this.m_tab_main.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_tab_main.Location = new System.Drawing.Point(0, 161);
+            this.m_tab_main.Location = new System.Drawing.Point(0, 146);
             this.m_tab_main.Name = "m_tab_main";
             this.m_tab_main.SelectedIndex = 0;
-            this.m_tab_main.Size = new System.Drawing.Size(924, 371);
+            this.m_tab_main.Size = new System.Drawing.Size(924, 386);
             this.m_tab_main.TabIndex = 61;
             // 
             // m_tm_bill_da_nhan
@@ -318,7 +320,7 @@
             this.m_tm_bill_da_nhan.Location = new System.Drawing.Point(4, 22);
             this.m_tm_bill_da_nhan.Name = "m_tm_bill_da_nhan";
             this.m_tm_bill_da_nhan.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_bill_da_nhan.Size = new System.Drawing.Size(916, 345);
+            this.m_tm_bill_da_nhan.Size = new System.Drawing.Size(916, 360);
             this.m_tm_bill_da_nhan.TabIndex = 0;
             this.m_tm_bill_da_nhan.Text = "DS bill đã nhận";
             this.m_tm_bill_da_nhan.UseVisualStyleBackColor = true;
@@ -347,7 +349,7 @@
             this.m_tm_bill_da_chuyen_cho_cpn.Location = new System.Drawing.Point(4, 22);
             this.m_tm_bill_da_chuyen_cho_cpn.Name = "m_tm_bill_da_chuyen_cho_cpn";
             this.m_tm_bill_da_chuyen_cho_cpn.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_bill_da_chuyen_cho_cpn.Size = new System.Drawing.Size(916, 345);
+            this.m_tm_bill_da_chuyen_cho_cpn.Size = new System.Drawing.Size(916, 352);
             this.m_tm_bill_da_chuyen_cho_cpn.TabIndex = 1;
             this.m_tm_bill_da_chuyen_cho_cpn.Text = "DS bill đã chuyển cho CPN";
             this.m_tm_bill_da_chuyen_cho_cpn.UseVisualStyleBackColor = true;
@@ -387,7 +389,7 @@
             this.m_tm_bill_bi_tra_lai.Location = new System.Drawing.Point(4, 22);
             this.m_tm_bill_bi_tra_lai.Name = "m_tm_bill_bi_tra_lai";
             this.m_tm_bill_bi_tra_lai.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_bill_bi_tra_lai.Size = new System.Drawing.Size(916, 345);
+            this.m_tm_bill_bi_tra_lai.Size = new System.Drawing.Size(916, 352);
             this.m_tm_bill_bi_tra_lai.TabIndex = 2;
             this.m_tm_bill_bi_tra_lai.Text = "DS bill bị trả lại";
             this.m_tm_bill_bi_tra_lai.UseVisualStyleBackColor = true;
@@ -434,7 +436,6 @@
             // m_grv_bi_tra_lai
             // 
             this.m_grv_bi_tra_lai.ColumnInfo = resources.GetString("m_grv_bi_tra_lai.ColumnInfo");
-            this.m_grv_bi_tra_lai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_bi_tra_lai.Location = new System.Drawing.Point(6, 17);
             this.m_grv_bi_tra_lai.Name = "m_grv_bi_tra_lai";
             this.m_grv_bi_tra_lai.Size = new System.Drawing.Size(749, 322);
@@ -448,7 +449,7 @@
             this.m_tm_noi_bo_nhan_tra_lai.Location = new System.Drawing.Point(4, 22);
             this.m_tm_noi_bo_nhan_tra_lai.Name = "m_tm_noi_bo_nhan_tra_lai";
             this.m_tm_noi_bo_nhan_tra_lai.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(916, 345);
+            this.m_tm_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(916, 352);
             this.m_tm_noi_bo_nhan_tra_lai.TabIndex = 3;
             this.m_tm_noi_bo_nhan_tra_lai.Text = "DS bill nội bộ đã nhận trả lại";
             this.m_tm_noi_bo_nhan_tra_lai.UseVisualStyleBackColor = true;
@@ -469,18 +470,28 @@
             // m_grv_noi_bo_nhan_tra_lai
             // 
             this.m_grv_noi_bo_nhan_tra_lai.ColumnInfo = resources.GetString("m_grv_noi_bo_nhan_tra_lai.ColumnInfo");
-            this.m_grv_noi_bo_nhan_tra_lai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_noi_bo_nhan_tra_lai.Location = new System.Drawing.Point(6, 17);
             this.m_grv_noi_bo_nhan_tra_lai.Name = "m_grv_noi_bo_nhan_tra_lai";
             this.m_grv_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(749, 322);
             this.m_grv_noi_bo_nhan_tra_lai.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_noi_bo_nhan_tra_lai.Styles"));
             this.m_grv_noi_bo_nhan_tra_lai.TabIndex = 41;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(135, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 16);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Từ khóa";
+            // 
             // F506_CAP_NHAT_TRANG_THAI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 569);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.m_tab_main);
             this.Controls.Add(this.m_txt_key_word);
             this.Controls.Add(this.m_lbl_tieu_de);
@@ -542,5 +553,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_nhan_tra_lai_2_tra_lai;
         private C1.Win.C1FlexGrid.C1FlexGrid m_grv_noi_bo_nhan_tra_lai;
         internal SIS.Controls.Button.SiSButton m_cmd_tra_lai_2_noi_bo_nhan_tl_all;
+        private System.Windows.Forms.Label label1;
     }
 }
