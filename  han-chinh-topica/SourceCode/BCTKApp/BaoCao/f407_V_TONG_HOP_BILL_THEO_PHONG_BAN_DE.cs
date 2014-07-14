@@ -411,18 +411,19 @@ namespace BCTKApp
             m_lbl_tong_bill.Text = CIPConvert.ToStr(ip_v_tong_bill, "#,###");
             m_lbl_tong_tien.Text = CIPConvert.ToStr(ip_v_tong_tien, "#,###") + "   (VNĐ)";
             v_us_tong_hop_CPN.FillDataset_chi_tiet_Bill(v_ds_tong_hop_CPN, ip_v_id_phong_ban, ip_v_id_trang_thai, ip_v_dt_tu_ngay, ip_v_dt_den_ngay);
-            m_fg.Redraw = false;
+            m_fg.Redraw = true;
             CGridUtils.Dataset2C1Grid(v_ds_tong_hop_CPN, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
             decimal v_dc_tong_doanh_thu = 0;
             //m_v_us.get_tong_doanh_thu(v_dc_tong_doanh_thu);
             for (int i = 1; i <= v_ds_tong_hop_CPN.V_TONG_HOP_CPN_THEO_PHONG_BAN.Count; i++)
             {
-                if (m_fg[i, (int)e_col_Number.SO_TIEN].ToString() == null){}
+                if (m_fg[i, (int)e_col_Number.SO_TIEN] == null) { }
                 else
                      v_dc_tong_doanh_thu += CIPConvert.ToDecimal((m_fg[i, (int)e_col_Number.SO_TIEN]));
             }
-            m_lbl_chua_tinh_vat.Text = CIPConvert.ToStr(v_dc_tong_doanh_thu, "#,###.##") + "   VNĐ";
+            if (v_dc_tong_doanh_thu == 0) m_lbl_chua_tinh_vat.Text = "0 VNĐ";
+            else m_lbl_chua_tinh_vat.Text = CIPConvert.ToStr(v_dc_tong_doanh_thu, "#,###.##") + "   VNĐ";
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
              , 0
              , (int)e_col_Number.NGAY_GUI // chỗ này là tên trường mà mình nhóm
