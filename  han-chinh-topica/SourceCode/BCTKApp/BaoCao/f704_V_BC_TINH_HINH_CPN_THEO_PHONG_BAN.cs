@@ -48,6 +48,7 @@ namespace BCTKApp
         private Panel panel1;
         private ToolTip toolTip1;
         private Label label1;
+        private Label label2;
 		private System.ComponentModel.IContainer components;
 
 		public f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN()
@@ -101,6 +102,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -143,7 +145,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 487);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(956, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(990, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_xuat_excel
@@ -170,7 +172,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(864, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(898, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -183,11 +185,10 @@ namespace BCTKApp
             this.m_fg.Location = new System.Drawing.Point(0, 135);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell;
-            this.m_fg.Size = new System.Drawing.Size(956, 352);
+            this.m_fg.Size = new System.Drawing.Size(990, 352);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào các cột tổng số bill, tổng tiền thực tế để xem chi tiết nh" +
-                    "é!");
+            this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào các cột tổng số bill, tổng tiền thực tế để xem chi tiết!");
             // 
             // m_cmd_tim_kiem
             // 
@@ -276,13 +277,14 @@ namespace BCTKApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(956, 35);
+            this.m_lbl_header.Size = new System.Drawing.Size(990, 35);
             this.m_lbl_header.TabIndex = 30;
-            this.m_lbl_header.Text = "BÁO CÁO TÌNH HÌNH CPN THEO PHÒNG BAN";
+            this.m_lbl_header.Text = "BÁO CÁO TÌNH HÌNH CPN THEO TRUNG TÂM - BAN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_dt_den_ngay);
             this.panel1.Controls.Add(this.m_lbl_tu_ngay);
@@ -294,8 +296,17 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(956, 100);
+            this.panel1.Size = new System.Drawing.Size(990, 100);
             this.panel1.TabIndex = 2830;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(251, 13);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Các trung tâm vượt định mức sẽ được đánh dấu đỏ";
             // 
             // label1
             // 
@@ -315,13 +326,13 @@ namespace BCTKApp
             // f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(956, 523);
+            this.ClientSize = new System.Drawing.Size(990, 523);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN";
-            this.Text = "F704 - Báo cáo tình hình CPN theo phòng ban";
+            this.Text = "F704 - Báo cáo tình hình CPN theo Trung tâm - Ban";
             this.Load += new System.EventHandler(this.f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -614,13 +625,15 @@ namespace BCTKApp
                 //    v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
                 //}
                 //else 
-                    if((i_grid_col == (int)e_col_Number.TONG_SO_BILL) || (i_grid_col == (int)e_col_Number.TONG_SO_TIEN)) {
+                if (((i_grid_col == (int)e_col_Number.TONG_SO_BILL) || (i_grid_col == (int)e_col_Number.TONG_SO_TIEN)) && v_dr[4].ToString() != "")
+                {
                     f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
                     v_frm1.Display_for_chi_tiet(v_id_phong_ban, -1, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
                 }
                 else {
-                    BaseMessages.MsgBox_Infor("Bạn nhấp đúp chuột vào các cột: tổng số bill, tổng tiền thanh toán, tổng tiền định mức để xem chi tiết");
-                }
+                    //BaseMessages.MsgBox_Infor("Bạn nhấp đúp chuột vào các cột: tổng số bill, tổng tiền thanh toán để xem chi tiết");
+                    BaseMessages.MsgBox_Infor("Bạn nhấp đúp chuột vào các cột: Tổng số bill, tổng tiền thực tế để xem chi tiết!");
+              }
             }
             catch (Exception v_e)
             {
