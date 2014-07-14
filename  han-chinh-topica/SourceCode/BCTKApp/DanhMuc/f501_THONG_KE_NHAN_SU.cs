@@ -31,612 +31,612 @@ namespace BCTKApp
 
 	public class f501_THONG_KE_NHAN_SU : System.Windows.Forms.Form
 	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_grv_thong_ke;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
-        private Panel m_pnl_top;
-        private TextBox m_txt_tu_khoa;
-        private Label label4;
-        private DateTimePicker m_dtp_tu_thang;
-        private Label label2;
-        private Label m_lbl_tieu_de;
-		private System.ComponentModel.IContainer components;
+//        internal system.windows.forms.imagelist imagelist;
+//        internal system.windows.forms.panel m_pnl_out_place_dm;
+//        private c1.win.c1flexgrid.c1flexgrid m_grv_thong_ke;
+//        internal sis.controls.button.sisbutton m_cmd_delete;
+//        internal sis.controls.button.sisbutton m_cmd_update;
+//        internal sis.controls.button.sisbutton m_cmd_insert;
+//        internal sis.controls.button.sisbutton m_cmd_exit;
+//        internal sis.controls.button.sisbutton m_cmd_xuat_excel;
+//        private panel m_pnl_top;
+//        private textbox m_txt_tu_khoa;
+//        private label label4;
+//        private datetimepicker m_dtp_tu_thang;
+//        private label label2;
+//        private label m_lbl_tieu_de;
+//        private system.componentmodel.icontainer components;
 
-		public f501_THONG_KE_NHAN_SU()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+//        public f501_thong_ke_nhan_su()
+//        {
+			
+//             required for windows form designer support
+			
+//            initializecomponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+			
+//             todo: add any constructor code after initializecomponent call
+			
+//            format_controls();
+//        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+//         <summary>
+//         clean up any resources being used.
+//         </summary>
+//        protected override void dispose( bool disposing )
+//        {
+//            if( disposing )
+//            {
+//                if(components != null)
+//                {
+//                    components.dispose();
+//                }
+//            }
+//            base.dispose( disposing );
+//        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f501_THONG_KE_NHAN_SU));
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_grv_thong_ke = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_pnl_top = new System.Windows.Forms.Panel();
-            this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.m_dtp_tu_thang = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_thong_ke)).BeginInit();
-            this.m_pnl_top.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // ImageList
-            // 
-            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList.Images.SetKeyName(0, "");
-            this.ImageList.Images.SetKeyName(1, "");
-            this.ImageList.Images.SetKeyName(2, "");
-            this.ImageList.Images.SetKeyName(3, "");
-            this.ImageList.Images.SetKeyName(4, "");
-            this.ImageList.Images.SetKeyName(5, "");
-            this.ImageList.Images.SetKeyName(6, "");
-            this.ImageList.Images.SetKeyName(7, "");
-            this.ImageList.Images.SetKeyName(8, "");
-            this.ImageList.Images.SetKeyName(9, "");
-            this.ImageList.Images.SetKeyName(10, "");
-            this.ImageList.Images.SetKeyName(11, "");
-            this.ImageList.Images.SetKeyName(12, "");
-            this.ImageList.Images.SetKeyName(13, "");
-            this.ImageList.Images.SetKeyName(14, "");
-            this.ImageList.Images.SetKeyName(15, "");
-            this.ImageList.Images.SetKeyName(16, "");
-            this.ImageList.Images.SetKeyName(17, "");
-            this.ImageList.Images.SetKeyName(18, "");
-            this.ImageList.Images.SetKeyName(19, "");
-            this.ImageList.Images.SetKeyName(20, "");
-            this.ImageList.Images.SetKeyName(21, "");
-            // 
-            // m_pnl_out_place_dm
-            // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 526);
-            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
-            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
-            this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(528, 4);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
-            this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.Visible = false;
-            // 
-            // m_cmd_update
-            // 
-            this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_update.ImageIndex = 3;
-            this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(616, 4);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 13;
-            this.m_cmd_update.Text = "&Sửa";
-            this.m_cmd_update.Visible = false;
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 19;
-            this.m_cmd_xuat_excel.ImageList = this.ImageList;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_xuat_excel.TabIndex = 21;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_delete.ImageIndex = 4;
-            this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(704, 4);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 14;
-            this.m_cmd_delete.Text = "&Xoá";
-            this.m_cmd_delete.Visible = false;
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(792, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
-            this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // m_grv_thong_ke
-            // 
-            this.m_grv_thong_ke.ColumnInfo = resources.GetString("m_grv_thong_ke.ColumnInfo");
-            this.m_grv_thong_ke.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_thong_ke.Location = new System.Drawing.Point(0, 146);
-            this.m_grv_thong_ke.Name = "m_grv_thong_ke";
-            this.m_grv_thong_ke.Size = new System.Drawing.Size(884, 380);
-            this.m_grv_thong_ke.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_thong_ke.Styles"));
-            this.m_grv_thong_ke.TabIndex = 20;
-            // 
-            // m_pnl_top
-            // 
-            this.m_pnl_top.Controls.Add(this.m_txt_tu_khoa);
-            this.m_pnl_top.Controls.Add(this.label4);
-            this.m_pnl_top.Controls.Add(this.m_dtp_tu_thang);
-            this.m_pnl_top.Controls.Add(this.label2);
-            this.m_pnl_top.Controls.Add(this.m_lbl_tieu_de);
-            this.m_pnl_top.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_pnl_top.Location = new System.Drawing.Point(0, 0);
-            this.m_pnl_top.Name = "m_pnl_top";
-            this.m_pnl_top.Size = new System.Drawing.Size(884, 146);
-            this.m_pnl_top.TabIndex = 21;
-            // 
-            // m_txt_tu_khoa
-            // 
-            this.m_txt_tu_khoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.m_txt_tu_khoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tu_khoa.Location = new System.Drawing.Point(309, 84);
-            this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
-            this.m_txt_tu_khoa.Size = new System.Drawing.Size(356, 20);
-            this.m_txt_tu_khoa.TabIndex = 6;
-            this.m_txt_tu_khoa.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tu_khoa_MouseClick);
-            this.m_txt_tu_khoa.MouseLeave += new System.EventHandler(this.m_txt_tu_khoa_Leave);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(243, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Từ khóa";
-            // 
-            // m_dtp_tu_thang
-            // 
-            this.m_dtp_tu_thang.Checked = false;
-            this.m_dtp_tu_thang.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_tu_thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_tu_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_thang.Location = new System.Drawing.Point(309, 45);
-            this.m_dtp_tu_thang.Name = "m_dtp_tu_thang";
-            this.m_dtp_tu_thang.ShowCheckBox = true;
-            this.m_dtp_tu_thang.Size = new System.Drawing.Size(126, 23);
-            this.m_dtp_tu_thang.TabIndex = 3;
-            this.m_dtp_tu_thang.Value = new System.DateTime(2014, 6, 26, 9, 16, 54, 0);
-            this.m_dtp_tu_thang.ValueChanged += new System.EventHandler(this.m_cmd_search_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(259, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Ngày";
-            // 
-            // m_lbl_tieu_de
-            // 
-            this.m_lbl_tieu_de.AutoSize = true;
-            this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tieu_de.Location = new System.Drawing.Point(286, 8);
-            this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(337, 23);
-            this.m_lbl_tieu_de.TabIndex = 0;
-            this.m_lbl_tieu_de.Text = "THỐNG KÊ NHÂN SỰ ĐANG LÀM VIỆC ";
-            // 
-            // f501_THONG_KE_NHAN_SU
-            // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(884, 562);
-            this.Controls.Add(this.m_pnl_top);
-            this.Controls.Add(this.m_grv_thong_ke);
-            this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Name = "f501_THONG_KE_NHAN_SU";
-            this.Text = "F501-Thống kê nhân sự đang làm việc";
-            this.Load += new System.EventHandler(this.f501_THONG_KE_NHAN_SU_Load);
-            this.m_pnl_out_place_dm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_thong_ke)).EndInit();
-            this.m_pnl_top.ResumeLayout(false);
-            this.m_pnl_top.PerformLayout();
-            this.ResumeLayout(false);
+//        #region windows form designer generated code
+//         <summary>
+//         required method for designer support - do not modify
+//         the contents of this method with the code editor.
+//         </summary>
+//        private void initializecomponent()
+//        {
+//            this.components = new system.componentmodel.container();
+//            system.componentmodel.componentresourcemanager resources = new system.componentmodel.componentresourcemanager(typeof(f501_thong_ke_nhan_su));
+//            this.imagelist = new system.windows.forms.imagelist(this.components);
+//            this.m_pnl_out_place_dm = new system.windows.forms.panel();
+//            this.m_cmd_insert = new sis.controls.button.sisbutton();
+//            this.m_cmd_update = new sis.controls.button.sisbutton();
+//            this.m_cmd_xuat_excel = new sis.controls.button.sisbutton();
+//            this.m_cmd_delete = new sis.controls.button.sisbutton();
+//            this.m_cmd_exit = new sis.controls.button.sisbutton();
+//            this.m_grv_thong_ke = new c1.win.c1flexgrid.c1flexgrid();
+//            this.m_pnl_top = new system.windows.forms.panel();
+//            this.m_txt_tu_khoa = new system.windows.forms.textbox();
+//            this.label4 = new system.windows.forms.label();
+//            this.m_dtp_tu_thang = new system.windows.forms.datetimepicker();
+//            this.label2 = new system.windows.forms.label();
+//            this.m_lbl_tieu_de = new system.windows.forms.label();
+//            this.m_pnl_out_place_dm.suspendlayout();
+//            ((system.componentmodel.isupportinitialize)(this.m_grv_thong_ke)).begininit();
+//            this.m_pnl_top.suspendlayout();
+//            this.suspendlayout();
+             
+//             imagelist
+             
+//            this.imagelist.imagestream = ((system.windows.forms.imageliststreamer)(resources.getobject("imagelist.imagestream")));
+//            this.imagelist.transparentcolor = system.drawing.color.transparent;
+//            this.imagelist.images.setkeyname(0, "");
+//            this.imagelist.images.setkeyname(1, "");
+//            this.imagelist.images.setkeyname(2, "");
+//            this.imagelist.images.setkeyname(3, "");
+//            this.imagelist.images.setkeyname(4, "");
+//            this.imagelist.images.setkeyname(5, "");
+//            this.imagelist.images.setkeyname(6, "");
+//            this.imagelist.images.setkeyname(7, "");
+//            this.imagelist.images.setkeyname(8, "");
+//            this.imagelist.images.setkeyname(9, "");
+//            this.imagelist.images.setkeyname(10, "");
+//            this.imagelist.images.setkeyname(11, "");
+//            this.imagelist.images.setkeyname(12, "");
+//            this.imagelist.images.setkeyname(13, "");
+//            this.imagelist.images.setkeyname(14, "");
+//            this.imagelist.images.setkeyname(15, "");
+//            this.imagelist.images.setkeyname(16, "");
+//            this.imagelist.images.setkeyname(17, "");
+//            this.imagelist.images.setkeyname(18, "");
+//            this.imagelist.images.setkeyname(19, "");
+//            this.imagelist.images.setkeyname(20, "");
+//            this.imagelist.images.setkeyname(21, "");
+             
+//             m_pnl_out_place_dm
+             
+//            this.m_pnl_out_place_dm.controls.add(this.m_cmd_insert);
+//            this.m_pnl_out_place_dm.controls.add(this.m_cmd_update);
+//            this.m_pnl_out_place_dm.controls.add(this.m_cmd_xuat_excel);
+//            this.m_pnl_out_place_dm.controls.add(this.m_cmd_delete);
+//            this.m_pnl_out_place_dm.controls.add(this.m_cmd_exit);
+//            this.m_pnl_out_place_dm.dock = system.windows.forms.dockstyle.bottom;
+//            this.m_pnl_out_place_dm.location = new system.drawing.point(0, 526);
+//            this.m_pnl_out_place_dm.name = "m_pnl_out_place_dm";
+//            this.m_pnl_out_place_dm.padding = new system.windows.forms.padding(4);
+//            this.m_pnl_out_place_dm.size = new system.drawing.size(884, 36);
+//            this.m_pnl_out_place_dm.tabindex = 19;
+             
+//             m_cmd_insert
+             
+//            this.m_cmd_insert.adjustimagelocation = new system.drawing.point(0, 0);
+//            this.m_cmd_insert.btnshape = sis.controls.button.emuntype.btnshape.rectangle;
+//            this.m_cmd_insert.btnstyle = sis.controls.button.emuntype.xpstyle.default;
+//            this.m_cmd_insert.dock = system.windows.forms.dockstyle.right;
+//            this.m_cmd_insert.imagealign = system.drawing.contentalignment.middleleft;
+//            this.m_cmd_insert.imageindex = 2;
+//            this.m_cmd_insert.imagelist = this.imagelist;
+//            this.m_cmd_insert.location = new system.drawing.point(528, 4);
+//            this.m_cmd_insert.name = "m_cmd_insert";
+//            this.m_cmd_insert.size = new system.drawing.size(88, 28);
+//            this.m_cmd_insert.tabindex = 12;
+//            this.m_cmd_insert.text = "&thêm";
+//            this.m_cmd_insert.visible = false;
+             
+//             m_cmd_update
+             
+//            this.m_cmd_update.adjustimagelocation = new system.drawing.point(0, 0);
+//            this.m_cmd_update.btnshape = sis.controls.button.emuntype.btnshape.rectangle;
+//            this.m_cmd_update.btnstyle = sis.controls.button.emuntype.xpstyle.default;
+//            this.m_cmd_update.dock = system.windows.forms.dockstyle.right;
+//            this.m_cmd_update.imagealign = system.drawing.contentalignment.middleleft;
+//            this.m_cmd_update.imageindex = 3;
+//            this.m_cmd_update.imagelist = this.imagelist;
+//            this.m_cmd_update.location = new system.drawing.point(616, 4);
+//            this.m_cmd_update.name = "m_cmd_update";
+//            this.m_cmd_update.size = new system.drawing.size(88, 28);
+//            this.m_cmd_update.tabindex = 13;
+//            this.m_cmd_update.text = "&sửa";
+//            this.m_cmd_update.visible = false;
+             
+//             m_cmd_xuat_excel
+             
+//            this.m_cmd_xuat_excel.adjustimagelocation = new system.drawing.point(0, 0);
+//            this.m_cmd_xuat_excel.btnshape = sis.controls.button.emuntype.btnshape.rectangle;
+//            this.m_cmd_xuat_excel.btnstyle = sis.controls.button.emuntype.xpstyle.default;
+//            this.m_cmd_xuat_excel.dock = system.windows.forms.dockstyle.left;
+//            this.m_cmd_xuat_excel.imagealign = system.drawing.contentalignment.middleleft;
+//            this.m_cmd_xuat_excel.imageindex = 19;
+//            this.m_cmd_xuat_excel.imagelist = this.imagelist;
+//            this.m_cmd_xuat_excel.location = new system.drawing.point(4, 4);
+//            this.m_cmd_xuat_excel.name = "m_cmd_xuat_excel";
+//            this.m_cmd_xuat_excel.size = new system.drawing.size(88, 28);
+//            this.m_cmd_xuat_excel.tabindex = 21;
+//            this.m_cmd_xuat_excel.text = "xuất excel";
+             
+//             m_cmd_delete
+             
+//            this.m_cmd_delete.adjustimagelocation = new system.drawing.point(0, 0);
+//            this.m_cmd_delete.btnshape = sis.controls.button.emuntype.btnshape.rectangle;
+//            this.m_cmd_delete.btnstyle = sis.controls.button.emuntype.xpstyle.default;
+//            this.m_cmd_delete.dock = system.windows.forms.dockstyle.right;
+//            this.m_cmd_delete.imagealign = system.drawing.contentalignment.middleleft;
+//            this.m_cmd_delete.imageindex = 4;
+//            this.m_cmd_delete.imagelist = this.imagelist;
+//            this.m_cmd_delete.location = new system.drawing.point(704, 4);
+//            this.m_cmd_delete.name = "m_cmd_delete";
+//            this.m_cmd_delete.size = new system.drawing.size(88, 28);
+//            this.m_cmd_delete.tabindex = 14;
+//            this.m_cmd_delete.text = "&xoá";
+//            this.m_cmd_delete.visible = false;
+             
+//             m_cmd_exit
+             
+//            this.m_cmd_exit.adjustimagelocation = new system.drawing.point(0, 0);
+//            this.m_cmd_exit.btnshape = sis.controls.button.emuntype.btnshape.rectangle;
+//            this.m_cmd_exit.btnstyle = sis.controls.button.emuntype.xpstyle.default;
+//            this.m_cmd_exit.dock = system.windows.forms.dockstyle.right;
+//            this.m_cmd_exit.imagealign = system.drawing.contentalignment.middleleft;
+//            this.m_cmd_exit.imageindex = 12;
+//            this.m_cmd_exit.imagelist = this.imagelist;
+//            this.m_cmd_exit.location = new system.drawing.point(792, 4);
+//            this.m_cmd_exit.name = "m_cmd_exit";
+//            this.m_cmd_exit.size = new system.drawing.size(88, 28);
+//            this.m_cmd_exit.tabindex = 11;
+//            this.m_cmd_exit.text = "thoát (esc)";
+             
+//             m_grv_thong_ke
+             
+//            this.m_grv_thong_ke.columninfo = resources.getstring("m_grv_thong_ke.columninfo");
+//            this.m_grv_thong_ke.dock = system.windows.forms.dockstyle.bottom;
+//            this.m_grv_thong_ke.location = new system.drawing.point(0, 146);
+//            this.m_grv_thong_ke.name = "m_grv_thong_ke";
+//            this.m_grv_thong_ke.size = new system.drawing.size(884, 380);
+//            this.m_grv_thong_ke.styles = new c1.win.c1flexgrid.cellstylecollection(resources.getstring("m_grv_thong_ke.styles"));
+//            this.m_grv_thong_ke.tabindex = 20;
+             
+//             m_pnl_top
+             
+//            this.m_pnl_top.controls.add(this.m_txt_tu_khoa);
+//            this.m_pnl_top.controls.add(this.label4);
+//            this.m_pnl_top.controls.add(this.m_dtp_tu_thang);
+//            this.m_pnl_top.controls.add(this.label2);
+//            this.m_pnl_top.controls.add(this.m_lbl_tieu_de);
+//            this.m_pnl_top.dock = system.windows.forms.dockstyle.fill;
+//            this.m_pnl_top.location = new system.drawing.point(0, 0);
+//            this.m_pnl_top.name = "m_pnl_top";
+//            this.m_pnl_top.size = new system.drawing.size(884, 146);
+//            this.m_pnl_top.tabindex = 21;
+             
+//             m_txt_tu_khoa
+             
+//            this.m_txt_tu_khoa.autocompletemode = system.windows.forms.autocompletemode.suggestappend;
+//            this.m_txt_tu_khoa.autocompletesource = system.windows.forms.autocompletesource.customsource;
+//            this.m_txt_tu_khoa.location = new system.drawing.point(309, 84);
+//            this.m_txt_tu_khoa.name = "m_txt_tu_khoa";
+//            this.m_txt_tu_khoa.size = new system.drawing.size(356, 20);
+//            this.m_txt_tu_khoa.tabindex = 6;
+//            this.m_txt_tu_khoa.mouseclick += new system.windows.forms.mouseeventhandler(this.m_txt_tu_khoa_mouseclick);
+//            this.m_txt_tu_khoa.mouseleave += new system.eventhandler(this.m_txt_tu_khoa_leave);
+             
+//             label4
+             
+//            this.label4.autosize = true;
+//            this.label4.font = new system.drawing.font("microsoft sans serif", 9.75f, system.drawing.fontstyle.regular, system.drawing.graphicsunit.point, ((byte)(0)));
+//            this.label4.location = new system.drawing.point(243, 88);
+//            this.label4.name = "label4";
+//            this.label4.size = new system.drawing.size(57, 16);
+//            this.label4.tabindex = 5;
+//            this.label4.text = "từ khóa";
+             
+//             m_dtp_tu_thang
+             
+//            this.m_dtp_tu_thang.checked = false;
+//            this.m_dtp_tu_thang.customformat = "dd/mm/yyyy";
+//            this.m_dtp_tu_thang.font = new system.drawing.font("tahoma", 9.75f, system.drawing.fontstyle.regular, system.drawing.graphicsunit.point, ((byte)(0)));
+//            this.m_dtp_tu_thang.format = system.windows.forms.datetimepickerformat.custom;
+//            this.m_dtp_tu_thang.location = new system.drawing.point(309, 45);
+//            this.m_dtp_tu_thang.name = "m_dtp_tu_thang";
+//            this.m_dtp_tu_thang.showcheckbox = true;
+//            this.m_dtp_tu_thang.size = new system.drawing.size(126, 23);
+//            this.m_dtp_tu_thang.tabindex = 3;
+//            this.m_dtp_tu_thang.value = new system.datetime(2014, 6, 26, 9, 16, 54, 0);
+//            this.m_dtp_tu_thang.valuechanged += new system.eventhandler(this.m_cmd_search_click);
+             
+//             label2
+             
+//            this.label2.autosize = true;
+//            this.label2.font = new system.drawing.font("microsoft sans serif", 9.75f, system.drawing.fontstyle.regular, system.drawing.graphicsunit.point, ((byte)(0)));
+//            this.label2.location = new system.drawing.point(259, 47);
+//            this.label2.name = "label2";
+//            this.label2.size = new system.drawing.size(41, 16);
+//            this.label2.tabindex = 1;
+//            this.label2.text = "ngày";
+             
+//             m_lbl_tieu_de
+             
+//            this.m_lbl_tieu_de.autosize = true;
+//            this.m_lbl_tieu_de.font = new system.drawing.font("tahoma", 14.25f, system.drawing.fontstyle.regular, system.drawing.graphicsunit.point, ((byte)(0)));
+//            this.m_lbl_tieu_de.location = new system.drawing.point(286, 8);
+//            this.m_lbl_tieu_de.name = "m_lbl_tieu_de";
+//            this.m_lbl_tieu_de.size = new system.drawing.size(337, 23);
+//            this.m_lbl_tieu_de.tabindex = 0;
+//            this.m_lbl_tieu_de.text = "thống kê nhân sự đang làm việc ";
+             
+//             f501_thong_ke_nhan_su
+             
+//            this.autoscalebasesize = new system.drawing.size(5, 13);
+//            this.clientsize = new system.drawing.size(884, 562);
+//            this.controls.add(this.m_pnl_top);
+//            this.controls.add(this.m_grv_thong_ke);
+//            this.controls.add(this.m_pnl_out_place_dm);
+//            this.name = "f501_thong_ke_nhan_su";
+//            this.text = "f501-thống kê nhân sự đang làm việc";
+//            this.load += new system.eventhandler(this.f501_thong_ke_nhan_su_load);
+//            this.m_pnl_out_place_dm.resumelayout(false);
+//            ((system.componentmodel.isupportinitialize)(this.m_grv_thong_ke)).endinit();
+//            this.m_pnl_top.resumelayout(false);
+//            this.m_pnl_top.performlayout();
+//            this.resumelayout(false);
 
-		}
-		#endregion
+//        }
+//        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-		#endregion
+//        #region public interface
+//        public void display(){			
+//            this.showdialog();
+//        }
+//        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			LOAI_THOI_GIAN = 5
-,DON_VI_THONG_KE = 8
-,MA_PHONG_BAN = 1
-,DEN_NGAY = 7
-,TEN_THONG_KE = 4
-,TEN_PHONG_BAN = 2
-,TU_NGAY = 6
-,GIA_TRI_THONG_KE = 9
-,LOAI_TK = 3
+//        #region data structure
+//        private enum e_col_number{
+//            loai_thoi_gian = 5
+//,don_vi_thong_ke = 8
+//,ma_phong_ban = 1
+//,den_ngay = 7
+//,ten_thong_ke = 4
+//,ten_phong_ban = 2
+//,tu_ngay = 6
+//,gia_tri_thong_ke = 9
+//,loai_tk = 3
 
-		}			
-		#endregion
+//        }			
+//        #endregion
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_GD_THONG_KE m_ds = new DS_V_GD_THONG_KE();
-		US_V_GD_THONG_KE m_us = new US_V_GD_THONG_KE();
-        private const String m_str_goi_y_tim_kiem = "Nhập Tên đơn vị cần tìm";
-		#endregion
+//        #region members
+//        itransferdatarow m_obj_trans;		
+//        ds_v_gd_thong_ke m_ds = new ds_v_gd_thong_ke();
+//        us_v_gd_thong_ke m_us = new us_v_gd_thong_ke();
+//        private const string m_str_goi_y_tim_kiem = "nhập tên đơn vị cần tìm";
+//        #endregion
 
-		#region Private Methods
-        private void load_custom_source_2_m_txt_tim_kiem()
-        {
-            int count = m_ds.Tables["V_GD_THONG_KE"].Rows.Count;
-            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
-            foreach (DataRow dr in m_ds.V_GD_THONG_KE)
-            {
-                v_acsc_search.Add(dr[V_GD_THONG_KE.TEN_PHONG_BAN].ToString());
-                //v_acsc_search.Add(dr[V_DINH_MUC_CPN_TUNG_PHONG_BAN.MA_PHONG_BAN].ToString());
+//        #region private methods
+//        private void load_custom_source_2_m_txt_tim_kiem()
+//        {
+//            int count = m_ds.tables["v_gd_thong_ke"].rows.count;
+//            autocompletestringcollection v_acsc_search = new autocompletestringcollection();
+//            foreach (datarow dr in m_ds.v_gd_thong_ke)
+//            {
+//                v_acsc_search.add(dr[v_gd_thong_ke.ten_phong_ban].tostring());
+//                v_acsc_search.add(dr[v_dinh_muc_cpn_tung_phong_ban.ma_phong_ban].tostring());
 
-            }
-            m_txt_tu_khoa.AutoCompleteCustomSource = v_acsc_search;
-        }
-		private void format_controls(){
-            CControlFormat.setFormStyle(this, new CAppContext_201());
-            m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			CControlFormat.setC1FlexFormat(m_grv_thong_ke);
-			CGridUtils.AddSave_Excel_Handlers(m_grv_thong_ke);
-            CGridUtils.AddSearch_Handlers(m_grv_thong_ke);
-            m_grv_thong_ke.Cols[0].Caption = "STT";
-			set_define_events();
-			this.KeyPreview = true;		
-		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_grv_thong_ke);
-			load_data_2_grid();		
-		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_GD_THONG_KE.LOAI_THOI_GIAN, e_col_Number.LOAI_THOI_GIAN);
-			v_htb.Add(V_GD_THONG_KE.DON_VI_THONG_KE, e_col_Number.DON_VI_THONG_KE);
-			v_htb.Add(V_GD_THONG_KE.MA_PHONG_BAN, e_col_Number.MA_PHONG_BAN);
-			v_htb.Add(V_GD_THONG_KE.DEN_NGAY, e_col_Number.DEN_NGAY);
-			v_htb.Add(V_GD_THONG_KE.TEN_THONG_KE, e_col_Number.TEN_THONG_KE);
-			v_htb.Add(V_GD_THONG_KE.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
-			v_htb.Add(V_GD_THONG_KE.TU_NGAY, e_col_Number.TU_NGAY);
-			v_htb.Add(V_GD_THONG_KE.GIA_TRI_THONG_KE, e_col_Number.GIA_TRI_THONG_KE);
-			v_htb.Add(V_GD_THONG_KE.LOAI_TK, e_col_Number.LOAI_TK);
+//            }
+//            m_txt_tu_khoa.autocompletecustomsource = v_acsc_search;
+//        }
+//        private void format_controls(){
+//            ccontrolformat.setformstyle(this, new cappcontext_201());
+//            m_lbl_tieu_de.font = new system.drawing.font("tahoma", 15, system.drawing.fontstyle.regular, system.drawing.graphicsunit.point);
+//            ccontrolformat.setc1flexformat(m_grv_thong_ke);
+//            cgridutils.addsave_excel_handlers(m_grv_thong_ke);
+//            cgridutils.addsearch_handlers(m_grv_thong_ke);
+//            m_grv_thong_ke.cols[0].caption = "stt";
+//            set_define_events();
+//            this.keypreview = true;		
+//        }
+//        private void set_initial_form_load(){						
+//            m_obj_trans = get_trans_object(m_grv_thong_ke);
+//            load_data_2_grid();		
+//        }	
+//        private itransferdatarow get_trans_object(c1.win.c1flexgrid.c1flexgrid i_fg){
+//            hashtable v_htb = new hashtable();
+//            v_htb.add(v_gd_thong_ke.loai_thoi_gian, e_col_number.loai_thoi_gian);
+//            v_htb.add(v_gd_thong_ke.don_vi_thong_ke, e_col_number.don_vi_thong_ke);
+//            v_htb.add(v_gd_thong_ke.ma_phong_ban, e_col_number.ma_phong_ban);
+//            v_htb.add(v_gd_thong_ke.den_ngay, e_col_number.den_ngay);
+//            v_htb.add(v_gd_thong_ke.ten_thong_ke, e_col_number.ten_thong_ke);
+//            v_htb.add(v_gd_thong_ke.ten_phong_ban, e_col_number.ten_phong_ban);
+//            v_htb.add(v_gd_thong_ke.tu_ngay, e_col_number.tu_ngay);
+//            v_htb.add(v_gd_thong_ke.gia_tri_thong_ke, e_col_number.gia_tri_thong_ke);
+//            v_htb.add(v_gd_thong_ke.loai_tk, e_col_number.loai_tk);
 									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_THONG_KE.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){
+//            itransferdatarow v_obj_trans = new cc1transferdatarow(i_fg,v_htb,m_ds.v_gd_thong_ke.newrow());
+//            return v_obj_trans;			
+//        }
+//        private void load_data_2_grid(){
             
-            string v_str_tu_khoa = m_txt_tu_khoa.Text;
-            DateTime v_dat_tai_ngay=DateTime.Now;
-            if (v_str_tu_khoa.Equals(m_str_goi_y_tim_kiem))
-            {
-                v_str_tu_khoa = "";
-            }
-            if (m_dtp_tu_thang.Checked == true) v_dat_tai_ngay = m_dtp_tu_thang.Value;
-			m_ds = new DS_V_GD_THONG_KE();
-            m_us.FillDatasetSearch_nhansu(m_ds, v_str_tu_khoa,v_dat_tai_ngay);
-            //m_us.FillDataset(m_ds);
-			m_grv_thong_ke.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_grv_thong_ke, m_obj_trans);
-            CGridUtils.MakeSoTT(0, m_grv_thong_ke);
-			m_grv_thong_ke.Redraw = true;
-            set_search_format_before();
+//            string v_str_tu_khoa = m_txt_tu_khoa.text;
+//            datetime v_dat_tai_ngay=datetime.now;
+//            if (v_str_tu_khoa.equals(m_str_goi_y_tim_kiem))
+//            {
+//                v_str_tu_khoa = "";
+//            }
+//            if (m_dtp_tu_thang.checked == true) v_dat_tai_ngay = m_dtp_tu_thang.value;
+//            m_ds = new ds_v_gd_thong_ke();
+//            m_us.filldatasetsearch_nhansu(m_ds, v_str_tu_khoa,v_dat_tai_ngay);
+//            m_us.filldataset(m_ds);
+//            m_grv_thong_ke.redraw = false;
+//            cgridutils.dataset2c1grid(m_ds, m_grv_thong_ke, m_obj_trans);
+//            cgridutils.makesott(0, m_grv_thong_ke);
+//            m_grv_thong_ke.redraw = true;
+//            set_search_format_before();
            
-		}
+//        }
 
-		private void grid2us_object(US_V_GD_THONG_KE i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_grv_thong_ke.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
+//        private void grid2us_object(us_v_gd_thong_ke i_us
+//            , int i_grid_row) {
+//            datarow v_dr;
+//            v_dr = (datarow) m_grv_thong_ke.rows[i_grid_row].userdata;
+//            m_obj_trans.gridrow2datarow(i_grid_row,v_dr);
+//            i_us.datarow2me(v_dr);
+//        }
 
 	
-		private void us_object2grid(US_V_GD_THONG_KE i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_grv_thong_ke.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+//        private void us_object2grid(us_v_gd_thong_ke i_us
+//            , int i_grid_row) {
+//            datarow v_dr = (datarow) m_grv_thong_ke.rows[i_grid_row].userdata;
+//            i_us.me2datarow(v_dr);
+//            m_obj_trans.datarow2gridrow(v_dr, i_grid_row);
+//        }
 
 
-		private void insert_v_gd_thong_ke(){			
-		//	f501_THONG_KE_NHAN_SU_DE v_fDE = new  f501_THONG_KE_NHAN_SU_DE();								
-		//	v_fDE.display();
-			load_data_2_grid();
-		}
+//        private void insert_v_gd_thong_ke(){			
+//            f501_thong_ke_nhan_su_de v_fde = new  f501_thong_ke_nhan_su_de();								
+//            v_fde.display();
+//            load_data_2_grid();
+//        }
 
-		private void update_v_gd_thong_ke(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_thong_ke)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_thong_ke, m_grv_thong_ke.Row)) return;			
-			grid2us_object(m_us, m_grv_thong_ke.Row);
-		//	f501_THONG_KE_NHAN_SU_DE v_fDE = new f501_THONG_KE_NHAN_SU_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
-		}
+//        private void update_v_gd_thong_ke(){			
+//            if (!cgridutils.isthere_any_nonfixed_row(m_grv_thong_ke)) return;
+//            if (!cgridutils.isvalid_nonfixed_rowindex(m_grv_thong_ke, m_grv_thong_ke.row)) return;			
+//            grid2us_object(m_us, m_grv_thong_ke.row);
+//            f501_thong_ke_nhan_su_de v_fde = new f501_thong_ke_nhan_su_de();
+//            v_fde.display(m_us);
+//            load_data_2_grid();
+//        }
 				
-		private void delete_v_gd_thong_ke(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_thong_ke)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_thong_ke, m_grv_thong_ke.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_GD_THONG_KE v_us = new US_V_GD_THONG_KE();
-			grid2us_object(v_us, m_grv_thong_ke.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_grv_thong_ke.Rows.Remove(m_grv_thong_ke.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
+//        private void delete_v_gd_thong_ke(){
+//            if (!cgridutils.isthere_any_nonfixed_row(m_grv_thong_ke)) return;
+//            if (!cgridutils.isvalid_nonfixed_rowindex(m_grv_thong_ke, m_grv_thong_ke.row)) return;
+//            if (basemessages.askuser_datacouldbedeleted(8) != basemessages.isdatacouldbedeleted.couldbedeleted)  return;
+//            us_v_gd_thong_ke v_us = new us_v_gd_thong_ke();
+//            grid2us_object(v_us, m_grv_thong_ke.row);
+//            try {			
+//                v_us.begintransaction();    											
+//                v_us.delete();                      								
+//                v_us.committransaction();
+//                m_grv_thong_ke.rows.remove(m_grv_thong_ke.row);				
+//            }
+//            catch (exception v_e) {
+//                v_us.rollback();
+//                cdbexceptionhandler v_objerrhandler = new cdbexceptionhandler(v_e,
+//                    new cdbclientdbexceptioninterpret());
+//                v_objerrhandler.showerrormessage();
+//            }
+//        }
 
-		private void view_v_gd_thong_ke(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_thong_ke)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_thong_ke, m_grv_thong_ke.Row)) return;
-			grid2us_object(m_us, m_grv_thong_ke.Row);
-		//	f501_THONG_KE_NHAN_SU_DE v_fDE = new f501_THONG_KE_NHAN_SU_DE();			
-		//	v_fDE.display(m_us);
-		}
-        private void export_2_excel() 
-        {
-            CExcelReport v_obj_excel_report = new CExcelReport("f501_thong_ke_nhan_su.xlsx",6,1);
-            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dtp_tu_thang.Text);
-            v_obj_excel_report.FindAndReplace(false);
-            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_grv_thong_ke,0, m_grv_thong_ke.Cols.Count - 1, true);
-        }
-        private void set_search_format_before()
-        {
-            if (m_txt_tu_khoa.Text == "")
-            {
-                m_txt_tu_khoa.Text = m_str_goi_y_tim_kiem;
-                m_txt_tu_khoa.ForeColor = Color.Gray;
-            }
-        }
-        private void set_search_format_after()
-        {
-            if (m_txt_tu_khoa.Text == m_str_goi_y_tim_kiem)
-            {
-                m_txt_tu_khoa.Text = "";
-            }
-            m_txt_tu_khoa.ForeColor = Color.Black;
-        }
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_xuat_excel.Click +=new EventHandler(m_cmd_xuat_excel_Click);
-            //m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
-            m_txt_tu_khoa.KeyDown += m_txt_tu_khoa_KeyDown;
-            m_txt_tu_khoa.MouseClick += m_txt_tu_khoa_MouseClick;
-            m_txt_tu_khoa.Leave += m_txt_tu_khoa_Leave;
-		}
-		#endregion
+//        private void view_v_gd_thong_ke(){			
+//            if (!cgridutils.isthere_any_nonfixed_row(m_grv_thong_ke)) return;
+//            if (!cgridutils.isvalid_nonfixed_rowindex(m_grv_thong_ke, m_grv_thong_ke.row)) return;
+//            grid2us_object(m_us, m_grv_thong_ke.row);
+//            f501_thong_ke_nhan_su_de v_fde = new f501_thong_ke_nhan_su_de();			
+//            v_fde.display(m_us);
+//        }
+//        private void export_2_excel() 
+//        {
+//            cexcelreport v_obj_excel_report = new cexcelreport("f501_thong_ke_nhan_su.xlsx",6,1);
+//            v_obj_excel_report.addfindandreplaceitem("<tu_ngay>", m_dtp_tu_thang.text);
+//            v_obj_excel_report.findandreplace(false);
+//            v_obj_excel_report.export2excelwithoutfixedrows(m_grv_thong_ke,0, m_grv_thong_ke.cols.count - 1, true);
+//        }
+//        private void set_search_format_before()
+//        {
+//            if (m_txt_tu_khoa.text == "")
+//            {
+//                m_txt_tu_khoa.text = m_str_goi_y_tim_kiem;
+//                m_txt_tu_khoa.forecolor = color.gray;
+//            }
+//        }
+//        private void set_search_format_after()
+//        {
+//            if (m_txt_tu_khoa.text == m_str_goi_y_tim_kiem)
+//            {
+//                m_txt_tu_khoa.text = "";
+//            }
+//            m_txt_tu_khoa.forecolor = color.black;
+//        }
+//        private void set_define_events(){
+//            m_cmd_exit.click += new eventhandler(m_cmd_exit_click);
+//            m_cmd_insert.click += new eventhandler(m_cmd_insert_click);
+//            m_cmd_update.click += new eventhandler(m_cmd_update_click);
+//            m_cmd_delete.click += new eventhandler(m_cmd_delete_click);
+//            m_cmd_xuat_excel.click +=new eventhandler(m_cmd_xuat_excel_click);
+//            m_cmd_search.click+=new eventhandler(m_cmd_search_click);
+//            m_txt_tu_khoa.keydown += m_txt_tu_khoa_keydown;
+//            m_txt_tu_khoa.mouseclick += m_txt_tu_khoa_mouseclick;
+//            m_txt_tu_khoa.leave += m_txt_tu_khoa_leave;
+//        }
+//        #endregion
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-        //
-        #region Event
-        private void f501_THONG_KE_NHAN_SU_Load(object sender, System.EventArgs e)
-        {
-            try
-            {
-                set_initial_form_load();
-                load_custom_source_2_m_txt_tim_kiem();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
 
-        }
+		
+//                event hanlders
+		
+        
+//        #region event
+//        private void f501_thong_ke_nhan_su_load(object sender, system.eventargs e)
+//        {
+//            try
+//            {
+//                set_initial_form_load();
+//                load_custom_source_2_m_txt_tim_kiem();
+//            }
+//            catch (exception v_e)
+//            {
+//                csystemlog_301.exceptionhandle(v_e);
+//            }
 
-        private void m_cmd_exit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.Close();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+//        }
 
-        private void m_cmd_insert_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                insert_v_gd_thong_ke();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+//        private void m_cmd_exit_click(object sender, eventargs e)
+//        {
+//            try
+//            {
+//                this.close();
+//            }
+//            catch (exception v_e)
+//            {
+//                csystemlog_301.exceptionhandle(v_e);
+//            }
+//        }
 
-        private void m_cmd_update_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                update_v_gd_thong_ke();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+//        private void m_cmd_insert_click(object sender, eventargs e)
+//        {
+//            try
+//            {
+//                insert_v_gd_thong_ke();
+//            }
+//            catch (exception v_e)
+//            {
+//                csystemlog_301.exceptionhandle(v_e);
+//            }
+//        }
 
-        private void m_cmd_delete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                delete_v_gd_thong_ke();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+//        private void m_cmd_update_click(object sender, eventargs e)
+//        {
+//            try
+//            {
+//                update_v_gd_thong_ke();
+//            }
+//            catch (exception v_e)
+//            {
+//                csystemlog_301.exceptionhandle(v_e);
+//            }
+//        }
 
-        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                export_2_excel();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-        private void m_cmd_search_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                load_data_2_grid();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-        private void m_txt_tu_khoa_KeyDown(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                if (e.KeyData == Keys.Enter)
-                {
-                    load_data_2_grid();
-                }
-                else
-                {
-                    set_search_format_after();
-                }
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+//        private void m_cmd_delete_click(object sender, eventargs e)
+//        {
+//            try
+//            {
+//                delete_v_gd_thong_ke();
+//            }
+//            catch (exception v_e)
+//            {
+//                csystemlog_301.exceptionhandle(v_e);
+//            }
+//        }
 
-        private void m_txt_tu_khoa_MouseClick(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                set_search_format_after();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+//        private void m_cmd_xuat_excel_click(object sender, eventargs e)
+//        {
+//            try
+//            {
+//                export_2_excel();
+//            }
+//            catch (exception v_e)
+//            {
+//                csystemlog_301.exceptionhandle(v_e);
+//            }
+//        }
+//        private void m_cmd_search_click(object sender, eventargs e)
+//        {
+//            try
+//            {
+//                load_data_2_grid();
+//            }
+//            catch (exception v_e)
+//            {
+//                csystemlog_301.exceptionhandle(v_e);
+//            }
+//        }
+//        private void m_txt_tu_khoa_keydown(object sender, keyeventargs e)
+//        {
+//            try
+//            {
+//                if (e.keydata == keys.enter)
+//                {
+//                    load_data_2_grid();
+//                }
+//                else
+//                {
+//                    set_search_format_after();
+//                }
+//            }
+//            catch (exception v_e)
+//            {
+//                csystemlog_301.exceptionhandle(v_e);
+//            }
+//        }
 
-        private void m_txt_tu_khoa_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                set_search_format_before();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-        #endregion
+//        private void m_txt_tu_khoa_mouseclick(object sender, mouseeventargs e)
+//        {
+//            try
+//            {
+//                set_search_format_after();
+//            }
+//            catch (exception v_e)
+//            {
+//                csystemlog_301.exceptionhandle(v_e);
+//            }
+//        }
+
+//        private void m_txt_tu_khoa_leave(object sender, eventargs e)
+//        {
+//            try
+//            {
+//                set_search_format_before();
+//            }
+//            catch (exception v_e)
+//            {
+//                csystemlog_301.exceptionhandle(v_e);
+//            }
+//        }
+//        #endregion
         
 	}
 }

@@ -153,22 +153,22 @@ namespace BCTKApp.ChucNang {
             return false;
         }
         private void set_color_ma_bill_da_ton_tai() {
-            C1.Win.C1FlexGrid.CellStyle v_cell_style_notOK_in_data = this.m_fg.Styles.Add("RowColorNotOk");
-            v_cell_style_notOK_in_data.BackColor = Color.Red;
-            C1.Win.C1FlexGrid.CellStyle v_cell_style_OK_in_data = this.m_fg.Styles.Add("RowColorOk");
-            v_cell_style_OK_in_data.BackColor = System.Drawing.SystemColors.Window;
-            int flag = 0;
-            for(int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count - 1; v_i_cur_row++) {
-                if(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL] != null && m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL].ToString() != "") {
-                    if(is_exist_bill_in_db(CIPConvert.ToStr(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL]))) {
-                        m_fg.SetCellStyle(v_i_cur_row, (int)e_col_Number.SO_BILL, v_cell_style_notOK_in_data);
-                        flag = 1;
-                    }
-                    else {
-                        m_fg.SetCellStyle(v_i_cur_row, (int)e_col_Number.SO_BILL, v_cell_style_OK_in_data);
-                    }
-                }
-            }
+            //C1.Win.C1FlexGrid.CellStyle v_cell_style_notOK_in_data = this.m_fg.Styles.Add("RowColorNotOk");
+            //v_cell_style_notOK_in_data.BackColor = Color.Red;
+            //C1.Win.C1FlexGrid.CellStyle v_cell_style_OK_in_data = this.m_fg.Styles.Add("RowColorOk");
+            //v_cell_style_OK_in_data.BackColor = System.Drawing.SystemColors.Window;
+            //int flag = 0;
+            //for(int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count - 1; v_i_cur_row++) {
+            //    if(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL] != null && m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL].ToString() != "") {
+            //        if(is_exist_bill_in_db(CIPConvert.ToStr(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL]))) {
+            //            m_fg.SetCellStyle(v_i_cur_row, (int)e_col_Number.SO_BILL, v_cell_style_notOK_in_data);
+            //            flag = 1;
+            //        }
+            //        else {
+            //            m_fg.SetCellStyle(v_i_cur_row, (int)e_col_Number.SO_BILL, v_cell_style_OK_in_data);
+            //        }
+            //    }
+            //}
             //if(flag == 0) v_cell_style_notOK_in_data.Clear();
         }
         private bool check_validate_grid_is_ok() {

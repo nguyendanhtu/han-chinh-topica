@@ -97,9 +97,9 @@
             this.m_lbl_tieu_de.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(1169, 29);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(1169, 42);
             this.m_lbl_tieu_de.TabIndex = 0;
-            this.m_lbl_tieu_de.Text = "Nhập thư gửi";
+            this.m_lbl_tieu_de.Text = "NHẬP THÔNG TIN BILL";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -311,7 +311,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_tieu_de);
             this.Name = "f810_DANG_KY_GUI_THEO_BUU";
-            this.Text = "F810 - Nhập thư gửi";
+            this.Text = "F810 - Nhập thông tin Bill";
             this.m_pnl_tieu_de.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
