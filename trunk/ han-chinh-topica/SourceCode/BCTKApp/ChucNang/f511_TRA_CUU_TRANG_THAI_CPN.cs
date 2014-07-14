@@ -188,9 +188,9 @@ namespace BCTKApp
             // 
             this.m_grv_trang_thai.ColumnInfo = resources.GetString("m_grv_trang_thai.ColumnInfo");
             this.m_grv_trang_thai.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_trang_thai.Location = new System.Drawing.Point(0, 186);
+            this.m_grv_trang_thai.Location = new System.Drawing.Point(0, 196);
             this.m_grv_trang_thai.Name = "m_grv_trang_thai";
-            this.m_grv_trang_thai.Size = new System.Drawing.Size(884, 340);
+            this.m_grv_trang_thai.Size = new System.Drawing.Size(884, 330);
             this.m_grv_trang_thai.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_trang_thai.Styles"));
             this.m_grv_trang_thai.TabIndex = 20;
             // 
@@ -213,24 +213,24 @@ namespace BCTKApp
             this.m_pnl_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_top.Location = new System.Drawing.Point(0, 0);
             this.m_pnl_top.Name = "m_pnl_top";
-            this.m_pnl_top.Size = new System.Drawing.Size(884, 180);
+            this.m_pnl_top.Size = new System.Drawing.Size(884, 190);
             this.m_pnl_top.TabIndex = 21;
             // 
             // m_cbo_trung_tam
             // 
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(334, 71);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(317, 80);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
-            this.m_cbo_trung_tam.Size = new System.Drawing.Size(190, 21);
+            this.m_cbo_trung_tam.Size = new System.Drawing.Size(207, 21);
             this.m_cbo_trung_tam.TabIndex = 34;
             // 
             // m_cbo_trang_thai
             // 
             this.m_cbo_trang_thai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.m_cbo_trang_thai.FormattingEnabled = true;
-            this.m_cbo_trang_thai.Location = new System.Drawing.Point(334, 108);
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(317, 117);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
-            this.m_cbo_trang_thai.Size = new System.Drawing.Size(190, 21);
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(207, 21);
             this.m_cbo_trang_thai.TabIndex = 4;
             // 
             // m_dtp_den_ngay
@@ -239,7 +239,7 @@ namespace BCTKApp
             this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_den_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_den_ngay.Location = new System.Drawing.Point(582, 40);
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(542, 46);
             this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
             this.m_dtp_den_ngay.RightToLeftLayout = true;
             this.m_dtp_den_ngay.ShowCheckBox = true;
@@ -251,7 +251,7 @@ namespace BCTKApp
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(239, 113);
+            this.label8.Location = new System.Drawing.Point(239, 122);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 16);
             this.label8.TabIndex = 33;
@@ -265,7 +265,7 @@ namespace BCTKApp
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(551, 135);
+            this.m_cmd_search.Location = new System.Drawing.Point(551, 144);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 6;
@@ -277,7 +277,7 @@ namespace BCTKApp
             this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(334, 39);
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(317, 46);
             this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
             this.m_dtp_tu_ngay.ShowCheckBox = true;
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(126, 23);
@@ -288,7 +288,7 @@ namespace BCTKApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(239, 147);
+            this.label1.Location = new System.Drawing.Point(239, 156);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 31;
@@ -298,7 +298,7 @@ namespace BCTKApp
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(484, 43);
+            this.label6.Location = new System.Drawing.Point(462, 50);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 16);
             this.label6.TabIndex = 32;
@@ -306,16 +306,16 @@ namespace BCTKApp
             // 
             // m_txt_so_bill
             // 
-            this.m_txt_so_bill.Location = new System.Drawing.Point(334, 143);
+            this.m_txt_so_bill.Location = new System.Drawing.Point(317, 152);
             this.m_txt_so_bill.Name = "m_txt_so_bill";
-            this.m_txt_so_bill.Size = new System.Drawing.Size(190, 20);
+            this.m_txt_so_bill.Size = new System.Drawing.Size(207, 20);
             this.m_txt_so_bill.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(239, 46);
+            this.label7.Location = new System.Drawing.Point(239, 51);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 16);
             this.label7.TabIndex = 31;
@@ -324,7 +324,7 @@ namespace BCTKApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(298, 136);
+            this.label2.Location = new System.Drawing.Point(298, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 29;
@@ -333,7 +333,7 @@ namespace BCTKApp
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(239, 78);
+            this.label3.Location = new System.Drawing.Point(239, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 29;
@@ -342,20 +342,21 @@ namespace BCTKApp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(300, 80);
+            this.label4.Location = new System.Drawing.Point(300, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 28;
             // 
             // m_lbl_tieu_de
             // 
-            this.m_lbl_tieu_de.AutoSize = true;
+            this.m_lbl_tieu_de.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tieu_de.Location = new System.Drawing.Point(327, 9);
+            this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(241, 23);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(884, 32);
             this.m_lbl_tieu_de.TabIndex = 27;
             this.m_lbl_tieu_de.Text = "TRA CỨU TRẠNG THÁI CPN";
+            this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // f511_TRA_CUU_TRANG_THAI_CPN
             // 
@@ -749,6 +750,8 @@ namespace BCTKApp
             }
         }
         #endregion
+
+        
         
 
 	}
