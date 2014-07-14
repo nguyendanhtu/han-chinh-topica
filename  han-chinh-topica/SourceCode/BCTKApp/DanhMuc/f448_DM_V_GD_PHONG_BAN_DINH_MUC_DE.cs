@@ -54,18 +54,17 @@ namespace BCTKApp.DanhMuc
         private void format_control()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
-            this.MinimizeBox = true;
             // m_lbl_header
             // 
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(61, 9);
+            this.m_lbl_header.Location = new System.Drawing.Point(37, 9);
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(410, 22);
             this.m_lbl_header.TabIndex = 25;
             this.m_lbl_header.Text = "THÊM CƠ SỞ ĐỊNH MỨC CHO TRUNG TÂM";
-            // 
+            //
         }
         private void m_us_obj_to_form()
         {
@@ -163,6 +162,7 @@ namespace BCTKApp.DanhMuc
         public f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE()
         {
             InitializeComponent();
+            format_control();
             load_cbo_co_tinh_dinh_muc();
             load_cbo_dm_co_co();
             load_cbo_trung_tam();
