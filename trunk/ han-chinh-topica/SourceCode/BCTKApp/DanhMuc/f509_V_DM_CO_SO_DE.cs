@@ -25,6 +25,7 @@ namespace BCTKApp
         DS_DM_CO_SO m_ds = new DS_DM_CO_SO();
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
         #endregion
+
         #region Public interface
         public void display_for_insert() 
         {
@@ -40,6 +41,7 @@ namespace BCTKApp
 
         }
         #endregion
+
         #region Private Method
         private void format_control()
         {
@@ -63,10 +65,32 @@ namespace BCTKApp
             m_txt_ten_co_so.Text = ip_us.strMO_TA;
             m_cbo_loai_co_so.SelectedValue = ip_us.dcID_LOAI_CO_SO;
         }
+        private bool validate_ma_insert(string v_str_ma)
+        {
+            US_DM_CO_SO v_us = new US_DM_CO_SO();
+            DS_DM_CO_SO v_ds = new DS_DM_CO_SO();
+            v_us.FillDataset(v_ds, "where ma='" + v_str_ma + "'");
+            if (v_ds.DM_CO_SO.Count != 0 && m_e_form_mode == DataEntryFormMode.InsertDataState) return false;
+            return true;
+        }
+        private bool validate_ma_update(string ip_str_ma, decimal ip_dc_id)
+        {
+            US_DM_CO_SO v_us = new US_DM_CO_SO();
+            DS_DM_CO_SO v_ds = new DS_DM_CO_SO();
+            v_us.FillDataset(v_ds, "where ma='" + ip_str_ma + "' or id=" + ip_dc_id);
+            if (v_ds.DM_CO_SO.Count != 1) return false;
+            return true;
+        }
         private void save_data()
         {
             if (!validate_data_is_ok())
                 return;
+            if (!validate_ma_insert(m_txt_ma_co_so.Text.Trim()))
+            {
+                BaseMessages.MsgBox_Infor("Mã cơ sở đã tồn tại");
+                xoa_trang();
+                return;
+            }
             form_2_us_obj();
             switch (m_e_form_mode)
             {
@@ -74,6 +98,12 @@ namespace BCTKApp
                     m_us.Insert();
                     break;
                 case DataEntryFormMode.UpdateDataState:
+                    if (!validate_ma_update(m_txt_ma_co_so.Text.Trim(), m_us.dcID))
+                    {
+                        BaseMessages.MsgBox_Infor("Mã cơ sở đã tồn tại");
+                        m_txt_ma_co_so.Focus();
+                        return;
+                    }
                     m_us.Update();
                     break;
             }
@@ -117,6 +147,7 @@ namespace BCTKApp
            m_cmd_exit.Click+=new EventHandler(m_cmd_exit_Click);
         }
         #endregion
+
         #region Event
         private void m_cmd_save_Click(object sender, EventArgs e)
         {
