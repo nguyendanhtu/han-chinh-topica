@@ -51,7 +51,7 @@
             this.m_cbo_loai_co_so.Location = new System.Drawing.Point(98, 107);
             this.m_cbo_loai_co_so.Name = "m_cbo_loai_co_so";
             this.m_cbo_loai_co_so.Size = new System.Drawing.Size(276, 21);
-            this.m_cbo_loai_co_so.TabIndex = 20;
+            this.m_cbo_loai_co_so.TabIndex = 2;
             // 
             // label1
             // 
@@ -120,7 +120,7 @@
             this.m_txt_ma_co_so.Location = new System.Drawing.Point(98, 35);
             this.m_txt_ma_co_so.Name = "m_txt_ma_co_so";
             this.m_txt_ma_co_so.Size = new System.Drawing.Size(143, 20);
-            this.m_txt_ma_co_so.TabIndex = 14;
+            this.m_txt_ma_co_so.TabIndex = 0;
             // 
             // m_pnl_out_place_dm
             // 
@@ -153,7 +153,7 @@
             this.m_txt_ten_co_so.Location = new System.Drawing.Point(98, 69);
             this.m_txt_ten_co_so.Name = "m_txt_ten_co_so";
             this.m_txt_ten_co_so.Size = new System.Drawing.Size(276, 20);
-            this.m_txt_ten_co_so.TabIndex = 16;
+            this.m_txt_ten_co_so.TabIndex = 1;
             // 
             // m_lbl_ma_phong_ban
             // 
@@ -179,7 +179,7 @@
             this.m_chk_close_form.Location = new System.Drawing.Point(99, 147);
             this.m_chk_close_form.Name = "m_chk_close_form";
             this.m_chk_close_form.Size = new System.Drawing.Size(196, 17);
-            this.m_chk_close_form.TabIndex = 21;
+            this.m_chk_close_form.TabIndex = 3;
             this.m_chk_close_form.Text = "Chọn để khi lưu không tắt hộp thoại";
             this.m_chk_close_form.UseVisualStyleBackColor = true;
             // 

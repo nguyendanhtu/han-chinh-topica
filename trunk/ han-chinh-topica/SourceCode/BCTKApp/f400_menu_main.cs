@@ -57,6 +57,7 @@ namespace BCTKApp
             m_cmd_tong_hop_bill_theo_phong_ban.Click += new EventHandler(m_cmd_tong_hop_bill_theo_phong_ban_Click);
             m_cmd_bc_tinh_hinh_CPN.Click += new EventHandler(m_cmd_bc_tinh_hinh_CPN_Click);
             m_cmd_bc_chi_phi_theo_phap_nhan.Click += new EventHandler(m_cmd_bc_chi_phi_theo_phap_nhan_Click);
+            m_cmd_dm_bill.Click+=new EventHandler(m_cmd_dm_bill_Click);
         }
 
         void f400_menu_main_Load(object sender, EventArgs e)
