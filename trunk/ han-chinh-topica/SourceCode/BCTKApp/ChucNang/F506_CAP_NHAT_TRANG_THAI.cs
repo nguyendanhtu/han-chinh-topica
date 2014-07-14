@@ -107,6 +107,7 @@ namespace BCTKApp
         {
             DataRow v_dr;
             v_dr = (DataRow)i_fg.Rows[i_grid_row].UserData;
+            m_obj_trans = get_trans_object(i_fg);
             m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
             i_us.DataRow2Me(v_dr);
         }
@@ -117,6 +118,7 @@ namespace BCTKApp
         {
             DataRow v_dr = (DataRow)i_fg.Rows[i_grid_row].UserData;
             i_us.Me2DataRow(v_dr);
+            m_obj_trans = get_trans_object(i_fg);
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
         }
        
@@ -130,8 +132,7 @@ namespace BCTKApp
             //chuyen tu trang thai 1-Da nhan noi bo -> 2-Da chuyen cho CPN
             change_state_of_bill(m_us.dcID, ip_id_trang_thai_moi);
             load_data_2_grid(ip_id_trang_thai_cu, i_fg_left);
-            load_data_2_grid(ip_id_trang_thai_moi, i_fg_right);
-            
+            load_data_2_grid(ip_id_trang_thai_moi, i_fg_right);            
             BaseMessages.MsgBox_Infor(ip_str_message);
 
         }

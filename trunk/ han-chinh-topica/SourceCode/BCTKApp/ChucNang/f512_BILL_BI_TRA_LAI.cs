@@ -326,7 +326,7 @@ namespace BCTKApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			TEN_PHONG_BAN = 1,NGAY_GUI = 2,NOI_NHAN = 6,NGUOI_NHAN = 5,NOI_DUNG = 4,NGUOI_GUI = 7,SO_BILL = 3
+			TEN_PHONG_BAN = 1        ,NGAY_GUI = 2        ,NOI_NHAN = 6        ,NGUOI_NHAN = 5        ,NOI_DUNG = 4        ,NGUOI_GUI = 7        ,SO_BILL = 3        ,SO_TIEN = 8
 		}			
 		#endregion
 
@@ -357,7 +357,8 @@ namespace BCTKApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_DM_BILL.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);			v_htb.Add(V_DM_BILL.NGAY_GUI, e_col_Number.NGAY_GUI);			v_htb.Add(V_DM_BILL.NOI_NHAN, e_col_Number.NOI_NHAN);			v_htb.Add(V_DM_BILL.NGUOI_NHAN, e_col_Number.NGUOI_NHAN);			v_htb.Add(V_DM_BILL.NOI_DUNG, e_col_Number.NOI_DUNG);			v_htb.Add(V_DM_BILL.NGUOI_GUI, e_col_Number.NGUOI_GUI);			v_htb.Add(V_DM_BILL.SO_BILL, e_col_Number.SO_BILL);									
+			v_htb.Add(V_DM_BILL.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);			v_htb.Add(V_DM_BILL.NGAY_GUI, e_col_Number.NGAY_GUI);			v_htb.Add(V_DM_BILL.NOI_NHAN, e_col_Number.NOI_NHAN);			v_htb.Add(V_DM_BILL.NGUOI_NHAN, e_col_Number.NGUOI_NHAN);			v_htb.Add(V_DM_BILL.NOI_DUNG, e_col_Number.NOI_DUNG);			v_htb.Add(V_DM_BILL.NGUOI_GUI, e_col_Number.NGUOI_GUI);			v_htb.Add(V_DM_BILL.SO_BILL, e_col_Number.SO_BILL);
+            v_htb.Add(V_DM_BILL.SO_TIEN, e_col_Number.SO_TIEN);									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_BILL.NewRow());
 			return v_obj_trans;			
 		}
