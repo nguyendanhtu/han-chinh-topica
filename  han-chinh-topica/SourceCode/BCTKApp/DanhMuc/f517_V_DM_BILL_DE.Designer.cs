@@ -67,7 +67,7 @@
             this.m_chk_close_form.Location = new System.Drawing.Point(102, 273);
             this.m_chk_close_form.Name = "m_chk_close_form";
             this.m_chk_close_form.Size = new System.Drawing.Size(196, 17);
-            this.m_chk_close_form.TabIndex = 30;
+            this.m_chk_close_form.TabIndex = 13;
             this.m_chk_close_form.Text = "Chọn để khi lưu không tắt hộp thoại";
             this.m_chk_close_form.UseVisualStyleBackColor = true;
             // 
@@ -77,7 +77,7 @@
             this.m_cbo_trung_tam.Location = new System.Drawing.Point(102, 35);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(217, 21);
-            this.m_cbo_trung_tam.TabIndex = 29;
+            this.m_cbo_trung_tam.TabIndex = 1;
             // 
             // ImageList
             // 
@@ -121,7 +121,7 @@
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(670, 26);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(659, 26);
             this.m_lbl_tieu_de.TabIndex = 27;
             this.m_lbl_tieu_de.Text = "Cập nhật thông tin Bill";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -131,7 +131,7 @@
             this.m_txt_so_bill.Location = new System.Drawing.Point(102, 73);
             this.m_txt_so_bill.Name = "m_txt_so_bill";
             this.m_txt_so_bill.Size = new System.Drawing.Size(217, 20);
-            this.m_txt_so_bill.TabIndex = 23;
+            this.m_txt_so_bill.TabIndex = 3;
             // 
             // m_pnl_out_place_dm
             // 
@@ -141,7 +141,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 299);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(670, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(659, 36);
             this.m_pnl_out_place_dm.TabIndex = 26;
             // 
             // m_cmd_save
@@ -153,10 +153,10 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(490, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(479, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 0;
+            this.m_cmd_save.TabIndex = 14;
             this.m_cmd_save.Text = "&Lưu";
             // 
             // m_cmd_exit
@@ -168,10 +168,10 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(578, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(567, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 1;
+            this.m_cmd_exit.TabIndex = 15;
             this.m_cmd_exit.Text = "Trở về (Esc)";
             // 
             // m_txt_noi_dung
@@ -179,7 +179,7 @@
             this.m_txt_noi_dung.Location = new System.Drawing.Point(411, 69);
             this.m_txt_noi_dung.Name = "m_txt_noi_dung";
             this.m_txt_noi_dung.Size = new System.Drawing.Size(217, 20);
-            this.m_txt_noi_dung.TabIndex = 25;
+            this.m_txt_noi_dung.TabIndex = 4;
             // 
             // m_lbl_ma_phong_ban
             // 
@@ -215,14 +215,14 @@
             this.m_dtp_ngay_gui.Location = new System.Drawing.Point(411, 32);
             this.m_dtp_ngay_gui.Name = "m_dtp_ngay_gui";
             this.m_dtp_ngay_gui.Size = new System.Drawing.Size(217, 20);
-            this.m_dtp_ngay_gui.TabIndex = 32;
+            this.m_dtp_ngay_gui.TabIndex = 2;
             // 
             // m_txt_nguoi_nhan
             // 
             this.m_txt_nguoi_nhan.Location = new System.Drawing.Point(102, 114);
             this.m_txt_nguoi_nhan.Name = "m_txt_nguoi_nhan";
             this.m_txt_nguoi_nhan.Size = new System.Drawing.Size(217, 20);
-            this.m_txt_nguoi_nhan.TabIndex = 34;
+            this.m_txt_nguoi_nhan.TabIndex = 5;
             // 
             // label3
             // 
@@ -238,7 +238,7 @@
             this.m_txt_noi_nhan.Location = new System.Drawing.Point(411, 114);
             this.m_txt_noi_nhan.Name = "m_txt_noi_nhan";
             this.m_txt_noi_nhan.Size = new System.Drawing.Size(217, 20);
-            this.m_txt_noi_nhan.TabIndex = 36;
+            this.m_txt_noi_nhan.TabIndex = 6;
             // 
             // label4
             // 
@@ -255,7 +255,7 @@
             this.m_chk_trong_nuoc.Location = new System.Drawing.Point(411, 156);
             this.m_chk_trong_nuoc.Name = "m_chk_trong_nuoc";
             this.m_chk_trong_nuoc.Size = new System.Drawing.Size(81, 17);
-            this.m_chk_trong_nuoc.TabIndex = 37;
+            this.m_chk_trong_nuoc.TabIndex = 7;
             this.m_chk_trong_nuoc.Text = "Trong nước";
             this.m_chk_trong_nuoc.UseVisualStyleBackColor = true;
             // 
@@ -265,7 +265,7 @@
             this.m_chk_nuoc_ngoai.Location = new System.Drawing.Point(526, 155);
             this.m_chk_nuoc_ngoai.Name = "m_chk_nuoc_ngoai";
             this.m_chk_nuoc_ngoai.Size = new System.Drawing.Size(81, 17);
-            this.m_chk_nuoc_ngoai.TabIndex = 38;
+            this.m_chk_nuoc_ngoai.TabIndex = 8;
             this.m_chk_nuoc_ngoai.Text = "Nước ngoài";
             this.m_chk_nuoc_ngoai.UseVisualStyleBackColor = true;
             // 
@@ -274,7 +274,7 @@
             this.m_txt_so_tien.Location = new System.Drawing.Point(102, 193);
             this.m_txt_so_tien.Name = "m_txt_so_tien";
             this.m_txt_so_tien.Size = new System.Drawing.Size(217, 20);
-            this.m_txt_so_tien.TabIndex = 40;
+            this.m_txt_so_tien.TabIndex = 10;
             // 
             // label5
             // 
@@ -291,7 +291,7 @@
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(102, 232);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(217, 21);
-            this.m_cbo_trang_thai.TabIndex = 42;
+            this.m_cbo_trang_thai.TabIndex = 12;
             // 
             // label6
             // 
@@ -307,7 +307,7 @@
             this.m_txt_ghi_chu.Location = new System.Drawing.Point(411, 196);
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
             this.m_txt_ghi_chu.Size = new System.Drawing.Size(217, 20);
-            this.m_txt_ghi_chu.TabIndex = 44;
+            this.m_txt_ghi_chu.TabIndex = 11;
             // 
             // label7
             // 
@@ -323,7 +323,7 @@
             this.m_txt_nguoi_gui.Location = new System.Drawing.Point(102, 153);
             this.m_txt_nguoi_gui.Name = "m_txt_nguoi_gui";
             this.m_txt_nguoi_gui.Size = new System.Drawing.Size(217, 20);
-            this.m_txt_nguoi_gui.TabIndex = 46;
+            this.m_txt_nguoi_gui.TabIndex = 9;
             // 
             // label8
             // 
@@ -338,7 +338,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 335);
+            this.ClientSize = new System.Drawing.Size(659, 335);
             this.Controls.Add(this.m_txt_nguoi_gui);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.m_txt_ghi_chu);
