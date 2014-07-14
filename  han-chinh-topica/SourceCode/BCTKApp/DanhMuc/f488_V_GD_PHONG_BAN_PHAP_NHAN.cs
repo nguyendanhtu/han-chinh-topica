@@ -232,6 +232,7 @@ namespace BCTKApp
             this.m_fg.Size = new System.Drawing.Size(695, 272);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
             // m_lbl_header
             // 
@@ -455,7 +456,7 @@ namespace BCTKApp
             , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình Count
             , "{0}"
             );
-            m_fg.Redraw = true;  
+            m_fg.Redraw = true;
         }
 		private void grid2us_object(US_V_DM_PHONG_BAN_PHAP_NHAN i_us
 			, int i_grid_row) {
@@ -482,7 +483,8 @@ namespace BCTKApp
 
 		private void update_v_dm_phong_ban_phap_nhan(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
+			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode) return;
 			grid2us_object(m_us, m_fg.Row);
             f489_V_DM_PHONG_BAN_PHAP_NHAN_DE v_fDE = new f489_V_DM_PHONG_BAN_PHAP_NHAN_DE();
             v_fDE.display(m_us);
@@ -612,6 +614,17 @@ namespace BCTKApp
             {
                 if(flag == true)
                 tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_dm_phong_ban_phap_nhan();
             }
             catch (Exception v_e)
             {
