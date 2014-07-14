@@ -348,11 +348,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_PHONG_BAN_DINH_MUC.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_V_GD_THONG_KE1.Designer.cs">
-      <DependentUpon>DS_V_GD_THONG_KE.xsd</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="DS_V_HT_LOG_TRUY_CAP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -866,17 +861,6 @@
     </None>
     <None Include="DS_V_GD_PHONG_BAN_DINH_MUC.xss">
       <DependentUpon>DS_V_GD_PHONG_BAN_DINH_MUC.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_THONG_KE.xsc">
-      <DependentUpon>DS_V_GD_THONG_KE.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_THONG_KE.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_V_GD_THONG_KE1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_V_GD_THONG_KE.xss">
-      <DependentUpon>DS_V_GD_THONG_KE.xsd</DependentUpon>
     </None>
     <None Include="DS_V_HT_LOG_TRUY_CAP.xsc">
       <DependentUpon>DS_V_HT_LOG_TRUY_CAP.xsd</DependentUpon>
