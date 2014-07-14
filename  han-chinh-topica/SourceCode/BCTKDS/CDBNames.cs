@@ -489,6 +489,14 @@ namespace BCTKDS.CDBNames
     #endregion
 
     #region Version 2
+    public class RPT_CHI_PHI_THEO_PHAP_NHAN {
+        public const string ID = "ID";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
+        public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
+        public const string TONG_TIEN = "TONG_TIEN";
+    }
+
     public class RPT_TONG_TIEN_DINH_MUC {
         public const string ID = "ID";
         public const string ID_LOAI_DINH_MUC = "ID_LOAI_DINH_MUC";
