@@ -226,10 +226,10 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 119);
+            this.m_fg.Location = new System.Drawing.Point(0, 108);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
-            this.m_fg.Size = new System.Drawing.Size(695, 261);
+            this.m_fg.Size = new System.Drawing.Size(695, 272);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -247,15 +247,15 @@ namespace BCTKApp
             // m_cbo_phap_nhan
             // 
             this.m_cbo_phap_nhan.FormattingEnabled = true;
-            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(107, 45);
+            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(221, 46);
             this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
-            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(193, 21);
+            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(272, 21);
             this.m_cbo_phap_nhan.TabIndex = 22;
             // 
             // m_lbl_ten_phap_nhan
             // 
             this.m_lbl_ten_phap_nhan.AutoSize = true;
-            this.m_lbl_ten_phap_nhan.Location = new System.Drawing.Point(33, 48);
+            this.m_lbl_ten_phap_nhan.Location = new System.Drawing.Point(147, 49);
             this.m_lbl_ten_phap_nhan.Name = "m_lbl_ten_phap_nhan";
             this.m_lbl_ten_phap_nhan.Size = new System.Drawing.Size(59, 13);
             this.m_lbl_ten_phap_nhan.TabIndex = 23;
@@ -264,7 +264,7 @@ namespace BCTKApp
             // m_lbl_tu_khoa
             // 
             this.m_lbl_tu_khoa.AutoSize = true;
-            this.m_lbl_tu_khoa.Location = new System.Drawing.Point(147, 89);
+            this.m_lbl_tu_khoa.Location = new System.Drawing.Point(147, 75);
             this.m_lbl_tu_khoa.Name = "m_lbl_tu_khoa";
             this.m_lbl_tu_khoa.Size = new System.Drawing.Size(47, 13);
             this.m_lbl_tu_khoa.TabIndex = 23;
@@ -272,7 +272,7 @@ namespace BCTKApp
             // 
             // m_txt_tim_kiem
             // 
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(221, 86);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(221, 72);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
             this.m_txt_tim_kiem.TabIndex = 24;
@@ -280,19 +280,21 @@ namespace BCTKApp
             // m_cbo_trung_tam
             // 
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(413, 45);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(574, 42);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
-            this.m_cbo_trung_tam.Size = new System.Drawing.Size(244, 21);
+            this.m_cbo_trung_tam.Size = new System.Drawing.Size(91, 21);
             this.m_cbo_trung_tam.TabIndex = 22;
+            this.m_cbo_trung_tam.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(339, 48);
+            this.label1.Location = new System.Drawing.Point(500, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 23;
             this.label1.Text = "Trung tâm";
+            this.label1.Visible = false;
             // 
             // f488_V_GD_PHONG_BAN_PHAP_NHAN
             // 
