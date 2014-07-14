@@ -407,7 +407,7 @@ namespace BCTKApp
             m_grv_trang_thai.Tree.Column = (int)e_col_Number.TRANG_THAI_THU;
             m_grv_trang_thai.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
             m_grv_trang_thai.Cols[0].Caption = "STT";
-            m_grv_trang_thai.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.CompleteLeaf;
+            m_grv_trang_thai.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
             load_data_2_cbo();
             load_data_2_cbo_trung_tam();
 			set_define_events();
@@ -561,7 +561,7 @@ namespace BCTKApp
         }
         private void export_2_excel()
         {
-            CExcelReport v_obj_excel_report = new CExcelReport("f511_tra_cuu_trang_thai_CPN.xlsx", 6, 1);
+            CExcelReport v_obj_excel_report = new CExcelReport("f511_tra_cuu_trang_thai_CPN.xls", 6, 1);
             v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dtp_tu_ngay.Text);
             v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dtp_den_ngay.Text);
             v_obj_excel_report.FindAndReplace(false);
