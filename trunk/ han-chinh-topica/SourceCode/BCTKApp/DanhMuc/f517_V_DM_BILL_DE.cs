@@ -25,6 +25,7 @@ namespace BCTKApp
         DS_DM_BILL m_ds = new DS_DM_BILL();
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
         #endregion
+
         #region Public interface
         public void display_for_insert()
         {
@@ -40,6 +41,7 @@ namespace BCTKApp
 
         }
         #endregion
+
         #region Private Method
         private void format_control()
         {
@@ -169,6 +171,7 @@ namespace BCTKApp
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
         }
         #endregion
+
         #region Event
         private void m_cmd_save_Click(object sender, EventArgs e)
         {
