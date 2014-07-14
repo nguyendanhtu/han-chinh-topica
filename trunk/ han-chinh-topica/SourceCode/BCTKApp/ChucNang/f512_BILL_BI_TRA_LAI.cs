@@ -345,7 +345,7 @@ namespace BCTKApp
             CGridUtils.AddSearch_Handlers(m_grv_bill);
             m_grv_bill.Tree.Column = (int)e_col_Number.NGAY_GUI;
             m_grv_bill.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
-            m_grv_bill.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.CompleteLeaf;
+            m_grv_bill.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
 			set_define_events();
 			this.KeyPreview = true;		
 		}
