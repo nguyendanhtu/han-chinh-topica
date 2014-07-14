@@ -38,7 +38,7 @@ namespace BCTKApp.DanhMuc
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us_dm_phong_ban = ip_us;
-            us_obi_2_form();
+            us_obj_2_form();
             this.ShowDialog();
         }
 
@@ -71,23 +71,51 @@ namespace BCTKApp.DanhMuc
             m_us_dm_phong_ban.strTEN_PHONG_BAN = m_txt_ten_phong_ban.Text;
             
         }
-        private void us_obi_2_form()
+        private void us_obj_2_form()
         {
             m_txt_ma_phong_ban.Text = m_us_dm_phong_ban.strMA_PHONG_BAN;
             m_txt_ten_phong_ban.Text = m_us_dm_phong_ban.strTEN_PHONG_BAN;
            
         }
+        private bool validate_ma_insert(string v_str_ma)
+        {
+            US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+            v_us.FillDataset(v_ds, "where ma_phong_ban='" + v_str_ma+"'");
+            if (v_ds.DM_PHONG_BAN.Count != 0 && m_e_form_mode==DataEntryFormMode.InsertDataState) return false;
+             return true;
+        }
+        private bool validate_ma_update(string ip_str_ma,decimal ip_dc_id)
+        {
+            US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+            v_us.FillDataset(v_ds, "where ma_phong_ban='" + ip_str_ma + "' or id="+ip_dc_id);
+            if (v_ds.DM_PHONG_BAN.Count != 1) return false;
+            return true;
+        }
         private void save_data()
         {
             if (!validate_data_is_ok())
                 return;
+            if (!validate_ma_insert(m_txt_ma_phong_ban.Text.Trim()))
+            {
+                BaseMessages.MsgBox_Infor("Mã trung tâm đã tồn tại");
+                xoa_trang();
+                return;
+            }
             form_2_us_obj();
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
-                    m_us_dm_phong_ban.Insert();
-                    break;
+                         m_us_dm_phong_ban.Insert(); 
+                        break;
                 case DataEntryFormMode.UpdateDataState:
+                        if (!validate_ma_update(m_txt_ma_phong_ban.Text.Trim(), m_us_dm_phong_ban.dcID))
+                        {
+                            BaseMessages.MsgBox_Infor("Mã trung tâm đã tồn tại");
+                            m_txt_ma_phong_ban.Focus();
+                            return;
+                        }
                     m_us_dm_phong_ban.Update();
                     break;
             }
