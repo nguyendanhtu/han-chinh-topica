@@ -161,7 +161,7 @@ namespace BCTKApp
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_xuat_excel.TabIndex = 25;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Text = "Xuất &Excel";
             // 
             // m_cmd_insert
             // 
@@ -341,6 +341,7 @@ namespace BCTKApp
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F410-Báo cáo chi phí theo các pháp nhân";
             this.Load += new System.EventHandler(this.f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
@@ -703,6 +704,26 @@ namespace BCTKApp
             }
         }
         #endregion
+
+        private void f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+                if (e.KeyData == Keys.E)
+                {
+                    export_2_excel();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
       
         
