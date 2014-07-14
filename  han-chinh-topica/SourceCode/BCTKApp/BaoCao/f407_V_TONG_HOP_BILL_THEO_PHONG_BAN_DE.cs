@@ -168,7 +168,7 @@ namespace BCTKApp
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_xuat_excel.TabIndex = 24;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Text = "Xuất &Excel";
             // 
             // m_cmd_insert
             // 
@@ -387,6 +387,7 @@ namespace BCTKApp
             this.Name = "f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE";
             this.Text = "F407 - Chi tiết Bill của phòng ban";
             this.Load += new System.EventHandler(this.f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
@@ -746,6 +747,26 @@ namespace BCTKApp
             }
         }
         #endregion
+
+        private void f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+                if (e.KeyData == Keys.E)
+                {
+                    export_2_excel();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
        
        
