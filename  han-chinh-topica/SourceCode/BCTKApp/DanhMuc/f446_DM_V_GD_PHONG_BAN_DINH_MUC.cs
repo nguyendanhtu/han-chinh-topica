@@ -43,25 +43,11 @@ namespace BCTKApp
         private Label m_lbl_header;
         private Label m_lbl_loai_dm;
         private ComboBox m_cbo_loai_dm;
-        private ComboBox comboBox2;
         private Label m_lbl_trung_tam;
         private ComboBox m_cbo_trung_tam;
         private Label m_lbl_tim_kiem;
         private TextBox m_txt_tim_kiem;
         private System.ComponentModel.IContainer components;
-
-        public f446_DM_V_GD_PHONG_BAN_DINH_MUC()
-        {
-            //
-            // Required for Windows Form Designer support
-            //
-            InitializeComponent();
-
-            //
-            // TODO: Add any constructor code after InitializeComponent call
-            //
-            format_controls();
-        }
 
         /// <summary>
         /// Clean up any resources being used.
@@ -98,7 +84,6 @@ namespace BCTKApp
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_lbl_loai_dm = new System.Windows.Forms.Label();
             this.m_cbo_loai_dm = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.m_lbl_trung_tam = new System.Windows.Forms.Label();
             this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
@@ -228,10 +213,10 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 138);
+            this.m_fg.Location = new System.Drawing.Point(0, 120);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
-            this.m_fg.Size = new System.Drawing.Size(903, 333);
+            this.m_fg.Size = new System.Drawing.Size(903, 351);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
@@ -250,7 +235,7 @@ namespace BCTKApp
             // m_lbl_loai_dm
             // 
             this.m_lbl_loai_dm.AutoSize = true;
-            this.m_lbl_loai_dm.Location = new System.Drawing.Point(108, 60);
+            this.m_lbl_loai_dm.Location = new System.Drawing.Point(235, 55);
             this.m_lbl_loai_dm.Name = "m_lbl_loai_dm";
             this.m_lbl_loai_dm.Size = new System.Drawing.Size(74, 13);
             this.m_lbl_loai_dm.TabIndex = 22;
@@ -260,41 +245,35 @@ namespace BCTKApp
             // 
             this.m_cbo_loai_dm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_loai_dm.FormattingEnabled = true;
-            this.m_cbo_loai_dm.Location = new System.Drawing.Point(191, 57);
+            this.m_cbo_loai_dm.Location = new System.Drawing.Point(318, 52);
             this.m_cbo_loai_dm.Name = "m_cbo_loai_dm";
-            this.m_cbo_loai_dm.Size = new System.Drawing.Size(208, 21);
+            this.m_cbo_loai_dm.Size = new System.Drawing.Size(282, 21);
             this.m_cbo_loai_dm.TabIndex = 23;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(531, 57);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(208, 21);
-            this.comboBox2.TabIndex = 23;
             // 
             // m_lbl_trung_tam
             // 
             this.m_lbl_trung_tam.AutoSize = true;
-            this.m_lbl_trung_tam.Location = new System.Drawing.Point(453, 60);
+            this.m_lbl_trung_tam.Location = new System.Drawing.Point(621, 55);
             this.m_lbl_trung_tam.Name = "m_lbl_trung_tam";
             this.m_lbl_trung_tam.Size = new System.Drawing.Size(55, 13);
             this.m_lbl_trung_tam.TabIndex = 22;
             this.m_lbl_trung_tam.Text = "Trung tâm";
+            this.m_lbl_trung_tam.Visible = false;
             // 
             // m_cbo_trung_tam
             // 
             this.m_cbo_trung_tam.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(531, 57);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(682, 52);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
-            this.m_cbo_trung_tam.Size = new System.Drawing.Size(280, 21);
+            this.m_cbo_trung_tam.Size = new System.Drawing.Size(154, 21);
             this.m_cbo_trung_tam.TabIndex = 23;
+            this.m_cbo_trung_tam.Visible = false;
             // 
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(260, 110);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(262, 82);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(47, 13);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -302,7 +281,7 @@ namespace BCTKApp
             // 
             // m_txt_tim_kiem
             // 
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(316, 103);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(318, 79);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(282, 20);
             this.m_txt_tim_kiem.TabIndex = 25;
@@ -314,7 +293,6 @@ namespace BCTKApp
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_lbl_tim_kiem);
             this.Controls.Add(this.m_cbo_trung_tam);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.m_lbl_trung_tam);
             this.Controls.Add(this.m_cbo_loai_dm);
             this.Controls.Add(this.m_lbl_loai_dm);
@@ -333,6 +311,18 @@ namespace BCTKApp
         #endregion
 
         #region Public Interface
+        public f446_DM_V_GD_PHONG_BAN_DINH_MUC()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
+
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
         public void display()
         {
             this.ShowDialog();
@@ -401,6 +391,7 @@ namespace BCTKApp
             this.m_lbl_header.TabIndex = 21;
             this.m_lbl_header.Text = "CƠ SỞ ĐỊNH MỨC THEO TRUNG TÂM";
             // 
+            this.MinimizeBox = true;
             load_cbo_trung_tam();
             load_cbo_loai_dinh_muc();
             set_define_events();
@@ -589,6 +580,7 @@ namespace BCTKApp
         //
         //
         #region Event
+
         private void f446_DM_V_GD_PHONG_BAN_DINH_MUC_Load(object sender, System.EventArgs e)
         {
             try
