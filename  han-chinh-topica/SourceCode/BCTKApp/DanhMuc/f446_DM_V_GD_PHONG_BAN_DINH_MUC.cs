@@ -522,6 +522,7 @@ namespace BCTKApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode) return;
             grid2us_object(m_us, m_fg.Row);
             f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE v_fDE = new f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE();
             v_fDE.display(m_us);
@@ -532,6 +533,7 @@ namespace BCTKApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode) return;
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
             US_V_GD_PHONG_BAN_DINH_MUC v_us = new US_V_GD_PHONG_BAN_DINH_MUC();
             grid2us_object(v_us, m_fg.Row);
