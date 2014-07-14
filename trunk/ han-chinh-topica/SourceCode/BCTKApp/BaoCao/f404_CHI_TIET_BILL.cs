@@ -366,5 +366,21 @@ namespace BCTKApp.BaoCao
 
         }
 
+        private void f404_CHI_TIET_BILL_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
     }
 }
