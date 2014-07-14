@@ -166,7 +166,7 @@ namespace BCTKApp
             this.m_cmd_insert.Location = new System.Drawing.Point(528, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
+            this.m_cmd_insert.TabIndex = 6;
             this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_update
@@ -181,7 +181,7 @@ namespace BCTKApp
             this.m_cmd_update.Location = new System.Drawing.Point(616, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 13;
+            this.m_cmd_update.TabIndex = 7;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_view
@@ -211,7 +211,7 @@ namespace BCTKApp
             this.m_cmd_delete.Location = new System.Drawing.Point(704, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 14;
+            this.m_cmd_delete.TabIndex = 8;
             this.m_cmd_delete.Text = "&Xoá";
             // 
             // m_cmd_exit
@@ -226,7 +226,7 @@ namespace BCTKApp
             this.m_cmd_exit.Location = new System.Drawing.Point(792, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 9;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_grv_bill
@@ -262,7 +262,7 @@ namespace BCTKApp
             this.m_txt_tu_khoa.Location = new System.Drawing.Point(320, 136);
             this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
             this.m_txt_tu_khoa.Size = new System.Drawing.Size(261, 20);
-            this.m_txt_tu_khoa.TabIndex = 36;
+            this.m_txt_tu_khoa.TabIndex = 4;
             // 
             // label2
             // 
@@ -280,7 +280,7 @@ namespace BCTKApp
             this.m_cbo_trung_tam.Location = new System.Drawing.Point(320, 96);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(261, 21);
-            this.m_cbo_trung_tam.TabIndex = 34;
+            this.m_cbo_trung_tam.TabIndex = 3;
             // 
             // label1
             // 
@@ -300,10 +300,10 @@ namespace BCTKApp
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(601, 129);
+            this.m_cmd_search.Location = new System.Drawing.Point(599, 129);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 22;
+            this.m_cmd_search.TabIndex = 5;
             this.m_cmd_search.Text = "Tìm kiếm";
             // 
             // m_dtp_den_ngay
