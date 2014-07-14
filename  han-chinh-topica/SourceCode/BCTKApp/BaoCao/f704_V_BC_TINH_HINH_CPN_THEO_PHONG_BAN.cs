@@ -47,8 +47,9 @@ namespace BCTKApp
         private Label m_lbl_header;
         private Panel panel1;
         private ToolTip toolTip1;
-        private Label label1;
         private Label label2;
+        private Label label1;
+        private Label m_lbl_tong_so_vuot_dm;
 		private System.ComponentModel.IContainer components;
 
 		public f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN()
@@ -103,8 +104,9 @@ namespace BCTKApp
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_tong_so_vuot_dm = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -172,9 +174,9 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(898, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(891, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.Size = new System.Drawing.Size(95, 28);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
@@ -182,10 +184,10 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 135);
+            this.m_fg.Location = new System.Drawing.Point(0, 154);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell;
-            this.m_fg.Size = new System.Drawing.Size(990, 352);
+            this.m_fg.Size = new System.Drawing.Size(990, 333);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào các cột tổng số bill, tổng tiền thực tế để xem chi tiết!");
@@ -284,8 +286,9 @@ namespace BCTKApp
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.m_lbl_tong_so_vuot_dm);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.m_dt_den_ngay);
             this.panel1.Controls.Add(this.m_lbl_tu_ngay);
             this.panel1.Controls.Add(this.m_cmd_tim_kiem);
@@ -296,32 +299,43 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(990, 100);
+            this.panel1.Size = new System.Drawing.Size(990, 119);
             this.panel1.TabIndex = 2830;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 80);
+            this.label2.Location = new System.Drawing.Point(684, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(251, 13);
             this.label2.TabIndex = 41;
             this.label2.Text = "Các trung tâm vượt định mức sẽ được đánh dấu đỏ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(786, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Tổng tiền định mức đã tính VAT";
             // 
             // toolTip1
             // 
             this.toolTip1.AutoPopDelay = 4500;
             this.toolTip1.InitialDelay = 450;
             this.toolTip1.ReshowDelay = 50;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(232, 13);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Tổng số trung tâm- ban vượt định mức: ";
+            // 
+            // m_lbl_tong_so_vuot_dm
+            // 
+            this.m_lbl_tong_so_vuot_dm.AutoSize = true;
+            this.m_lbl_tong_so_vuot_dm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tong_so_vuot_dm.Location = new System.Drawing.Point(260, 97);
+            this.m_lbl_tong_so_vuot_dm.Name = "m_lbl_tong_so_vuot_dm";
+            this.m_lbl_tong_so_vuot_dm.Size = new System.Drawing.Size(14, 13);
+            this.m_lbl_tong_so_vuot_dm.TabIndex = 43;
+            this.m_lbl_tong_so_vuot_dm.Text = "0";
             // 
             // f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
             // 
@@ -436,7 +450,7 @@ namespace BCTKApp
             decimal v_id_trang_thai = -1;
              v_dt_tu_ngay = m_dt_tu_ngay.Value;
             v_dt_den_ngay = m_dt_den_ngay.Value;
-            
+            decimal v_dc_tong_so_vuot_dm = 0;
             US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
             DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
             v_us.FillDatasetSearch(v_ds, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai, v_id_tu_khoa);
@@ -454,10 +468,12 @@ namespace BCTKApp
                 if (CIPConvert.ToDecimal((m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT]).ToString()) > 20)
                 {
                     m_fg.Rows[i].Style = m_fg.Styles["CustomStyle1"];
+                    v_dc_tong_so_vuot_dm++;
                 }
 
             }
-
+            if (v_dc_tong_so_vuot_dm == 0) m_lbl_tong_so_vuot_dm.Text = "0";
+            else m_lbl_tong_so_vuot_dm.Text = CIPConvert.ToStr(v_dc_tong_so_vuot_dm, "#,###");
             m_fg.Redraw = true;
         }
 		private void grid2us_object(US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN i_us
