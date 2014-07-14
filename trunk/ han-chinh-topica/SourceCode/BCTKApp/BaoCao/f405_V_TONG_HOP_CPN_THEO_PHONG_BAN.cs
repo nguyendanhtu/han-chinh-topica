@@ -189,7 +189,7 @@ namespace BCTKApp
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_xuat_excel.TabIndex = 22;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Text = "Xuất &Excel";
             this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // m_cmd_insert
@@ -254,7 +254,6 @@ namespace BCTKApp
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
-            this.m_cmd_exit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_cmd_exit_KeyDown);
             // 
             // m_fg
             // 
@@ -523,6 +522,7 @@ namespace BCTKApp
             this.Name = "f405_V_TONG_HOP_CPN_THEO_PHONG_BAN";
             this.Text = "F405- Tra cứu thông tin Bill";
             this.Load += new System.EventHandler(this.f405_V_TONG_HOP_CPN_THEO_PHONG_BAN_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f405_V_TONG_HOP_CPN_THEO_PHONG_BAN_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
@@ -1099,14 +1099,18 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
-
-        private void m_cmd_exit_KeyDown(object sender, KeyEventArgs e)
+        private void f405_V_TONG_HOP_CPN_THEO_PHONG_BAN_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
                 if (e.KeyData == Keys.Escape)
+                {
                     this.Close();
+                }
+                if (e.KeyData == Keys.E)
+                {
+                    export_2_excel();
+                }
             }
             catch (Exception v_e)
             {
@@ -1114,6 +1118,7 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
 
     }
 }
