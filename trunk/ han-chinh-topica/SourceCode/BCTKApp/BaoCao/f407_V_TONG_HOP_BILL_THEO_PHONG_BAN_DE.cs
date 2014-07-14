@@ -253,7 +253,7 @@ namespace BCTKApp
             this.m_lbl_ten_phong_ban.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ten_phong_ban.Location = new System.Drawing.Point(404, 9);
             this.m_lbl_ten_phong_ban.Name = "m_lbl_ten_phong_ban";
-            this.m_lbl_ten_phong_ban.Size = new System.Drawing.Size(355, 22);
+            this.m_lbl_ten_phong_ban.Size = new System.Drawing.Size(354, 22);
             this.m_lbl_ten_phong_ban.TabIndex = 21;
             this.m_lbl_ten_phong_ban.Text = "CHI TIẾT CÁC BILL CỦA PHÒNG BAN";
             // 
@@ -315,11 +315,11 @@ namespace BCTKApp
             // m_lbl_tong_tien
             // 
             this.m_lbl_tong_tien.AutoSize = true;
-            this.m_lbl_tong_tien.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tong_tien.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tong_tien.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tong_tien.Location = new System.Drawing.Point(495, 70);
+            this.m_lbl_tong_tien.Location = new System.Drawing.Point(455, 70);
             this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
-            this.m_lbl_tong_tien.Size = new System.Drawing.Size(16, 15);
+            this.m_lbl_tong_tien.Size = new System.Drawing.Size(16, 13);
             this.m_lbl_tong_tien.TabIndex = 25;
             this.m_lbl_tong_tien.Text = "...";
             // 
@@ -349,7 +349,7 @@ namespace BCTKApp
             this.m_lbl_chua_tinh_vat.AutoSize = true;
             this.m_lbl_chua_tinh_vat.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_chua_tinh_vat.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_chua_tinh_vat.Location = new System.Drawing.Point(227, 70);
+            this.m_lbl_chua_tinh_vat.Location = new System.Drawing.Point(201, 70);
             this.m_lbl_chua_tinh_vat.Name = "m_lbl_chua_tinh_vat";
             this.m_lbl_chua_tinh_vat.Size = new System.Drawing.Size(16, 15);
             this.m_lbl_chua_tinh_vat.TabIndex = 26;
@@ -364,7 +364,6 @@ namespace BCTKApp
             this.label5.Size = new System.Drawing.Size(100, 13);
             this.label5.TabIndex = 27;
             this.label5.Text = "Tổng tiền:";
-            
             // 
             // f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE
             // 
