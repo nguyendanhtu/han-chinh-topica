@@ -52,16 +52,16 @@
             this.m_tm_bill_da_nhan = new System.Windows.Forms.TabPage();
             this.m_cmd_xem_bill_da_chuyen_cpn = new SIS.Controls.Button.SiSButton();
             this.m_tm_bill_da_chuyen_cho_cpn = new System.Windows.Forms.TabPage();
+            this.m_cmd_da_chuyen_2_tra_lai = new SIS.Controls.Button.SiSButton();
             this.m_cmd_xem_ds_bill_da_nhan = new SIS.Controls.Button.SiSButton();
             this.m_tm_bill_bi_tra_lai = new System.Windows.Forms.TabPage();
-            this.m_grv_bi_tra_lai = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cmd_da_chuyen_2_tra_lai = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all = new SIS.Controls.Button.SiSButton();
             this.m_cmd_tra_lai_2_da_chuyen = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl = new SIS.Controls.Button.SiSButton();
+            this.m_grv_bi_tra_lai = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tm_noi_bo_nhan_tra_lai = new System.Windows.Forms.TabPage();
             this.m_cmd_nhan_tra_lai_2_tra_lai = new SIS.Controls.Button.SiSButton();
             this.m_grv_noi_bo_nhan_tra_lai = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all = new SIS.Controls.Button.SiSButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_da_nhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_da_chuyen)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -107,7 +107,7 @@
             this.m_grv_da_nhan.ColumnInfo = resources.GetString("m_grv_da_nhan.ColumnInfo");
             this.m_grv_da_nhan.Location = new System.Drawing.Point(6, 17);
             this.m_grv_da_nhan.Name = "m_grv_da_nhan";
-            this.m_grv_da_nhan.Size = new System.Drawing.Size(665, 302);
+            this.m_grv_da_nhan.Size = new System.Drawing.Size(749, 322);
             this.m_grv_da_nhan.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_da_nhan.Styles"));
             this.m_grv_da_nhan.TabIndex = 36;
             // 
@@ -170,7 +170,7 @@
             this.m_grv_da_chuyen.ColumnInfo = resources.GetString("m_grv_da_chuyen.ColumnInfo");
             this.m_grv_da_chuyen.Location = new System.Drawing.Point(6, 17);
             this.m_grv_da_chuyen.Name = "m_grv_da_chuyen";
-            this.m_grv_da_chuyen.Size = new System.Drawing.Size(661, 305);
+            this.m_grv_da_chuyen.Size = new System.Drawing.Size(749, 322);
             this.m_grv_da_chuyen.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_da_chuyen.Styles"));
             this.m_grv_da_chuyen.TabIndex = 37;
             // 
@@ -181,7 +181,7 @@
             this.m_cmd_right_2_left_all.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_right_2_left_all.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_right_2_left_all.ImageIndex = 10;
-            this.m_cmd_right_2_left_all.Location = new System.Drawing.Point(682, 171);
+            this.m_cmd_right_2_left_all.Location = new System.Drawing.Point(777, 171);
             this.m_cmd_right_2_left_all.Name = "m_cmd_right_2_left_all";
             this.m_cmd_right_2_left_all.Size = new System.Drawing.Size(115, 72);
             this.m_cmd_right_2_left_all.TabIndex = 9;
@@ -194,7 +194,7 @@
             this.m_cmd_right_2_left.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_right_2_left.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_right_2_left.ImageIndex = 10;
-            this.m_cmd_right_2_left.Location = new System.Drawing.Point(682, 17);
+            this.m_cmd_right_2_left.Location = new System.Drawing.Point(777, 17);
             this.m_cmd_right_2_left.Name = "m_cmd_right_2_left";
             this.m_cmd_right_2_left.Size = new System.Drawing.Size(115, 72);
             this.m_cmd_right_2_left.TabIndex = 8;
@@ -208,7 +208,7 @@
             this.m_cmd_left_2_right_all.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_cmd_left_2_right_all.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_left_2_right_all.ImageIndex = 10;
-            this.m_cmd_left_2_right_all.Location = new System.Drawing.Point(689, 95);
+            this.m_cmd_left_2_right_all.Location = new System.Drawing.Point(777, 95);
             this.m_cmd_left_2_right_all.Name = "m_cmd_left_2_right_all";
             this.m_cmd_left_2_right_all.Size = new System.Drawing.Size(115, 72);
             this.m_cmd_left_2_right_all.TabIndex = 7;
@@ -222,7 +222,7 @@
             this.m_cmd_left_2_right.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_cmd_left_2_right.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_left_2_right.ImageIndex = 10;
-            this.m_cmd_left_2_right.Location = new System.Drawing.Point(689, 17);
+            this.m_cmd_left_2_right.Location = new System.Drawing.Point(777, 17);
             this.m_cmd_left_2_right.Name = "m_cmd_left_2_right";
             this.m_cmd_left_2_right.Size = new System.Drawing.Size(115, 72);
             this.m_cmd_left_2_right.TabIndex = 6;
@@ -302,10 +302,11 @@
             this.m_tab_main.Controls.Add(this.m_tm_bill_da_chuyen_cho_cpn);
             this.m_tab_main.Controls.Add(this.m_tm_bill_bi_tra_lai);
             this.m_tab_main.Controls.Add(this.m_tm_noi_bo_nhan_tra_lai);
-            this.m_tab_main.Location = new System.Drawing.Point(38, 167);
+            this.m_tab_main.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_tab_main.Location = new System.Drawing.Point(0, 161);
             this.m_tab_main.Name = "m_tab_main";
             this.m_tab_main.SelectedIndex = 0;
-            this.m_tab_main.Size = new System.Drawing.Size(834, 359);
+            this.m_tab_main.Size = new System.Drawing.Size(924, 371);
             this.m_tab_main.TabIndex = 61;
             // 
             // m_tm_bill_da_nhan
@@ -317,7 +318,7 @@
             this.m_tm_bill_da_nhan.Location = new System.Drawing.Point(4, 22);
             this.m_tm_bill_da_nhan.Name = "m_tm_bill_da_nhan";
             this.m_tm_bill_da_nhan.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_bill_da_nhan.Size = new System.Drawing.Size(826, 333);
+            this.m_tm_bill_da_nhan.Size = new System.Drawing.Size(916, 345);
             this.m_tm_bill_da_nhan.TabIndex = 0;
             this.m_tm_bill_da_nhan.Text = "DS bill đã nhận";
             this.m_tm_bill_da_nhan.UseVisualStyleBackColor = true;
@@ -330,7 +331,7 @@
             this.m_cmd_xem_bill_da_chuyen_cpn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_cmd_xem_bill_da_chuyen_cpn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_xem_bill_da_chuyen_cpn.ImageIndex = 10;
-            this.m_cmd_xem_bill_da_chuyen_cpn.Location = new System.Drawing.Point(689, 246);
+            this.m_cmd_xem_bill_da_chuyen_cpn.Location = new System.Drawing.Point(777, 246);
             this.m_cmd_xem_bill_da_chuyen_cpn.Name = "m_cmd_xem_bill_da_chuyen_cpn";
             this.m_cmd_xem_bill_da_chuyen_cpn.Size = new System.Drawing.Size(115, 72);
             this.m_cmd_xem_bill_da_chuyen_cpn.TabIndex = 7;
@@ -346,10 +347,23 @@
             this.m_tm_bill_da_chuyen_cho_cpn.Location = new System.Drawing.Point(4, 22);
             this.m_tm_bill_da_chuyen_cho_cpn.Name = "m_tm_bill_da_chuyen_cho_cpn";
             this.m_tm_bill_da_chuyen_cho_cpn.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_bill_da_chuyen_cho_cpn.Size = new System.Drawing.Size(826, 333);
+            this.m_tm_bill_da_chuyen_cho_cpn.Size = new System.Drawing.Size(916, 345);
             this.m_tm_bill_da_chuyen_cho_cpn.TabIndex = 1;
             this.m_tm_bill_da_chuyen_cho_cpn.Text = "DS bill đã chuyển cho CPN";
             this.m_tm_bill_da_chuyen_cho_cpn.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_da_chuyen_2_tra_lai
+            // 
+            this.m_cmd_da_chuyen_2_tra_lai.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_da_chuyen_2_tra_lai.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_da_chuyen_2_tra_lai.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_da_chuyen_2_tra_lai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_da_chuyen_2_tra_lai.ImageIndex = 10;
+            this.m_cmd_da_chuyen_2_tra_lai.Location = new System.Drawing.Point(777, 95);
+            this.m_cmd_da_chuyen_2_tra_lai.Name = "m_cmd_da_chuyen_2_tra_lai";
+            this.m_cmd_da_chuyen_2_tra_lai.Size = new System.Drawing.Size(115, 72);
+            this.m_cmd_da_chuyen_2_tra_lai.TabIndex = 38;
+            this.m_cmd_da_chuyen_2_tra_lai.Text = "Chuyển Bill đã chọn sang bị trả lại";
             // 
             // m_cmd_xem_ds_bill_da_nhan
             // 
@@ -358,7 +372,7 @@
             this.m_cmd_xem_ds_bill_da_nhan.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_xem_ds_bill_da_nhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_xem_ds_bill_da_nhan.ImageIndex = 10;
-            this.m_cmd_xem_ds_bill_da_nhan.Location = new System.Drawing.Point(682, 249);
+            this.m_cmd_xem_ds_bill_da_nhan.Location = new System.Drawing.Point(777, 249);
             this.m_cmd_xem_ds_bill_da_nhan.Name = "m_cmd_xem_ds_bill_da_nhan";
             this.m_cmd_xem_ds_bill_da_nhan.Size = new System.Drawing.Size(115, 72);
             this.m_cmd_xem_ds_bill_da_nhan.TabIndex = 9;
@@ -373,46 +387,23 @@
             this.m_tm_bill_bi_tra_lai.Location = new System.Drawing.Point(4, 22);
             this.m_tm_bill_bi_tra_lai.Name = "m_tm_bill_bi_tra_lai";
             this.m_tm_bill_bi_tra_lai.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_bill_bi_tra_lai.Size = new System.Drawing.Size(826, 333);
+            this.m_tm_bill_bi_tra_lai.Size = new System.Drawing.Size(916, 345);
             this.m_tm_bill_bi_tra_lai.TabIndex = 2;
             this.m_tm_bill_bi_tra_lai.Text = "DS bill bị trả lại";
             this.m_tm_bill_bi_tra_lai.UseVisualStyleBackColor = true;
             // 
-            // m_grv_bi_tra_lai
+            // m_cmd_tra_lai_2_noi_bo_nhan_tl_all
             // 
-            this.m_grv_bi_tra_lai.ColumnInfo = resources.GetString("m_grv_bi_tra_lai.ColumnInfo");
-            this.m_grv_bi_tra_lai.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grv_bi_tra_lai.Location = new System.Drawing.Point(6, 17);
-            this.m_grv_bi_tra_lai.Name = "m_grv_bi_tra_lai";
-            this.m_grv_bi_tra_lai.Size = new System.Drawing.Size(661, 305);
-            this.m_grv_bi_tra_lai.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_bi_tra_lai.Styles"));
-            this.m_grv_bi_tra_lai.TabIndex = 38;
-            // 
-            // m_cmd_da_chuyen_2_tra_lai
-            // 
-            this.m_cmd_da_chuyen_2_tra_lai.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_da_chuyen_2_tra_lai.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_da_chuyen_2_tra_lai.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_da_chuyen_2_tra_lai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_da_chuyen_2_tra_lai.ImageIndex = 10;
-            this.m_cmd_da_chuyen_2_tra_lai.Location = new System.Drawing.Point(682, 95);
-            this.m_cmd_da_chuyen_2_tra_lai.Name = "m_cmd_da_chuyen_2_tra_lai";
-            this.m_cmd_da_chuyen_2_tra_lai.Size = new System.Drawing.Size(115, 72);
-            this.m_cmd_da_chuyen_2_tra_lai.TabIndex = 38;
-            this.m_cmd_da_chuyen_2_tra_lai.Text = "Chuyển Bill đã chọn sang bị trả lại";
-            // 
-            // m_cmd_tra_lai_2_noi_bo_nhan_tl
-            // 
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.ImageIndex = 10;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Location = new System.Drawing.Point(688, 17);
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Name = "m_cmd_tra_lai_2_noi_bo_nhan_tl";
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Size = new System.Drawing.Size(115, 72);
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.TabIndex = 39;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Text = "Chuyển bill đã chọn sang nội bộ nhận trả lại";
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.ImageIndex = 10;
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Location = new System.Drawing.Point(773, 112);
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Name = "m_cmd_tra_lai_2_noi_bo_nhan_tl_all";
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Size = new System.Drawing.Size(115, 72);
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.TabIndex = 41;
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Text = "Chuyển tất cả sang nội bộ nhận trả lại";
             // 
             // m_cmd_tra_lai_2_da_chuyen
             // 
@@ -421,11 +412,34 @@
             this.m_cmd_tra_lai_2_da_chuyen.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_tra_lai_2_da_chuyen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tra_lai_2_da_chuyen.ImageIndex = 10;
-            this.m_cmd_tra_lai_2_da_chuyen.Location = new System.Drawing.Point(688, 206);
+            this.m_cmd_tra_lai_2_da_chuyen.Location = new System.Drawing.Point(773, 208);
             this.m_cmd_tra_lai_2_da_chuyen.Name = "m_cmd_tra_lai_2_da_chuyen";
             this.m_cmd_tra_lai_2_da_chuyen.Size = new System.Drawing.Size(115, 72);
             this.m_cmd_tra_lai_2_da_chuyen.TabIndex = 40;
             this.m_cmd_tra_lai_2_da_chuyen.Text = "Hủy trạng thái bill bị trả lại";
+            // 
+            // m_cmd_tra_lai_2_noi_bo_nhan_tl
+            // 
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.ImageIndex = 10;
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Location = new System.Drawing.Point(773, 19);
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Name = "m_cmd_tra_lai_2_noi_bo_nhan_tl";
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Size = new System.Drawing.Size(115, 72);
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.TabIndex = 39;
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Text = "Chuyển bill đã chọn sang nội bộ nhận trả lại";
+            // 
+            // m_grv_bi_tra_lai
+            // 
+            this.m_grv_bi_tra_lai.ColumnInfo = resources.GetString("m_grv_bi_tra_lai.ColumnInfo");
+            this.m_grv_bi_tra_lai.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grv_bi_tra_lai.Location = new System.Drawing.Point(6, 17);
+            this.m_grv_bi_tra_lai.Name = "m_grv_bi_tra_lai";
+            this.m_grv_bi_tra_lai.Size = new System.Drawing.Size(749, 322);
+            this.m_grv_bi_tra_lai.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_bi_tra_lai.Styles"));
+            this.m_grv_bi_tra_lai.TabIndex = 38;
             // 
             // m_tm_noi_bo_nhan_tra_lai
             // 
@@ -434,7 +448,7 @@
             this.m_tm_noi_bo_nhan_tra_lai.Location = new System.Drawing.Point(4, 22);
             this.m_tm_noi_bo_nhan_tra_lai.Name = "m_tm_noi_bo_nhan_tra_lai";
             this.m_tm_noi_bo_nhan_tra_lai.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(826, 333);
+            this.m_tm_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(916, 345);
             this.m_tm_noi_bo_nhan_tra_lai.TabIndex = 3;
             this.m_tm_noi_bo_nhan_tra_lai.Text = "DS bill nội bộ đã nhận trả lại";
             this.m_tm_noi_bo_nhan_tra_lai.UseVisualStyleBackColor = true;
@@ -446,7 +460,7 @@
             this.m_cmd_nhan_tra_lai_2_tra_lai.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_nhan_tra_lai_2_tra_lai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_nhan_tra_lai_2_tra_lai.ImageIndex = 10;
-            this.m_cmd_nhan_tra_lai_2_tra_lai.Location = new System.Drawing.Point(697, 17);
+            this.m_cmd_nhan_tra_lai_2_tra_lai.Location = new System.Drawing.Point(782, 24);
             this.m_cmd_nhan_tra_lai_2_tra_lai.Name = "m_cmd_nhan_tra_lai_2_tra_lai";
             this.m_cmd_nhan_tra_lai_2_tra_lai.Size = new System.Drawing.Size(115, 72);
             this.m_cmd_nhan_tra_lai_2_tra_lai.TabIndex = 43;
@@ -458,22 +472,9 @@
             this.m_grv_noi_bo_nhan_tra_lai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_noi_bo_nhan_tra_lai.Location = new System.Drawing.Point(6, 17);
             this.m_grv_noi_bo_nhan_tra_lai.Name = "m_grv_noi_bo_nhan_tra_lai";
-            this.m_grv_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(661, 305);
+            this.m_grv_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(749, 322);
             this.m_grv_noi_bo_nhan_tra_lai.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_noi_bo_nhan_tra_lai.Styles"));
             this.m_grv_noi_bo_nhan_tra_lai.TabIndex = 41;
-            // 
-            // m_cmd_tra_lai_2_noi_bo_nhan_tl_all
-            // 
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.ImageIndex = 10;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Location = new System.Drawing.Point(688, 110);
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Name = "m_cmd_tra_lai_2_noi_bo_nhan_tl_all";
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Size = new System.Drawing.Size(115, 72);
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.TabIndex = 41;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Text = "Chuyển tất cả sang nội bộ nhận trả lại";
             // 
             // F506_CAP_NHAT_TRANG_THAI
             // 
