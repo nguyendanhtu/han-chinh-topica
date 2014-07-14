@@ -300,6 +300,7 @@ namespace BCTKApp
             this.Name = "f446_DM_V_GD_PHONG_BAN_DINH_MUC";
             this.Text = "F446 - Cở định mức theo trung tâm";
             this.Load += new System.EventHandler(this.f446_DM_V_GD_PHONG_BAN_DINH_MUC_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f446_DM_V_GD_PHONG_BAN_DINH_MUC_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
@@ -706,9 +707,37 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void f446_DM_V_GD_PHONG_BAN_DINH_MUC_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+                if (e.KeyData == Keys.T)
+                {
+                    insert_v_gd_phong_ban_dinh_muc();
+                }
+                if (e.KeyData == Keys.S)
+                {
+                    update_v_gd_phong_ban_dinh_muc();
+                }
+                if (e.KeyData == Keys.X)
+                {
+                    delete_v_gd_phong_ban_dinh_muc();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         #endregion
 
+       
 
 
     }

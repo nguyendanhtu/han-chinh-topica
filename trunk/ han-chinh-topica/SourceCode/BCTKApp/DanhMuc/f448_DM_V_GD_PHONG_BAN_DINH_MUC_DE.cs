@@ -156,6 +156,30 @@ namespace BCTKApp.DanhMuc
             else
                 return true;
         }
+        private void save_data()
+        {
+            m_form_to_us_obj();
+            switch (m_e)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    if (!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue)))
+                    {
+                        BaseMessages.MsgBox_Error("Đã tồn tại cơ sở định mức của trung tâm này!");
+                        return;
+                    }
+                    m_us_gd_pbdm.Insert();
+                    BaseMessages.MsgBox_Infor("Thêm mới thành công!");
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    m_us_gd_pbdm.dcID = m_id;
+                    m_us_gd_pbdm.Update();
+                    BaseMessages.MsgBox_Infor("Cập nhật thành công!");
+                    break;
+                default: m_us_gd_pbdm.Insert();
+                    break;
+            }
+            this.Close();
+        }
         #endregion
 
         #region Event
@@ -184,27 +208,7 @@ namespace BCTKApp.DanhMuc
         {
             try
             {
-                m_form_to_us_obj();
-                switch (m_e)
-                {
-                    case DataEntryFormMode.InsertDataState:
-                        if (!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue)))
-                        {
-                            BaseMessages.MsgBox_Error("Đã tồn tại cơ sở định mức của trung tâm này!");
-                            return;
-                        }
-                        m_us_gd_pbdm.Insert();
-                        BaseMessages.MsgBox_Infor("Thêm mới thành công!");
-                        break;
-                    case DataEntryFormMode.UpdateDataState:
-                        m_us_gd_pbdm.dcID = m_id;
-                        m_us_gd_pbdm.Update();
-                        BaseMessages.MsgBox_Infor("Cập nhật thành công!");
-                        break;
-                    default: m_us_gd_pbdm.Insert();
-                        break;
-                }
-                this.Close();
+                save_data();
             }
             catch (Exception v_e)
             {
@@ -213,6 +217,26 @@ namespace BCTKApp.DanhMuc
         }
    
         #endregion
+
+        private void f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+                if (e.KeyData == Keys.L)
+                {
+                    save_data();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
   
     }
