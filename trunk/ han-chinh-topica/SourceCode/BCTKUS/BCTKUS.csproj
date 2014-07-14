@@ -155,6 +155,7 @@
     <Compile Include="US_HT_QUYEN_GROUP.cs" />
     <Compile Include="US_HT_USER_GROUP.cs" />
     <Compile Include="US_RPT_BANG_DINH_MUC.cs" />
+    <Compile Include="US_RPT_CHI_PHI_THEO_PHAP_NHAN.cs" />
     <Compile Include="US_RPT_TONG_TIEN_DINH_MUC.cs" />
     <Compile Include="US_TONG_HOP_CPN_THEO_PHONG_BAN.cs" />
     <Compile Include="US_UT_SEQUENCES.cs" />

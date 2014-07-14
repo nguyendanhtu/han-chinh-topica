@@ -288,8 +288,8 @@ namespace BCTKApp
         {
             try
             {
-                f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN v_frm = new f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN();
-                v_frm.ShowDialog();
+                f870_RPT_CHI_PHI_THEO_PHAP_NHAN v_frm = new f870_RPT_CHI_PHI_THEO_PHAP_NHAN();
+                v_frm.display(); ;
             }
             catch (Exception v_e)
             {
