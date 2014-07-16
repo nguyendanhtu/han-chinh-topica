@@ -518,6 +518,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f406_V_TONG_HOP_BILL_THEO_PHONG_BAN.resx">
       <DependentUpon>f406_V_TONG_HOP_BILL_THEO_PHONG_BAN.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE.resx">
       <DependentUpon>f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE.cs</DependentUpon>

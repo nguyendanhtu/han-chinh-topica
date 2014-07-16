@@ -208,8 +208,8 @@ namespace BCTKApp.ChucNang {
                 }
                 //Kiểm tra xem có số bill trong phần mềm không?
 
-                if(is_exist_bill_in_db(CIPConvert.ToStr(m_fg.Rows[v_i_cur_row][(int) e_col_Number.SO_BILL]))) {
-                    BaseMessages.MsgBox_Error("Đã tồn tại số bill " +CIPConvert.ToStr(m_fg.Rows[v_i_cur_row][(int) e_col_Number.SO_BILL])+"này trong phần mềm!");
+                if(is_exist_bill_in_db(CIPConvert.ToStr(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL]))) {
+                    BaseMessages.MsgBox_Error("Đã tồn tại số bill " + CIPConvert.ToStr(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL]) + "này trong phần mềm!");
                     //m_fg.SetCellStyle(v_i_cur_row, (int)e_col_Number.SO_BILL, v_cell_style_notOK_in_data);
                     m_fg.Select(v_i_cur_row, (int)e_col_Number.SO_BILL);
                     return false;
@@ -269,21 +269,23 @@ namespace BCTKApp.ChucNang {
             // Insert vào dm bill, cột số tiền để null
             DS_V_DM_BILL v_ds_v_dm_bill = new DS_V_DM_BILL();
             US_V_DM_BILL v_us_v_dm_bill = new US_V_DM_BILL();
-            try {
-                v_us_v_dm_bill.BeginTransaction();
-                for(int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count - 1; v_i_cur_row++) {
-                    grid_row_2_us_v_dm_bill(v_i_cur_row, v_us_v_dm_bill);
-                    v_us_v_dm_bill.Insert();
-                }
-                v_us_v_dm_bill.CommitTransaction();
-                BaseMessages.MsgBox_Infor("Đã nhập thành công!");
+            //try {
+            //v_us_v_dm_bill.BeginTransaction();
+            Int64 v_dem_bill = 0;
+            for(int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count - 1; v_i_cur_row++) {
+                grid_row_2_us_v_dm_bill(v_i_cur_row, v_us_v_dm_bill);
+                v_us_v_dm_bill.Insert();
+                v_dem_bill++;
             }
-            catch(Exception v_e) {
-                if(v_us_v_dm_bill.is_having_transaction()) {
-                    v_us_v_dm_bill.Rollback();
-                }
-                throw v_e;
-            }
+            //v_us_v_dm_bill.CommitTransaction();
+            BaseMessages.MsgBox_Infor("Đã nhập thành công " + v_dem_bill + " Bill!");
+            //}
+            //catch(Exception v_e) {
+            //    if(v_us_v_dm_bill.is_having_transaction()) {
+            //        v_us_v_dm_bill.Rollback();
+            //    }
+            //    throw v_e;
+            //}
         }
         private Int64 count_record_in_grid(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
             Int64 v_count = 0;
@@ -299,11 +301,17 @@ namespace BCTKApp.ChucNang {
         }
         private void load_excel_2_grid(C1.Win.C1FlexGrid.C1FlexGrid m_fg) {
             var m_obj_dialog = new System.Windows.Forms.OpenFileDialog();
-            m_obj_dialog.ShowDialog();
+            DialogResult v_result = new DialogResult();
+            v_result = m_obj_dialog.ShowDialog();
 
+            if(v_result == DialogResult.Cancel) {
+                BaseMessages.MsgBox_Infor("Bạn chưa chọn file Excel!");
+                m_obj_dialog.Dispose();
+                return;
+            }
             Workbook wb = null;
             wb = Workbook.getWorkbook(m_obj_dialog.FileName);
-            Sheet sheet = wb.getSheet("Sheet1");
+            Sheet sheet = wb.getSheet(0);
             //Cái này để thêm hàng vào grid
             int v_count_row = 7;
             while(sheet.getCell(2, v_count_row).Contents != "") {
@@ -358,16 +366,16 @@ namespace BCTKApp.ChucNang {
             }
         }
         private void m_fg_AfterEdit(object sender, C1.Win.C1FlexGrid.RowColEventArgs e) {
-            
+
             if(m_fg.Col == (int)e_col_Number.MA_PHONG_BAN)
                 m_fg.Rows[m_fg.Row][m_fg.Col + 1] = m_fg.Rows[m_fg.Row][m_fg.Col];
             if(m_fg.Col == (int)e_col_Number.TEN_PHONG_BAN)
                 m_fg.Rows[m_fg.Row][m_fg.Col - 1] = m_fg.Rows[m_fg.Row][m_fg.Col];
             m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
 
-            if(m_fg.Col == (int) e_col_Number.SO_BILL)
+            if(m_fg.Col == (int)e_col_Number.SO_BILL)
                 set_color_ma_bill_da_ton_tai();
-            
+
             make_stt(m_fg);
         }
         private void m_cmd_del_Click(object sender, EventArgs e) {
@@ -406,7 +414,7 @@ namespace BCTKApp.ChucNang {
                 set_color_ma_bill_da_ton_tai();
             }
             catch(Exception v_e) {
-                BaseMessages.MsgBox_Error("Bạn chưa chọn file Excel hoặc chọn file Excel chưa đúng mẫu!");
+                BaseMessages.MsgBox_Error("File Excel chưa đúng mẫu hoặc đang bị mở!");
                 //CSystemLog_301.ExceptionHandle(v_e);
             }
         }
