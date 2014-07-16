@@ -163,7 +163,6 @@
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
-            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
             // ImageList
             // 
@@ -206,7 +205,6 @@
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Trở về (Esc)";
-            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
             // f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE
             // 
@@ -227,7 +225,6 @@
             this.Name = "f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F448 - Thêm cơ sở định mức cho trung tâm";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

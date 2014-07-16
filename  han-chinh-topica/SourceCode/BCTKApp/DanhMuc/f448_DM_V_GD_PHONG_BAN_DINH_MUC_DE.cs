@@ -73,7 +73,6 @@ namespace BCTKApp.DanhMuc
             m_cbo_co_so_tinh_dm.Text = m_us_v_gd_pbdm.strTEN_CO_SO_DINH_MUC;
             m_cbo_tinh_theo_co_so.Text = m_us_v_gd_pbdm.strMA;
         }
-      
         private void m_form_to_us_obj()
         {
             m_us_gd_pbdm.dcID_CO_SO_DINH_MUC = CIPConvert.ToDecimal(m_cbo_co_so_tinh_dm.SelectedValue);
@@ -180,6 +179,12 @@ namespace BCTKApp.DanhMuc
             }
             this.Close();
         }
+        private void set_define_event()
+        {
+            m_cmd_save.Click += new System.EventHandler(m_cmd_save_Click);
+            m_cmd_exit.Click += new System.EventHandler(m_cmd_exit_Click);
+            KeyDown += new System.Windows.Forms.KeyEventHandler(f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE_KeyDown);
+        }
         #endregion
 
         #region Event
@@ -187,6 +192,7 @@ namespace BCTKApp.DanhMuc
         {
             InitializeComponent();
             format_control();
+            set_define_event();
             load_cbo_co_tinh_dinh_muc();
             load_cbo_dm_co_co();
             load_cbo_trung_tam();
@@ -203,21 +209,6 @@ namespace BCTKApp.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-        private void m_cmd_save_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                save_data();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-   
-        #endregion
-
         private void f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -237,7 +228,19 @@ namespace BCTKApp.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
+        private void m_cmd_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                save_data();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+   
+        #endregion
   
     }
 }
