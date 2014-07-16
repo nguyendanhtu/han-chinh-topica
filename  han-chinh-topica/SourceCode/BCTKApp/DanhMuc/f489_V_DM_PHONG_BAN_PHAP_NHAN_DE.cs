@@ -250,10 +250,6 @@ namespace BCTKApp.DanhMuc
                 {
                     this.Close();
                 }
-                if (e.KeyData == Keys.L)
-                {
-                    save_data();
-                }
             }
             catch (Exception v_e)
             {
