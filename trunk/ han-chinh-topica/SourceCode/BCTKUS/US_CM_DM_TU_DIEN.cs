@@ -176,5 +176,10 @@ public class US_CM_DM_TU_DIEN : US_Object
         CStoredProc v_store_proc = new CStoredProc("pr_load_ds_phap_nhan");
         v_store_proc.fillDataSetByCommand(this, ip_ds);
     }
+
+    public void FillDatasetByLoaiTuDienLoaiDinhMuc(DS_CM_DM_TU_DIEN ip_ds) {
+        CStoredProc v_store_proc = new CStoredProc("pr_load_loai_dinh_muc");
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
 }
 }

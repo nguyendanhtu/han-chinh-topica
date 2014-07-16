@@ -180,8 +180,10 @@ namespace BCTKApp
         {
             try
             {
-                f850_RPT_BANG_DINH_MUC v_frm = new f850_RPT_BANG_DINH_MUC();
+                f849_RPT_CO_SO_DINH_MUC v_frm = new f849_RPT_CO_SO_DINH_MUC();
                 v_frm.ShowDialog();
+                //f850_RPT_BANG_DINH_MUC v_frm = new f850_RPT_BANG_DINH_MUC();
+                //v_frm.ShowDialog();
             }
             catch (Exception v_e)
             {
