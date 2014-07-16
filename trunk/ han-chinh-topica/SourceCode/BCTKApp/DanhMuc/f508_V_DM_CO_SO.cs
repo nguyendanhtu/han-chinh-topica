@@ -450,62 +450,81 @@ namespace BCTKApp
 		//
 		//		EVENT HANLDERS
 		//
-		//
-		private void f508_V_DM_CO_SO_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        //
+        #region Event
+        private void f508_V_DM_CO_SO_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_dm_co_so();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_dm_co_so();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_dm_co_so();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_dm_co_so();
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_dm_co_so();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_v_dm_co_so();
                 CGridUtils.MakeSoTT(0, m_grv_dm_co_so);
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_v_dm_co_so();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                view_v_dm_co_so();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_txt_tu_khoa_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -573,6 +592,9 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        #endregion
+        
 
 	}
 }
