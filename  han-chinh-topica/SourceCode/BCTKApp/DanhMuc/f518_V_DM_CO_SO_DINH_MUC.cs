@@ -443,6 +443,7 @@ namespace BCTKApp
             m_txt_tu_khoa.MouseClick += new MouseEventHandler(m_txt_tu_khoa_MouseClick);
             m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
             m_grv_co_so_dinh_muc.DoubleClick+=new EventHandler(m_grv_co_so_dinh_muc_DoubleClick);
+            this.KeyDown+=new KeyEventHandler(f518_V_DM_CO_SO_DINH_MUC_KeyDown);
 		}
 		#endregion
 
@@ -570,7 +571,20 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
+        private void f518_V_DM_CO_SO_DINH_MUC_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 	}
 }
 

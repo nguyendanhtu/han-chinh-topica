@@ -442,6 +442,7 @@ namespace BCTKApp
             m_txt_tu_khoa.Leave+=new EventHandler(m_txt_tu_khoa_Leave);
             m_txt_tu_khoa.MouseClick+=new MouseEventHandler(m_txt_tu_khoa_MouseClick);
             m_grv_dm_co_so.DoubleClick+=new EventHandler(m_grv_dm_co_so_DoubleClick);
+            this.KeyDown+=new KeyEventHandler(f508_V_DM_CO_SO_KeyDown);
 		}
 		#endregion
 
@@ -552,6 +553,20 @@ namespace BCTKApp
             try
             {
                 update_v_dm_co_so();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void f508_V_DM_CO_SO_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
             }
             catch (Exception v_e)
             {

@@ -227,6 +227,7 @@ namespace BCTKApp
             m_cmd_tra_lai_2_da_chuyen.Click+=new EventHandler(m_cmd_tra_lai_2_da_chuyen_Click);
             m_cmd_nhan_tra_lai_2_tra_lai.Click+=new EventHandler(m_cmd_nhan_tra_lai_2_tra_lai_Click);
             m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Click+=new EventHandler(m_cmd_tra_lai_2_noi_bo_nhan_tl_all_Click);
+            this.KeyDown+=new KeyEventHandler(F506_CAP_NHAT_TRANG_THAI_KeyDown);
         }
 
         private void m_cmd_xem_ds_bill_da_nhan_Click(object sender, EventArgs e)
@@ -414,8 +415,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
-
         private void m_dtp_tu_ngay_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -431,7 +430,7 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void m_cmd_da_chuyen_2_tra_lai_Click(object sender, EventArgs e) 
+        private void m_cmd_da_chuyen_2_tra_lai_Click(object sender, EventArgs e)
         {
             try
             {
@@ -492,6 +491,22 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void F506_CAP_NHAT_TRANG_THAI_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion
 
+        
     }
 }

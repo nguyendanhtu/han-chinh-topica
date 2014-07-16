@@ -552,6 +552,7 @@ namespace BCTKApp
             m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
             m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
             m_grv_bill.DoubleClick+=new EventHandler(m_grv_bill_DoubleClick);
+            this.KeyDown+=new KeyEventHandler(f516_V_DM_BILL_KeyDown);
 		}
 		#endregion
 
@@ -726,6 +727,20 @@ namespace BCTKApp
             try
             {
                 update_v_dm_bill();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void f516_V_DM_BILL_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
             }
             catch (Exception v_e)
             {

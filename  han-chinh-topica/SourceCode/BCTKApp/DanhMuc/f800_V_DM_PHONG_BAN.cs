@@ -454,6 +454,7 @@ namespace BCTKApp
             m_txt_tu_khoa.KeyDown += m_txt_tu_khoa_KeyDown;
             m_txt_tu_khoa.MouseClick += m_txt_tu_khoa_MouseClick;
             m_txt_tu_khoa.Leave += m_txt_tu_khoa_Leave;
+            this.KeyDown+=new KeyEventHandler(f800_V_DM_PHONG_BAN_KeyDown);
         }
         #endregion
 
@@ -575,6 +576,20 @@ namespace BCTKApp
             try
             {
                 set_search_format_before();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void f800_V_DM_PHONG_BAN_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }               
             }
             catch (Exception v_e)
             {

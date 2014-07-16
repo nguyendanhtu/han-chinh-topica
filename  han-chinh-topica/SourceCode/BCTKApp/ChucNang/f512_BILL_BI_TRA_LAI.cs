@@ -326,7 +326,7 @@ namespace BCTKApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			TEN_PHONG_BAN = 1        ,NGAY_GUI = 2        ,NOI_NHAN = 6        ,NGUOI_NHAN = 5        ,NOI_DUNG = 4        ,NGUOI_GUI = 7        ,SO_BILL = 3        ,SO_TIEN = 8
+		 TEN_PHONG_BAN = 1        ,NGAY_GUI = 2        ,NOI_NHAN = 6        ,NGUOI_NHAN = 5        ,NOI_DUNG = 4        ,NGUOI_GUI = 7        ,SO_BILL = 3        ,SO_TIEN = 8
 		}			
 		#endregion
 
@@ -377,6 +377,12 @@ namespace BCTKApp
               , (int)e_col_Number.SO_BILL // chỗ này là tên trường mà mình Count
               , "{0}"
               );
+            m_grv_bill.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
+                , 0
+                , (int)e_col_Number.TEN_PHONG_BAN
+                , (int)e_col_Number.SO_TIEN
+                , "{0}"
+                );
 			m_grv_bill.Redraw = true;
 		}
 		private void grid2us_object(US_V_DM_BILL i_us
@@ -473,6 +479,7 @@ namespace BCTKApp
             //m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
             m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
             m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
+            this.KeyDown+=new KeyEventHandler(f512_BILL_BI_TRA_LAI_KeyDown);
 		}
 		#endregion
 
@@ -575,9 +582,23 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void f512_BILL_BI_TRA_LAI_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape) 
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         #endregion
-        
 
-	}
+
+    }
 }
 
