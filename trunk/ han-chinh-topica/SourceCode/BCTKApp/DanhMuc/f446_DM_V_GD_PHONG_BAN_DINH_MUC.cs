@@ -575,11 +575,6 @@ namespace BCTKApp
         }
         #endregion
 
-        //
-        //
-        //		EVENT HANLDERS
-        //
-        //
         #region Event
 
         private void f446_DM_V_GD_PHONG_BAN_DINH_MUC_Load(object sender, System.EventArgs e)
@@ -714,18 +709,6 @@ namespace BCTKApp
                 if (e.KeyData == Keys.Escape)
                 {
                     this.Close();
-                }
-                if (e.KeyData == Keys.T)
-                {
-                    insert_v_gd_phong_ban_dinh_muc();
-                }
-                if (e.KeyData == Keys.S)
-                {
-                    update_v_gd_phong_ban_dinh_muc();
-                }
-                if (e.KeyData == Keys.X)
-                {
-                    delete_v_gd_phong_ban_dinh_muc();
                 }
             }
             catch (Exception v_e)
