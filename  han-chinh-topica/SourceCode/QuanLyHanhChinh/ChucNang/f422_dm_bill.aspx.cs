@@ -168,14 +168,18 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     }
     private void load_title()
     {
-        m_lbl_title.Text = "THÔNG TIN BILL";
+        m_lbl_title.Text = "Nhập thông tin Bill";
     }
     private void load_data_to_grid()
     {
         US_DM_BILL m_us_dm_bill = new US_DM_BILL();
         DS_DM_BILL m_ds_dm_bill = new DS_DM_BILL();
+        string v_so_bill = m_txt_tim_kiem.Text.Trim();
+        string v_nguoi_gui = m_txt_tim_kiem.Text.Trim();
+        string v_nguoi_nhan = m_txt_tim_kiem.Text.Trim();
+        string v_noi_nhan = m_txt_tim_kiem.Text.Trim();
         m_ds_dm_bill.Clear();
-        m_us_dm_bill.FillDataset(m_ds_dm_bill);
+        m_us_dm_bill.FillDataset(m_ds_dm_bill,v_so_bill,v_nguoi_gui,v_nguoi_nhan, v_noi_nhan);
         m_grv_dm_bill.DataSource = m_ds_dm_bill.DM_BILL;
         load_title();
         string v_str_thong_tin = " (Có " + m_ds_dm_bill.DM_BILL.Rows.Count + " bản ghi)";
@@ -476,6 +480,30 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         }
         catch (Exception v_e)
         {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            load_data_to_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_grv_v_dm_bill_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            m_grv_dm_bill.PageIndex = e.NewPageIndex;
+            m_grv_dm_bill.DataBind();
+        }
+        catch (Exception v_e)
+        {
+
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
