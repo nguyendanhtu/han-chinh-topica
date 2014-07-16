@@ -178,10 +178,17 @@
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
                         <asp:Label ID="m_lbl_danh_muc_bill" runat="server" CssClass="cssPageTitle" ForeColor="White"
-                            Text="Danh mục bill"></asp:Label>
+                            Text="Danh sách các Bill đã gửi cho TAD"></asp:Label>
                         <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"
                             ForeColor="White"></asp:Label>
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                    </td>
+                </tr>
+                <tr>
+                       <td align="center">
+                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="400px" CssClass="cssTextBox"></asp:TextBox>
+                        &nbsp;
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton"  CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
                     </td>
                 </tr>
                 <tr>
@@ -190,7 +197,8 @@
                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
                             CellPadding="8" PageSize="20"
-                            OnRowEditing = "m_grv_dm_bill_RowEditing">
+                            OnRowEditing = "m_grv_dm_bill_RowEditing"
+                             OnPageIndexChanging="m_grv_v_dm_bill_PageIndexChanging">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />
