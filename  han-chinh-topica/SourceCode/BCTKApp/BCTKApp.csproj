@@ -316,6 +316,9 @@
     <Compile Include="BaoCao\f706_V_BC_CHI_TIET_DM.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f849_RPT_CO_SO_DINH_MUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BaoCao\f850_RPT_BANG_DINH_MUC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -531,6 +534,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f706_V_BC_CHI_TIET_DM.resx">
       <DependentUpon>f706_V_BC_CHI_TIET_DM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f849_RPT_CO_SO_DINH_MUC.resx">
+      <DependentUpon>f849_RPT_CO_SO_DINH_MUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f850_RPT_BANG_DINH_MUC.resx">
       <DependentUpon>f850_RPT_BANG_DINH_MUC.cs</DependentUpon>

@@ -273,6 +273,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_RPT_CHI_PHI_THEO_PHAP_NHAN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_CO_SO_DINH_MUC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_CO_SO_DINH_MUC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_RPT_TONG_TIEN_DINH_MUC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -701,6 +706,17 @@
     </None>
     <None Include="DS_RPT_CHI_PHI_THEO_PHAP_NHAN.xss">
       <DependentUpon>DS_RPT_CHI_PHI_THEO_PHAP_NHAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_CO_SO_DINH_MUC.xsc">
+      <DependentUpon>DS_RPT_CO_SO_DINH_MUC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_CO_SO_DINH_MUC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_CO_SO_DINH_MUC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_CO_SO_DINH_MUC.xss">
+      <DependentUpon>DS_RPT_CO_SO_DINH_MUC.xsd</DependentUpon>
     </None>
     <None Include="DS_RPT_TONG_TIEN_DINH_MUC.xsc">
       <DependentUpon>DS_RPT_TONG_TIEN_DINH_MUC.xsd</DependentUpon>

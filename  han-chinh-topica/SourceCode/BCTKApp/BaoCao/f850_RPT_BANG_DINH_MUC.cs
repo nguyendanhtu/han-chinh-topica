@@ -213,10 +213,10 @@ namespace BCTKApp
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.FocusRect = C1.Win.C1FlexGrid.FocusRectEnum.Solid;
-            this.m_fg.Location = new System.Drawing.Point(0, 56);
+            this.m_fg.Location = new System.Drawing.Point(0, 66);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
-            this.m_fg.Size = new System.Drawing.Size(609, 273);
+            this.m_fg.Size = new System.Drawing.Size(609, 263);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -227,9 +227,9 @@ namespace BCTKApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(609, 56);
+            this.m_lbl_header.Size = new System.Drawing.Size(609, 66);
             this.m_lbl_header.TabIndex = 21;
-            this.m_lbl_header.Text = "BẢNG ĐƠN GIÁ ĐỊNH MỨC THEO TRUNG TÂM - BAN";
+            this.m_lbl_header.Text = "BẢNG ĐƠN GIÁ ĐỊNH MỨC MỚI NHẤT ";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // f850_RPT_BANG_DINH_MUC
