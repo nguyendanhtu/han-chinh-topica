@@ -260,6 +260,9 @@
         AQMBgAEPAYEB/wHAAQ8BwAEHAYgBHwHDA/8BwAEPAZ8B/ws=
 </value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>121, 17</value>
+  </metadata>
   <data name="m_fg.ColumnInfo" xml:space="preserve">
     <value>5,1,0,0,0,85,Columns:0{Width:38;Caption:"STT";}	1{Width:184;Caption:"Loại định mức";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Width:72;Caption:"Mã phòng ban";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	3{Width:252;Caption:"Tên phòng ban";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	4{Width:95;Caption:"Tổng tiền định mức (VNĐ)";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	</value>
   </data>
@@ -270,6 +273,6 @@
     <value>121, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>137</value>
   </metadata>
 </root>
