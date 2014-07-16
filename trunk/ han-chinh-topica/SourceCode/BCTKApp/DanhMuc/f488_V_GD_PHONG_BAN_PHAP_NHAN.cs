@@ -643,18 +643,6 @@ namespace BCTKApp
                 {
                     this.Close();
                 }
-                if (e.KeyData == Keys.T)
-                {
-                    insert_v_dm_phong_ban_phap_nhan();
-                }
-                if (e.KeyData == Keys.S)
-                {
-                    update_v_dm_phong_ban_phap_nhan();
-                }
-                if (e.KeyData == Keys.X)
-                {
-                    delete_v_dm_phong_ban_phap_nhan();
-                }
             }
             catch (Exception v_e)
             {
