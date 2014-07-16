@@ -266,7 +266,7 @@ namespace BCTKApp
             this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_tu_ngay.TabIndex = 1;
-            this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 1, 30, 0, 0, 0, 0);
+            this.m_dtp_tu_ngay.Value = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -351,8 +351,10 @@ namespace BCTKApp
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_bill);
-            m_dtp_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
-            m_dtp_den_ngay.Value = DateTime.Now.Date;
+             this.m_dtp_tu_ngay.Value = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
+            
+            
+            //m_dtp_den_ngay.Value = DateTime.Now.Date;
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
