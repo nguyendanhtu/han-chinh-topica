@@ -44,6 +44,8 @@ namespace BCTKApp
         private TextBox m_txt_tu_khoa;
         private Label label1;
         private Label m_lbl_tieu_de;
+        private Label m_lbl_note;
+        private ToolTip toolTip1;
 		private System.ComponentModel.IContainer components;
 
 		public f508_V_DM_CO_SO()
@@ -85,17 +87,19 @@ namespace BCTKApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f508_V_DM_CO_SO));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_grv_dm_co_so = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_grv_dm_co_so = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_tieu_de = new System.Windows.Forms.Label();
+            this.m_lbl_note = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_co_so)).BeginInit();
             this.panel1.SuspendLayout();
@@ -130,6 +134,7 @@ namespace BCTKApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_note);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -141,69 +146,6 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(686, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_grv_dm_co_so
-            // 
-            this.m_grv_dm_co_so.ColumnInfo = resources.GetString("m_grv_dm_co_so.ColumnInfo");
-            this.m_grv_dm_co_so.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_dm_co_so.Location = new System.Drawing.Point(0, 106);
-            this.m_grv_dm_co_so.Name = "m_grv_dm_co_so";
-            this.m_grv_dm_co_so.Size = new System.Drawing.Size(686, 267);
-            this.m_grv_dm_co_so.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_dm_co_so.Styles"));
-            this.m_grv_dm_co_so.TabIndex = 20;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.m_cmd_search);
-            this.panel1.Controls.Add(this.m_txt_tu_khoa);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.m_lbl_tieu_de);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(686, 100);
-            this.panel1.TabIndex = 24;
-            // 
-            // m_txt_tu_khoa
-            // 
-            this.m_txt_tu_khoa.Location = new System.Drawing.Point(245, 56);
-            this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
-            this.m_txt_tu_khoa.Size = new System.Drawing.Size(191, 20);
-            this.m_txt_tu_khoa.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(168, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Từ khóa";
-            // 
-            // m_lbl_tieu_de
-            // 
-            this.m_lbl_tieu_de.AutoSize = true;
-            this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tieu_de.Location = new System.Drawing.Point(275, 7);
-            this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(144, 19);
-            this.m_lbl_tieu_de.TabIndex = 0;
-            this.m_lbl_tieu_de.Text = "DANH MỤC CƠ SỞ";
-            // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_search.ImageIndex = 18;
-            this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(461, 50);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 22;
-            this.m_cmd_search.Text = "Tìm kiếm";
             // 
             // m_cmd_insert
             // 
@@ -281,6 +223,81 @@ namespace BCTKApp
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // m_grv_dm_co_so
+            // 
+            this.m_grv_dm_co_so.ColumnInfo = resources.GetString("m_grv_dm_co_so.ColumnInfo");
+            this.m_grv_dm_co_so.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_grv_dm_co_so.Location = new System.Drawing.Point(0, 106);
+            this.m_grv_dm_co_so.Name = "m_grv_dm_co_so";
+            this.m_grv_dm_co_so.Size = new System.Drawing.Size(686, 267);
+            this.m_grv_dm_co_so.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_dm_co_so.Styles"));
+            this.m_grv_dm_co_so.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.m_grv_dm_co_so, "Bạn nhấp đôi chuột vào  bảng để xem chi tiết");
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_cmd_search);
+            this.panel1.Controls.Add(this.m_txt_tu_khoa);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.m_lbl_tieu_de);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(686, 100);
+            this.panel1.TabIndex = 24;
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(461, 50);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 22;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            // 
+            // m_txt_tu_khoa
+            // 
+            this.m_txt_tu_khoa.Location = new System.Drawing.Point(245, 56);
+            this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
+            this.m_txt_tu_khoa.Size = new System.Drawing.Size(191, 20);
+            this.m_txt_tu_khoa.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(168, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Từ khóa";
+            // 
+            // m_lbl_tieu_de
+            // 
+            this.m_lbl_tieu_de.AutoSize = true;
+            this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tieu_de.Location = new System.Drawing.Point(275, 7);
+            this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(144, 19);
+            this.m_lbl_tieu_de.TabIndex = 0;
+            this.m_lbl_tieu_de.Text = "DANH MỤC CƠ SỞ";
+            // 
+            // m_lbl_note
+            // 
+            this.m_lbl_note.AutoSize = true;
+            this.m_lbl_note.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_note.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_note.Location = new System.Drawing.Point(92, 4);
+            this.m_lbl_note.Name = "m_lbl_note";
+            this.m_lbl_note.Size = new System.Drawing.Size(224, 13);
+            this.m_lbl_note.TabIndex = 23;
+            this.m_lbl_note.Text = "Bạn nhấp đôi chuột vào  bảng để xem chi tiết";
+            // 
             // f508_V_DM_CO_SO
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -292,6 +309,7 @@ namespace BCTKApp
             this.Text = "F508 - Danh mục cơ sở";
             this.Load += new System.EventHandler(this.f508_V_DM_CO_SO_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_co_so)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -324,6 +342,7 @@ namespace BCTKApp
 			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_grv_dm_co_so);
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.m_lbl_note.ForeColor = System.Drawing.Color.Maroon;
 			CGridUtils.AddSave_Excel_Handlers(m_grv_dm_co_so);
             			CGridUtils.AddSearch_Handlers(m_grv_dm_co_so);
 			set_define_events();
