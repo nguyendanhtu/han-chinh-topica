@@ -139,6 +139,7 @@ namespace BCTKApp.DanhMuc
         {
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            this.KeyDown+=new KeyEventHandler(f801_DM_PHONG_BAN_DE_KeyDown);
         }
         #endregion
 
@@ -152,6 +153,20 @@ namespace BCTKApp.DanhMuc
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void f801_DM_PHONG_BAN_DE_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         #endregion

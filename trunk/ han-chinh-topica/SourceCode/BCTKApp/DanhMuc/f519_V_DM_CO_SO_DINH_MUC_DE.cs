@@ -146,6 +146,7 @@ namespace BCTKApp
         {
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            this.KeyDown+=new KeyEventHandler(f519_V_DM_CO_SO_DINH_MUC_DE_KeyDown);
         }
         #endregion
 
@@ -168,6 +169,21 @@ namespace BCTKApp
             try
             {
                 this.Close();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void f519_V_DM_CO_SO_DINH_MUC_DE_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
             }
             catch (Exception v_e)
             {

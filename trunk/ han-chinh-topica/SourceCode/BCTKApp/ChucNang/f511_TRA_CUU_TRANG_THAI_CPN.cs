@@ -580,6 +580,7 @@ namespace BCTKApp
             m_cbo_trang_thai.SelectedIndexChanged+=new EventHandler(m_cbo_trang_thai_SelectedIndexChanged);
             m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
             m_cmd_xuat_excel.Click+=new EventHandler(m_cmd_xuat_excel_Click);
+            this.KeyDown+=new KeyEventHandler(f511_TRA_CUU_TRANG_THAI_CPN_KeyDown);
 		}
 		#endregion
 
@@ -743,6 +744,20 @@ namespace BCTKApp
             try
             {
                 export_2_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void f511_TRA_CUU_TRANG_THAI_CPN_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
             }
             catch (Exception v_e)
             {
