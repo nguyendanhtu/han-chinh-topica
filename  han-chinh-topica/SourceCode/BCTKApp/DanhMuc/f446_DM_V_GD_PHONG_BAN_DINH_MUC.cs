@@ -299,8 +299,6 @@ namespace BCTKApp
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f446_DM_V_GD_PHONG_BAN_DINH_MUC";
             this.Text = "F446 - Cở định mức theo trung tâm";
-            this.Load += new System.EventHandler(this.f446_DM_V_GD_PHONG_BAN_DINH_MUC_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f446_DM_V_GD_PHONG_BAN_DINH_MUC_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
@@ -569,9 +567,11 @@ namespace BCTKApp
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-            m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
-            m_cbo_trung_tam.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trung_tam_SelectedIndexChanged);
-            m_cbo_loai_dm.SelectedIndexChanged += new System.EventHandler(this.m_cbo_loai_dm_SelectedIndexChanged);
+            m_txt_tim_kiem.TextChanged += new System.EventHandler(m_txt_tim_kiem_TextChanged);
+            m_cbo_trung_tam.SelectedIndexChanged += new System.EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
+            m_cbo_loai_dm.SelectedIndexChanged += new System.EventHandler(m_cbo_loai_dm_SelectedIndexChanged);
+            KeyDown += new System.Windows.Forms.KeyEventHandler(f446_DM_V_GD_PHONG_BAN_DINH_MUC_KeyDown);
+            Load += new System.EventHandler(f446_DM_V_GD_PHONG_BAN_DINH_MUC_Load);
         }
         #endregion
 
