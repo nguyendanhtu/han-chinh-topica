@@ -588,19 +588,19 @@ namespace BCTKDS.CDBNames
     public class V_GD_THONG_KE
     {
         public const string ID = "ID";
-        public const string ID_LOAI_THONG_KE = "ID_LOAI_THONG_KE";
-        public const string LOAI_TK = "LOAI_TK";
+        public const string ID_CO_SO_DINH_MUC = "ID_CO_SO_DINH_MUC";
+        public const string TEN_CO_SO_DINH_MUC = "TEN_CO_SO_DINH_MUC";
         public const string TEN_THONG_KE = "TEN_THONG_KE";
         public const string ID_LOAI_THOI_GIAN = "ID_LOAI_THOI_GIAN";
-        public const string LOAI_THOI_GIAN = "LOAI_THOI_GIAN";
+        public const string TEN_NGAN = "TEN_NGAN";
         public const string TU_NGAY = "TU_NGAY";
         public const string DEN_NGAY = "DEN_NGAY";
-        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
-        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
-        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
         public const string GIA_TRI_THONG_KE = "GIA_TRI_THONG_KE";
         public const string ID_DON_VI_THONG_KE = "ID_DON_VI_THONG_KE";
-        public const string DON_VI_THONG_KE = "DON_VI_THONG_KE";
+        public const string TEN = "TEN";
+        public const string ID_DM_CO_SO = "ID_DM_CO_SO";
+        public const string MA = "MA";
+        public const string MO_TA = "MO_TA";
         public const string GHI_CHU_1 = "GHI_CHU_1";
         public const string GHI_CHU_2 = "GHI_CHU_2";
         public const string GHI_CHU_3 = "GHI_CHU_3";
