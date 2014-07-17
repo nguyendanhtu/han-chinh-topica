@@ -42,10 +42,10 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Panel m_pnl_top;
         private DateTimePicker m_dtp_den_ngay;
-        private DateTimePicker m_dtp_tu_ngay;
         private Label label6;
         private Label label7;
         private Label m_lbl_tieu_de;
+        private DateTimePicker m_dtp_tu_ngay;
 		private System.ComponentModel.IContainer components;
 
 		public f512_BILL_BI_TRA_LAI()
@@ -95,10 +95,10 @@ namespace BCTKApp
             this.m_grv_bill = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_top = new System.Windows.Forms.Panel();
             this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
-            this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
+            this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_bill)).BeginInit();
             this.m_pnl_top.SuspendLayout();
@@ -227,13 +227,12 @@ namespace BCTKApp
             this.m_grv_bill.Location = new System.Drawing.Point(0, 97);
             this.m_grv_bill.Name = "m_grv_bill";
             this.m_grv_bill.Size = new System.Drawing.Size(884, 429);
-            this.m_grv_bill.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_bill.Styles"));
             this.m_grv_bill.TabIndex = 20;
             // 
             // m_pnl_top
             // 
-            this.m_pnl_top.Controls.Add(this.m_dtp_den_ngay);
             this.m_pnl_top.Controls.Add(this.m_dtp_tu_ngay);
+            this.m_pnl_top.Controls.Add(this.m_dtp_den_ngay);
             this.m_pnl_top.Controls.Add(this.label6);
             this.m_pnl_top.Controls.Add(this.label7);
             this.m_pnl_top.Controls.Add(this.m_lbl_tieu_de);
@@ -255,18 +254,6 @@ namespace BCTKApp
             this.m_dtp_den_ngay.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_den_ngay.TabIndex = 2;
             this.m_dtp_den_ngay.Value = new System.DateTime(2014, 7, 12, 0, 0, 0, 0);
-            // 
-            // m_dtp_tu_ngay
-            // 
-            this.m_dtp_tu_ngay.Checked = false;
-            this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(295, 48);
-            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
-            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(126, 23);
-            this.m_dtp_tu_ngay.TabIndex = 1;
-            this.m_dtp_tu_ngay.Value = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -298,6 +285,17 @@ namespace BCTKApp
             this.m_lbl_tieu_de.TabIndex = 27;
             this.m_lbl_tieu_de.Text = "TỔNG HỢP THƯ BỊ TRẢ LẠI TOÀN TOPICA";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // m_dtp_tu_ngay
+            // 
+            this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(296, 51);
+            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
+            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(133, 23);
+            this.m_dtp_tu_ngay.TabIndex = 33;
+            this.m_dtp_tu_ngay.Value = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
             // 
             // f512_BILL_BI_TRA_LAI
             // 
@@ -351,10 +349,7 @@ namespace BCTKApp
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_bill);
-             this.m_dtp_tu_ngay.Value = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
-            
-            
-            //m_dtp_den_ngay.Value = DateTime.Now.Date;
+            m_dtp_den_ngay.Value = DateTime.Now.Date;
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
