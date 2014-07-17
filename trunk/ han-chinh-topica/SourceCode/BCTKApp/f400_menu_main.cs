@@ -35,7 +35,7 @@ namespace BCTKApp
         {
             m_cmd_dm_trung_tam.Click += new EventHandler(m_cmd_dm_trung_tam_Click);
             m_cmd_tk_nhan_su.Click += new EventHandler(m_cmd_tk_nhan_su_Click);
-            m_cmd_tk_hv_dang_hoc.Click+=new EventHandler(m_cmd_tk_hv_dang_hoc_Click);
+            m_cmd_tk_hv.Click+=new EventHandler(m_cmd_tk_hv_dang_hoc_Click);
             m_cmd_hv_tuyen_moi.Click+=new EventHandler(m_cmd_hv_tuyen_moi_Click);
             m_cmd_theo_tung_bill.Click += new EventHandler(m_cmd_theo_tung_bill_Click);
             this.m_cmd_trang_thai.Click += new System.EventHandler(this.m_cmd_trang_thai_Click);
