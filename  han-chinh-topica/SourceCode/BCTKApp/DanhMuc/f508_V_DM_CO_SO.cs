@@ -87,6 +87,7 @@ namespace BCTKApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f508_V_DM_CO_SO));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_lbl_note = new System.Windows.Forms.Label();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
@@ -98,7 +99,6 @@ namespace BCTKApp
             this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.m_lbl_note = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_co_so)).BeginInit();
@@ -146,6 +146,17 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(686, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_lbl_note
+            // 
+            this.m_lbl_note.AutoSize = true;
+            this.m_lbl_note.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_note.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_note.Location = new System.Drawing.Point(92, 4);
+            this.m_lbl_note.Name = "m_lbl_note";
+            this.m_lbl_note.Size = new System.Drawing.Size(224, 13);
+            this.m_lbl_note.TabIndex = 23;
+            this.m_lbl_note.Text = "Bạn nhấp đôi chuột vào  bảng để xem chi tiết";
             // 
             // m_cmd_insert
             // 
@@ -287,17 +298,6 @@ namespace BCTKApp
             this.m_lbl_tieu_de.TabIndex = 0;
             this.m_lbl_tieu_de.Text = "DANH MỤC CƠ SỞ";
             // 
-            // m_lbl_note
-            // 
-            this.m_lbl_note.AutoSize = true;
-            this.m_lbl_note.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_lbl_note.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_note.Location = new System.Drawing.Point(92, 4);
-            this.m_lbl_note.Name = "m_lbl_note";
-            this.m_lbl_note.Size = new System.Drawing.Size(224, 13);
-            this.m_lbl_note.TabIndex = 23;
-            this.m_lbl_note.Text = "Bạn nhấp đôi chuột vào  bảng để xem chi tiết";
-            // 
             // f508_V_DM_CO_SO
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -326,7 +326,7 @@ namespace BCTKApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			MO_TA = 2,MA = 1,TEN_LOAI_CO_SO = 3
+			MO_TA = 3,MA = 2,TEN_LOAI_CO_SO = 1
 		}			
 		#endregion
 
