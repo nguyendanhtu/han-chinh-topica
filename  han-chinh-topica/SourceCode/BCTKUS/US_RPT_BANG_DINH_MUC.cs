@@ -153,5 +153,14 @@ public class US_RPT_BANG_DINH_MUC : US_Object
         CStoredProc v_proc = new CStoredProc("pr_rpt_bang_dinh_muc");
         v_proc.ExecuteCommand(this);
     }
+    public string get_ap_dung_tu_ngay(decimal ip_id_loai_dinh_muc, decimal ip_id_loai_co_so_dinh_muc) {
+        CStoredProc v_proc = new CStoredProc("pr_get_ap_dung_tu_ngay_max");
+        v_proc.addDecimalInputParam("@ID_LOAI_DINH_MUC", ip_id_loai_dinh_muc);
+        v_proc.addDecimalInputParam("@ID_LOAI_CO_SO_DINH_MUC", ip_id_loai_co_so_dinh_muc);
+        SqlParameter v_ap_dung_tu_ngay = v_proc.addDatetimeOutputParam("@AP_DUNG_TU_NGAY", -1);
+        v_proc.ExecuteCommand(this);
+
+        return v_ap_dung_tu_ngay.Value.ToString();
+    }
 	}
 }
