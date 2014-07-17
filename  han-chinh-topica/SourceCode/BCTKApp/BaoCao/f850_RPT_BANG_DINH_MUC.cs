@@ -24,59 +24,54 @@ using BCTKDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 
-namespace BCTKApp
-{
+namespace BCTKApp {
 
 
 
-	public class f850_RPT_BANG_DINH_MUC : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+    public class f850_RPT_BANG_DINH_MUC : System.Windows.Forms.Form {
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_view;
         private Label m_lbl_header;
-		private System.ComponentModel.IContainer components;
+        private Label label1;
+        private ToolTip toolTip1;
+        private System.ComponentModel.IContainer components;
 
-		public f850_RPT_BANG_DINH_MUC()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public f850_RPT_BANG_DINH_MUC() {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing) {
+            if(disposing) {
+                if(components != null) {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f850_RPT_BANG_DINH_MUC));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -88,6 +83,8 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_header = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -121,6 +118,7 @@ namespace BCTKApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.label1);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -219,6 +217,7 @@ namespace BCTKApp
             this.m_fg.Size = new System.Drawing.Size(611, 289);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.m_fg, "Click đúp vào một ô để biết ngày áp dụng");
             // 
             // m_lbl_header
             // 
@@ -232,6 +231,16 @@ namespace BCTKApp
             this.m_lbl_header.Text = "BẢNG ĐƠN GIÁ ĐỊNH MỨC MỚI NHẤT ";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(33, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Click đúp vào một ô để biết ngày áp dụng";
+            // 
             // f850_RPT_BANG_DINH_MUC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -243,196 +252,374 @@ namespace BCTKApp
             this.Text = "F850 - Bảng đơn giá định mức mới nhất";
             this.Load += new System.EventHandler(this.f850_RPT_BANG_DINH_MUC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-		#endregion
+        #region Public Interface
+        public void display() {
+            this.ShowDialog();
+        }
+        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			L8 = 2
-,NHAN_VIEN = 3
-,NOI_DUNG = 1
-,HOC_VIEN_DANG_HOC = 4
+        #region Data Structure
+        private enum e_col_Number {
+            L8 = 2
+,
+            NHAN_VIEN = 3
+                ,
+            NOI_DUNG = 1
+                , HOC_VIEN_DANG_HOC = 4
 
-		}			
-		#endregion
+        }
+        #endregion
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_RPT_BANG_DINH_MUC m_ds = new DS_RPT_BANG_DINH_MUC();
-		US_RPT_BANG_DINH_MUC m_us = new US_RPT_BANG_DINH_MUC();
-		#endregion
+        #region Members
+        ITransferDataRow m_obj_trans;
+        DS_RPT_BANG_DINH_MUC m_ds = new DS_RPT_BANG_DINH_MUC();
+        US_RPT_BANG_DINH_MUC m_us = new US_RPT_BANG_DINH_MUC();
+        #endregion
 
-		#region Private Methods
-		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201());
+        #region Private Methods
+        private void format_controls() {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
             this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			CControlFormat.setC1FlexFormat(m_fg);
-			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
-			set_define_events();
+            CControlFormat.setC1FlexFormat(m_fg);
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            set_define_events();
             m_fg.Styles.Editor.WordWrap = true;
             CGridUtils.MakeSoTT(0, m_fg);
-			this.KeyPreview = true;		
-		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
-		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(RPT_BANG_DINH_MUC.L8, e_col_Number.L8);
-			v_htb.Add(RPT_BANG_DINH_MUC.NHAN_VIEN, e_col_Number.NHAN_VIEN);
-			v_htb.Add(RPT_BANG_DINH_MUC.NOI_DUNG, e_col_Number.NOI_DUNG);
-			v_htb.Add(RPT_BANG_DINH_MUC.HOC_VIEN_DANG_HOC, e_col_Number.HOC_VIEN_DANG_HOC);
-									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.RPT_BANG_DINH_MUC.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_RPT_BANG_DINH_MUC();
+            this.KeyPreview = true;
+        }
+        private void set_initial_form_load() {
+            m_obj_trans = get_trans_object(m_fg);
+            load_data_2_grid();
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(RPT_BANG_DINH_MUC.L8, e_col_Number.L8);
+            v_htb.Add(RPT_BANG_DINH_MUC.NHAN_VIEN, e_col_Number.NHAN_VIEN);
+            v_htb.Add(RPT_BANG_DINH_MUC.NOI_DUNG, e_col_Number.NOI_DUNG);
+            v_htb.Add(RPT_BANG_DINH_MUC.HOC_VIEN_DANG_HOC, e_col_Number.HOC_VIEN_DANG_HOC);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.RPT_BANG_DINH_MUC.NewRow());
+            return v_obj_trans;
+        }
+        private void load_data_2_grid() {
+            m_ds = new DS_RPT_BANG_DINH_MUC();
             m_us.ExecuteProc();
             m_us.FillDataset(m_ds);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
-		}
-		private void grid2us_object(US_RPT_BANG_DINH_MUC i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
-
-	
-		private void us_object2grid(US_RPT_BANG_DINH_MUC i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
+        private void grid2us_object(US_RPT_BANG_DINH_MUC i_us
+            , int i_grid_row) {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
 
-		private void insert_rpt_bang_dinh_muc(){			
-		//	f850_RPT_BANG_DINH_MUC_DE v_fDE = new  f850_RPT_BANG_DINH_MUC_DE();								
-		//	v_fDE.display();
-			load_data_2_grid();
-		}
+        private void us_object2grid(US_RPT_BANG_DINH_MUC i_us
+            , int i_grid_row) {
+            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
 
-		private void update_rpt_bang_dinh_muc(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
-		//	f850_RPT_BANG_DINH_MUC_DE v_fDE = new f850_RPT_BANG_DINH_MUC_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
-		}
-				
-		private void delete_rpt_bang_dinh_muc(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_RPT_BANG_DINH_MUC v_us = new US_RPT_BANG_DINH_MUC();
-			grid2us_object(v_us, m_fg.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
 
-		private void view_rpt_bang_dinh_muc(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
-		//	f850_RPT_BANG_DINH_MUC_DE v_fDE = new f850_RPT_BANG_DINH_MUC_DE();			
-		//	v_fDE.display(m_us);
-		}
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-		}
-		#endregion
+        private void insert_rpt_bang_dinh_muc() {
+            //	f850_RPT_BANG_DINH_MUC_DE v_fDE = new  f850_RPT_BANG_DINH_MUC_DE();								
+            //	v_fDE.display();
+            load_data_2_grid();
+        }
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f850_RPT_BANG_DINH_MUC_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        private void update_rpt_bang_dinh_muc() {
+            if(!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            //	f850_RPT_BANG_DINH_MUC_DE v_fDE = new f850_RPT_BANG_DINH_MUC_DE();
+            //	v_fDE.display(m_us);
+            load_data_2_grid();
+        }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void delete_rpt_bang_dinh_muc() {
+            if(!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if(BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            US_RPT_BANG_DINH_MUC v_us = new US_RPT_BANG_DINH_MUC();
+            grid2us_object(v_us, m_fg.Row);
+            try {
+                v_us.BeginTransaction();
+                v_us.Delete();
+                v_us.CommitTransaction();
+                m_fg.Rows.Remove(m_fg.Row);
+            }
+            catch(Exception v_e) {
+                v_us.Rollback();
+                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_objErrHandler.showErrorMessage();
+            }
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_rpt_bang_dinh_muc();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void view_rpt_bang_dinh_muc() {
+            if(!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            //	f850_RPT_BANG_DINH_MUC_DE v_fDE = new f850_RPT_BANG_DINH_MUC_DE();			
+            //	v_fDE.display(m_us);
+        }
+        private void set_define_events() {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_rpt_bang_dinh_muc();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_rpt_bang_dinh_muc();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        #endregion
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_rpt_bang_dinh_muc();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        //
+        //
+        //		EVENT HANLDERS
+        //
+        //
 
-	}
+        private void f850_RPT_BANG_DINH_MUC_Load(object sender, System.EventArgs e) {
+            try {
+                set_initial_form_load();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        private void m_cmd_exit_Click(object sender, EventArgs e) {
+            try {
+                this.Close();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_insert_Click(object sender, EventArgs e) {
+            try {
+                insert_rpt_bang_dinh_muc();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_update_Click(object sender, EventArgs e) {
+            try {
+                update_rpt_bang_dinh_muc();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_delete_Click(object sender, EventArgs e) {
+            try {
+                delete_rpt_bang_dinh_muc();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_view_Click(object sender, EventArgs e) {
+            try {
+                view_rpt_bang_dinh_muc();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_fg_DoubleClick(object sender, EventArgs e) {
+            try {
+                int vRowClick = m_fg.Row;
+                switch(vRowClick) {
+                    case 2:
+                        if(m_fg.Col == (int)e_col_Number.L8) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.CPN, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_L8);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        if(m_fg.Col == (int)e_col_Number.NHAN_VIEN) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.CPN, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_NHAN_VIEN);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        if(m_fg.Col == (int)e_col_Number.HOC_VIEN_DANG_HOC) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.CPN, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_HV_DANG_HOC);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        break;
+                    case 1:
+                        if(m_fg.Col == (int)e_col_Number.L8) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.VPP, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_L8);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        if(m_fg.Col == (int)e_col_Number.NHAN_VIEN) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.VPP, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_NHAN_VIEN);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        if(m_fg.Col == (int)e_col_Number.HOC_VIEN_DANG_HOC) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.VPP, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_HV_DANG_HOC);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        break;
+                    case 3:
+                        if(m_fg.Col == (int)e_col_Number.L8) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.DIENTHOAI, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_L8);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        if(m_fg.Col == (int)e_col_Number.NHAN_VIEN) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.DIENTHOAI, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_NHAN_VIEN);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        if(m_fg.Col == (int)e_col_Number.HOC_VIEN_DANG_HOC) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.DIENTHOAI, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_HV_DANG_HOC);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        break;
+                    case 4:
+                        if(m_fg.Col == (int)e_col_Number.L8) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.IN, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_L8);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        if(m_fg.Col == (int)e_col_Number.NHAN_VIEN) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.IN, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_NHAN_VIEN);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        if(m_fg.Col == (int)e_col_Number.HOC_VIEN_DANG_HOC) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.IN, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_HV_DANG_HOC);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        break;
+                    case 5:
+                        if(m_fg.Col == (int)e_col_Number.L8) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.PHOTO, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_L8);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        if(m_fg.Col == (int)e_col_Number.NHAN_VIEN) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.PHOTO, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_NHAN_VIEN);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        if(m_fg.Col == (int)e_col_Number.HOC_VIEN_DANG_HOC) {
+                            string v_str = m_us.get_ap_dung_tu_ngay(CONST_ID_LOAI_DINH_MUC.PHOTO, CONST_ID_LOAI_CO_SO_DINH_MUC.ID_HV_DANG_HOC);
+                            if(v_str == "") {
+                                BaseMessages.MsgBox_Infor("Bạn chưa tạo ngày áp dụng và đơn giá cho định mức này!");
+                            }
+                            else {
+                                v_str = v_str.Substring(0, v_str.IndexOf(" "));
+                                BaseMessages.MsgBox_Infor("Ngày áp dụng: " + v_str);
+                            }
+                        }
+                        break;
+                }
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+    }
 }
 
