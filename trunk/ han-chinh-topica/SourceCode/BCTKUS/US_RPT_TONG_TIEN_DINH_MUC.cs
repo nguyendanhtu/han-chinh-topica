@@ -197,5 +197,50 @@ public class US_RPT_TONG_TIEN_DINH_MUC : US_Object
         v_proc.addDatetimeInputParam("@to_date", ip_to_date);
         v_proc.fillDataSetByCommand(this, ip_ds);
     }
+
+    public void get_don_gia_dinh_muc_and_so_luong_thong_ke(decimal ip_id_trung_tam, decimal ip_id_loai_dinh_muc
+                                                    , DateTime ip_from_date, DateTime ip_to_date
+                                                    , ref decimal op_don_gia_dinh_muc, ref decimal op_so_luong_thong_ke) {
+        CStoredProc v_proc = new CStoredProc("pr_get_don_gia_dinh_muc_and_so_luong_thong_ke");
+
+        v_proc.addDecimalInputParam("@ID_TRUNG_TAM", ip_id_trung_tam);
+        v_proc.addDecimalInputParam("@ID_LOAI_DINH_MUC", ip_id_loai_dinh_muc);
+        v_proc.addDatetimeInputParam("@FROM_DATE", ip_from_date);
+        v_proc.addDatetimeInputParam("@TO_DATE", ip_to_date);
+        SqlParameter v_obj_don_gia_dinh_muc = v_proc.addDecimalOutputParam("@DON_GIA_DINH_MUC", -1);
+        SqlParameter v_obj_so_luong_thong_ke = v_proc.addDecimalOutputParam("@SO_LUONG_THONG_KE", -1);
+
+        v_proc.ExecuteCommand(this);
+
+        if(v_obj_don_gia_dinh_muc.Value != null) {
+            op_don_gia_dinh_muc = CIPConvert.ToDecimal(v_obj_don_gia_dinh_muc.Value);
+        }
+        if(v_obj_so_luong_thong_ke.Value != null) {
+            op_so_luong_thong_ke = CIPConvert.ToDecimal(v_obj_so_luong_thong_ke.Value);
+        }
+    }
+    public void get_co_so_dinh_muc_ap_dung_tu_ngay(decimal ip_id_trung_tam, decimal ip_id_loai_dinh_muc
+                                                    , DateTime ip_from_date, DateTime ip_to_date
+                                                    , ref decimal op_id_co_so_dinh_muc, ref DateTime op_ap_dung_tu_ngay
+                                                    , ref string op_ten_co_so_dinh_muc) {
+        CStoredProc v_proc = new CStoredProc("pr_get_co_so_dinh_muc_ap_dung_tu_ngay");
+
+        v_proc.addDecimalInputParam("@ID_TRUNG_TAM", ip_id_trung_tam);
+        v_proc.addDecimalInputParam("@ID_LOAI_DINH_MUC", ip_id_loai_dinh_muc);
+        v_proc.addDatetimeInputParam("@FROM_DATE", ip_from_date);
+        v_proc.addDatetimeInputParam("@TO_DATE", ip_to_date);
+
+        SqlParameter v_obj_id_co_so_dinh_muc = v_proc.addDecimalOutputParam("@ID_CO_SO_DINH_MUC", -1);
+        SqlParameter v_obj_ten_co_so_dinh_muc = v_proc.addNVarcharOutputParam("@TEN_CO_SO_DINH_MUC", -1);
+        SqlParameter v_obj_ap_dung_tu_ngay = v_proc.addDatetimeOutputParam("@AP_DUNG_TU_NGAY", -1);
+
+        v_proc.ExecuteCommand(this);
+
+        op_id_co_so_dinh_muc = CIPConvert.ToDecimal(v_obj_id_co_so_dinh_muc.Value);
+        string temp = v_obj_ap_dung_tu_ngay.Value.ToString();
+        temp = temp.Substring(0, temp.IndexOf(" "));
+        op_ap_dung_tu_ngay = CIPConvert.ToDatetime(temp);
+        op_ten_co_so_dinh_muc = CIPConvert.ToStr(v_obj_ten_co_so_dinh_muc.Value);
+    }
 	}
 }

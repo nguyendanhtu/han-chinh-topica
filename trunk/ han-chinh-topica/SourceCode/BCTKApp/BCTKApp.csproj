@@ -325,6 +325,12 @@
     <Compile Include="BaoCao\f860_RPT_TONG_TIEN_DINH_MUC.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f861_RPT_TONG_TIEN_DINH_MUC_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f861_RPT_TONG_TIEN_DINH_MUC_DE.Designer.cs">
+      <DependentUpon>f861_RPT_TONG_TIEN_DINH_MUC_DE.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\f870_RPT_CHI_PHI_THEO_PHAP_NHAN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -438,9 +444,6 @@
     <Compile Include="f400_menu_main.Designer.cs">
       <DependentUpon>f400_menu_main.cs</DependentUpon>
     </Compile>
-    <Compile Include="f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="f996_license_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -547,6 +550,9 @@
     <EmbeddedResource Include="BaoCao\f860_RPT_TONG_TIEN_DINH_MUC.resx">
       <DependentUpon>f860_RPT_TONG_TIEN_DINH_MUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f861_RPT_TONG_TIEN_DINH_MUC_DE.resx">
+      <DependentUpon>f861_RPT_TONG_TIEN_DINH_MUC_DE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f870_RPT_CHI_PHI_THEO_PHAP_NHAN.resx">
       <DependentUpon>f870_RPT_CHI_PHI_THEO_PHAP_NHAN.cs</DependentUpon>
     </EmbeddedResource>
@@ -624,9 +630,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f400_menu_main.resx">
       <DependentUpon>f400_menu_main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.resx">
-      <DependentUpon>f410_thong_ke_tong_hop_tien_chuyen_phat_nhanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f996_license_form.resx">
       <DependentUpon>f996_license_form.cs</DependentUpon>
