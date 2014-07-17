@@ -401,11 +401,10 @@ public class US_V_GD_THONG_KE : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-    public void FillDatasetSearch(DS_V_GD_THONG_KE ip_m_ds, decimal ip_dc_id_co_so_dinh_muc,string ip_v_str_tim_kiem,DateTime ip_dat_tu_ngay,DateTime ip_dat_den_ngay)
+    public void FillDatasetSearch(DS_V_GD_THONG_KE ip_m_ds,string ip_v_str_tim_kiem,DateTime ip_dat_tu_ngay,DateTime ip_dat_den_ngay)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_THONG_KE_Search");
         v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tim_kiem);
-        v_stored_proc.addDecimalInputParam("@ID_CO_SO_DM",ip_dc_id_co_so_dinh_muc);
         v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
         v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
         v_stored_proc.fillDataSetByCommand(this, ip_m_ds);
