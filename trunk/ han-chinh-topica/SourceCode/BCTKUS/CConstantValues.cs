@@ -4,6 +4,18 @@ using System.Text;
 
 namespace BCTKUS
 {
+    public class CONST_ID_LOAI_CO_SO_DINH_MUC {
+        public const decimal ID_NHAN_VIEN = 201;
+        public const decimal ID_L8 = 204;
+        public const decimal ID_HV_DANG_HOC = 203;
+    }
+    public class CONST_ID_LOAI_DINH_MUC {
+        public const decimal VPP = 173;
+        public const decimal CPN = 174;
+        public const decimal DIENTHOAI = 206;
+        public const decimal IN = 207;
+        public const decimal PHOTO = 208;
+    }
     public class CONST_ID_CM_DM_LOAI_TD {
         public const decimal ID_CHUC_NANG = 16;
     }
