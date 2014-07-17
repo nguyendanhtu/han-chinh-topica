@@ -40,12 +40,12 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
         private Label m_lbl_header;
-        private ComboBox m_cbo_loai_dinh_muc;
         private Label m_lbl;
         private Label label1;
         private DateTimePicker m_dat_ap_dung_tu_ngay;
         private Panel m_pnl_don_gia_dinh_muc;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
+        private ComboBox m_cbo_loai_dinh_muc;
 		private System.ComponentModel.IContainer components;
 
 		public f849_RPT_CO_SO_DINH_MUC()
@@ -94,12 +94,12 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_header = new System.Windows.Forms.Label();
-            this.m_cbo_loai_dinh_muc = new System.Windows.Forms.ComboBox();
             this.m_lbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_dat_ap_dung_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_don_gia_dinh_muc = new System.Windows.Forms.Panel();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
+            this.m_cbo_loai_dinh_muc = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_pnl_don_gia_dinh_muc.SuspendLayout();
@@ -243,14 +243,6 @@ namespace BCTKApp
             this.m_lbl_header.Text = "ĐƠN GIÁ ĐỊNH MỨC";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // m_cbo_loai_dinh_muc
-            // 
-            this.m_cbo_loai_dinh_muc.FormattingEnabled = true;
-            this.m_cbo_loai_dinh_muc.Location = new System.Drawing.Point(277, 4);
-            this.m_cbo_loai_dinh_muc.Name = "m_cbo_loai_dinh_muc";
-            this.m_cbo_loai_dinh_muc.Size = new System.Drawing.Size(150, 21);
-            this.m_cbo_loai_dinh_muc.TabIndex = 22;
-            // 
             // m_lbl
             // 
             this.m_lbl.AutoSize = true;
@@ -276,6 +268,7 @@ namespace BCTKApp
             this.m_dat_ap_dung_tu_ngay.Name = "m_dat_ap_dung_tu_ngay";
             this.m_dat_ap_dung_tu_ngay.Size = new System.Drawing.Size(150, 20);
             this.m_dat_ap_dung_tu_ngay.TabIndex = 25;
+            this.m_dat_ap_dung_tu_ngay.Value = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
             // 
             // m_pnl_don_gia_dinh_muc
             // 
@@ -304,6 +297,14 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(110, 48);
             this.m_cmd_tim_kiem.TabIndex = 41;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
+            // 
+            // m_cbo_loai_dinh_muc
+            // 
+            this.m_cbo_loai_dinh_muc.FormattingEnabled = true;
+            this.m_cbo_loai_dinh_muc.Location = new System.Drawing.Point(277, 4);
+            this.m_cbo_loai_dinh_muc.Name = "m_cbo_loai_dinh_muc";
+            this.m_cbo_loai_dinh_muc.Size = new System.Drawing.Size(150, 21);
+            this.m_cbo_loai_dinh_muc.TabIndex = 22;
             // 
             // f849_RPT_CO_SO_DINH_MUC
             // 
