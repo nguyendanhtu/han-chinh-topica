@@ -514,6 +514,8 @@ namespace BCTKApp
             m_txt_tu_khoa.KeyDown += new KeyEventHandler(m_txt_tu_khoa_KeyDown);
             m_txt_tu_khoa.Leave += new EventHandler(m_txt_tu_khoa_Leave);
             m_txt_tu_khoa.MouseClick += new MouseEventHandler(m_txt_tu_khoa_MouseClick);
+            m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
+            m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
 		}
 		#endregion
 
@@ -642,6 +644,28 @@ namespace BCTKApp
             try
             {
                 set_search_format_before();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_dtp_tu_ngay_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_dtp_den_ngay_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
