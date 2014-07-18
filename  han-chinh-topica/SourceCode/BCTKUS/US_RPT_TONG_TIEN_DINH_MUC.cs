@@ -212,10 +212,10 @@ public class US_RPT_TONG_TIEN_DINH_MUC : US_Object
 
         v_proc.ExecuteCommand(this);
 
-        if(v_obj_don_gia_dinh_muc.Value != null) {
+        if(v_obj_don_gia_dinh_muc.SqlValue is DBNull) {
             op_don_gia_dinh_muc = CIPConvert.ToDecimal(v_obj_don_gia_dinh_muc.Value);
         }
-        if(v_obj_so_luong_thong_ke.Value != null) {
+        if(v_obj_so_luong_thong_ke.Value.ToString() != "0") {
             op_so_luong_thong_ke = CIPConvert.ToDecimal(v_obj_so_luong_thong_ke.Value);
         }
     }
@@ -238,9 +238,13 @@ public class US_RPT_TONG_TIEN_DINH_MUC : US_Object
 
         op_id_co_so_dinh_muc = CIPConvert.ToDecimal(v_obj_id_co_so_dinh_muc.Value);
         string temp = v_obj_ap_dung_tu_ngay.Value.ToString();
-        temp = temp.Substring(0, temp.IndexOf(" "));
-        op_ap_dung_tu_ngay = CIPConvert.ToDatetime(temp);
-        op_ten_co_so_dinh_muc = CIPConvert.ToStr(v_obj_ten_co_so_dinh_muc.Value);
+        if(temp != "") {
+            temp = temp.Substring(0, temp.IndexOf(" "));
+            op_ap_dung_tu_ngay = CIPConvert.ToDatetime(temp);
+        }
+        if(v_obj_ten_co_so_dinh_muc.Value.ToString() != "") {
+            op_ten_co_so_dinh_muc = CIPConvert.ToStr(v_obj_ten_co_so_dinh_muc.Value);
+        }
     }
 	}
 }
