@@ -131,11 +131,11 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             case LOAI_FORM.THEM:
                 m_us_dm_bill.Insert();
-                thong_bao("Đã gửi cho TAD!");
+                thong_bao("Đã gửi đăng kí Bill cho TAD!");
                 break;
             case LOAI_FORM.SUA:
                 m_us_dm_bill.Update();
-                thong_bao("Đã cập nhật và gửi cho TAD!");
+                thong_bao("Đã cập nhật và gửi đăng kí lại cho TAD!");
                 m_cmd_them.Visible = false;
                 m_cmd_sua.Visible = true;
                 set_form_mode(LOAI_FORM.THEM);
@@ -148,7 +148,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         //if (!check_validate_is_ok()) return;
         m_us_dm_bill.DeleteByID(CIPConvert.ToDecimal(m_hdf_id_bill.Value));
         load_data_to_grid();
-        thong_bao("Xóa Bill thành công.", true);
+        thong_bao("Đã hủy đăng ký gửi BIll cho TAD", true);
     }
     private void Huy_thao_tac()
     {
