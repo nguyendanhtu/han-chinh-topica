@@ -38,7 +38,9 @@ namespace BCTKApp.BaoCao {
             //m_lbl_ngay_ap_dung.Text = so_luong_thong_ke + " (người)";
             m_lbl_sltk.Text = so_luong_thong_ke + " (người)";
             m_lbl_tong_tien.Text = CIPConvert.ToStr(don_gia_dinh_muc * so_luong_thong_ke,"#,###") + " (VNĐ)";
-
+            if(don_gia_dinh_muc*so_luong_thong_ke == 0) {
+                m_lbl_tong_tien.Text = "0" + " (VNĐ)";
+            }
             ip_us.get_co_so_dinh_muc_ap_dung_tu_ngay(ip_us.dcID_PHONG_BAN, ip_us.dcID_LOAI_DINH_MUC
                                                             , ip_from_date, ip_to_date
                                                             , ref id_co_so_dinh_muc, ref ap_dung_tu_ngay
