@@ -320,22 +320,22 @@ namespace BCTKApp
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(432, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Đến ngày";
+            this.label2.Text = "Đến tháng";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(211, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Từ ngày";
+            this.label1.Text = "Từ tháng";
             // 
             // m_dtp_den_ngay
             // 
-            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_den_ngay.CustomFormat = "MM/yyyy";
             this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dtp_den_ngay.Location = new System.Drawing.Point(494, 50);
             this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
@@ -344,11 +344,11 @@ namespace BCTKApp
             // 
             // m_dtp_tu_ngay
             // 
-            this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_tu_ngay.CustomFormat = "MM/yyyy";
             this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dtp_tu_ngay.Location = new System.Drawing.Point(296, 50);
             this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
-            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(125, 20);
+            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(119, 20);
             this.m_dtp_tu_ngay.TabIndex = 0;
             this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
             // 
@@ -417,8 +417,12 @@ namespace BCTKApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){
-            DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value.Date;
+            DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value.Date.AddDays(- m_dtp_tu_ngay.Value.Date.Day + 1);
             DateTime v_dat_den_ngay = m_dtp_den_ngay.Value.Date;
+            DateTime temp = m_dtp_den_ngay.Value.Date;
+            temp = temp.AddMonths(1);
+            temp = temp.AddDays(-(temp.Day));
+            v_dat_den_ngay = temp;
             string v_str_tu_khoa = m_txt_tu_khoa.Text;
             if (v_str_tu_khoa == m_str_goi_y_tim_kiem) v_str_tu_khoa = "";
 			m_ds = new DS_V_GD_THONG_KE();
