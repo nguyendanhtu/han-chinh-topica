@@ -26,8 +26,8 @@
                     <td>
                         <ew:CalendarPopup ID="m_dat_tu_ngay" runat="server" TextBoxLabelStyle-BorderColor="#810913"
                             TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
-                            DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
-                            ShowGoToToday="true" Width="35%">
+                            DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" DefaultValue ="01-01-2013"
+                            ShowGoToToday="false" Width="35%">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
                                 ForeColor="Black" />
                             <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
@@ -116,7 +116,7 @@
                     <td align="center">
                         <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="400px" CssClass="cssTextBox"></asp:TextBox>
                         &nbsp;
-                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton" />
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click"/>
                     </td>
                 </tr>
                 <tr>
@@ -156,19 +156,27 @@
                                     </ItemTemplate>
                                     <ItemStyle HorizontalAlign="Center" Width="2%" />
                                 </asp:TemplateField>
-                                <asp:BoundField DataField="TEN_PHONG_BAN" ItemStyle-HorizontalAlign="Left" HeaderText="TÊN TRUNG TÂM"
+                           <%--     <asp:BoundField DataField="TEN_PHONG_BAN" ItemStyle-HorizontalAlign="Left" HeaderText="TÊN TRUNG TÂM"
+                                    ItemStyle-Width="7%">
+                                    <ItemStyle HorizontalAlign="Left" Width="12%" />
+                                </asp:BoundField>--%>
+                                <asp:BoundField DataField="SO_BILL" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ BILL"
+                                    ItemStyle-Width="7%">
+                                    <ItemStyle HorizontalAlign="Right" Width="3%" />
+                                </asp:BoundField>
+                                  <asp:BoundField DataField="TRANG_THAI_THU" ItemStyle-HorizontalAlign="Left" HeaderText="TRẠNG THÁI"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="7%" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="TRANG_THAI_THU" ItemStyle-HorizontalAlign="Left" HeaderText="TRẠNG THÁI"
-                                    ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                 <asp:BoundField DataField="SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ TIỀN (VNĐ)"
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                    <ItemStyle HorizontalAlign="Right" Width="5%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="NGAY_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGÀY GỬI"
-                                    ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                    ItemStyle-Width="7%"  HtmlEncode="false" DataFormatString="{0:dd/MM/yyyy}">
+                                    <ItemStyle HorizontalAlign="Left" Width="3%" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="SO_BILL" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ BILL"
+                                     <asp:BoundField DataField="NGUOI_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI GỬI"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="7%" />
                                 </asp:BoundField>
@@ -176,17 +184,13 @@
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="7%" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="NOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
+                                  <asp:BoundField DataField="NOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
                                     ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                    <ItemStyle HorizontalAlign="Left" Width="15%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="NOI_DUNG" ItemStyle-HorizontalAlign="Left" HeaderText="NỘI DUNG"
                                     ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
-                                </asp:BoundField>
-                                <asp:BoundField DataField="NGUOI_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI GỬI"
-                                    ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                    <ItemStyle HorizontalAlign="Left" Width="5%" />
                                 </asp:BoundField>
                                 <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
                                     Visible="False">
