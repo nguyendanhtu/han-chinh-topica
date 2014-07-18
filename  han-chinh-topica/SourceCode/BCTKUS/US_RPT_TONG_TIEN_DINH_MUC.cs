@@ -212,10 +212,10 @@ public class US_RPT_TONG_TIEN_DINH_MUC : US_Object
 
         v_proc.ExecuteCommand(this);
 
-        if(v_obj_don_gia_dinh_muc.SqlValue is DBNull) {
+        if(v_obj_don_gia_dinh_muc.Value.ToString() != "0" && v_obj_don_gia_dinh_muc.Value.ToString() != "") {
             op_don_gia_dinh_muc = CIPConvert.ToDecimal(v_obj_don_gia_dinh_muc.Value);
         }
-        if(v_obj_so_luong_thong_ke.Value.ToString() != "0") {
+        if(v_obj_so_luong_thong_ke.Value.ToString() != "0" && v_obj_so_luong_thong_ke.Value.ToString() != "") {
             op_so_luong_thong_ke = CIPConvert.ToDecimal(v_obj_so_luong_thong_ke.Value);
         }
     }
