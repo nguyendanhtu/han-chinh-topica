@@ -132,6 +132,7 @@
             this.m_txt_so_bill.Name = "m_txt_so_bill";
             this.m_txt_so_bill.Size = new System.Drawing.Size(217, 20);
             this.m_txt_so_bill.TabIndex = 3;
+            this.m_txt_so_bill.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_pnl_out_place_dm
             // 
@@ -275,6 +276,7 @@
             this.m_txt_so_tien.Name = "m_txt_so_tien";
             this.m_txt_so_tien.Size = new System.Drawing.Size(217, 20);
             this.m_txt_so_tien.TabIndex = 10;
+            this.m_txt_so_tien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 

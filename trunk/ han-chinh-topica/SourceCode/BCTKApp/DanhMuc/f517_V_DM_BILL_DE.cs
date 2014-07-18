@@ -65,7 +65,7 @@ namespace BCTKApp
             if (m_chk_trong_nuoc.Checked == true) m_us.strTRONG_NUOC = "x";
             m_us.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             m_us.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
-            m_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text);
+            m_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text.Replace(",","").Replace(".",""));
             m_us.datNGAY_GUI = m_dtp_ngay_gui.Value.Date;
         }
         private void us_obj_2_form(US_V_DM_BILL ip_us)
@@ -168,6 +168,9 @@ namespace BCTKApp
             this.KeyDown+=new KeyEventHandler(f517_V_DM_BILL_DE_KeyDown);
             m_chk_nuoc_ngoai.CheckedChanged+=new EventHandler(m_chk_nuoc_ngoai_CheckedChanged);
             m_chk_trong_nuoc.CheckedChanged+=new EventHandler(m_chk_trong_nuoc_CheckedChanged);
+            m_txt_so_tien.KeyPress+=new KeyPressEventHandler(m_txt_so_tien_KeyPress);
+            m_txt_so_bill.KeyPress+=new KeyPressEventHandler(m_txt_so_bill_KeyPress);
+            m_txt_so_tien.TextChanged+=new EventHandler(m_txt_so_tien_TextChanged);
         }
         #endregion
 
@@ -235,6 +238,41 @@ namespace BCTKApp
 
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+        private void m_txt_so_bill_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar < '0' || e.KeyChar > '9')
+            {
+                if (e.KeyChar != (char)8)
+                {
+                    BaseMessages.MsgBox_Infor("Bạn đã nhập chữ '" + e.KeyChar + "'...Xin vui lòng chỉ nhập số");
+                    e.KeyChar = (char)0;
+                }
+            }
+        }
+        private void m_txt_so_tien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar < '0' || e.KeyChar > '9')
+            {
+                if (e.KeyChar != (char)8)
+                {
+                    BaseMessages.MsgBox_Infor("Bạn đã nhập chữ '" + e.KeyChar + "'...Xin vui lòng chỉ nhập số");
+                    e.KeyChar = (char)0;
+                }
+            }
+        }
+        private void m_txt_so_tien_TextChanged(object sender, EventArgs e)
+        {
+            if (m_txt_so_tien.Text == "")
+            {
+                m_txt_so_tien.SelectionStart = m_txt_so_tien.Text.Length + 1;
+            }
+            else
+            {
+                m_txt_so_tien.Text = string.Format("{0:#,###}", CIPConvert.ToDecimal(m_txt_so_tien.Text.Trim()));
+                m_txt_so_tien.SelectionStart = m_txt_so_tien.Text.Length + 1;
+            }
+
         }
         #endregion
     }
