@@ -255,7 +255,7 @@
             this.m_chk_trong_nuoc.Location = new System.Drawing.Point(411, 156);
             this.m_chk_trong_nuoc.Name = "m_chk_trong_nuoc";
             this.m_chk_trong_nuoc.Size = new System.Drawing.Size(81, 17);
-            this.m_chk_trong_nuoc.TabIndex = 7;
+            this.m_chk_trong_nuoc.TabIndex = 8;
             this.m_chk_trong_nuoc.Text = "Trong nước";
             this.m_chk_trong_nuoc.UseVisualStyleBackColor = true;
             // 
@@ -265,7 +265,7 @@
             this.m_chk_nuoc_ngoai.Location = new System.Drawing.Point(526, 155);
             this.m_chk_nuoc_ngoai.Name = "m_chk_nuoc_ngoai";
             this.m_chk_nuoc_ngoai.Size = new System.Drawing.Size(81, 17);
-            this.m_chk_nuoc_ngoai.TabIndex = 8;
+            this.m_chk_nuoc_ngoai.TabIndex = 9;
             this.m_chk_nuoc_ngoai.Text = "Nước ngoài";
             this.m_chk_nuoc_ngoai.UseVisualStyleBackColor = true;
             // 
@@ -323,7 +323,7 @@
             this.m_txt_nguoi_gui.Location = new System.Drawing.Point(102, 153);
             this.m_txt_nguoi_gui.Name = "m_txt_nguoi_gui";
             this.m_txt_nguoi_gui.Size = new System.Drawing.Size(217, 20);
-            this.m_txt_nguoi_gui.TabIndex = 9;
+            this.m_txt_nguoi_gui.TabIndex = 7;
             // 
             // label8
             // 
