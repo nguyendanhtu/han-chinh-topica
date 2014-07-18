@@ -33,19 +33,20 @@ namespace BCTKApp.BaoCao
             DS_V_TONG_HOP_CPN_THEO_PHONG_BAN v_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
             v_us.FillDataset(v_ds,"where id ="+ v_id);
             DataRow v_dr = v_ds.Tables[0].Rows[0];
+            DateTime v_dat_ngay_gui = (DateTime)(v_dr["NGAY_GUI"]);
             m_lbl_phong.Text = v_dr["TEN_PHONG_BAN"].ToString();
             m_lbl_so_bill.Text = v_dr["SO_BILL"].ToString();
-            m_lbl_ngay_gui.Text = v_dr["NGAY_GUI"].ToString();
+            m_lbl_ngay_gui.Text = v_dat_ngay_gui.ToShortDateString();
             m_lbl_nguoi_gui.Text = v_dr["NGUOI_GUI"].ToString();
             m_lbl_nguoi_nhan.Text = v_dr["NGUOI_NHAN"].ToString();
             m_lbl_noi_nhan.Text = v_dr["NOI_NHAN"].ToString();
             m_lbl_trang_thai.Text = v_dr["TRANG_THAI"].ToString();
             m_lbl_noi_dung.Text = v_dr["NOI_DUNG"].ToString();
-            if (v_dr["SO_TIEN"].ToString() != "")
+            if (v_dr["SO_TIEN"].ToString() != "" || v_dr["SO_TIEN"] == null)
             {
-                m_lbl_so_tien.Text = CIPConvert.ToStr(v_dr["SO_TIEN"], "#,###") + " (VNĐ)";
+                m_lbl_so_tien.Text = " 0 (vnđ)";   
             }
-            else m_lbl_so_tien.Text = "0,000 (VNĐ)";
+            else m_lbl_so_tien.Text = CIPConvert.ToStr(v_dr["SO_TIEN"], "#,###") + " (vnđ)";
             if(v_dr["TRONG_NUOC"].ToString() == "x")
             {
                 m_lbl_khu_vuc.Text = "Trong nước";
@@ -54,6 +55,11 @@ namespace BCTKApp.BaoCao
             {
                 m_lbl_khu_vuc.Text = "Ngoài nước";
             }
+            if (v_dr["GHI_CHU"] == null || v_dr["GHI_CHU"].ToString() == "")
+            {
+                m_lbl_ghi_chu.Text = "................";
+            }
+            else
             m_lbl_ghi_chu.Text = v_dr["GHI_CHU"].ToString();
             this.ShowDialog();
         }
