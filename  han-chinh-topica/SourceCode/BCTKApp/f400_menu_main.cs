@@ -35,7 +35,7 @@ namespace BCTKApp
         {
             m_cmd_dm_trung_tam.Click += new EventHandler(m_cmd_dm_trung_tam_Click);
             m_cmd_tk_nhan_su.Click += new EventHandler(m_cmd_tk_nhan_su_Click);
-            m_cmd_tk_hv.Click+=new EventHandler(m_cmd_tk_hv_dang_hoc_Click);
+            m_cmd_tk_hv.Click+=new EventHandler(m_cmd_tk_hv_Click);
             m_cmd_hv_tuyen_moi.Click+=new EventHandler(m_cmd_hv_tuyen_moi_Click);
             m_cmd_theo_tung_bill.Click += new EventHandler(m_cmd_theo_tung_bill_Click);
             this.m_cmd_trang_thai.Click += new System.EventHandler(this.m_cmd_trang_thai_Click);
@@ -58,6 +58,7 @@ namespace BCTKApp
             m_cmd_bc_tinh_hinh_CPN.Click += new EventHandler(m_cmd_bc_tinh_hinh_CPN_Click);
             m_cmd_bc_chi_phi_theo_phap_nhan.Click += new EventHandler(m_cmd_bc_chi_phi_theo_phap_nhan_Click);
             m_cmd_dm_bill.Click+=new EventHandler(m_cmd_dm_bill_Click);
+
         }
 
         void f400_menu_main_Load(object sender, EventArgs e)
@@ -147,12 +148,12 @@ namespace BCTKApp
         }
         private void m_cmd_tk_nhan_su_Click(object sender, EventArgs e)
         {
-            f501_THONG_KE_NHAN_SU v_frm = new f501_THONG_KE_NHAN_SU();
+            f521_THONG_KE_NHAN_SU v_frm = new f521_THONG_KE_NHAN_SU();
             v_frm.ShowDialog();
         }
-        private void m_cmd_tk_hv_dang_hoc_Click(object sender, EventArgs e)
+        private void m_cmd_tk_hv_Click(object sender, EventArgs e)
         {
-            f502_THONG_KE_HV_DANG_HOC v_frm = new f502_THONG_KE_HV_DANG_HOC();
+            f523_V_GD_THONG_KE_HOC_VIEN v_frm = new f523_V_GD_THONG_KE_HOC_VIEN();
             v_frm.ShowDialog();
         }
         private void m_cmd_hv_tuyen_moi_Click(object sender, EventArgs e)
