@@ -6,7 +6,6 @@ using System.Web.UI.WebControls;
 using BCTKUS;
 using BCTKDS;
 using BCTKDS.CDBNames;
-using BCTKUS;
 using IP.Core.IPCommon;
 using IP.Core.WinFormControls;
 public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
@@ -125,6 +124,8 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     private void save_data()
     {
         if (!check_validate_is_ok()) return;
+        if (!check_tien_bill()) return;
+        if (!check_so_bill()) return;
         form_to_us_object();
         switch (get_form_mode(m_hdf_form_mode))
         {
@@ -141,6 +142,13 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
                 break;
         }
         Huy_thao_tac();
+    }
+    private void delete_data()
+    {
+        //if (!check_validate_is_ok()) return;
+        m_us_dm_bill.DeleteByID(CIPConvert.ToDecimal(m_hdf_id_bill.Value));
+        load_data_to_grid();
+        thong_bao("Xóa Bill thành công.", true);
     }
     private void Huy_thao_tac()
     {
@@ -165,6 +173,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_cmd_them.Visible = true;
         load_data_to_grid();
         thong_bao("", false);
+        m_txt_so_tien.Text = "0";
     }
     private void load_title()
     {
@@ -194,6 +203,28 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         if (m_ds_dm_bill.DM_BILL.Count == 0)
             thong_bao("Không tìm thấy Bill.", true);
     }
+    private bool check_tien_bill()
+    {
+        decimal num;
+        bool isNumberic = decimal.TryParse(m_txt_so_tien.Text, out num);
+        if (!isNumberic)
+        {
+            thong_bao("Số tiền phải là kiểu số!");
+            return false;
+        }
+        else return true;
+    }
+    private bool check_so_bill()
+    {
+        decimal num;
+        bool isNumberic = decimal.TryParse(m_txt_so_tien.Text, out num);
+        if (!isNumberic)
+        {
+            thong_bao("Số bill phải là kiểu số!");
+            return false;
+        }
+        else return true;
+    }
     private bool check_validate_is_ok()
     {
         string v_form_mode = get_form_mode(m_hdf_form_mode);
@@ -201,7 +232,6 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             if (m_txt_so_bill.Text.Trim().Length != 8)
             {
-                //m_lbl_popup_mess.Text += "Số Bill gồm 8 chữ số!";
                 thong_bao("Số Bill gồm 8 chữ số!");
                 m_txt_so_bill.Focus();
                 return false;
@@ -229,6 +259,9 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
                 }
             }
         }
+        if (m_txt_nguoi_gui.Text == null || m_txt_nguoi_gui.Text == "") { thong_bao("Chưa nhập người gửi! "); m_txt_nguoi_gui.Focus(); return false; }
+        if (m_txt_nguoi_nhan.Text == null || m_txt_nguoi_nhan.Text == "") { thong_bao("Chưa nhập người nhận! "); m_txt_nguoi_nhan.Focus(); return false; }
+        if (m_txt_noi_nhan.Text == null || m_txt_noi_nhan.Text == "") { thong_bao("Chưa nhập nơi nhận! "); m_txt_noi_nhan.Focus(); return false; }
         return true;
     }
 
@@ -268,150 +301,6 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-
-    //protected void m_cmd_tao_moi_Click(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        m_lbl_mess.Text = "";
-    //        save_data();
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_cmd_xoa_trang_Click(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        Huy_thao_tac();
-    //        m_cmd_cap_nhat.Visible = false;
-    //        m_cmd_tao_moi.Visible = true;
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_grv_dm_phap_nhan_PageIndexChanging(object sender, GridViewPageEventArgs e)
-    //{
-    //    load_data_to_grid();
-    //    m_grv_dm_phap_nhan.PageIndex = e.NewPageIndex;
-    //    m_grv_dm_phap_nhan.DataBind();
-    //    if (!m_hdf_id_bill.Value.Equals(""))
-    //    {
-    //        m_grv_dm_phap_nhan.SelectedIndex = -1;
-    //        for (int i = 0; i < m_grv_dm_phap_nhan.Rows.Count; i++)
-    //            if (CIPConvert.ToDecimal(m_grv_dm_phap_nhan.DataKeys[i].Value) == CIPConvert.ToDecimal(m_hdf_id_bill.Value)) m_grv_dm_phap_nhan.SelectedIndex = i;
-    //    }
-    //}
-    //protected void m_grv_dm_phap_nhan_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    //{
-    //    try
-    //    {
-    //        Huy_thao_tac();
-    //        m_lbl_mess.Text = "";
-    //        set_form_mode(LOAI_FORM.XOA);
-    //        m_hdf_id_bill.Value = CIPConvert.ToStr(m_grv_dm_phap_nhan.DataKeys[e.RowIndex].Value);
-    //        delete_dm_han_muc_by_ID();
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_cmd_cap_nhat_Click(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        m_lbl_mess.Text = "";
-    //        save_data();
-
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        load_data_to_grid();
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_rdb_cong_ty_CheckedChanged(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        m_cbo_don_vi_cap_tren.Visible = false;
-    //        m_lbl_don_vi_cap_tren.Visible = false;
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(v_e);
-    //    }
-    //}
-    //protected void m_rdb_cong_ty_con_CheckedChanged(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        m_cbo_don_vi_cap_tren.Visible = true;
-    //        m_lbl_don_vi_cap_tren.Visible = true;
-    //        US_V_DM_DON_VI v_us = new US_V_DM_DON_VI();
-    //        DS_V_DM_DON_VI v_ds = new DS_V_DM_DON_VI();
-    //        v_us.FillDataset(v_ds, "where id_loai_don_vi=13");
-    //        m_cbo_don_vi_cap_tren.DataSource = v_ds.V_DM_DON_VI;
-    //        m_cbo_don_vi_cap_tren.DataValueField = V_DM_DON_VI.ID;
-    //        m_cbo_don_vi_cap_tren.DataTextField = V_DM_DON_VI.DISPLAY;
-    //        m_cbo_don_vi_cap_tren.DataBind();
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_rdb_chi_nhanh_CheckedChanged(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        m_cbo_don_vi_cap_tren.Visible = true;
-    //        m_lbl_don_vi_cap_tren.Visible = true;
-    //        US_V_DM_DON_VI v_us = new US_V_DM_DON_VI();
-    //        DS_V_DM_DON_VI v_ds = new DS_V_DM_DON_VI();
-    //        v_us.FillDataset(v_ds, "where id_loai_don_vi=14");
-    //        m_cbo_don_vi_cap_tren.DataSource = v_ds.V_DM_DON_VI;
-    //        m_cbo_don_vi_cap_tren.DataValueField = V_DM_DON_VI.ID;
-    //        m_cbo_don_vi_cap_tren.DataTextField = V_DM_DON_VI.DISPLAY;
-    //        m_cbo_don_vi_cap_tren.DataBind();
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_grv_dm_phap_nhan_RowEditing(object sender, GridViewEditEventArgs e)
-    //{
-    //    try
-    //    {
-    //        m_grv_dm_phap_nhan.SelectedIndex = e.NewEditIndex;
-    //        m_lbl_mess.Text = "";
-    //        m_cmd_tao_moi.Visible = false;
-    //        m_cmd_cap_nhat.Visible = true;
-    //        set_form_mode(LOAI_FORM.SUA);
-    //        m_hdf_id_bill.Value = CIPConvert.ToStr(m_grv_dm_phap_nhan.DataKeys[e.NewEditIndex].Value);
-    //        us_object_to_form();
-    //    }
-    //    catch (System.Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
     protected void m_cmd_ok_Click(object sender, EventArgs e)
     {
         try
@@ -423,34 +312,33 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    #endregion
     protected void m_cmd_them_Click(object sender, EventArgs e)
     {
-          try
-          {
-              //m_lbl_mess.Text = "";
-              save_data();
-              load_data_to_grid();
-          }
-          catch (Exception v_e)
-          {
-              CSystemLog_301.ExceptionHandle(this, v_e);
-          }
+        try
+        {
+            //m_lbl_mess.Text = "";
+            save_data();
+            load_data_to_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
     protected void m_cmd_sua_Click(object sender, EventArgs e)
     {
-          try
-          {
-              //m_lbl_mess.Text = "";
-              save_data();
-              load_data_to_grid();
-              m_cmd_sua.Visible = false;
-              m_cmd_them.Visible = true;
-          }
-          catch (Exception v_e)
-          {
-              CSystemLog_301.ExceptionHandle(this, v_e);
-          }
+        try
+        {
+            //m_lbl_mess.Text = "";
+            save_data();
+            load_data_to_grid();
+            m_cmd_sua.Visible = false;
+            m_cmd_them.Visible = true;
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
     protected void m_cmd_huy_Click(object sender, EventArgs e)
     {
@@ -483,6 +371,21 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_grv_dm_bill_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        try
+        {
+            Huy_thao_tac();
+            m_grv_dm_bill.SelectedIndex = e.RowIndex;
+            set_form_mode(LOAI_FORM.XOA);
+            m_hdf_id_bill.Value = CIPConvert.ToStr(m_grv_dm_bill.DataKeys[e.RowIndex].Value);
+            delete_data();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
     {
         try
@@ -507,4 +410,6 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    #endregion
+    
 }
