@@ -44,7 +44,9 @@ namespace BCTKApp.BaoCao {
                                                             , ref id_co_so_dinh_muc, ref ap_dung_tu_ngay
                                                             , ref ten_co_so_dinh_muc);
             m_lbl_co_so_dinh_muc.Text = ten_co_so_dinh_muc;
-            m_lbl_ngay_ap_dung.Text = ap_dung_tu_ngay.ToShortDateString();
+            if(ap_dung_tu_ngay.ToShortDateString() != "01/01/0001") {
+                m_lbl_ngay_ap_dung.Text = ap_dung_tu_ngay.ToShortDateString();
+            }
             this.ShowDialog();
         }
 
