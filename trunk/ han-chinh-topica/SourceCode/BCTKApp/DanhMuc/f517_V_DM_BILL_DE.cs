@@ -170,6 +170,8 @@ namespace BCTKApp
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             this.KeyDown+=new KeyEventHandler(f517_V_DM_BILL_DE_KeyDown);
+            m_chk_nuoc_ngoai.CheckedChanged+=new EventHandler(m_chk_nuoc_ngoai_CheckedChanged);
+            m_chk_trong_nuoc.CheckedChanged+=new EventHandler(m_chk_trong_nuoc_CheckedChanged);
         }
         #endregion
 
@@ -207,6 +209,30 @@ namespace BCTKApp
                 {
                     this.Close();
                 }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_chk_nuoc_ngoai_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_chk_nuoc_ngoai.Checked == true) m_chk_trong_nuoc.Checked = false;
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_chk_trong_nuoc_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_chk_trong_nuoc.Checked == true) m_chk_nuoc_ngoai.Checked = false;
             }
             catch (Exception v_e)
             {
