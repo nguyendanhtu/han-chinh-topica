@@ -198,6 +198,7 @@
                             EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
                             CellPadding="8" PageSize="20"
                             OnRowEditing = "m_grv_dm_bill_RowEditing"
+                            OnRowDeleting = "m_grv_dm_bill_RowDeleting"
                              OnPageIndexChanging="m_grv_v_dm_bill_PageIndexChanging">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
