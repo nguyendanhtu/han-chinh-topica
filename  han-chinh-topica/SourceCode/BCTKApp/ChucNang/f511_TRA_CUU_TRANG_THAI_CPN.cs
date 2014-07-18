@@ -221,7 +221,7 @@ namespace BCTKApp
             this.m_cbo_trung_tam.FormattingEnabled = true;
             this.m_cbo_trung_tam.Location = new System.Drawing.Point(317, 80);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
-            this.m_cbo_trung_tam.Size = new System.Drawing.Size(207, 21);
+            this.m_cbo_trung_tam.Size = new System.Drawing.Size(228, 21);
             this.m_cbo_trung_tam.TabIndex = 34;
             // 
             // m_cbo_trang_thai
@@ -230,7 +230,7 @@ namespace BCTKApp
             this.m_cbo_trang_thai.FormattingEnabled = true;
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(317, 117);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
-            this.m_cbo_trang_thai.Size = new System.Drawing.Size(207, 21);
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(228, 21);
             this.m_cbo_trang_thai.TabIndex = 4;
             // 
             // m_dtp_den_ngay
@@ -265,7 +265,7 @@ namespace BCTKApp
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(551, 144);
+            this.m_cmd_search.Location = new System.Drawing.Point(561, 144);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 6;
@@ -308,7 +308,7 @@ namespace BCTKApp
             // 
             this.m_txt_so_bill.Location = new System.Drawing.Point(317, 152);
             this.m_txt_so_bill.Name = "m_txt_so_bill";
-            this.m_txt_so_bill.Size = new System.Drawing.Size(207, 20);
+            this.m_txt_so_bill.Size = new System.Drawing.Size(228, 20);
             this.m_txt_so_bill.TabIndex = 5;
             // 
             // label7
@@ -581,6 +581,8 @@ namespace BCTKApp
             m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
             m_cmd_xuat_excel.Click+=new EventHandler(m_cmd_xuat_excel_Click);
             this.KeyDown+=new KeyEventHandler(f511_TRA_CUU_TRANG_THAI_CPN_KeyDown);
+            m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
+            m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
 		}
 		#endregion
 
@@ -761,6 +763,22 @@ namespace BCTKApp
             }
             catch (Exception v_e)
             {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_dtp_tu_ngay_ValueChanged(object sender, EventArgs e) {
+            try {
+                load_data_2_grid();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_dtp_den_ngay_ValueChanged(object sender, EventArgs e) {
+            try {
+                load_data_2_grid();
+            }
+            catch(Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
