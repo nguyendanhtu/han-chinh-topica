@@ -17,6 +17,7 @@
                         <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" Text="Tra cứu trạng thái"
                             ForeColor="White" />
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                        <asp:hiddenfield ID="m_hdf_id_trung_tam" runat="server"></asp:hiddenfield>
                     </td>
                 </tr>
                 <tr>
@@ -26,7 +27,7 @@
                     <td>
                         <ew:CalendarPopup ID="m_dat_tu_ngay" runat="server" TextBoxLabelStyle-BorderColor="#810913"
                             TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
-                            DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" DefaultValue ="01-01-2013"
+                            DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
                             ShowGoToToday="false" Width="35%">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
                                 ForeColor="Black" />
