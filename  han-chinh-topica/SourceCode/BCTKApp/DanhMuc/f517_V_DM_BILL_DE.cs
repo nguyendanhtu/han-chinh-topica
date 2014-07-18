@@ -129,13 +129,9 @@ namespace BCTKApp
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_nguoi_nhan, DataType.StringType, allowNull.NO, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_ghi_chu, DataType.StringType, allowNull.NO, true))
-                return false;
             if (!CValidateTextBox.IsValid(m_txt_nguoi_gui, DataType.StringType, allowNull.NO, true))
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_noi_dung, DataType.StringType, allowNull.NO, true))
-                return false;
-            if (!CValidateTextBox.IsValid(m_txt_so_tien, DataType.StringType, allowNull.NO, true))
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_noi_nhan, DataType.StringType, allowNull.NO, true))
                 return false;
