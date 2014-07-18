@@ -783,10 +783,6 @@ namespace BCTKApp
             }
         }
         #endregion
-
-        
-        
-
 	}
 }
 
