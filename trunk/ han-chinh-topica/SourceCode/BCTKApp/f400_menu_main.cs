@@ -29,7 +29,7 @@ namespace BCTKApp
         private void format_controls()
         {
             set_define_event();
-            m_rib_bar_qldm_thong_ke.Visible = true;
+            //m_rib_bar_qldm_thong_ke.Visible = true;
         }
         private void set_define_event()
         {
@@ -58,7 +58,7 @@ namespace BCTKApp
             m_cmd_bc_tinh_hinh_CPN.Click += new EventHandler(m_cmd_bc_tinh_hinh_CPN_Click);
             m_cmd_bc_chi_phi_theo_phap_nhan.Click += new EventHandler(m_cmd_bc_chi_phi_theo_phap_nhan_Click);
             m_cmd_dm_bill.Click+=new EventHandler(m_cmd_dm_bill_Click);
-
+            m_cmd_don_gia_dinh_muc.Click += new EventHandler(m_cmd_don_gia_dinh_muc_Click);
         }
 
         void f400_menu_main_Load(object sender, EventArgs e)
