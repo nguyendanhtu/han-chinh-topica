@@ -393,6 +393,7 @@ namespace BCTKApp
             string str_temp = m_dat_ap_dung_tu_ngay.Value.ToString();
             str_temp = str_temp.Substring(0, str_temp.IndexOf(" "));
             v_us_rpt_co_so_dinh_muc.FillDatasetByProc(v_ds_rpt_co_so_dinh_muc, CIPConvert.ToDecimal(m_cbo_loai_dinh_muc.SelectedValue), CIPConvert.ToDatetime(str_temp));
+            CGridUtils.MakeSoTT(0, m_fg);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(v_ds_rpt_co_so_dinh_muc, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
