@@ -40,6 +40,8 @@ namespace BCTKApp {
         private Label m_lbl_header;
         private Label label1;
         private ToolTip toolTip1;
+        private Label label2;
+        private Label label3;
         private System.ComponentModel.IContainer components;
 
         public f850_RPT_BANG_DINH_MUC() {
@@ -76,6 +78,7 @@ namespace BCTKApp {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f850_RPT_BANG_DINH_MUC));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
@@ -83,8 +86,9 @@ namespace BCTKApp {
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_header = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -130,6 +134,16 @@ namespace BCTKApp {
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(611, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(33, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Click đúp vào một ô để biết ngày áp dụng";
             // 
             // m_cmd_insert
             // 
@@ -211,10 +225,10 @@ namespace BCTKApp {
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.FocusRect = C1.Win.C1FlexGrid.FocusRectEnum.Solid;
-            this.m_fg.Location = new System.Drawing.Point(0, 66);
+            this.m_fg.Location = new System.Drawing.Point(0, 80);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
-            this.m_fg.Size = new System.Drawing.Size(611, 289);
+            this.m_fg.Size = new System.Drawing.Size(611, 275);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.toolTip1.SetToolTip(this.m_fg, "Click đúp vào một ô để biết ngày áp dụng");
@@ -226,25 +240,35 @@ namespace BCTKApp {
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(611, 66);
+            this.m_lbl_header.Size = new System.Drawing.Size(611, 80);
             this.m_lbl_header.TabIndex = 21;
             this.m_lbl_header.Text = "BẢNG ĐƠN GIÁ ĐỊNH MỨC MỚI NHẤT ";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(33, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Click đúp vào một ô để biết ngày áp dụng";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(225, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(162, 13);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "(Đơn vị tính/1 người, 1 học viên)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(485, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Đơn vị tính: đồng/người";
             // 
             // f850_RPT_BANG_DINH_MUC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(611, 391);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -255,6 +279,7 @@ namespace BCTKApp {
             this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
         #endregion
