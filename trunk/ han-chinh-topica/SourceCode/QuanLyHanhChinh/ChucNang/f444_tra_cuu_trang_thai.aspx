@@ -104,12 +104,48 @@
                         </ew:CalendarPopup>
                     </td>
                 </tr>
+                 <tr>
+                    <td align="center" colspan="4">
+                        <asp:Label ID="Label2" runat="server" Text="Nội dung tìm kiếm " CssClass="cssManField"></asp:Label>
+                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="350px" CssClass="cssTextBox"></asp:TextBox>
+                        &nbsp;
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click"/>
+                    </td>
+                </tr>
             </table>
+            <asp:Panel ID="m_pnl_confirm_tg" runat="server">
+                <div class="cssLoadWapper">
+                    <asp:MultiView ID="m_mtv_1" runat="server">
+                        <asp:View ID="m_view_confirm" runat="server">
+                            <div class="cssLoadContent2" style="width: 50%">
+                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
+                                    <tr>
+                                        <td align="center">
+                                            <br />
+                                            <asp:Label ID="m_lbl_popup_mess" CssClass="cssManField" Style="font-size: 14px" runat="server"></asp:Label>
+                                            <br />
+                                            <br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center">
+                                            <asp:Button ID="m_cmd_ok" AccessKey="c" CssClass="cssGoogleButton" runat="server"
+                                                Text="OK" OnClick="m_cmd_ok_Click" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </asp:View>
+                    </asp:MultiView>
+                </div>
+            </asp:Panel>
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
                         <asp:Label ID="m_lbl_danh_muc_bill" runat="server" CssClass="cssPageTitle" ForeColor="White"
                             Text="Danh mục Bill theo trạng thái"></asp:Label>
+                            <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"
+                            ForeColor="White"></asp:Label>
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
                     </td>
                 </tr>
@@ -120,12 +156,8 @@
                     <td>
                         &nbsp;
                     </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="400px" CssClass="cssTextBox"></asp:TextBox>
-                        &nbsp;
-                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click"/>
+                        <td>
+                        <asp:HiddenField ID="m_hdf_id_bill" runat="server" />
                     </td>
                 </tr>
                 <tr>

@@ -30,9 +30,35 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
         string v_str_tu_khoa = m_txt_tim_kiem.Text.Trim();
         US_V_DM_BILL v_us_v_dm_bill = new US_V_DM_BILL();
         DS_V_DM_BILL v_ds_v_dm_bill = new DS_V_DM_BILL();
+        v_ds_v_dm_bill.Clear();
         v_us_v_dm_bill.FillDataset(v_ds_v_dm_bill, v_id_trung_tam, m_dat_tu_ngay.SelectedDate, m_dat_den_ngay.SelectedDate, v_dc_id_trang_thai, v_str_tu_khoa);
         m_grv_v_dm_bill.DataSource = v_ds_v_dm_bill.V_DM_BILL;
+        string v_str_thong_tin = " (Có " + v_ds_v_dm_bill.V_DM_BILL.Rows.Count + " bản ghi)";
+        m_lbl_thong_tim_grv_dm_bill.Text = v_str_thong_tin;
         m_grv_v_dm_bill.DataBind();
+        if (!m_hdf_id_bill.Value.Equals(""))
+        {
+            m_grv_v_dm_bill.SelectedIndex = -1;
+            for (int i = 0; i < m_grv_v_dm_bill.Rows.Count; i++)
+                if (CIPConvert.ToDecimal(m_grv_v_dm_bill.DataKeys[i].Value) == CIPConvert.ToDecimal(m_hdf_id_bill.Value)) m_grv_v_dm_bill.SelectedIndex = i;
+        }
+        if (v_ds_v_dm_bill.V_DM_BILL.Count == 0)
+            thong_bao("Không tìm thấy Bill!",true);
+    }
+
+    private void thong_bao(string ip_str_mess)
+    {
+        m_mtv_1.SetActiveView(m_view_confirm);
+        m_lbl_popup_mess.Text = ip_str_mess;
+        m_pnl_confirm_tg.Visible = true;
+        m_cmd_ok.Visible = true;
+    }
+        private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
+    {
+        m_mtv_1.SetActiveView(m_view_confirm);
+        m_lbl_popup_mess.Text = ip_str_mess;
+        m_pnl_confirm_tg.Visible = ip_panel_thong_bao_visible;
+        m_cmd_ok.Visible = ip_panel_thong_bao_visible;
     }
     private void set_time()
     {
@@ -135,6 +161,17 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
             load_data_to_grid();
         }
         catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cmd_ok_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            thong_bao("", false);
+        }
+        catch (System.Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
