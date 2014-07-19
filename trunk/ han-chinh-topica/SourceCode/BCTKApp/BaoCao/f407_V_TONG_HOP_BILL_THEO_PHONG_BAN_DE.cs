@@ -307,7 +307,7 @@ namespace BCTKApp
             // 
             this.m_lbl_tong_bill.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tong_bill.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tong_bill.Location = new System.Drawing.Point(52, 89);
+            this.m_lbl_tong_bill.Location = new System.Drawing.Point(40, 89);
             this.m_lbl_tong_bill.Name = "m_lbl_tong_bill";
             this.m_lbl_tong_bill.Size = new System.Drawing.Size(80, 15);
             this.m_lbl_tong_bill.TabIndex = 25;
@@ -319,7 +319,7 @@ namespace BCTKApp
             this.m_lbl_tong_tien.AutoSize = true;
             this.m_lbl_tong_tien.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tong_tien.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tong_tien.Location = new System.Drawing.Point(673, 91);
+            this.m_lbl_tong_tien.Location = new System.Drawing.Point(660, 91);
             this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
             this.m_lbl_tong_tien.Size = new System.Drawing.Size(16, 15);
             this.m_lbl_tong_tien.TabIndex = 25;
@@ -349,7 +349,7 @@ namespace BCTKApp
             // 
             this.m_lbl_chua_tinh_vat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_chua_tinh_vat.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_chua_tinh_vat.Location = new System.Drawing.Point(352, 90);
+            this.m_lbl_chua_tinh_vat.Location = new System.Drawing.Point(360, 90);
             this.m_lbl_chua_tinh_vat.Name = "m_lbl_chua_tinh_vat";
             this.m_lbl_chua_tinh_vat.Size = new System.Drawing.Size(91, 13);
             this.m_lbl_chua_tinh_vat.TabIndex = 26;
