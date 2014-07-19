@@ -33,6 +33,14 @@ namespace BCTKApp
             this.ShowDialog();
 
         }
+        public void display_for_insert_truong()
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_cbo_loai_co_so.SelectedIndex = 1;
+            m_cbo_loai_co_so.Enabled = false;
+            this.ShowDialog();
+
+        }
         public void display_for_update(US_V_DM_CO_SO ip_us_v)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
