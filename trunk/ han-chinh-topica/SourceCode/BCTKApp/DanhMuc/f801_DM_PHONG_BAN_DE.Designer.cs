@@ -40,7 +40,11 @@
             this.m_txt_ma_phong_ban = new System.Windows.Forms.TextBox();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_chk_close_form = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_grv_ty_trong = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_ty_trong)).BeginInit();
             this.SuspendLayout();
             // 
             // m_lbl_ma_phong_ban
@@ -100,10 +104,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 155);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 331);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(415, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(493, 36);
             this.m_pnl_out_place_dm.TabIndex = 4;
             // 
             // m_cmd_save
@@ -115,7 +119,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(235, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(313, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
@@ -130,7 +134,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(323, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(401, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -149,7 +153,7 @@
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(415, 29);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(493, 29);
             this.m_lbl_tieu_de.TabIndex = 19;
             this.m_lbl_tieu_de.Text = "Cập nhật thông tin trung tâm";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -157,18 +161,39 @@
             // m_chk_close_form
             // 
             this.m_chk_close_form.AutoSize = true;
-            this.m_chk_close_form.Location = new System.Drawing.Point(34, 111);
+            this.m_chk_close_form.Location = new System.Drawing.Point(34, 311);
             this.m_chk_close_form.Name = "m_chk_close_form";
             this.m_chk_close_form.Size = new System.Drawing.Size(196, 17);
             this.m_chk_close_form.TabIndex = 2;
             this.m_chk_close_form.Text = "Chọn để khi lưu không tắt hộp thoại";
             this.m_chk_close_form.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.m_grv_ty_trong);
+            this.groupBox1.Location = new System.Drawing.Point(12, 95);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(477, 208);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tỷ trọng theo pháp nhân";
+            // 
+            // m_grv_ty_trong
+            // 
+            this.m_grv_ty_trong.ColumnInfo = resources.GetString("m_grv_ty_trong.ColumnInfo");
+            this.m_grv_ty_trong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grv_ty_trong.Location = new System.Drawing.Point(3, 16);
+            this.m_grv_ty_trong.Name = "m_grv_ty_trong";
+            this.m_grv_ty_trong.Size = new System.Drawing.Size(471, 189);
+            this.m_grv_ty_trong.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_ty_trong.Styles"));
+            this.m_grv_ty_trong.TabIndex = 21;
+            // 
             // f801_DM_PHONG_BAN_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 191);
+            this.ClientSize = new System.Drawing.Size(493, 367);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_chk_close_form);
             this.Controls.Add(this.m_lbl_tieu_de);
             this.Controls.Add(this.m_txt_ma_phong_ban);
@@ -179,6 +204,8 @@
             this.Name = "f801_DM_PHONG_BAN_DE";
             this.Text = "F801 - Cập nhật chi tiết thông tin trung tâm";
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_ty_trong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +223,7 @@
         private System.Windows.Forms.TextBox m_txt_ma_phong_ban;
         private System.Windows.Forms.Label m_lbl_tieu_de;
         private System.Windows.Forms.CheckBox m_chk_close_form;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_grv_ty_trong;
     }
 }
