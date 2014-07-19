@@ -56,7 +56,6 @@
             this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
             this.m_cmd_tk_nhan_su = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_tk_hv = new DevComponents.DotNetBar.ButtonItem();
-            this.m_cmd_hv_tuyen_moi = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.m_cmd_co_dinh_muc_trung_tam = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_don_gia_dinh_muc = new DevComponents.DotNetBar.ButtonItem();
@@ -90,8 +89,8 @@
             this.m_rib_control_TAD.BackgroundStyle.BackColor2 = System.Drawing.Color.Transparent;
             this.m_rib_control_TAD.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_control_TAD.CaptionVisible = true;
-            this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_he_thong);
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_quan_ly_dinh_muc);
+            this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_he_thong);
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_CPN);
             this.m_rib_control_TAD.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_rib_control_TAD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -441,7 +440,6 @@
             // 
             this.m_rib_pnl_quan_ly_dinh_muc.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_pnl_quan_ly_dinh_muc.TabIndex = 2;
-            this.m_rib_pnl_quan_ly_dinh_muc.Visible = false;
             // 
             // ribbonBar4
             // 
@@ -529,8 +527,7 @@
             this.ribbonBar3.ImageSize = DevComponents.DotNetBar.eBarImageSize.Medium;
             this.ribbonBar3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.m_cmd_tk_nhan_su,
-            this.m_cmd_tk_hv,
-            this.m_cmd_hv_tuyen_moi});
+            this.m_cmd_tk_hv});
             this.ribbonBar3.Location = new System.Drawing.Point(212, 0);
             this.ribbonBar3.Name = "ribbonBar3";
             this.ribbonBar3.Size = new System.Drawing.Size(159, 101);
@@ -565,16 +562,6 @@
             this.m_cmd_tk_hv.Name = "m_cmd_tk_hv";
             this.m_cmd_tk_hv.SubItemsExpandWidth = 14;
             this.m_cmd_tk_hv.Text = "Học viên";
-            // 
-            // m_cmd_hv_tuyen_moi
-            // 
-            this.m_cmd_hv_tuyen_moi.Icon = ((System.Drawing.Icon)(resources.GetObject("m_cmd_hv_tuyen_moi.Icon")));
-            this.m_cmd_hv_tuyen_moi.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Large;
-            this.m_cmd_hv_tuyen_moi.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.m_cmd_hv_tuyen_moi.Name = "m_cmd_hv_tuyen_moi";
-            this.m_cmd_hv_tuyen_moi.SubItemsExpandWidth = 14;
-            this.m_cmd_hv_tuyen_moi.Text = "Học viên tuyển mới";
-            this.m_cmd_hv_tuyen_moi.Visible = false;
             // 
             // ribbonBar1
             // 
@@ -658,6 +645,7 @@
             // 
             this.m_rib_pnl_he_thong.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.m_rib_pnl_he_thong.TabIndex = 1;
+            this.m_rib_pnl_he_thong.Visible = false;
             // 
             // m_rib_bar_he_thong
             // 
@@ -742,7 +730,6 @@
             // 
             // m_rib_tab_he_thong
             // 
-            this.m_rib_tab_he_thong.Checked = true;
             this.m_rib_tab_he_thong.HotFontBold = true;
             this.m_rib_tab_he_thong.Name = "m_rib_tab_he_thong";
             this.m_rib_tab_he_thong.NotificationMarkColor = System.Drawing.Color.Maroon;
@@ -751,6 +738,7 @@
             // 
             // m_rib_tab_quan_ly_dinh_muc
             // 
+            this.m_rib_tab_quan_ly_dinh_muc.Checked = true;
             this.m_rib_tab_quan_ly_dinh_muc.Name = "m_rib_tab_quan_ly_dinh_muc";
             this.m_rib_tab_quan_ly_dinh_muc.Panel = this.m_rib_pnl_quan_ly_dinh_muc;
             this.m_rib_tab_quan_ly_dinh_muc.Text = "Quản lý định mức";
@@ -835,7 +823,6 @@
         private DevComponents.DotNetBar.RibbonBar ribbonBar3;
         private DevComponents.DotNetBar.ButtonItem m_cmd_tk_nhan_su;
         private DevComponents.DotNetBar.ButtonItem m_cmd_tk_hv;
-        private DevComponents.DotNetBar.ButtonItem m_cmd_hv_tuyen_moi;
         private DevComponents.DotNetBar.RibbonBar ribbonBar4;
         private DevComponents.DotNetBar.ButtonItem m_cmd_dm_trung_tam;
         private DevComponents.DotNetBar.ButtonItem m_cmd_dm_co_so;
