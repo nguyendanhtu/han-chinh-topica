@@ -51,6 +51,7 @@ namespace BCTKApp
         private Label label1;
         private Label m_lbl_tong_so_vuot_dm;
         private Label label3;
+        private ToolTip toolTip2;
 		private System.ComponentModel.IContainer components;
 
 		public f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN()
@@ -109,6 +110,7 @@ namespace BCTKApp
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -192,8 +194,9 @@ namespace BCTKApp
             this.m_fg.Size = new System.Drawing.Size(990, 329);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào các cột: Tổng số bill đã gửi, Tổng số tiền thực tế và Tổng" +
+            this.toolTip1.SetToolTip(this.m_fg,"Bạn nhấp đúp chuột vào các cột: Tổng số bill đã gửi, Tổng số tiền thực tế và Tổng" +
                     " số tiền định mức để xem chi tiết!");
+            this.toolTip2.SetToolTip(this.m_txt_tim_kiem,"Nhập Mã trung tâm, Tên trung tâm cần tìm!");
             // 
             // m_cmd_tim_kiem
             // 
@@ -349,6 +352,10 @@ namespace BCTKApp
             this.toolTip1.InitialDelay = 450;
             this.toolTip1.ReshowDelay = 50;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // toolTip2
+            // 
+            this.toolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
             // 
