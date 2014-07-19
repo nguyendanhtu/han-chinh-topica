@@ -29,6 +29,7 @@
                         <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" ForeColor="White"
                             Text="Nhập thông tin bill"></asp:Label>
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                        <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" /> 
                     </td>
                 </tr>
                 <tr>
