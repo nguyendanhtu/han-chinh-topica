@@ -204,7 +204,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 18;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(652, 55);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(761, 58);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_tim_kiem.TabIndex = 39;
@@ -215,7 +215,7 @@ namespace BCTKApp
             // 
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(346, 60);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(276, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(395, 20);
             this.m_txt_tim_kiem.TabIndex = 38;
             this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
             // 
@@ -361,6 +361,7 @@ namespace BCTKApp
             this.Name = "f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN";
             this.Text = "F704 - Báo cáo tình hình CPN theo Trung tâm - Ban";
             this.Load += new System.EventHandler(this.f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_fg_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -669,6 +670,21 @@ namespace BCTKApp
             catch (Exception v_e)
             {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_fg_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+                
+            }
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
