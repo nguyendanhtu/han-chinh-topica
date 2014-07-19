@@ -97,6 +97,8 @@ namespace BCTKApp {
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_pnl = new System.Windows.Forms.Panel();
+            this.m_txt_cuoi_thang = new System.Windows.Forms.TextBox();
+            this.m_txt_dau_thang = new System.Windows.Forms.TextBox();
             this.m_dat_chon_thang = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
@@ -105,8 +107,6 @@ namespace BCTKApp {
             this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.m_txt_dau_thang = new System.Windows.Forms.TextBox();
-            this.m_txt_cuoi_thang = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_pnl.SuspendLayout();
@@ -281,6 +281,20 @@ namespace BCTKApp {
             this.m_pnl.Size = new System.Drawing.Size(702, 87);
             this.m_pnl.TabIndex = 22;
             // 
+            // m_txt_cuoi_thang
+            // 
+            this.m_txt_cuoi_thang.Location = new System.Drawing.Point(430, 46);
+            this.m_txt_cuoi_thang.Name = "m_txt_cuoi_thang";
+            this.m_txt_cuoi_thang.Size = new System.Drawing.Size(100, 20);
+            this.m_txt_cuoi_thang.TabIndex = 44;
+            // 
+            // m_txt_dau_thang
+            // 
+            this.m_txt_dau_thang.Location = new System.Drawing.Point(223, 46);
+            this.m_txt_dau_thang.Name = "m_txt_dau_thang";
+            this.m_txt_dau_thang.Size = new System.Drawing.Size(100, 20);
+            this.m_txt_dau_thang.TabIndex = 43;
+            // 
             // m_dat_chon_thang
             // 
             this.m_dat_chon_thang.CustomFormat = "MM/yyy";
@@ -350,20 +364,6 @@ namespace BCTKApp {
             this.label1.TabIndex = 0;
             this.label1.Text = "Ngày đầu tháng";
             // 
-            // m_txt_dau_thang
-            // 
-            this.m_txt_dau_thang.Location = new System.Drawing.Point(223, 46);
-            this.m_txt_dau_thang.Name = "m_txt_dau_thang";
-            this.m_txt_dau_thang.Size = new System.Drawing.Size(100, 20);
-            this.m_txt_dau_thang.TabIndex = 43;
-            // 
-            // m_txt_cuoi_thang
-            // 
-            this.m_txt_cuoi_thang.Location = new System.Drawing.Point(430, 46);
-            this.m_txt_cuoi_thang.Name = "m_txt_cuoi_thang";
-            this.m_txt_cuoi_thang.Size = new System.Drawing.Size(100, 20);
-            this.m_txt_cuoi_thang.TabIndex = 44;
-            // 
             // f860_RPT_TONG_TIEN_DINH_MUC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -421,6 +421,8 @@ namespace BCTKApp {
             m_dat_tu_ngay.Visible = false;
             m_dat_den_ngay.Visible = false;
             m_cmd_tim_kiem.Visible = false;
+            m_txt_dau_thang.ReadOnly = true;
+            m_txt_cuoi_thang.ReadOnly = true;
             m_fg.Tree.Column = (int)e_col_Number.MA_PHONG_BAN;
             m_fg.Cols[(int)e_col_Number.TEN_NGAN].Visible = false;
             m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
