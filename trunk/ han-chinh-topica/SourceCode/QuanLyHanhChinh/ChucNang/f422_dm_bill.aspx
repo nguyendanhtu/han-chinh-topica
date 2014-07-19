@@ -194,6 +194,7 @@
                 </tr>
                 <tr>
                        <td align="center">
+                        <asp:Label ID="Label2" runat="server" Text="Nội dung tìm kiếm " CssClass="cssManField"></asp:Label>
                         <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="400px" CssClass="cssTextBox"></asp:TextBox>
                         &nbsp;
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton"  CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
