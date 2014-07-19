@@ -432,7 +432,8 @@ namespace BCTKApp
             decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
             DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value;
             DateTime v_dat_den_ngay = m_dtp_den_ngay.Value;
-            if (m_dtp_den_ngay.Checked == false) v_dat_den_ngay = DateTime.Now.Date;		
+            if (m_dtp_den_ngay.Checked == false) v_dat_den_ngay = DateTime.Now.Date;
+            if (m_dtp_tu_ngay.Checked == false) v_dat_tu_ngay = new System.DateTime(2014, 1, 30, 9, 16, 0, 0);
 			m_ds = new DS_V_DM_BILL();			
 			m_us.FillDatasetSearch(m_ds,v_dc_id_phong_ban,v_str_so_bill,v_dc_id_trang_thai,v_dat_tu_ngay,v_dat_den_ngay);
 			m_grv_trang_thai.Redraw = false;
