@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
 using BCTKUS;
 using BCTKDS;
 using BCTKDS.CDBNames;
+
 using IP.Core.IPCommon;
 using IP.Core.WinFormControls;
+using IP.Core.IPUserService;
 public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
 {
     #region public methods
@@ -187,8 +190,9 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         string v_nguoi_gui = m_txt_tim_kiem.Text.Trim();
         string v_nguoi_nhan = m_txt_tim_kiem.Text.Trim();
         string v_noi_nhan = m_txt_tim_kiem.Text.Trim();
+        decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         m_ds_dm_bill.Clear();
-        m_us_dm_bill.FillDataset(m_ds_dm_bill,v_so_bill,v_nguoi_gui,v_nguoi_nhan, v_noi_nhan);
+        m_us_dm_bill.FillDataset(m_ds_dm_bill, v_id_trung_tam, v_so_bill,v_nguoi_gui,v_nguoi_nhan, v_noi_nhan);
         m_grv_dm_bill.DataSource = m_ds_dm_bill.DM_BILL;
         load_title();
         string v_str_thong_tin = " (Có " + m_ds_dm_bill.DM_BILL.Rows.Count + " bản ghi)";
@@ -293,7 +297,26 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
                 {
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script type = 'text/javascript'>alert('Bạn không có quyền sử dụng chức năng này!');window.location.replace('/TraCuuKeToan/')</script>");
                 }
-                set_inital_form_mode();
+                US_HT_NGUOI_SU_DUNG v_us_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
+                if (Session[SESSION.AccounLoginYN] == "Y")
+                {
+                    decimal v_id_user = CIPConvert.ToDecimal(Session[SESSION.UserID]);
+                    US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
+                    IP.Core.IPData.DS_HT_NGUOI_SU_DUNG v_ds_ht_nguoi_su_dung = new IP.Core.IPData.DS_HT_NGUOI_SU_DUNG();
+                    v_us_ht_nguoi_su_dung.FillDataset(v_ds_ht_nguoi_su_dung, " WHERE ID =" + v_id_user);
+                    decimal v_id_user_group = CIPConvert.ToDecimal(v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Rows[0]["ID_USER_GROUP"]);
+                    US_HT_QUAN_HE_SU_DUNG_DU_LIEU v_us_ht_qh_sd_dl = new US_HT_QUAN_HE_SU_DUNG_DU_LIEU();
+                    DS_HT_QUAN_HE_SU_DUNG_DU_LIEU v_ds_ht_qh_sd_dl = new DS_HT_QUAN_HE_SU_DUNG_DU_LIEU();
+                    v_us_ht_qh_sd_dl.FillDataset(v_ds_ht_qh_sd_dl, "where ID_USER_GROUP =" + v_id_user_group);
+                    m_hdf_id_trung_tam.Value = v_ds_ht_qh_sd_dl.HT_QUAN_HE_SU_DUNG_DU_LIEU.Rows[0]["ID_PHONG_BAN"].ToString();
+
+                }
+                else
+                {
+                    Response.Redirect("../Default.aspx", false);
+                    HttpContext.Current.ApplicationInstance.CompleteRequest();
+                }
+               set_inital_form_mode();
             }
         }
         catch (Exception v_e)
