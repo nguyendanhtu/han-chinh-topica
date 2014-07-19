@@ -246,7 +246,7 @@ namespace BCTKApp
             // m_lbl
             // 
             this.m_lbl.AutoSize = true;
-            this.m_lbl.Location = new System.Drawing.Point(154, 7);
+            this.m_lbl.Location = new System.Drawing.Point(212, 7);
             this.m_lbl.Name = "m_lbl";
             this.m_lbl.Size = new System.Drawing.Size(98, 13);
             this.m_lbl.TabIndex = 23;
@@ -255,16 +255,16 @@ namespace BCTKApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 38);
+            this.label1.Location = new System.Drawing.Point(212, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 24;
-            this.label1.Text = "Áp dụng từ ngày";
+            this.label1.Text = "Áp dụng tại ngày";
             // 
             // m_dat_ap_dung_tu_ngay
             // 
             this.m_dat_ap_dung_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ap_dung_tu_ngay.Location = new System.Drawing.Point(277, 35);
+            this.m_dat_ap_dung_tu_ngay.Location = new System.Drawing.Point(335, 35);
             this.m_dat_ap_dung_tu_ngay.Name = "m_dat_ap_dung_tu_ngay";
             this.m_dat_ap_dung_tu_ngay.Size = new System.Drawing.Size(150, 20);
             this.m_dat_ap_dung_tu_ngay.TabIndex = 25;
@@ -292,7 +292,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 18;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(451, 7);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(541, 7);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(110, 48);
             this.m_cmd_tim_kiem.TabIndex = 41;
@@ -301,7 +301,7 @@ namespace BCTKApp
             // m_cbo_loai_dinh_muc
             // 
             this.m_cbo_loai_dinh_muc.FormattingEnabled = true;
-            this.m_cbo_loai_dinh_muc.Location = new System.Drawing.Point(277, 4);
+            this.m_cbo_loai_dinh_muc.Location = new System.Drawing.Point(335, 4);
             this.m_cbo_loai_dinh_muc.Name = "m_cbo_loai_dinh_muc";
             this.m_cbo_loai_dinh_muc.Size = new System.Drawing.Size(150, 21);
             this.m_cbo_loai_dinh_muc.TabIndex = 22;
@@ -346,6 +346,7 @@ namespace BCTKApp
 		ITransferDataRow m_obj_trans;		
 		DS_RPT_CO_SO_DINH_MUC m_ds = new DS_RPT_CO_SO_DINH_MUC();
 		US_RPT_CO_SO_DINH_MUC m_us = new US_RPT_CO_SO_DINH_MUC();
+        bool m_status_cbo = false;
 		#endregion
 
 		#region Private Methods
@@ -353,6 +354,7 @@ namespace BCTKApp
 			CControlFormat.setFormStyle(this, new CAppContext_201());
             this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			CControlFormat.setC1FlexFormat(m_fg);
+            m_cmd_tim_kiem.Visible = false;
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
             			CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
@@ -361,9 +363,11 @@ namespace BCTKApp
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
             load_data_2_cbo();
+            m_dat_ap_dung_tu_ngay.Value = DateTime.Now.Date;
             load_data_2_grid();	
 		}
         private void load_data_2_cbo() {
+            m_status_cbo = false;
             BCTKDS.DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new BCTKDS.DS_CM_DM_TU_DIEN();
             BCTKUS.US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new BCTKUS.US_CM_DM_TU_DIEN();
             v_us_cm_dm_tu_dien.FillDatasetByLoaiTuDienLoaiDinhMuc(v_ds_cm_dm_tu_dien);
@@ -371,6 +375,7 @@ namespace BCTKApp
             m_cbo_loai_dinh_muc.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
             m_cbo_loai_dinh_muc.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
             m_cbo_loai_dinh_muc.ValueMember = CM_DM_TU_DIEN.ID;
+            m_status_cbo = true;
         }
     		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -460,7 +465,36 @@ namespace BCTKApp
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_tim_kiem.Click += new EventHandler(m_cmd_tim_kiem_Click);
+            m_dat_ap_dung_tu_ngay.ValueChanged += new EventHandler(m_dat_ap_dung_tu_ngay_ValueChanged);
+            //m_cbo_loai_dinh_muc.SelectedIndexChanged += new EventHandler(m_cbo_loai_dinh_muc_SelectedIndexChanged);
+            m_cbo_loai_dinh_muc.SelectedValueChanged += new EventHandler(m_cbo_loai_dinh_muc_SelectedValueChanged);
 		}
+
+        private void m_cbo_loai_dinh_muc_SelectedValueChanged(object sender, EventArgs e) {
+            try {
+                if(m_status_cbo == true) {
+                    load_data_2_grid();
+                }
+            }
+            catch(Exception v_e) {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        
+
+        private void m_dat_ap_dung_tu_ngay_ValueChanged(object sender, EventArgs e) {
+            try {
+                load_data_2_grid();
+            }
+            catch(Exception v_e) {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        
 
 		#endregion
 
@@ -523,6 +557,7 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e) {
             try {
                 load_data_2_grid();
