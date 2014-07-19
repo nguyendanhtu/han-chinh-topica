@@ -355,9 +355,10 @@ public class US_DM_BILL : US_Object
         return true;
     }
 
-    public void FillDataset(DS_DM_BILL ip_v_ds_dm_bill, string ip_v_so_bill, string ip_v_nguoi_gui, string ip_v_nguoi_nhan, string ip_v_noi_nhan)
+    public void FillDataset(DS_DM_BILL ip_v_ds_dm_bill, decimal ip_v_id_trung_tam, string ip_v_so_bill, string ip_v_nguoi_gui, string ip_v_nguoi_nhan, string ip_v_noi_nhan)
     {
         CStoredProc v_store_proc = new CStoredProc("pr_DM_BILL_Search");
+        v_store_proc.addDecimalInputParam("ID_TRUNG_TAM",ip_v_id_trung_tam);
         v_store_proc.addNVarcharInputParam("@SO_BILL", ip_v_so_bill);
         v_store_proc.addNVarcharInputParam("@NGUOI_NHAN",ip_v_nguoi_nhan);
         v_store_proc.addNVarcharInputParam("@NOI_NHAN",ip_v_noi_nhan);
