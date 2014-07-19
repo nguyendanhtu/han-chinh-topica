@@ -181,6 +181,11 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     private void load_title()
     {
         m_lbl_title.Text = "Nhập thông tin Bill";
+         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
+        US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+        DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+        v_us.FillDataset(v_ds,"where id="+v_id_trung_tam);
+        m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
     }
     private void load_data_to_grid()
     {
