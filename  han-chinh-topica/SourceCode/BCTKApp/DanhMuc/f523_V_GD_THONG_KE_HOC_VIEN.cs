@@ -38,7 +38,7 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_update;
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+		internal SIS.Controls.Button.SiSButton m_cmd_update_truong;
         private Panel panel1;
         private ComboBox m_cbo_loai_tk;
         private Label label3;
@@ -93,7 +93,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_update_truong = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_thong_ke_hoc_vien = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -144,7 +144,7 @@ namespace BCTKApp
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update_truong);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -186,20 +186,20 @@ namespace BCTKApp
             this.m_cmd_update.Text = "&Sửa";
             this.m_cmd_update.Visible = false;
             // 
-            // m_cmd_view
+            // m_cmd_update_truong
             // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xem";
+            this.m_cmd_update_truong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_update_truong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_update_truong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_update_truong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_update_truong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_update_truong.ImageIndex = 2;
+            this.m_cmd_update_truong.ImageList = this.ImageList;
+            this.m_cmd_update_truong.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_update_truong.Name = "m_cmd_update_truong";
+            this.m_cmd_update_truong.Size = new System.Drawing.Size(118, 28);
+            this.m_cmd_update_truong.TabIndex = 21;
+            this.m_cmd_update_truong.Text = "Cập nhật  trường";
             // 
             // m_cmd_delete
             // 
@@ -431,14 +431,23 @@ namespace BCTKApp
 			m_ds = new DS_V_GD_THONG_KE();
             if (m_cbo_loai_tk.SelectedIndex == 0)
             {
+                m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.TU_NGAY].Visible = true;
+                m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.DEN_NGAY].Caption = "Đến ngày";
+                m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.GHI_CHU_1].Width = 125;
                 m_us.FillDatasetSearch_hocvien(m_ds, v_str_tu_khoa, v_dat_tu_ngay, v_dat_den_ngay);
             }
             else if (m_cbo_loai_tk.SelectedIndex == 1)
             {
+                m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.TU_NGAY].Visible = false;
+                m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.DEN_NGAY].Caption = "Tại ngày";
+                m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.GHI_CHU_1].Width = 240;
                 m_us.FillDatasetSearch_hocvien_danghoc(m_ds, v_str_tu_khoa, v_dat_tu_ngay, v_dat_den_ngay);
             }
             else
             {
+                m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.TU_NGAY].Visible = true;
+                m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.DEN_NGAY].Caption = "Đến ngày";
+                m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.GHI_CHU_1].Width = 125;
                 m_us.FillDatasetSearch_hocvien_tuyenmoi(m_ds, v_str_tu_khoa, v_dat_tu_ngay, v_dat_den_ngay);
             }
 			m_grv_thong_ke_hoc_vien.Redraw = false;
@@ -537,7 +546,7 @@ namespace BCTKApp
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            //m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_update_truong.Click += new EventHandler(m_cmd_update_truong_Click);
             m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
             m_txt_tu_khoa.KeyDown += new KeyEventHandler(m_txt_tu_khoa_KeyDown);
             m_txt_tu_khoa.Leave += new EventHandler(m_txt_tu_khoa_Leave);
@@ -580,7 +589,19 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
+        private void m_cmd_update_truong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f509_V_DM_CO_SO_DE v_frm = new f509_V_DM_CO_SO_DE();
+                v_frm.display_for_insert_truong();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		private void m_cmd_update_Click(object sender, EventArgs e) {
 			try{
 				update_v_gd_thong_ke();
