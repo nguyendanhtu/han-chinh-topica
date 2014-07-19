@@ -50,6 +50,8 @@ namespace BCTKApp {
         private ToolTip toolTip1;
         private Label label3;
         private DateTimePicker m_dat_chon_thang;
+        private TextBox m_txt_cuoi_thang;
+        private TextBox m_txt_dau_thang;
         private System.ComponentModel.IContainer components;
 
         public f860_RPT_TONG_TIEN_DINH_MUC() {
@@ -103,6 +105,8 @@ namespace BCTKApp {
             this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.m_txt_dau_thang = new System.Windows.Forms.TextBox();
+            this.m_txt_cuoi_thang = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_pnl.SuspendLayout();
@@ -262,6 +266,8 @@ namespace BCTKApp {
             // 
             // m_pnl
             // 
+            this.m_pnl.Controls.Add(this.m_txt_cuoi_thang);
+            this.m_pnl.Controls.Add(this.m_txt_dau_thang);
             this.m_pnl.Controls.Add(this.m_dat_chon_thang);
             this.m_pnl.Controls.Add(this.label3);
             this.m_pnl.Controls.Add(this.m_cmd_tim_kiem);
@@ -279,7 +285,7 @@ namespace BCTKApp {
             // 
             this.m_dat_chon_thang.CustomFormat = "MM/yyy";
             this.m_dat_chon_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_chon_thang.Location = new System.Drawing.Point(311, 12);
+            this.m_dat_chon_thang.Location = new System.Drawing.Point(329, 12);
             this.m_dat_chon_thang.Name = "m_dat_chon_thang";
             this.m_dat_chon_thang.Size = new System.Drawing.Size(78, 20);
             this.m_dat_chon_thang.TabIndex = 42;
@@ -287,7 +293,7 @@ namespace BCTKApp {
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(243, 16);
+            this.label3.Location = new System.Drawing.Point(261, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 41;
@@ -302,7 +308,7 @@ namespace BCTKApp {
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 18;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(513, 12);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(574, 12);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(110, 54);
             this.m_cmd_tim_kiem.TabIndex = 40;
@@ -312,7 +318,7 @@ namespace BCTKApp {
             // 
             this.m_dat_den_ngay.Enabled = false;
             this.m_dat_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_den_ngay.Location = new System.Drawing.Point(416, 46);
+            this.m_dat_den_ngay.Location = new System.Drawing.Point(12, 38);
             this.m_dat_den_ngay.Name = "m_dat_den_ngay";
             this.m_dat_den_ngay.Size = new System.Drawing.Size(86, 20);
             this.m_dat_den_ngay.TabIndex = 3;
@@ -320,7 +326,7 @@ namespace BCTKApp {
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(325, 49);
+            this.label2.Location = new System.Drawing.Point(339, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 2;
@@ -330,7 +336,7 @@ namespace BCTKApp {
             // 
             this.m_dat_tu_ngay.Enabled = false;
             this.m_dat_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_tu_ngay.Location = new System.Drawing.Point(224, 45);
+            this.m_dat_tu_ngay.Location = new System.Drawing.Point(12, 12);
             this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
             this.m_dat_tu_ngay.Size = new System.Drawing.Size(86, 20);
             this.m_dat_tu_ngay.TabIndex = 1;
@@ -338,11 +344,25 @@ namespace BCTKApp {
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(124, 50);
+            this.label1.Location = new System.Drawing.Point(139, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ngày đầu tháng";
+            // 
+            // m_txt_dau_thang
+            // 
+            this.m_txt_dau_thang.Location = new System.Drawing.Point(223, 46);
+            this.m_txt_dau_thang.Name = "m_txt_dau_thang";
+            this.m_txt_dau_thang.Size = new System.Drawing.Size(100, 20);
+            this.m_txt_dau_thang.TabIndex = 43;
+            // 
+            // m_txt_cuoi_thang
+            // 
+            this.m_txt_cuoi_thang.Location = new System.Drawing.Point(430, 46);
+            this.m_txt_cuoi_thang.Name = "m_txt_cuoi_thang";
+            this.m_txt_cuoi_thang.Size = new System.Drawing.Size(100, 20);
+            this.m_txt_cuoi_thang.TabIndex = 44;
             // 
             // f860_RPT_TONG_TIEN_DINH_MUC
             // 
@@ -398,7 +418,9 @@ namespace BCTKApp {
 
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-
+            m_dat_tu_ngay.Visible = false;
+            m_dat_den_ngay.Visible = false;
+            m_cmd_tim_kiem.Visible = false;
             m_fg.Tree.Column = (int)e_col_Number.MA_PHONG_BAN;
             m_fg.Cols[(int)e_col_Number.TEN_NGAN].Visible = false;
             m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
@@ -546,6 +568,12 @@ namespace BCTKApp {
                 temp = temp.AddMonths(1);
                 temp = temp.AddDays(-(temp.Day));
                 m_dat_den_ngay.Value = temp;
+
+                //Gan cho textbox
+                m_txt_cuoi_thang.Text = m_dat_den_ngay.Value.ToShortDateString();
+                m_txt_dau_thang.Text = m_dat_tu_ngay.Value.ToShortDateString();
+
+                load_data_2_grid();
             }
             catch(Exception v_e) {
 
