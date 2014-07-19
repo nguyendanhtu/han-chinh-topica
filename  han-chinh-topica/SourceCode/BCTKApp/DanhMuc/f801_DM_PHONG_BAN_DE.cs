@@ -198,6 +198,17 @@ namespace BCTKApp.DanhMuc
             if (v_ds.DM_PHONG_BAN.Count != 1) return false;
             return true;
         }
+        private bool check_ty_trong() 
+        {
+            decimal sum_ty_trong = 0;
+            for (int i = 1; i < m_grv_ty_trong.Rows.Count; i++)
+            {
+                if (m_grv_ty_trong.Rows[i][(int)e_col_Number.TY_TRONG] == null) break;
+                sum_ty_trong += CIPConvert.ToDecimal(m_grv_ty_trong.Rows[i][(int)e_col_Number.TY_TRONG]);
+            }
+                if(sum_ty_trong > 100) return false;
+                return true;
+        }
         private void save_data()
         {
             if (!validate_data_is_ok())
@@ -206,6 +217,21 @@ namespace BCTKApp.DanhMuc
             {
                 BaseMessages.MsgBox_Infor("Mã trung tâm đã tồn tại");
                 xoa_trang();
+                return;
+            }
+            if (m_grv_ty_trong.Rows[1][(int)e_col_Number.TEN_PHAP_NHAN] == null)
+            {
+                BaseMessages.MsgBox_Infor("Bạn không được để trống tỷ trọng theo pháp nhân");
+                return;
+            }
+            if (m_grv_ty_trong.Rows[1][(int)e_col_Number.TY_TRONG] == null)
+            {
+                BaseMessages.MsgBox_Infor("Bạn không được để trống tỷ trọng");
+                return;
+            }
+            if (!check_ty_trong())
+            {
+                BaseMessages.MsgBox_Infor("Tổng tỷ trọng phải nhở hơn hoặc bằng 100");
                 return;
             }
             form_2_us_obj();
