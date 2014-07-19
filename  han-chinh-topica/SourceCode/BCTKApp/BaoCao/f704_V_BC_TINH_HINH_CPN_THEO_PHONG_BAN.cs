@@ -461,7 +461,7 @@ namespace BCTKApp
             string v_id_tu_khoa = m_txt_tim_kiem.Text;
             //decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
             decimal v_id_trang_thai = -1;
-             v_dt_tu_ngay = m_dt_tu_ngay.Value;
+            v_dt_tu_ngay = m_dt_tu_ngay.Value;
             v_dt_den_ngay = m_dt_den_ngay.Value;
             decimal v_dc_tong_so_vuot_dm = 0;
             US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
@@ -570,7 +570,7 @@ namespace BCTKApp
 		//
 		//
 		private void f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_Load(object sender, System.EventArgs e) {
-			try{
+			try  {
 				set_initial_form_load();
                 tim_kiem();
 			}
