@@ -350,6 +350,7 @@ namespace BCTKApp
             this.Name = "f706_V_BC_CHI_TIET_DM";
             this.Text = "f706_V_BC_CHI_TIET_DM";
             this.Load += new System.EventHandler(this.f706_V_BC_CHI_TIET_DM_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_fg_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -646,7 +647,21 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_fg_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
 
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 
