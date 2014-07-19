@@ -338,6 +338,7 @@ namespace BCTKApp {
             m_ds = new DS_RPT_BANG_DINH_MUC();
             m_us.ExecuteProc();
             m_us.FillDataset(m_ds);
+            CGridUtils.MakeSoTT(0, m_fg);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
