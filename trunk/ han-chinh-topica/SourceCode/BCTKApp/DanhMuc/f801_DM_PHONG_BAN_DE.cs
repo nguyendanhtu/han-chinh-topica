@@ -128,6 +128,7 @@ namespace BCTKApp.DanhMuc
             {
                 if (m_grv_ty_trong.Rows[i][(int)e_col_Number.TEN_PHAP_NHAN] == null) break;
                 US_DM_PHONG_BAN_PHAP_NHAN v_us_pb_phap_nhan = new US_DM_PHONG_BAN_PHAP_NHAN();
+                v_us_pb_phap_nhan.UseTransOfUSObject(m_us_dm_phong_ban);
                 v_us_pb_phap_nhan.dcID_PHAP_NHAN = CIPConvert.ToDecimal(m_grv_ty_trong.Rows[i][(int)e_col_Number.TEN_PHAP_NHAN]);
                 v_us_pb_phap_nhan.dcID_PHONG_BAN = ip_phong_ban;
                 v_us_pb_phap_nhan.dcTY_TRONG = CIPConvert.ToDecimal(m_grv_ty_trong.Rows[i][(int)e_col_Number.TY_TRONG]);
@@ -150,6 +151,7 @@ namespace BCTKApp.DanhMuc
             {
                 load_cbo_phong_ban_2_grid();
                 m_grv_ty_trong.AllowEditing = true;
+                m_grv_ty_trong.AllowAddNew = true;
                 m_grv_ty_trong.Cols[(int)e_col_Number.TEN_PHAP_NHAN].DataType = typeof(decimal);
             }
         }
@@ -238,8 +240,10 @@ namespace BCTKApp.DanhMuc
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
-                         m_us_dm_phong_ban.Insert();
+                         m_us_dm_phong_ban.BeginTransaction();
+                         m_us_dm_phong_ban.Insert();   
                          insert_grid_2_bd(m_us_dm_phong_ban.dcID);
+                         m_us_dm_phong_ban.CommitTransaction();
                         break;
                 case DataEntryFormMode.UpdateDataState:
                         if (!validate_ma_update(m_txt_ma_phong_ban.Text.Trim(), m_us_dm_phong_ban.dcID))
@@ -292,7 +296,17 @@ namespace BCTKApp.DanhMuc
         private void m_cmd_save_Click(object sender, EventArgs e)
         {
             //Buoc 1: Save data
-            save_data();
+            try
+            {
+                save_data();
+            }
+            catch (Exception v_e)
+            {
+
+                if (m_us_dm_phong_ban.is_having_transaction()) m_us_dm_phong_ban.Rollback();
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+            
         }
 
         private void m_cmd_exit_Click(object sender, EventArgs e)
