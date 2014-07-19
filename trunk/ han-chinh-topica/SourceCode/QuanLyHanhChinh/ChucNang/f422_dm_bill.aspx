@@ -69,6 +69,12 @@
                                 Font-Size="XX-Small" ForeColor="Black" />
                         </ew:CalendarPopup>
                     </td>
+                    <td align="right">
+                     <asp:label ID="Label1" runat ="server"  CssClass="cssManField" text="Trung tâm-ban:"></asp:label>
+                    </td>
+                    <td align="left">
+                        <asp:label ID="m_lbl_ten_trung_tam" runat ="server"  CssClass="cssManField" Font-Bold="true" Font-Size="Medium"></asp:label>
+                    </td>
                 </tr>
                 <tr>
                     <td align="right" class="style1">
