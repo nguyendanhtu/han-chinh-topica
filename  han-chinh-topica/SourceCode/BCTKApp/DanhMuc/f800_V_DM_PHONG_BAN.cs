@@ -376,8 +376,7 @@ namespace BCTKApp
             i_us.Me2DataRow(v_dr);
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
         }
-
-
+       
         private void insert_dm_phong_ban()
         {
             f801_DM_PHONG_BAN_DE v_fDE = new f801_DM_PHONG_BAN_DE();
