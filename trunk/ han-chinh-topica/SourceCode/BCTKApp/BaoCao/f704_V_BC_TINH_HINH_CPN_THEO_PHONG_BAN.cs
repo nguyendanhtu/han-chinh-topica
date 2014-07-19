@@ -650,11 +650,12 @@ namespace BCTKApp
                     v_tong_tien = CIPConvert.ToDecimal(v_dr[4]);
                 else
                     v_tong_tien = 0;
-                //if(i_grid_col==(int)e_col_Number.DINH_MUC){
-                //    f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
-                //    v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
-                //}
-                //else 
+                if (i_grid_col == (int)e_col_Number.DINH_MUC)
+                {
+                    f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
+                    v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay);
+                }
+                else 
                 if (((i_grid_col == (int)e_col_Number.TONG_SO_BILL) || (i_grid_col == (int)e_col_Number.TONG_SO_TIEN)))// && v_dr[4].ToString() != "")
                 {
                     f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
