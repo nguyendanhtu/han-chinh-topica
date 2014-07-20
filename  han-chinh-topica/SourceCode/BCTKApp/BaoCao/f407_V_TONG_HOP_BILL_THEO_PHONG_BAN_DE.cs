@@ -426,27 +426,15 @@ namespace BCTKApp
             }
             if (v_dc_tong_doanh_thu == 0) m_lbl_chua_tinh_vat.Text = "0 VNĐ";
             else m_lbl_chua_tinh_vat.Text = CIPConvert.ToStr(v_dc_tong_doanh_thu, "#,###.##") + "   VNĐ";
+           
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-                       , 0
-                       , -1// chỗ này là tên trường mà mình nhóm
-                       , (int)e_col_Number.TRANG_THAI // chỗ này là tên trường mà mình Count
-                       , "Tổng"
-                       );
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
-                , 0
-                , -1
-                , (int)e_col_Number.SO_TIEN
-                , "Tổng"
-                );
-
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-             , 1
+             , 0
              , (int)e_col_Number.NGAY_GUI // chỗ này là tên trường mà mình nhóm
              , (int)e_col_Number.TRANG_THAI // chỗ này là tên trường mà mình Count
              , "{0}"
              );
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
-                , 1
+                , 0
                 , (int)e_col_Number.NGAY_GUI
                 , (int)e_col_Number.SO_TIEN
                 , "{0}"
