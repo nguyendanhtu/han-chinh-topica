@@ -29,16 +29,17 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_lbl_header = new System.Windows.Forms.Label();
+            this.m_lbl_ten_trung_tam = new System.Windows.Forms.Label();
             this.a = new System.Windows.Forms.Label();
             this.c = new System.Windows.Forms.Label();
-            this.m_lbl_tong_tien = new System.Windows.Forms.Label();
+            this.m_lbl = new System.Windows.Forms.Label();
             this.b = new System.Windows.Forms.Label();
             this.m_lbl_ngay_ap_dung = new System.Windows.Forms.Label();
             this.m_lbl_don_gia = new System.Windows.Forms.Label();
             this.m_lbl_sltk = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_co_so_dinh_muc = new System.Windows.Forms.Label();
+            this.m_lbl_tong_tien = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +101,7 @@
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 182);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 207);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(405, 36);
@@ -121,49 +122,50 @@
             this.m_cmd_exit.TabIndex = 15;
             this.m_cmd_exit.Text = "Trở về (Esc)";
             // 
-            // m_lbl_header
+            // m_lbl_ten_trung_tam
             // 
-            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(405, 35);
-            this.m_lbl_header.TabIndex = 28;
-            this.m_lbl_header.Text = "Tổng tiền định mức";
-            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.m_lbl_ten_trung_tam.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_ten_trung_tam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ten_trung_tam.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_ten_trung_tam.Name = "m_lbl_ten_trung_tam";
+            this.m_lbl_ten_trung_tam.Size = new System.Drawing.Size(405, 28);
+            this.m_lbl_ten_trung_tam.TabIndex = 28;
+            this.m_lbl_ten_trung_tam.Text = "...";
+            this.m_lbl_ten_trung_tam.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // a
             // 
             this.a.AutoSize = true;
-            this.a.Location = new System.Drawing.Point(20, 133);
+            this.a.Location = new System.Drawing.Point(20, 164);
             this.a.Name = "a";
-            this.a.Size = new System.Drawing.Size(91, 13);
+            this.a.Size = new System.Drawing.Size(122, 13);
             this.a.TabIndex = 29;
-            this.a.Text = "Đơn giá định mức";
+            this.a.Text = "Đơn giá định mức/người";
             // 
             // c
             // 
             this.c.AutoSize = true;
-            this.c.Location = new System.Drawing.Point(20, 105);
+            this.c.Location = new System.Drawing.Point(20, 136);
             this.c.Name = "c";
             this.c.Size = new System.Drawing.Size(94, 13);
             this.c.TabIndex = 30;
             this.c.Text = "Số lượng thống kê";
             // 
-            // m_lbl_tong_tien
+            // m_lbl
             // 
-            this.m_lbl_tong_tien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_tong_tien.Location = new System.Drawing.Point(0, 35);
-            this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
-            this.m_lbl_tong_tien.Size = new System.Drawing.Size(405, 31);
-            this.m_lbl_tong_tien.TabIndex = 32;
-            this.m_lbl_tong_tien.Text = "...";
-            this.m_lbl_tong_tien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.m_lbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl.Location = new System.Drawing.Point(0, 28);
+            this.m_lbl.Name = "m_lbl";
+            this.m_lbl.Size = new System.Drawing.Size(405, 31);
+            this.m_lbl.TabIndex = 32;
+            this.m_lbl.Text = "Tổng tiền định mức";
+            this.m_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // b
             // 
             this.b.AutoSize = true;
-            this.b.Location = new System.Drawing.Point(210, 133);
+            this.b.Location = new System.Drawing.Point(239, 164);
             this.b.Name = "b";
             this.b.Size = new System.Drawing.Size(77, 13);
             this.b.TabIndex = 33;
@@ -172,7 +174,7 @@
             // m_lbl_ngay_ap_dung
             // 
             this.m_lbl_ngay_ap_dung.AutoSize = true;
-            this.m_lbl_ngay_ap_dung.Location = new System.Drawing.Point(325, 133);
+            this.m_lbl_ngay_ap_dung.Location = new System.Drawing.Point(330, 164);
             this.m_lbl_ngay_ap_dung.Name = "m_lbl_ngay_ap_dung";
             this.m_lbl_ngay_ap_dung.Size = new System.Drawing.Size(16, 13);
             this.m_lbl_ngay_ap_dung.TabIndex = 34;
@@ -181,7 +183,7 @@
             // m_lbl_don_gia
             // 
             this.m_lbl_don_gia.AutoSize = true;
-            this.m_lbl_don_gia.Location = new System.Drawing.Point(142, 133);
+            this.m_lbl_don_gia.Location = new System.Drawing.Point(152, 164);
             this.m_lbl_don_gia.Name = "m_lbl_don_gia";
             this.m_lbl_don_gia.Size = new System.Drawing.Size(16, 13);
             this.m_lbl_don_gia.TabIndex = 35;
@@ -190,7 +192,7 @@
             // m_lbl_sltk
             // 
             this.m_lbl_sltk.AutoSize = true;
-            this.m_lbl_sltk.Location = new System.Drawing.Point(142, 105);
+            this.m_lbl_sltk.Location = new System.Drawing.Point(152, 136);
             this.m_lbl_sltk.Name = "m_lbl_sltk";
             this.m_lbl_sltk.Size = new System.Drawing.Size(16, 13);
             this.m_lbl_sltk.TabIndex = 36;
@@ -199,7 +201,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 76);
+            this.label1.Location = new System.Drawing.Point(20, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 37;
@@ -208,27 +210,38 @@
             // m_lbl_co_so_dinh_muc
             // 
             this.m_lbl_co_so_dinh_muc.AutoSize = true;
-            this.m_lbl_co_so_dinh_muc.Location = new System.Drawing.Point(142, 76);
+            this.m_lbl_co_so_dinh_muc.Location = new System.Drawing.Point(152, 107);
             this.m_lbl_co_so_dinh_muc.Name = "m_lbl_co_so_dinh_muc";
             this.m_lbl_co_so_dinh_muc.Size = new System.Drawing.Size(16, 13);
             this.m_lbl_co_so_dinh_muc.TabIndex = 38;
             this.m_lbl_co_so_dinh_muc.Text = "...";
             // 
+            // m_lbl_tong_tien
+            // 
+            this.m_lbl_tong_tien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_tong_tien.Location = new System.Drawing.Point(0, 59);
+            this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
+            this.m_lbl_tong_tien.Size = new System.Drawing.Size(405, 27);
+            this.m_lbl_tong_tien.TabIndex = 40;
+            this.m_lbl_tong_tien.Text = "...";
+            this.m_lbl_tong_tien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // f861_RPT_TONG_TIEN_DINH_MUC_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 218);
+            this.ClientSize = new System.Drawing.Size(405, 243);
+            this.Controls.Add(this.m_lbl_tong_tien);
             this.Controls.Add(this.m_lbl_co_so_dinh_muc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_sltk);
             this.Controls.Add(this.m_lbl_don_gia);
             this.Controls.Add(this.m_lbl_ngay_ap_dung);
             this.Controls.Add(this.b);
-            this.Controls.Add(this.m_lbl_tong_tien);
+            this.Controls.Add(this.m_lbl);
             this.Controls.Add(this.c);
             this.Controls.Add(this.a);
-            this.Controls.Add(this.m_lbl_header);
+            this.Controls.Add(this.m_lbl_ten_trung_tam);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f861_RPT_TONG_TIEN_DINH_MUC_DE";
             this.Text = "F861 - Chi tiết tổng tiền định mức";
@@ -244,15 +257,16 @@
         internal System.Windows.Forms.ImageList imageList1;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
-        private System.Windows.Forms.Label m_lbl_header;
+        private System.Windows.Forms.Label m_lbl_ten_trung_tam;
         private System.Windows.Forms.Label a;
         private System.Windows.Forms.Label c;
-        private System.Windows.Forms.Label m_lbl_tong_tien;
+        private System.Windows.Forms.Label m_lbl;
         private System.Windows.Forms.Label b;
         private System.Windows.Forms.Label m_lbl_ngay_ap_dung;
         private System.Windows.Forms.Label m_lbl_don_gia;
         private System.Windows.Forms.Label m_lbl_sltk;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label m_lbl_co_so_dinh_muc;
+        private System.Windows.Forms.Label m_lbl_tong_tien;
     }
 }
