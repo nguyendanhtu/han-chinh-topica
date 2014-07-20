@@ -263,7 +263,7 @@
             this.m_fg.Name = "m_fg";
             this.m_fg.Rows.Count = 2;
             this.m_fg.Size = new System.Drawing.Size(1316, 364);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.Styles = ((C1.Win.C1FlexGrid.CellStyleCollection)(new C1.Win.C1FlexGrid.CellStyleCollection("")));
             this.m_fg.TabIndex = 1;
             this.m_fg.TabStop = false;
             // 
@@ -291,6 +291,7 @@
             // m_lbox_ds_loi
             // 
             this.m_lbox_ds_loi.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_lbox_ds_loi.ForeColor = System.Drawing.Color.Red;
             this.m_lbox_ds_loi.FormattingEnabled = true;
             this.m_lbox_ds_loi.Location = new System.Drawing.Point(0, 27);
             this.m_lbox_ds_loi.Name = "m_lbox_ds_loi";
