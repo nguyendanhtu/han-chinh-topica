@@ -44,7 +44,7 @@
                 <tr>
                     <td align="center">
                         <asp:HyperLink ID="HyperLink1" runat="Server" NavigateUrl="#">
-                            <asp:Image ID="Image1" runat="server" Height='73px' Width='200px' ImageUrl="~/Images/MenuTop/logo-default.png" />
+                            <asp:Image ID="Image1" runat="server" Height='73px' Width='200px' ImageUrl="~/Images/MenuTop/logo-default1.png" />
                         </asp:HyperLink>
                     </td>
                 </tr>
