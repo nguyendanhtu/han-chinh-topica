@@ -233,9 +233,9 @@ namespace BCTKApp
             // 
             this.m_grv_bill.ColumnInfo = resources.GetString("m_grv_bill.ColumnInfo");
             this.m_grv_bill.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_bill.Location = new System.Drawing.Point(0, 189);
+            this.m_grv_bill.Location = new System.Drawing.Point(0, 178);
             this.m_grv_bill.Name = "m_grv_bill";
-            this.m_grv_bill.Size = new System.Drawing.Size(884, 337);
+            this.m_grv_bill.Size = new System.Drawing.Size(884, 348);
             this.m_grv_bill.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_bill.Styles"));
             this.m_grv_bill.TabIndex = 20;
             // 
@@ -259,7 +259,7 @@ namespace BCTKApp
             // 
             // m_txt_tu_khoa
             // 
-            this.m_txt_tu_khoa.Location = new System.Drawing.Point(320, 136);
+            this.m_txt_tu_khoa.Location = new System.Drawing.Point(341, 118);
             this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
             this.m_txt_tu_khoa.Size = new System.Drawing.Size(261, 20);
             this.m_txt_tu_khoa.TabIndex = 4;
@@ -268,7 +268,7 @@ namespace BCTKApp
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(225, 141);
+            this.label2.Location = new System.Drawing.Point(237, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 35;
@@ -277,7 +277,7 @@ namespace BCTKApp
             // m_cbo_trung_tam
             // 
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(320, 96);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(341, 82);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(261, 21);
             this.m_cbo_trung_tam.TabIndex = 3;
@@ -286,11 +286,11 @@ namespace BCTKApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(225, 101);
+            this.label1.Location = new System.Drawing.Point(237, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
+            this.label1.Size = new System.Drawing.Size(96, 16);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Trung tâm";
+            this.label1.Text = "Trung tâm/Ban";
             // 
             // m_cmd_search
             // 
@@ -300,7 +300,7 @@ namespace BCTKApp
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(599, 129);
+            this.m_cmd_search.Location = new System.Drawing.Point(413, 144);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 5;
@@ -312,7 +312,7 @@ namespace BCTKApp
             this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_den_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_den_ngay.Location = new System.Drawing.Point(568, 51);
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(518, 46);
             this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
             this.m_dtp_den_ngay.RightToLeftLayout = true;
             this.m_dtp_den_ngay.Size = new System.Drawing.Size(126, 23);
@@ -325,7 +325,7 @@ namespace BCTKApp
             this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(320, 50);
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(300, 45);
             this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_tu_ngay.TabIndex = 1;
@@ -335,7 +335,7 @@ namespace BCTKApp
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(470, 54);
+            this.label6.Location = new System.Drawing.Point(446, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 16);
             this.label6.TabIndex = 32;
@@ -345,7 +345,7 @@ namespace BCTKApp
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(225, 57);
+            this.label7.Location = new System.Drawing.Point(237, 49);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 16);
             this.label7.TabIndex = 31;
