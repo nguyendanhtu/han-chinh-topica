@@ -17,8 +17,14 @@ namespace BCTKApp.BaoCao {
 
         private void format_control() {
             CControlFormat.setFormStyle(this, new CAppContext_201());
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ten_trung_tam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_co_so_dinh_muc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_sltk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_don_gia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ngay_ap_dung.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tong_tien.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             set_define_events();
+
         }
 
         private void set_define_events() {
@@ -31,13 +37,15 @@ namespace BCTKApp.BaoCao {
             decimal id_co_so_dinh_muc = -1;
             DateTime ap_dung_tu_ngay = new DateTime();
             string ten_co_so_dinh_muc = "";
+            m_lbl_ten_trung_tam.Text = ip_us.strTEN_PHONG_BAN + " (" + ip_us.strMA_PHONG_BAN + ")";
+            m_lbl.Text = "Tổng tiền định mức " + ip_us.strTEN_NGAN +" tháng " + ip_from_date.Month + "/" + ip_from_date.Year;
             ip_us.get_don_gia_dinh_muc_and_so_luong_thong_ke(ip_us.dcID_PHONG_BAN, ip_us.dcID_LOAI_DINH_MUC
                                                                 , ip_from_date, ip_to_date
                                                                 , ref don_gia_dinh_muc, ref so_luong_thong_ke);
             m_lbl_don_gia.Text = CIPConvert.ToStr(don_gia_dinh_muc, "#,###") + " (VNĐ)";
             //m_lbl_ngay_ap_dung.Text = so_luong_thong_ke + " (người)";
             m_lbl_sltk.Text = so_luong_thong_ke + " (người)";
-            m_lbl_tong_tien.Text = CIPConvert.ToStr(don_gia_dinh_muc * so_luong_thong_ke,"#,###") + " (VNĐ)";
+            m_lbl_tong_tien.Text = CIPConvert.ToStr(don_gia_dinh_muc * so_luong_thong_ke, "#,###") + " (VNĐ)";
             if(don_gia_dinh_muc*so_luong_thong_ke == 0) {
                 m_lbl_tong_tien.Text = "0" + " (VNĐ)";
             }
