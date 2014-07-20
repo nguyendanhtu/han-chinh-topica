@@ -268,7 +268,7 @@
             this.m_fg.Name = "m_fg";
             this.m_fg.Rows.Count = 2;
             this.m_fg.Size = new System.Drawing.Size(1316, 304);
-            this.m_fg.Styles = ((C1.Win.C1FlexGrid.CellStyleCollection)(new C1.Win.C1FlexGrid.CellStyleCollection("")));
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 1;
             this.m_fg.TabStop = false;
             // 
