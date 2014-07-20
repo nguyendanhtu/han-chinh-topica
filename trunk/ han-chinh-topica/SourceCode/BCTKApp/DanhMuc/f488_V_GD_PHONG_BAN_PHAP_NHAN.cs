@@ -230,7 +230,7 @@ namespace BCTKApp
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
             this.m_fg.Size = new System.Drawing.Size(695, 272);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.Styles = ((C1.Win.C1FlexGrid.CellStyleCollection)(new C1.Win.C1FlexGrid.CellStyleCollection("")));
             this.m_fg.TabIndex = 20;
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
@@ -248,19 +248,21 @@ namespace BCTKApp
             // m_cbo_phap_nhan
             // 
             this.m_cbo_phap_nhan.FormattingEnabled = true;
-            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(221, 46);
+            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(570, 42);
             this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
-            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(272, 21);
+            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(84, 21);
             this.m_cbo_phap_nhan.TabIndex = 22;
+            this.m_cbo_phap_nhan.Visible = false;
             // 
             // m_lbl_ten_phap_nhan
             // 
             this.m_lbl_ten_phap_nhan.AutoSize = true;
-            this.m_lbl_ten_phap_nhan.Location = new System.Drawing.Point(147, 49);
+            this.m_lbl_ten_phap_nhan.Location = new System.Drawing.Point(505, 42);
             this.m_lbl_ten_phap_nhan.Name = "m_lbl_ten_phap_nhan";
             this.m_lbl_ten_phap_nhan.Size = new System.Drawing.Size(59, 13);
             this.m_lbl_ten_phap_nhan.TabIndex = 23;
             this.m_lbl_ten_phap_nhan.Text = "Pháp nhân";
+            this.m_lbl_ten_phap_nhan.Visible = false;
             // 
             // m_lbl_tu_khoa
             // 
@@ -281,21 +283,19 @@ namespace BCTKApp
             // m_cbo_trung_tam
             // 
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(574, 42);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(221, 42);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
-            this.m_cbo_trung_tam.Size = new System.Drawing.Size(91, 21);
+            this.m_cbo_trung_tam.Size = new System.Drawing.Size(272, 21);
             this.m_cbo_trung_tam.TabIndex = 22;
-            this.m_cbo_trung_tam.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(500, 45);
+            this.label1.Location = new System.Drawing.Point(147, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 23;
             this.label1.Text = "Trung tâm";
-            this.label1.Visible = false;
             // 
             // f488_V_GD_PHONG_BAN_PHAP_NHAN
             // 
@@ -331,12 +331,12 @@ namespace BCTKApp
 		#region Data Structure
 		private enum e_col_Number{
 			TY_TRONG = 5
-,TEN_PHONG_BAN = 4
-,ID_PHONG_BAN = 7
-,MA_PHAP_NHAN = 1
+,TEN_PHONG_BAN = 2
+,ID_PHONG_BAN = 1
+,MA_PHAP_NHAN = 7
 ,MA_PHONG_BAN = 3
 ,ID_PHAP_NHAN = 6
-,TEN_PHAP_NHAN = 2
+,TEN_PHAP_NHAN = 4
 
 		}			
 		#endregion
@@ -365,7 +365,7 @@ namespace BCTKApp
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.TEN_PHAP_NHAN;
+            m_fg.Tree.Column = (int)e_col_Number.TEN_PHONG_BAN;
             m_fg.Cols[(int)e_col_Number.TEN_PHAP_NHAN].Visible = true;
             m_fg.Cols[0].Caption = "STT";
             m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
@@ -374,7 +374,6 @@ namespace BCTKApp
             load_cbo_phap_nhan();
             load_cbo_trung_tam();
 		}
-
         private void load_cbo_phap_nhan()
         {
             flag = false;
@@ -434,10 +433,16 @@ namespace BCTKApp
             CGridUtils.MakeSoTT(0, m_fg);
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
             , 0
-            , (int)e_col_Number.TEN_PHAP_NHAN // chỗ này là tên trường mà mình nhóm
-            , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình Count
+            , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình nhóm
+            , (int)e_col_Number.TEN_PHAP_NHAN // chỗ này là tên trường mà mình Count
             , "{0}"
             );
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
+               , 0
+               , (int)e_col_Number.TEN_PHONG_BAN
+               , (int)e_col_Number.TY_TRONG
+               , "{0}"
+               );
 			m_fg.Redraw = true;
             m_fg.Tree.Show(0);
 		}
@@ -453,8 +458,8 @@ namespace BCTKApp
             CGridUtils.MakeSoTT(0, m_fg);
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
             , 0
-            , (int)e_col_Number.TEN_PHAP_NHAN // chỗ này là tên trường mà mình nhóm
-            , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình Count
+            , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình nhóm
+            , (int)e_col_Number.TEN_PHAP_NHAN // chỗ này là tên trường mà mình Count
             , "{0}"
             );
             m_fg.Redraw = true;
@@ -633,8 +638,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
-
         private void f488_V_GD_PHONG_BAN_PHAP_NHAN_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -650,6 +653,8 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        #endregion
 
     }
 }
