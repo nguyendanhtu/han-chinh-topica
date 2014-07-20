@@ -49,6 +49,11 @@
             this.m_lbl_danh_sach_loi = new System.Windows.Forms.Label();
             this.m_lbox_ds_loi = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_tong_tien = new System.Windows.Forms.Label();
+            this.m_lbl_vat = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.m_lbl_tien = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -232,15 +237,15 @@
             this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(1316, 33);
+            this.m_lbl_header.Size = new System.Drawing.Size(1316, 36);
             this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "F820 - Nhập chi phí cuối tháng";
+            this.m_lbl_header.Text = "F820 - NHẬP CHI PHÍ CUỐI THÁNG";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_lbl_tong_so_bill
             // 
             this.m_lbl_tong_so_bill.AutoSize = true;
-            this.m_lbl_tong_so_bill.Location = new System.Drawing.Point(416, 8);
+            this.m_lbl_tong_so_bill.Location = new System.Drawing.Point(176, 66);
             this.m_lbl_tong_so_bill.Name = "m_lbl_tong_so_bill";
             this.m_lbl_tong_so_bill.Size = new System.Drawing.Size(16, 13);
             this.m_lbl_tong_so_bill.TabIndex = 9;
@@ -249,7 +254,7 @@
             // m_lbl_
             // 
             this.m_lbl_.AutoSize = true;
-            this.m_lbl_.Location = new System.Drawing.Point(315, 8);
+            this.m_lbl_.Location = new System.Drawing.Point(94, 66);
             this.m_lbl_.Name = "m_lbl_";
             this.m_lbl_.Size = new System.Drawing.Size(67, 13);
             this.m_lbl_.TabIndex = 8;
@@ -259,10 +264,10 @@
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 65);
+            this.m_fg.Location = new System.Drawing.Point(0, 125);
             this.m_fg.Name = "m_fg";
             this.m_fg.Rows.Count = 2;
-            this.m_fg.Size = new System.Drawing.Size(1316, 364);
+            this.m_fg.Size = new System.Drawing.Size(1316, 304);
             this.m_fg.Styles = ((C1.Win.C1FlexGrid.CellStyleCollection)(new C1.Win.C1FlexGrid.CellStyleCollection("")));
             this.m_fg.TabIndex = 1;
             this.m_fg.TabStop = false;
@@ -300,6 +305,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.m_lbl_tong_tien);
+            this.panel1.Controls.Add(this.m_lbl_vat);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel8);
@@ -311,13 +321,59 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1316, 29);
+            this.panel1.Size = new System.Drawing.Size(1316, 89);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1316, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "(Đơn vị tính: VNĐ)";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1108, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Tổng tiền";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1132, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "VAT";
+            // 
+            // m_lbl_tong_tien
+            // 
+            this.m_lbl_tong_tien.AutoSize = true;
+            this.m_lbl_tong_tien.Location = new System.Drawing.Point(1165, 18);
+            this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
+            this.m_lbl_tong_tien.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_tong_tien.TabIndex = 26;
+            this.m_lbl_tong_tien.Text = "...";
+            // 
+            // m_lbl_vat
+            // 
+            this.m_lbl_vat.AutoSize = true;
+            this.m_lbl_vat.Location = new System.Drawing.Point(1166, 42);
+            this.m_lbl_vat.Name = "m_lbl_vat";
+            this.m_lbl_vat.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_vat.TabIndex = 25;
+            this.m_lbl_vat.Text = "...";
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.m_lbl_tien);
-            this.panel5.Location = new System.Drawing.Point(1116, 3);
+            this.panel5.Location = new System.Drawing.Point(1116, 58);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(93, 23);
             this.panel5.TabIndex = 16;
@@ -335,7 +391,7 @@
             // panel9
             // 
             this.panel9.Controls.Add(this.m_lbl_cuoc);
-            this.panel9.Location = new System.Drawing.Point(701, 3);
+            this.panel9.Location = new System.Drawing.Point(701, 58);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(90, 23);
             this.panel9.TabIndex = 24;
@@ -353,7 +409,7 @@
             // panel8
             // 
             this.panel8.Controls.Add(this.m_lbl_phi);
-            this.panel8.Location = new System.Drawing.Point(811, 3);
+            this.panel8.Location = new System.Drawing.Point(811, 58);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(90, 23);
             this.panel8.TabIndex = 23;
@@ -371,7 +427,7 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.m_lbl_phi_xd);
-            this.panel7.Location = new System.Drawing.Point(916, 3);
+            this.panel7.Location = new System.Drawing.Point(916, 58);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(86, 23);
             this.panel7.TabIndex = 22;
@@ -389,7 +445,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.m_lbl_tienck);
-            this.panel6.Location = new System.Drawing.Point(1020, 0);
+            this.panel6.Location = new System.Drawing.Point(1020, 55);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(81, 23);
             this.panel6.TabIndex = 21;
@@ -409,11 +465,10 @@
             this.m_cmd_del.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_del.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_del.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_del.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_del.ImageIndex = 4;
             this.m_cmd_del.ImageList = this.ImageList;
-            this.m_cmd_del.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_del.Location = new System.Drawing.Point(0, 58);
             this.m_cmd_del.Name = "m_cmd_del";
             this.m_cmd_del.Size = new System.Drawing.Size(71, 29);
             this.m_cmd_del.TabIndex = 10;
@@ -485,5 +540,10 @@
         private System.Windows.Forms.Panel panel9;
         private SIS.Controls.Button.SiSButton m_cmd_so_sanh;
         private SIS.Controls.Button.SiSButton m_cmd_nhap_excel;
+        private System.Windows.Forms.Label m_lbl_vat;
+        private System.Windows.Forms.Label m_lbl_tong_tien;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
