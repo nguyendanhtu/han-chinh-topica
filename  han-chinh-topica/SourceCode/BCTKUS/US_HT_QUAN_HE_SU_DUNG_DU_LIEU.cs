@@ -125,6 +125,17 @@ namespace BCTKUS
             v_cstore.addNVarcharInputParam("@ID_PHONG_BAN", i_arr_dc_don_vi);
             v_cstore.ExecuteCommand(this);
         }
+
+        public string get_all_ma_phong_ban_by_id_user_group(decimal ip_dc_id_user_group)
+        {
+            string v_str_ma_phong_ban = "";
+            CStoredProc v_sp = new CStoredProc("pr_HT_QUAN_HE_SU_DUNG_DU_LIEU_get_all_ma_phong_ban_by_id_user_group");
+            v_sp.addDecimalInputParam("@ip_dc_id_user_group", ip_dc_id_user_group);
+            SqlParameter v_sql_para = v_sp.addNVarcharOutputParam("@ip_str_phong_ban", v_str_ma_phong_ban);
+            v_sp.ExecuteCommand(this);
+            v_str_ma_phong_ban = v_sql_para.Value.ToString();
+            return v_str_ma_phong_ban;
+        }
         #endregion
     }
 }
