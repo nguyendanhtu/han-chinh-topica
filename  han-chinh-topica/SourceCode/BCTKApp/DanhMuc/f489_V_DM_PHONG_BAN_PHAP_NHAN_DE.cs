@@ -132,10 +132,6 @@ namespace BCTKApp.DanhMuc {
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     m_us.dcID = m_id;
-                    if(!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue))) {
-                        BaseMessages.MsgBox_Error("Đã tồn tại trung tâm của pháp nhân này!");
-                        return;
-                    }
                     if(!check_100_phan_tram_phap_nhan(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue))) {
                         BaseMessages.MsgBox_Error("Tổng tỷ trọng các trung tâm trong pháp nhân đã quá 100%, đề nghị sửa lại!");
                         return;
@@ -149,19 +145,18 @@ namespace BCTKApp.DanhMuc {
             this.Close();
         }
         private bool check_trung_tam(decimal ip_id_trung_tam, decimal ip_id_phap_nhan) {
-            //US_V_DM_PHONG_BAN_PHAP_NHAN v_us = new US_V_DM_PHONG_BAN_PHAP_NHAN();
-            //DS_V_DM_PHONG_BAN_PHAP_NHAN v_ds = new DS_V_DM_PHONG_BAN_PHAP_NHAN();
-            //v_us.FillDataset(v_ds, "where id_phong_ban="+ip_id_trung_tam + "and id_phap_nhan ="+ip_id_phap_nhan);
-            //if (v_ds.Tables[0].Rows.Count != 0)
-            //    return false;
-            //else
+            US_V_DM_PHONG_BAN_PHAP_NHAN v_us = new US_V_DM_PHONG_BAN_PHAP_NHAN();
+            DS_V_DM_PHONG_BAN_PHAP_NHAN v_ds = new DS_V_DM_PHONG_BAN_PHAP_NHAN();
+            v_us.FillDataset(v_ds, "where id_phong_ban=" + ip_id_trung_tam + "and id_phap_nhan =" + ip_id_phap_nhan);
+            if (v_ds.Tables[0].Rows.Count != 0)
+                return false;
+            else
             return true;
         }
         private bool check_100_phan_tram_phap_nhan(decimal ip_id_phong_ban, decimal ip_id_phap_nhan) {
             DS_DM_PHONG_BAN_PHAP_NHAN v_ds = new DS_DM_PHONG_BAN_PHAP_NHAN();
             US_DM_PHONG_BAN_PHAP_NHAN v_us = new US_DM_PHONG_BAN_PHAP_NHAN();
-
-            v_us.FillDataset(v_ds, "where ID_PHAP_NHAN = " + ip_id_phap_nhan);
+            v_us.FillDataset(v_ds, "where ID_PHONG_BAN = " + ip_id_phong_ban);
             switch(m_e) {
                 case DataEntryFormMode.InsertDataState:
                     decimal tong_phan_tram_insert = CIPConvert.ToDecimal(m_txt_ty_trong.Text);
@@ -175,7 +170,7 @@ namespace BCTKApp.DanhMuc {
                 case DataEntryFormMode.UpdateDataState:
                     decimal tong_phan_tram_update = 0;
                     foreach(DataRow v_dr in v_ds.DM_PHONG_BAN_PHAP_NHAN.Rows) {
-                        if(CIPConvert.ToDecimal(v_dr["ID_PHONG_BAN"].ToString()) == ip_id_phong_ban)
+                        if(CIPConvert.ToDecimal(v_dr["ID_PHAP_NHAN"].ToString()) == ip_id_phap_nhan)
                             v_dr["TY_TRONG"] = m_txt_ty_trong.Text;
                         tong_phan_tram_update = tong_phan_tram_update + CIPConvert.ToDecimal(v_dr["TY_TRONG"].ToString());
                     }
