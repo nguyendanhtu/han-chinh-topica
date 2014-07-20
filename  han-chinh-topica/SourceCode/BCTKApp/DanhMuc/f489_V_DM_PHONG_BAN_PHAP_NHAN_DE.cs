@@ -74,7 +74,6 @@ namespace BCTKApp.DanhMuc {
             // 
             load_cbo_phap_nhan();
             load_cbo_trung_tam();
-            m_cbo_phap_nhan.Enabled = true;
         }
         private void m_us_obj_to_form() {
             m_cbo_phap_nhan.Text = m_us_v.strTEN_PHAP_NHAN;

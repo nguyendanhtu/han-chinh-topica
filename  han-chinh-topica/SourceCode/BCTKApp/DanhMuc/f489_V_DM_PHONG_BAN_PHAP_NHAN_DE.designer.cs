@@ -94,6 +94,7 @@
             // 
             // m_cbo_trung_tam
             // 
+            this.m_cbo_trung_tam.Enabled = false;
             this.m_cbo_trung_tam.FormattingEnabled = true;
             this.m_cbo_trung_tam.Location = new System.Drawing.Point(100, 99);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
