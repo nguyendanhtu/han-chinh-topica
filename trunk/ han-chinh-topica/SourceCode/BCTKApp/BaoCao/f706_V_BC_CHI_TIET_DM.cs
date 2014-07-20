@@ -168,7 +168,7 @@ namespace BCTKApp
             this.m_lbl_den_ngay.AutoSize = true;
             this.m_lbl_den_ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_den_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_den_ngay.Location = new System.Drawing.Point(660, 10);
+            this.m_lbl_den_ngay.Location = new System.Drawing.Point(703, 10);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
             this.m_lbl_den_ngay.Size = new System.Drawing.Size(81, 19);
             this.m_lbl_den_ngay.TabIndex = 27;
@@ -179,7 +179,7 @@ namespace BCTKApp
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(576, 10);
+            this.label2.Location = new System.Drawing.Point(619, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 19);
             this.label2.TabIndex = 28;
@@ -190,7 +190,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.AutoSize = true;
             this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(418, 10);
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(461, 10);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(81, 19);
             this.m_lbl_tu_ngay.TabIndex = 29;
@@ -212,7 +212,7 @@ namespace BCTKApp
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(342, 10);
+            this.label1.Location = new System.Drawing.Point(385, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 19);
             this.label1.TabIndex = 31;
@@ -227,7 +227,7 @@ namespace BCTKApp
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(1171, 42);
             this.m_lbl_header.TabIndex = 26;
-            this.m_lbl_header.Text = "CHI TIẾT CÁC ĐỊNH MỨC THEO PHÒNG BAN";
+            this.m_lbl_header.Text = "CHI TIẾT TỔNG ĐỊNH MỨC THEO TRUNG TÂM - BAN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_lbl_tong_dm
@@ -246,7 +246,7 @@ namespace BCTKApp
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(835, 46);
+            this.label3.Location = new System.Drawing.Point(830, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 19);
             this.label3.TabIndex = 33;
