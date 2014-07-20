@@ -216,5 +216,15 @@ public class US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDataset(DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN ip_v_ds, decimal ip_v_id_trung_tam, DateTime ip_v_dat_tu_ngay, DateTime ip_v_dat_den_ngay)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_TRA_CUU_TINH_HINH_CPN_WEB_Search");
+        v_store_proc.addDecimalInputParam("@ID_TRUNG_TAM", ip_v_id_trung_tam);
+        //v_store_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tu_khoa);
+        v_store_proc.addDatetimeInputParam("@TU_NGAY", ip_v_dat_tu_ngay);
+        v_store_proc.addDatetimeInputParam("@DEN_NGAY", ip_v_dat_den_ngay);
+        v_store_proc.fillDataSetByCommand(this, ip_v_ds);
+    }
+}
 }
