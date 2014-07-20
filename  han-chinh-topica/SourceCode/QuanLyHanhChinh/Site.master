@@ -41,7 +41,6 @@
                             <br />
                         </td>
                     </tr>
-                    </tr>
                 <tr>
                     <td align="center">
                         <asp:HyperLink ID="HyperLink1" runat="Server" NavigateUrl="#">
