@@ -48,6 +48,7 @@
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_danh_sach_bill = new SIS.Controls.Button.SiSButton();
             this.m_pnl_tieu_de.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -151,9 +152,9 @@
             this.m_lbl_.AutoSize = true;
             this.m_lbl_.Location = new System.Drawing.Point(929, 34);
             this.m_lbl_.Name = "m_lbl_";
-            this.m_lbl_.Size = new System.Drawing.Size(67, 13);
+            this.m_lbl_.Size = new System.Drawing.Size(62, 13);
             this.m_lbl_.TabIndex = 7;
-            this.m_lbl_.Text = "Tổng số bưu";
+            this.m_lbl_.Text = "Tổng số Bill";
             // 
             // m_cmd_del
             // 
@@ -275,6 +276,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.m_cmd_danh_sach_bill);
             this.panel2.Controls.Add(this.m_cmd_nhap_excel);
             this.panel2.Controls.Add(this.m_cmd_save);
             this.panel2.Controls.Add(this.m_cmd_exit);
@@ -300,6 +302,22 @@
             this.m_cmd_nhap_excel.TabIndex = 0;
             this.m_cmd_nhap_excel.Text = "Nhập từ Excel";
             this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_danh_sach_bill
+            // 
+            this.m_cmd_danh_sach_bill.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_danh_sach_bill.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_danh_sach_bill.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_danh_sach_bill.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_danh_sach_bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_danh_sach_bill.ImageIndex = 8;
+            this.m_cmd_danh_sach_bill.ImageList = this.ImageList;
+            this.m_cmd_danh_sach_bill.Location = new System.Drawing.Point(93, 0);
+            this.m_cmd_danh_sach_bill.Name = "m_cmd_danh_sach_bill";
+            this.m_cmd_danh_sach_bill.Size = new System.Drawing.Size(117, 31);
+            this.m_cmd_danh_sach_bill.TabIndex = 3;
+            this.m_cmd_danh_sach_bill.Text = "Danh sách Bill";
+            this.m_cmd_danh_sach_bill.UseVisualStyleBackColor = true;
             // 
             // f810_DANG_KY_GUI_THEO_BUU
             // 
@@ -341,6 +359,7 @@
         private System.Windows.Forms.Label m_lbl_;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label m_lbl_loading;
+        private SIS.Controls.Button.SiSButton m_cmd_danh_sach_bill;
 
     }
 }
