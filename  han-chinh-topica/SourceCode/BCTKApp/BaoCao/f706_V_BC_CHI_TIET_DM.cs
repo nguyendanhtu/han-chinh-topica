@@ -276,7 +276,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f706_V_BC_CHI_TIET_DM";
-            this.Text = "f706_V_BC_CHI_TIET_DM";
+            this.Text = "F706 - Báo cáo chi tiết định mức";
             this.Load += new System.EventHandler(this.f706_V_BC_CHI_TIET_DM_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_fg_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
@@ -332,15 +332,16 @@ namespace BCTKApp
         #region Data Structure
         private enum e_col_Number
         {
-            TEN_THONG_KE=1
-            ,CO_SO_DINH_MUC= 2
-            ,LOAI_THOI_GIAN = 3
-            ,TU_NGAY = 4
-            ,DEN_NGAY = 5
-            ,GIA_TRI_THONG_KE = 6
-            ,DON_VI_TK = 7
-            ,DON_GIA = 8
-            ,TONG_TIEN_DM=9
+            TONG_TIEN_DM=1
+            ,DON_GIA = 2
+            ,GIA_TRI_THONG_KE = 3
+            ,DON_VI_TK = 4
+            ,CO_SO_DINH_MUC = 5
+                ,
+            TEN_THONG_KE = 6
+            ,LOAI_THOI_GIAN = 7
+            ,TU_NGAY = 8
+            ,DEN_NGAY = 9
             ,TEN_CO_SO_TINH_DM=10
 
         }
@@ -365,10 +366,22 @@ namespace BCTKApp
             //m_fg.Tree.Column = (int)e_col_Number.TEN_THUOC;
             //m_fg.Tree.Column = (int)e_col_Number.LOAI_TK;
             //m_fg.Cols[(int)e_col_Number.LOAI_TK].Visible = false;
-            m_fg.Cols[0].Caption = "STT";
+            
+            set_caption_of_grid();
             m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.Complete;
             set_define_events();
             this.KeyPreview = true;
+        }
+        private void set_caption_of_grid(){
+            m_fg.Rows.Fixed = 2;
+            m_fg.Cols[0].Caption = "STT";
+            m_fg[1,(int)e_col_Number.TONG_TIEN_DM] = "(1)=(2)*(3)";
+            for (int v_i_cur_col = (int)e_col_Number.DON_GIA; v_i_cur_col < m_fg.Cols.Count;v_i_cur_col++ ){
+                m_fg[1,v_i_cur_col] = "("+v_i_cur_col.ToString()+")";
+            }
+
+                
+            
         }
         private void set_initial_form_load()
         {
