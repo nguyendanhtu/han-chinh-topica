@@ -1,6 +1,5 @@
 ﻿
-#footer
-{
+#footer {
     bottom: 0;
     font-size: 10pt;
     height: 42px;
@@ -8,25 +7,25 @@
     width: 100%;
     background-color: #810913;
 }
-.fbar
-{
+
+.fbar {
     font-size: small;
     display: block;
 }
-.fbar
-{
+
+.fbar {
     background: #810913;
     background: #f2f2f2;
     border-top: 1px solid #e4e4e4;
     line-height: 40px;
     min-width: 980px;
 }
-user agent stylesheetdiv
-{
+
+user agent stylesheetdiv {
     display: block;
 }
-.cssGoogleButton
-{
+
+.cssGoogleButton {
     background: -webkit-linear-gradient(top,#810913,#810913);
     border: 1px solid #dcdcdc;
     border-color: rgba(0,0,0,0.1);
@@ -50,90 +49,90 @@ user agent stylesheetdiv
     text-indent: 0px;
     text-shadow: none;
 }
-.cssGoogleButton:hover
-{
-    border-color: #c6c6c6;
-    color: White !important;
-    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.15);
-    box-shadow: 0 1px 0 rgba(0,0,0,.15);
-    background: #810913;
-    background: -webkit-linear-gradient(top,#810913,#810913);
-    background: linear-gradient(top,#810913,#810913);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f8f8f8,endColorstr=#f1f1f1,GradientType=1);
-}
-body
-{
+
+    .cssGoogleButton:hover {
+        border-color: #c6c6c6;
+        color: White !important;
+        -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.15);
+        box-shadow: 0 1px 0 rgba(0,0,0,.15);
+        background: #810913;
+        background: -webkit-linear-gradient(top,#810913,#810913);
+        background: linear-gradient(top,#810913,#810913);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f8f8f8,endColorstr=#f1f1f1,GradientType=1);
+    }
+
+body {
     font-family: Arial, Times New Roman, Tahoma;
     font-size: 12px;
 }
-.cssTable
-{
+
+.cssTable {
     border: #C9BDAB 1px solid;
     background-color: White;
 }
-.cssLogout
-{
+
+.cssLogout {
     background-color: Transparent;
     border: #C9BDAB 0px solid;
     cursor: hand;
 }
-.cssButtonViewNews
-{
+
+.cssButtonViewNews {
     background-image: url(../images/Button/Views.gif);
     width: 21px;
     border: #C9BDAB 0px solid;
 }
-.cssContentViewNews
-{
+
+.cssContentViewNews {
     border: #5d5d5d 0px solid;
     background-color: Transparent;
     color: InfoBackground;
 }
-.cssBGLanguage1
-{
+
+.cssBGLanguage1 {
     background-image: url(../images/BGLanguage/Top1.gif);
 }
-.cssBGLanguage2
-{
+
+.cssBGLanguage2 {
     background-image: url(../images/BGLanguage/Top2.gif);
 }
-.cssBGLanguage3
-{
+
+.cssBGLanguage3 {
     background-image: url(../images/BGLanguage/Top3.gif);
 }
-.cssBGLanguage4
-{
+
+.cssBGLanguage4 {
     background-image: url(../images/BGLanguage/Logout.gif);
 }
-.cssBGMenu
-{
+
+.cssBGMenu {
     background-image: url(../images/MenuTop/BGMenuTop.jpg);
 }
-.cssManField
-{
+
+.cssManField {
     /*color: #143fbc;*/
-    color:#810913;
+    color: #810913;
     font-family: Arial, Tahoma, Times New Roman;
     font-size: 12px;
     font-weight: bold;
 }
-.cssLabelBold
-{
+
+.cssLabelBold {
     color: #000000;
     font-family: Arial, Tahoma, Times New Roman;
     font-size: 13px;
     font-weight: normal;
     font-weight: bold;
 }
-.cssLabel
-{
+
+.cssLabel {
     color: #000000;
     font-family: Arial, Tahoma, Times New Roman;
     font-size: 12px;
     font-weight: normal;
 }
-.cssButton
-{
+
+.cssButton {
     border: #5d5d5d 0px solid;
     color: Black; /*#df4017;*/
     font-family: Tahoma, Arial, Times New Roman;
@@ -144,15 +143,15 @@ body
     background-image: url('../images/Button/BGButton.jpg');
     cursor: hand;
 }
-.cssSearchItem
-{
+
+.cssSearchItem {
     background-color: transparent;
     height: 40px;
     width: 40px;
     background-image: url('../Images/search-item-in-textbox.png');
 }
-.cssHyperLinkButton
-{
+
+.cssHyperLinkButton {
     border: #5d5d5d 0px solid;
     background-image: url('../images/Button/BGButton.jpg');
     color: Black;
@@ -164,8 +163,8 @@ body
     padding-top: 3px;
     vertical-align: bottom;
 }
-.cssDorpdownlist
-{
+
+.cssDorpdownlist {
     width: 120px;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -182,8 +181,8 @@ body
     background-position: right;
     background-size: contain;
 }
-.cssDorpdownlistDefault
-{
+
+.cssDorpdownlistDefault {
     width: 120px;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -202,22 +201,22 @@ body
     background-position: right;
     background-size: contain;
 }
-select > option:hover
-{
+
+select > option:hover {
     background: #810913;
     color: White;
     cursor: pointer;
 }
-.csscurrency
-{
+
+.csscurrency {
     text-align: right;
 }
-.cssNumber
-{
+
+.cssNumber {
     text-align: right;
 }
-.cssTextBox
-{
+
+.cssTextBox {
     border: 1px solid #810913;
     background-color: #fff;
     font-family: Tahoma, Arial, Times New Roman;
@@ -227,8 +226,19 @@ select > option:hover
     padding-bottom: 2px;
     margin-top: 0px;
 }
-.cssTextBoxDefault
-{
+
+.cssTextBoxGrid {
+    border: 1px solid rgba(0,0,0,.15);
+    border-bottom:0px;
+    background-color: White;
+    font-family: Tahoma, Arial, Times New Roman;
+    font-size: 12px;
+    padding: 0px;
+    margin-top: 0px;
+    width: 100%;
+}
+
+.cssTextBoxDefault {
     border: 1px solid tranparent;
     background-color: tranparent;
     font-family: Tahoma, Arial, Times New Roman;
@@ -238,21 +248,20 @@ select > option:hover
     padding-bottom: 2px;
     margin-top: 0px;
 }
-input[type=text]:focus, textarea:focus
-{
+
+input[type=text]:focus, textarea:focus {
     box-shadow: 0 0 5px #810913;
     border: 1px solid #810803;
 }
-.cssButtonGridDetail
-{
+
+.cssButtonGridDetail {
     background-image: url('../Images/Button/detail.png');
     width: 16px;
     height: 16px;
     border: #C9BDAB 0px solid;
 }
 
-.cssTextBoxHover
-{
+.cssTextBoxHover {
     border: 1px solid #bbb;
     border-bottom-color: #aaa;
     border-right-color: #aaa;
@@ -263,25 +272,24 @@ input[type=text]:focus, textarea:focus
     padding-top: 2px;
     padding-bottom: 2px;
 }
-.cssLanguage
-{
+
+.cssLanguage {
     color: #FFFFFF;
     font-family: Arial, Tahoma, Times New Roman;
     font-size: 12px;
     font-weight: normal;
     text-decoration: none;
 }
-.cssLanguage:Hover
-{
-    color: #FFFFFF;
-    font-family: Arial, Tahoma, Times New Roman;
-    font-size: 12px;
-    font-weight: normal;
-    text-decoration: none;
-}
+
+    .cssLanguage:Hover {
+        color: #FFFFFF;
+        font-family: Arial, Tahoma, Times New Roman;
+        font-size: 12px;
+        font-weight: normal;
+        text-decoration: none;
+    }
 /*PageTitle*/
-.cssPageTitle
-{
+.cssPageTitle {
     padding-left: 9px;
     padding-bottom: 4px;
     padding-top: 7px;
@@ -294,15 +302,14 @@ input[type=text]:focus, textarea:focus
     text-align: left;
     display: inline-block;
 }
-.cssPageTitleBG
-{
+
+.cssPageTitleBG {
     border: solid 1px #b4b4b4;
     background-color: #810913;
     height: 26px;
 }
 
-.expand-collapse-text
-{
+.expand-collapse-text {
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -311,15 +318,13 @@ input[type=text]:focus, textarea:focus
     margin: 4px 4px 4px 0;
 }
 
-.initial-expand
-{
+.initial-expand {
     background-image: url('../Images/Button/Arrowhead-Down-01.png');
 }
 /*End PageTitle*/
 
 /*GridView*/
-.cssGridLink
-{
+.cssGridLink {
     color: #000000;
     font-family: Arial, Tahoma, Times New Roman;
     font-size: 12px;
@@ -327,17 +332,17 @@ input[type=text]:focus, textarea:focus
     text-decoration: none;
     cursor: hand;
 }
-.cssGridLink:hover
-{
-    color: #000000;
-    font-family: Arial, Tahoma, Times New Roman;
-    font-size: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: hand;
-}
-.cssGridHeader
-{
+
+    .cssGridLink:hover {
+        color: #000000;
+        font-family: Arial, Tahoma, Times New Roman;
+        font-size: 12px;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: hand;
+    }
+
+.cssGridHeader {
     font-family: Tahoma, Arial, Times New Roman;
     font-size: 12px;
     font-weight: bold;
@@ -347,8 +352,8 @@ input[type=text]:focus, textarea:focus
     height: 29px;
     vertical-align: middle;
 }
-.cssGridCellText
-{
+
+.cssGridCellText {
     font-family: Tahoma, Arial, Times New Roman;
     font-size: 12px;
     color: #000040;
@@ -356,18 +361,18 @@ input[type=text]:focus, textarea:focus
     padding-left: 4px;
     cursor: hand;
 }
-.cssGridCellText:Hover
-{
-    font-family: Tahoma, Arial, Times New Roman;
-    font-size: 12px;
-    color: #000040;
-    font-weight: bold;
-    text-decoration: none;
-    padding-left: 4px;
-    cursor: hand;
-}
-.cssGridCell
-{
+
+    .cssGridCellText:Hover {
+        font-family: Tahoma, Arial, Times New Roman;
+        font-size: 12px;
+        color: #000040;
+        font-weight: bold;
+        text-decoration: none;
+        padding-left: 4px;
+        cursor: hand;
+    }
+
+.cssGridCell {
     font-family: Tahoma, Arial, Times New Roman;
     font-size: 12px;
     background-color: #ffffff;
@@ -375,8 +380,8 @@ input[type=text]:focus, textarea:focus
     height: 24px;
     cursor: hand;
 }
-.cssGridAlterCell
-{
+
+.cssGridAlterCell {
     font-family: Tahoma, Arial, Times New Roman;
     font-size: 12px;
     background-color: #E8EEF7;
@@ -384,8 +389,8 @@ input[type=text]:focus, textarea:focus
     height: 24px;
     cursor: Hand;
 }
-.cssGridEdit
-{
+
+.cssGridEdit {
     background-color: #CCCCCC;
     font-family: Tahoma, Arial, Times New Roman;
     font-size: 12px;
@@ -393,8 +398,8 @@ input[type=text]:focus, textarea:focus
     height: 24px;
     cursor: Hand;
 }
-.cssSelectedRow
-{
+
+.cssSelectedRow {
     font-family: Tahoma, Arial, Times New Roman;
     font-size: 12px;
     background-color: #C5BBAF;
@@ -402,8 +407,8 @@ input[type=text]:focus, textarea:focus
     height: 24px;
     cursor: hand;
 }
-.cssGridPager
-{
+
+.cssGridPager {
     background-image: url(../images/Grid/grid_footer_bg.gif);
     font-family: Arial, Tahoma;
     font-size: 12px;
@@ -411,26 +416,26 @@ input[type=text]:focus, textarea:focus
     color: #000000;
     height: 29px;
 }
-.cssGridPager:Hover
-{
-    background-image: url(../images/Grid/grid_footer_bg.gif);
-    font-family: Arial, Tahoma;
-    font-size: 12px;
-    font-weight: bold;
-    color: #000000;
-    height: 29px;
-    cursor: hand;
-}
-.cssGridPager:Active
-{
-    background-image: url(../images/Grid/grid_footer_bg.gif);
-    font-family: Arial, Tahoma;
-    font-size: 12px;
-    font-weight: bold;
-    color: #000000;
-    height: 29px;
-    cursor: hand;
-}
+
+    .cssGridPager:Hover {
+        background-image: url(../images/Grid/grid_footer_bg.gif);
+        font-family: Arial, Tahoma;
+        font-size: 12px;
+        font-weight: bold;
+        color: #000000;
+        height: 29px;
+        cursor: hand;
+    }
+
+    .cssGridPager:Active {
+        background-image: url(../images/Grid/grid_footer_bg.gif);
+        font-family: Arial, Tahoma;
+        font-size: 12px;
+        font-weight: bold;
+        color: #000000;
+        height: 29px;
+        cursor: hand;
+    }
 /*
 .cssGrid
 {
@@ -472,8 +477,7 @@ input[type=text]:focus, textarea:focus
     background-color: #ffeec2;
     color: #000080;
 }*/
-.GridViewStyle
-{
+.GridViewStyle {
     border-right: 1px solid #810913;
     border-bottom: 1px solid #A7A6AA;
     border-left: 1px solid white;
@@ -481,97 +485,84 @@ input[type=text]:focus, textarea:focus
     padding: 4px;
 }
 
-.GridViewStyle a
-{
-    color: #5208c1;
-}
-.GridViewStyle tr:first-child td:last-child
-{
-    border-right: 1px solid #810913;
-}
+    .GridViewStyle a {
+        color: #5208c1;
+    }
 
-.GridViewStyle tr td:last-child
-{
-    border-right: 1px solid white;
-}
-.GridViewStyle tr:last-child td:last-child
-{
-    border-right: 1px solid tranparent;
-}
-/*.GridViewStyle tr:nth-child(even) td
+    .GridViewStyle tr:first-child td:last-child {
+        border-right: 1px solid #810913;
+    }
+
+    .GridViewStyle tr td:last-child {
+        border-right: 1px solid white;
+    }
+
+    .GridViewStyle tr:last-child td:last-child {
+        border-right: 1px solid tranparent;
+    }
+    /*.GridViewStyle tr:nth-child(even) td
 {
     background-color:#e6e7e8;
     color:#333333;
 }*/
-.GridViewStyle tr:nth-last-child() td
-{
-    background: #810913;
-}
+    .GridViewStyle tr:nth-last-child() td {
+        background: #810913;
+    }
 
-.GridViewHeaderStyle th
-{
+.GridViewHeaderStyle th {
     border-left: 1px solid #EBE9ED;
     border-right: 1px solid #EBE9ED;
 }
 
-.GridViewHeaderStyle
-{
+.GridViewHeaderStyle {
     background-color: #810913;
     font-weight: bold;
     color: White;
 }
 
-.GridViewFooterStyle
-{
+.GridViewFooterStyle {
     background-color: #5D7B9D;
     font-weight: bold;
     color: White;
 }
 
-.GridViewRowStyle
-{
+.GridViewRowStyle {
     background-color: #F7F6F3;
     color: #333333;
 }
 
-.GridViewAlternatingRowStyle
-{
+.GridViewAlternatingRowStyle {
     background-color: #FFFFFF;
     color: #333333;
 }
 
-.GridViewRowStyle td, .GridViewAlternatingRowStyle td
-{
-    border: 1px solid #;
-}
+    .GridViewRowStyle td, .GridViewAlternatingRowStyle td {
+        border: 1px solid #;
+    }
 
-.GridViewSelectedRowStyle
-{
+.GridViewSelectedRowStyle {
     background-color: #e2b075 !important;
     font-weight: bold;
     color: #000080;
 }
-.GridViewPagerStyle
-{
+
+.GridViewPagerStyle {
     background-color: #810913;
     color: White;
     font-weight: bold;
 }
 
-.GridViewStyle tr:first-child td a, tr:last-child td a
-{
+.GridViewStyle tr:first-child td a, tr:last-child td a {
     color: #c9c2d3;
     font-weight: normal;
 }
 
-.GridViewPagerStyle table /* to center the paging links*/
-{
+.GridViewPagerStyle table /* to center the paging links*/ {
     margin: 0 auto 0 auto;
 }
 /*End GridView*/
 
-.cssView1280
-{
+.cssView1280 {
     position: absolute;
     left: 1078px;
     top: 0px;
@@ -579,8 +570,8 @@ input[type=text]:focus, textarea:focus
     border: 0px solid #d2d2d2;
     background-color: Transparent;
 }
-.cssView1024
-{
+
+.cssView1024 {
     position: absolute;
     left: 800px;
     top: 0px;
@@ -588,8 +579,8 @@ input[type=text]:focus, textarea:focus
     border: 0px solid #d2d2d2;
     background-color: Transparent;
 }
-.cssView800
-{
+
+.cssView800 {
     position: absolute;
     left: 800px;
     top: 0px;
@@ -599,8 +590,7 @@ input[type=text]:focus, textarea:focus
 }
 
 /*Form News*/
-.cssHeadingNews
-{
+.cssHeadingNews {
     background-image: url(../images/News/grid_header_bg.gif);
     background-color: #FFFFFF;
     border: 0px;
@@ -608,15 +598,15 @@ input[type=text]:focus, textarea:focus
     padding-bottom: 4px;
     padding-right: 4px;
 }
-.cssContentNews
-{
+
+.cssContentNews {
     background-color: #FFFFFF;
     border: 0px;
     border-bottom: 1px solid #D5D5D5;
     border-right: 1px solid #D5D5D5;
 }
-.cssHeadingNewsTitle
-{
+
+.cssHeadingNewsTitle {
     padding-left: 9px;
     font-weight: bold;
     font-size: 12px;
@@ -627,8 +617,7 @@ input[type=text]:focus, textarea:focus
     text-align: left;
 }
 /* TreeView*/
-.HeadingTree
-{
+.HeadingTree {
     background: url(../images/heading_bg.gif);
     background-color: #4B4B4B;
     color: #FFFFFF;
@@ -639,8 +628,8 @@ input[type=text]:focus, textarea:focus
     padding: 5px;
     cursor: default;
 }
-.HeadingTree1
-{
+
+.HeadingTree1 {
     background: url(../images/heading_bg.gif);
     background-color: #4B4B4B;
     color: #FFFFFF;
@@ -650,8 +639,8 @@ input[type=text]:focus, textarea:focus
     font-weight: bold;
     cursor: default;
 }
-.TreeView
-{
+
+.TreeView {
     background-color: #ffffff;
     border: 1px solid #ACACAC;
     border-top-width: 0px;
@@ -660,8 +649,7 @@ input[type=text]:focus, textarea:focus
     cursor: default;
 }
 
-.TreeNode
-{
+.TreeNode {
     font-family: tahoma;
     font-size: 11px;
     padding-top: 2px;
@@ -670,8 +658,7 @@ input[type=text]:focus, textarea:focus
     padding-right: 3px;
 }
 
-.GrayedTreeNode
-{
+.GrayedTreeNode {
     font-family: tahoma;
     font-size: 11px;
     padding-top: 2px;
@@ -682,8 +669,7 @@ input[type=text]:focus, textarea:focus
     cursor: default;
 }
 
-.HoverTreeNode
-{
+.HoverTreeNode {
     font-family: tahoma;
     font-size: 11px;
     text-decoration: underline;
@@ -694,8 +680,7 @@ input[type=text]:focus, textarea:focus
     cursor: hand;
 }
 
-.SelectedTreeNode
-{
+.SelectedTreeNode {
     background-image: url(images/node_bg.gif);
     font-family: tahoma;
     font-size: 11px;
@@ -707,8 +692,7 @@ input[type=text]:focus, textarea:focus
     cursor: hand;
 }
 
-.HoverPopupTreeNode
-{
+.HoverPopupTreeNode {
     background-color: White;
     font-family: tahoma;
     font-size: 11px;
@@ -722,8 +706,7 @@ input[type=text]:focus, textarea:focus
     cursor: hand;
 }
 
-.HoverPopup
-{
+.HoverPopup {
     background-image: url(images/node_bg.gif);
     filter: progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=2);
     font-family: tahoma;
@@ -736,68 +719,65 @@ input[type=text]:focus, textarea:focus
     cursor: default;
 }
 
-.NodeEdit
-{
+.NodeEdit {
     border: 1px gray solid;
     font-family: tahoma;
     font-size: 11px;
 }
 /*End TreeView*/
-.cssHyperLinkIcon
-{
+.cssHyperLinkIcon {
     border: #5d5d5d 0px solid;
     cursor: hand;
 }
 
 
 /*Report*/
-.cssTitleReport
-{
+.cssTitleReport {
     font-family: tahoma;
     font-size: 11px;
     font-weight: bold;
     border: 1px #000000 solid;
     text-align: left;
 }
-.cssTitleReport2
-{
+
+.cssTitleReport2 {
     font-family: tahoma;
     font-size: 14px;
     font-weight: bold;
 }
-.cssTableReport
-{
+
+.cssTableReport {
     border: 1px #000000 solid;
 }
-.cssLabelTitle
-{
+
+.cssLabelTitle {
     font-family: tahoma;
     font-size: 12px;
     font-weight: bold;
 }
-.cssPercentReport
-{
+
+.cssPercentReport {
     color: #0000FF;
     font-family: tahoma;
     font-size: 11px;
     text-decoration: none;
     border: 1px #000000 solid;
 }
-.cssTitleReport4s
-{
+
+.cssTitleReport4s {
     font-family: Verdana;
     font-size: 11px;
     font-weight: bold;
     color: #000000;
 }
-.cssReport4sTitle1
-{
+
+.cssReport4sTitle1 {
     font-family: tahoma;
     font-size: 12px;
     font-weight: bold;
 }
-.cssReport23Title1
-{
+
+.cssReport23Title1 {
     color: #FFFFFF;
     background-color: #800000;
     font-family: tahoma,Arial,Times New Roman;
@@ -805,14 +785,14 @@ input[type=text]:focus, textarea:focus
     font-weight: bold;
     border: 1px #000000 solid;
 }
-.cssReport4sTitle2
-{
+
+.cssReport4sTitle2 {
     font-family: tahoma;
     font-size: 11px;
     font-weight: bold;
 }
-.cssLabelReport
-{
+
+.cssLabelReport {
     color: #000000;
     font-family: tahoma,Arial,Times New Roman;
     font-size: 18px;
@@ -820,8 +800,7 @@ input[type=text]:focus, textarea:focus
 }
 /* Phần load dữ liệu */
 
-.cssLoadWapper
-{
+.cssLoadWapper {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -830,20 +809,18 @@ input[type=text]:focus, textarea:focus
     left: 0;
 }
 
-.cssLoadWapper:after
-{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.3;
-    background-color: Gray;
-    width: 100%;
-    height: 100%;
-}
+    .cssLoadWapper:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+        background-color: Gray;
+        width: 100%;
+        height: 100%;
+    }
 
-.cssLoadContent
-{
+.cssLoadContent {
     margin: 250px auto 0 auto;
     width: 355px;
     height: 65px;
@@ -854,8 +831,7 @@ input[type=text]:focus, textarea:focus
     position: relative;
 }
 
-.cssLoadContent2
-{
+.cssLoadContent2 {
     margin: 250px auto 0 auto;
     padding: 10px 0 10px 0;
     width: 80%;
@@ -868,13 +844,11 @@ input[type=text]:focus, textarea:focus
     border-radius: 12px;
 }
 
-.cssLoadContent img
-{
+.cssLoadContent img {
     margin: 10px 5px 0 5px;
 }
 
-.cssLoadContent p
-{
+.cssLoadContent p {
     margin: 5px 5px 0 5px;
     text-align: center;
 }

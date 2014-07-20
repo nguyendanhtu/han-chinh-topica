@@ -60,7 +60,21 @@ Public Class CExcelReport
         v_strRandomName = m_strOutputPath & "~" & CType(Rnd() * 1000000000000, Int64) & ".xls"
         Return v_strRandomName
     End Function
-
+    Public Function GetCountRow() As Integer
+        Try
+            m_objExcelApp = New Excel.Application
+            Dim oldCI As System.Globalization.CultureInfo = _
+            System.Threading.Thread.CurrentThread.CurrentCulture
+            System.Threading.Thread.CurrentThread.CurrentCulture = _
+                        New System.Globalization.CultureInfo("en-US")
+            m_objExcelApp.Workbooks.Open(m_strTemplateFileNameWithPath)
+            m_objExcelApp.Workbooks(1).Worksheets.Select(1)
+            m_objExcelWorksheet = CType(m_objExcelApp.Workbooks(1).Worksheets(1), Excel.Worksheet)
+            Return m_objExcelWorksheet.UsedRange.Rows.Count
+        Catch v_e As Exception
+            Throw v_e
+        End Try
+    End Function
     Public Sub Export2Grid(ByVal i_fg As C1FlexGrid _
                             , ByVal i_iSheetStartRow As Integer _
                             , ByVal i_iSheetCol As Integer _
