@@ -30,6 +30,7 @@ namespace BCTKApp
         {
             set_define_event();
             //m_rib_bar_qldm_thong_ke.Visible = true;
+            m_cmd_bc_chi_phi_theo_phap_nhan.Visible = false;
         }
         private void set_define_event()
         {
