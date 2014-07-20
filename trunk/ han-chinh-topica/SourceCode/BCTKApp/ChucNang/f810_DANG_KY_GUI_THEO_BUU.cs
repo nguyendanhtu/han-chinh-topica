@@ -21,7 +21,6 @@ namespace BCTKApp.ChucNang {
             InitializeComponent();
             format_control();
             set_initial_form_load();
-
         }
 
         #region Public Interface
@@ -77,54 +76,6 @@ namespace BCTKApp.ChucNang {
             set_define_events();
             this.KeyPreview = true;
         }
-        private void set_initial_form_load() {
-            load_cbo_phong_ban_2_grid();
-            load_cbo_loai_thu_2_grid();
-            load_ten_phong_ban_tuong_ung_2_grid();
-        }
-        private Hashtable get_mapping_col_excel_grid() {
-            Hashtable v_hst = new Hashtable();
-            v_hst.Add((int)e_col_Number.SO_BILL, (int)e_col_Excel.SO_BILL);
-            v_hst.Add((int)e_col_Number.MA_PHONG_BAN, (int)e_col_Excel.MA_PHONG_BAN);
-            v_hst.Add((int)e_col_Number.TEN_PHONG_BAN, (int)e_col_Excel.TEN_PHONG_BAN);
-            v_hst.Add((int)e_col_Number.NGUOI_GUI, (int)e_col_Excel.NGUOI_GUI);
-            v_hst.Add((int)e_col_Number.NGUOI_NHAN, (int)e_col_Excel.NGUOI_NHAN);
-            v_hst.Add((int)e_col_Number.NOI_NHAN, (int)e_col_Excel.NOI_NHAN);
-            v_hst.Add((int)e_col_Number.LOAI_THU, (int)e_col_Excel.LOAI_THU);
-            v_hst.Add((int)e_col_Number.NOI_DUNG, (int)e_col_Excel.NOI_DUNG);
-            v_hst.Add((int)e_col_Number.GHI_CHU, (int)e_col_Excel.GHI_CHU);
-
-            return v_hst;
-        }
-
-        private void load_cbo_loai_thu_2_grid() {
-            Hashtable v_hst = new Hashtable();
-            v_hst.Add("Trong nước", "Trong nước");
-            v_hst.Add("Ngoài nước", "Ngoài nước");
-
-            m_fg.Cols[(int)e_col_Number.LOAI_THU].DataMap = v_hst;
-        }
-
-        private void load_ten_phong_ban_tuong_ung_2_grid() {
-            m_fg.Cols[(int)e_col_Number.TEN_PHONG_BAN].DataMap = get_mapping_col_ten_phong_ban();
-        }
-        private IDictionary get_mapping_col_ten_phong_ban() {
-            Hashtable v_hst = new Hashtable();
-
-            US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
-            DS_DM_PHONG_BAN v_ds_dm_phong_ban = new DS_DM_PHONG_BAN();
-
-            v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban);
-
-
-            foreach(DataRow v_dr in v_ds_dm_phong_ban.DM_PHONG_BAN.Rows) {
-                v_hst.Add(v_dr[DM_PHONG_BAN.ID], v_dr[DM_PHONG_BAN.TEN_PHONG_BAN]);
-            }
-            return v_hst;
-        }
-        private void load_cbo_phong_ban_2_grid() {
-            m_fg.Cols[(int)e_col_Number.MA_PHONG_BAN].DataMap = get_mapping_col_ma_phong_ban();
-        }
 
         private System.Collections.IDictionary get_mapping_col_ma_phong_ban() {
             Hashtable v_hst = new Hashtable();
@@ -140,40 +91,100 @@ namespace BCTKApp.ChucNang {
             }
             return v_hst;
         }
-        private bool check_validate_is_ok() {
-            if(!check_validate_grid_is_ok())
-                return false;
-            return true;
+        private void load_cbo_phong_ban_2_grid() {
+            m_fg.Cols[(int)e_col_Number.MA_PHONG_BAN].DataMap = get_mapping_col_ma_phong_ban();
         }
-        private bool is_exist_bill_in_db(string ip_so_bill) {
-            US_DM_BILL v_us_dm_bill = new US_DM_BILL();
-            if(v_us_dm_bill.is_existed_bill(v_us_dm_bill, ip_so_bill)) {
-                return true;
-            }
-            return false;
-        }
-        private void set_color_ma_bill_da_ton_tai() {
-            //C1.Win.C1FlexGrid.CellStyle v_cell_style_notOK_in_data = this.m_fg.Styles.Add("RowColorNotOk");
-            //v_cell_style_notOK_in_data.BackColor = Color.Red;
-            //C1.Win.C1FlexGrid.CellStyle v_cell_style_OK_in_data = this.m_fg.Styles.Add("RowColorOk");
-            //v_cell_style_OK_in_data.BackColor = System.Drawing.SystemColors.Window;
-            //int flag = 0;
-            //for(int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count - 1; v_i_cur_row++) {
-            //    if(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL] != null && m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL].ToString() != "") {
-            //        if(is_exist_bill_in_db(CIPConvert.ToStr(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL]))) {
-            //            m_fg.SetCellStyle(v_i_cur_row, (int)e_col_Number.SO_BILL, v_cell_style_notOK_in_data);
-            //            flag = 1;
-            //        }
-            //        else {
-            //            m_fg.SetCellStyle(v_i_cur_row, (int)e_col_Number.SO_BILL, v_cell_style_OK_in_data);
-            //        }
-            //    }
-            //}
-            //if(flag == 0) v_cell_style_notOK_in_data.Clear();
-        }
-        private bool check_validate_grid_is_ok() {
-            //Check xem số bill đã tồn tại trong cơ sở dữ liệu hay chưa
 
+        private IDictionary get_mapping_col_ten_phong_ban() {
+            Hashtable v_hst = new Hashtable();
+
+            US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds_dm_phong_ban = new DS_DM_PHONG_BAN();
+
+            v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban);
+
+
+            foreach(DataRow v_dr in v_ds_dm_phong_ban.DM_PHONG_BAN.Rows) {
+                v_hst.Add(v_dr[DM_PHONG_BAN.ID], v_dr[DM_PHONG_BAN.TEN_PHONG_BAN]);
+            }
+            return v_hst;
+        }
+        private void load_ten_phong_ban_tuong_ung_2_grid() {
+            m_fg.Cols[(int)e_col_Number.TEN_PHONG_BAN].DataMap = get_mapping_col_ten_phong_ban();
+        }
+
+        private void load_cbo_loai_thu_2_grid() {
+            Hashtable v_hst = new Hashtable();
+            v_hst.Add("Trong nước", "Trong nước");
+            v_hst.Add("Ngoài nước", "Ngoài nước");
+
+            m_fg.Cols[(int)e_col_Number.LOAI_THU].DataMap = v_hst;
+        }
+
+        private void set_initial_form_load() {
+            load_cbo_phong_ban_2_grid();
+            load_cbo_loai_thu_2_grid();
+            load_ten_phong_ban_tuong_ung_2_grid();
+        }
+
+        private Hashtable get_mapping_col_excel_grid() {
+            Hashtable v_hst = new Hashtable();
+            v_hst.Add((int)e_col_Number.SO_BILL, (int)e_col_Excel.SO_BILL);
+            v_hst.Add((int)e_col_Number.MA_PHONG_BAN, (int)e_col_Excel.MA_PHONG_BAN);
+            v_hst.Add((int)e_col_Number.TEN_PHONG_BAN, (int)e_col_Excel.TEN_PHONG_BAN);
+            v_hst.Add((int)e_col_Number.NGUOI_GUI, (int)e_col_Excel.NGUOI_GUI);
+            v_hst.Add((int)e_col_Number.NGUOI_NHAN, (int)e_col_Excel.NGUOI_NHAN);
+            v_hst.Add((int)e_col_Number.NOI_NHAN, (int)e_col_Excel.NOI_NHAN);
+            v_hst.Add((int)e_col_Number.LOAI_THU, (int)e_col_Excel.LOAI_THU);
+            v_hst.Add((int)e_col_Number.NOI_DUNG, (int)e_col_Excel.NOI_DUNG);
+            v_hst.Add((int)e_col_Number.GHI_CHU, (int)e_col_Excel.GHI_CHU);
+
+            return v_hst;
+        }
+        private void load_excel_2_grid(C1.Win.C1FlexGrid.C1FlexGrid m_fg) {
+            var m_obj_dialog = new System.Windows.Forms.OpenFileDialog();
+            DialogResult v_result = new DialogResult();
+            v_result = m_obj_dialog.ShowDialog();
+
+            if(v_result == DialogResult.Cancel) {
+                BaseMessages.MsgBox_Infor("Bạn chưa chọn file Excel!");
+                m_obj_dialog.Dispose();
+                return;
+            }
+            Workbook wb = null;
+            wb = Workbook.getWorkbook(m_obj_dialog.FileName);
+            Sheet sheet = wb.getSheet(0);
+            //Cái này để thêm hàng vào grid
+            int v_count_row = 7;
+            while(sheet.getCell(2, v_count_row).Contents != "") {
+                v_count_row = v_count_row + 1;
+                m_fg.Rows.Add();
+            }
+            wb.close();
+
+            Hashtable v_hst_excel_col = get_mapping_col_excel_grid();
+            CExcelReport v_obj_excel_rpt = new CExcelReport(m_obj_dialog.FileName);
+            int v_i_start_excel_row = 7;
+
+            for(int v_i_cur_col = m_fg.Cols.Fixed; v_i_cur_col < m_fg.Cols.Count; v_i_cur_col++) {
+                m_lbl_loading.Visible = true;
+                progressBar1.Visible = true;
+                progressBar1.Minimum = m_fg.Cols.Fixed;
+                progressBar1.Maximum = m_fg.Cols.Count;
+                progressBar1.Value = v_i_cur_col;
+                v_obj_excel_rpt.Export2Grid(m_fg,
+                    v_i_start_excel_row
+                    , (int)v_hst_excel_col[v_i_cur_col]
+                    , v_i_cur_col);
+            }
+            m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
+            make_stt(m_fg);
+            m_lbl_loading.Visible = false;
+            progressBar1.Visible = false;
+            m_fg.Select(0, 0);
+        }
+
+        private bool check_validate_grid_is_ok() {
             //Check nội dung các ô xem có null hay không
             for(int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count - 1; v_i_cur_row++) {
                 if(m_fg[v_i_cur_row, (int)e_col_Number.SO_BILL] == null /*|| CIPConvert.ToStr(m_fg[v_i_cur_row, (int)e_col_Number.SO_BILL]) == ""*/) {
@@ -206,17 +217,40 @@ namespace BCTKApp.ChucNang {
                     m_fg.Select(v_i_cur_row, (int)e_col_Number.LOAI_THU);
                     return false;
                 }
-                //Kiểm tra xem có số bill trong phần mềm không?
-
-                if(is_exist_bill_in_db(CIPConvert.ToStr(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL]))) {
-                    BaseMessages.MsgBox_Error("Đã tồn tại số bill " + CIPConvert.ToStr(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL]) + "này trong phần mềm!");
-                    //m_fg.SetCellStyle(v_i_cur_row, (int)e_col_Number.SO_BILL, v_cell_style_notOK_in_data);
-                    m_fg.Select(v_i_cur_row, (int)e_col_Number.SO_BILL);
-                    return false;
-                }
             }
             return true;
         }
+        private bool check_validate_is_ok() {
+            if(!check_validate_grid_is_ok())
+                return false;
+            return true;
+        }
+
+        private void make_stt(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
+            CGridUtils.MakeSoTT(0, i_fg);
+            i_fg.Rows[i_fg.Rows.Count - 1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
+        }
+        private bool is_exist_bill_in_db(string ip_so_bill) {
+            US_DM_BILL v_us_dm_bill = new US_DM_BILL();
+            if(v_us_dm_bill.is_existed_bill(v_us_dm_bill, ip_so_bill)) {
+                return true;
+            }
+            return false;
+        }
+        private void set_color_ma_bill_da_ton_tai(int ip_row_exist) {
+            C1.Win.C1FlexGrid.CellStyle v_cell_style_notOK_in_data = this.m_fg.Styles.Add("RowColorNotOk");
+            v_cell_style_notOK_in_data.BackColor = Color.Red;
+            m_fg.SetCellStyle(ip_row_exist, (int)e_col_Number.SO_BILL, v_cell_style_notOK_in_data);
+        }
+        private Int64 count_record_in_grid(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
+            Int64 v_count = 0;
+            for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count - 1; v_row++) {
+                if(i_fg.Rows[v_row][(int)e_col_Number.SO_BILL] != null && i_fg.Rows[v_row][(int)e_col_Number.SO_BILL].ToString() != "")
+                    v_count = v_count + 1;
+            }
+            return v_count;
+        }
+
         private void grid_row_2_us_v_dm_bill(int ip_grid_row, US_V_DM_BILL iop_us_v_dm_bill) {
             iop_us_v_dm_bill.datNGAY_GUI
                = m_dat_ngay_gui.Value;
@@ -269,78 +303,30 @@ namespace BCTKApp.ChucNang {
             // Insert vào dm bill, cột số tiền để null
             DS_V_DM_BILL v_ds_v_dm_bill = new DS_V_DM_BILL();
             US_V_DM_BILL v_us_v_dm_bill = new US_V_DM_BILL();
-            //try {
-            //v_us_v_dm_bill.BeginTransaction();
+            
             Int64 v_dem_bill = 0;
             for(int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count - 1; v_i_cur_row++) {
+                //Check xem tồn tại số bill trong CSDL chưa? Nếu có rồi tô màu đỏ
+                if(is_exist_bill_in_db(CIPConvert.ToStr(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL]))) {
+                    BaseMessages.MsgBox_Error("Đã tồn tại số bill " + CIPConvert.ToStr(m_fg.Rows[v_i_cur_row][(int)e_col_Number.SO_BILL]) + "này trong phần mềm!");
+                    set_color_ma_bill_da_ton_tai(v_i_cur_row);
+                    return;
+                }
+                //Đổ dữ liệu từ lưới lên us
                 grid_row_2_us_v_dm_bill(v_i_cur_row, v_us_v_dm_bill);
+                //Insert
                 v_us_v_dm_bill.Insert();
+                //Xóa hàng nếu insert thành công cho dễ nhìn
+                if(m_fg.Rows.Count > 3) {
+                    m_fg.Rows.Remove(v_i_cur_row);
+                }
+                else m_fg.Rows[v_i_cur_row].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
+                v_i_cur_row = v_i_cur_row - 1;
                 v_dem_bill++;
             }
-            //v_us_v_dm_bill.CommitTransaction();
             BaseMessages.MsgBox_Infor("Đã nhập thành công " + v_dem_bill + " Bill!");
-            //}
-            //catch(Exception v_e) {
-            //    if(v_us_v_dm_bill.is_having_transaction()) {
-            //        v_us_v_dm_bill.Rollback();
-            //    }
-            //    throw v_e;
-            //}
         }
-        private Int64 count_record_in_grid(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
-            Int64 v_count = 0;
-            for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count - 1; v_row++) {
-                if(i_fg.Rows[v_row][(int)e_col_Number.SO_BILL] != null && i_fg.Rows[v_row][(int)e_col_Number.SO_BILL].ToString() != "")
-                    v_count = v_count + 1;
-            }
-            return v_count;
-        }
-        private void make_stt(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
-            CGridUtils.MakeSoTT(0, i_fg);
-            i_fg.Rows[i_fg.Rows.Count - 1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
-        }
-        private void load_excel_2_grid(C1.Win.C1FlexGrid.C1FlexGrid m_fg) {
-            var m_obj_dialog = new System.Windows.Forms.OpenFileDialog();
-            DialogResult v_result = new DialogResult();
-            v_result = m_obj_dialog.ShowDialog();
 
-            if(v_result == DialogResult.Cancel) {
-                BaseMessages.MsgBox_Infor("Bạn chưa chọn file Excel!");
-                m_obj_dialog.Dispose();
-                return;
-            }
-            Workbook wb = null;
-            wb = Workbook.getWorkbook(m_obj_dialog.FileName);
-            Sheet sheet = wb.getSheet(0);
-            //Cái này để thêm hàng vào grid
-            int v_count_row = 7;
-            while(sheet.getCell(2, v_count_row).Contents != "") {
-                v_count_row = v_count_row + 1;
-                m_fg.Rows.Add();
-            }
-            wb.close();
-
-            Hashtable v_hst_excel_col = get_mapping_col_excel_grid();
-            CExcelReport v_obj_excel_rpt = new CExcelReport(m_obj_dialog.FileName);
-            int v_i_start_excel_row = 7;
-
-            for(int v_i_cur_col = m_fg.Cols.Fixed; v_i_cur_col < m_fg.Cols.Count; v_i_cur_col++) {
-                m_lbl_loading.Visible = true;
-                progressBar1.Visible = true;
-                progressBar1.Minimum = m_fg.Cols.Fixed;
-                progressBar1.Maximum = m_fg.Cols.Count;
-                progressBar1.Value = v_i_cur_col;
-                v_obj_excel_rpt.Export2Grid(m_fg,
-                    v_i_start_excel_row
-                    , (int)v_hst_excel_col[v_i_cur_col]
-                    , v_i_cur_col);
-            }
-            m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
-            make_stt(m_fg);
-            m_lbl_loading.Visible = false;
-            progressBar1.Visible = false;
-            m_fg.Select(0, 0);
-        }
         private void set_define_events() {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
@@ -349,24 +335,40 @@ namespace BCTKApp.ChucNang {
             m_fg.AfterAddRow += new C1.Win.C1FlexGrid.RowColEventHandler(m_fg_AfterAddRow);
             m_cmd_nhap_excel.Click += new EventHandler(m_cmd_nhap_excel_Click);
             //m_cmd_xem_thu_gui.Click += new EventHandler(m_cmd_xem_thu_gui_Click);
+            m_cmd_danh_sach_bill.Click += new EventHandler(m_cmd_danh_sach_bill_Click);
         }
         #endregion
 
         #region Events
+        private void m_cmd_danh_sach_bill_Click(object sender, EventArgs e) {
+            try {
+                f516_V_DM_BILL v_frm = new f516_V_DM_BILL();
+                v_frm.display();
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_cmd_exit_Click(object sender, EventArgs e) {
-            this.Close();
+            try {
+                this.Close();
+            }
+            catch(Exception v_e) {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         private void m_cmd_save_Click(object sender, EventArgs e) {
             try {
-                set_color_ma_bill_da_ton_tai();
                 save_data();
+                m_lbl_tong_so_bill.Text =""+ count_record_in_grid(m_fg);
             }
             catch(System.Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void m_fg_AfterEdit(object sender, C1.Win.C1FlexGrid.RowColEventArgs e) {
-
             if(m_fg.Col == (int)e_col_Number.MA_PHONG_BAN)
                 m_fg.Rows[m_fg.Row][m_fg.Col + 1] = m_fg.Rows[m_fg.Row][m_fg.Col];
             if(m_fg.Col == (int)e_col_Number.TEN_PHONG_BAN)
@@ -374,8 +376,6 @@ namespace BCTKApp.ChucNang {
             m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
 
             if(m_fg.Col == (int)e_col_Number.SO_BILL)
-                set_color_ma_bill_da_ton_tai();
-
             make_stt(m_fg);
         }
         private void m_cmd_del_Click(object sender, EventArgs e) {
@@ -401,7 +401,6 @@ namespace BCTKApp.ChucNang {
             try {
                 m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
                 make_stt(m_fg);
-                set_color_ma_bill_da_ton_tai();
             }
             catch(Exception v_e) {
 
@@ -411,7 +410,6 @@ namespace BCTKApp.ChucNang {
         private void m_cmd_nhap_excel_Click(object sender, EventArgs e) {
             try {
                 load_excel_2_grid(m_fg);
-                set_color_ma_bill_da_ton_tai();
             }
             catch(Exception v_e) {
                 BaseMessages.MsgBox_Error("File Excel chưa đúng mẫu hoặc đang bị mở!");
