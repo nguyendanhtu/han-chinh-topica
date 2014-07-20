@@ -22,7 +22,7 @@
         </asp:UpdatePanel>
     </div>
 
-    <div style="clip: rect(auto, auto, auto, auto); margin-left: 5%; padding-right: 5%;" >
+    <%--<div style="clip: rect(auto, auto, auto, auto); margin-left: 5%; padding-right: 5%;" >
      
      <table width = "315px" >
         <tr class="title_ttql">
@@ -642,6 +642,5 @@
     </table>
     <!-- Ket thuc bang Tai San Khac-->
 
-    </div>
-    
+    </div>--%>
 </asp:Content>
