@@ -69,16 +69,6 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
         m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
     }
-    //private void load_cbo_trang_thai()
-    //{
-    //    BCTKUS.US_CM_DM_TU_DIEN v_us = new BCTKUS.US_CM_DM_TU_DIEN();
-    //    DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
-    //    v_us.FillDataset(v_ds, "where ID_LOAI_TU_DIEN=" + 12);
-    //    m_cbo_trang_thai.DataSource = v_ds.CM_DM_TU_DIEN;
-    //    m_cbo_trang_thai.DataValueField = CM_DM_TU_DIEN.ID;
-    //    m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN;
-    //    m_cbo_trang_thai.DataBind();
-    //}
     #endregion
 
     #region Events
@@ -88,6 +78,10 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
+                if (!Person.check_user_have_menu())
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script type = 'text/javascript'>alert('Bạn không có quyền sử dụng chức năng này!');window.location.replace('/TraCuuKeToan/')</script>");
+                }
                 US_HT_NGUOI_SU_DUNG v_us_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
                 if (Session[SESSION.AccounLoginYN] == "Y")
                 {
