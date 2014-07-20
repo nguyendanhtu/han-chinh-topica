@@ -108,6 +108,7 @@
             this.m_grv_da_nhan.ColumnInfo = resources.GetString("m_grv_da_nhan.ColumnInfo");
             this.m_grv_da_nhan.Location = new System.Drawing.Point(6, 17);
             this.m_grv_da_nhan.Name = "m_grv_da_nhan";
+            this.m_grv_da_nhan.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
             this.m_grv_da_nhan.Size = new System.Drawing.Size(749, 322);
             this.m_grv_da_nhan.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_da_nhan.Styles"));
             this.m_grv_da_nhan.TabIndex = 36;
@@ -171,6 +172,7 @@
             this.m_grv_da_chuyen.ColumnInfo = resources.GetString("m_grv_da_chuyen.ColumnInfo");
             this.m_grv_da_chuyen.Location = new System.Drawing.Point(6, 17);
             this.m_grv_da_chuyen.Name = "m_grv_da_chuyen";
+            this.m_grv_da_chuyen.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
             this.m_grv_da_chuyen.Size = new System.Drawing.Size(749, 322);
             this.m_grv_da_chuyen.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_da_chuyen.Styles"));
             this.m_grv_da_chuyen.TabIndex = 37;
@@ -439,6 +441,7 @@
             this.m_grv_bi_tra_lai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_bi_tra_lai.Location = new System.Drawing.Point(6, 17);
             this.m_grv_bi_tra_lai.Name = "m_grv_bi_tra_lai";
+            this.m_grv_bi_tra_lai.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
             this.m_grv_bi_tra_lai.Size = new System.Drawing.Size(749, 322);
             this.m_grv_bi_tra_lai.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_bi_tra_lai.Styles"));
             this.m_grv_bi_tra_lai.TabIndex = 38;
@@ -474,6 +477,7 @@
             this.m_grv_noi_bo_nhan_tra_lai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_noi_bo_nhan_tra_lai.Location = new System.Drawing.Point(6, 17);
             this.m_grv_noi_bo_nhan_tra_lai.Name = "m_grv_noi_bo_nhan_tra_lai";
+            this.m_grv_noi_bo_nhan_tra_lai.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
             this.m_grv_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(749, 322);
             this.m_grv_noi_bo_nhan_tra_lai.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_noi_bo_nhan_tra_lai.Styles"));
             this.m_grv_noi_bo_nhan_tra_lai.TabIndex = 41;
