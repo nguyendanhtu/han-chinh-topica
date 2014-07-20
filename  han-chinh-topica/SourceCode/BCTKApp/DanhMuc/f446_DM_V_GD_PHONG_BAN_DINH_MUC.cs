@@ -237,15 +237,15 @@ namespace BCTKApp
             this.m_lbl_loai_dm.AutoSize = true;
             this.m_lbl_loai_dm.Location = new System.Drawing.Point(244, 47);
             this.m_lbl_loai_dm.Name = "m_lbl_loai_dm";
-            this.m_lbl_loai_dm.Size = new System.Drawing.Size(74, 13);
+            this.m_lbl_loai_dm.Size = new System.Drawing.Size(115, 13);
             this.m_lbl_loai_dm.TabIndex = 22;
-            this.m_lbl_loai_dm.Text = "Loại định mức";
+            this.m_lbl_loai_dm.Text = "Lọc theo loại định mức";
             // 
             // m_cbo_loai_dm
             // 
             this.m_cbo_loai_dm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_loai_dm.FormattingEnabled = true;
-            this.m_cbo_loai_dm.Location = new System.Drawing.Point(327, 44);
+            this.m_cbo_loai_dm.Location = new System.Drawing.Point(365, 44);
             this.m_cbo_loai_dm.Name = "m_cbo_loai_dm";
             this.m_cbo_loai_dm.Size = new System.Drawing.Size(305, 21);
             this.m_cbo_loai_dm.TabIndex = 23;
@@ -255,15 +255,15 @@ namespace BCTKApp
             this.m_lbl_trung_tam.AutoSize = true;
             this.m_lbl_trung_tam.Location = new System.Drawing.Point(244, 75);
             this.m_lbl_trung_tam.Name = "m_lbl_trung_tam";
-            this.m_lbl_trung_tam.Size = new System.Drawing.Size(55, 13);
+            this.m_lbl_trung_tam.Size = new System.Drawing.Size(96, 13);
             this.m_lbl_trung_tam.TabIndex = 22;
-            this.m_lbl_trung_tam.Text = "Trung tâm";
+            this.m_lbl_trung_tam.Text = "Lọc theo trung tâm";
             // 
             // m_cbo_trung_tam
             // 
             this.m_cbo_trung_tam.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(327, 72);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(365, 72);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(305, 21);
             this.m_cbo_trung_tam.TabIndex = 23;
@@ -273,13 +273,13 @@ namespace BCTKApp
             this.m_lbl_tim_kiem.AutoSize = true;
             this.m_lbl_tim_kiem.Location = new System.Drawing.Point(244, 102);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
-            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(47, 13);
+            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(88, 13);
             this.m_lbl_tim_kiem.TabIndex = 24;
-            this.m_lbl_tim_kiem.Text = "Từ khóa";
+            this.m_lbl_tim_kiem.Text = "Từ khóa tìm kiếm";
             // 
             // m_txt_tim_kiem
             // 
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(327, 99);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(365, 99);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(305, 20);
             this.m_txt_tim_kiem.TabIndex = 25;
