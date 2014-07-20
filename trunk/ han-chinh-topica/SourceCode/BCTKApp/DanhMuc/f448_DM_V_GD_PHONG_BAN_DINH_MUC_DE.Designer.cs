@@ -105,9 +105,9 @@
             this.m_lbl_co_so_tinh_dm.AutoSize = true;
             this.m_lbl_co_so_tinh_dm.Location = new System.Drawing.Point(60, 125);
             this.m_lbl_co_so_tinh_dm.Name = "m_lbl_co_so_tinh_dm";
-            this.m_lbl_co_so_tinh_dm.Size = new System.Drawing.Size(106, 13);
+            this.m_lbl_co_so_tinh_dm.Size = new System.Drawing.Size(104, 13);
             this.m_lbl_co_so_tinh_dm.TabIndex = 26;
-            this.m_lbl_co_so_tinh_dm.Text = "Cơ sở tính định mức:";
+            this.m_lbl_co_so_tinh_dm.Text = "Cách tính định mức:";
             // 
             // m_cbo_loai_dm
             // 
