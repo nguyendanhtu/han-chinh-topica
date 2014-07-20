@@ -248,9 +248,9 @@ namespace BCTKApp
             this.label3.ForeColor = System.Drawing.Color.Maroon;
             this.label3.Location = new System.Drawing.Point(835, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 19);
+            this.label3.Size = new System.Drawing.Size(142, 19);
             this.label3.TabIndex = 33;
-            this.label3.Text = "Tổng định mức:";
+            this.label3.Text = "Tổng tiền định mức:";
             // 
             // panel1
             // 
