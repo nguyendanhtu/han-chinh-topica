@@ -86,11 +86,13 @@ namespace BCTKApp.ChucNang {
             this.KeyPreview = true;
         }
         private void remove_row_after_nhap_lai() {
-            int v_amount = m_fg.Rows.Count - 1;
-            for(int i = v_amount - 1; i > m_fg.Rows.Fixed; i--) {
-                m_fg.RemoveItem(i);
-            }
-            m_fg.Rows[1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
+            //int v_amount = m_fg.Rows.Count - 1;
+            //for(int i = v_amount - 1; i > m_fg.Rows.Fixed; i--) {
+            //    m_fg.RemoveItem(i);
+            //}
+            //m_fg.Rows[1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
+
+            CGridUtils.ClearDataInGrid(m_fg);
         }
         private void load_danh_sach_excel() {
             //if(m_status != (int) status.begin) {
@@ -245,7 +247,11 @@ namespace BCTKApp.ChucNang {
             if(tien == 0) {
                 m_lbl_tien.Text = "0";
             }
-            else m_lbl_tien.Text = CIPConvert.ToStr(tien, "#,###");
+            else {
+                m_lbl_tien.Text = CIPConvert.ToStr(tien, "#,###");
+                m_lbl_vat.Text = CIPConvert.ToStr(tien / 10, "#,###");
+                m_lbl_tong_tien.Text = CIPConvert.ToStr(tien + tien / 10, "#,###");
+            }
         }
         private void so_sanh() {
             //Concept: Kiểm tra từng số bill ở trong file excel của NCC, 
