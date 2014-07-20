@@ -88,6 +88,10 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
+                if (!Person.check_user_have_menu())
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script type = 'text/javascript'>alert('Bạn không có quyền sử dụng chức năng này!');window.location.replace('/TraCuuKeToan/')</script>");
+                }
                 US_HT_NGUOI_SU_DUNG v_us_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
                 if (Session[SESSION.AccounLoginYN] == "Y")
                 {
@@ -118,7 +122,6 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    #endregion
     protected void m_grv_v_dm_bill_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         try
@@ -176,4 +179,6 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    #endregion
+
 }
