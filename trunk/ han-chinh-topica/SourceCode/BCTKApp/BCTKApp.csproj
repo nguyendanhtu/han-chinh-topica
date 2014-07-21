@@ -200,11 +200,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
-    <Reference Include="ExcelLibrary">
-      <HintPath>C:\Users\Nguyen Thanh Tuyen\Downloads\ExcelLibrary.dll</HintPath>
+    <Reference Include="Excel">
+      <HintPath>..\DLL\Excel.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\packages\NPOI.2.0.6\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\DLL\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Interop.Excel">
       <Name>Interop.Excel</Name>
