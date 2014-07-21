@@ -111,6 +111,7 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
                     Response.Redirect("../Default.aspx", false);
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }
+                thong_bao("", false);
                 set_time();
                 load_cbo_trang_thai();
                 load_data_to_grid();
