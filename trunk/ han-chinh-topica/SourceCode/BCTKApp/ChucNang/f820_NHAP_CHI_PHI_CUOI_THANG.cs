@@ -18,7 +18,12 @@ using BCTKDS;
 
 namespace BCTKApp.ChucNang {
     public partial class f820_NHAP_CHI_PHI_CUOI_THANG : Form {
-        public class CError {
+        public class CError_ton_tai_bill {
+            public string value { get; set; }
+            public string name { get; set; }
+        }
+        public class CError_ton_tai_tien
+        {
             public string value { get; set; }
             public string name { get; set; }
         }
@@ -51,7 +56,7 @@ namespace BCTKApp.ChucNang {
             tien = 11,
             ghichu = 12
         }
-        private int m_status;
+    
         private enum status {
             begin = 0, // trạng thái ban đầu
             fail_import = -1, // trạng thái import file excel bị lỗi
@@ -64,6 +69,8 @@ namespace BCTKApp.ChucNang {
 
         #region Members
         US_DM_BILL m_us_dm_bill = new US_DM_BILL();
+        private int m_status;
+        private int m_flag = 0;
         #endregion
 
         #region Private Methods
@@ -72,7 +79,7 @@ namespace BCTKApp.ChucNang {
             CControlFormat.setC1FlexFormat(m_fg);
             //m_fg_load_file.Cols[(int)e_col_Number.ID].Visible = false;
             m_lbl_loading.Visible = false;
-            m_fg.AllowAddNew = true;
+            //m_fg.AllowAddNew = true;
             m_fg.AllowEditing = true;
             m_fg.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None;
             m_fg.AutoSearch = C1.Win.C1FlexGrid.AutoSearchEnum.None;
@@ -85,25 +92,12 @@ namespace BCTKApp.ChucNang {
             set_define_event();
             this.KeyPreview = true;
         }
-        private void remove_row_after_nhap_lai() {
-            //int v_amount = m_fg.Rows.Count - 1;
-            //for(int i = v_amount - 1; i > m_fg.Rows.Fixed; i--) {
-            //    m_fg.RemoveItem(i);
-            //}
-            //m_fg.Rows[1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
 
+        private void remove_row_after_nhap_lai() {
             CGridUtils.ClearDataInGrid(m_fg);
         }
-        private void load_danh_sach_excel() {
-            //if(m_status != (int) status.begin) {
-            //    m_status = (int)status.begin;
-            //    int v_amount = m_fg.Rows.Count;
-            //    for(int i = v_amount - 1; i > m_fg.Rows.Fixed; i--) {
-            //        m_fg.RemoveItem(i);
-            //    }
-            //    m_fg.Rows[1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
-            //}
 
+        private void load_danh_sach_excel() {
             //Chọn đường dẫn tới file excel
             var m_obj_dialog = new System.Windows.Forms.OpenFileDialog();
             m_obj_dialog.ShowDialog();
@@ -116,11 +110,9 @@ namespace BCTKApp.ChucNang {
             int v_count_row = 2;
             while(sheet.getCell(3, v_count_row).Contents != "") {
                 v_count_row = v_count_row + 1;
-                m_fg.Rows.Add();
+                //m_fg.Rows.Add();
             }
-            //m_fg.Rows.Add();
-            //m_fg.Rows.Add();
-            //m_fg.Rows.Add();
+            m_fg.Rows.Count = v_count_row + 1;
 
             wb.close();//Đóng connection khi sử dụng NExcel
 
@@ -140,29 +132,12 @@ namespace BCTKApp.ChucNang {
                     , v_i_cur_col);
                 v_i_sheet_col = v_i_sheet_col + 1;
             }
-            m_fg.Rows[m_fg.Rows.Count - 1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
+            //m_fg.Rows[m_fg.Rows.Count - 1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
             m_lbl_loading.Visible = false;
             progressBar1.Visible = false;
             m_fg.Select(0,0);
         }
-        //private void grid_row_2_us_cm_dm_bang_chi_tiet_cuoi_thang(int ip_grid_row, US_CM_DM_BANG_CHI_TIET_CUOI_THANG iop_us_cm_dm_bang_chi_tiet_cuoi_thang) 
-        //{
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.strSOCT = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.soct]);
-        //    string ngay = m_fg[ip_grid_row, (int)e_col_Number.ngay].ToString();
-        //    //ngay = StringForngay.Substring(0, ngay.IndexOf(" "));
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.datNGAY = DateTime.Parse(ngay);
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.strLOAI = CIPConvert.ToStr(m_fg[ip_grid_row, (int) e_col_Number.loai]); 
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.strBARCODE = CIPConvert.ToStr(m_fg[ip_grid_row, (int) e_col_Number.barcode]);
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.strNOIDEN = CIPConvert.ToStr(m_fg[ip_grid_row, (int) e_col_Number.noiden]);
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.dcTRLUONG = CIPConvert.ToDecimal(m_fg[ip_grid_row, (int) e_col_Number.trluong]);
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.dcCUOC = CIPConvert.ToDecimal(m_fg[ip_grid_row, (int)e_col_Number.cuoc]);
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.dcPHI = CIPConvert.ToDecimal(m_fg[ip_grid_row, (int)e_col_Number.phi]);
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.dcPHIXD = CIPConvert.ToDecimal(m_fg[ip_grid_row, (int)e_col_Number.phixd]);
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.dcTIENCK = CIPConvert.ToDecimal(m_fg[ip_grid_row, (int) e_col_Number.trluong]);
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.dcTIEN = CIPConvert.ToDecimal(m_fg[ip_grid_row, (int) e_col_Number.tien]);
 
-        //    iop_us_cm_dm_bang_chi_tiet_cuoi_thang.SetGHICHUNull();
-        //}
         private bool kiem_tra_ds_excel() {
             //Kiểm tra xem đủ dữ liệu chưa, có cell nào trống không (cell cần thiết, cell không cần thiết thì kệ)
             //for(int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count - 4; v_i_cur_row++) {
@@ -200,14 +175,17 @@ namespace BCTKApp.ChucNang {
             //    throw v_e;
             //}
         }
+
         private bool check_so_bill_in_db(string ip_so_bill) {
             US_DM_BILL v_us_dm_bill = new US_DM_BILL();
 
             return v_us_dm_bill.is_existed_bill(v_us_dm_bill, ip_so_bill);
         }
+
         private bool check_so_tien_is_null(US_DM_BILL ip_us_dm_bill, string ip_so_bill) {
             return ip_us_dm_bill.is_so_tien_null(ip_us_dm_bill, ip_so_bill);        
         }
+
         private void hien_thi_tong_tien() {
             decimal cuoc = 0, phi = 0, phixd = 0, tienck = 0, tien = 0;
             for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count - 1; v_row++) {
@@ -253,14 +231,28 @@ namespace BCTKApp.ChucNang {
                 m_lbl_tong_tien.Text = CIPConvert.ToStr(tien + tien / 10, "#,###");
             }
         }
+
         private void so_sanh() {
             //Concept: Kiểm tra từng số bill ở trong file excel của NCC, 
             //nếu tồn tại trong CSDL (bảng DM bill) thì update số tiền bằng mã bill
             //Bản ghi nào update xong thì trên lưới xóa bỏ hàng đó đi, cuối cùng còn chừa lại những mã bill của ncc chưa đc
             //update vào pm (do trên phần mềm ko có mã bill đó hoặc nhập sai)
-            List<CError> v_listError = new List<CError>();
+
+            C1.Win.C1FlexGrid.CellStyle v_cell_style_not_in_db = this.m_fg.Styles.Add("RowColorNotInDb");
+            v_cell_style_not_in_db.BackColor = Color.Red;
+            C1.Win.C1FlexGrid.CellStyle v_cell_style_ton_tai_tien = this.m_fg.Styles.Add("RowColorTonTaiTien");
+            v_cell_style_ton_tai_tien.BackColor = Color.Gold;
+            C1.Win.C1FlexGrid.CellStyle v_cell_style_ok = this.m_fg.Styles.Add("RowColorOk");
+            v_cell_style_ok.BackColor = Color.Yellow;
+
+            List<CError_ton_tai_bill> v_listError_ton_tai_bill = new List<CError_ton_tai_bill>();
+            List<CError_ton_tai_tien> v_listError_ton_tai_tien = new List<CError_ton_tai_tien>();
+
             int v_amount_row = m_fg.Rows.Count - 1;
             Int64 count_bill_update = 0;
+
+            //Kiểm tra các tổng tiền đúng chưa?
+
             for(int v_row = m_fg.Rows.Fixed; v_row < v_amount_row; v_row++) {
                 /* Kiểm tra xem số bill có trên csdl chưa. Nếu không có thì kệ trên lưới, xuất lỗi ra listbox*/
                 if(m_fg[v_row, (int)e_col_Number.barcode] == null || m_fg[v_row, (int)e_col_Number.barcode].ToString() == "") {
@@ -269,22 +261,28 @@ namespace BCTKApp.ChucNang {
                 string v_so_bill = CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]);
 
                 if(!check_so_bill_in_db(CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]))) {
-                    CError v_error_exist = new CError();
-                    v_error_exist.name = "Số bill " + CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]) + " từ nhà cung cấp không có trong phần mềm!";
+                    CError_ton_tai_bill v_error_exist = new CError_ton_tai_bill();
+                    v_error_exist.name = CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]);
                     v_error_exist.value = CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]);;
-                    v_listError.Add(v_error_exist);
+                    v_listError_ton_tai_bill.Add(v_error_exist);
+
+                    m_fg.SetCellStyle(v_row, (int)e_col_Number.barcode, v_cell_style_not_in_db);
                     continue;
                 }
 
+                //Kiểm tra xem bill đã có tiền chưa?
                 US_DM_BILL v_us_dm_bill = new US_DM_BILL();
                 if(!check_so_tien_is_null(v_us_dm_bill, CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]))) {
-                    CError v_error_null = new CError();
-                    v_error_null.name = "Số bill " + CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]) +" này đã có số tiền trong phần mềm rồi!";
+                    CError_ton_tai_tien v_error_null = new CError_ton_tai_tien();
+                    v_error_null.name = CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]);
                     v_error_null.value = CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]); ;
-                    v_listError.Add(v_error_null);
+                    v_listError_ton_tai_tien.Add(v_error_null);
+
+                    m_fg.SetCellStyle(v_row, (int)e_col_Number.barcode, v_cell_style_ton_tai_tien);
                     continue;
                 }
-                else { 
+                else {
+                    m_fg.SetCellStyle(v_row, (int)e_col_Number.barcode, v_cell_style_ok);
                     v_us_dm_bill.update_tien_by_so_bill(CIPConvert.ToStr(m_fg[v_row, (int)e_col_Number.barcode]), CIPConvert.ToDecimal(m_fg[v_row, (int)e_col_Number.tien]));
                     count_bill_update = count_bill_update + 1;
                 }
@@ -296,10 +294,16 @@ namespace BCTKApp.ChucNang {
                 }
             }
             MessageBox.Show("Đã cập nhật số tiền chi phí cho " + count_bill_update + " bill, " + (v_amount_row - 1 - count_bill_update) + " bill chưa cập nhật!");
-            m_lbox_ds_loi.DataSource = v_listError;
-            m_lbox_ds_loi.DisplayMember = "name";
-            m_lbox_ds_loi.ValueMember = "value";
+            //Gán lôi không tồn tại bill
+            m_lbox_ds_loi_bill.DataSource = v_listError_ton_tai_bill;
+            m_lbox_ds_loi_bill.DisplayMember = "name";
+            m_lbox_ds_loi_bill.ValueMember = "value";
+            //Gán lỗi đã có số tiền
+            m_lbox_ds_loi_tien.DataSource = v_listError_ton_tai_tien;
+            m_lbox_ds_loi_tien.DisplayMember = "name";
+            m_lbox_ds_loi_tien.ValueMember = "value";
         }
+
         private Int64 count_record_in_grid(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
             Int64 v_count = 0;
             for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count - 1; v_row++) {
@@ -308,26 +312,41 @@ namespace BCTKApp.ChucNang {
             }
             return v_count;
         }
+
         private void make_stt(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
             CGridUtils.MakeSoTT(0, i_fg);
             i_fg.Rows[i_fg.Rows.Count - 1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
         }
+
         private void set_define_event() {
             m_cmd_thoat.Click += new EventHandler(m_cmd_thoat_Click);
             m_cmd_nhap_excel.Click += new EventHandler(m_cmd_nhap_excel_Click);
             m_cmd_so_sanh.Click += new EventHandler(m_cmd_so_sanh_Click);
             //m_cmd_kiem_tra_dl.Click += new EventHandler(m_cmd_kiem_tra_dl_Click);
-            m_lbox_ds_loi.Click += new EventHandler(m_lbox_ds_loi_Click);
+            m_lbox_ds_loi_bill.Click += new EventHandler(m_lbox_ds_loi_Click);
             m_cmd_del.Click += new EventHandler(m_cmd_del_Click);
+            m_cmd_insert_row.Click += m_cmd_insert_row_Click;
         }
 
-        
-        
-        #endregion
+      
 
+        #endregion
         //
         // Event Handlers
         //
+        private void m_cmd_insert_row_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_fg.Rows.Insert(m_fg.Row);
+                m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
+            }
+            catch (System.Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         private void m_cmd_del_Click(object sender, EventArgs e) {
             try {
                 if(m_fg.Rows.Count == 3) {
@@ -349,26 +368,15 @@ namespace BCTKApp.ChucNang {
             }
         }
         private void m_lbox_ds_loi_Click(object sender, EventArgs e) {
-            if(m_lbox_ds_loi.Items.Count == 0) {
+            if(m_lbox_ds_loi_bill.Items.Count == 0) {
                 return;                
             }
             for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count - 1; v_row++) {
                 if(m_fg.Rows[v_row][(int)e_col_Number.barcode].ToString() != "" && m_fg.Rows[v_row][(int)e_col_Number.barcode] != null)
-                    if(m_lbox_ds_loi.SelectedValue.ToString() == m_fg.Rows[v_row][(int)e_col_Number.barcode].ToString())
+                    if(m_lbox_ds_loi_bill.SelectedValue.ToString() == m_fg.Rows[v_row][(int)e_col_Number.barcode].ToString())
                         m_fg.Select(v_row, (int)e_col_Number.barcode);
             }
         }
-        //private void m_cmd_kiem_tra_dl_Click(object sender, EventArgs e) {
-        //    try {
-        //        if(!kiem_tra_ds_excel()) return;
-
-        //        m_status = (int)status.ok_check;
-        //    }
-        //    catch(Exception v_e) {
-        //        m_status = (int)status.fail_check;
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
         private void m_cmd_so_sanh_Click(object sender, EventArgs e) {
             try {
                 so_sanh();
@@ -390,7 +398,7 @@ namespace BCTKApp.ChucNang {
                 else {
                     if(BaseMessages.MsgBox_Confirm("Bạn có muốn nhập lại từ file Excel?")) {
                         remove_row_after_nhap_lai();
-                        m_lbox_ds_loi.DataSource = null;
+                        m_lbox_ds_loi_bill.DataSource = null;
                         load_danh_sach_excel();
                         m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
                         m_status = (int)status.ok_import;
@@ -402,7 +410,7 @@ namespace BCTKApp.ChucNang {
             catch(Exception v_e) {
                 m_status = (int)status.fail_import;
                 BaseMessages.MsgBox_Error("Bạn không chọn file Excel /hoặc file Excel không đúng mẫu/ hoặc file Excel đang được mở!");
-                m_lbox_ds_loi.DataSource = null;
+                m_lbox_ds_loi_bill.DataSource = null;
                 //CSystemLog_301.ExceptionHandle(v_e);
             }
         }
