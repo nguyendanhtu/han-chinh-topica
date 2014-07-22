@@ -128,6 +128,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CConstantValues.cs" />
+    <Compile Include="US_CM_DM_DANG_KY_GUI.cs" />
+    <Compile Include="US_CM_DM_DANG_KY_GUI_DANH_SACH_TUNG_PHONG.cs" />
     <Compile Include="US_CM_DM_TU_DIEN.cs" />
     <Compile Include="US_DM_BILL.cs" />
     <Compile Include="US_DM_CO_SO.cs" />
