@@ -168,7 +168,6 @@ namespace BCTKApp
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
             this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.Visible = false;
             // 
             // m_cmd_update
             // 
@@ -184,7 +183,6 @@ namespace BCTKApp
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
-            this.m_cmd_update.Visible = false;
             // 
             // m_cmd_update_truong
             // 
@@ -215,7 +213,6 @@ namespace BCTKApp
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
             this.m_cmd_delete.Text = "&Xoá";
-            this.m_cmd_delete.Visible = false;
             // 
             // m_cmd_exit
             // 
@@ -420,7 +417,7 @@ namespace BCTKApp
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_THONG_KE.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){
+		private void load_data_2_grid(){           
             DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value.Date.AddDays(- m_dtp_tu_ngay.Value.Date.Day + 1);
             DateTime v_dat_den_ngay = m_dtp_den_ngay.Value.Date;
             DateTime temp = m_dtp_den_ngay.Value.Date;
@@ -430,6 +427,7 @@ namespace BCTKApp
             string v_str_tu_khoa = m_txt_tu_khoa.Text;
             if (v_str_tu_khoa == m_str_goi_y_tim_kiem) v_str_tu_khoa = "";
 			m_ds = new DS_V_GD_THONG_KE();
+            m_ds.Clear();
             if (m_cbo_loai_tk.SelectedIndex == 0)
             {
                 m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.TU_NGAY].Visible = true;
@@ -471,7 +469,14 @@ namespace BCTKApp
 			i_us.DataRow2Me(v_dr);
 		}
 
-	
+        private void dm_grid2us_object(US_GD_THONG_KE i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_grv_thong_ke_hoc_vien.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 		private void us_object2grid(US_V_GD_THONG_KE i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_grv_thong_ke_hoc_vien.Rows[i_grid_row].UserData;
@@ -480,9 +485,9 @@ namespace BCTKApp
 		}
 
 
-		private void insert_v_gd_thong_ke(){			
-		//	f523_V_GD_THONG_KE_HOC_VIEN_DE v_fDE = new  f523_V_GD_THONG_KE_HOC_VIEN_DE();								
-		//	v_fDE.display();
+		private void insert_v_gd_thong_ke(){
+            f524_THONG_KE_HOC_VIEN_DE v_fDE = new f524_THONG_KE_HOC_VIEN_DE();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -490,8 +495,8 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_thong_ke_hoc_vien)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_thong_ke_hoc_vien, m_grv_thong_ke_hoc_vien.Row)) return;			
 			grid2us_object(m_us, m_grv_thong_ke_hoc_vien.Row);
-		//	f523_V_GD_THONG_KE_HOC_VIEN_DE v_fDE = new f523_V_GD_THONG_KE_HOC_VIEN_DE();
-		//	v_fDE.display(m_us);
+            f524_THONG_KE_HOC_VIEN_DE v_fDE = new f524_THONG_KE_HOC_VIEN_DE();
+            v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
@@ -499,8 +504,8 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_thong_ke_hoc_vien)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_thong_ke_hoc_vien, m_grv_thong_ke_hoc_vien.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_GD_THONG_KE v_us = new US_V_GD_THONG_KE();
-			grid2us_object(v_us, m_grv_thong_ke_hoc_vien.Row);
+			US_GD_THONG_KE v_us = new US_GD_THONG_KE();
+			dm_grid2us_object(v_us, m_grv_thong_ke_hoc_vien.Row);
 			try {			
 				v_us.BeginTransaction();    											
 				v_us.Delete();                      								
@@ -538,10 +543,6 @@ namespace BCTKApp
             }
             m_txt_tu_khoa.ForeColor = Color.Black;
         }
-        private void load_data_2_cbo() 
-        {
- 
-        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
@@ -555,6 +556,7 @@ namespace BCTKApp
             m_cbo_loai_tk.SelectedIndexChanged+=new EventHandler(m_cbo_loai_tk_SelectedIndexChanged);
             m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
             m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
+            this.KeyDown+=new KeyEventHandler(f523_V_GD_THONG_KE_HOC_VIEN_KeyDown);
 		}
 		#endregion
 
@@ -562,34 +564,44 @@ namespace BCTKApp
 		//
 		//		EVENT HANLDERS
 		//
-		//
-		private void f523_V_GD_THONG_KE_HOC_VIEN_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        //
+        #region Event
+        private void f523_V_GD_THONG_KE_HOC_VIEN_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_gd_thong_ke();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_gd_thong_ke();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_cmd_update_truong_Click(object sender, EventArgs e)
         {
             try
@@ -603,32 +615,41 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_gd_thong_ke();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_gd_thong_ke();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_gd_thong_ke();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_v_gd_thong_ke();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_search_Click(object sender, EventArgs e) {
-			try{
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 load_data_2_grid();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_txt_tu_khoa_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -704,7 +725,24 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void f523_V_GD_THONG_KE_HOC_VIEN_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+                
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
+        #endregion
+        
 	}
 }
 
