@@ -138,7 +138,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                     v_us_dm_bill.SetTRONG_NUOCNull();
                     v_us_dm_bill.strNUOC_NGOAI = "x";
                 }
-               // v_us_dm_bill.Insert();
+                 v_us_dm_bill.Insert();
 
                 m_grv_dm_bill.DeleteRow(i);
                 m_grv_dm_bill.DataBind();

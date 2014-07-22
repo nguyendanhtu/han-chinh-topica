@@ -104,6 +104,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
                 thong_bao("", false);
                 set_time_set_ten_trung_tam();
                 load_data_to_grid();
+                thong_bao("", false);
             }
         }
 
