@@ -13,15 +13,15 @@ using System.Windows.Forms;
 
 namespace BCTKApp
 {
-    public partial class f522_THONG_KE_NHAN_SU_DE : Form
+    public partial class f524_THONG_KE_HOC_VIEN_DE : Form
     {
-        public f522_THONG_KE_NHAN_SU_DE()
+        public f524_THONG_KE_HOC_VIEN_DE()
         {
             InitializeComponent();
             format_control();
         }
         #region Public Interface
-        public void display_for_insert()
+        public void display_for_insert() 
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
@@ -32,8 +32,6 @@ namespace BCTKApp
             us_obj_2_form(ip_us_v);
             this.ShowDialog();
         }
-
-        
         #endregion
 
         #region Member
@@ -49,43 +47,50 @@ namespace BCTKApp
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             m_chk_close_form.Font = new System.Drawing.Font("Tahoma", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             m_chk_close_form.ForeColor = Color.Maroon;
-            load_data_2_cbo_trung_tam();
+            load_data_2_cbo_truong();
             DateTime temp = m_dtp_ngay.Value.Date;
             temp = temp.AddMonths(1);
             temp = temp.AddDays(-(temp.Day));
             m_dtp_ngay.Value = temp;
+            load_data_2_cbo_truong();
+            this.m_cbo_loai_hv.Items.AddRange(new object[] { "Học viên đang học", "Học viên tuyển mới" });
+            m_cbo_loai_hv.SelectedIndex = 0;
             set_define_event();
+        }
+        private void form_2_us_obj(decimal ip_id_co_so_dm) 
+        {
+            m_us_tk.dcID_CO_SO_DINH_MUC = ip_id_co_so_dm;
+            m_us_tk.dcID_DM_CO_SO = CIPConvert.ToDecimal(m_cbo_truong.SelectedValue);
+            m_us_tk.dcID_DON_VI_THONG_KE = CONST_ID_DON_VI_THONG_KE.HOC_VIEN;
+            m_us_tk.dcID_LOAI_THOI_GIAN = CONST_ID_CM_DM_TU_DIEN.ID_PHAT_SINH_CUOi_KY;
+            m_us_tk.dcGIA_TRI_THONG_KE = CIPConvert.ToDecimal(m_txt_so_luong.Text.Replace(",", "").Replace(",", ""));
+            m_us_tk.strTEN_THONG_KE = m_txt_ten_thong_ke.Text;
+            m_us_tk.strGHI_CHU_1 = m_txt_ghi_chu.Text;
+            m_us_tk.datTU_NGAY = m_dtp_ngay.Value.Date.AddDays(-(m_dtp_ngay.Value.Day) + 1);
+            m_us_tk.datDEN_NGAY = m_dtp_ngay.Value.Date;
         }
         private void us_obj_2_form(US_V_GD_THONG_KE ip_us_v)
         {
             m_us_tk.dcID = ip_us_v.dcID;
-            m_cbo_trung_tam.SelectedValue = ip_us_v.dcID_DM_CO_SO;
+            m_cbo_truong.SelectedValue = ip_us_v.dcID_DM_CO_SO;
             m_txt_ten_thong_ke.Text = ip_us_v.strTEN_THONG_KE;
             m_txt_so_luong.Text = ip_us_v.dcGIA_TRI_THONG_KE.ToString();
             m_dtp_ngay.Value = ip_us_v.datDEN_NGAY.Date;
             m_txt_ghi_chu.Text = ip_us_v.strGHI_CHU_1;
+            if (ip_us_v.dcID_CO_SO_DINH_MUC == CONST_ID_CO_SO_DINH_MUC.DANGHOC_TRUONG || ip_us_v.dcID_CO_SO_DINH_MUC == CONST_ID_CO_SO_DINH_MUC.DANGHOC_ALL)
+            {
+                m_cbo_loai_hv.SelectedIndex = 0;
+            }
+            else m_cbo_loai_hv.SelectedIndex = 1;
         }
-        private void form_2_us_obj()
-        {
-            m_us_tk.dcID_CO_SO_DINH_MUC = CONST_ID_CO_SO_DINH_MUC.NV_TRUNGTAM;
-            m_us_tk.dcID_DM_CO_SO = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
-            m_us_tk.dcID_DON_VI_THONG_KE = CONST_ID_DON_VI_THONG_KE.NHAN_VIEN;
-            m_us_tk.dcID_LOAI_THOI_GIAN = CONST_ID_CM_DM_TU_DIEN.ID_PHAT_SINH_CUOi_KY;
-            m_us_tk.dcGIA_TRI_THONG_KE = CIPConvert.ToDecimal(m_txt_so_luong.Text.Replace(",", "").Replace(".", ""));            
-            m_us_tk.strTEN_THONG_KE = m_txt_ten_thong_ke.Text;
-            m_us_tk.strGHI_CHU_1 = m_txt_ghi_chu.Text;
-            m_us_tk.datDEN_NGAY = m_dtp_ngay.Value.Date;
-            m_us_tk.datTU_NGAY = m_dtp_ngay.Value.Date.AddDays(-(m_dtp_ngay.Value.Day) + 1);
-            
-        }
-        private void load_data_2_cbo_trung_tam()
+        private void load_data_2_cbo_truong()
         {
             US_V_DM_CO_SO v_us = new US_V_DM_CO_SO();
             DS_V_DM_CO_SO v_ds = new DS_V_DM_CO_SO();
-            v_us.FillDataset(v_ds,"where id_loai_co_so=183");
-            m_cbo_trung_tam.ValueMember = V_DM_CO_SO.ID;
-            m_cbo_trung_tam.DisplayMember = V_DM_CO_SO.MO_TA;
-            m_cbo_trung_tam.DataSource = v_ds.V_DM_CO_SO;
+            v_us.FillDataset(v_ds, "where id_loai_co_so=184 or id_loai_co_so=186");
+            m_cbo_truong.DataSource = v_ds.V_DM_CO_SO;
+            m_cbo_truong.ValueMember = V_DM_CO_SO.ID;
+            m_cbo_truong.DisplayMember = V_DM_CO_SO.MO_TA;
         }
         private bool validate_data_is_ok()
         {
@@ -98,15 +103,22 @@ namespace BCTKApp
         private void save_data()
         {
             if (!validate_data_is_ok())
-                return;          
-            form_2_us_obj();
+                return;
+            if (m_cbo_loai_hv.SelectedIndex == 0)
+            {
+                form_2_us_obj(CONST_ID_CO_SO_DINH_MUC.DANGHOC_TRUONG);
+            }
+            else 
+            {
+                form_2_us_obj(CONST_ID_CO_SO_DINH_MUC.TUYENMOI_TRUONG);
+            }
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
                     m_us_tk.Insert();
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    
+
                     m_us_tk.Update();
                     break;
             }
@@ -120,7 +132,6 @@ namespace BCTKApp
                 this.Close();
             }
         }
-
         private void xoa_trang()
         {
             m_txt_ten_thong_ke.Clear();
@@ -130,13 +141,12 @@ namespace BCTKApp
         }
         private void set_define_event()
         {
-            m_cmd_save.Click+=new EventHandler(m_cmd_save_Click);
-            m_cmd_exit.Click+=new EventHandler(m_cmd_exit_Click);
-            m_dtp_ngay.ValueChanged+=new EventHandler(m_dtp_ngay_ValueChanged);
-            m_txt_so_luong.TextChanged+=new EventHandler(m_txt_so_luong_TextChanged);
-            m_txt_so_luong.KeyPress+=new KeyPressEventHandler(m_txt_so_luong_KeyPress);
+            m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_dtp_ngay.ValueChanged += new EventHandler(m_dtp_ngay_ValueChanged);
+            m_txt_so_luong.TextChanged += new EventHandler(m_txt_so_luong_TextChanged);
+            m_txt_so_luong.KeyPress += new KeyPressEventHandler(m_txt_so_luong_KeyPress);
         }
-
         #endregion
 
         #region Event
