@@ -338,7 +338,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_grv_nhan_su);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f521_THONG_KE_NHAN_SU";
-            this.Text = "F521- Thống kê";
+            this.Text = "F521- Thống kê nhân sự";
             this.Load += new System.EventHandler(this.f521_THONG_KE_NHAN_SU_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).EndInit();
