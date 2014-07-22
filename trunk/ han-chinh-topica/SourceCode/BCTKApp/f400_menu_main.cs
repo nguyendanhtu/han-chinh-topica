@@ -59,7 +59,10 @@ namespace BCTKApp
             m_cmd_bc_chi_phi_theo_phap_nhan.Click += new EventHandler(m_cmd_bc_chi_phi_theo_phap_nhan_Click);
             m_cmd_dm_bill.Click+=new EventHandler(m_cmd_dm_bill_Click);
             m_cmd_don_gia_dinh_muc.Click += new EventHandler(m_cmd_don_gia_dinh_muc_Click);
+            m_cmd_nhap_theo_t.Click += m_cmd_nhap_theo_t_Click;
         }
+
+        
 
         void f400_menu_main_Load(object sender, EventArgs e)
         {
@@ -176,7 +179,18 @@ namespace BCTKApp
            
         }
         #endregion
+        private void m_cmd_nhap_theo_t_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f121_dm_dang_ky_gui_theo_excel v_frm = new f121_dm_dang_ky_gui_theo_excel();
+                v_frm.Display();
+            }
+            catch (System.Exception ex)
+            {
 
+            }
+        }
         private void m_cmd_don_gia_dinh_muc_Click(object sender, EventArgs e)
         {
             try

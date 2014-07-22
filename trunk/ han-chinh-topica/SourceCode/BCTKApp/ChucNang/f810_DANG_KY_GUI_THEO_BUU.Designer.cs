@@ -47,8 +47,8 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_danh_sach_bill = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_tieu_de.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -287,22 +287,6 @@
             this.panel2.Size = new System.Drawing.Size(1169, 33);
             this.panel2.TabIndex = 5;
             // 
-            // m_cmd_nhap_excel
-            // 
-            this.m_cmd_nhap_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_nhap_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_nhap_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_nhap_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_nhap_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_nhap_excel.ImageIndex = 19;
-            this.m_cmd_nhap_excel.ImageList = this.ImageList;
-            this.m_cmd_nhap_excel.Location = new System.Drawing.Point(0, 0);
-            this.m_cmd_nhap_excel.Name = "m_cmd_nhap_excel";
-            this.m_cmd_nhap_excel.Size = new System.Drawing.Size(93, 31);
-            this.m_cmd_nhap_excel.TabIndex = 0;
-            this.m_cmd_nhap_excel.Text = "Nhập từ Excel";
-            this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
-            // 
             // m_cmd_danh_sach_bill
             // 
             this.m_cmd_danh_sach_bill.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -319,6 +303,23 @@
             this.m_cmd_danh_sach_bill.Text = "Danh sách Bill";
             this.m_cmd_danh_sach_bill.UseVisualStyleBackColor = true;
             // 
+            // m_cmd_nhap_excel
+            // 
+            this.m_cmd_nhap_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_nhap_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_nhap_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_nhap_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_nhap_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_nhap_excel.ImageIndex = 19;
+            this.m_cmd_nhap_excel.ImageList = this.ImageList;
+            this.m_cmd_nhap_excel.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_nhap_excel.Name = "m_cmd_nhap_excel";
+            this.m_cmd_nhap_excel.Size = new System.Drawing.Size(93, 31);
+            this.m_cmd_nhap_excel.TabIndex = 0;
+            this.m_cmd_nhap_excel.Text = "Nhập từ Excel";
+            this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
+            this.m_cmd_nhap_excel.Visible = false;
+            // 
             // f810_DANG_KY_GUI_THEO_BUU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,7 +330,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_tieu_de);
             this.Name = "f810_DANG_KY_GUI_THEO_BUU";
-            this.Text = "F810 - Nhập thông tin Bill";
+            this.Text = "Nhập thông tin Bill lẻ";
             this.m_pnl_tieu_de.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -73,6 +73,7 @@
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
+            this.m_cmd_nhap_theo_t = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_control_TAD.SuspendLayout();
             this.m_rib_pnl_CPN.SuspendLayout();
             this.m_rib_pnl_quan_ly_dinh_muc.SuspendLayout();
@@ -172,7 +173,7 @@
             this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.m_cmd_tra_cuu_trang_thai_CPN,
             this.m_cmd_tra_cuu_Bill});
-            this.ribbonBar2.Location = new System.Drawing.Point(663, 0);
+            this.ribbonBar2.Location = new System.Drawing.Point(816, 0);
             this.ribbonBar2.Name = "ribbonBar2";
             this.ribbonBar2.Size = new System.Drawing.Size(120, 101);
             this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -225,7 +226,7 @@
             this.m_cmd_bc_tinh_hinh_CPN,
             this.m_cmd_bc_chi_phi_theo_phap_nhan,
             this.m_cmd_bc_thu_tra_lai});
-            this.m_rib_bar_CPN_Bao_cao.Location = new System.Drawing.Point(342, 0);
+            this.m_rib_bar_CPN_Bao_cao.Location = new System.Drawing.Point(495, 0);
             this.m_rib_bar_CPN_Bao_cao.Name = "m_rib_bar_CPN_Bao_cao";
             this.m_rib_bar_CPN_Bao_cao.Size = new System.Drawing.Size(321, 101);
             this.m_rib_bar_CPN_Bao_cao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -294,7 +295,7 @@
             this.m_rib_bar_cap_nhat_trang_thai.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
             this.m_rib_bar_cap_nhat_trang_thai.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.m_cmd_trang_thai});
-            this.m_rib_bar_cap_nhat_trang_thai.Location = new System.Drawing.Point(242, 0);
+            this.m_rib_bar_cap_nhat_trang_thai.Location = new System.Drawing.Point(395, 0);
             this.m_rib_bar_cap_nhat_trang_thai.MaximumSize = new System.Drawing.Size(100, 101);
             this.m_rib_bar_cap_nhat_trang_thai.MinimumSize = new System.Drawing.Size(100, 101);
             this.m_rib_bar_cap_nhat_trang_thai.Name = "m_rib_bar_cap_nhat_trang_thai";
@@ -336,7 +337,7 @@
             this.m_rib_bar_nhap_thong_tin_thang.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
             this.m_rib_bar_nhap_thong_tin_thang.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.m_cmd_thong_tin_thang_excel});
-            this.m_rib_bar_nhap_thong_tin_thang.Location = new System.Drawing.Point(154, 0);
+            this.m_rib_bar_nhap_thong_tin_thang.Location = new System.Drawing.Point(307, 0);
             this.m_rib_bar_nhap_thong_tin_thang.MaximumSize = new System.Drawing.Size(88, 101);
             this.m_rib_bar_nhap_thong_tin_thang.MinimumSize = new System.Drawing.Size(88, 101);
             this.m_rib_bar_nhap_thong_tin_thang.Name = "m_rib_bar_nhap_thong_tin_thang";
@@ -380,10 +381,11 @@
             this.m_rib_bar_nhap_thong_tin_hang_ngay.HorizontalItemAlignment = DevComponents.DotNetBar.eHorizontalItemsAlignment.Center;
             this.m_rib_bar_nhap_thong_tin_hang_ngay.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.m_cmd_theo_tung_bill,
-            this.m_cmd_dm_bill});
+            this.m_cmd_dm_bill,
+            this.m_cmd_nhap_theo_t});
             this.m_rib_bar_nhap_thong_tin_hang_ngay.Location = new System.Drawing.Point(3, 0);
             this.m_rib_bar_nhap_thong_tin_hang_ngay.Name = "m_rib_bar_nhap_thong_tin_hang_ngay";
-            this.m_rib_bar_nhap_thong_tin_hang_ngay.Size = new System.Drawing.Size(151, 101);
+            this.m_rib_bar_nhap_thong_tin_hang_ngay.Size = new System.Drawing.Size(304, 101);
             this.m_rib_bar_nhap_thong_tin_hang_ngay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.m_rib_bar_nhap_thong_tin_hang_ngay.TabIndex = 0;
             this.m_rib_bar_nhap_thong_tin_hang_ngay.Text = "Gửi thư";
@@ -763,6 +765,12 @@
             // 
             this.buttonItem1.Name = "buttonItem1";
             // 
+            // m_cmd_nhap_theo_t
+            // 
+            this.m_cmd_nhap_theo_t.Name = "m_cmd_nhap_theo_t";
+            this.m_cmd_nhap_theo_t.SubItemsExpandWidth = 14;
+            this.m_cmd_nhap_theo_t.Text = "Nhập Bill từng Trung tâm";
+            // 
             // f400_menu_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -829,6 +837,7 @@
         private DevComponents.DotNetBar.ButtonItem m_cmd_co_so_dinh_muc;
         private DevComponents.DotNetBar.ButtonItem m_cmd_phong_ban_phap_nhan;
         private DevComponents.DotNetBar.ButtonItem m_cmd_dm_bill;
+        private DevComponents.DotNetBar.ButtonItem m_cmd_nhap_theo_t;
 
     }
 }
