@@ -262,6 +262,7 @@ namespace BCTKApp
             // 
             // m_cbo_loai_tk
             // 
+            this.m_cbo_loai_tk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_loai_tk.FormattingEnabled = true;
             this.m_cbo_loai_tk.Location = new System.Drawing.Point(296, 87);
             this.m_cbo_loai_tk.Name = "m_cbo_loai_tk";
