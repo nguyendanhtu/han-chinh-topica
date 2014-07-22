@@ -164,7 +164,6 @@ namespace BCTKApp
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
             this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.Visible = false;
             // 
             // m_cmd_update
             // 
@@ -180,7 +179,6 @@ namespace BCTKApp
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
-            this.m_cmd_update.Visible = false;
             // 
             // m_cmd_view
             // 
@@ -212,7 +210,6 @@ namespace BCTKApp
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
             this.m_cmd_delete.Text = "&Xoá";
-            this.m_cmd_delete.Visible = false;
             // 
             // m_cmd_exit
             // 
@@ -426,6 +423,14 @@ namespace BCTKApp
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
+        private void dm_grid2us_object(US_GD_THONG_KE i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_grv_nhan_su.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
 	
 		private void us_object2grid(US_V_GD_THONG_KE i_us
@@ -436,9 +441,9 @@ namespace BCTKApp
 		}
 
 
-		private void insert_v_gd_thong_ke(){			
-		//	f521_THONG_KE_NHAN_SU_DE v_fDE = new  f521_THONG_KE_NHAN_SU_DE();								
-		//	v_fDE.display();
+		private void insert_v_gd_thong_ke(){
+            f522_THONG_KE_NHAN_SU_DE v_fDE = new f522_THONG_KE_NHAN_SU_DE();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -446,8 +451,8 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;			
 			grid2us_object(m_us, m_grv_nhan_su.Row);
-		//	f521_THONG_KE_NHAN_SU_DE v_fDE = new f521_THONG_KE_NHAN_SU_DE();
-		//	v_fDE.display(m_us);
+            f522_THONG_KE_NHAN_SU_DE v_fDE = new f522_THONG_KE_NHAN_SU_DE();
+            v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
@@ -455,8 +460,8 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_GD_THONG_KE v_us = new US_V_GD_THONG_KE();
-			grid2us_object(v_us, m_grv_nhan_su.Row);
+			US_GD_THONG_KE v_us = new US_GD_THONG_KE();
+			dm_grid2us_object(v_us, m_grv_nhan_su.Row);
 			try {			
 				v_us.BeginTransaction();    											
 				v_us.Delete();                      								
