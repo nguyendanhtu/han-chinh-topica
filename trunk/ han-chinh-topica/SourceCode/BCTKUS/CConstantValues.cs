@@ -23,6 +23,8 @@ namespace BCTKUS
         public const decimal ID_VIEW = 698;
         public const decimal ID_REPORT= 699;
         public const decimal ID_EDIT = 697;
+        public const decimal ID_PHAT_SINH_TRONG_KY = 171;
+        public const decimal ID_PHAT_SINH_CUOi_KY= 172;
          
     }
     public class CONST_ID_TRANG_THAI_THU 
@@ -44,5 +46,25 @@ namespace BCTKUS
         //public const string QuyenGV = "QuyenGV";
         public const string Allow2DeleteDataYN = "Allow2DeleteDataYN";
         public const string NHOM_PHAN_QUYEN = "NHOM_PHAN_QUYEN";
+    }
+    public class CONST_ID_DON_VI_THONG_KE
+    {
+        public const decimal NHAN_VIEN = 169;
+        public const decimal HOC_VIEN = 168;
+    }
+    public class CONST_ID_CO_SO_DINH_MUC
+    {
+        public const decimal NV_TRUNGTAM = 1;
+        public const decimal NV_DIAPHUONG = 2;
+        public const decimal NV_ALL = 3;
+        public const decimal DANGHOC_TRUONG = 4;
+        public const decimal DANGHOC_DIAPHUONG = 5;
+        public const decimal DANGHOC_ALL = 6;
+        public const decimal TUYENMOI_TRUONG = 7;
+        public const decimal TUYENMOI_DIAPHUONG = 8;
+        public const decimal TUYENMOI_ALL = 9;
+        public const decimal DANGHOC_TRUONG_DIAPHUONG = 10;
+        public const decimal TUYENMOI_TRUONG_DIAPHUONG = 11;
+
     }
 }
