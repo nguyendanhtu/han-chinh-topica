@@ -169,6 +169,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_DON_VI.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_NHA_CUNG_CAP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_NHA_CUNG_CAP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DM_PHAP_NHAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -184,6 +189,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_PHONG_BAN_PHAP_NHAN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_VPP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_VPP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DOC_COLUMN_COMMENT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -198,6 +208,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_DINH_MUC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_GD_DON_DAT_HANG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_DON_DAT_HANG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_GD_DON_DAT_HANG_DETAIL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_DON_DAT_HANG_DETAIL.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_GD_PHAN_HOI.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -487,6 +507,17 @@
     <None Include="DS_DM_DON_VI.xss">
       <DependentUpon>DS_DM_DON_VI.xsd</DependentUpon>
     </None>
+    <None Include="DS_DM_NHA_CUNG_CAP.xsc">
+      <DependentUpon>DS_DM_NHA_CUNG_CAP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_NHA_CUNG_CAP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_NHA_CUNG_CAP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_NHA_CUNG_CAP.xss">
+      <DependentUpon>DS_DM_NHA_CUNG_CAP.xsd</DependentUpon>
+    </None>
     <None Include="DS_DM_PHAP_NHAN.xsc">
       <DependentUpon>DS_DM_PHAP_NHAN.xsd</DependentUpon>
     </None>
@@ -520,6 +551,17 @@
     <None Include="DS_DM_PHONG_BAN_PHAP_NHAN.xss">
       <DependentUpon>DS_DM_PHONG_BAN_PHAP_NHAN.xsd</DependentUpon>
     </None>
+    <None Include="DS_DM_VPP.xsc">
+      <DependentUpon>DS_DM_VPP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_VPP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_VPP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_VPP.xss">
+      <DependentUpon>DS_DM_VPP.xsd</DependentUpon>
+    </None>
     <None Include="DS_DOC_COLUMN_COMMENT.xsc">
       <DependentUpon>DS_DOC_COLUMN_COMMENT.xsd</DependentUpon>
     </None>
@@ -552,6 +594,28 @@
     </None>
     <None Include="DS_GD_DINH_MUC.xss">
       <DependentUpon>DS_GD_DINH_MUC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DON_DAT_HANG.xsc">
+      <DependentUpon>DS_GD_DON_DAT_HANG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DON_DAT_HANG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_DON_DAT_HANG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_DON_DAT_HANG.xss">
+      <DependentUpon>DS_GD_DON_DAT_HANG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DON_DAT_HANG_DETAIL.xsc">
+      <DependentUpon>DS_GD_DON_DAT_HANG_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DON_DAT_HANG_DETAIL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_DON_DAT_HANG_DETAIL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_DON_DAT_HANG_DETAIL.xss">
+      <DependentUpon>DS_GD_DON_DAT_HANG_DETAIL.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_PHAN_HOI.xsc">
       <DependentUpon>DS_GD_PHAN_HOI.xsd</DependentUpon>

@@ -136,12 +136,16 @@
     <Compile Include="US_DM_CO_SO.cs" />
     <Compile Include="US_DM_CO_SO_DINH_MUC.cs" />
     <Compile Include="US_DM_DON_VI.cs" />
+    <Compile Include="US_DM_NHA_CUNG_CAP.cs" />
     <Compile Include="US_DM_PHAP_NHAN.cs" />
     <Compile Include="US_DM_PHONG_BAN.cs" />
     <Compile Include="US_DM_PHONG_BAN_PHAP_NHAN.cs" />
+    <Compile Include="US_DM_VPP.cs" />
     <Compile Include="US_DOC_COLUMN_COMMENT.cs" />
     <Compile Include="US_DOC_TABLE_COMMENT.cs" />
     <Compile Include="US_GD_DINH_MUC.cs" />
+    <Compile Include="US_GD_DON_DAT_HANG.cs" />
+    <Compile Include="US_GD_DON_DAT_HANG_DETAIL.cs" />
     <Compile Include="US_GD_PHAN_HOI.cs" />
     <Compile Include="US_GD_PHONG_BAN_DINH_MUC.cs" />
     <Compile Include="US_GD_THONG_KE.cs" />
