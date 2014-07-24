@@ -221,9 +221,9 @@ namespace BCTKApp
             // 
             this.m_grv_nha_cc.ColumnInfo = resources.GetString("m_grv_nha_cc.ColumnInfo");
             this.m_grv_nha_cc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_nha_cc.Location = new System.Drawing.Point(0, 112);
+            this.m_grv_nha_cc.Location = new System.Drawing.Point(0, 104);
             this.m_grv_nha_cc.Name = "m_grv_nha_cc";
-            this.m_grv_nha_cc.Size = new System.Drawing.Size(692, 330);
+            this.m_grv_nha_cc.Size = new System.Drawing.Size(692, 338);
             this.m_grv_nha_cc.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nha_cc.Styles"));
             this.m_grv_nha_cc.TabIndex = 20;
             // 
