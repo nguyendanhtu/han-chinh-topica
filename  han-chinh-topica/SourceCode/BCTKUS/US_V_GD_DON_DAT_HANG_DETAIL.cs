@@ -417,9 +417,13 @@ public class US_V_GD_DON_DAT_HANG_DETAIL : US_Object
 	}
 #endregion
 
-    public void FillDatasetSearch(DS_V_GD_DON_DAT_HANG_DETAIL m_ds, DateTime v_dat_thang, decimal v_dc_id_trung_tam, string v_str_tu_khoa)
+    public void FillDatasetSearch(DS_V_GD_DON_DAT_HANG_DETAIL ip_ds, DateTime ip_dat_thang, decimal ip_dc_id_trung_tam, string ip_str_tu_khoa)
     {
-        
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_DON_DAT_HANG_DETAIL_Search");
+        v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
+        v_stored_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_dc_id_trung_tam);
+        v_stored_proc.addDatetimeInputParam("@NGAY", ip_dat_thang);
+        v_stored_proc.fillDataSetByCommand(this, ip_ds);
     }
 }
 }
