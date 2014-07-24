@@ -659,6 +659,7 @@ namespace BCTKDS.CDBNames
         public const string DIEN_THOAI = "DIEN_THOAI";
         public const string WEB = "WEB";
         public const string EMAIL = "EMAIL";
+        public const string FAX = "FAX";
     }
     #endregion
 }
