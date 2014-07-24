@@ -46,8 +46,8 @@
             this.m_cmd_thong_tin_thang_excel = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_bar_nhap_thong_tin_hang_ngay = new DevComponents.DotNetBar.RibbonBar();
             this.m_cmd_theo_tung_bill = new DevComponents.DotNetBar.ButtonItem();
-            this.m_cmd_dm_bill = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_nhap_theo_t = new DevComponents.DotNetBar.ButtonItem();
+            this.m_cmd_dm_bill = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_pnl_quan_ly_dinh_muc = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
             this.m_cmd_dm_trung_tam = new DevComponents.DotNetBar.ButtonItem();
@@ -407,15 +407,6 @@
             this.m_cmd_theo_tung_bill.SubItemsExpandWidth = 14;
             this.m_cmd_theo_tung_bill.Text = "Nhập Bill lẻ";
             // 
-            // m_cmd_dm_bill
-            // 
-            this.m_cmd_dm_bill.Icon = ((System.Drawing.Icon)(resources.GetObject("m_cmd_dm_bill.Icon")));
-            this.m_cmd_dm_bill.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.m_cmd_dm_bill.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.m_cmd_dm_bill.Name = "m_cmd_dm_bill";
-            this.m_cmd_dm_bill.SubItemsExpandWidth = 14;
-            this.m_cmd_dm_bill.Text = "Danh sách Bill";
-            // 
             // m_cmd_nhap_theo_t
             // 
             this.m_cmd_nhap_theo_t.Icon = ((System.Drawing.Icon)(resources.GetObject("m_cmd_nhap_theo_t.Icon")));
@@ -424,6 +415,15 @@
             this.m_cmd_nhap_theo_t.Name = "m_cmd_nhap_theo_t";
             this.m_cmd_nhap_theo_t.SubItemsExpandWidth = 14;
             this.m_cmd_nhap_theo_t.Text = "Nhập Bill từng Trung tâm";
+            // 
+            // m_cmd_dm_bill
+            // 
+            this.m_cmd_dm_bill.Icon = ((System.Drawing.Icon)(resources.GetObject("m_cmd_dm_bill.Icon")));
+            this.m_cmd_dm_bill.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.m_cmd_dm_bill.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.m_cmd_dm_bill.Name = "m_cmd_dm_bill";
+            this.m_cmd_dm_bill.SubItemsExpandWidth = 14;
+            this.m_cmd_dm_bill.Text = "Danh sách Bill";
             // 
             // m_rib_pnl_quan_ly_dinh_muc
             // 
