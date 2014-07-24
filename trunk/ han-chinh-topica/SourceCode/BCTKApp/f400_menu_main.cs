@@ -60,6 +60,8 @@ namespace BCTKApp
             m_cmd_dm_bill.Click+=new EventHandler(m_cmd_dm_bill_Click);
             m_cmd_don_gia_dinh_muc.Click += new EventHandler(m_cmd_don_gia_dinh_muc_Click);
             m_cmd_nhap_theo_t.Click += m_cmd_nhap_theo_t_Click;
+            m_cmd_nha_cc.Click+=new EventHandler(m_cmd_nha_cc_Click);
+            m_cmd_tra_cuu_don_hang.Click+=new EventHandler(m_cmd_tra_cuu_don_hang_Click);
         }
 
         
@@ -400,6 +402,32 @@ namespace BCTKApp
             try
             {
                 f516_V_DM_BILL v_frm = new f516_V_DM_BILL();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_nha_cc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f528_DM_NHA_CC v_frm = new f528_DM_NHA_CC();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_tra_cuu_don_hang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f531_TRA_CUU_DON_HANG v_frm = new f531_TRA_CUU_DON_HANG();
                 v_frm.ShowDialog();
             }
             catch (Exception v_e)
