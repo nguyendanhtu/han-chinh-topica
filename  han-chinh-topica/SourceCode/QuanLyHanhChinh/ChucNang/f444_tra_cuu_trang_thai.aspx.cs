@@ -129,6 +129,7 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
         try
         {
             m_grv_v_dm_bill.PageIndex = e.NewPageIndex;
+            load_data_to_grid();
             m_grv_v_dm_bill.DataBind();
         }
         catch (Exception v_e)
