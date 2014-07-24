@@ -6,6 +6,18 @@ using System.Configuration;
 
 namespace BCTKDS.CDBNames
 {
+    public class V_DM_VPP
+    {
+        public const string ID_VPP = "ID_VPP";
+        public const string MA = "MA";
+        public const string DON_GIA_CHUA_VAT = "DON_GIA_CHUA_VAT";
+        public const string DON_GIA_GOM_VAT = "DON_GIA_GOM_VAT";
+        public const string TEN_VPP = "TEN_VPP";
+        public const string DON_VI_TINH = "DON_VI_TINH";
+        public const string ID_NHA_CUNG_CAP = "ID_NHA_CUNG_CAP";
+        public const string TEN_NCC = "TEN_NCC";
+    }
+
     public class HT_CHUC_NANG
     {
         public const string ID = "ID";
