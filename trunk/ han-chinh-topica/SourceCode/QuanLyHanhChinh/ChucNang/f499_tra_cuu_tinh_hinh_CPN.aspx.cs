@@ -33,8 +33,8 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         v_ds.Clear();
         v_us.FillDataset(v_ds, v_id_trung_tam, m_dat_tu_ngay.SelectedDate, m_dat_den_ngay.SelectedDate);
         m_grv_v_bc_tinh_hinh_CPN.DataSource = v_ds.V_BC_TINH_HINH_CPN_THEO_PHONG_BAN;
-        string v_str_thong_tin = " (Có " + v_ds.V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.Rows.Count + " bản ghi)";
-        m_lbl_thong_tim_grv_dm_bill.Text = v_str_thong_tin;
+        //string v_str_thong_tin = " (Có " + v_ds.V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.Rows.Count + " bản ghi)";
+        //m_lbl_thong_tim_grv_dm_bill.Text = v_str_thong_tin;
         m_grv_v_bc_tinh_hinh_CPN.DataBind();
         if (!m_hdf_id_bill.Value.Equals(""))
         {
@@ -62,12 +62,12 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
     }
     private void set_time_set_ten_trung_tam()
     {
-        m_dat_tu_ngay.SelectedDate = new DateTime(2013, 01, 01);
+        m_dat_tu_ngay.SelectedDate = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
         v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
-        m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
+        m_lbl_ten_trung_tam.Text = "Tình hình CPN "+ v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
     }
     #endregion
 
