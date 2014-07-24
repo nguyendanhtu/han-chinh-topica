@@ -42,9 +42,16 @@
             this.m_lbl_ = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.m_lbox_ds_loi_tien = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_danh_sach_loi_bill = new System.Windows.Forms.Label();
             this.m_lbox_ds_loi_bill = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_insert_row = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_so_sanh = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,15 +68,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.m_lbl_tienck = new System.Windows.Forms.Label();
             this.m_cmd_del = new SIS.Controls.Button.SiSButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.m_lbox_ds_loi_tien = new System.Windows.Forms.ListBox();
-            this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_so_sanh = new SIS.Controls.Button.SiSButton();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.m_lbl_loading = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.m_cmd_insert_row = new SIS.Controls.Button.SiSButton();
             this.m_pnl_bot.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -234,6 +234,43 @@
             this.panel4.Size = new System.Drawing.Size(1316, 174);
             this.panel4.TabIndex = 19;
             // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Gold;
+            this.textBox2.Location = new System.Drawing.Point(744, 6);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(58, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Red;
+            this.textBox1.Location = new System.Drawing.Point(46, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(58, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // m_lbox_ds_loi_tien
+            // 
+            this.m_lbox_ds_loi_tien.BackColor = System.Drawing.Color.White;
+            this.m_lbox_ds_loi_tien.ForeColor = System.Drawing.Color.Gold;
+            this.m_lbox_ds_loi_tien.FormattingEnabled = true;
+            this.m_lbox_ds_loi_tien.Location = new System.Drawing.Point(744, 27);
+            this.m_lbox_ds_loi_tien.Name = "m_lbox_ds_loi_tien";
+            this.m_lbox_ds_loi_tien.Size = new System.Drawing.Size(521, 147);
+            this.m_lbox_ds_loi_tien.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(830, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(270, 16);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Danh sách bill đã có số tiền trong phần mềm";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // m_lbl_danh_sach_loi_bill
             // 
             this.m_lbl_danh_sach_loi_bill.AutoSize = true;
@@ -277,6 +314,53 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1316, 123);
             this.panel1.TabIndex = 0;
+            // 
+            // m_cmd_insert_row
+            // 
+            this.m_cmd_insert_row.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_insert_row.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_insert_row.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_insert_row.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_insert_row.ImageIndex = 2;
+            this.m_cmd_insert_row.ImageList = this.ImageList;
+            this.m_cmd_insert_row.Location = new System.Drawing.Point(88, 91);
+            this.m_cmd_insert_row.Name = "m_cmd_insert_row";
+            this.m_cmd_insert_row.Size = new System.Drawing.Size(83, 26);
+            this.m_cmd_insert_row.TabIndex = 33;
+            this.m_cmd_insert_row.TabStop = false;
+            this.m_cmd_insert_row.Text = "&Thêm hàng";
+            // 
+            // m_cmd_so_sanh
+            // 
+            this.m_cmd_so_sanh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_so_sanh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_so_sanh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_so_sanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_so_sanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_so_sanh.ImageIndex = 13;
+            this.m_cmd_so_sanh.ImageList = this.imageList1;
+            this.m_cmd_so_sanh.Location = new System.Drawing.Point(183, 39);
+            this.m_cmd_so_sanh.Name = "m_cmd_so_sanh";
+            this.m_cmd_so_sanh.Size = new System.Drawing.Size(337, 37);
+            this.m_cmd_so_sanh.TabIndex = 32;
+            this.m_cmd_so_sanh.Text = "Bước 2: Đối chiếu và cập nhật số tiền từng bưu vào phần mềm";
+            this.m_cmd_so_sanh.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_nhap_excel
+            // 
+            this.m_cmd_nhap_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_nhap_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_nhap_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_nhap_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_nhap_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_nhap_excel.ImageIndex = 19;
+            this.m_cmd_nhap_excel.ImageList = this.imageList1;
+            this.m_cmd_nhap_excel.Location = new System.Drawing.Point(12, 39);
+            this.m_cmd_nhap_excel.Name = "m_cmd_nhap_excel";
+            this.m_cmd_nhap_excel.Size = new System.Drawing.Size(149, 37);
+            this.m_cmd_nhap_excel.TabIndex = 30;
+            this.m_cmd_nhap_excel.Text = "Bước 1: Chọn File Excel";
+            this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -429,59 +513,6 @@
             this.m_cmd_del.TabStop = false;
             this.m_cmd_del.Text = "&Xóa hàng";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(830, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(270, 16);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Danh sách bill đã có số tiền trong phần mềm";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // m_lbox_ds_loi_tien
-            // 
-            this.m_lbox_ds_loi_tien.BackColor = System.Drawing.Color.White;
-            this.m_lbox_ds_loi_tien.ForeColor = System.Drawing.Color.Gold;
-            this.m_lbox_ds_loi_tien.FormattingEnabled = true;
-            this.m_lbox_ds_loi_tien.Location = new System.Drawing.Point(744, 27);
-            this.m_lbox_ds_loi_tien.Name = "m_lbox_ds_loi_tien";
-            this.m_lbox_ds_loi_tien.Size = new System.Drawing.Size(521, 147);
-            this.m_lbox_ds_loi_tien.TabIndex = 3;
-            // 
-            // m_cmd_nhap_excel
-            // 
-            this.m_cmd_nhap_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_nhap_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_nhap_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_nhap_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_nhap_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_nhap_excel.ImageIndex = 19;
-            this.m_cmd_nhap_excel.ImageList = this.imageList1;
-            this.m_cmd_nhap_excel.Location = new System.Drawing.Point(12, 39);
-            this.m_cmd_nhap_excel.Name = "m_cmd_nhap_excel";
-            this.m_cmd_nhap_excel.Size = new System.Drawing.Size(149, 37);
-            this.m_cmd_nhap_excel.TabIndex = 30;
-            this.m_cmd_nhap_excel.Text = "Bước 1: Chọn File Excel";
-            this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
-            // 
-            // m_cmd_so_sanh
-            // 
-            this.m_cmd_so_sanh.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_so_sanh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_so_sanh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_so_sanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_so_sanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_so_sanh.ImageIndex = 13;
-            this.m_cmd_so_sanh.ImageList = this.imageList1;
-            this.m_cmd_so_sanh.Location = new System.Drawing.Point(183, 39);
-            this.m_cmd_so_sanh.Name = "m_cmd_so_sanh";
-            this.m_cmd_so_sanh.Size = new System.Drawing.Size(337, 37);
-            this.m_cmd_so_sanh.TabIndex = 32;
-            this.m_cmd_so_sanh.Text = "Bước 2: Đối chiếu và cập nhật số tiền từng bưu vào phần mềm";
-            this.m_cmd_so_sanh.UseVisualStyleBackColor = true;
-            // 
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(538, 249);
@@ -500,37 +531,6 @@
             this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
             this.m_lbl_loading.TabIndex = 21;
             this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Red;
-            this.textBox1.Location = new System.Drawing.Point(46, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(58, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.Gold;
-            this.textBox2.Location = new System.Drawing.Point(744, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(58, 20);
-            this.textBox2.TabIndex = 5;
-            // 
-            // m_cmd_insert_row
-            // 
-            this.m_cmd_insert_row.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert_row.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert_row.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert_row.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert_row.ImageIndex = 2;
-            this.m_cmd_insert_row.ImageList = this.ImageList;
-            this.m_cmd_insert_row.Location = new System.Drawing.Point(88, 91);
-            this.m_cmd_insert_row.Name = "m_cmd_insert_row";
-            this.m_cmd_insert_row.Size = new System.Drawing.Size(83, 26);
-            this.m_cmd_insert_row.TabIndex = 33;
-            this.m_cmd_insert_row.TabStop = false;
-            this.m_cmd_insert_row.Text = "&Thêm hàng";
             // 
             // f820_NHAP_CHI_PHI_CUOI_THANG
             // 
