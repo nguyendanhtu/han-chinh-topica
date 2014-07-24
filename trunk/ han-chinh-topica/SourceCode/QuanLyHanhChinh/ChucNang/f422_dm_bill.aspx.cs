@@ -433,6 +433,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         try
         {
             m_grv_dm_bill.PageIndex = e.NewPageIndex;
+            load_data_to_grid();
             m_grv_dm_bill.DataBind();
         }
         catch (Exception v_e)
