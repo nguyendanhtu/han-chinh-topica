@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_DM_VPP" targetNamespace="http://tempuri.org/DS_V_DM_VPP.xsd" xmlns:mstns="http://tempuri.org/DS_V_DM_VPP.xsd" xmlns="http://tempuri.org/DS_V_DM_VPP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ADMIN_SOFTConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ADMIN_SOFTConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.ADMIN_SOFTConnectionString3" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DM_VPPTableAdapter" GeneratorDataComponentClassName="V_DM_VPPTableAdapter" Name="V_DM_VPP" UserDataComponentName="V_DM_VPPTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ADMIN_SOFTConnectionString3 (Settings)" DbObjectName="ADMIN_SOFT.dbo.V_DM_VPP" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_VPP, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN_VPP, DON_VI_TINH, ID_NHA_CUNG_CAP, TEN_NCC FROM dbo.V_DM_VPP</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_VPP" DataSetColumn="ID_VPP" />
+              <Mapping SourceColumn="MA" DataSetColumn="MA" />
+              <Mapping SourceColumn="DON_GIA_CHUA_VAT" DataSetColumn="DON_GIA_CHUA_VAT" />
+              <Mapping SourceColumn="DON_GIA_GOM_VAT" DataSetColumn="DON_GIA_GOM_VAT" />
+              <Mapping SourceColumn="TEN_VPP" DataSetColumn="TEN_VPP" />
+              <Mapping SourceColumn="DON_VI_TINH" DataSetColumn="DON_VI_TINH" />
+              <Mapping SourceColumn="ID_NHA_CUNG_CAP" DataSetColumn="ID_NHA_CUNG_CAP" />
+              <Mapping SourceColumn="TEN_NCC" DataSetColumn="TEN_NCC" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_DM_VPP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_VPP" msprop:Generator_UserDSName="DS_V_DM_VPP">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_DM_VPP" msprop:Generator_TableClassName="V_DM_VPPDataTable" msprop:Generator_TableVarName="tableV_DM_VPP" msprop:Generator_TablePropName="V_DM_VPP" msprop:Generator_RowDeletingName="V_DM_VPPRowDeleting" msprop:Generator_UserTableName="V_DM_VPP" msprop:Generator_RowChangingName="V_DM_VPPRowChanging" msprop:Generator_RowEvHandlerName="V_DM_VPPRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_VPPRowDeleted" msprop:Generator_RowEvArgName="V_DM_VPPRowChangeEvent" msprop:Generator_RowChangedName="V_DM_VPPRowChanged" msprop:Generator_RowClassName="V_DM_VPPRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_VPP" msprop:Generator_ColumnVarNameInTable="columnID_VPP" msprop:Generator_ColumnPropNameInRow="ID_VPP" msprop:Generator_ColumnPropNameInTable="ID_VPPColumn" msprop:Generator_UserColumnName="ID_VPP" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA" msprop:Generator_ColumnVarNameInTable="columnMA" msprop:Generator_ColumnPropNameInRow="MA" msprop:Generator_ColumnPropNameInTable="MAColumn" msprop:Generator_UserColumnName="MA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DON_GIA_CHUA_VAT" msprop:Generator_ColumnVarNameInTable="columnDON_GIA_CHUA_VAT" msprop:Generator_ColumnPropNameInRow="DON_GIA_CHUA_VAT" msprop:Generator_ColumnPropNameInTable="DON_GIA_CHUA_VATColumn" msprop:Generator_UserColumnName="DON_GIA_CHUA_VAT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DON_GIA_GOM_VAT" msprop:Generator_ColumnVarNameInTable="columnDON_GIA_GOM_VAT" msprop:Generator_ColumnPropNameInRow="DON_GIA_GOM_VAT" msprop:Generator_ColumnPropNameInTable="DON_GIA_GOM_VATColumn" msprop:Generator_UserColumnName="DON_GIA_GOM_VAT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TEN_VPP" msprop:Generator_ColumnVarNameInTable="columnTEN_VPP" msprop:Generator_ColumnPropNameInRow="TEN_VPP" msprop:Generator_ColumnPropNameInTable="TEN_VPPColumn" msprop:Generator_UserColumnName="TEN_VPP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DON_VI_TINH" msprop:Generator_ColumnVarNameInTable="columnDON_VI_TINH" msprop:Generator_ColumnPropNameInRow="DON_VI_TINH" msprop:Generator_ColumnPropNameInTable="DON_VI_TINHColumn" msprop:Generator_UserColumnName="DON_VI_TINH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_NHA_CUNG_CAP" msprop:Generator_ColumnVarNameInTable="columnID_NHA_CUNG_CAP" msprop:Generator_ColumnPropNameInRow="ID_NHA_CUNG_CAP" msprop:Generator_ColumnPropNameInTable="ID_NHA_CUNG_CAPColumn" msprop:Generator_UserColumnName="ID_NHA_CUNG_CAP" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TEN_NCC" msprop:Generator_ColumnVarNameInTable="columnTEN_NCC" msprop:Generator_ColumnPropNameInRow="TEN_NCC" msprop:Generator_ColumnPropNameInTable="TEN_NCCColumn" msprop:Generator_UserColumnName="TEN_NCC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:V_DM_VPP" />
+      <xs:field xpath="mstns:ID_VPP" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
