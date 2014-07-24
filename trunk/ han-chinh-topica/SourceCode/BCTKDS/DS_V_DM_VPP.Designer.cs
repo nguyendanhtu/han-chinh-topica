@@ -20,17 +20,17 @@ namespace BCTKDS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DS_DM_NHA_CUNG_CAP")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DS_V_DM_VPP")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DS_DM_NHA_CUNG_CAP : global::System.Data.DataSet {
+    public partial class DS_V_DM_VPP : global::System.Data.DataSet {
         
-        private DM_NHA_CUNG_CAPDataTable tableDM_NHA_CUNG_CAP;
+        private V_DM_VPPDataTable tableV_DM_VPP;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DS_DM_NHA_CUNG_CAP() {
+        public DS_V_DM_VPP() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace BCTKDS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DS_DM_NHA_CUNG_CAP(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DS_V_DM_VPP(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace BCTKDS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DM_NHA_CUNG_CAP"] != null)) {
-                    base.Tables.Add(new DM_NHA_CUNG_CAPDataTable(ds.Tables["DM_NHA_CUNG_CAP"]));
+                if ((ds.Tables["V_DM_VPP"] != null)) {
+                    base.Tables.Add(new V_DM_VPPDataTable(ds.Tables["V_DM_VPP"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace BCTKDS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DM_NHA_CUNG_CAPDataTable DM_NHA_CUNG_CAP {
+        public V_DM_VPPDataTable V_DM_VPP {
             get {
-                return this.tableDM_NHA_CUNG_CAP;
+                return this.tableV_DM_VPP;
             }
         }
         
@@ -127,7 +127,7 @@ namespace BCTKDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DS_DM_NHA_CUNG_CAP cln = ((DS_DM_NHA_CUNG_CAP)(base.Clone()));
+            DS_V_DM_VPP cln = ((DS_V_DM_VPP)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace BCTKDS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DM_NHA_CUNG_CAP"] != null)) {
-                    base.Tables.Add(new DM_NHA_CUNG_CAPDataTable(ds.Tables["DM_NHA_CUNG_CAP"]));
+                if ((ds.Tables["V_DM_VPP"] != null)) {
+                    base.Tables.Add(new V_DM_VPPDataTable(ds.Tables["V_DM_VPP"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace BCTKDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDM_NHA_CUNG_CAP = ((DM_NHA_CUNG_CAPDataTable)(base.Tables["DM_NHA_CUNG_CAP"]));
+            this.tableV_DM_VPP = ((V_DM_VPPDataTable)(base.Tables["V_DM_VPP"]));
             if ((initTable == true)) {
-                if ((this.tableDM_NHA_CUNG_CAP != null)) {
-                    this.tableDM_NHA_CUNG_CAP.InitVars();
+                if ((this.tableV_DM_VPP != null)) {
+                    this.tableV_DM_VPP.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace BCTKDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DS_DM_NHA_CUNG_CAP";
+            this.DataSetName = "DS_V_DM_VPP";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DS_DM_NHA_CUNG_CAP.xsd";
+            this.Namespace = "http://tempuri.org/DS_V_DM_VPP.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDM_NHA_CUNG_CAP = new DM_NHA_CUNG_CAPDataTable();
-            base.Tables.Add(this.tableDM_NHA_CUNG_CAP);
+            this.tableV_DM_VPP = new V_DM_VPPDataTable();
+            base.Tables.Add(this.tableV_DM_VPP);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeDM_NHA_CUNG_CAP() {
+        private bool ShouldSerializeV_DM_VPP() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace BCTKDS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DS_DM_NHA_CUNG_CAP ds = new DS_DM_NHA_CUNG_CAP();
+            DS_V_DM_VPP ds = new DS_V_DM_VPP();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,35 @@ namespace BCTKDS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DM_NHA_CUNG_CAPRowChangeEventHandler(object sender, DM_NHA_CUNG_CAPRowChangeEvent e);
+        public delegate void V_DM_VPPRowChangeEventHandler(object sender, V_DM_VPPRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DM_NHA_CUNG_CAPDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class V_DM_VPPDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnID_VPP;
             
-            private global::System.Data.DataColumn columnTEN;
+            private global::System.Data.DataColumn columnMA;
             
-            private global::System.Data.DataColumn columnDIA_CHI;
+            private global::System.Data.DataColumn columnDON_GIA_CHUA_VAT;
             
-            private global::System.Data.DataColumn columnDIEN_THOAI;
+            private global::System.Data.DataColumn columnDON_GIA_GOM_VAT;
             
-            private global::System.Data.DataColumn columnWEB;
+            private global::System.Data.DataColumn columnTEN_VPP;
             
-            private global::System.Data.DataColumn columnEMAIL;
+            private global::System.Data.DataColumn columnDON_VI_TINH;
             
-            private global::System.Data.DataColumn columnFAX;
+            private global::System.Data.DataColumn columnID_NHA_CUNG_CAP;
+            
+            private global::System.Data.DataColumn columnTEN_NCC;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_NHA_CUNG_CAPDataTable() {
-                this.TableName = "DM_NHA_CUNG_CAP";
+            public V_DM_VPPDataTable() {
+                this.TableName = "V_DM_VPP";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +306,7 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DM_NHA_CUNG_CAPDataTable(global::System.Data.DataTable table) {
+            internal V_DM_VPPDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,64 +323,72 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected DM_NHA_CUNG_CAPDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected V_DM_VPPDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn ID_VPPColumn {
                 get {
-                    return this.columnID;
+                    return this.columnID_VPP;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TENColumn {
+            public global::System.Data.DataColumn MAColumn {
                 get {
-                    return this.columnTEN;
+                    return this.columnMA;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DIA_CHIColumn {
+            public global::System.Data.DataColumn DON_GIA_CHUA_VATColumn {
                 get {
-                    return this.columnDIA_CHI;
+                    return this.columnDON_GIA_CHUA_VAT;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DIEN_THOAIColumn {
+            public global::System.Data.DataColumn DON_GIA_GOM_VATColumn {
                 get {
-                    return this.columnDIEN_THOAI;
+                    return this.columnDON_GIA_GOM_VAT;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WEBColumn {
+            public global::System.Data.DataColumn TEN_VPPColumn {
                 get {
-                    return this.columnWEB;
+                    return this.columnTEN_VPP;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EMAILColumn {
+            public global::System.Data.DataColumn DON_VI_TINHColumn {
                 get {
-                    return this.columnEMAIL;
+                    return this.columnDON_VI_TINH;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FAXColumn {
+            public global::System.Data.DataColumn ID_NHA_CUNG_CAPColumn {
                 get {
-                    return this.columnFAX;
+                    return this.columnID_NHA_CUNG_CAP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TEN_NCCColumn {
+                get {
+                    return this.columnTEN_NCC;
                 }
             }
             
@@ -393,52 +403,46 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_NHA_CUNG_CAPRow this[int index] {
+            public V_DM_VPPRow this[int index] {
                 get {
-                    return ((DM_NHA_CUNG_CAPRow)(this.Rows[index]));
+                    return ((V_DM_VPPRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DM_NHA_CUNG_CAPRowChangeEventHandler DM_NHA_CUNG_CAPRowChanging;
+            public event V_DM_VPPRowChangeEventHandler V_DM_VPPRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DM_NHA_CUNG_CAPRowChangeEventHandler DM_NHA_CUNG_CAPRowChanged;
+            public event V_DM_VPPRowChangeEventHandler V_DM_VPPRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DM_NHA_CUNG_CAPRowChangeEventHandler DM_NHA_CUNG_CAPRowDeleting;
+            public event V_DM_VPPRowChangeEventHandler V_DM_VPPRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DM_NHA_CUNG_CAPRowChangeEventHandler DM_NHA_CUNG_CAPRowDeleted;
+            public event V_DM_VPPRowChangeEventHandler V_DM_VPPRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddDM_NHA_CUNG_CAPRow(DM_NHA_CUNG_CAPRow row) {
+            public void AddV_DM_VPPRow(V_DM_VPPRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_NHA_CUNG_CAPRow AddDM_NHA_CUNG_CAPRow(string TEN, string DIA_CHI, string DIEN_THOAI, string WEB, string EMAIL, string FAX) {
-                DM_NHA_CUNG_CAPRow rowDM_NHA_CUNG_CAPRow = ((DM_NHA_CUNG_CAPRow)(this.NewRow()));
+            public V_DM_VPPRow AddV_DM_VPPRow(decimal ID_VPP, string MA, decimal DON_GIA_CHUA_VAT, decimal DON_GIA_GOM_VAT, string TEN_VPP, string DON_VI_TINH, decimal ID_NHA_CUNG_CAP, string TEN_NCC) {
+                V_DM_VPPRow rowV_DM_VPPRow = ((V_DM_VPPRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        TEN,
-                        DIA_CHI,
-                        DIEN_THOAI,
-                        WEB,
-                        EMAIL,
-                        FAX};
-                rowDM_NHA_CUNG_CAPRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDM_NHA_CUNG_CAPRow);
-                return rowDM_NHA_CUNG_CAPRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_NHA_CUNG_CAPRow FindByID(decimal ID) {
-                return ((DM_NHA_CUNG_CAPRow)(this.Rows.Find(new object[] {
-                            ID})));
+                        ID_VPP,
+                        MA,
+                        DON_GIA_CHUA_VAT,
+                        DON_GIA_GOM_VAT,
+                        TEN_VPP,
+                        DON_VI_TINH,
+                        ID_NHA_CUNG_CAP,
+                        TEN_NCC};
+                rowV_DM_VPPRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowV_DM_VPPRow);
+                return rowV_DM_VPPRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -450,7 +454,7 @@ namespace BCTKDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DM_NHA_CUNG_CAPDataTable cln = ((DM_NHA_CUNG_CAPDataTable)(base.Clone()));
+                V_DM_VPPDataTable cln = ((V_DM_VPPDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -458,79 +462,74 @@ namespace BCTKDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DM_NHA_CUNG_CAPDataTable();
+                return new V_DM_VPPDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnTEN = base.Columns["TEN"];
-                this.columnDIA_CHI = base.Columns["DIA_CHI"];
-                this.columnDIEN_THOAI = base.Columns["DIEN_THOAI"];
-                this.columnWEB = base.Columns["WEB"];
-                this.columnEMAIL = base.Columns["EMAIL"];
-                this.columnFAX = base.Columns["FAX"];
+                this.columnID_VPP = base.Columns["ID_VPP"];
+                this.columnMA = base.Columns["MA"];
+                this.columnDON_GIA_CHUA_VAT = base.Columns["DON_GIA_CHUA_VAT"];
+                this.columnDON_GIA_GOM_VAT = base.Columns["DON_GIA_GOM_VAT"];
+                this.columnTEN_VPP = base.Columns["TEN_VPP"];
+                this.columnDON_VI_TINH = base.Columns["DON_VI_TINH"];
+                this.columnID_NHA_CUNG_CAP = base.Columns["ID_NHA_CUNG_CAP"];
+                this.columnTEN_NCC = base.Columns["TEN_NCC"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnTEN = new global::System.Data.DataColumn("TEN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTEN);
-                this.columnDIA_CHI = new global::System.Data.DataColumn("DIA_CHI", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDIA_CHI);
-                this.columnDIEN_THOAI = new global::System.Data.DataColumn("DIEN_THOAI", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDIEN_THOAI);
-                this.columnWEB = new global::System.Data.DataColumn("WEB", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWEB);
-                this.columnEMAIL = new global::System.Data.DataColumn("EMAIL", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEMAIL);
-                this.columnFAX = new global::System.Data.DataColumn("FAX", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFAX);
+                this.columnID_VPP = new global::System.Data.DataColumn("ID_VPP", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_VPP);
+                this.columnMA = new global::System.Data.DataColumn("MA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMA);
+                this.columnDON_GIA_CHUA_VAT = new global::System.Data.DataColumn("DON_GIA_CHUA_VAT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDON_GIA_CHUA_VAT);
+                this.columnDON_GIA_GOM_VAT = new global::System.Data.DataColumn("DON_GIA_GOM_VAT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDON_GIA_GOM_VAT);
+                this.columnTEN_VPP = new global::System.Data.DataColumn("TEN_VPP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTEN_VPP);
+                this.columnDON_VI_TINH = new global::System.Data.DataColumn("DON_VI_TINH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDON_VI_TINH);
+                this.columnID_NHA_CUNG_CAP = new global::System.Data.DataColumn("ID_NHA_CUNG_CAP", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_NHA_CUNG_CAP);
+                this.columnTEN_NCC = new global::System.Data.DataColumn("TEN_NCC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTEN_NCC);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
-                this.columnID.Unique = true;
-                this.columnTEN.MaxLength = 250;
-                this.columnDIA_CHI.AllowDBNull = false;
-                this.columnDIA_CHI.MaxLength = 250;
-                this.columnDIEN_THOAI.MaxLength = 15;
-                this.columnWEB.MaxLength = 35;
-                this.columnEMAIL.MaxLength = 35;
-                this.columnFAX.MaxLength = 35;
+                                this.columnID_VPP}, false));
+                this.columnID_VPP.Unique = true;
+                this.columnMA.MaxLength = 35;
+                this.columnTEN_VPP.MaxLength = 250;
+                this.columnDON_VI_TINH.MaxLength = 35;
+                this.columnTEN_NCC.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_NHA_CUNG_CAPRow NewDM_NHA_CUNG_CAPRow() {
-                return ((DM_NHA_CUNG_CAPRow)(this.NewRow()));
+            public V_DM_VPPRow NewV_DM_VPPRow() {
+                return ((V_DM_VPPRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DM_NHA_CUNG_CAPRow(builder);
+                return new V_DM_VPPRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DM_NHA_CUNG_CAPRow);
+                return typeof(V_DM_VPPRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DM_NHA_CUNG_CAPRowChanged != null)) {
-                    this.DM_NHA_CUNG_CAPRowChanged(this, new DM_NHA_CUNG_CAPRowChangeEvent(((DM_NHA_CUNG_CAPRow)(e.Row)), e.Action));
+                if ((this.V_DM_VPPRowChanged != null)) {
+                    this.V_DM_VPPRowChanged(this, new V_DM_VPPRowChangeEvent(((V_DM_VPPRow)(e.Row)), e.Action));
                 }
             }
             
@@ -538,8 +537,8 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DM_NHA_CUNG_CAPRowChanging != null)) {
-                    this.DM_NHA_CUNG_CAPRowChanging(this, new DM_NHA_CUNG_CAPRowChangeEvent(((DM_NHA_CUNG_CAPRow)(e.Row)), e.Action));
+                if ((this.V_DM_VPPRowChanging != null)) {
+                    this.V_DM_VPPRowChanging(this, new V_DM_VPPRowChangeEvent(((V_DM_VPPRow)(e.Row)), e.Action));
                 }
             }
             
@@ -547,8 +546,8 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DM_NHA_CUNG_CAPRowDeleted != null)) {
-                    this.DM_NHA_CUNG_CAPRowDeleted(this, new DM_NHA_CUNG_CAPRowChangeEvent(((DM_NHA_CUNG_CAPRow)(e.Row)), e.Action));
+                if ((this.V_DM_VPPRowDeleted != null)) {
+                    this.V_DM_VPPRowDeleted(this, new V_DM_VPPRowChangeEvent(((V_DM_VPPRow)(e.Row)), e.Action));
                 }
             }
             
@@ -556,14 +555,14 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DM_NHA_CUNG_CAPRowDeleting != null)) {
-                    this.DM_NHA_CUNG_CAPRowDeleting(this, new DM_NHA_CUNG_CAPRowChangeEvent(((DM_NHA_CUNG_CAPRow)(e.Row)), e.Action));
+                if ((this.V_DM_VPPRowDeleting != null)) {
+                    this.V_DM_VPPRowDeleting(this, new V_DM_VPPRowChangeEvent(((V_DM_VPPRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveDM_NHA_CUNG_CAPRow(DM_NHA_CUNG_CAPRow row) {
+            public void RemoveV_DM_VPPRow(V_DM_VPPRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -572,7 +571,7 @@ namespace BCTKDS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_DM_NHA_CUNG_CAP ds = new DS_DM_NHA_CUNG_CAP();
+                DS_V_DM_VPP ds = new DS_V_DM_VPP();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -590,7 +589,7 @@ namespace BCTKDS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DM_NHA_CUNG_CAPDataTable";
+                attribute2.FixedValue = "V_DM_VPPDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -634,177 +633,239 @@ namespace BCTKDS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DM_NHA_CUNG_CAPRow : global::System.Data.DataRow {
+        public partial class V_DM_VPPRow : global::System.Data.DataRow {
             
-            private DM_NHA_CUNG_CAPDataTable tableDM_NHA_CUNG_CAP;
+            private V_DM_VPPDataTable tableV_DM_VPP;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DM_NHA_CUNG_CAPRow(global::System.Data.DataRowBuilder rb) : 
+            internal V_DM_VPPRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDM_NHA_CUNG_CAP = ((DM_NHA_CUNG_CAPDataTable)(this.Table));
+                this.tableV_DM_VPP = ((V_DM_VPPDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ID {
-                get {
-                    return ((decimal)(this[this.tableDM_NHA_CUNG_CAP.IDColumn]));
-                }
-                set {
-                    this[this.tableDM_NHA_CUNG_CAP.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TEN {
+            public decimal ID_VPP {
                 get {
                     try {
-                        return ((string)(this[this.tableDM_NHA_CUNG_CAP.TENColumn]));
+                        return ((decimal)(this[this.tableV_DM_VPP.ID_VPPColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TEN\' in table \'DM_NHA_CUNG_CAP\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_VPP\' in table \'V_DM_VPP\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDM_NHA_CUNG_CAP.TENColumn] = value;
+                    this[this.tableV_DM_VPP.ID_VPPColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DIA_CHI {
-                get {
-                    return ((string)(this[this.tableDM_NHA_CUNG_CAP.DIA_CHIColumn]));
-                }
-                set {
-                    this[this.tableDM_NHA_CUNG_CAP.DIA_CHIColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DIEN_THOAI {
+            public string MA {
                 get {
                     try {
-                        return ((string)(this[this.tableDM_NHA_CUNG_CAP.DIEN_THOAIColumn]));
+                        return ((string)(this[this.tableV_DM_VPP.MAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DIEN_THOAI\' in table \'DM_NHA_CUNG_CAP\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA\' in table \'V_DM_VPP\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDM_NHA_CUNG_CAP.DIEN_THOAIColumn] = value;
+                    this[this.tableV_DM_VPP.MAColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WEB {
+            public decimal DON_GIA_CHUA_VAT {
                 get {
                     try {
-                        return ((string)(this[this.tableDM_NHA_CUNG_CAP.WEBColumn]));
+                        return ((decimal)(this[this.tableV_DM_VPP.DON_GIA_CHUA_VATColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WEB\' in table \'DM_NHA_CUNG_CAP\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DON_GIA_CHUA_VAT\' in table \'V_DM_VPP\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDM_NHA_CUNG_CAP.WEBColumn] = value;
+                    this[this.tableV_DM_VPP.DON_GIA_CHUA_VATColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EMAIL {
+            public decimal DON_GIA_GOM_VAT {
                 get {
                     try {
-                        return ((string)(this[this.tableDM_NHA_CUNG_CAP.EMAILColumn]));
+                        return ((decimal)(this[this.tableV_DM_VPP.DON_GIA_GOM_VATColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EMAIL\' in table \'DM_NHA_CUNG_CAP\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DON_GIA_GOM_VAT\' in table \'V_DM_VPP\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDM_NHA_CUNG_CAP.EMAILColumn] = value;
+                    this[this.tableV_DM_VPP.DON_GIA_GOM_VATColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string FAX {
+            public string TEN_VPP {
                 get {
                     try {
-                        return ((string)(this[this.tableDM_NHA_CUNG_CAP.FAXColumn]));
+                        return ((string)(this[this.tableV_DM_VPP.TEN_VPPColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FAX\' in table \'DM_NHA_CUNG_CAP\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TEN_VPP\' in table \'V_DM_VPP\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDM_NHA_CUNG_CAP.FAXColumn] = value;
+                    this[this.tableV_DM_VPP.TEN_VPPColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTENNull() {
-                return this.IsNull(this.tableDM_NHA_CUNG_CAP.TENColumn);
+            public string DON_VI_TINH {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_DM_VPP.DON_VI_TINHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DON_VI_TINH\' in table \'V_DM_VPP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_VPP.DON_VI_TINHColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTENNull() {
-                this[this.tableDM_NHA_CUNG_CAP.TENColumn] = global::System.Convert.DBNull;
+            public decimal ID_NHA_CUNG_CAP {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_DM_VPP.ID_NHA_CUNG_CAPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_NHA_CUNG_CAP\' in table \'V_DM_VPP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_VPP.ID_NHA_CUNG_CAPColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDIEN_THOAINull() {
-                return this.IsNull(this.tableDM_NHA_CUNG_CAP.DIEN_THOAIColumn);
+            public string TEN_NCC {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_DM_VPP.TEN_NCCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TEN_NCC\' in table \'V_DM_VPP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_VPP.TEN_NCCColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDIEN_THOAINull() {
-                this[this.tableDM_NHA_CUNG_CAP.DIEN_THOAIColumn] = global::System.Convert.DBNull;
+            public bool IsID_VPPNull() {
+                return this.IsNull(this.tableV_DM_VPP.ID_VPPColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWEBNull() {
-                return this.IsNull(this.tableDM_NHA_CUNG_CAP.WEBColumn);
+            public void SetID_VPPNull() {
+                this[this.tableV_DM_VPP.ID_VPPColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWEBNull() {
-                this[this.tableDM_NHA_CUNG_CAP.WEBColumn] = global::System.Convert.DBNull;
+            public bool IsMANull() {
+                return this.IsNull(this.tableV_DM_VPP.MAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEMAILNull() {
-                return this.IsNull(this.tableDM_NHA_CUNG_CAP.EMAILColumn);
+            public void SetMANull() {
+                this[this.tableV_DM_VPP.MAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEMAILNull() {
-                this[this.tableDM_NHA_CUNG_CAP.EMAILColumn] = global::System.Convert.DBNull;
+            public bool IsDON_GIA_CHUA_VATNull() {
+                return this.IsNull(this.tableV_DM_VPP.DON_GIA_CHUA_VATColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFAXNull() {
-                return this.IsNull(this.tableDM_NHA_CUNG_CAP.FAXColumn);
+            public void SetDON_GIA_CHUA_VATNull() {
+                this[this.tableV_DM_VPP.DON_GIA_CHUA_VATColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFAXNull() {
-                this[this.tableDM_NHA_CUNG_CAP.FAXColumn] = global::System.Convert.DBNull;
+            public bool IsDON_GIA_GOM_VATNull() {
+                return this.IsNull(this.tableV_DM_VPP.DON_GIA_GOM_VATColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDON_GIA_GOM_VATNull() {
+                this[this.tableV_DM_VPP.DON_GIA_GOM_VATColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTEN_VPPNull() {
+                return this.IsNull(this.tableV_DM_VPP.TEN_VPPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTEN_VPPNull() {
+                this[this.tableV_DM_VPP.TEN_VPPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDON_VI_TINHNull() {
+                return this.IsNull(this.tableV_DM_VPP.DON_VI_TINHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDON_VI_TINHNull() {
+                this[this.tableV_DM_VPP.DON_VI_TINHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_NHA_CUNG_CAPNull() {
+                return this.IsNull(this.tableV_DM_VPP.ID_NHA_CUNG_CAPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_NHA_CUNG_CAPNull() {
+                this[this.tableV_DM_VPP.ID_NHA_CUNG_CAPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTEN_NCCNull() {
+                return this.IsNull(this.tableV_DM_VPP.TEN_NCCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTEN_NCCNull() {
+                this[this.tableV_DM_VPP.TEN_NCCColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -812,22 +873,22 @@ namespace BCTKDS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class DM_NHA_CUNG_CAPRowChangeEvent : global::System.EventArgs {
+        public class V_DM_VPPRowChangeEvent : global::System.EventArgs {
             
-            private DM_NHA_CUNG_CAPRow eventRow;
+            private V_DM_VPPRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_NHA_CUNG_CAPRowChangeEvent(DM_NHA_CUNG_CAPRow row, global::System.Data.DataRowAction action) {
+            public V_DM_VPPRowChangeEvent(V_DM_VPPRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DM_NHA_CUNG_CAPRow Row {
+            public V_DM_VPPRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -843,7 +904,7 @@ namespace BCTKDS {
         }
     }
 }
-namespace BCTKDS.DS_DM_NHA_CUNG_CAPTableAdapters {
+namespace BCTKDS.DS_V_DM_VPPTableAdapters {
     
     
     /// <summary>
@@ -855,7 +916,7 @@ namespace BCTKDS.DS_DM_NHA_CUNG_CAPTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DM_NHA_CUNG_CAPTableAdapter : global::System.ComponentModel.Component {
+    public partial class V_DM_VPPTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -869,7 +930,7 @@ namespace BCTKDS.DS_DM_NHA_CUNG_CAPTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DM_NHA_CUNG_CAPTableAdapter() {
+        public V_DM_VPPTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -966,68 +1027,16 @@ namespace BCTKDS.DS_DM_NHA_CUNG_CAPTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DM_NHA_CUNG_CAP";
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("TEN", "TEN");
-            tableMapping.ColumnMappings.Add("DIA_CHI", "DIA_CHI");
-            tableMapping.ColumnMappings.Add("DIEN_THOAI", "DIEN_THOAI");
-            tableMapping.ColumnMappings.Add("WEB", "WEB");
-            tableMapping.ColumnMappings.Add("EMAIL", "EMAIL");
-            tableMapping.ColumnMappings.Add("FAX", "FAX");
+            tableMapping.DataSetTable = "V_DM_VPP";
+            tableMapping.ColumnMappings.Add("ID_VPP", "ID_VPP");
+            tableMapping.ColumnMappings.Add("MA", "MA");
+            tableMapping.ColumnMappings.Add("DON_GIA_CHUA_VAT", "DON_GIA_CHUA_VAT");
+            tableMapping.ColumnMappings.Add("DON_GIA_GOM_VAT", "DON_GIA_GOM_VAT");
+            tableMapping.ColumnMappings.Add("TEN_VPP", "TEN_VPP");
+            tableMapping.ColumnMappings.Add("DON_VI_TINH", "DON_VI_TINH");
+            tableMapping.ColumnMappings.Add("ID_NHA_CUNG_CAP", "ID_NHA_CUNG_CAP");
+            tableMapping.ColumnMappings.Add("TEN_NCC", "TEN_NCC");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[DM_NHA_CUNG_CAP] WHERE (([ID] = @Original_ID) AND ((@IsNull_TEN = 1 AND [TEN] IS NULL) OR ([TEN] = @Original_TEN)) AND ([DIA_CHI] = @Original_DIA_CHI) AND ((@IsNull_DIEN_THOAI = 1 AND [DIEN_THOAI] IS NULL) OR ([DIEN_THOAI] = @Original_DIEN_THOAI)) AND ((@IsNull_WEB = 1 AND [WEB] IS NULL) OR ([WEB] = @Original_WEB)) AND ((@IsNull_EMAIL = 1 AND [EMAIL] IS NULL) OR ([EMAIL] = @Original_EMAIL)) AND ((@IsNull_FAX = 1 AND [FAX] IS NULL) OR ([FAX] = @Original_FAX)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TEN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DIA_CHI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIA_CHI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DIEN_THOAI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEN_THOAI", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DIEN_THOAI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEN_THOAI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_WEB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WEB", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WEB", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WEB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EMAIL", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EMAIL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FAX", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FAX", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FAX", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FAX", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[DM_NHA_CUNG_CAP] ([TEN], [DIA_CHI], [DIEN_THOAI], [WEB], [EMAI" +
-                "L], [FAX]) VALUES (@TEN, @DIA_CHI, @DIEN_THOAI, @WEB, @EMAIL, @FAX);\r\nSELECT ID," +
-                " TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE (ID = SCOP" +
-                "E_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DIA_CHI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIA_CHI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DIEN_THOAI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEN_THOAI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WEB", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WEB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMAIL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FAX", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FAX", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[DM_NHA_CUNG_CAP] SET [TEN] = @TEN, [DIA_CHI] = @DIA_CHI, [DIEN_THOAI] = @DIEN_THOAI, [WEB] = @WEB, [EMAIL] = @EMAIL, [FAX] = @FAX WHERE (([ID] = @Original_ID) AND ((@IsNull_TEN = 1 AND [TEN] IS NULL) OR ([TEN] = @Original_TEN)) AND ([DIA_CHI] = @Original_DIA_CHI) AND ((@IsNull_DIEN_THOAI = 1 AND [DIEN_THOAI] IS NULL) OR ([DIEN_THOAI] = @Original_DIEN_THOAI)) AND ((@IsNull_WEB = 1 AND [WEB] IS NULL) OR ([WEB] = @Original_WEB)) AND ((@IsNull_EMAIL = 1 AND [EMAIL] IS NULL) OR ([EMAIL] = @Original_EMAIL)) AND ((@IsNull_FAX = 1 AND [FAX] IS NULL) OR ([FAX] = @Original_FAX)));
-SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE (ID = @ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DIA_CHI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIA_CHI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DIEN_THOAI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEN_THOAI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WEB", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WEB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMAIL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FAX", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FAX", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TEN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DIA_CHI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIA_CHI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DIEN_THOAI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEN_THOAI", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DIEN_THOAI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEN_THOAI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_WEB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WEB", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WEB", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WEB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EMAIL", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EMAIL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FAX", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FAX", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FAX", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FAX", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1043,7 +1052,8 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM dbo.DM_NHA_CUNG_CAP";
+            this._commandCollection[0].CommandText = "SELECT ID_VPP, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN_VPP, DON_VI_TINH, ID_NH" +
+                "A_CUNG_CAP, TEN_NCC FROM dbo.V_DM_VPP";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1051,7 +1061,7 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_DM_NHA_CUNG_CAP.DM_NHA_CUNG_CAPDataTable dataTable) {
+        public virtual int Fill(DS_V_DM_VPP.V_DM_VPPDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1064,278 +1074,11 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_DM_NHA_CUNG_CAP.DM_NHA_CUNG_CAPDataTable GetData() {
+        public virtual DS_V_DM_VPP.V_DM_VPPDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_DM_NHA_CUNG_CAP.DM_NHA_CUNG_CAPDataTable dataTable = new DS_DM_NHA_CUNG_CAP.DM_NHA_CUNG_CAPDataTable();
+            DS_V_DM_VPP.V_DM_VPPDataTable dataTable = new DS_V_DM_VPP.V_DM_VPPDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_DM_NHA_CUNG_CAP.DM_NHA_CUNG_CAPDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_DM_NHA_CUNG_CAP dataSet) {
-            return this.Adapter.Update(dataSet, "DM_NHA_CUNG_CAP");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, string Original_TEN, string Original_DIA_CHI, string Original_DIEN_THOAI, string Original_WEB, string Original_EMAIL, string Original_FAX) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
-            if ((Original_TEN == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_TEN));
-            }
-            if ((Original_DIA_CHI == null)) {
-                throw new global::System.ArgumentNullException("Original_DIA_CHI");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_DIA_CHI));
-            }
-            if ((Original_DIEN_THOAI == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_DIEN_THOAI));
-            }
-            if ((Original_WEB == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_WEB));
-            }
-            if ((Original_EMAIL == null)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_EMAIL));
-            }
-            if ((Original_FAX == null)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_FAX));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string TEN, string DIA_CHI, string DIEN_THOAI, string WEB, string EMAIL, string FAX) {
-            if ((TEN == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(TEN));
-            }
-            if ((DIA_CHI == null)) {
-                throw new global::System.ArgumentNullException("DIA_CHI");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(DIA_CHI));
-            }
-            if ((DIEN_THOAI == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DIEN_THOAI));
-            }
-            if ((WEB == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(WEB));
-            }
-            if ((EMAIL == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(EMAIL));
-            }
-            if ((FAX == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(FAX));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TEN, string DIA_CHI, string DIEN_THOAI, string WEB, string EMAIL, string FAX, decimal Original_ID, string Original_TEN, string Original_DIA_CHI, string Original_DIEN_THOAI, string Original_WEB, string Original_EMAIL, string Original_FAX, decimal ID) {
-            if ((TEN == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(TEN));
-            }
-            if ((DIA_CHI == null)) {
-                throw new global::System.ArgumentNullException("DIA_CHI");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(DIA_CHI));
-            }
-            if ((DIEN_THOAI == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DIEN_THOAI));
-            }
-            if ((WEB == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(WEB));
-            }
-            if ((EMAIL == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(EMAIL));
-            }
-            if ((FAX == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(FAX));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_ID));
-            if ((Original_TEN == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_TEN));
-            }
-            if ((Original_DIA_CHI == null)) {
-                throw new global::System.ArgumentNullException("Original_DIA_CHI");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_DIA_CHI));
-            }
-            if ((Original_DIEN_THOAI == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_DIEN_THOAI));
-            }
-            if ((Original_WEB == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_WEB));
-            }
-            if ((Original_EMAIL == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_EMAIL));
-            }
-            if ((Original_FAX == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_FAX));
-            }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(ID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TEN, string DIA_CHI, string DIEN_THOAI, string WEB, string EMAIL, string FAX, decimal Original_ID, string Original_TEN, string Original_DIA_CHI, string Original_DIEN_THOAI, string Original_WEB, string Original_EMAIL, string Original_FAX) {
-            return this.Update(TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX, Original_ID, Original_TEN, Original_DIA_CHI, Original_DIEN_THOAI, Original_WEB, Original_EMAIL, Original_FAX, Original_ID);
         }
     }
     
@@ -1351,8 +1094,6 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
         
         private UpdateOrderOption _updateOrder;
         
-        private DM_NHA_CUNG_CAPTableAdapter _dM_NHA_CUNG_CAPTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1365,20 +1106,6 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public DM_NHA_CUNG_CAPTableAdapter DM_NHA_CUNG_CAPTableAdapter {
-            get {
-                return this._dM_NHA_CUNG_CAPTableAdapter;
-            }
-            set {
-                this._dM_NHA_CUNG_CAPTableAdapter = value;
             }
         }
         
@@ -1401,10 +1128,6 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._dM_NHA_CUNG_CAPTableAdapter != null) 
-                            && (this._dM_NHA_CUNG_CAPTableAdapter.Connection != null))) {
-                    return this._dM_NHA_CUNG_CAPTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1418,9 +1141,6 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._dM_NHA_CUNG_CAPTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1430,17 +1150,8 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DS_DM_NHA_CUNG_CAP dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DS_V_DM_VPP dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._dM_NHA_CUNG_CAPTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DM_NHA_CUNG_CAP.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._dM_NHA_CUNG_CAPTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1449,16 +1160,8 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DS_DM_NHA_CUNG_CAP dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DS_V_DM_VPP dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._dM_NHA_CUNG_CAPTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DM_NHA_CUNG_CAP.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._dM_NHA_CUNG_CAPTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1467,16 +1170,8 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DS_DM_NHA_CUNG_CAP dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DS_V_DM_VPP dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._dM_NHA_CUNG_CAPTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DM_NHA_CUNG_CAP.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._dM_NHA_CUNG_CAPTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1509,17 +1204,12 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DS_DM_NHA_CUNG_CAP dataSet) {
+        public virtual int UpdateAll(DS_V_DM_VPP dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._dM_NHA_CUNG_CAPTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._dM_NHA_CUNG_CAPTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1553,15 +1243,6 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._dM_NHA_CUNG_CAPTableAdapter != null)) {
-                    revertConnections.Add(this._dM_NHA_CUNG_CAPTableAdapter, this._dM_NHA_CUNG_CAPTableAdapter.Connection);
-                    this._dM_NHA_CUNG_CAPTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._dM_NHA_CUNG_CAPTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._dM_NHA_CUNG_CAPTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._dM_NHA_CUNG_CAPTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._dM_NHA_CUNG_CAPTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1619,10 +1300,6 @@ SELECT ID, TEN, DIA_CHI, DIEN_THOAI, WEB, EMAIL, FAX FROM DM_NHA_CUNG_CAP WHERE 
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._dM_NHA_CUNG_CAPTableAdapter != null)) {
-                    this._dM_NHA_CUNG_CAPTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dM_NHA_CUNG_CAPTableAdapter]));
-                    this._dM_NHA_CUNG_CAPTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
