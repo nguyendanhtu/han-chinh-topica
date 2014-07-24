@@ -173,6 +173,7 @@
     <Compile Include="US_V_DM_CO_SO_DINH_MUC.cs" />
     <Compile Include="US_V_DM_PHONG_BAN.cs" />
     <Compile Include="US_V_DM_PHONG_BAN_PHAP_NHAN.cs" />
+    <Compile Include="US_V_GD_DON_DAT_HANG_DETAIL.cs" />
     <Compile Include="US_V_GD_PHONG_BAN_DINH_MUC.cs" />
     <Compile Include="US_V_GD_THONG_KE.cs" />
     <Compile Include="US_V_HT_LOG_TRUY_CAP.cs" />
