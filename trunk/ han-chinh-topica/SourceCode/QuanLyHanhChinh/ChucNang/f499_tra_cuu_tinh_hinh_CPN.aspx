@@ -13,6 +13,7 @@
             <table cellspacing="0" cellpadding="1" style="width: 100%" class="cssTable" border="0">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
+
                         <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" Text="Tra cứu tình hình CPN"
                             ForeColor="White" />
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
