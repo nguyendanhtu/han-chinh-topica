@@ -673,5 +673,26 @@ namespace BCTKDS.CDBNames
         public const string EMAIL = "EMAIL";
         public const string FAX = "FAX";
     }
+    public class V_GD_DON_DAT_HANG_DETAIL
+    {
+        public const string ID = "ID";
+        public const string ID_VPP = "ID_VPP";
+        public const string MA_VPP = "MA_VPP";
+        public const string TEN_VPP = "TEN_VPP";
+        public const string DON_VI_TINH = "DON_VI_TINH";
+        public const string DON_GIA_CHUA_VAT = "DON_GIA_CHUA_VAT";
+        public const string DON_GIA_GOM_VAT = "DON_GIA_GOM_VAT";
+        public const string SO_LUONG = "SO_LUONG";
+        public const string NGAY_DAT_HANG = "NGAY_DAT_HANG";
+        public const string LAN_DAT_HANG = "LAN_DAT_HANG";
+        public const string ID_DON_DAT_HANG = "ID_DON_DAT_HANG";
+        public const string MA_DON_HANG = "MA_DON_HANG";
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string GIA_TRI_CHUA_VAT = "GIA_TRI_CHUA_VAT";
+        public const string GIA_TRI_DA_VAT = "GIA_TRI_DA_VAT";
+        public const string ID_TRANG_THAI_HANG = "ID_TRANG_THAI_HANG";
+        public const string TRANG_THAI_HANG = "TRANG_THAI_HANG";
+    }
     #endregion
 }
