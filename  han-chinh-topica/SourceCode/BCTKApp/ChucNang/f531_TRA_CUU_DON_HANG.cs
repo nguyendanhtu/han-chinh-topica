@@ -341,8 +341,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_grv_don_hang);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f531_TRA_CUU_DON_HANG";
-            this.Text = "F531- Tra cứu đơn hàng theo từng trung tâm";
-            this.Load += new System.EventHandler(this.f331_V_GD_DON_DAT_HANG_DETAIL_Load);
+            this.Text = "F531- Tra cứu đơn hàng theo từng trung tâm";         
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -392,7 +391,10 @@ namespace BCTKApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){
-            DateTime v_dat_thang = m_dtp_thang.Value.Date;
+            DateTime temp = m_dtp_thang.Value.Date;
+            temp = temp.AddMonths(1);
+            temp = temp.AddDays(-(temp.Day));
+            DateTime v_dat_thang = temp;
             decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             string v_str_tu_khoa = m_txt_tu_khoa.Text;
 			m_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();			
@@ -484,6 +486,7 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
+            this.Load +=new EventHandler(f531_TRA_CUU_DON_HANG_Load);
 		}
 		#endregion
 
@@ -491,62 +494,82 @@ namespace BCTKApp
 		//
 		//		EVENT HANLDERS
 		//
-		//
-		private void f331_V_GD_DON_DAT_HANG_DETAIL_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        //
+        #region Event
+        private void f531_TRA_CUU_DON_HANG_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_gd_don_dat_hang_detail();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_gd_don_dat_hang_detail();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_gd_don_dat_hang_detail();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_gd_don_dat_hang_detail();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_gd_don_dat_hang_detail();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_v_gd_don_dat_hang_detail();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
-			try{
+            try
+            {
                 load_data_2_grid();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion
+        
 
 	}
 }
