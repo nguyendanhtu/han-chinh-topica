@@ -45,10 +45,10 @@
             this.m_txt_website = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_chk_close_form = new System.Windows.Forms.CheckBox();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             // 
             this.m_txt_ten_nha_cc.Location = new System.Drawing.Point(136, 52);
             this.m_txt_ten_nha_cc.Name = "m_txt_ten_nha_cc";
-            this.m_txt_ten_nha_cc.Size = new System.Drawing.Size(235, 20);
+            this.m_txt_ten_nha_cc.Size = new System.Drawing.Size(275, 20);
             this.m_txt_ten_nha_cc.TabIndex = 13;
             // 
             // label2
@@ -91,7 +91,7 @@
             // 
             this.m_txt_dia_chi.Location = new System.Drawing.Point(136, 92);
             this.m_txt_dia_chi.Name = "m_txt_dia_chi";
-            this.m_txt_dia_chi.Size = new System.Drawing.Size(235, 20);
+            this.m_txt_dia_chi.Size = new System.Drawing.Size(275, 20);
             this.m_txt_dia_chi.TabIndex = 15;
             // 
             // label3
@@ -107,7 +107,7 @@
             // 
             this.m_txt_dien_thoai.Location = new System.Drawing.Point(136, 134);
             this.m_txt_dien_thoai.Name = "m_txt_dien_thoai";
-            this.m_txt_dien_thoai.Size = new System.Drawing.Size(235, 20);
+            this.m_txt_dien_thoai.Size = new System.Drawing.Size(275, 20);
             this.m_txt_dien_thoai.TabIndex = 17;
             // 
             // label4
@@ -123,7 +123,7 @@
             // 
             this.m_txt_fax.Location = new System.Drawing.Point(136, 175);
             this.m_txt_fax.Name = "m_txt_fax";
-            this.m_txt_fax.Size = new System.Drawing.Size(235, 20);
+            this.m_txt_fax.Size = new System.Drawing.Size(275, 20);
             this.m_txt_fax.TabIndex = 19;
             // 
             // label5
@@ -139,7 +139,7 @@
             // 
             this.m_txt_email.Location = new System.Drawing.Point(136, 221);
             this.m_txt_email.Name = "m_txt_email";
-            this.m_txt_email.Size = new System.Drawing.Size(235, 20);
+            this.m_txt_email.Size = new System.Drawing.Size(275, 20);
             this.m_txt_email.TabIndex = 21;
             // 
             // label6
@@ -155,7 +155,7 @@
             // 
             this.m_txt_website.Location = new System.Drawing.Point(136, 265);
             this.m_txt_website.Name = "m_txt_website";
-            this.m_txt_website.Size = new System.Drawing.Size(235, 20);
+            this.m_txt_website.Size = new System.Drawing.Size(275, 20);
             this.m_txt_website.TabIndex = 23;
             // 
             // label7
@@ -177,36 +177,6 @@
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(459, 36);
             this.m_pnl_out_place_dm.TabIndex = 25;
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_save.ImageIndex = 10;
-            this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(279, 4);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 0;
-            this.m_cmd_save.Text = "&Lưu";
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 11;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(367, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 1;
-            this.m_cmd_exit.Text = "Trở về (Esc)";
             // 
             // m_chk_close_form
             // 
@@ -245,6 +215,36 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_save.ImageIndex = 10;
+            this.m_cmd_save.ImageList = this.ImageList;
+            this.m_cmd_save.Location = new System.Drawing.Point(279, 4);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_save.TabIndex = 0;
+            this.m_cmd_save.Text = "&Lưu";
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 11;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(367, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 1;
+            this.m_cmd_exit.Text = "Trở về (Esc)";
+            // 
             // f529_DM_NHA_CC_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,7 +267,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_tieu_de);
             this.Name = "f529_DM_NHA_CC_DE";
-            this.Text = "f529_DM_NHA_CC_DE";
+            this.Text = "F529- Cập nhật thông tin nhà cung cấp";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
