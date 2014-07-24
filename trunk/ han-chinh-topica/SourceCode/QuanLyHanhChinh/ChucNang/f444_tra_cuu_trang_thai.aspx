@@ -17,15 +17,15 @@
                         <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" Text="Tra cứu trạng thái"
                             ForeColor="White" />
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
-                        <asp:hiddenfield ID="m_hdf_id_trung_tam" runat="server"></asp:hiddenfield>
+                        <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server"></asp:HiddenField>
                     </td>
                 </tr>
                 <tr>
                     <td align="right">
-                        <asp:label ID="Label1" runat ="server"  CssClass="cssManField" text="Trung tâm-ban:"></asp:label>
+                        <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="Trung tâm-ban:"></asp:Label>
                     </td>
                     <td align="left">
-                        <asp:label ID="m_lbl_ten_trung_tam" runat ="server"  CssClass="cssManField" Font-Bold="true" Font-Size="Medium"></asp:label>
+                        <asp:Label ID="m_lbl_ten_trung_tam" runat="server" CssClass="cssManField" Font-Bold="true" Font-Size="Medium"></asp:Label>
                     </td>
                     <td align="right">
                         <asp:Label ID="m_lbl_tu_ngay" runat="server" Text="Từ ngày: " CssClass="cssManField"></asp:Label>
@@ -34,8 +34,8 @@
                         <ew:CalendarPopup ID="m_dat_tu_ngay" runat="server" TextBoxLabelStyle-BorderColor="#810913"
                             TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
                             DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
-                            ShowGoToToday="false" Width="35%" 
-                            ondatechanged="m_dat_tu_ngay_DateChanged">
+                            ShowGoToToday="false" Width="35%"
+                            OnDateChanged="m_dat_tu_ngay_DateChanged">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
                                 ForeColor="Black" />
                             <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
@@ -58,7 +58,7 @@
                     </td>
                 </tr>
                 <tr>
-                 <%--   <td align="right">
+                    <%--   <td align="right">
                         <asp:Label ID="m_lbl_trung_tam" runat="server" Text="Chọn trung tâm: " CssClass="cssManField"></asp:Label>
                     </td>
                     <td>
@@ -74,15 +74,15 @@
                             Width="45%">
                         </asp:DropDownList>
                     </td>
-                     <td align="right">
+                    <td align="right">
                         <asp:Label ID="m_lbl_den_ngay" runat="server" Text="Đến ngày: " CssClass="cssManField"></asp:Label>
                     </td>
                     <td>
                         <ew:CalendarPopup ID="m_dat_den_ngay" runat="server" TextBoxLabelStyle-BorderColor="#810913"
                             TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
                             DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
-                            ShowGoToToday="true" Width="35%" 
-                            ondatechanged="m_dat_den_ngay_DateChanged">
+                            ShowGoToToday="true" Width="35%"
+                            OnDateChanged="m_dat_den_ngay_DateChanged">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
                                 ForeColor="Black" />
                             <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
@@ -104,12 +104,17 @@
                         </ew:CalendarPopup>
                     </td>
                 </tr>
-                 <tr>
+                <tr>
                     <td align="center" colspan="4">
                         <asp:Label ID="Label2" runat="server" Text="Nội dung tìm kiếm " CssClass="cssManField"></asp:Label>
                         <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="350px" CssClass="cssTextBox"></asp:TextBox>
                         &nbsp;
-                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click"/>
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
+                    </td>
+                </tr>
+                <tr >
+                    <td align="center" colspan="4">
+                        <asp:Label ID="m_lbl_chu_thich" runat="server" Text="*Nhập số Bill, người gửi, người nhận để tìm kiếm" CssClass="cssManField" Font-Size="Smaller" ForeColor="DarkGray"></asp:Label>
                     </td>
                 </tr>
             </table>
@@ -144,7 +149,7 @@
                     <td class="cssPageTitleBG" colspan="6">
                         <asp:Label ID="m_lbl_danh_muc_bill" runat="server" CssClass="cssPageTitle" ForeColor="White"
                             Text="Danh mục Bill theo trạng thái"></asp:Label>
-                            <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"
+                        <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"
                             ForeColor="White"></asp:Label>
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
                     </td>
@@ -153,10 +158,9 @@
                     <td align="left">
                         <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssManField" />
                     </td>
-                    <td>
-                        &nbsp;
+                    <td>&nbsp;
                     </td>
-                        <td>
+                    <td>
                         <asp:HiddenField ID="m_hdf_id_bill" runat="server" />
                     </td>
                 </tr>
@@ -197,7 +201,7 @@
                                     </ItemTemplate>
                                     <ItemStyle HorizontalAlign="Center" Width="2%" />
                                 </asp:TemplateField>
-                           <%--     <asp:BoundField DataField="TEN_PHONG_BAN" ItemStyle-HorizontalAlign="Left" HeaderText="TÊN TRUNG TÂM"
+                                <%--     <asp:BoundField DataField="TEN_PHONG_BAN" ItemStyle-HorizontalAlign="Left" HeaderText="TÊN TRUNG TÂM"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="12%" />
                                 </asp:BoundField>--%>
@@ -205,19 +209,19 @@
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Right" Width="3%" />
                                 </asp:BoundField>
-                                  <asp:BoundField DataField="TRANG_THAI_THU" ItemStyle-HorizontalAlign="Left" HeaderText="TRẠNG THÁI"
+                                <asp:BoundField DataField="TRANG_THAI_THU" ItemStyle-HorizontalAlign="Left" HeaderText="TRẠNG THÁI"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="7%" />
                                 </asp:BoundField>
-                                 <asp:BoundField DataField="SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ TIỀN (VNĐ)"
+                                <asp:BoundField DataField="SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ TIỀN (VNĐ)"
                                     ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
                                     <ItemStyle HorizontalAlign="Right" Width="5%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="NGAY_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGÀY GỬI"
-                                    ItemStyle-Width="7%"  HtmlEncode="false" DataFormatString="{0:dd/MM/yyyy}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:dd/MM/yyyy}">
                                     <ItemStyle HorizontalAlign="Left" Width="3%" />
                                 </asp:BoundField>
-                                     <asp:BoundField DataField="NGUOI_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI GỬI"
+                                <asp:BoundField DataField="NGUOI_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI GỬI"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="7%" />
                                 </asp:BoundField>
@@ -225,7 +229,7 @@
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="7%" />
                                 </asp:BoundField>
-                                  <asp:BoundField DataField="NOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
+                                <asp:BoundField DataField="NOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="15%" />
                                 </asp:BoundField>
