@@ -26,9 +26,10 @@ namespace BCTKApp
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
         }
-        public void display_for_update()
+        public void display_for_update(US_DM_NHA_CUNG_CAP ip_us)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_us = ip_us;
             us_obj_2_form();
             this.ShowDialog();
         }
@@ -51,17 +52,59 @@ namespace BCTKApp
         }
         private void form_2_us_obj()
         {
-
+            m_us.strTEN = m_txt_ten_nha_cc.Text;
+            m_us.strDIA_CHI = m_txt_dia_chi.Text;
+            m_us.strDIEN_THOAI = m_txt_dien_thoai.Text;
+            m_us.strEMAIL = m_txt_email.Text;
+            m_us.strFAX = m_txt_fax.Text;
+            m_us.strWEB = m_txt_website.Text;
         }
         private void us_obj_2_form()
         {
-
+            m_txt_ten_nha_cc.Text = m_us.strTEN;
+            m_txt_dia_chi.Text = m_us.strDIA_CHI;
+            m_txt_dien_thoai.Text = m_us.strDIEN_THOAI;
+            m_txt_fax.Text = m_us.strFAX;
+            m_txt_email.Text = m_us.strEMAIL;
+            m_txt_website.Text = m_us.strWEB;
         }
         private void save_data()
         {
             if (!validate_data_is_ok())
                 return;
             form_2_us_obj();
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    m_us.Insert();
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    m_us.Update();
+                    break;
+                default:
+                    break;
+            }
+            BaseMessages.MsgBox_Infor("Đã lưu thành công!");
+            if (m_chk_close_form.Checked == true)
+            {
+                xoa_trang();
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void xoa_trang()
+        {
+            m_txt_ten_nha_cc.Clear();
+            m_txt_dia_chi.Clear();
+            m_txt_dien_thoai.Clear();
+            m_txt_email.Clear();
+            m_txt_fax.Clear();
+            m_txt_website.Clear();
+            m_txt_website.Clear();
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
         }
         private bool validate_data_is_ok() 
         {
