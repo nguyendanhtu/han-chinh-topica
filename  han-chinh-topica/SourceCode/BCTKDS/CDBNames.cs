@@ -651,5 +651,14 @@ namespace BCTKDS.CDBNames
         public const string DON_GIA_DINH_MUC = "DON_GIA_DINH_MUC";
         public const string AP_DUNG_TU_NGAY = "AP_DUNG_TU_NGAY";
     }
+    public class DM_NHA_CUNG_CAP
+    {
+        public const string ID = "ID";
+        public const string TEN = "TEN";
+        public const string DIA_CHI = "DIA_CHI";
+        public const string DIEN_THOAI = "DIEN_THOAI";
+        public const string WEB = "WEB";
+        public const string EMAIL = "EMAIL";
+    }
     #endregion
 }
