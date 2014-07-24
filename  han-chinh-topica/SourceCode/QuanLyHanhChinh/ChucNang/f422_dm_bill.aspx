@@ -11,6 +11,7 @@
             width: 15%;
             height: 24px;
         }
+
         .style2
         {
             width: 35%;
@@ -29,7 +30,7 @@
                         <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" ForeColor="White"
                             Text="Nhập thông tin bill"></asp:Label>
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
-                        <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" /> 
+                        <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
                     </td>
                 </tr>
                 <tr>
@@ -70,10 +71,10 @@
                         </ew:CalendarPopup>
                     </td>
                     <td align="right">
-                     <asp:label ID="Label1" runat ="server"  CssClass="cssManField" text="Ban/Trung tâm:"></asp:label>
+                        <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="Ban/Trung tâm:"></asp:Label>
                     </td>
                     <td align="left">
-                        <asp:label ID="m_lbl_ten_trung_tam" runat ="server"  CssClass="cssManField" Font-Bold="true" Font-Size="Medium"></asp:label>
+                        <asp:Label ID="m_lbl_ten_trung_tam" runat="server" CssClass="cssManField" Font-Bold="true" Font-Size="Medium"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -89,7 +90,7 @@
                     </td>
                     <td class="style2">
                         <asp:TextBox ID="m_txt_so_tien" runat="Server" CssClass="cssTextBox" Width="45%"></asp:TextBox>
-                        <asp:label ID="m_lbl_vnd" runat="server" CssClass="cssManField" Text="(VNĐ)"></asp:label>
+                        <asp:Label ID="m_lbl_vnd" runat="server" CssClass="cssManField" Text="(VNĐ)"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -140,8 +141,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                    </td>
+                    <td></td>
                     <td colspan="2" align="center">
                         <asp:Button ID="m_cmd_them" runat="server" Text="Gửi cho TAD" CssClass="cssGoogleButton"
                             OnClick="m_cmd_them_Click" />
@@ -193,11 +193,16 @@
                     </td>
                 </tr>
                 <tr>
-                       <td align="center">
+                    <td align="center">
                         <asp:Label ID="Label2" runat="server" Text="Nội dung tìm kiếm " CssClass="cssManField"></asp:Label>
                         <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="400px" CssClass="cssTextBox"></asp:TextBox>
                         &nbsp;
-                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton"  CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
+                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="4">
+                        <asp:Label ID="m_lbl_chu_thich" runat="server" Text="*Nhập số Bill, người gửi, người nhận để tìm kiếm" CssClass="cssManField" Font-Size="Smaller" ForeColor="DarkGray"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -206,9 +211,9 @@
                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
                             CellPadding="8" PageSize="20"
-                            OnRowEditing = "m_grv_dm_bill_RowEditing"
-                            OnRowDeleting = "m_grv_dm_bill_RowDeleting"
-                             OnPageIndexChanging="m_grv_v_dm_bill_PageIndexChanging">
+                            OnRowEditing="m_grv_dm_bill_RowEditing"
+                            OnRowDeleting="m_grv_dm_bill_RowDeleting"
+                            OnPageIndexChanging="m_grv_v_dm_bill_PageIndexChanging">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />
@@ -256,27 +261,27 @@
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="7%" />
                                 </asp:BoundField>
-                                   <asp:BoundField DataField="NGUOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI NHẬN"
+                                <asp:BoundField DataField="NGUOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI NHẬN"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="7%" />
                                 </asp:BoundField>
-                                   <asp:BoundField DataField="NOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
+                                <asp:BoundField DataField="NOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="12%" />
                                 </asp:BoundField>
-                                   <asp:BoundField DataField="NOI_DUNG" ItemStyle-HorizontalAlign="Left" HeaderText="NỘI DUNG"
+                                <asp:BoundField DataField="NOI_DUNG" ItemStyle-HorizontalAlign="Left" HeaderText="NỘI DUNG"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="4%" />
                                 </asp:BoundField>
-                                   <asp:BoundField DataField="TRONG_NUOC" ItemStyle-HorizontalAlign="Left" HeaderText="TRONG NƯỚC"
+                                <asp:BoundField DataField="TRONG_NUOC" ItemStyle-HorizontalAlign="Left" HeaderText="TRONG NƯỚC"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="center" Width="3%" />
                                 </asp:BoundField>
-                                   <asp:BoundField DataField="NUOC_NGOAI" ItemStyle-HorizontalAlign="Left" HeaderText="NƯỚC NGOÀI"
+                                <asp:BoundField DataField="NUOC_NGOAI" ItemStyle-HorizontalAlign="Left" HeaderText="NƯỚC NGOÀI"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="center" Width="3%" />
                                 </asp:BoundField>
-                                   <asp:BoundField DataField="GHI_CHU" ItemStyle-HorizontalAlign="Left" HeaderText="GHI CHÚ"
+                                <asp:BoundField DataField="GHI_CHU" ItemStyle-HorizontalAlign="Left" HeaderText="GHI CHÚ"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="5%" />
                                 </asp:BoundField>
