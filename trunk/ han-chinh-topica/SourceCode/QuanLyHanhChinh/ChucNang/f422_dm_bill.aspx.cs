@@ -177,6 +177,9 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         load_data_to_grid();
         thong_bao("", false);
         m_txt_so_tien.Text = "0";
+        m_txt_so_tien.Visible = false;
+        m_lbl_so_tien.Visible = false;
+        m_lbl_vnd.Visible = false;
     }
     private void load_title()
     {
@@ -438,6 +441,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    
     #endregion
     
 }

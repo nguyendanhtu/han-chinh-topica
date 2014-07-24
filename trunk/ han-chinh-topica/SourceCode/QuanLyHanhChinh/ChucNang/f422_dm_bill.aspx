@@ -89,7 +89,7 @@
                     </td>
                     <td class="style2">
                         <asp:TextBox ID="m_txt_so_tien" runat="Server" CssClass="cssTextBox" Width="45%"></asp:TextBox>
-                        <asp:label ID="m_vnd" runat="server" CssClass="cssManField" Text="(VNĐ)"></asp:label>
+                        <asp:label ID="m_lbl_vnd" runat="server" CssClass="cssManField" Text="(VNĐ)"></asp:label>
                     </td>
                 </tr>
                 <tr>
