@@ -465,6 +465,15 @@
     <Compile Include="DanhMuc\f524_THONG_KE_HOC_VIEN_DE.Designer.cs">
       <DependentUpon>f524_THONG_KE_HOC_VIEN_DE.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f528_DM_NHA_CC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f529_DM_NHA_CC_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f529_DM_NHA_CC_DE.Designer.cs">
+      <DependentUpon>f529_DM_NHA_CC_DE.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\f800_V_DM_PHONG_BAN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -670,6 +679,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f524_THONG_KE_HOC_VIEN_DE.resx">
       <DependentUpon>f524_THONG_KE_HOC_VIEN_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f528_DM_NHA_CC.resx">
+      <DependentUpon>f528_DM_NHA_CC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f529_DM_NHA_CC_DE.resx">
+      <DependentUpon>f529_DM_NHA_CC_DE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f800_V_DM_PHONG_BAN.resx">
       <DependentUpon>f800_V_DM_PHONG_BAN.cs</DependentUpon>
