@@ -413,8 +413,9 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f540_V_DM_CO_SO_DINH_MUC_DE v_fDE = new f540_V_DM_CO_SO_DINH_MUC_DE();
-		//	v_fDE.display(m_us);
+
+			f541_V_DM_CO_SO_DINH_MUC_DE v_fDE = new f541_V_DM_CO_SO_DINH_MUC_DE();
+			v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				

@@ -51,6 +51,14 @@ namespace BCTKApp.DanhMuc
             m_cbo_loai_dinh_muc.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
             m_cbo_loai_dinh_muc.ValueMember = CM_DM_TU_DIEN.ID;
         }
+        private bool validate_ma_update(string ip_str_ma, decimal ip_dc_id)
+        {
+            US_DM_CO_SO_DINH_MUC v_us = new US_DM_CO_SO_DINH_MUC();
+            DS_DM_CO_SO_DINH_MUC v_ds = new DS_DM_CO_SO_DINH_MUC();
+            v_us.FillDataset(v_ds, "where ma_co_so_dinh_muc='" + ip_str_ma + "' or id=" + ip_dc_id);
+            if (v_ds.DM_CO_SO_DINH_MUC.Count != 1) return false;
+            return true;
+        }
         private void save_data()
         {
             if (!validate_data_is_ok())
@@ -68,13 +76,13 @@ namespace BCTKApp.DanhMuc
                     m_us_dm_co_so_dinh_muc.Insert();
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    //if (!validate_ma_update(m_txt_ma_co_so.Text.Trim(), m_us.dcID))
-                    //{
-                    //    BaseMessages.MsgBox_Infor("Mã cơ sở đã tồn tại");
-                    //    m_txt_ma_co_so.Focus();
-                    //    return;
-                    //}
-                    //m_us.Update();
+                    if (!validate_ma_update(m_txt_ma_co_so.Text.Trim(), m_us_dm_co_so_dinh_muc.dcID))
+                    {
+                        BaseMessages.MsgBox_Infor("Mã cơ sở đã tồn tại");
+                        m_txt_ma_co_so.Focus();
+                        return;
+                    }
+                    m_us_dm_co_so_dinh_muc.Update();
                     break;
             }
             BaseMessages.MsgBox_Infor("Đã lưu thành công!");
@@ -108,10 +116,6 @@ namespace BCTKApp.DanhMuc
             v_ap_dung_tu_ngay = v_ap_dung_tu_ngay.Substring(0, v_ap_dung_tu_ngay.IndexOf(" "));
             m_us_dm_co_so_dinh_muc.datAP_DUNG_TU_NGAY = CIPConvert.ToDatetime(v_ap_dung_tu_ngay);
         }
-        private void us_obj_2_form(US_V_DM_CO_SO_DINH_MUC ip_us_v_dm_co_so_dinh_muc)
-        {
-            
-        }
         private void xoa_trang()
         {
             m_txt_ma_co_so.Clear();
@@ -136,19 +140,33 @@ namespace BCTKApp.DanhMuc
             }
             if (!CValidateTextBox.IsValid(m_txt_don_gia_dinh_muc, DataType.StringType, allowNull.NO, true))
             {
-                BaseMessages.MsgBox_Error("Bạn chưa nhập Tên cơ sở rồi!");
+                BaseMessages.MsgBox_Error("Bạn chưa nhập Đơn giá định mức rồi!");
                 return false;
             }
             return true;
         }
 
+        public void display_for_update(US_V_DM_CO_SO_DINH_MUC ip_us)
+        {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_us_dm_co_so_dinh_muc.dcID = ip_us.dcID;
+            us_obj_2_form(ip_us);
+            this.ShowDialog();
+        }
+
+        private void us_obj_2_form(US_V_DM_CO_SO_DINH_MUC ip_us)
+        {
+            m_txt_ma_co_so.Text = ip_us.strMA_CO_SO_DINH_MUC;
+            m_txt_ten_co_so.Text = ip_us.strTEN_CO_SO_DINH_MUC;
+            m_cbo_loai_dinh_muc.SelectedValue = ip_us.dcID_LOAI_DINH_MUC;
+            m_txt_don_gia_dinh_muc.Text = CIPConvert.ToStr(ip_us.dcDON_GIA_DINH_MUC);
+            m_dat_ap_dung_tu_ngay.Value = ip_us.datAP_DUNG_TU_NGAY;
+        }
         private void set_define_events()
         {
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
         }
-
-       
 
         #endregion
 
@@ -177,6 +195,5 @@ namespace BCTKApp.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
     }
 }

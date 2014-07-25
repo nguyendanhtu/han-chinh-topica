@@ -361,7 +361,7 @@ namespace BCTKApp
         {
             try
             {
-                f518_V_DM_CO_SO_DINH_MUC v_frm = new f518_V_DM_CO_SO_DINH_MUC();
+                f540_V_DM_CO_SO_DINH_MUC v_frm = new f540_V_DM_CO_SO_DINH_MUC();
                 v_frm.ShowDialog();
             }
             catch (Exception v_e)
