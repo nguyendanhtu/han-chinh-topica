@@ -164,6 +164,7 @@ namespace BCTKApp
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
             this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_insert.Visible = false;
             // 
             // m_cmd_update
             // 
@@ -179,6 +180,7 @@ namespace BCTKApp
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
+            this.m_cmd_update.Visible = false;
             // 
             // m_cmd_xuat_excel
             // 
@@ -187,7 +189,7 @@ namespace BCTKApp
             this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 18;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
             this.m_cmd_xuat_excel.ImageList = this.ImageList;
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
@@ -209,6 +211,7 @@ namespace BCTKApp
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
             this.m_cmd_delete.Text = "&Xoá";
+            this.m_cmd_delete.Visible = false;
             // 
             // m_cmd_exit
             // 
@@ -341,7 +344,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_grv_don_hang);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f531_TRA_CUU_DON_HANG";
-            this.Text = "F531- Tra cứu đơn hàng theo từng trung tâm";         
+            this.Text = "F531- Tra cứu đơn hàng theo từng trung tâm";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -376,6 +379,9 @@ namespace BCTKApp
 			CControlFormat.setC1FlexFormat(m_grv_don_hang);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_don_hang);
             CGridUtils.AddSearch_Handlers(m_grv_don_hang);
+            m_grv_don_hang.Tree.Column = (int)e_col_Number.NGAY_DAT_HANG;
+            m_grv_don_hang.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
+            m_grv_don_hang.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
             load_data_2_cbo_trung_tam();
 			set_define_events();
 			this.KeyPreview = true;		
@@ -402,6 +408,12 @@ namespace BCTKApp
 			m_grv_don_hang.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_don_hang, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_don_hang);
+            m_grv_don_hang.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+              , 0
+              , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình nhóm
+              , (int)e_col_Number.MA_VPP // chỗ này là tên trường mà mình Count
+              , "{0}"
+              );
 			m_grv_don_hang.Redraw = true;
 		}
 		private void grid2us_object(US_V_GD_DON_DAT_HANG_DETAIL i_us
@@ -487,6 +499,7 @@ namespace BCTKApp
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
             this.Load +=new EventHandler(f531_TRA_CUU_DON_HANG_Load);
+            this.KeyDown+=new KeyEventHandler(f531_TRA_CUU_DON_HANG_KeyDown);
 		}
 		#endregion
 
@@ -562,6 +575,20 @@ namespace BCTKApp
             try
             {
                 load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void f531_TRA_CUU_DON_HANG_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
             }
             catch (Exception v_e)
             {
