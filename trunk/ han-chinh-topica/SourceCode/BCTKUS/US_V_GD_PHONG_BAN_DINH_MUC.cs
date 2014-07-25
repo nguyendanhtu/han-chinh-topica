@@ -21,316 +21,316 @@ namespace BCTKUS{
 public class US_V_GD_PHONG_BAN_DINH_MUC : US_Object
 {
 	private const string c_TableName = "V_GD_PHONG_BAN_DINH_MUC";
-#region "Public Properties"
-	public decimal dcID 
-	{
-		get
-		{
-			return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
-		}
-		set	
-		{
-			pm_objDR["ID"] = value;
-		}
-	}
+    #region "Public Properties"
+    public decimal dcID
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID"] = value;
+        }
+    }
 
-	public bool IsIDNull()	{
-		return pm_objDR.IsNull("ID");
-	}
+    public bool IsIDNull()
+    {
+        return pm_objDR.IsNull("ID");
+    }
 
-	public void SetIDNull() {
-		pm_objDR["ID"] = System.Convert.DBNull;
-	}
+    public void SetIDNull()
+    {
+        pm_objDR["ID"] = System.Convert.DBNull;
+    }
 
-	public decimal dcID_PHONG_BAN 
-	{
-		get
-		{
-			return CNull.RowNVLDecimal(pm_objDR, "ID_PHONG_BAN", IPConstants.c_DefaultDecimal);
-		}
-		set	
-		{
-			pm_objDR["ID_PHONG_BAN"] = value;
-		}
-	}
+    public decimal dcID_PHONG_BAN
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_PHONG_BAN", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_PHONG_BAN"] = value;
+        }
+    }
 
-	public bool IsID_PHONG_BANNull()	{
-		return pm_objDR.IsNull("ID_PHONG_BAN");
-	}
+    public bool IsID_PHONG_BANNull()
+    {
+        return pm_objDR.IsNull("ID_PHONG_BAN");
+    }
 
-	public void SetID_PHONG_BANNull() {
-		pm_objDR["ID_PHONG_BAN"] = System.Convert.DBNull;
-	}
+    public void SetID_PHONG_BANNull()
+    {
+        pm_objDR["ID_PHONG_BAN"] = System.Convert.DBNull;
+    }
 
-	public decimal dcID_CO_SO_DINH_MUC 
-	{
-		get
-		{
-			return CNull.RowNVLDecimal(pm_objDR, "ID_CO_SO_DINH_MUC", IPConstants.c_DefaultDecimal);
-		}
-		set	
-		{
-			pm_objDR["ID_CO_SO_DINH_MUC"] = value;
-		}
-	}
+    public decimal dcID_CO_SO_DINH_MUC
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_CO_SO_DINH_MUC", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_CO_SO_DINH_MUC"] = value;
+        }
+    }
 
-	public bool IsID_CO_SO_DINH_MUCNull()	{
-		return pm_objDR.IsNull("ID_CO_SO_DINH_MUC");
-	}
+    public bool IsID_CO_SO_DINH_MUCNull()
+    {
+        return pm_objDR.IsNull("ID_CO_SO_DINH_MUC");
+    }
 
-	public void SetID_CO_SO_DINH_MUCNull() {
-		pm_objDR["ID_CO_SO_DINH_MUC"] = System.Convert.DBNull;
-	}
+    public void SetID_CO_SO_DINH_MUCNull()
+    {
+        pm_objDR["ID_CO_SO_DINH_MUC"] = System.Convert.DBNull;
+    }
 
-	public decimal dcID_LOAI_DINH_MUC 
-	{
-		get
-		{
-			return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_DINH_MUC", IPConstants.c_DefaultDecimal);
-		}
-		set	
-		{
-			pm_objDR["ID_LOAI_DINH_MUC"] = value;
-		}
-	}
+    public decimal dcID_DM_CO_SO
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_DM_CO_SO", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_DM_CO_SO"] = value;
+        }
+    }
 
-	public bool IsID_LOAI_DINH_MUCNull()	{
-		return pm_objDR.IsNull("ID_LOAI_DINH_MUC");
-	}
+    public bool IsID_DM_CO_SONull()
+    {
+        return pm_objDR.IsNull("ID_DM_CO_SO");
+    }
 
-	public void SetID_LOAI_DINH_MUCNull() {
-		pm_objDR["ID_LOAI_DINH_MUC"] = System.Convert.DBNull;
-	}
+    public void SetID_DM_CO_SONull()
+    {
+        pm_objDR["ID_DM_CO_SO"] = System.Convert.DBNull;
+    }
 
-	public decimal dcID_DM_CO_SO 
-	{
-		get
-		{
-			return CNull.RowNVLDecimal(pm_objDR, "ID_DM_CO_SO", IPConstants.c_DefaultDecimal);
-		}
-		set	
-		{
-			pm_objDR["ID_DM_CO_SO"] = value;
-		}
-	}
+    public string strMA_CO_SO_DINH_MUC
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MA_CO_SO_DINH_MUC", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MA_CO_SO_DINH_MUC"] = value;
+        }
+    }
 
-	public bool IsID_DM_CO_SONull()	{
-		return pm_objDR.IsNull("ID_DM_CO_SO");
-	}
+    public bool IsMA_CO_SO_DINH_MUCNull()
+    {
+        return pm_objDR.IsNull("MA_CO_SO_DINH_MUC");
+    }
 
-	public void SetID_DM_CO_SONull() {
-		pm_objDR["ID_DM_CO_SO"] = System.Convert.DBNull;
-	}
+    public void SetMA_CO_SO_DINH_MUCNull()
+    {
+        pm_objDR["MA_CO_SO_DINH_MUC"] = System.Convert.DBNull;
+    }
 
-	public string strMA_CO_SO_DINH_MUC 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "MA_CO_SO_DINH_MUC", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["MA_CO_SO_DINH_MUC"] = value;
-		}
-	}
+    public string strTEN_CO_SO_DINH_MUC
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TEN_CO_SO_DINH_MUC", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TEN_CO_SO_DINH_MUC"] = value;
+        }
+    }
 
-	public bool IsMA_CO_SO_DINH_MUCNull() 
-	{
-		return pm_objDR.IsNull("MA_CO_SO_DINH_MUC");
-	}
+    public bool IsTEN_CO_SO_DINH_MUCNull()
+    {
+        return pm_objDR.IsNull("TEN_CO_SO_DINH_MUC");
+    }
 
-	public void SetMA_CO_SO_DINH_MUCNull() {
-		pm_objDR["MA_CO_SO_DINH_MUC"] = System.Convert.DBNull;
-	}
+    public void SetTEN_CO_SO_DINH_MUCNull()
+    {
+        pm_objDR["TEN_CO_SO_DINH_MUC"] = System.Convert.DBNull;
+    }
 
-	public string strTEN_CO_SO_DINH_MUC 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "TEN_CO_SO_DINH_MUC", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["TEN_CO_SO_DINH_MUC"] = value;
-		}
-	}
+    public string strMA_CO_SO
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MA_CO_SO", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MA_CO_SO"] = value;
+        }
+    }
 
-	public bool IsTEN_CO_SO_DINH_MUCNull() 
-	{
-		return pm_objDR.IsNull("TEN_CO_SO_DINH_MUC");
-	}
+    public bool IsMA_CO_SONull()
+    {
+        return pm_objDR.IsNull("MA_CO_SO");
+    }
 
-	public void SetTEN_CO_SO_DINH_MUCNull() {
-		pm_objDR["TEN_CO_SO_DINH_MUC"] = System.Convert.DBNull;
-	}
+    public void SetMA_CO_SONull()
+    {
+        pm_objDR["MA_CO_SO"] = System.Convert.DBNull;
+    }
 
-	public decimal dcID_LOAI_CO_SO_DINH_MUC 
-	{
-		get
-		{
-			return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_CO_SO_DINH_MUC", IPConstants.c_DefaultDecimal);
-		}
-		set	
-		{
-			pm_objDR["ID_LOAI_CO_SO_DINH_MUC"] = value;
-		}
-	}
+    public string strMO_TA_CO_SO
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MO_TA_CO_SO", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MO_TA_CO_SO"] = value;
+        }
+    }
 
-	public bool IsID_LOAI_CO_SO_DINH_MUCNull()	{
-		return pm_objDR.IsNull("ID_LOAI_CO_SO_DINH_MUC");
-	}
+    public bool IsMO_TA_CO_SONull()
+    {
+        return pm_objDR.IsNull("MO_TA_CO_SO");
+    }
 
-	public void SetID_LOAI_CO_SO_DINH_MUCNull() {
-		pm_objDR["ID_LOAI_CO_SO_DINH_MUC"] = System.Convert.DBNull;
-	}
+    public void SetMO_TA_CO_SONull()
+    {
+        pm_objDR["MO_TA_CO_SO"] = System.Convert.DBNull;
+    }
 
-	public string strMA 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "MA", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["MA"] = value;
-		}
-	}
+    public decimal dcID_LOAI_CO_SO
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_CO_SO", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_LOAI_CO_SO"] = value;
+        }
+    }
 
-	public bool IsMANull() 
-	{
-		return pm_objDR.IsNull("MA");
-	}
+    public bool IsID_LOAI_CO_SONull()
+    {
+        return pm_objDR.IsNull("ID_LOAI_CO_SO");
+    }
 
-	public void SetMANull() {
-		pm_objDR["MA"] = System.Convert.DBNull;
-	}
+    public void SetID_LOAI_CO_SONull()
+    {
+        pm_objDR["ID_LOAI_CO_SO"] = System.Convert.DBNull;
+    }
 
-	public string strMO_TA 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "MO_TA", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["MO_TA"] = value;
-		}
-	}
+    public string strMA_PHONG_BAN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MA_PHONG_BAN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MA_PHONG_BAN"] = value;
+        }
+    }
 
-	public bool IsMO_TANull() 
-	{
-		return pm_objDR.IsNull("MO_TA");
-	}
+    public bool IsMA_PHONG_BANNull()
+    {
+        return pm_objDR.IsNull("MA_PHONG_BAN");
+    }
 
-	public void SetMO_TANull() {
-		pm_objDR["MO_TA"] = System.Convert.DBNull;
-	}
+    public void SetMA_PHONG_BANNull()
+    {
+        pm_objDR["MA_PHONG_BAN"] = System.Convert.DBNull;
+    }
 
-	public decimal dcID_LOAI_CO_SO 
-	{
-		get
-		{
-			return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_CO_SO", IPConstants.c_DefaultDecimal);
-		}
-		set	
-		{
-			pm_objDR["ID_LOAI_CO_SO"] = value;
-		}
-	}
+    public string strTEN_PHONG_BAN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TEN_PHONG_BAN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TEN_PHONG_BAN"] = value;
+        }
+    }
 
-	public bool IsID_LOAI_CO_SONull()	{
-		return pm_objDR.IsNull("ID_LOAI_CO_SO");
-	}
+    public bool IsTEN_PHONG_BANNull()
+    {
+        return pm_objDR.IsNull("TEN_PHONG_BAN");
+    }
 
-	public void SetID_LOAI_CO_SONull() {
-		pm_objDR["ID_LOAI_CO_SO"] = System.Convert.DBNull;
-	}
+    public void SetTEN_PHONG_BANNull()
+    {
+        pm_objDR["TEN_PHONG_BAN"] = System.Convert.DBNull;
+    }
 
-	public string strMA_PHONG_BAN 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "MA_PHONG_BAN", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["MA_PHONG_BAN"] = value;
-		}
-	}
+    public string strTEN_LOAI_CO_SO
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TEN_LOAI_CO_SO", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TEN_LOAI_CO_SO"] = value;
+        }
+    }
 
-	public bool IsMA_PHONG_BANNull() 
-	{
-		return pm_objDR.IsNull("MA_PHONG_BAN");
-	}
+    public bool IsTEN_LOAI_CO_SONull()
+    {
+        return pm_objDR.IsNull("TEN_LOAI_CO_SO");
+    }
 
-	public void SetMA_PHONG_BANNull() {
-		pm_objDR["MA_PHONG_BAN"] = System.Convert.DBNull;
-	}
+    public void SetTEN_LOAI_CO_SONull()
+    {
+        pm_objDR["TEN_LOAI_CO_SO"] = System.Convert.DBNull;
+    }
 
-	public string strTEN_PHONG_BAN 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "TEN_PHONG_BAN", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["TEN_PHONG_BAN"] = value;
-		}
-	}
+    public decimal dcID_LOAI_DINH_MUC
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_DINH_MUC", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_LOAI_DINH_MUC"] = value;
+        }
+    }
 
-	public bool IsTEN_PHONG_BANNull() 
-	{
-		return pm_objDR.IsNull("TEN_PHONG_BAN");
-	}
+    public bool IsID_LOAI_DINH_MUCNull()
+    {
+        return pm_objDR.IsNull("ID_LOAI_DINH_MUC");
+    }
 
-	public void SetTEN_PHONG_BANNull() {
-		pm_objDR["TEN_PHONG_BAN"] = System.Convert.DBNull;
-	}
+    public void SetID_LOAI_DINH_MUCNull()
+    {
+        pm_objDR["ID_LOAI_DINH_MUC"] = System.Convert.DBNull;
+    }
 
-	public string strTEN_LOAI_CO_SO 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "TEN_LOAI_CO_SO", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["TEN_LOAI_CO_SO"] = value;
-		}
-	}
+    public string strTEN_LOAI_DINH_MUC
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TEN_LOAI_DINH_MUC", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TEN_LOAI_DINH_MUC"] = value;
+        }
+    }
 
-	public bool IsTEN_LOAI_CO_SONull() 
-	{
-		return pm_objDR.IsNull("TEN_LOAI_CO_SO");
-	}
+    public bool IsTEN_LOAI_DINH_MUCNull()
+    {
+        return pm_objDR.IsNull("TEN_LOAI_DINH_MUC");
+    }
 
-	public void SetTEN_LOAI_CO_SONull() {
-		pm_objDR["TEN_LOAI_CO_SO"] = System.Convert.DBNull;
-	}
+    public void SetTEN_LOAI_DINH_MUCNull()
+    {
+        pm_objDR["TEN_LOAI_DINH_MUC"] = System.Convert.DBNull;
+    }
 
-	public string strTEN_LOAI_DINH_MUC 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "TEN_LOAI_DINH_MUC", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["TEN_LOAI_DINH_MUC"] = value;
-		}
-	}
-
-	public bool IsTEN_LOAI_DINH_MUCNull() 
-	{
-		return pm_objDR.IsNull("TEN_LOAI_DINH_MUC");
-	}
-
-	public void SetTEN_LOAI_DINH_MUCNull() {
-		pm_objDR["TEN_LOAI_DINH_MUC"] = System.Convert.DBNull;
-	}
-
-#endregion
+    #endregion
 #region "Init Functions"
 	public US_V_GD_PHONG_BAN_DINH_MUC() 
 	{

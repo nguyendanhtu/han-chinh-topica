@@ -54,9 +54,10 @@ namespace BCTKApp
         }
         private void form_2_us_obj()
         {
-            m_us.strMA_CO_SO_DINH_MUC = m_txt_ma_co_so.Text;
-            m_us.strTEN_CO_SO_DINH_MUC = m_txt_ten_co_so.Text;
-            m_us.dcID_LOAI_CO_SO_DINH_MUC = CIPConvert.ToDecimal(m_cbo_loai_co_so.SelectedValue);
+            //m_us.datAP_DUNG_TU_NGAY = CIPConvert.ToDatetime()
+            //m_us.strMA_CO_SO_DINH_MUC = m_txt_ma_co_so.Text;
+            //m_us.strTEN_CO_SO_DINH_MUC = m_txt_ten_co_so.Text;
+            //m_us.dc = CIPConvert.ToDecimal(m_cbo_loai_co_so.SelectedValue);
         }
         private void us_obj_2_form(US_V_DM_CO_SO_DINH_MUC ip_us)
         {

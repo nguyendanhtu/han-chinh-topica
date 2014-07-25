@@ -71,7 +71,7 @@ namespace BCTKApp.DanhMuc
             m_cbo_loai_dm.Text = m_us_v_gd_pbdm.strTEN_LOAI_DINH_MUC;
             m_cbo_trung_tam.Text = m_us_v_gd_pbdm.strTEN_PHONG_BAN;
             m_cbo_co_so_tinh_dm.Text = m_us_v_gd_pbdm.strTEN_CO_SO_DINH_MUC;
-            m_cbo_tinh_theo_co_so.Text = m_us_v_gd_pbdm.strMA;
+            m_cbo_tinh_theo_co_so.Text = m_us_v_gd_pbdm.strMA_CO_SO;
         }
         private void m_form_to_us_obj()
         {
