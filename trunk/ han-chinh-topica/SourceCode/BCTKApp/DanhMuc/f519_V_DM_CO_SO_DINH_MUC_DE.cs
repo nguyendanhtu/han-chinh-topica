@@ -64,7 +64,7 @@ namespace BCTKApp
             m_us.dcID = ip_us.dcID;
             m_txt_ma_co_so.Text = ip_us.strMA_CO_SO_DINH_MUC;
             m_txt_ten_co_so.Text = ip_us.strTEN_CO_SO_DINH_MUC;
-            m_cbo_loai_co_so.SelectedValue = ip_us.dcID_LOAI_CO_SO_DINH_MUC;
+            m_cbo_loai_co_so.SelectedValue = ip_us.dcID_LOAI_DINH_MUC;
         }
         private void save_data()
         {
