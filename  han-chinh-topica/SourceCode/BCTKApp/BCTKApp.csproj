@@ -480,6 +480,15 @@
     <Compile Include="DanhMuc\f708_V_DM_VPP.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DanhMuc\f540_V_DM_CO_SO_DINH_MUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f541_V_DM_CO_SO_DINH_MUC_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f541_V_DM_CO_SO_DINH_MUC_DE.Designer.cs">
+      <DependentUpon>f541_V_DM_CO_SO_DINH_MUC_DE.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\f800_V_DM_PHONG_BAN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -695,6 +704,12 @@
     <EmbeddedResource Include="DanhMuc\f529_DM_NHA_CC_DE.resx">
       <DependentUpon>f529_DM_NHA_CC_DE.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f540_V_DM_CO_SO_DINH_MUC.resx">
+      <DependentUpon>f540_V_DM_CO_SO_DINH_MUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f541_V_DM_CO_SO_DINH_MUC_DE.resx">
+      <DependentUpon>f541_V_DM_CO_SO_DINH_MUC_DE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f708_V_DM_VPP.resx">
       <DependentUpon>f708_V_DM_VPP.cs</DependentUpon>
     </EmbeddedResource>
@@ -709,6 +724,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f400_menu_main.resx">
       <DependentUpon>f400_menu_main.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f996_license_form.resx">
       <DependentUpon>f996_license_form.cs</DependentUpon>

@@ -18,6 +18,7 @@ namespace BCTKUS
     }
     public class CONST_ID_CM_DM_LOAI_TD {
         public const decimal ID_CHUC_NANG = 16;
+        public const decimal ID_LOAI_DINH_MUC = 17;
     }
     public class CONST_ID_CM_DM_TU_DIEN {
         public const decimal ID_VIEW = 698;
