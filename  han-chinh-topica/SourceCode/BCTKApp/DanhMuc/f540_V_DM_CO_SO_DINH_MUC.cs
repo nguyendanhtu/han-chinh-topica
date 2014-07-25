@@ -224,9 +224,9 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 135);
+            this.m_fg.Location = new System.Drawing.Point(0, 102);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(801, 313);
+            this.m_fg.Size = new System.Drawing.Size(801, 346);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -236,7 +236,7 @@ namespace BCTKApp
             this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(801, 53);
+            this.m_lbl_header.Size = new System.Drawing.Size(801, 41);
             this.m_lbl_header.TabIndex = 21;
             this.m_lbl_header.Text = "DANH SÁCH CÁCH TÍNH ĐỊNH MỨC";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -274,9 +274,9 @@ namespace BCTKApp
             this.panel1.Controls.Add(this.m_txt_tu_khoa);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 53);
+            this.panel1.Location = new System.Drawing.Point(0, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(801, 82);
+            this.panel1.Size = new System.Drawing.Size(801, 61);
             this.panel1.TabIndex = 26;
             // 
             // m_cmd_search
@@ -351,6 +351,7 @@ namespace BCTKApp
 		ITransferDataRow m_obj_trans;		
 		DS_V_DM_CO_SO_DINH_MUC m_ds = new DS_V_DM_CO_SO_DINH_MUC();
 		US_V_DM_CO_SO_DINH_MUC m_us = new US_V_DM_CO_SO_DINH_MUC();
+        private const String m_str_goi_y_tim_kiem = "Nhập từ khóa cần tìm..";
 		#endregion
 
 		#region Private Methods
@@ -379,12 +380,15 @@ namespace BCTKApp
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_CO_SO_DINH_MUC.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){						
+		private void load_data_2_grid(){
+            string v_str_tu_khoa = m_txt_tu_khoa.Text;
+            if (v_str_tu_khoa == m_str_goi_y_tim_kiem) v_str_tu_khoa = "";
 			m_ds = new DS_V_DM_CO_SO_DINH_MUC();			
-			m_us.FillDataset(m_ds);
+			m_us.FillDatasetSearch(m_ds,v_str_tu_khoa);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
+            set_search_format_before();
 		}
 		private void grid2us_object(US_V_DM_CO_SO_DINH_MUC i_us
 			, int i_grid_row) {
@@ -446,12 +450,32 @@ namespace BCTKApp
 		//	f540_V_DM_CO_SO_DINH_MUC_DE v_fDE = new f540_V_DM_CO_SO_DINH_MUC_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void set_search_format_before()
+        {
+            if (m_txt_tu_khoa.Text == "")
+            {
+                m_txt_tu_khoa.Text = m_str_goi_y_tim_kiem;
+                m_txt_tu_khoa.ForeColor = Color.Gray;
+            }
+        }
+        private void set_search_format_after()
+        {
+            if (m_txt_tu_khoa.Text == m_str_goi_y_tim_kiem)
+            {
+                m_txt_tu_khoa.Text = "";
+            }
+            m_txt_tu_khoa.ForeColor = Color.Black;
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
+            m_txt_tu_khoa.KeyDown += new KeyEventHandler(m_txt_tu_khoa_KeyDown);
+            m_txt_tu_khoa.Leave += new EventHandler(m_txt_tu_khoa_Leave);
+            m_txt_tu_khoa.MouseClick += new MouseEventHandler(m_txt_tu_khoa_MouseClick);
 		}
 		#endregion
 
@@ -514,6 +538,59 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_tu_khoa_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid();
+                }
+                else
+                {
+                    set_search_format_after();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_tu_khoa_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                set_search_format_after();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_tu_khoa_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                set_search_format_before();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 	}
 }
