@@ -30,8 +30,12 @@
                     <asp:HyperLink ID="m_lhk_user_name" runat="server" CssClass="accountInfo" Style="color: White; border-right: 1px double White; padding: 4px; padding-right: 10px;">m_lhk_user_name</asp:HyperLink>
                 </div>
                 <div class="loginer_header">
-                    <asp:HyperLink ID="m_lnk_logout" runat="server" CssClass="accountInfo" Style="color: White; margin-left: 7px; bottom: 6px;"
+                    <asp:HyperLink ID="m_lnk_logout" runat="server" CssClass="accountInfo" Style="color: White; margin-left: 7px; bottom: 6px; border-right: 1px double White; padding: 4px; padding-right: 10px;"
                         NavigateUrl="/QuanLyHanhChinh/Account/Logout.aspx">Đăng xuất</asp:HyperLink>
+                </div>
+                <div class="loginer_header">
+                    <asp:HyperLink ID="m_lnk_doi_mat_khau" runat="server" CssClass="accountInfo" Style="color: White; margin-left: 7px; bottom: 6px;"
+                        NavigateUrl="/QuanLyHanhChinh/Account/ChangePassword.aspx">Đổi mật khẩu</asp:HyperLink>
                 </div>
             </div>
             <div>
@@ -41,13 +45,13 @@
                             <br />
                         </td>
                     </tr>
-                <tr>
-                    <td align="center">
-                        <asp:HyperLink ID="HyperLink1" runat="Server" NavigateUrl="#">
-                            <asp:Image ID="Image1" runat="server" Height='73px' Width='200px' ImageUrl="~/Images/MenuTop/logo-default1.png" />
-                        </asp:HyperLink>
-                    </td>
-                </tr>
+                    <tr>
+                        <td align="center">
+                            <asp:HyperLink ID="HyperLink1" runat="Server" NavigateUrl="#">
+                                <asp:Image ID="Image1" runat="server" Height='73px' Width='200px' ImageUrl="~/Images/MenuTop/logo-default1.png" />
+                            </asp:HyperLink>
+                        </td>
+                    </tr>
                     <tr>
                         <td>
                             <br />
