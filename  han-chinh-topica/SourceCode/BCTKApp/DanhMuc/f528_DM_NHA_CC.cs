@@ -412,6 +412,7 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
+            this.KeyDown+=new KeyEventHandler(f528_DM_NHA_CC_KeyDown);
 		}
 		#endregion
 
@@ -448,7 +449,8 @@ namespace BCTKApp
 			}
 		}
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
+		private void m_cmd_update_Click(object sender, EventArgs e) 
+        {
 			try{
 				update_dm_nha_cung_cap();
 			}
@@ -457,7 +459,8 @@ namespace BCTKApp
 			}
 		}
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
+		private void m_cmd_delete_Click(object sender, EventArgs e) 
+        {
 			try{
 				delete_dm_nha_cung_cap();
 			}
@@ -466,7 +469,8 @@ namespace BCTKApp
 			}
 		}
 
-		private void m_cmd_search_Click(object sender, EventArgs e) {
+		private void m_cmd_search_Click(object sender, EventArgs e) 
+        {
 			try{
                 load_data_2_grid();
 			}
@@ -474,6 +478,20 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+        private void f528_DM_NHA_CC_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 	}
 }
