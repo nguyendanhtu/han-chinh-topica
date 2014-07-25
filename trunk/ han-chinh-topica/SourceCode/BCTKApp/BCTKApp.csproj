@@ -477,6 +477,9 @@
     <Compile Include="DanhMuc\f529_DM_NHA_CC_DE.Designer.cs">
       <DependentUpon>f529_DM_NHA_CC_DE.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f708_V_DM_VPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DanhMuc\f800_V_DM_PHONG_BAN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -691,6 +694,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f529_DM_NHA_CC_DE.resx">
       <DependentUpon>f529_DM_NHA_CC_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f708_V_DM_VPP.resx">
+      <DependentUpon>f708_V_DM_VPP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f800_V_DM_PHONG_BAN.resx">
       <DependentUpon>f800_V_DM_PHONG_BAN.cs</DependentUpon>
