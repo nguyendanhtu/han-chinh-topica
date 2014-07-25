@@ -311,7 +311,7 @@ namespace BCTKApp
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f708_V_DM_VPP";
-            this.Text = "f708_V_DM_VPP";
+            this.Text = "F708 - Danh mục văn phòng phẩm";
             this.Load += new System.EventHandler(this.f708_V_DM_VPP_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -432,9 +432,9 @@ namespace BCTKApp
 		}
 
 
-		private void insert_v_dm_vpp(){			
-		//	f708_V_DM_VPP_DE v_fDE = new  f708_V_DM_VPP_DE();								
-		//	v_fDE.display();
+		private void insert_v_dm_vpp(){
+            //f709_V_DM_VPP_DE v_fDE = new f709_V_DM_VPP_DE();
+            //v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -442,8 +442,8 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f708_V_DM_VPP_DE v_fDE = new f708_V_DM_VPP_DE();
-		//	v_fDE.display(m_us);
+            //f709_V_DM_VPP_DE v_fDE = new f709_V_DM_VPP_DE();
+            //v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
