@@ -51,7 +51,7 @@
             // 
             this.m_cbo_tinh_theo_co_so.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_tinh_theo_co_so.FormattingEnabled = true;
-            this.m_cbo_tinh_theo_co_so.Location = new System.Drawing.Point(173, 150);
+            this.m_cbo_tinh_theo_co_so.Location = new System.Drawing.Point(225, 150);
             this.m_cbo_tinh_theo_co_so.Name = "m_cbo_tinh_theo_co_so";
             this.m_cbo_tinh_theo_co_so.Size = new System.Drawing.Size(208, 21);
             this.m_cbo_tinh_theo_co_so.TabIndex = 28;
@@ -60,7 +60,7 @@
             // 
             this.m_cbo_trung_tam.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(173, 96);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(225, 96);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(208, 21);
             this.m_cbo_trung_tam.TabIndex = 31;
@@ -68,7 +68,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(173, 96);
+            this.comboBox2.Location = new System.Drawing.Point(225, 96);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(208, 21);
             this.comboBox2.TabIndex = 30;
@@ -76,26 +76,26 @@
             // m_lbl_trung_tam
             // 
             this.m_lbl_trung_tam.AutoSize = true;
-            this.m_lbl_trung_tam.Location = new System.Drawing.Point(60, 99);
+            this.m_lbl_trung_tam.Location = new System.Drawing.Point(41, 99);
             this.m_lbl_trung_tam.Name = "m_lbl_trung_tam";
-            this.m_lbl_trung_tam.Size = new System.Drawing.Size(58, 13);
+            this.m_lbl_trung_tam.Size = new System.Drawing.Size(79, 13);
             this.m_lbl_trung_tam.TabIndex = 24;
-            this.m_lbl_trung_tam.Text = "Trung tâm:";
+            this.m_lbl_trung_tam.Text = "Trung tâm/Ban";
             // 
             // m_lbl_tinh_theo_co_so
             // 
             this.m_lbl_tinh_theo_co_so.AutoSize = true;
-            this.m_lbl_tinh_theo_co_so.Location = new System.Drawing.Point(60, 153);
+            this.m_lbl_tinh_theo_co_so.Location = new System.Drawing.Point(41, 153);
             this.m_lbl_tinh_theo_co_so.Name = "m_lbl_tinh_theo_co_so";
-            this.m_lbl_tinh_theo_co_so.Size = new System.Drawing.Size(86, 13);
+            this.m_lbl_tinh_theo_co_so.Size = new System.Drawing.Size(143, 13);
             this.m_lbl_tinh_theo_co_so.TabIndex = 27;
-            this.m_lbl_tinh_theo_co_so.Text = "Tính theo cơ sở:";
+            this.m_lbl_tinh_theo_co_so.Text = "Của Trung tâm/Ban/Trường:";
             // 
             // m_cbo_co_so_tinh_dm
             // 
             this.m_cbo_co_so_tinh_dm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_co_so_tinh_dm.FormattingEnabled = true;
-            this.m_cbo_co_so_tinh_dm.Location = new System.Drawing.Point(173, 122);
+            this.m_cbo_co_so_tinh_dm.Location = new System.Drawing.Point(225, 122);
             this.m_cbo_co_so_tinh_dm.Name = "m_cbo_co_so_tinh_dm";
             this.m_cbo_co_so_tinh_dm.Size = new System.Drawing.Size(208, 21);
             this.m_cbo_co_so_tinh_dm.TabIndex = 32;
@@ -103,17 +103,17 @@
             // m_lbl_co_so_tinh_dm
             // 
             this.m_lbl_co_so_tinh_dm.AutoSize = true;
-            this.m_lbl_co_so_tinh_dm.Location = new System.Drawing.Point(60, 125);
+            this.m_lbl_co_so_tinh_dm.Location = new System.Drawing.Point(41, 125);
             this.m_lbl_co_so_tinh_dm.Name = "m_lbl_co_so_tinh_dm";
-            this.m_lbl_co_so_tinh_dm.Size = new System.Drawing.Size(104, 13);
+            this.m_lbl_co_so_tinh_dm.Size = new System.Drawing.Size(128, 13);
             this.m_lbl_co_so_tinh_dm.TabIndex = 26;
-            this.m_lbl_co_so_tinh_dm.Text = "Cách tính định mức:";
+            this.m_lbl_co_so_tinh_dm.Text = "Cách tính định mức theo:";
             // 
             // m_cbo_loai_dm
             // 
             this.m_cbo_loai_dm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_loai_dm.FormattingEnabled = true;
-            this.m_cbo_loai_dm.Location = new System.Drawing.Point(173, 69);
+            this.m_cbo_loai_dm.Location = new System.Drawing.Point(225, 69);
             this.m_cbo_loai_dm.Name = "m_cbo_loai_dm";
             this.m_cbo_loai_dm.Size = new System.Drawing.Size(208, 21);
             this.m_cbo_loai_dm.TabIndex = 29;
@@ -121,7 +121,7 @@
             // m_lbl_loai_dm
             // 
             this.m_lbl_loai_dm.AutoSize = true;
-            this.m_lbl_loai_dm.Location = new System.Drawing.Point(60, 72);
+            this.m_lbl_loai_dm.Location = new System.Drawing.Point(41, 72);
             this.m_lbl_loai_dm.Name = "m_lbl_loai_dm";
             this.m_lbl_loai_dm.Size = new System.Drawing.Size(77, 13);
             this.m_lbl_loai_dm.TabIndex = 25;

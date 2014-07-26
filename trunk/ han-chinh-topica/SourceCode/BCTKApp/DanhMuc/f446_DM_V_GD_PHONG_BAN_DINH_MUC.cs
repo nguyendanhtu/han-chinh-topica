@@ -235,7 +235,7 @@ namespace BCTKApp
             // m_lbl_loai_dm
             // 
             this.m_lbl_loai_dm.AutoSize = true;
-            this.m_lbl_loai_dm.Location = new System.Drawing.Point(244, 47);
+            this.m_lbl_loai_dm.Location = new System.Drawing.Point(239, 47);
             this.m_lbl_loai_dm.Name = "m_lbl_loai_dm";
             this.m_lbl_loai_dm.Size = new System.Drawing.Size(115, 13);
             this.m_lbl_loai_dm.TabIndex = 22;
@@ -253,11 +253,11 @@ namespace BCTKApp
             // m_lbl_trung_tam
             // 
             this.m_lbl_trung_tam.AutoSize = true;
-            this.m_lbl_trung_tam.Location = new System.Drawing.Point(244, 75);
+            this.m_lbl_trung_tam.Location = new System.Drawing.Point(239, 75);
             this.m_lbl_trung_tam.Name = "m_lbl_trung_tam";
-            this.m_lbl_trung_tam.Size = new System.Drawing.Size(96, 13);
+            this.m_lbl_trung_tam.Size = new System.Drawing.Size(124, 13);
             this.m_lbl_trung_tam.TabIndex = 22;
-            this.m_lbl_trung_tam.Text = "Lọc theo trung tâm";
+            this.m_lbl_trung_tam.Text = "Lọc theo Trung tâm/Ban";
             // 
             // m_cbo_trung_tam
             // 
@@ -271,7 +271,7 @@ namespace BCTKApp
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(244, 102);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(239, 102);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(88, 13);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -373,8 +373,8 @@ namespace BCTKApp
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            //m_fg.Tree.Column = (int)e_col_Number.TEN_LOAI_DINH_MUC;
-            m_fg.Cols[(int)e_col_Number.TEN_LOAI_DINH_MUC].Visible = true;
+            m_fg.Tree.Column = (int)e_col_Number.MA_PHONG_BAN;
+            m_fg.Cols[(int)e_col_Number.TEN_LOAI_DINH_MUC].Visible = false;
             m_fg.Cols[0].Caption = "STT";
             //m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
             // m_lbl_header
@@ -429,14 +429,14 @@ namespace BCTKApp
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
-            //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-            //, 0
-            //, (int)e_col_Number.TEN_LOAI_DINH_MUC // chỗ này là tên trường mà mình nhóm
-            //, (int)e_col_Number.MA_PHONG_BAN // chỗ này là tên trường mà mình Count
-            //, "{0}"
-            //);
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+              , 0
+              , (int)e_col_Number.TEN_LOAI_DINH_MUC // chỗ này là tên trường mà mình nhóm
+              , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình Count
+              , "{0}"
+              );
             m_fg.Redraw = true;
-            m_fg.Tree.Show(0);
+           // m_fg.Tree.Show(0);
         }
         private void grid2us_object(US_V_GD_PHONG_BAN_DINH_MUC i_us
             , int i_grid_row)
@@ -465,12 +465,12 @@ namespace BCTKApp
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
-            //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-            //, 0
-            //, (int)e_col_Number.TEN_LOAI_DINH_MUC // chỗ này là tên trường mà mình nhóm
-            //, (int)e_col_Number.MA_PHONG_BAN // chỗ này là tên trường mà mình Count
-            //, "{0}"
-            //);
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+            , 0
+            , (int)e_col_Number.TEN_LOAI_DINH_MUC // chỗ này là tên trường mà mình nhóm
+            , (int)e_col_Number.MA_PHONG_BAN // chỗ này là tên trường mà mình Count
+            , "{0}"
+            );
             m_fg.Redraw = true;
         }
         private void load_cbo_trung_tam()
@@ -512,7 +512,7 @@ namespace BCTKApp
         private void insert_v_gd_phong_ban_dinh_muc()
         {
             f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE v_frm = new f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE();
-            v_frm.Display();
+            v_frm.display_for_insert();
             load_data_2_grid();
         }
 
@@ -523,7 +523,7 @@ namespace BCTKApp
             if (m_fg.Rows[m_fg.Row].IsNode) return;
             grid2us_object(m_us, m_fg.Row);
             f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE v_fDE = new f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE();
-            v_fDE.display(m_us);
+            v_fDE.display_for_update(m_us);
             load_data_2_grid();
         }
 

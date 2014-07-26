@@ -22,16 +22,16 @@ namespace BCTKApp.DanhMuc
 {
     public partial class f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE : Form
     {
-    
+
         #region Public interface
- 
-        public void Display()
+
+        public void display_for_insert()
         {
             m_e = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
         }
 
-        public void display(BCTKUS.US_V_GD_PHONG_BAN_DINH_MUC ip_v_m_us)
+        public void display_for_update(BCTKUS.US_V_GD_PHONG_BAN_DINH_MUC ip_v_m_us)
         {
             m_e = DataEntryFormMode.UpdateDataState;
             m_us_v_gd_pbdm = ip_v_m_us;
@@ -48,6 +48,8 @@ namespace BCTKApp.DanhMuc
         US_V_GD_PHONG_BAN_DINH_MUC m_us_v_gd_pbdm = new US_V_GD_PHONG_BAN_DINH_MUC();
         decimal m_id;
         DataEntryFormMode m_e = new DataEntryFormMode();
+        bool flag_loai_dm = false;
+        bool flag_loai_co_so_dm = true;
         #endregion
 
         #region Private method
@@ -56,15 +58,12 @@ namespace BCTKApp.DanhMuc
             CControlFormat.setFormStyle(this, new CAppContext_201());
             // m_lbl_header
             // 
-            this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(37, 9);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(410, 22);
-            this.m_lbl_header.TabIndex = 25;
-            this.m_lbl_header.Text = "THÊM CƠ SỞ ĐỊNH MỨC CHO TRUNG TÂM";
             //
+            m_cbo_co_so_tinh_dm.DropDownStyle = ComboBoxStyle.DropDownList;
+            m_cbo_loai_dm.DropDownStyle = ComboBoxStyle.DropDownList;
+            m_cbo_tinh_theo_co_so.DropDownStyle = ComboBoxStyle.DropDownList;
+            m_cbo_trung_tam.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         private void m_us_obj_to_form()
         {
@@ -75,10 +74,19 @@ namespace BCTKApp.DanhMuc
         }
         private void m_form_to_us_obj()
         {
-            m_us_gd_pbdm.dcID_CO_SO_DINH_MUC = CIPConvert.ToDecimal(m_cbo_co_so_tinh_dm.SelectedValue);
+            if (m_cbo_co_so_tinh_dm.SelectedValue != null)
+            {
+                m_us_gd_pbdm.dcID_CO_SO_DINH_MUC = CIPConvert.ToDecimal(m_cbo_co_so_tinh_dm.SelectedValue);
+                flag_loai_co_so_dm = true;
+            }
+            else
+            {
+                flag_loai_co_so_dm = false;
+                return;
+            }
             m_us_gd_pbdm.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             m_us_gd_pbdm.dcID_DM_CO_SO = CIPConvert.ToDecimal(m_cbo_tinh_theo_co_so.SelectedValue);
-            m_us_gd_pbdm.dcID_LOAI_DINH_MUC = CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue);
+            //m_us_gd_pbdm.dcID_LOAI_DINH_MUC = CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue);
         }
         private void load_cbo_dm_co_co()
         {
@@ -95,11 +103,13 @@ namespace BCTKApp.DanhMuc
             //v_ds.DM_CO_SO.Rows.InsertAt(v_dr, 0);
             m_cbo_tinh_theo_co_so.SelectedIndex = 0;
         }
-        private void load_cbo_co_tinh_dinh_muc()
+        private void load_cbo_co_tinh_dinh_muc(decimal ip_id_loai_dinh_muc)
         {
+            m_cbo_co_so_tinh_dm.ResetText();
             US_DM_CO_SO_DINH_MUC v_us = new US_DM_CO_SO_DINH_MUC();
             DS_DM_CO_SO_DINH_MUC v_ds = new DS_DM_CO_SO_DINH_MUC();
-            v_us.FillDataset(v_ds);
+            v_us.FillDataset(v_ds, "where id_loai_dinh_muc= " + ip_id_loai_dinh_muc);
+
             m_cbo_co_so_tinh_dm.DataSource = v_ds.DM_CO_SO_DINH_MUC;
             m_cbo_co_so_tinh_dm.ValueMember = DM_CO_SO_DINH_MUC.ID;
             m_cbo_co_so_tinh_dm.DisplayMember = DM_CO_SO_DINH_MUC.TEN_CO_SO_DINH_MUC;
@@ -109,7 +119,7 @@ namespace BCTKApp.DanhMuc
             //v_dr[DM_CO_SO_DINH_MUC.MA_CO_SO_DINH_MUC] = "";
             //v_dr[DM_CO_SO_DINH_MUC.ID_LOAI_CO_SO_DINH_MUC] = -1;
             //v_ds.DM_CO_SO_DINH_MUC.Rows.InsertAt(v_dr, 0);
-            m_cbo_co_so_tinh_dm.SelectedIndex = 0;
+            //m_cbo_co_so_tinh_dm.SelectedIndex = 0;
         }
         private void load_cbo_trung_tam()
         {
@@ -125,17 +135,16 @@ namespace BCTKApp.DanhMuc
             //v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
             //v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
             m_cbo_trung_tam.SelectedIndex = 0;
-        
+
         }
         private void load_cbo_loai_dinh_muc()
         {
-        
             BCTKUS.US_CM_DM_TU_DIEN v_us = new BCTKUS.US_CM_DM_TU_DIEN();
             BCTKDS.DS_CM_DM_TU_DIEN v_ds = new BCTKDS.DS_CM_DM_TU_DIEN();
             v_us.FillDataset(v_ds, "where id_loai_tu_dien =" + 17);
             m_cbo_loai_dm.DataSource = v_ds.CM_DM_TU_DIEN;
             m_cbo_loai_dm.ValueMember = CM_DM_TU_DIEN.ID;
-            m_cbo_loai_dm.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_loai_dm.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
             //DataRow v_dr = v_ds.CM_DM_TU_DIEN.NewRow();
             //v_dr[CM_DM_TU_DIEN.ID] = -1;
             //v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 17;
@@ -143,13 +152,14 @@ namespace BCTKApp.DanhMuc
             //v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
             //v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "Tất cả";
             //v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
-            m_cbo_loai_dm.SelectedIndex = 0; 
+            //m_cbo_loai_dm.SelectedIndex = 0;
+            flag_loai_dm = true;
         }
         private bool check_trung_tam(decimal ip_id_trung_tam, decimal ip_loai_dm)
         {
             US_V_GD_PHONG_BAN_DINH_MUC v_us = new US_V_GD_PHONG_BAN_DINH_MUC();
             DS_V_GD_PHONG_BAN_DINH_MUC v_ds = new DS_V_GD_PHONG_BAN_DINH_MUC();
-            v_us.FillDataset(v_ds, "where id_phong_ban="+ip_id_trung_tam + "and id_loai_dinh_muc ="+ip_loai_dm);
+            v_us.FillDataset(v_ds, "where id_phong_ban=" + ip_id_trung_tam + "and id_loai_dinh_muc =" + ip_loai_dm);
             if (v_ds.Tables[0].Rows.Count != 0)
                 return false;
             else
@@ -161,22 +171,24 @@ namespace BCTKApp.DanhMuc
             switch (m_e)
             {
                 case DataEntryFormMode.InsertDataState:
+                    if (flag_loai_co_so_dm == false)
+                    {
+                        BaseMessages.MsgBox_Infor("Chưa có cách tính định mức với loại định mức này!");
+                        return;
+                    }
                     if (!check_trung_tam(CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue), CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue)))
                     {
                         BaseMessages.MsgBox_Error("Đã tồn tại cơ sở định mức của trung tâm này!");
                         return;
                     }
                     m_us_gd_pbdm.Insert();
-                    BaseMessages.MsgBox_Infor("Thêm mới thành công!");
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     m_us_gd_pbdm.dcID = m_id;
                     m_us_gd_pbdm.Update();
-                    BaseMessages.MsgBox_Infor("Cập nhật thành công!");
-                    break;
-                default: m_us_gd_pbdm.Insert();
                     break;
             }
+            BaseMessages.MsgBox_Infor("Cập nhật thành công!");
             this.Close();
         }
         private void set_define_event()
@@ -184,16 +196,31 @@ namespace BCTKApp.DanhMuc
             m_cmd_save.Click += new System.EventHandler(m_cmd_save_Click);
             m_cmd_exit.Click += new System.EventHandler(m_cmd_exit_Click);
             KeyDown += new System.Windows.Forms.KeyEventHandler(f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE_KeyDown);
+            m_cbo_loai_dm.SelectedValueChanged += new EventHandler(m_cbo_loai_dm_SelectedValueChanged);
         }
         #endregion
 
         #region Event
+        private void m_cbo_loai_dm_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (flag_loai_dm == true)
+                {
+                    load_cbo_co_tinh_dinh_muc(CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue));
+                }
+            }
+            catch (System.Exception ex)
+            {
+                CSystemLog_301.ExceptionHandle(ex);
+            }
+        }
         public f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE()
         {
             InitializeComponent();
             format_control();
             set_define_event();
-            load_cbo_co_tinh_dinh_muc();
+            //load_cbo_co_tinh_dinh_muc();
             load_cbo_dm_co_co();
             load_cbo_trung_tam();
             load_cbo_loai_dinh_muc();
@@ -235,8 +262,7 @@ namespace BCTKApp.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-   
         #endregion
-  
+
     }
 }

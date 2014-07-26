@@ -286,20 +286,20 @@ namespace BCTKDS.CDBNames
     public class V_GD_PHONG_BAN_DINH_MUC
     {
 
-        public const string ID = "ID";
-        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
-        public const string ID_CO_SO_DINH_MUC = "ID_CO_SO_DINH_MUC";
-        public const string ID_DM_CO_SO = "ID_DM_CO_SO";
-        public const string MA_CO_SO_DINH_MUC = "MA_CO_SO_DINH_MUC";
-        public const string TEN_CO_SO_DINH_MUC = "TEN_CO_SO_DINH_MUC";
-        public const string MA_CO_SO = "MA_CO_SO";
-        public const string MO_TA_CO_SO = "MO_TA_CO_SO";
-        public const string ID_LOAI_CO_SO = "ID_LOAI_CO_SO";
-        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
-        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
-        public const string TEN_LOAI_CO_SO = "TEN_LOAI_CO_SO";
-        public const string ID_LOAI_DINH_MUC = "ID_LOAI_DINH_MUC";
-        public const string TEN_LOAI_DINH_MUC = "TEN_LOAI_DINH_MUC";
+        public const string ID =  "ID";
+   public const string ID_PHONG_BAN =  "ID_PHONG_BAN";
+   public const string ID_CO_SO_DINH_MUC =  "ID_CO_SO_DINH_MUC";
+   public const string ID_DM_CO_SO =  "ID_DM_CO_SO";
+   public const string MA_CO_SO_DINH_MUC =  "MA_CO_SO_DINH_MUC";
+   public const string TEN_CO_SO_DINH_MUC =  "TEN_CO_SO_DINH_MUC";
+   public const string MA_CO_SO =  "MA_CO_SO";
+   public const string MO_TA_CO_SO =  "MO_TA_CO_SO";
+   public const string ID_LOAI_CO_SO =  "ID_LOAI_CO_SO";
+   public const string MA_PHONG_BAN =  "MA_PHONG_BAN";
+   public const string TEN_PHONG_BAN =  "TEN_PHONG_BAN";
+   public const string TEN_LOAI_CO_SO =  "TEN_LOAI_CO_SO";
+   public const string ID_LOAI_DINH_MUC =  "ID_LOAI_DINH_MUC";
+   public const string TEN_LOAI_DINH_MUC =  "TEN_LOAI_DINH_MUC";
     }
     public class V_DM_PHONG_BAN_PHAP_NHAN
     {
@@ -586,6 +586,7 @@ namespace BCTKDS.CDBNames
         public const string ID = "ID";
         public const string ID_PHONG_BAN = "ID_PHONG_BAN";
         public const string ID_CO_SO_DINH_MUC = "ID_CO_SO_DINH_MUC";
+        public const string ID_DM_CO_SO = "ID_DM_CO_SO";
     }
     public class GD_DINH_MUC
     {
