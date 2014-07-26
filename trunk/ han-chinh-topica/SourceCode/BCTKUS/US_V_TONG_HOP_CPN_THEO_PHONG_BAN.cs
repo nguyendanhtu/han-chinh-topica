@@ -382,27 +382,14 @@ public class US_V_TONG_HOP_CPN_THEO_PHONG_BAN : US_Object
 	}
 #endregion
 
-    public void FillDatasetSearch(DS_V_TONG_HOP_CPN_THEO_PHONG_BAN ip_v_ds, string ip_v_str_tu_khoa, decimal ip_v_id_phong_ban, DateTime ip_v_dt_tu_ngay, DateTime ip_v_dt_den_ngay)
+    public void FillDatasetSearch(DS_V_TONG_HOP_CPN_THEO_PHONG_BAN ip_v_ds, string ip_v_str_tu_khoa, decimal ip_v_id_phong_ban, DateTime ip_v_dt_tu_ngay, DateTime ip_v_dt_den_ngay, decimal ip_v_id_trang_thai)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_TONG_HOP_CPN_THEO_PHONG_BAN_Search");
         v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tu_khoa);
         v_stored_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_v_id_phong_ban);
         v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_v_dt_tu_ngay);
         v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_v_dt_den_ngay);
-        v_stored_proc.fillDataSetByCommand(this, ip_v_ds);
-    }
-
-    public void FillDatasetSearch(DS_V_TONG_HOP_CPN_THEO_PHONG_BAN ip_v_ds, string ip_v_str_tu_khoa, decimal ip_v_id_phong_ban, DateTime ip_v_dt_tu_ngay, DateTime ip_v_dt_den_ngay, decimal ip_v_id_trang_thai, string ip_v_nguoi_gui, string ip_v_nguoi_nhan, string ip_v_noi_nhan)
-    {
-        CStoredProc v_stored_proc = new CStoredProc("pr_V_TONG_HOP_CPN_THEO_PHONG_BAN_Search");
-        v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tu_khoa); //so Bill
-        v_stored_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_v_id_phong_ban);
-        v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_v_dt_tu_ngay);
-        v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_v_dt_den_ngay);
         v_stored_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_v_id_trang_thai);
-        v_stored_proc.addNVarcharInputParam("@NGUOI_GUI", ip_v_nguoi_gui);
-        v_stored_proc.addNVarcharInputParam("@NGUOI_NHAN",ip_v_nguoi_nhan);
-        v_stored_proc.addNVarcharInputParam("@NOI_NHAN",ip_v_noi_nhan);
         v_stored_proc.fillDataSetByCommand(this, ip_v_ds);
     }
 
