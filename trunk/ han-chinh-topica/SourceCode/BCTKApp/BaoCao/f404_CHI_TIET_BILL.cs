@@ -46,7 +46,7 @@ namespace BCTKApp.BaoCao
             {
                 m_lbl_so_tien.Text = " 0 (vnđ)";   
             }
-            else m_lbl_so_tien.Text = CIPConvert.ToStr(v_dr["SO_TIEN"], "#,###") + " (vnđ)";
+            else m_lbl_so_tien.Text = CIPConvert.ToStr(v_dr["SO_TIEN"], "#,##0") + " (vnđ)";
             if(v_dr["TRONG_NUOC"].ToString() == "x")
             {
                 m_lbl_khu_vuc.Text = "Trong nước";
