@@ -173,7 +173,7 @@ namespace BCTKApp
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_xuat_excel.TabIndex = 22;
-            this.m_cmd_xuat_excel.Text = "Xuất &Excel";
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
             this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // m_cmd_insert
@@ -755,38 +755,6 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
-        private void m_cbo_ma_pb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (m_trang_thai == true)
-            {
-                decimal v_dc_id_phong_ban = CIPConvert.ToDecimal(m_cbo_ten_pb.SelectedValue) ;
-                US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
-                DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
-                v_us.FillDataset(v_ds,"where id ="+v_dc_id_phong_ban);
-                if (v_ds.Tables[0].Rows.Count != 0)
-                {
-                    //m_cbo_ten_pb.DataSource = v_ds.DM_PHONG_BAN;
-                    //m_cbo_ten_pb.ValueMember = DM_PHONG_BAN.ID;
-                    //m_cbo_ten_pb.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
-                    m_cbo_ten_pb.Text = v_ds.Tables[0].Rows[0][2].ToString();
-                }
-                else
-                {
-                    //DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
-                    //v_dr[DM_PHONG_BAN.ID] = -1;
-                    //v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
-                    //v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
-                    //v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
-                    //m_cbo_ten_pb.DataSource = v_ds.DM_PHONG_BAN;
-                    //m_cbo_ten_pb.ValueMember = DM_PHONG_BAN.ID;
-                    //m_cbo_ten_pb.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
-                    //m_cbo_ten_pb.SelectedIndex = 0;
-                    m_cbo_ten_pb.Text = "Tất cả";
-                }
-                tim_kiem();   
-            }
-        }
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
         {
             
