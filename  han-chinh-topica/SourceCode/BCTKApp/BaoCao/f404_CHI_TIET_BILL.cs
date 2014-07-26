@@ -42,7 +42,7 @@ namespace BCTKApp.BaoCao
             m_lbl_noi_nhan.Text = v_dr["NOI_NHAN"].ToString();
             m_lbl_trang_thai.Text = v_dr["TRANG_THAI"].ToString();
             m_lbl_noi_dung.Text = v_dr["NOI_DUNG"].ToString();
-            if (v_dr["SO_TIEN"].ToString() != "" || v_dr["SO_TIEN"] == null)
+            if (v_dr["SO_TIEN"].ToString() == "" || v_dr["SO_TIEN"] == null)
             {
                 m_lbl_so_tien.Text = " 0 (vnđ)";   
             }
