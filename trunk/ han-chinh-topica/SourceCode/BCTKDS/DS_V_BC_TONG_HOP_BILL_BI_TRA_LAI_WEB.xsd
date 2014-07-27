@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB" targetNamespace="http://tempuri.org/DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.xsd" xmlns:mstns="http://tempuri.org/DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.xsd" xmlns="http://tempuri.org/DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ADMIN_SOFTConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ADMIN_SOFTConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.ADMIN_SOFTConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEBTableAdapter" GeneratorDataComponentClassName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEBTableAdapter" Name="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB" UserDataComponentName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEBTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ADMIN_SOFTConnectionString1 (Settings)" DbObjectName="ADMIN_SOFT.dbo.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TONG_SO_BILL, TONG_SO_TIEN FROM dbo.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TONG_SO_BILL" DataSetColumn="TONG_SO_BILL" />
+              <Mapping SourceColumn="TONG_SO_TIEN" DataSetColumn="TONG_SO_TIEN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB" msprop:Generator_UserDSName="DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB" msprop:Generator_TableClassName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEBDataTable" msprop:Generator_TableVarName="tableV_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB" msprop:Generator_TablePropName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB" msprop:Generator_RowDeletingName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEBRowDeleting" msprop:Generator_RowChangingName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEBRowChanging" msprop:Generator_RowEvHandlerName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEBRowChangeEventHandler" msprop:Generator_RowDeletedName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEBRowDeleted" msprop:Generator_UserTableName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB" msprop:Generator_RowChangedName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEBRowChanged" msprop:Generator_RowEvArgName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEBRowChangeEvent" msprop:Generator_RowClassName="V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEBRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TONG_SO_BILL" msprop:Generator_ColumnVarNameInTable="columnTONG_SO_BILL" msprop:Generator_ColumnPropNameInRow="TONG_SO_BILL" msprop:Generator_ColumnPropNameInTable="TONG_SO_BILLColumn" msprop:Generator_UserColumnName="TONG_SO_BILL" type="xs:int" minOccurs="0" />
+              <xs:element name="TONG_SO_TIEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTONG_SO_TIEN" msprop:Generator_ColumnPropNameInRow="TONG_SO_TIEN" msprop:Generator_ColumnPropNameInTable="TONG_SO_TIENColumn" msprop:Generator_UserColumnName="TONG_SO_TIEN" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
