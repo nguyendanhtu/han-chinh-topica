@@ -57,6 +57,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         FileStream v_fs_stream = File.Open(ip_str_file_dir, FileMode.Open, FileAccess.Read);
         IExcelDataReader v_edr = ExcelReaderFactory.CreateBinaryReader(v_fs_stream);
         DataSet v_ds_result = v_edr.AsDataSet();
+        
 
         if (ip_i_start_row < v_ds_result.Tables[0].Rows.Count)
         {
@@ -77,18 +78,24 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 i--;
             }
         }
-        if (v_ds_result.Tables[0].Columns.Count < 10) return;
-        v_ds_result.Tables[0].Columns[0].ColumnName = "STT";
-        v_ds_result.Tables[0].Columns[1].ColumnName = "SO_BILL";
-        v_ds_result.Tables[0].Columns[2].ColumnName = "MA_PHONG_BAN";
-        v_ds_result.Tables[0].Columns[3].ColumnName = "TEN_PHONG_BAN";
-        v_ds_result.Tables[0].Columns[4].ColumnName = "NGUOI_GUI";
-        v_ds_result.Tables[0].Columns[5].ColumnName = "NGUOI_NHAN";
-        v_ds_result.Tables[0].Columns[6].ColumnName = "NOI_NHAN";
-        v_ds_result.Tables[0].Columns[7].ColumnName = "LOAI_THU";
-        v_ds_result.Tables[0].Columns[8].ColumnName = "NOI_DUNG";
-        v_ds_result.Tables[0].Columns[9].ColumnName = "GHI_CHU";
+        for (int i = 0; i < v_ds_result.Tables[0].Rows.Count; i++)
+        {
+            v_ds_result.Tables[0].Rows[i][8] = DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8]));
+        }
 
+        if (v_ds_result.Tables[0].Columns.Count < 11) return;
+        v_ds_result.Tables[0].Columns[0].ColumnName = "STT";
+        v_ds_result.Tables[0].Columns[1].ColumnName = "NOI_DUNG";
+        v_ds_result.Tables[0].Columns[2].ColumnName = "NOI_NHAN";
+        v_ds_result.Tables[0].Columns[3].ColumnName = "NGUOI_NHAN";
+        v_ds_result.Tables[0].Columns[4].ColumnName = "TRONG_NUOC";
+        v_ds_result.Tables[0].Columns[5].ColumnName = "NGOAI_NUOC";
+        v_ds_result.Tables[0].Columns[6].ColumnName = "SO_BILL";
+        v_ds_result.Tables[0].Columns[7].ColumnName = "NGUOI_GUI";
+        v_ds_result.Tables[0].Columns[8].ColumnName = "NGAY_GUI";
+        v_ds_result.Tables[0].Columns[9].ColumnName = "GHI_CHU";
+        v_ds_result.Tables[0].Columns[10].ColumnName = "MA_PHONG_BAN";
+        v_ds_result.Tables[0].Columns[11].ColumnName = "TEN_PHONG_BAN";
 
         ip_grv.DataSource = v_ds_result;
         ip_grv.DataBind();
@@ -110,6 +117,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             System.Web.UI.WebControls.TextBox v_txt_noi_dung_gui = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_noi_dung_grid");
             System.Web.UI.WebControls.TextBox v_txt_noi_ghi_chu = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_ghi_chu_grid");
             System.Web.UI.WebControls.RadioButton v_rdb_trong_nuoc = (System.Web.UI.WebControls.RadioButton)v_arr_gvr[i].FindControl("m_rdb_trong_nuoc");
+            eWorld.UI.CalendarPopup v_dat_ngay_gui = (eWorld.UI.CalendarPopup)v_arr_gvr[i].FindControl("m_dat_ngay_gui");
            
 
             US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
@@ -128,6 +136,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 v_us_dm_bill.strNGUOI_NHAN = v_txt_nguoi_nhan.Text.Trim();
                 v_us_dm_bill.strNOI_NHAN = v_txt_noi_nhan.Text.Trim();
                 v_us_dm_bill.strNOI_DUNG = v_txt_noi_dung_gui.Text.Trim();
+                v_us_dm_bill.datNGAY_GUI = v_dat_ngay_gui.SelectedDate;
                 if (v_rdb_trong_nuoc.Checked==true)
                 {
                     v_us_dm_bill.strTRONG_NUOC="x";
