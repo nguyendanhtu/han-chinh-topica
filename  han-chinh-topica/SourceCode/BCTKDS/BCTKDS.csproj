@@ -333,6 +333,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_BC_TINH_HINH_CPN_THEO_TT_BAN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_CM_DM_DANG_KY_GUI.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -868,6 +873,17 @@
     </None>
     <None Include="DS_V_BC_TINH_HINH_CPN_THEO_TT_BAN.xss">
       <DependentUpon>DS_V_BC_TINH_HINH_CPN_THEO_TT_BAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.xsc">
+      <DependentUpon>DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.xss">
+      <DependentUpon>DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.xsd</DependentUpon>
     </None>
     <None Include="DS_V_CM_DM_DANG_KY_GUI.xsc">
       <DependentUpon>DS_V_CM_DM_DANG_KY_GUI.xsd</DependentUpon>

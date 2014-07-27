@@ -329,6 +329,12 @@ namespace BCTKDS.CDBNames
         public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
         public const string TY_TRONG = "TY_TRONG";
     }
+    public class V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB
+    {
+        public const string TONG_SO_BILL = "TONG_SO_BILL";
+        public const string TONG_SO_TIEN = "TONG_SO_TIEN";
+    }
+
 
 
     #region HE_THONG
