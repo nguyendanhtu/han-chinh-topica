@@ -79,10 +79,10 @@
                 </tr>
                 <tr>
                     <td align="right" class="style1">
-                        <asp:Label ID="m_lbl_so_bill" runat="Server" CssClass="cssManField" Text="Số bill"></asp:Label>
+                        <asp:Label ID="m_lbl_so_bill" runat="Server" CssClass="cssManField" Text="Số bill(*)"></asp:Label>
                     </td>
                     <td class="style2">
-                        <asp:TextBox ID="m_txt_so_bill" runat="Server" CssClass="cssTextBox" Width="45%"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_so_bill" runat="Server" CssClass="cssTextBox" Width="45%" placeholder="Nhập số bill gồm 8 chữ số"></asp:TextBox>
                     </td>
                     <td align="right" class="style1">
                         <asp:Label ID="m_lbl_so_tien" runat="Server" CssClass="cssManField" Text="Số tiền"
@@ -95,32 +95,32 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <asp:Label ID="m_lbl_nguoi_nhan" runat="Server" Text="Người nhận" CssClass="cssManField"></asp:Label>
+                        <asp:Label ID="m_lbl_nguoi_nhan" runat="Server" Text="Người nhận(*)" CssClass="cssManField"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="m_txt_nguoi_nhan" runat="Server" CssClass="cssTextBox" Width="45%"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_nguoi_nhan" runat="Server" CssClass="cssTextBox" Width="45%" placeholder="Nhập người nhận"></asp:TextBox>
                     </td>
                     <td align="right">
-                        <asp:Label ID="m_lbl_nguoi_gui" runat="Server" Text="Người gửi" CssClass="cssManField"></asp:Label>
+                        <asp:Label ID="m_lbl_nguoi_gui" runat="Server" Text="Người gửi(*)" CssClass="cssManField"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="m_txt_nguoi_gui" runat="Server" CssClass="cssTextBox" Width="45%"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_nguoi_gui" runat="Server" CssClass="cssTextBox" Width="45%" placeholder="Nhập người gửi"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td align="right">
-                        <asp:Label ID="m_lbl_noi_nhan" runat="Server" CssClass="cssManField" Text="Nơi nhận"></asp:Label>
+                        <asp:Label ID="m_lbl_noi_nhan" runat="Server" CssClass="cssManField" Text="Nơi nhận(*)"></asp:Label>
                     </td>
                     <td rowspan="1">
                         <asp:TextBox ID="m_txt_noi_nhan" runat="Server" TextMode="MultiLine" CssClass="cssTextBox"
-                            Width="90%"></asp:TextBox>
+                            Width="90%" placeholder="Nhập nơi nhận"></asp:TextBox>
                     </td>
                     <td align="right">
                         <asp:Label ID="m_lbl_ghi_chu" runat="Server" Text="Ghi chú" CssClass="cssManField"></asp:Label>
                     </td>
                     <td rowspan="1">
                         <asp:TextBox ID="m_txt_ghi_chu" runat="Server" TextMode="MultiLine" CssClass="cssTextBox"
-                            Width="45%"></asp:TextBox>
+                            Width="45%" placeholder="Nhập ghi chú"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -128,7 +128,7 @@
                         <asp:Label ID="m_lbl_noi_dung" runat="Server" Text="Nội dung" CssClass="cssManField"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="m_txt_noi_dung" runat="Server" CssClass="cssTextBox" Width="90%"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_noi_dung" runat="Server" CssClass="cssTextBox" Width="90%" placeholder="Nhập nội dung"></asp:TextBox>
                     </td>
                     <td align="right">
                         <asp:Label ID="m_lbl_khu_vuc" runat="Server" Text="Khu vực: " CssClass="cssManField"></asp:Label>
