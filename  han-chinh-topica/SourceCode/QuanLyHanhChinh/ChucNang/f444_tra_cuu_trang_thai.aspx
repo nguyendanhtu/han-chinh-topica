@@ -23,7 +23,7 @@
                      <tr>
                     <td align="center" colspan="4">
                         <asp:Label ID="Label2" runat="server" Text="Nội dung tìm kiếm " CssClass="cssManField"></asp:Label>
-                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="350px" Height="15px" CssClass="cssTextBox" placeholder="Nhập số Bill, người gửi, người nhận"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="350px" Height="15px" CssClass="cssTextBox" placeholder="Nhập số Bill, người gửi, người nhận, nội dung"></asp:TextBox>
                         &nbsp;
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
                     </td>
