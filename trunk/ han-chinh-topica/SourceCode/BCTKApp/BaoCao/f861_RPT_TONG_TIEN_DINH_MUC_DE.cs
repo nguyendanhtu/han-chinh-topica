@@ -38,7 +38,7 @@ namespace BCTKApp.BaoCao {
             DateTime ap_dung_tu_ngay = new DateTime();
             string ten_co_so_dinh_muc = "";
             m_lbl_ten_trung_tam.Text = ip_us.strTEN_PHONG_BAN + " (" + ip_us.strMA_PHONG_BAN + ")";
-            m_lbl.Text = "Tổng tiền định mức " + ip_us.strTEN_NGAN +" tháng " + ip_from_date.Month + "/" + ip_from_date.Year;
+            //m_lbl.Text = "Tổng tiền định mức " + ip_us.strTEN_NGAN +" tháng " + ip_from_date.Month + "/" + ip_from_date.Year;
             ip_us.get_don_gia_dinh_muc_and_so_luong_thong_ke(ip_us.dcID_PHONG_BAN, ip_us.dcID_LOAI_DINH_MUC
                                                                 , ip_from_date, ip_to_date
                                                                 , ref don_gia_dinh_muc, ref so_luong_thong_ke);
