@@ -406,7 +406,7 @@ namespace BCTKApp
             v_htb.Add(V_GD_PHONG_BAN_DINH_MUC.MA_CO_SO, e_col_Number.MA);
             v_htb.Add(V_GD_PHONG_BAN_DINH_MUC.TEN_CO_SO_DINH_MUC, e_col_Number.TEN_CO_SO_DINH_MUC);
             v_htb.Add(V_GD_PHONG_BAN_DINH_MUC.ID_LOAI_DINH_MUC, e_col_Number.ID_LOAI_DINH_MUC);
-            v_htb.Add(V_GD_PHONG_BAN_DINH_MUC.MO_TA_CO_SO, e_col_Number.MO_TA);
+            v_htb.Add(V_GD_PHONG_BAN_DINH_MUC.TEN_CO_SO, e_col_Number.MO_TA);
             v_htb.Add(V_GD_PHONG_BAN_DINH_MUC.ID_LOAI_CO_SO, e_col_Number.ID_LOAI_CO_SO);
             v_htb.Add(V_GD_PHONG_BAN_DINH_MUC.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
             v_htb.Add(V_GD_PHONG_BAN_DINH_MUC.ID_CO_SO_DINH_MUC, e_col_Number.ID_CO_SO_DINH_MUC);
