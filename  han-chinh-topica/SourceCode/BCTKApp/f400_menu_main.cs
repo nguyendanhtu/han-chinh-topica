@@ -20,7 +20,6 @@ namespace BCTKApp
             format_controls();
         }
 
-
         public void display(ref IPConstants.HowUserWantTo_Exit_MainForm o_exitMode)
         {
             this.ShowDialog();
@@ -32,6 +31,7 @@ namespace BCTKApp
             //m_rib_bar_qldm_thong_ke.Visible = true;
             m_cmd_bc_chi_phi_theo_phap_nhan.Visible = false;
         }
+
         private void set_define_event()
         {
             m_cmd_dm_trung_tam.Click += new EventHandler(m_cmd_dm_trung_tam_Click);
@@ -64,16 +64,12 @@ namespace BCTKApp
             m_cmd_tra_cuu_don_hang.Click+=new EventHandler(m_cmd_tra_cuu_don_hang_Click);
         }
 
-        
-
         void f400_menu_main_Load(object sender, EventArgs e)
         {
             //string ngay = "01-02-2014";
             //DateTime v_dat = new DateTime();
             //v_dat = CIPConvert.ToDatetime(ngay);
         }
-
-     
         #endregion
         #region Event
         private void m_cmd_thong_tin_thang_excel_Click(object sender, EventArgs e)
@@ -88,7 +84,7 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        void m_cmd_doi_mat_khau_Click(object sender, EventArgs e)
+        private void m_cmd_doi_mat_khau_Click(object sender, EventArgs e)
         {
             try
             {
@@ -100,7 +96,7 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        void m_cmd_phan_quyen_cho_nhom_Click(object sender, EventArgs e)
+        private void m_cmd_phan_quyen_cho_nhom_Click(object sender, EventArgs e)
         {
             try
             {
@@ -113,7 +109,7 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        void m_cmd_nhom_nguoi_su_dung_Click(object sender, EventArgs e)
+        private void m_cmd_nhom_nguoi_su_dung_Click(object sender, EventArgs e)
         {
             try
             {
@@ -178,7 +174,6 @@ namespace BCTKApp
 
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-           
         }
         #endregion
         private void m_cmd_nhap_theo_t_Click(object sender, EventArgs e)
@@ -208,7 +203,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_tong_hop_CPN_theo_phong_ban_Click(object sender, EventArgs e)
         {
             try
@@ -222,12 +216,11 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_dinh_muc_tung_phong_ban_Click(object sender, EventArgs e)
         {
             try
             {
-                f860_RPT_TONG_TIEN_DINH_MUC frm = new f860_RPT_TONG_TIEN_DINH_MUC();
+                f880_RPT_TONG_TIEN_DINH_MUC frm = new f880_RPT_TONG_TIEN_DINH_MUC();
                 frm.display();
             }
             catch (Exception v_e)
@@ -236,7 +229,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_trang_thai_Click(object sender, EventArgs e)
         {
             try
@@ -250,7 +242,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_tong_hop_bill_theo_phong_ban_Click(object sender, EventArgs e)
         {
             try

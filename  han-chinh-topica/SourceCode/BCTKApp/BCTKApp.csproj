@@ -352,6 +352,9 @@
     <Compile Include="BaoCao\f870_RPT_CHI_PHI_THEO_PHAP_NHAN.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f880_RPT_TONG_TIEN_DINH_MUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CChartParameter.cs" />
     <Compile Include="ChartDataSourceInterface.cs" />
     <Compile Include="ChucNang\f121_dm_dang_ky_gui_theo_excel.cs">
@@ -618,6 +621,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f870_RPT_CHI_PHI_THEO_PHAP_NHAN.resx">
       <DependentUpon>f870_RPT_CHI_PHI_THEO_PHAP_NHAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f880_RPT_TONG_TIEN_DINH_MUC.resx">
+      <DependentUpon>f880_RPT_TONG_TIEN_DINH_MUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f121_dm_dang_ky_gui_theo_excel.resx">
       <DependentUpon>f121_dm_dang_ky_gui_theo_excel.cs</DependentUpon>

@@ -523,11 +523,30 @@ namespace BCTKDS.CDBNames
     public class RPT_TONG_TIEN_DINH_MUC
     {
         public const string ID = "ID";
-        public const string ID_LOAI_DINH_MUC = "ID_LOAI_DINH_MUC";
-        public const string TEN_NGAN = "TEN_NGAN";
         public const string ID_PHONG_BAN = "ID_PHONG_BAN";
         public const string MA_PHONG_BAN = "MA_PHONG_BAN";
         public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string ID_CO_SO_DINH_MUC = "ID_CO_SO_DINH_MUC";
+        public const string MA_CO_SO_DINH_MUC = "MA_CO_SO_DINH_MUC";
+        public const string TEN_CO_SO_DINH_MUC = "TEN_CO_SO_DINH_MUC";
+        public const string ID_LOAI_DINH_MUC = "ID_LOAI_DINH_MUC";
+        public const string TEN_LOAI_DINH_MUC = "TEN_LOAI_DINH_MUC";
+        public const string DON_GIA_DINH_MUC = "DON_GIA_DINH_MUC";
+        public const string AP_DUNG_TU_NGAY = "AP_DUNG_TU_NGAY";
+        public const string ID_DM_CO_SO = "ID_DM_CO_SO";
+        public const string MA_CO_SO = "MA_CO_SO";
+        public const string TEN_CO_SO = "TEN_CO_SO";
+        public const string ID_LOAI_CO_SO = "ID_LOAI_CO_SO";
+        public const string TEN_LOAI_CO_SO = "TEN_LOAI_CO_SO";
+        public const string ID_THONG_KE = "ID_THONG_KE";
+        public const string TEN_THONG_KE = "TEN_THONG_KE";
+        public const string ID_LOAI_THOI_GIAN = "ID_LOAI_THOI_GIAN";
+        public const string TEN_LOAI_THOI_GIAN = "TEN_LOAI_THOI_GIAN";
+        public const string TU_NGAY = "TU_NGAY";
+        public const string DEN_NGAY = "DEN_NGAY";
+        public const string GIA_TRI_THONG_KE = "GIA_TRI_THONG_KE";
+        public const string ID_DON_VI_THONG_KE = "ID_DON_VI_THONG_KE";
+        public const string TEN_DON_VI_THONG_KE = "TEN_DON_VI_THONG_KE";
         public const string TONG_TIEN_DINH_MUC = "TONG_TIEN_DINH_MUC";
     }
 
