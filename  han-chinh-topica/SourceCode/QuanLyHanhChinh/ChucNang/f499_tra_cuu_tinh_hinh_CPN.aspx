@@ -198,7 +198,7 @@
                             <asp:GridView ID="m_grv_bill_tra_lai_mat_phi" runat="Server"
                                 AutoGenerateColumns="false" CssClass="GridViewStyle"
                                 Width="99%" DataKeyNames="ID_TRANG_THAI" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
-                                EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
+                                EmptyDataText="Không có bill trả lại mất phí!" EmptyDataRowStyle-BorderColor="#810913"
                                 CellPadding="8" PageSize="20"
                                 OnPageIndexChanging="m_grv_v_bc_tinh_hinh_CPN_PageIndexChanging">
                                 <PagerSettings Position="TopAndBottom" />
@@ -228,7 +228,7 @@
                             <asp:GridView ID="m_grv_tong_hop_bill_tra_lai_khong_mat_phi" runat="Server"
                                 AutoGenerateColumns="false" CssClass="GridViewStyle"
                                 Width="99%" DataKeyNames="ID_TRANG_THAI" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
-                                EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
+                                EmptyDataText="Không có bill trả lại không mất phí!" EmptyDataRowStyle-BorderColor="#810913"
                                 CellPadding="8" PageSize="20"
                                 OnPageIndexChanging="m_grv_v_bc_tinh_hinh_CPN_PageIndexChanging">
                                 <PagerSettings Position="TopAndBottom" />
