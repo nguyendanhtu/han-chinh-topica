@@ -57,9 +57,9 @@
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        <a href="/QuanLyHanhChinh/ChucNang/f600_import_bill_from_excel_file.aspx" title="Nhập bill Excel">
-                                                            <img border="0" src="Images/Trangchu/excel-xls-icon.png" width="100"
-                                                                title="Nhập bill Excel" /></a>
+                                                        <a href="/QuanLyHanhChinh/ChucNang/f442_dm_bill.aspx" title="Nhập bill Excel">
+                                                            <img border="0" src="Images/Trangchu/nhap_tay.jpg" width="100"
+                                                                title="Nhập bill lẻ" /></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -77,7 +77,7 @@
                                     </td>
                                      <td>
                                         <p class="link_news_hot" style="margin-top: 0px; margin-bottom: 5px">
-                                            <a href="/QuanLyHanhChinh/ChucNang/f600_import_bill_from_excel_file.aspx" style="color: maroon; font-size: larger; font-weight: bold">Nhập bill Excel</a>
+                                            <a href="/QuanLyHanhChinh/ChucNang/f442_dm_bill.aspx" style="color: maroon; font-size: larger; font-weight: bold">Nhập bill lẻ</a>
                                         </p>
                                     </td>
                                 </tr>
@@ -86,7 +86,7 @@
                                         <table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tbody>
                                                 <tr>
-                                                    <td>Nhập danh sách bill từ file excel theo mẫu
+                                                    <td>Nhập danh sách bill từ file excel theo mẫu hoặc nhập bill lẻ khi cần bổ sung
                                                     </td>
                                                 </tr>
                                             </tbody>
