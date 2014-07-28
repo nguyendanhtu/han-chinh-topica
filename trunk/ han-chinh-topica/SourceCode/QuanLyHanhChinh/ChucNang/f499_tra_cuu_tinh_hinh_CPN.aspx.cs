@@ -42,8 +42,28 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
             for (int i = 0; i < m_grv_v_bc_tinh_hinh_CPN.Rows.Count; i++)
                 if (CIPConvert.ToDecimal(m_grv_v_bc_tinh_hinh_CPN.DataKeys[i].Value) == CIPConvert.ToDecimal(m_hdf_id_bill.Value)) m_grv_v_bc_tinh_hinh_CPN.SelectedIndex = i;
         }
-        //if (v_ds.V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.Count == 0)
-        //    thong_bao("Không tìm thấy thông tin!", true);
+        load_data_to_grid_tra_lai_mat_phi();
+        load_data_to_grid_tra_lai_khong_mat_phi();
+
+    }
+
+    private void load_data_to_grid_tra_lai_mat_phi()
+    {
+        decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
+        US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_us = new US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
+        DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_ds = new DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
+        v_us.Fill_TONG_HOP_BILL_MAT_PHI(v_ds, v_id_trung_tam, m_dat_tu_ngay.SelectedDate, m_dat_den_ngay.SelectedDate);
+        m_grv_bill_tra_lai_mat_phi.DataSource = v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB;
+        m_grv_bill_tra_lai_mat_phi.DataBind();
+    }
+    private void load_data_to_grid_tra_lai_khong_mat_phi()
+    {
+        decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
+        US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_us = new US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
+        DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_ds = new DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
+        v_us.Fill_TONG_HOP_BILL_KHONG_MAT_PHI(v_ds, v_id_trung_tam, m_dat_tu_ngay.SelectedDate, m_dat_den_ngay.SelectedDate);
+        m_grv_tong_hop_bill_tra_lai_khong_mat_phi.DataSource = v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB;
+        m_grv_tong_hop_bill_tra_lai_khong_mat_phi.DataBind();
     }
 
     private void thong_bao(string ip_str_mess)
@@ -137,28 +157,28 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_dat_tu_ngay_DateChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            load_data_to_grid();
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_dat_den_ngay_DateChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            load_data_to_grid();
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
+    //protected void m_dat_tu_ngay_DateChanged(object sender, EventArgs e)
+    //{
+    //    try
+    //    {
+    //        load_data_to_grid();
+    //    }
+    //    catch (Exception v_e)
+    //    {
+    //        CSystemLog_301.ExceptionHandle(this, v_e);
+    //    }
+    //}
+    //protected void m_dat_den_ngay_DateChanged(object sender, EventArgs e)
+    //{
+    //    try
+    //    {
+    //        load_data_to_grid();
+    //    }
+    //    catch (Exception v_e)
+    //    {
+    //        CSystemLog_301.ExceptionHandle(this, v_e);
+    //    }
+    //}
     protected void m_cmd_ok_Click(object sender, EventArgs e)
     {
         try
