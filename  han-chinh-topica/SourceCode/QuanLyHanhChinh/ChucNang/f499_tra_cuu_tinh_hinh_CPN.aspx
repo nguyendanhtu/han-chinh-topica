@@ -28,8 +28,7 @@
                         <ew:CalendarPopup ID="m_dat_tu_ngay" runat="server" TextBoxLabelStyle-BorderColor="#810913"
                             TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
                             DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
-                            ShowGoToToday="false" Width="35%"
-                            OnDateChanged="m_dat_tu_ngay_DateChanged">
+                            ShowGoToToday="false" Width="35%">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
                                 ForeColor="Black" />
                             <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
@@ -57,8 +56,7 @@
                         <ew:CalendarPopup ID="m_dat_den_ngay" runat="server" TextBoxLabelStyle-BorderColor="#810913"
                             TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
                             DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
-                            ShowGoToToday="true" Width="35%"
-                            OnDateChanged="m_dat_den_ngay_DateChanged">
+                            ShowGoToToday="true" Width="35%">
                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
                                 ForeColor="Black" />
                             <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
@@ -161,7 +159,11 @@
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="TONG_SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN THỰC TẾ (VNĐ)"
+                                <%--                       <asp:BoundField DataField="TRANG_THAI" ItemStyle-HorizontalAlign="right" HeaderText="TRẠNG THÁI"
+                                    ItemStyle-Width="7%">
+                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
+                                </asp:BoundField>--%>
+                                <asp:BoundField DataField="TONG_SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐÃ TÍNH VAT (VNĐ)"
                                     ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
                                     <ItemStyle HorizontalAlign="right" Width="7%" />
                                 </asp:BoundField>
@@ -181,6 +183,77 @@
                         </asp:GridView>
                     </td>
                 </tr>
+                <table cellspacing="0" cellpadding="1" style="width: 100%" class="cssTable" border="0">
+                    <tr>
+                        <td class="cssPageTitleBG" colspan="6">
+
+                            <asp:Label ID="Label1" runat="server" CssClass="cssPageTitle" Text="Tổng hợp bill bị trả lại"
+                                ForeColor="White" />
+                            &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                            <asp:HiddenField ID="HiddenField1" runat="server"></asp:HiddenField>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <asp:GridView ID="m_grv_bill_tra_lai_mat_phi" runat="Server"
+                                AutoGenerateColumns="false" CssClass="GridViewStyle"
+                                Width="99%" DataKeyNames="ID_TRANG_THAI" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
+                                EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
+                                CellPadding="8" PageSize="20"
+                                OnPageIndexChanging="m_grv_v_bc_tinh_hinh_CPN_PageIndexChanging">
+                                <PagerSettings Position="TopAndBottom" />
+                                <AlternatingRowStyle BackColor="White" />
+                                <EmptyDataRowStyle BorderColor="#810913" />
+                                <FooterStyle CssClass="GridViewFooterStyle" />
+                                <RowStyle CssClass="GridViewRowStyle" />
+                                <SelectedRowStyle CssClass="GridViewSelectedRowStyle" />
+                                <PagerStyle CssClass="GridViewPagerStyle" />
+                                <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
+                                <HeaderStyle CssClass="GridViewHeaderStyle" />
+                                <Columns>
+                                    <asp:BoundField DataField="TONG_SO_BILL" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG SỐ BILL ĐÃ BỊ TRẢ LẠI MẤT PHÍ"
+                                        ItemStyle-Width="7%">
+                                        <ItemStyle HorizontalAlign="Right" Width="7%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="TONG_SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐÃ TÍNH VAT (VNĐ)"
+                                        ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                        <ItemStyle HorizontalAlign="right" Width="7%" />
+                                    </asp:BoundField>
+                                </Columns>
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <asp:GridView ID="m_grv_tong_hop_bill_tra_lai_khong_mat_phi" runat="Server"
+                                AutoGenerateColumns="false" CssClass="GridViewStyle"
+                                Width="99%" DataKeyNames="ID_TRANG_THAI" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
+                                EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
+                                CellPadding="8" PageSize="20"
+                                OnPageIndexChanging="m_grv_v_bc_tinh_hinh_CPN_PageIndexChanging">
+                                <PagerSettings Position="TopAndBottom" />
+                                <AlternatingRowStyle BackColor="White" />
+                                <EmptyDataRowStyle BorderColor="#810913" />
+                                <FooterStyle CssClass="GridViewFooterStyle" />
+                                <RowStyle CssClass="GridViewRowStyle" />
+                                <SelectedRowStyle CssClass="GridViewSelectedRowStyle" />
+                                <PagerStyle CssClass="GridViewPagerStyle" />
+                                <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
+                                <HeaderStyle CssClass="GridViewHeaderStyle" />
+                                <Columns>
+                                    <asp:BoundField DataField="TONG_SO_BILL" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG SỐ BILL ĐÃ BỊ TRẢ LẠI KHÔNG MẤT PHÍ"
+                                        ItemStyle-Width="7%">
+                                        <ItemStyle HorizontalAlign="Right" Width="7%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="TONG_SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐÃ TÍNH VAT (VNĐ)"
+                                        ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                        <ItemStyle HorizontalAlign="right" Width="7%" />
+                                    </asp:BoundField>
+                                </Columns>
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                </table>
             </table>
         </ContentTemplate>
     </asp:UpdatePanel>
