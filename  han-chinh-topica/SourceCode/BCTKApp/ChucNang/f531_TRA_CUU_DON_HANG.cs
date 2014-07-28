@@ -309,7 +309,7 @@ namespace BCTKApp
             this.m_dtp_thang.CustomFormat = "MM/yyyy";
             this.m_dtp_thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thang.Location = new System.Drawing.Point(396, 46);
+            this.m_dtp_thang.Location = new System.Drawing.Point(382, 44);
             this.m_dtp_thang.Name = "m_dtp_thang";
             this.m_dtp_thang.Size = new System.Drawing.Size(126, 23);
             this.m_dtp_thang.TabIndex = 32;
@@ -319,7 +319,7 @@ namespace BCTKApp
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(339, 53);
+            this.label7.Location = new System.Drawing.Point(325, 51);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 16);
             this.label7.TabIndex = 33;
@@ -507,6 +507,8 @@ namespace BCTKApp
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
             this.Load +=new EventHandler(f531_TRA_CUU_DON_HANG_Load);
             this.KeyDown+=new KeyEventHandler(f531_TRA_CUU_DON_HANG_KeyDown);
+            m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
+            m_dtp_thang.ValueChanged+=new EventHandler(m_dtp_thang_ValueChanged);
 		}
 		#endregion
 
@@ -596,6 +598,28 @@ namespace BCTKApp
                 {
                     this.Close();
                 }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cbo_trung_tam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_dtp_thang_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
