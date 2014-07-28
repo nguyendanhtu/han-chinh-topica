@@ -381,6 +381,9 @@
     <Compile Include="ChucNang\f531_TRA_CUU_DON_HANG.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ChucNang\f535_gui_don_dat_hang_cho_NCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ChucNang\f702_v_dinh_muc_cpn_tung_phong_ban.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -642,6 +645,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f531_TRA_CUU_DON_HANG.resx">
       <DependentUpon>f531_TRA_CUU_DON_HANG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\f535_gui_don_dat_hang_cho_NCC.resx">
+      <DependentUpon>f535_gui_don_dat_hang_cho_NCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f702_v_dinh_muc_cpn_tung_phong_ban.resx">
       <DependentUpon>f702_v_dinh_muc_cpn_tung_phong_ban.cs</DependentUpon>
