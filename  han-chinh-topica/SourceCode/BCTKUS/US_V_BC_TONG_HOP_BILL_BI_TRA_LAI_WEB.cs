@@ -106,5 +106,25 @@ public class US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB : US_Object
         v_store_proc.addDatetimeInputParam("@DEN_NGAY", ip_v_dat_den_ngay);
         v_store_proc.fillDataSetByCommand(this, ip_v_ds);
     }
+
+    public void Fill_TONG_HOP_BILL_DA_GUI_THANH_CONG(DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB ip_v_ds, decimal ip_v_id_trung_tam, DateTime ip_v_dat_tu_ngay, DateTime ip_v_dat_den_ngay)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_BAO_CAO_TONG_HOP_BILL_GUI_THANH_CONG_WEB");
+        v_store_proc.addDecimalInputParam("@ID_TRUNG_TAM", ip_v_id_trung_tam);
+        //v_store_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tu_khoa);
+        v_store_proc.addDatetimeInputParam("@TU_NGAY", ip_v_dat_tu_ngay);
+        v_store_proc.addDatetimeInputParam("@DEN_NGAY", ip_v_dat_den_ngay);
+        v_store_proc.fillDataSetByCommand(this, ip_v_ds);
+    }
+
+    public void Fill_TONG_HOP_BILL_CHUA_GUI_CHO_CPN(DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB ip_v_ds, decimal ip_v_id_trung_tam, DateTime ip_v_dat_tu_ngay, DateTime ip_v_dat_den_ngay)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_BAO_CAO_TONG_HOP_BILL_CHUA_GUI_CHO_CPN_WEB");
+        v_store_proc.addDecimalInputParam("@ID_TRUNG_TAM", ip_v_id_trung_tam);
+        //v_store_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tu_khoa);
+        v_store_proc.addDatetimeInputParam("@TU_NGAY", ip_v_dat_tu_ngay);
+        v_store_proc.addDatetimeInputParam("@DEN_NGAY", ip_v_dat_den_ngay);
+        v_store_proc.fillDataSetByCommand(this, ip_v_ds);
+    }
 }
 }
