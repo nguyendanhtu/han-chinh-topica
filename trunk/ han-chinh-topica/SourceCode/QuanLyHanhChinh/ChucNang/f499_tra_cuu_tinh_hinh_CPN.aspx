@@ -183,74 +183,69 @@
                         </asp:GridView>
                     </td>
                 </tr>
-                <table cellspacing="0" cellpadding="1" style="width: 100%" class="cssTable" border="0">
+                <table cellspacing="0" cellpadding="1" style="width: 100%" class="cssTable" border="1">
                     <tr>
                         <td class="cssPageTitleBG" colspan="6">
 
-                            <asp:Label ID="Label1" runat="server" CssClass="cssPageTitle" Text="Tổng hợp bill bị trả lại"
+                            <asp:Label ID="Label1" runat="server" CssClass="cssPageTitle" Text="Chi tiết tổng hợp tình hình CPN"
                                 ForeColor="White" />
                             &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
                             <asp:HiddenField ID="HiddenField1" runat="server"></asp:HiddenField>
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="4">
-                            <asp:GridView ID="m_grv_bill_tra_lai_mat_phi" runat="Server"
-                                AutoGenerateColumns="false" CssClass="GridViewStyle"
-                                Width="99%" DataKeyNames="ID_TRANG_THAI" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
-                                EmptyDataText="Không có bill trả lại mất phí!" EmptyDataRowStyle-BorderColor="#810913"
-                                CellPadding="8" PageSize="20"
-                                OnPageIndexChanging="m_grv_v_bc_tinh_hinh_CPN_PageIndexChanging">
-                                <PagerSettings Position="TopAndBottom" />
-                                <AlternatingRowStyle BackColor="White" />
-                                <EmptyDataRowStyle BorderColor="#810913" />
-                                <FooterStyle CssClass="GridViewFooterStyle" />
-                                <RowStyle CssClass="GridViewRowStyle" />
-                                <SelectedRowStyle CssClass="GridViewSelectedRowStyle" />
-                                <PagerStyle CssClass="GridViewPagerStyle" />
-                                <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
-                                <HeaderStyle CssClass="GridViewHeaderStyle" />
-                                <Columns>
-                                    <asp:BoundField DataField="TONG_SO_BILL" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG SỐ BILL ĐÃ BỊ TRẢ LẠI MẤT PHÍ"
-                                        ItemStyle-Width="7%">
-                                        <ItemStyle HorizontalAlign="Right" Width="7%" />
-                                    </asp:BoundField>
-                                    <asp:BoundField DataField="TONG_SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐÃ TÍNH VAT (VNĐ)"
-                                        ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
-                                        <ItemStyle HorizontalAlign="right" Width="7%" />
-                                    </asp:BoundField>
-                                </Columns>
-                            </asp:GridView>
+                    <tr style="background-color:lightgrey">
+                        <td align="center">
+                            <asp:Label ID="Label7" runat="server" Text="Trạng thái Bill" CssClass="cssPageTitle" ForeColor="Maroon" />
+                        </td>
+                        <td align="center">
+                            <asp:Label ID="Label8" runat="server" Text="Tổng số Bill" CssClass="cssPageTitle" ForeColor="Maroon" />
+                        </td>
+                        <td align="center">
+                            <asp:Label ID="Label9" runat="server" Text="Tổng số tiền đã tính VAT (VNĐ)" CssClass="cssPageTitle" ForeColor="Maroon" />
+                        </td>
+                    </tr>
+                              <tr>
+                        <td align="left">
+                            <asp:Label ID="Label5" runat="server" Text="Bill chưa gửi cho CPN" CssClass="cssPageTitle" ForeColor="Black" />
+                        </td>
+                        <td align="right">
+                            <asp:Label ID="m_lbl_bill_chua_gui_cho_CPN" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
+                        </td>
+                        <td align="right">
+                            <asp:Label ID="Label10" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" text="0"/>
+                        </td>
+                    </tr>
+                       <tr>
+                        <td align="left">
+                            <asp:Label ID="Label4" runat="server" Text="Bill đã gửi thành công" CssClass="cssPageTitle" ForeColor="Black" />
+                        </td>
+                        <td align="right">
+                            <asp:Label ID="m_lbl_so_bill_da_gui_thanh_cong" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
+                        </td>
+                        <td align="right">
+                            <asp:Label ID="m_lbl_tong_tien_da_gui_thanh_cong" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="4">
-                            <asp:GridView ID="m_grv_tong_hop_bill_tra_lai_khong_mat_phi" runat="Server"
-                                AutoGenerateColumns="false" CssClass="GridViewStyle"
-                                Width="99%" DataKeyNames="ID_TRANG_THAI" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
-                                EmptyDataText="Không có bill trả lại không mất phí!" EmptyDataRowStyle-BorderColor="#810913"
-                                CellPadding="8" PageSize="20"
-                                OnPageIndexChanging="m_grv_v_bc_tinh_hinh_CPN_PageIndexChanging">
-                                <PagerSettings Position="TopAndBottom" />
-                                <AlternatingRowStyle BackColor="White" />
-                                <EmptyDataRowStyle BorderColor="#810913" />
-                                <FooterStyle CssClass="GridViewFooterStyle" />
-                                <RowStyle CssClass="GridViewRowStyle" />
-                                <SelectedRowStyle CssClass="GridViewSelectedRowStyle" />
-                                <PagerStyle CssClass="GridViewPagerStyle" />
-                                <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
-                                <HeaderStyle CssClass="GridViewHeaderStyle" />
-                                <Columns>
-                                    <asp:BoundField DataField="TONG_SO_BILL" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG SỐ BILL ĐÃ BỊ TRẢ LẠI KHÔNG MẤT PHÍ"
-                                        ItemStyle-Width="7%">
-                                        <ItemStyle HorizontalAlign="Right" Width="7%" />
-                                    </asp:BoundField>
-                                    <asp:BoundField DataField="TONG_SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐÃ TÍNH VAT (VNĐ)"
-                                        ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
-                                        <ItemStyle HorizontalAlign="right" Width="7%" />
-                                    </asp:BoundField>
-                                </Columns>
-                            </asp:GridView>
+                        <td align="left">
+                            <asp:Label ID="Label2" runat="server" Text="Bill trả lại mất phí" CssClass="cssPageTitle" ForeColor="Black" />
+                        </td>
+                        <td align="right">
+                            <asp:Label ID="m_lbl_so_bill_bi_tra_lai_mat_phi" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
+                        </td>
+                        <td align="right">
+                            <asp:Label ID="m_lbl_so_tien_bill_bi_tra_lai_mat_phi" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <asp:Label ID="Label3" runat="server" Text="Bill trả lại không mất phí" CssClass="cssPageTitle" ForeColor="Black" />
+                        </td>
+                        <td align="right">
+                            <asp:Label ID="m_lbl_so_bill_bi_tra_lai_khong_mat_phi" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
+                        </td>
+                        <td align="right">
+                            <asp:Label ID="m_lbl_so_tien_bill_tra_lai_khong_mat_phi" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" Text="0" />
                         </td>
                     </tr>
                 </table>
