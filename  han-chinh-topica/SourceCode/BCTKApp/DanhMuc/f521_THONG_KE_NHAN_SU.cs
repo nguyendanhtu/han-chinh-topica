@@ -375,8 +375,8 @@ namespace BCTKApp
 			CControlFormat.setC1FlexFormat(m_grv_nhan_su);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_nhan_su);
             CGridUtils.AddSearch_Handlers(m_grv_nhan_su);
-            m_grv_nhan_su.Tree.Column = (int)e_col_Number.MO_TA;
-            m_grv_nhan_su.Cols[(int)e_col_Number.MA].Visible = false;
+            m_grv_nhan_su.Tree.Column = (int)e_col_Number.TEN_THONG_KE;
+            m_grv_nhan_su.Cols[(int)e_col_Number.MO_TA].Visible = false;
             m_grv_nhan_su.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
             //load_data_2_cbo();
             m_dtp_den_ngay.Value = DateTime.Now.Date;
@@ -407,12 +407,12 @@ namespace BCTKApp
 			m_grv_nhan_su.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_nhan_su, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_nhan_su);
-           m_grv_nhan_su.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-              , 0
-              , (int)e_col_Number.MA// chỗ này là tên trường mà mình nhóm
-              , (int)e_col_Number.TEN_THONG_KE // chỗ này là tên trường mà mình Count
-              , "{0}"
-              );
+            m_grv_nhan_su.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+               , 0
+               , (int)e_col_Number.MO_TA// chỗ này là tên trường mà mình nhóm
+               , (int)e_col_Number.TU_NGAY // chỗ này là tên trường mà mình Count
+               , "{0}"
+               );
 			m_grv_nhan_su.Redraw = true;
             set_search_format_before();
 		}
