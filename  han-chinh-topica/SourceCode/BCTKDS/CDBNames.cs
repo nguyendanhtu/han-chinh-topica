@@ -688,7 +688,9 @@ namespace BCTKDS.CDBNames
         public const string ID = "ID";
         public const string MA_CO_SO_DINH_MUC = "MA_CO_SO_DINH_MUC";
         public const string TEN_CO_SO_DINH_MUC = "TEN_CO_SO_DINH_MUC";
-        public const string ID_LOAI_CO_SO_DINH_MUC = "ID_LOAI_CO_SO_DINH_MUC";
+        public const string ID_LOAI_DINH_MUC = "ID_LOAI_DINH_MUC";
+        public const string DON_GIA_DINH_MUC = "DON_GIA_DINH_MUC";
+        public const string AP_DUNG_TU_NGAY = "AP_DUNG_TU_NGAY";
     }
     public class RPT_CO_SO_DINH_MUC
     {
