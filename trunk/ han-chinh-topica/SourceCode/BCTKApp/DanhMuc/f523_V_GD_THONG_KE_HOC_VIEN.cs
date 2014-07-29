@@ -271,9 +271,9 @@ namespace BCTKApp
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(211, 96);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 33;
-            this.label3.Text = "Loại thống kê";
+            this.label3.Text = "Loại học viên";
             // 
             // m_cmd_search
             // 
@@ -451,13 +451,14 @@ namespace BCTKApp
             }
 			m_grv_thong_ke_hoc_vien.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_thong_ke_hoc_vien, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_grv_thong_ke_hoc_vien);
             m_grv_thong_ke_hoc_vien.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
               , 0
               , (int)e_col_Number.MA// chỗ này là tên trường mà mình nhóm
               , (int)e_col_Number.TEN_THONG_KE // chỗ này là tên trường mà mình Count
               , "{0}"
               );
-            CGridUtils.MakeSoTT(0, m_grv_thong_ke_hoc_vien);
+            
 			m_grv_thong_ke_hoc_vien.Redraw = true;
             set_search_format_before();
 		}
