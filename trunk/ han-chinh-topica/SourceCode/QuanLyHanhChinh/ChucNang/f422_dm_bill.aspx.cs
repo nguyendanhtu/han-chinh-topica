@@ -92,7 +92,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         else
             m_us_dm_bill.dcSO_TIEN = 0;
         m_us_dm_bill.datNGAY_GUI = m_dat_ngay_gui.SelectedDate;
-        m_us_dm_bill.dcID_PHONG_BAN = 128;
+        m_us_dm_bill.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         m_us_dm_bill.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
         if (m_rdb_trong_nuoc.Checked == true)
         {
@@ -134,11 +134,11 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             case LOAI_FORM.THEM:
                 m_us_dm_bill.Insert();
-                thong_bao("Đã gửi đăng kí Bill cho TAD!");
+                thong_bao("Đã gửi đăng kí Bill cho TAD!", true);
                 break;
             case LOAI_FORM.SUA:
                 m_us_dm_bill.Update();
-                thong_bao("Đã cập nhật và gửi đăng kí lại cho TAD!");
+                thong_bao("Đã cập nhật và gửi đăng kí lại cho TAD!", true);
                 m_cmd_them.Visible = false;
                 m_cmd_sua.Visible = true;
                 set_form_mode(LOAI_FORM.THEM);
@@ -192,14 +192,11 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     }
     private void load_data_to_grid()
     {
-        US_DM_BILL m_us_dm_bill = new US_DM_BILL();
-        DS_DM_BILL m_ds_dm_bill = new DS_DM_BILL();
         string v_so_bill = m_txt_tim_kiem.Text.Trim();
         string v_nguoi_gui = m_txt_tim_kiem.Text.Trim();
         string v_nguoi_nhan = m_txt_tim_kiem.Text.Trim();
         string v_noi_nhan = m_txt_tim_kiem.Text.Trim();
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
-        m_ds_dm_bill.Clear();
         m_us_dm_bill.FillDataset(m_ds_dm_bill, v_id_trung_tam, v_so_bill,v_nguoi_gui,v_nguoi_nhan, v_noi_nhan);
         m_grv_dm_bill.DataSource = m_ds_dm_bill.DM_BILL;
         load_title();
@@ -317,6 +314,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
                     DS_HT_QUAN_HE_SU_DUNG_DU_LIEU v_ds_ht_qh_sd_dl = new DS_HT_QUAN_HE_SU_DUNG_DU_LIEU();
                     v_us_ht_qh_sd_dl.FillDataset(v_ds_ht_qh_sd_dl, "where ID_USER_GROUP =" + v_id_user_group);
                     m_hdf_id_trung_tam.Value = v_ds_ht_qh_sd_dl.HT_QUAN_HE_SU_DUNG_DU_LIEU.Rows[0]["ID_PHONG_BAN"].ToString();
+                    set_inital_form_mode();
 
                 }
                 else
@@ -324,7 +322,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
                     Response.Redirect("../Default.aspx", false);
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }
-               set_inital_form_mode();
+               
             }
         }
         catch (Exception v_e)
