@@ -65,7 +65,11 @@ namespace BCTKApp
             if (m_chk_trong_nuoc.Checked == true) m_us.strTRONG_NUOC = "x";
             m_us.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             m_us.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
-            m_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text.Replace(",","").Replace(".",""));
+            if (m_txt_so_tien.Text != "") 
+            {
+                m_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text.Replace(",", "").Replace(".", ""));
+            }
+            
             m_us.datNGAY_GUI = m_dtp_ngay_gui.Value.Date;
         }
         private void us_obj_2_form(US_V_DM_BILL ip_us)
