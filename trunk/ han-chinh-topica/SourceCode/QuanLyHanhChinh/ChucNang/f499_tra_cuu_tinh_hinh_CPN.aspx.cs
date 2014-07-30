@@ -17,6 +17,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
     #endregion
 
     #region Members
+    decimal m_id_trung_tam;
     #endregion
 
     #region Data Structure
@@ -241,8 +242,15 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         }
     }
     protected void m_cmd_bill_chua_gui_cho_CPN_Click(object sender, EventArgs e)
-    { 
-    
+    {
+        try
+        {
+          
+        }
+        catch (System.Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
     #endregion
    
