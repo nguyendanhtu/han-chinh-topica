@@ -224,7 +224,7 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 102);
+            this.m_fg.Location = new System.Drawing.Point(0, 135);
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(778, 313);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
@@ -238,7 +238,7 @@ namespace BCTKApp
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(778, 53);
             this.m_lbl_header.TabIndex = 21;
-            this.m_lbl_header.Text = "DANH SÁCH CÁCH TÍNH ĐỊNH MỨC";
+            this.m_lbl_header.Text = "DANH SÁCH CƠ SỞ TÍNH ĐỊNH MỨC";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // imageList1
@@ -274,7 +274,7 @@ namespace BCTKApp
             this.panel1.Controls.Add(this.m_txt_tu_khoa);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 41);
+            this.panel1.Location = new System.Drawing.Point(0, 53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(778, 82);
             this.panel1.TabIndex = 26;
@@ -319,7 +319,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f540_V_DM_CO_SO_DINH_MUC";
-            this.Text = "F540 - Danh mục cách tính định mức";
+            this.Text = "F540 - Danh sách cơ sở tính định mức";
             this.Load += new System.EventHandler(this.f540_V_DM_CO_SO_DINH_MUC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
