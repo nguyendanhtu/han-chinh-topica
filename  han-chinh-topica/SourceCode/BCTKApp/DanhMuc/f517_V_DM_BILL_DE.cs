@@ -135,7 +135,7 @@ namespace BCTKApp
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_noi_nhan, DataType.StringType, allowNull.NO, true))
                 return false;
-            if (m_chk_nuoc_ngoai.Checked == true && m_chk_trong_nuoc.Checked == true) 
+            if (m_chk_nuoc_ngoai.Checked == false && m_chk_trong_nuoc.Checked == false) 
             {
                 BaseMessages.MsgBox_Infor("Bạn chưa chọn trong nước hay ngoài nước");
                 return false;
