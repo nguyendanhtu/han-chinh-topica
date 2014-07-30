@@ -218,8 +218,8 @@
                             <asp:Label ID="Label10" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" Text="0" />
                         </td>
                         <td align="center" style="width: 150px">
-                            <asp:ImageButton ID="m_cmd_bill_chua_gui_cho_CPN" ImageUrl="../Images/Button/detail.png"
-                                PostBackUrl="/QuanLyHanhChinh/ChucNang/f444_tra_cuu_trang_thai.aspx" runat="Server" OnClick="m_cmd_bill_chua_gui_cho_CPN_Click"/>
+                            <asp:ImageButton ID="Button1" ImageUrl="../Images/Button/detail.png"
+                                PostBackUrl="/QuanLyHanhChinh/ChucNang/f444_tra_cuu_trang_thai.aspx" runat="Server" />
                         </td>
                     </tr>
                     <tr>
