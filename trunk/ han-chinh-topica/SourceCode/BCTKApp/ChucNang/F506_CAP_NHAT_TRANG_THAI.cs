@@ -77,7 +77,6 @@ namespace BCTKApp
         }
         private void load_data_2_grid(decimal ip_dc_trang_thai, C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
-            i_fg.DataSource = null;
             DateTime v_dat_ngay = m_dtp_tu_ngay.Value.Date;
             decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             decimal v_dc_id_trang_thai = ip_dc_trang_thai; //CIPConvert.ToDecimal(m_cbo_trang_thai_cu.SelectedValue);
