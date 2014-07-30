@@ -228,9 +228,9 @@ namespace BCTKApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(273, 9);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(359, 22);
+            this.m_lbl_header.Size = new System.Drawing.Size(454, 22);
             this.m_lbl_header.TabIndex = 21;
-            this.m_lbl_header.Text = "CƠ SỞ ĐỊNH MỨC THEO TRUNG TÂM";
+            this.m_lbl_header.Text = "CÁCH TÍNH ĐỊNH MỨC TỪNG TRUNG TÂM/BAN";
             // 
             // m_lbl_loai_dm
             // 
@@ -298,7 +298,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f446_DM_V_GD_PHONG_BAN_DINH_MUC";
-            this.Text = "F446 - Cở định mức theo trung tâm";
+            this.Text = "F446 - Cách tính định mức cho trung tâm";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
