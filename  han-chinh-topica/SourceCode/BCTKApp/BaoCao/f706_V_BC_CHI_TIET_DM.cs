@@ -303,7 +303,7 @@ namespace BCTKApp
             m_lbl_ten_phong_ban.Text = v_ds_dm_pb.Tables[0].Rows[0][2].ToString();
             m_lbl_tu_ngay.Text = ip_v_dt_tu_ngay.Date.ToShortDateString();
             m_lbl_den_ngay.Text = ip_v_dt_den_ngay.Date.ToShortDateString();
-            //DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
             //US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
             //m_us.FillDataset_chi_tiet_dm(m_ds, ip_v_id_phong_ban, ip_v_dt_tu_ngay, ip_v_dt_den_ngay);
             m_dt_den_ngay = ip_v_dt_den_ngay;
