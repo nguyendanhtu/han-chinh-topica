@@ -135,6 +135,7 @@ namespace BCTKApp
             m_dtp_ngay.ValueChanged+=new EventHandler(m_dtp_ngay_ValueChanged);
             m_txt_so_luong.TextChanged+=new EventHandler(m_txt_so_luong_TextChanged);
             m_txt_so_luong.KeyPress+=new KeyPressEventHandler(m_txt_so_luong_KeyPress);
+            this.KeyDown+=new KeyEventHandler(f522_THONG_KE_NHAN_SU_DE_KeyDown);
         }
 
         #endregion
@@ -193,6 +194,20 @@ namespace BCTKApp
                     BaseMessages.MsgBox_Infor("Bạn đã nhập chữ '" + e.KeyChar + "'...Xin vui lòng chỉ nhập số");
                     e.KeyChar = (char)0;
                 }
+            }
+        }
+        private void f522_THONG_KE_NHAN_SU_DE_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         #endregion
