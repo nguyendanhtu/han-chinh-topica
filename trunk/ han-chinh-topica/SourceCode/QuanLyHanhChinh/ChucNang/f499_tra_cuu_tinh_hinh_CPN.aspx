@@ -193,18 +193,21 @@
                             <asp:HiddenField ID="HiddenField1" runat="server"></asp:HiddenField>
                         </td>
                     </tr>
-                    <tr style="background-color:lightgrey">
-                        <td align="center">
+                    <tr style="background-color: lightgrey">
+                        <td align="center" style="width:25%">
                             <asp:Label ID="Label7" runat="server" Text="Trạng thái Bill" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
-                        <td align="center">
+                        <td align="center" style="width:25%">
                             <asp:Label ID="Label8" runat="server" Text="Tổng số Bill" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
-                        <td align="center">
+                        <td align="center" style="width:25%">
                             <asp:Label ID="Label9" runat="server" Text="Tổng số tiền đã tính VAT (VNĐ)" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
+                        <td align="center" style="width:25%">
+                            <asp:Label ID="Label6" runat="server" Text="Click xem chi tiết" CssClass="cssPageTitle" ForeColor="Maroon" />
+                        </td>
                     </tr>
-                              <tr>
+                    <tr>
                         <td align="left">
                             <asp:Label ID="Label5" runat="server" Text="Bill chưa gửi cho CPN" CssClass="cssPageTitle" ForeColor="Black" />
                         </td>
@@ -212,18 +215,27 @@
                             <asp:Label ID="m_lbl_bill_chua_gui_cho_CPN" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
                         <td align="right">
-                            <asp:Label ID="Label10" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" text="0"/>
+                            <asp:Label ID="Label10" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" Text="0" />
+                        </td>
+                        <td align="center" style="width: 150px">
+                            <asp:ImageButton ID="Button1" ImageUrl="../Images/Button/detail.png"
+                                PostBackUrl="/QuanLyHanhChinh/ChucNang/f444_tra_cuu_trang_thai.aspx" runat="Server" />
                         </td>
                     </tr>
-                       <tr>
+                    <tr>
                         <td align="left">
-                            <asp:Label ID="Label4" runat="server" Text="Bill đã gửi thành công" CssClass="cssPageTitle" ForeColor="Black" />
+                            <asp:Label ID="Label4" runat="server" Text="Bill đã gửi cho CPN" CssClass="cssPageTitle" ForeColor="Black" />
+
                         </td>
                         <td align="right">
                             <asp:Label ID="m_lbl_so_bill_da_gui_thanh_cong" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
                         <td align="right">
                             <asp:Label ID="m_lbl_tong_tien_da_gui_thanh_cong" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
+                        </td>
+                        <td align="center" style="width: 150px">
+                            <asp:ImageButton ID="ImageButton1" ImageUrl="../Images/Button/detail.png"
+                                PostBackUrl="/QuanLyHanhChinh/ChucNang/f444_tra_cuu_trang_thai.aspx" runat="Server" />
                         </td>
                     </tr>
                     <tr>
@@ -236,6 +248,10 @@
                         <td align="right">
                             <asp:Label ID="m_lbl_so_tien_bill_bi_tra_lai_mat_phi" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
+                        <td align="center" style="width: 150px">
+                            <asp:ImageButton ID="ImageButton2" ImageUrl="../Images/Button/detail.png"
+                                PostBackUrl="/QuanLyHanhChinh/ChucNang/f444_tra_cuu_trang_thai.aspx" runat="Server" />
+                        </td>
                     </tr>
                     <tr>
                         <td align="left">
@@ -246,6 +262,10 @@
                         </td>
                         <td align="right">
                             <asp:Label ID="m_lbl_so_tien_bill_tra_lai_khong_mat_phi" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" Text="0" />
+                        </td>
+                        <td align="center" style="width: 150px">
+                            <asp:ImageButton ID="ImageButton3" ImageUrl="../Images/Button/detail.png"
+                                PostBackUrl="/QuanLyHanhChinh/ChucNang/f444_tra_cuu_trang_thai.aspx" runat="Server" />
                         </td>
                     </tr>
                 </table>
