@@ -529,6 +529,7 @@ namespace BCTKApp
             m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
             m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
             this.KeyDown+=new KeyEventHandler(f521_THONG_KE_NHAN_SU_KeyDown);
+            m_grv_nhan_su.DoubleClick+=new EventHandler(m_grv_nhan_su_DoubleClick);
 		}
 		#endregion
 
@@ -679,6 +680,17 @@ namespace BCTKApp
             try
             {
                 load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_grv_nhan_su_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_gd_thong_ke();
             }
             catch (Exception v_e)
             {

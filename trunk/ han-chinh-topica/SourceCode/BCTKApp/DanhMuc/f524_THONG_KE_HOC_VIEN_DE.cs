@@ -30,6 +30,7 @@ namespace BCTKApp
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_obj_2_form(ip_us_v);
+            m_cbo_co_so_dm.Enabled = false;
             this.ShowDialog();
         }
         #endregion
@@ -55,11 +56,12 @@ namespace BCTKApp
             load_data_2_cbo_truong();
             this.m_cbo_loai_hv.Items.AddRange(new object[] { "Học viên đang học", "Học viên tuyển mới" });
             m_cbo_loai_hv.SelectedIndex = 0;
+            load_data_2_co_so_dm();
             set_define_event();
         }
-        private void form_2_us_obj(decimal ip_id_co_so_dm) 
+        private void form_2_us_obj() 
         {
-            m_us_tk.dcID_CO_SO_DINH_MUC = ip_id_co_so_dm;
+            m_us_tk.dcID_CO_SO_DINH_MUC = CIPConvert.ToDecimal(m_cbo_co_so_dm.SelectedValue);
             m_us_tk.dcID_DM_CO_SO = CIPConvert.ToDecimal(m_cbo_truong.SelectedValue);
             m_us_tk.dcID_DON_VI_THONG_KE = CONST_ID_DON_VI_THONG_KE.HOC_VIEN;
             m_us_tk.dcID_LOAI_THOI_GIAN = CONST_ID_CM_DM_TU_DIEN.ID_PHAT_SINH_CUOi_KY;
@@ -82,6 +84,7 @@ namespace BCTKApp
                 m_cbo_loai_hv.SelectedIndex = 0;
             }
             else m_cbo_loai_hv.SelectedIndex = 1;
+            m_cbo_co_so_dm.SelectedValue = ip_us_v.dcID_CO_SO_DINH_MUC;
         }
         private void load_data_2_cbo_truong()
         {
@@ -91,6 +94,24 @@ namespace BCTKApp
             m_cbo_truong.DataSource = v_ds.V_DM_CO_SO;
             m_cbo_truong.ValueMember = V_DM_CO_SO.ID;
             m_cbo_truong.DisplayMember = V_DM_CO_SO.MO_TA;
+        }
+
+        private void load_data_2_co_so_dm()
+        {
+            US_DM_CO_SO_DINH_MUC v_us = new US_DM_CO_SO_DINH_MUC();
+            DS_DM_CO_SO_DINH_MUC v_ds = new DS_DM_CO_SO_DINH_MUC();
+            v_ds.Clear();
+            if (m_cbo_loai_hv.SelectedIndex == 0)
+            {
+                v_us.FillDataset(v_ds, "Where TEN_CO_SO_DINH_MUC LIKE N'%học%'");
+            }
+            else
+            {
+                v_us.FillDataset(v_ds, "Where TEN_CO_SO_DINH_MUC LIKE N'%mới%'");
+            }
+            m_cbo_co_so_dm.DataSource = v_ds.DM_CO_SO_DINH_MUC;
+            m_cbo_co_so_dm.ValueMember = DM_CO_SO_DINH_MUC.ID;
+            m_cbo_co_so_dm.DisplayMember = DM_CO_SO_DINH_MUC.TEN_CO_SO_DINH_MUC;
         }
         private bool validate_data_is_ok()
         {
@@ -104,14 +125,7 @@ namespace BCTKApp
         {
             if (!validate_data_is_ok())
                 return;
-            if (m_cbo_loai_hv.SelectedIndex == 0)
-            {
-                form_2_us_obj(CONST_ID_CO_SO_DINH_MUC.DANGHOC_TRUONG);
-            }
-            else 
-            {
-                form_2_us_obj(CONST_ID_CO_SO_DINH_MUC.TUYENMOI_TRUONG);
-            }
+            form_2_us_obj();
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -146,6 +160,7 @@ namespace BCTKApp
             m_dtp_ngay.ValueChanged += new EventHandler(m_dtp_ngay_ValueChanged);
             m_txt_so_luong.TextChanged += new EventHandler(m_txt_so_luong_TextChanged);
             m_txt_so_luong.KeyPress += new KeyPressEventHandler(m_txt_so_luong_KeyPress);
+            m_cbo_loai_hv.SelectedIndexChanged+=new EventHandler(m_cbo_loai_hv_SelectedIndexChanged);
         }
         #endregion
 
@@ -167,6 +182,19 @@ namespace BCTKApp
             try
             {
                 this.Close();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cbo_loai_hv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                m_cbo_co_so_dm.Enabled = true;
+                load_data_2_co_so_dm();
             }
             catch (Exception v_e)
             {
