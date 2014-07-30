@@ -240,6 +240,10 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_cmd_bill_chua_gui_cho_CPN_Click(object sender, EventArgs e)
+    { 
+    
+    }
     #endregion
    
 }
