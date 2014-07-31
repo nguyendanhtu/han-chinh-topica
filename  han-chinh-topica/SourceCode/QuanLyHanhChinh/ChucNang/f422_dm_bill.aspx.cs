@@ -127,7 +127,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     private void save_data()
     {
         if (!check_validate_is_ok()) return;
-        if (!check_tien_bill()) return;
+        //if (!check_tien_bill()) return;
         if (!check_so_bill()) return;
         form_to_us_object();
         switch (get_form_mode(m_hdf_form_mode))
@@ -212,21 +212,21 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         if (m_ds_dm_bill.DM_BILL.Count == 0)
             thong_bao("Không tìm thấy Bill.", true);
     }
-    private bool check_tien_bill()
-    {
-        decimal num;
-        bool isNumberic = decimal.TryParse(m_txt_so_tien.Text, out num);
-        if (!isNumberic)
-        {
-            thong_bao("Số tiền phải là kiểu số!");
-            return false;
-        }
-        else return true;
-    }
+    //private bool check_tien_bill()
+    //{
+    //    decimal num;
+    //    bool isNumberic = decimal.TryParse(m_txt_so_tien.Text, out num);
+    //    if (!isNumberic)
+    //    {
+    //        thong_bao("Số tiền phải là kiểu số!");
+    //        return false;
+    //    }
+    //    else return true;
+    //}
     private bool check_so_bill()
     {
         decimal num;
-        bool isNumberic = decimal.TryParse(m_txt_so_tien.Text, out num);
+        bool isNumberic = decimal.TryParse(m_txt_so_bill.Text, out num);
         if (!isNumberic)
         {
             thong_bao("Số bill phải là kiểu số!");
