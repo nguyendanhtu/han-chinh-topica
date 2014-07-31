@@ -172,7 +172,7 @@
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="TI_LE_DA_VUOT" ItemStyle-HorizontalAlign="Left" HeaderText="TỶ LỆ ĐÃ VƯỢT (%)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:P1}">
                                     <ItemStyle HorizontalAlign="right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
