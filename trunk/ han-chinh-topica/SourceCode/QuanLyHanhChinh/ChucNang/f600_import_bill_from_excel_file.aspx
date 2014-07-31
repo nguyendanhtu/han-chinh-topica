@@ -17,14 +17,6 @@
         </tr>
         <tr>
             <td>
-                <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" /></td>
-            <td>
-                <asp:Button ID="m_cmd_upload" runat="Server" Text="Bắt đầu upload file" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
-                <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <asp:Label ID="m_lbl_message" runat="Server"></asp:Label></td>
         </tr>
     </table>
@@ -34,7 +26,22 @@
         <ContentTemplate>
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
                 <tr>
+                    <td>
+                        <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" /></td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <asp:Button ID="m_cmd_upload" runat="Server" Text="Bắt đầu upload file" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
+                        <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="4">
+                        <hr>
+                        </td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="left">
 
                         <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Kiểm tra và cập nhật danh sách bill" CssClass="cssGoogleButton"
                             OnClick="m_cmd_kiem_tra_va_import_Click" />
@@ -110,7 +117,7 @@
                                     <ItemTemplate>
                                         <ew:CalendarPopup ID="m_dat_ngay_gui" runat="server" TextBoxLabelStyle-BorderColor="#810913"
                                             TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN" SelectedDate='<%#Eval("NGAY_GUI") %>'
-                                            DisableTextBoxEntry="true" GoToTodayText="Hôm nay: "  ImageUrl="~/Images/cal.gif"
+                                            DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
                                             ShowGoToToday="true" Width="70%">
                                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
                                                 ForeColor="Black" />
