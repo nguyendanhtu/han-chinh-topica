@@ -8,8 +8,8 @@ using System.Windows.Forms;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
-using IP.Core.IPData;
-using IP.Core.IPData.DBNames;
+//using IP.Core.IPData;
+//using IP.Core.IPData.DBNames;
 
 namespace BCTKApp.HeThong
 {

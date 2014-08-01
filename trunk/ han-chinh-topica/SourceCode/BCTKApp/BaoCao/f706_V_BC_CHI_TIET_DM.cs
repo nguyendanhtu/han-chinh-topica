@@ -293,7 +293,10 @@ namespace BCTKApp
         {
             this.ShowDialog();
         }
-        public void Display_for_chi_tiet(decimal ip_v_id_phong_ban, DateTime ip_v_dt_tu_ngay, DateTime ip_v_dt_den_ngay)
+        public void Display_for_chi_tiet(
+            decimal ip_v_id_phong_ban
+            , DateTime ip_v_dt_tu_ngay
+            , DateTime ip_v_dt_den_ngay)
         {
             m_obj_trans = get_trans_object(m_fg);
             format_controls();
@@ -309,22 +312,9 @@ namespace BCTKApp
             m_dt_den_ngay = ip_v_dt_den_ngay;
             m_dt_tu_ngay = ip_v_dt_tu_ngay;
             m_id_phong_ban = ip_v_id_phong_ban;
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            CGridUtils.MakeSoTT(0, m_fg);
-            //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-            // , 0
-            // , (int)e_col_Number.LOAI_TK // chỗ này là tên trường mà mình nhóm
-            // , (int)e_col_Number.GIA_TRI_THONG_KE // chỗ này là tên trường mà mình Count
-            // , "{0}"
-            // );
-            //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
-            //    , 0
-            //    , (int)e_col_Number.LOAI_TK
-            //    , (int)e_col_Number.DINH_MUC
-            //    , "{0}"
-            //    );
-            m_fg.Redraw = true;
+
+           
+        
             this.ShowDialog();
         }
         #endregion
@@ -417,18 +407,18 @@ namespace BCTKApp
                 v_dc_tong_doanh_thu += CIPConvert.ToDecimal(m_ds.Tables[0].Rows[i][m_ds.V_BC_CHI_TIET_DM.TONG_TIEN_DMColumn]);
             }
             m_lbl_tong_dm.Text = CIPConvert.ToStr(v_dc_tong_doanh_thu, "#,###.##") + "   VNĐ";
-            //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-            //, 0
-            //, (int)e_col_Number.LOAI_TK // chỗ này là tên trường mà mình nhóm
-            //, (int)e_col_Number.GIA_TRI_THONG_KE // chỗ này là tên trường mà mình Count
-            //, "{0}"
-            //);
-            //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
-            //    , 0
-            //    , (int)e_col_Number.LOAI_TK
-            //    , (int)e_col_Number.DINH_MUC
-            //    , "{0}"
-            //    );
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+             , 0
+             , -1 // chỗ này là tên trường mà mình nhóm
+             , (int)e_col_Number.GIA_TRI_THONG_KE // chỗ này là tên trường mà mình Count
+             , "{0}"
+             );
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
+                , 0
+                , -1
+                , (int)e_col_Number.TONG_TIEN_DM
+                , "{0}"
+                );
             m_fg.Redraw = true;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 
