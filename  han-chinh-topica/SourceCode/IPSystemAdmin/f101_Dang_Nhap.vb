@@ -57,6 +57,7 @@ Public Class f101_Dang_Nhap
     Friend WithEvents m_txtTenTruyNhap As System.Windows.Forms.TextBox
     Friend WithEvents ImageList As System.Windows.Forms.ImageList
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
@@ -71,8 +72,10 @@ Public Class f101_Dang_Nhap
         Me.m_txtTenTruyNhap = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -135,7 +138,6 @@ Public Class f101_Dang_Nhap
         Me.m_txtMatKhau.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.m_txtMatKhau.Size = New System.Drawing.Size(98, 20)
         Me.m_txtMatKhau.TabIndex = 3
-        Me.m_txtMatKhau.Text = "admin"
         '
         'Label2
         '
@@ -167,7 +169,6 @@ Public Class f101_Dang_Nhap
         Me.m_txtTenTruyNhap.Name = "m_txtTenTruyNhap"
         Me.m_txtTenTruyNhap.Size = New System.Drawing.Size(147, 20)
         Me.m_txtTenTruyNhap.TabIndex = 1
-        Me.m_txtTenTruyNhap.Text = "admin"
         '
         'GroupBox1
         '
@@ -187,11 +188,23 @@ Public Class f101_Dang_Nhap
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 165)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(302, 40)
         Me.Panel2.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Maroon
+        Me.Label3.Location = New System.Drawing.Point(8, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(286, 20)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Designed by BKIndex Group, 3T Corp.Ltd"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'f101_Dang_Nhap
         '
@@ -208,6 +221,7 @@ Public Class f101_Dang_Nhap
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
