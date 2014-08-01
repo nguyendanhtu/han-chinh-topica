@@ -13,6 +13,7 @@
                 <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" ForeColor="White"
                     Text="Import bill từ file excel"></asp:Label>
                 &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
             </td>
         </tr>
         <tr>
@@ -33,22 +34,21 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4">
-                <hr>
+            <td></td>
+        </tr>
+
+        <tr>
+
+            <td align="left">
+
+                <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Kiểm tra và cập nhật danh sách bill" CssClass="cssGoogleButton"
+                    OnClick="m_cmd_kiem_tra_va_import_Click" />
             </td>
         </tr>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <tr>
-
-                    <td colspan="4" align="left">
-
-                        <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Kiểm tra và cập nhật danh sách bill" CssClass="cssGoogleButton"
-                            OnClick="m_cmd_kiem_tra_va_import_Click" />
-                    </td>
-                </tr>
                 <tr>
                     <td colspan="4">
                         <asp:GridView ID="m_grv_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
