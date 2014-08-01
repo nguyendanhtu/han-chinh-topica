@@ -398,6 +398,7 @@ namespace BCTKApp
 			m_us.FillDatasetSearch(m_ds,v_str_tu_khoa);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_fg);
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
              , 0
              , (int)e_col_Number.TEN_LOAI_DINH_MUC // chỗ này là tên trường mà mình nhóm
