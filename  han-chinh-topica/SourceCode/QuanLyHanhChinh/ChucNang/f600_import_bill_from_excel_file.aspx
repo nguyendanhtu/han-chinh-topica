@@ -20,27 +20,29 @@
                 <asp:Label ID="m_lbl_message" runat="Server"></asp:Label></td>
         </tr>
     </table>
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
-            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+
+    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+            <td>
+                <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" /></td>
+        </tr>
+        <tr>
+            <td align="left">
+                <asp:Button ID="m_cmd_upload" runat="Server" Text="Bắt đầu upload file" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
+                <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <hr>
+            </td>
+        </tr>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
                 <tr>
-                    <td>
-                        <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" /></td>
-                </tr>
-                <tr>
-                    <td align="left">
-                        <asp:Button ID="m_cmd_upload" runat="Server" Text="Bắt đầu upload file" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
-                        <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <hr>
-                        </td>
-                </tr>
-                <tr>
+
                     <td colspan="4" align="left">
 
                         <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Kiểm tra và cập nhật danh sách bill" CssClass="cssGoogleButton"
@@ -160,9 +162,10 @@
                         </asp:GridView>
                     </td>
                 </tr>
-            </table>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </table>
+
 </asp:Content>
 
 
