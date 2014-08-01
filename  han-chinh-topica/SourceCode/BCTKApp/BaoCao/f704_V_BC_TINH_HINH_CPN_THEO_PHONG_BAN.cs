@@ -194,9 +194,8 @@ namespace BCTKApp
             this.m_fg.Size = new System.Drawing.Size(990, 329);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.m_fg,"Bạn nhấp đúp chuột vào các cột: Tổng số bill đã gửi, Tổng số tiền thực tế và Tổng" +
-                    " số tiền định mức để xem chi tiết!");
-            this.toolTip2.SetToolTip(this.m_txt_tim_kiem,"Nhập Mã trung tâm, Tên trung tâm cần tìm!");
+            this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào các cột: Tổng số bill đã gửi, Tổng số tiền thực tế và Tổng" +
+        " số tiền định mức để xem chi tiết!");
             // 
             // m_cmd_tim_kiem
             // 
@@ -220,6 +219,7 @@ namespace BCTKApp
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(395, 20);
             this.m_txt_tim_kiem.TabIndex = 38;
+            this.toolTip2.SetToolTip(this.m_txt_tim_kiem, "Nhập Mã trung tâm, Tên trung tâm cần tìm!");
             this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
             // 
             // m_lbl_tu_khoa
@@ -236,10 +236,11 @@ namespace BCTKApp
             // m_dt_den_ngay
             // 
             this.m_dt_den_ngay.Checked = false;
-            this.m_dt_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dt_den_ngay.CustomFormat = "MM/yyyy";
             this.m_dt_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dt_den_ngay.Location = new System.Drawing.Point(621, 25);
             this.m_dt_den_ngay.Name = "m_dt_den_ngay";
+            this.m_dt_den_ngay.ShowUpDown = true;
             this.m_dt_den_ngay.Size = new System.Drawing.Size(120, 20);
             this.m_dt_den_ngay.TabIndex = 33;
             this.m_dt_den_ngay.ValueChanged += new System.EventHandler(this.m_dt_den_ngay_ValueChanged);
@@ -247,10 +248,11 @@ namespace BCTKApp
             // m_dt_tu_ngay
             // 
             this.m_dt_tu_ngay.Checked = false;
-            this.m_dt_tu_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dt_tu_ngay.CustomFormat = "MM/yyyy";
             this.m_dt_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dt_tu_ngay.Location = new System.Drawing.Point(346, 25);
             this.m_dt_tu_ngay.Name = "m_dt_tu_ngay";
+            this.m_dt_tu_ngay.ShowUpDown = true;
             this.m_dt_tu_ngay.Size = new System.Drawing.Size(120, 20);
             this.m_dt_tu_ngay.TabIndex = 34;
             this.m_dt_tu_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
@@ -263,9 +265,9 @@ namespace BCTKApp
             this.m_lbl_den_ngay.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_den_ngay.Location = new System.Drawing.Point(540, 25);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
-            this.m_lbl_den_ngay.Size = new System.Drawing.Size(56, 13);
+            this.m_lbl_den_ngay.Size = new System.Drawing.Size(60, 13);
             this.m_lbl_den_ngay.TabIndex = 31;
-            this.m_lbl_den_ngay.Text = "Đến ngày:";
+            this.m_lbl_den_ngay.Text = "Đến tháng:";
             // 
             // m_lbl_tu_ngay
             // 
@@ -274,9 +276,9 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_tu_ngay.Location = new System.Drawing.Point(266, 25);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
-            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(49, 13);
+            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(53, 13);
             this.m_lbl_tu_ngay.TabIndex = 32;
-            this.m_lbl_tu_ngay.Text = "Từ ngày:";
+            this.m_lbl_tu_ngay.Text = "Từ tháng:";
             // 
             // m_lbl_header
             // 
@@ -469,8 +471,8 @@ namespace BCTKApp
             string v_id_tu_khoa = m_txt_tim_kiem.Text;
             //decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
             decimal v_id_trang_thai = -1;
-            v_dt_tu_ngay = m_dt_tu_ngay.Value;
-            v_dt_den_ngay = m_dt_den_ngay.Value;
+            v_dt_tu_ngay = m_dt_tu_ngay.Value.AddDays(-m_dt_tu_ngay.Value.Date.Day+1);
+            v_dt_den_ngay = m_dt_den_ngay.Value.AddMonths(1).AddDays(-m_dt_den_ngay.Value.Day);
             decimal v_dc_tong_so_vuot_dm = 0;
             US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
             DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
