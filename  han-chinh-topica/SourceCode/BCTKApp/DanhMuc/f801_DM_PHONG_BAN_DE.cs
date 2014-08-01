@@ -221,12 +221,12 @@ namespace BCTKApp.DanhMuc
                 xoa_trang();
                 return;
             }
-            if (m_grv_ty_trong.Rows[1][(int)e_col_Number.TEN_PHAP_NHAN] == null)
+            if (m_grv_ty_trong.Rows[1][(int)e_col_Number.TEN_PHAP_NHAN] == null && m_grv_ty_trong.Rows[1][(int)e_col_Number.TY_TRONG] != null)
             {
                 BaseMessages.MsgBox_Infor("Bạn không được để trống tỷ trọng theo pháp nhân");
                 return;
             }
-            if (m_grv_ty_trong.Rows[1][(int)e_col_Number.TY_TRONG] == null)
+            if (m_grv_ty_trong.Rows[1][(int)e_col_Number.TY_TRONG] == null && m_grv_ty_trong.Rows[1][(int)e_col_Number.TEN_PHAP_NHAN] != null)
             {
                 BaseMessages.MsgBox_Infor("Bạn không được để trống tỷ trọng");
                 return;
