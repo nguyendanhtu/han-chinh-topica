@@ -50,7 +50,7 @@
   <xs:element name="DS_V_BC_CHI_TIET_DM" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_BC_CHI_TIET_DM" msprop:Generator_UserDSName="DS_V_BC_CHI_TIET_DM">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_BC_CHI_TIET_DM" msprop:Generator_TableClassName="V_BC_CHI_TIET_DMDataTable" msprop:Generator_TableVarName="tableV_BC_CHI_TIET_DM" msprop:Generator_TablePropName="V_BC_CHI_TIET_DM" msprop:Generator_RowDeletingName="V_BC_CHI_TIET_DMRowDeleting" msprop:Generator_RowChangingName="V_BC_CHI_TIET_DMRowChanging" msprop:Generator_RowEvHandlerName="V_BC_CHI_TIET_DMRowChangeEventHandler" msprop:Generator_RowDeletedName="V_BC_CHI_TIET_DMRowDeleted" msprop:Generator_UserTableName="V_BC_CHI_TIET_DM" msprop:Generator_RowChangedName="V_BC_CHI_TIET_DMRowChanged" msprop:Generator_RowEvArgName="V_BC_CHI_TIET_DMRowChangeEvent" msprop:Generator_RowClassName="V_BC_CHI_TIET_DMRow">
+        <xs:element name="V_BC_CHI_TIET_DM" msprop:Generator_TableClassName="V_BC_CHI_TIET_DMDataTable" msprop:Generator_TableVarName="tableV_BC_CHI_TIET_DM" msprop:Generator_RowChangedName="V_BC_CHI_TIET_DMRowChanged" msprop:Generator_TablePropName="V_BC_CHI_TIET_DM" msprop:Generator_RowDeletingName="V_BC_CHI_TIET_DMRowDeleting" msprop:Generator_RowChangingName="V_BC_CHI_TIET_DMRowChanging" msprop:Generator_RowEvHandlerName="V_BC_CHI_TIET_DMRowChangeEventHandler" msprop:Generator_RowDeletedName="V_BC_CHI_TIET_DMRowDeleted" msprop:Generator_RowClassName="V_BC_CHI_TIET_DMRow" msprop:Generator_UserTableName="V_BC_CHI_TIET_DM" msprop:Generator_RowEvArgName="V_BC_CHI_TIET_DMRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
@@ -84,7 +84,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TU_NGAY" msprop:Generator_ColumnVarNameInTable="columnTU_NGAY" msprop:Generator_ColumnPropNameInRow="TU_NGAY" msprop:Generator_ColumnPropNameInTable="TU_NGAYColumn" msprop:Generator_UserColumnName="TU_NGAY" type="xs:dateTime" />
+              <xs:element name="TU_NGAY" msprop:Generator_ColumnVarNameInTable="columnTU_NGAY" msprop:Generator_ColumnPropNameInRow="TU_NGAY" msprop:Generator_ColumnPropNameInTable="TU_NGAYColumn" msprop:Generator_UserColumnName="TU_NGAY" type="xs:dateTime" minOccurs="0" />
               <xs:element name="DEN_NGAY" msprop:Generator_ColumnVarNameInTable="columnDEN_NGAY" msprop:Generator_ColumnPropNameInRow="DEN_NGAY" msprop:Generator_ColumnPropNameInTable="DEN_NGAYColumn" msprop:Generator_UserColumnName="DEN_NGAY" type="xs:dateTime" />
               <xs:element name="DON_GIA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDON_GIA" msprop:Generator_ColumnPropNameInRow="DON_GIA" msprop:Generator_ColumnPropNameInTable="DON_GIAColumn" msprop:Generator_UserColumnName="DON_GIA" type="xs:decimal" minOccurs="0" />
               <xs:element name="GIA_TRI_THONG_KE" msprop:Generator_ColumnVarNameInTable="columnGIA_TRI_THONG_KE" msprop:Generator_ColumnPropNameInRow="GIA_TRI_THONG_KE" msprop:Generator_ColumnPropNameInTable="GIA_TRI_THONG_KEColumn" msprop:Generator_UserColumnName="GIA_TRI_THONG_KE" type="xs:decimal" />

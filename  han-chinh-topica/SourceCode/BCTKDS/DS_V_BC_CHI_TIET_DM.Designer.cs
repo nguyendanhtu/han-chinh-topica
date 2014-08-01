@@ -702,7 +702,6 @@ namespace BCTKDS {
                 this.columnMO_TA.MaxLength = 250;
                 this.columnID_LOAI_THOI_GIAN.AllowDBNull = false;
                 this.columnLOAI_THOI_GIAN.MaxLength = 500;
-                this.columnTU_NGAY.AllowDBNull = false;
                 this.columnDEN_NGAY.AllowDBNull = false;
                 this.columnDON_GIA.ReadOnly = true;
                 this.columnGIA_TRI_THONG_KE.AllowDBNull = false;
@@ -956,7 +955,12 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime TU_NGAY {
                 get {
-                    return ((global::System.DateTime)(this[this.tableV_BC_CHI_TIET_DM.TU_NGAYColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_BC_CHI_TIET_DM.TU_NGAYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TU_NGAY\' in table \'V_BC_CHI_TIET_DM\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_BC_CHI_TIET_DM.TU_NGAYColumn] = value;
@@ -1181,6 +1185,18 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLOAI_THOI_GIANNull() {
                 this[this.tableV_BC_CHI_TIET_DM.LOAI_THOI_GIANColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTU_NGAYNull() {
+                return this.IsNull(this.tableV_BC_CHI_TIET_DM.TU_NGAYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTU_NGAYNull() {
+                this[this.tableV_BC_CHI_TIET_DM.TU_NGAYColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

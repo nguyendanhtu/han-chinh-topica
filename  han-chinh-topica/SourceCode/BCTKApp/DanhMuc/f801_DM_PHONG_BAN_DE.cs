@@ -12,7 +12,7 @@ using System.Text;
 using System.Windows.Forms;
 using C1.Win.C1FlexGrid;
 using IP.Core.IPException;
-using IP.Core.IPData;
+//using IP.Core.IPData;
 using IP.Core.IPUserService;
 using System.Collections;
 
