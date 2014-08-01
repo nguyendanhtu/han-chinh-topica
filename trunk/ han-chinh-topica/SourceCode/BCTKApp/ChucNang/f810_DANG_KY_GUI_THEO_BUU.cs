@@ -319,9 +319,12 @@ namespace BCTKApp.ChucNang {
                 //Xóa hàng nếu insert thành công cho dễ nhìn
                 if(m_fg.Rows.Count > 3) {
                     m_fg.Rows.Remove(v_i_cur_row);
+                    v_i_cur_row = v_i_cur_row - 1;
                 }
-                else m_fg.Rows[v_i_cur_row].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
-                v_i_cur_row = v_i_cur_row - 1;
+                else {
+                    m_fg.Rows[v_i_cur_row].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
+                    
+                }
                 v_dem_bill++;
             }
             BaseMessages.MsgBox_Infor("Đã nhập thành công " + v_dem_bill + " Bill!");
