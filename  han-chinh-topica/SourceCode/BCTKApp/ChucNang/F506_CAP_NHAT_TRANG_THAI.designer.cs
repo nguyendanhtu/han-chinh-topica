@@ -353,7 +353,7 @@
             this.m_tm_bill_da_chuyen_cho_cpn.Padding = new System.Windows.Forms.Padding(3);
             this.m_tm_bill_da_chuyen_cho_cpn.Size = new System.Drawing.Size(916, 360);
             this.m_tm_bill_da_chuyen_cho_cpn.TabIndex = 1;
-            this.m_tm_bill_da_chuyen_cho_cpn.Text = "DS bill đã chuyển cho CPN";
+            this.m_tm_bill_da_chuyen_cho_cpn.Text = "DS bill đã gửi thành công";
             this.m_tm_bill_da_chuyen_cho_cpn.UseVisualStyleBackColor = true;
             // 
             // m_cmd_da_chuyen_2_tra_lai
@@ -407,7 +407,7 @@
             this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Name = "m_cmd_tra_lai_2_noi_bo_nhan_tl_all";
             this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Size = new System.Drawing.Size(115, 72);
             this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.TabIndex = 41;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Text = "Chuyển tất cả sang nội bộ nhận trả lại";
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Text = "Chuyển tất cả sang đơn vị nhận trả lại";
             // 
             // m_cmd_tra_lai_2_da_chuyen
             // 
@@ -433,12 +433,11 @@
             this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Name = "m_cmd_tra_lai_2_noi_bo_nhan_tl";
             this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Size = new System.Drawing.Size(115, 72);
             this.m_cmd_tra_lai_2_noi_bo_nhan_tl.TabIndex = 39;
-            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Text = "Chuyển bill đã chọn sang nội bộ nhận trả lại";
+            this.m_cmd_tra_lai_2_noi_bo_nhan_tl.Text = "Chuyển bill đã chọn sang đơn vị nhận trả lại";
             // 
             // m_grv_bi_tra_lai
             // 
             this.m_grv_bi_tra_lai.ColumnInfo = resources.GetString("m_grv_bi_tra_lai.ColumnInfo");
-            this.m_grv_bi_tra_lai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_bi_tra_lai.Location = new System.Drawing.Point(6, 17);
             this.m_grv_bi_tra_lai.Name = "m_grv_bi_tra_lai";
             this.m_grv_bi_tra_lai.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
@@ -455,7 +454,7 @@
             this.m_tm_noi_bo_nhan_tra_lai.Padding = new System.Windows.Forms.Padding(3);
             this.m_tm_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(916, 360);
             this.m_tm_noi_bo_nhan_tra_lai.TabIndex = 3;
-            this.m_tm_noi_bo_nhan_tra_lai.Text = "DS bill nội bộ đã nhận trả lại";
+            this.m_tm_noi_bo_nhan_tra_lai.Text = "DS bill đơn vị đã nhận trả lại";
             this.m_tm_noi_bo_nhan_tra_lai.UseVisualStyleBackColor = true;
             // 
             // m_cmd_nhan_tra_lai_2_tra_lai
@@ -474,7 +473,6 @@
             // m_grv_noi_bo_nhan_tra_lai
             // 
             this.m_grv_noi_bo_nhan_tra_lai.ColumnInfo = resources.GetString("m_grv_noi_bo_nhan_tra_lai.ColumnInfo");
-            this.m_grv_noi_bo_nhan_tra_lai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_noi_bo_nhan_tra_lai.Location = new System.Drawing.Point(6, 17);
             this.m_grv_noi_bo_nhan_tra_lai.Name = "m_grv_noi_bo_nhan_tra_lai";
             this.m_grv_noi_bo_nhan_tra_lai.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
