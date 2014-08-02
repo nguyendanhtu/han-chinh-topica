@@ -140,6 +140,18 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
         m_lbl_ten_trung_tam.Text = "Tình hình CPN "+ v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
     }
+
+    private bool check_thoi_gian()
+    {
+        if (m_dat_tu_ngay.SelectedDate > m_dat_den_ngay.SelectedDate)
+        {
+            thong_bao("Bạn đã chọn khoảng thời gian không hợp lệ!", true);
+            m_dat_tu_ngay.SelectedDate = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
+            return false;
+        }
+        else
+        return true;
+    }
     #endregion
 
     #region Events
@@ -201,6 +213,8 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
     {
         try
         {
+            if (!check_thoi_gian())
+                return;
             load_data_to_grid();
         }
         catch (Exception v_e)
@@ -208,6 +222,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+
     //protected void m_dat_tu_ngay_DateChanged(object sender, EventArgs e)
     //{
     //    try
