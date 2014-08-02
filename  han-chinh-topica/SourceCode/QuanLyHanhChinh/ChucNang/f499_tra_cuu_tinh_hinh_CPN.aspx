@@ -135,7 +135,7 @@
                         <asp:GridView ID="m_grv_v_bc_tinh_hinh_CPN" runat="Server"
                             AutoGenerateColumns="false" CssClass="GridViewStyle"
                             Width="99%" DataKeyNames="ID_PHONG_BAN" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
-                            EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
+                            EmptyDataText="Chưa có dữ liệu báo cáo!" EmptyDataRowStyle-BorderColor="#810913"
                             CellPadding="8" PageSize="20"
                             OnPageIndexChanging="m_grv_v_bc_tinh_hinh_CPN_PageIndexChanging">
                             <PagerSettings Position="TopAndBottom" />
