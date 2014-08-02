@@ -23,6 +23,7 @@ using BCTKDS;
 using BCTKDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using IP.Core.IPExcelReport;
 
 namespace BCTKApp
 {
@@ -453,6 +454,13 @@ namespace BCTKApp
 		//	f535_gui_don_dat_hang_cho_NCC_DE v_fDE = new f535_gui_don_dat_hang_cho_NCC_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void export_2_excel()
+        {
+            CExcelReport v_obj_excel_report = new CExcelReport("f535_gui_don_hang_cho_NCC.xls", 6,1);
+            v_obj_excel_report.AddFindAndReplaceItem("<thang>",m_dtp_thang.Text);
+            v_obj_excel_report.FindAndReplace(false);
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_grv_don_hang, 0, m_grv_don_hang.Cols.Count - 1, true);
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
@@ -517,7 +525,7 @@ namespace BCTKApp
 
 		private void m_cmd_xuat_excel_Click(object sender, EventArgs e) {
 			try{
-				view_v_gd_don_dat_hang_detail();
+                export_2_excel();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
@@ -545,8 +553,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-
 	}
 }
 
