@@ -85,6 +85,7 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
         {
             thong_bao("Bạn đã chọn khoảng thời gian không hợp lệ!", true);
             m_dat_tu_ngay.SelectedDate = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).AddMonths(-6);
+            m_dat_den_ngay.SelectedDate = DateTime.Now.Date;
             return false;
         }
         else
