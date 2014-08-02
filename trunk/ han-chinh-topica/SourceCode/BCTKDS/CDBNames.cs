@@ -176,6 +176,17 @@ namespace BCTKDS.CDBNames
         public const decimal KHONG_DUYET = 120;
         public const decimal DA_EXPORT = 23;
     }
+    public class GD_DON_DAT_HANG_DETAIL
+    {
+        public const string ID = "ID";
+        public const string ID_DON_DAT_HANG = "ID_DON_DAT_HANG";
+        public const string ID_TRANG_THAI_HANG = "ID_TRANG_THAI_HANG";
+        public const string DON_GIA_CHUA_VAT = "DON_GIA_CHUA_VAT";
+        public const string DON_GIA_GOM_VAT = "DON_GIA_GOM_VAT";
+        public const string SO_LUONG = "SO_LUONG";
+        public const string ID_VPP = "ID_VPP";
+    }
+
     public class CConstant
     {
         public static string SO_VAO_SO_DAU_TIEN = ConfigurationSettings.AppSettings["SO_VAO_SO_DAU_TIEN"].ToString();
