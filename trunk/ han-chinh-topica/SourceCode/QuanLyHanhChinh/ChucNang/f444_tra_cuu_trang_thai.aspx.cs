@@ -62,7 +62,7 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
     }
     private void set_time()
     {
-        m_dat_tu_ngay.SelectedDate = new DateTime(2013, 01, 01);
+        m_dat_tu_ngay.SelectedDate = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).AddMonths(-6);
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
@@ -78,6 +78,17 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
         m_cbo_trang_thai.DataValueField = CM_DM_TU_DIEN.ID;
         m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN;
         m_cbo_trang_thai.DataBind();
+    }
+    private bool check_thoi_gian()
+    {
+        if (m_dat_tu_ngay.SelectedDate > m_dat_den_ngay.SelectedDate)
+        {
+            thong_bao("Bạn đã chọn khoảng thời gian không hợp lệ!", true);
+            m_dat_tu_ngay.SelectedDate = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).AddMonths(-6);
+            return false;
+        }
+        else
+            return true;
     }
     #endregion
 
@@ -142,6 +153,8 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
     {
         try
         {
+            if (!check_thoi_gian())
+                return;
             load_data_to_grid();
         }
         catch (Exception v_e)
