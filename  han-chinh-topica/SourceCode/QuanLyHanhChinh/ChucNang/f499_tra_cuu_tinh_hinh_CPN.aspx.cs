@@ -147,6 +147,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         {
             thong_bao("Bạn đã chọn khoảng thời gian không hợp lệ!", true);
             m_dat_tu_ngay.SelectedDate = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
+            m_dat_den_ngay.SelectedDate = DateTime.Now.Date;
             return false;
         }
         else
