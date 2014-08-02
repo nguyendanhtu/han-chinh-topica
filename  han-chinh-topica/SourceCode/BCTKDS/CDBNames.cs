@@ -17,6 +17,17 @@ namespace BCTKDS.CDBNames
         public const string ID_NHA_CUNG_CAP = "ID_NHA_CUNG_CAP";
         public const string TEN_NCC = "TEN_NCC";
     }
+    public class DM_VPP
+    {
+        public const string ID = "ID";
+        public const string MA = "MA";
+        public const string DON_GIA_CHUA_VAT = "DON_GIA_CHUA_VAT";
+        public const string DON_GIA_GOM_VAT = "DON_GIA_GOM_VAT";
+        public const string TEN = "TEN";
+        public const string DON_VI_TINH = "DON_VI_TINH";
+        public const string ID_NHA_CUNG_CAP = "ID_NHA_CUNG_CAP";
+    }
+
 
     public class HT_CHUC_NANG
     {
