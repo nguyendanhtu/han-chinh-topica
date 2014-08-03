@@ -208,15 +208,16 @@
                         <asp:Label ID="m_lbl_don_gia" runat="server" CssClass="=cssManField" Text="0" ForeColor="Blue"></asp:Label>
                     </td>
                     <td align="left">
-                        <asp:Button ID="m_cmd_them" runat="server" Text="Thêm vào phiếu" CssClass="cssGoogleButton" OnClick="m_cmd_them_Click" />
+                        <asp:Button ID="m_cmd_them_don_hang_de" runat="server" Text="Thêm vào phiếu" CssClass="cssGoogleButton" OnClick="m_cmd_them_don_hang_de_Click" />
+                    </td>
+                     <td align="left">
+                        <asp:Button ID="m_cmd_cap_nhat_don_hang_de" runat="server" Text="Cập nhật lại" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_de_Click" />
                     </td>
                     <td>
                         <asp:HiddenField ID="m_hdf_form_mode" runat="server" />
                         <asp:HiddenField ID="m_hdf_ma_trung_tam" runat="server" />
-                        <asp:HiddenField ID="m_hdf_id_VPP" runat="server" />
                         <asp:HiddenField ID="m_hdf_don_gia" runat="server" />
                         <asp:HiddenField ID="m_hdf_ID_GD_DON_DAT_HANG_DE" runat="server" />
-                        <asp:HiddenField ID="m_hdf_ID_GD_DON_DAT_HANG" runat="server" />
                     </td>
                 </tr>
             </table>
@@ -258,13 +259,13 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <asp:GridView ID="m_grv_phieu_de_nghi_cap_va_ban_giao_VPP" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
+                        <asp:GridView ID="m_grv_don_hang_de" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Không có mặt hàng!" EmptyDataRowStyle-BorderColor="#810913"
                             CellPadding="8" PageSize="20"
-                            OnRowEditing="m_grv_dm_bill_RowEditing"
-                            OnRowDeleting="m_grv_dm_bill_RowDeleting"
-                            OnPageIndexChanging="m_grv_phieu_de_nghi_cap_va_ban_giao_VPP_PageIndexChanging">
+                            OnRowEditing="m_grv_don_hang_de_RowEditing"
+                            OnRowDeleting="m_grv_don_hang_de_RowDeleting"
+                            OnPageIndexChanging="m_grv_don_hang_de_PageIndexChanging">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />
