@@ -103,26 +103,31 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_us_gd_don_dat_hang.dcGIA_TRI_CHUA_VAT = m_us_gd_don_dat_hang.dcGIA_TRI_CHUA_VAT + m_us_gd_don_dat_hang_de.dcDON_GIA_CHUA_VAT;
         m_us_gd_don_dat_hang.dcGIA_TRI_DA_VAT = m_us_gd_don_dat_hang.dcGIA_TRI_DA_VAT + m_us_gd_don_dat_hang_de.dcDON_GIA_GOM_VAT;
     }
-    //private void us_object_to_form()
-    //{
-    //    US_DM_BILL v_us_dm_bill = new US_DM_BILL(CIPConvert.ToDecimal(m_hdf_id_bill.Value));
-    //    m_txt_so_bill.Text = v_us_dm_bill.strSO_BILL.Trim();
-    //    m_txt_nguoi_nhan.Text = v_us_dm_bill.strNGUOI_NHAN.Trim();
-    //    m_txt_noi_nhan.Text = v_us_dm_bill.strNOI_NHAN.Trim();
-    //    m_txt_nguoi_gui.Text = v_us_dm_bill.strNGUOI_GUI.Trim();
-    //    m_txt_noi_dung.Text = v_us_dm_bill.strNOI_DUNG.Trim();
-    //    m_txt_ghi_chu.Text = v_us_dm_bill.strGHI_CHU.Trim();
-    //    m_txt_so_tien.Text = v_us_dm_bill.dcSO_TIEN.ToString();
-    //    m_dat_ngay_gui.Text = v_us_dm_bill.datNGAY_GUI.ToString();
-    //    if (v_us_dm_bill.strTRONG_NUOC == "x")
-    //    {
-    //        m_rdb_trong_nuoc.Checked = true;
-    //    }
-    //    if (v_us_dm_bill.strNUOC_NGOAI == "x")
-    //    {
-    //        m_rdb_nuoc_ngoai.Checked = false;
-    //    }
-    //}
+    private void form_to_us_object_don_hang()
+    {
+        switch (get_form_mode(m_hdf_form_mode))
+        {
+            case LOAI_FORM.SUA:
+                m_us_gd_don_dat_hang.dcID = CIPConvert.ToDecimal(m_hdf_id_don_hang.Value);
+                break;
+            default:
+                m_us_gd_don_dat_hang = new US_GD_DON_DAT_HANG();
+                //insert đơn hàng mới:
+                break;
+        }
+        m_us_gd_don_dat_hang.datNGAY_DAT_HANG = m_dat_ngay_gui.SelectedDate;
+        m_us_gd_don_dat_hang.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
+        m_us_gd_don_dat_hang.dcLAN = CIPConvert.ToDecimal(m_txt_so_lan.Text);
+        m_us_gd_don_dat_hang.dcID_TRANG_THAI = 209;
+        m_us_gd_don_dat_hang.strMA = m_txt_ma_don_hang.Text;
+    }
+    private void us_object_to_form_don_hang()
+    {
+        US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
+        m_txt_ma_don_hang.Text = v_us.strMA.ToString();
+        m_txt_so_lan.Text = v_us.dcLAN.ToString();
+        m_dat_ngay_gui.SelectedValue = v_us.datNGAY_DAT_HANG;
+    }
     private void insert_don_hang_de()
     {
         //if (!check_validate_is_ok()) return;
@@ -145,23 +150,30 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         }
         Huy_thao_tac();
     }
-    private void insert_don_hang()
+    private void save_don_hang()
     {
-        form_to_us_object();
+        form_to_us_object_don_hang();
         switch (get_form_mode(m_hdf_form_mode))
         {
             case LOAI_FORM.THEM:
                 m_us_gd_don_dat_hang.Insert();
-                thong_bao("Đã thêm vào hóa đơn đăng kí");
+                thong_bao("Đã thêm đơn hàng mới",true);
                 break;
             case LOAI_FORM.SUA:
                 m_us_gd_don_dat_hang.Update();
-                thong_bao("Đã cập nhật lại vào hóa đơn đăng kí");
-                m_cmd_them.Visible = false;
-                //m_cmd_sua.Visible = true;
+                m_cmd_them_don_hang.Visible = false;
+                m_cmd_cap_nhat_don_hang.Visible = true;
                 set_form_mode(LOAI_FORM.THEM);
+                thong_bao("Đã cập nhật lại đơn hàng",true);
                 break;
         }
+    }
+    private void delete_data_don_hang()
+    {
+        //if (!check_validate_is_ok()) return;
+        m_us_gd_don_dat_hang.DeleteByID(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
+        load_data_to_grid();
+        thong_bao("Đã xóa đơn hàng thành công!", true);
     }
     private void delete_data()
     {
@@ -170,16 +182,23 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         load_data_to_grid();
         thong_bao("Đã hủy đăng ký gửi BIll cho TAD", true);
     }
+    private void Huy_thao_tac_don_hang()
+    {
+        m_txt_ma_don_hang.Text = "";
+        m_txt_so_lan.Text = "";
+        m_dat_ngay_gui.SelectedValue = DateTime.Now.Date;
+    }
     private void Huy_thao_tac()
     {
-      
+
     }
+
     private void set_inital_form_mode()
     {
-        load_ma_don_hang();
+        load_ma_ten_trung_tam();
         load_cbo_VPP();
         load_don_vi_tinh_don_gia();
-        //m_cmd_sua.Visible = false;
+        m_cmd_cap_nhat_don_hang.Visible = false;
         m_cmd_them.Visible = true;
         load_data_to_grid();
         thong_bao("", false);
@@ -205,23 +224,16 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_cbo_vpp.DataTextField = V_DM_VPP.TEN_VPP;
         m_cbo_vpp.DataBind();
     }
-    private void load_ma_don_hang()
+    private void load_ma_ten_trung_tam()
     {
         
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
-        //US_GD_DON_DAT_HANG v_us_don_dat_hang = new US_GD_DON_DAT_HANG();
-        //DS_GD_DON_DAT_HANG v_ds_don_dat_hang = new DS_GD_DON_DAT_HANG();
-        // hiển thị tên trung tâm ban
         v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
         m_lbl_title.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
         // lấy mã trung tâm
-        m_hdf_ma_trung_tam.Value = v_ds.DM_PHONG_BAN.Rows[0]["MA_PHONG_BAN"].ToString();
-        //kiểm tra mã đơn hàng
-        //v_us_don_dat_hang.FillDataset(v_ds_don_dat_hang,"where NGAY_DAT_HANG");
-        //m_txt_ma_don_hang.Text = m_hdf_ma_trung_tam.Value + m_dat_ngay_gui.SelectedDate.Day + m_dat_ngay_gui.SelectedDate.Month +  m_dat_ngay_gui.SelectedDate.Year + "L" + m_txt_so_lan.Text;
-        
+        m_hdf_ma_trung_tam.Value = v_ds.DM_PHONG_BAN.Rows[0]["MA_PHONG_BAN"].ToString();   
     }
     private void load_data_to_grid()
     {
@@ -385,7 +397,6 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     {
         try
         {
-            insert_don_hang();
             insert_don_hang_de();
             load_data_to_grid();
         }
@@ -394,93 +405,83 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_cmd_them_don_hang_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            save_don_hang();
+            load_data_to_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cmd_cap_nhat_don_hang_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            //m_lbl_mess.Text = "";
+            save_don_hang();
+            load_data_to_grid();
+            m_cmd_cap_nhat_don_hang.Visible = false;
+            m_cmd_them_don_hang.Visible = true;
+            Huy_thao_tac_don_hang();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_grv_don_hang_nhap_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        try
+        {
+            m_grv_don_hang_nhap.SelectedIndex = e.NewEditIndex;
+            //m_lbl_mess.Text = "";
+            m_cmd_them_don_hang.Visible = false;
+            m_cmd_cap_nhat_don_hang.Visible = true;
+            set_form_mode(LOAI_FORM.SUA);
+            m_hdf_id_don_hang.Value = CIPConvert.ToStr(m_grv_don_hang_nhap.DataKeys[e.NewEditIndex].Value);
+            us_object_to_form_don_hang();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
 
+    protected void m_grv_don_hang_nhap_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        try
+        {
+            Huy_thao_tac();
+            m_grv_don_hang_nhap.SelectedIndex = e.RowIndex;
+            set_form_mode(LOAI_FORM.XOA);
+            m_hdf_id_don_hang.Value = CIPConvert.ToStr(m_grv_don_hang_nhap.DataKeys[e.RowIndex].Value);
+            delete_data_don_hang();
+            load_data_to_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
 
-    //protected void m_cmd_sua_Click(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        //m_lbl_mess.Text = "";
-    //        save_data();
-    //        load_data_to_grid();
-    //        m_cmd_sua.Visible = false;
-    //        m_cmd_them.Visible = true;
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_cmd_huy_Click(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        //m_lbl_mess.Text = "";
-    //        Huy_thao_tac();
-    //        m_cmd_sua.Visible = false;
-    //        m_cmd_them.Visible = true;
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_grv_dm_bill_RowEditing(object sender, GridViewEditEventArgs e)
-    //{
-    //    try
-    //    {
-    //        m_grv_dm_bill.SelectedIndex = e.NewEditIndex;
-    //        //m_lbl_mess.Text = "";
-    //        m_cmd_them.Visible = false;
-    //        m_cmd_sua.Visible = true;
-    //        set_form_mode(LOAI_FORM.SUA);
-    //        m_hdf_id_bill.Value = CIPConvert.ToStr(m_grv_dm_bill.DataKeys[e.NewEditIndex].Value);
-    //        us_object_to_form();
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_grv_dm_bill_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    //{
-    //    try
-    //    {
-    //        Huy_thao_tac();
-    //        m_grv_dm_bill.SelectedIndex = e.RowIndex;
-    //        set_form_mode(LOAI_FORM.XOA);
-    //        m_hdf_id_bill.Value = CIPConvert.ToStr(m_grv_dm_bill.DataKeys[e.RowIndex].Value);
-    //        delete_data();
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        load_data_to_grid();
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_grv_v_dm_bill_PageIndexChanging(object sender, GridViewPageEventArgs e)
-    //{
-    //    try
-    //    {
-    //        m_grv_dm_bill.PageIndex = e.NewPageIndex;
-    //        m_grv_dm_bill.DataBind();
-    //    }
-    //    catch (Exception v_e)
-    //    {
+    protected void m_grv_don_hang_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            m_grv_don_hang_nhap.PageIndex = e.NewPageIndex;
+            m_grv_don_hang_nhap.DataBind();
+            load_data_to_grid();
+        }
+        catch (Exception v_e)
+        {
 
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     protected void m_grv_dm_bill_RowEditing(object sender, GridViewEditEventArgs e)
     {
         try
