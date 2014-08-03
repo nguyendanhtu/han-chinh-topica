@@ -22,7 +22,7 @@
                     <td></td>
                 </tr>
             </table>
-             <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
+            <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
 
                 <tr>
                     <td class="cssPageTitleBG" colspan="8">
@@ -32,11 +32,11 @@
                         <asp:HiddenField ID="m_hdf_id_don_hang" runat="server" />
                     </td>
                 </tr>
-                 <tr>
+                <tr>
                     <td colspan="" align="right">
                         <asp:Label ID="m_lbl_ma_don_hang" runat="server" CssClass="cssManField" Text="Mã đơn hàng:" ForeColor="Blue"></asp:Label>
                     </td>
-                    <td align="left">&nbsp;<asp:textbox ID="m_txt_ma_don_hang" runat="server" CssClass="cssManField" Font-Bold="true"></asp:textbox>
+                    <td align="left">&nbsp;<asp:TextBox ID="m_txt_ma_don_hang" runat="server" CssClass="cssManField" Font-Bold="true"></asp:TextBox>
                     </td>
                     <td align="right">
                         <asp:Label ID="m_lbl_lan" runat="server" CssClass="cssManField" Text="Lần "></asp:Label>
@@ -70,6 +70,13 @@
                             Font-Size="XX-Small" ForeColor="Black" />
                     </ew:CalendarPopup>
                     </td>
+                    <td align="left">
+                        <asp:Button ID="m_cmd_them_don_hang" runat="server" Text="Thêm đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_them_don_hang_Click" />
+                    </td>
+                    </td>
+                        <td align="left">
+                            <asp:Button ID="m_cmd_cap_nhat_don_hang" runat="server" Text="Cập nhật đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" />
+                        </td>
                 </tr>
             </table>
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -88,9 +95,9 @@
                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Không có đơn hàng nào!" EmptyDataRowStyle-BorderColor="#810913"
                             CellPadding="8" PageSize="20"
-                            OnRowEditing="m_grv_dm_bill_RowEditing"
-                            OnRowDeleting="m_grv_dm_bill_RowDeleting"
-                            OnPageIndexChanging="m_grv_phieu_de_nghi_cap_va_ban_giao_VPP_PageIndexChanging">
+                            OnRowEditing="m_grv_don_hang_nhap_RowEditing"
+                            OnRowDeleting="m_grv_don_hang_nhap_RowDeleting"
+                            OnPageIndexChanging="m_grv_don_hang_PageIndexChanging">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />
