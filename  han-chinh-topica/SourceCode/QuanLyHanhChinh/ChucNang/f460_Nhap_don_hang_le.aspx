@@ -174,7 +174,7 @@
             <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
 
                 <tr>
-                    <td class="cssPageTitleBG" colspan="8">
+                    <td class="cssPageTitleBG" colspan="9">
                         <asp:Label ID="m_lbl_title_ma_don_hang" runat="server" CssClass="cssPageTitle" ForeColor="White"
                             Text="Nhập thông tin chi tiết đơn hàng"></asp:Label>
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
