@@ -236,9 +236,9 @@ namespace BCTKApp
             // 
             // m_fg
             // 
-            this.m_fg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_fg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 130);
             this.m_fg.Name = "m_fg";
@@ -255,9 +255,9 @@ namespace BCTKApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(227, 9);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(392, 22);
+            this.m_lbl_header.Size = new System.Drawing.Size(415, 22);
             this.m_lbl_header.TabIndex = 21;
-            this.m_lbl_header.Text = "TỔNG HỢP TIỀN BILL THEO PHÒNG BAN";
+            this.m_lbl_header.Text = "BẢNG TỔNG HỢP THÔNG TIN CUỐI THÁNG";
             // 
             // m_lbl_tu_ngay
             // 
@@ -393,7 +393,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f406_V_TONG_HOP_BILL_THEO_PHONG_BAN";
-            this.Text = "F406- Tổng hợp tiền Bill theo phòng ban";
+            this.Text = "F406- Bảng tổng hợp thông tin cuối tháng";
             this.Load += new System.EventHandler(this.f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
@@ -443,7 +443,7 @@ namespace BCTKApp
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(392, 22);
             this.m_lbl_header.TabIndex = 21;
-            this.m_lbl_header.Text = "TỔNG HỢP TIỀN BILL THEO PHÒNG BAN";
+            this.m_lbl_header.Text = "BẢNG TỔNG HỢP THÔNG TIN CUỐI THÁNG";
             //
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
