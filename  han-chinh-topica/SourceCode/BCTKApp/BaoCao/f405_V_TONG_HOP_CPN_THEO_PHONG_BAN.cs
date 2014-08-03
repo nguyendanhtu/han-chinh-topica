@@ -89,6 +89,7 @@ namespace BCTKApp
         private TextBox m_txt_tu_khoa;
         private ToolTip toolTip1;
         private Label m_lbl_ghi_chu;
+        private Button m_cmd_tim_kiem;
         private System.ComponentModel.IContainer components;
 		private void InitializeComponent()
 		{
@@ -115,6 +116,7 @@ namespace BCTKApp
             this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_lbl_ghi_chu = new System.Windows.Forms.Label();
+            this.m_cmd_tim_kiem = new System.Windows.Forms.Button();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -241,9 +243,9 @@ namespace BCTKApp
             // 
             // m_fg
             // 
-            this.m_fg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_fg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 173);
             this.m_fg.Name = "m_fg";
@@ -256,9 +258,9 @@ namespace BCTKApp
             // 
             // m_lbl_header
             // 
-            this.m_lbl_header.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_lbl_header.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
@@ -390,10 +392,20 @@ namespace BCTKApp
             this.m_lbl_ghi_chu.TabIndex = 15;
             this.m_lbl_ghi_chu.Text = "Nhấp đúp chuột mỗi dòng để xem chi tiết.";
             // 
+            // m_cmd_tim_kiem
+            // 
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(685, 127);
+            this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
+            this.m_cmd_tim_kiem.Size = new System.Drawing.Size(75, 23);
+            this.m_cmd_tim_kiem.TabIndex = 21;
+            this.m_cmd_tim_kiem.Text = "Tìm kiếm";
+            this.m_cmd_tim_kiem.UseVisualStyleBackColor = true;
+            // 
             // f405_V_TONG_HOP_CPN_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1034, 627);
+            this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tu_khoa);
             this.Controls.Add(this.m_dt_den_ngay);
             this.Controls.Add(this.m_dt_tu_ngay);
@@ -470,11 +482,6 @@ namespace BCTKApp
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            //m_fg.Tree.Column = (int)e_col_Number.TEN_THUOC;
-            m_fg.Tree.Column = (int)e_col_Number.NGAY_GUI;
-            m_fg.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
-            m_fg.Cols[0].Caption = "STT";
-            m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
             load_cbo_trang_thai();
             load_cbo_ten_pb();
 			set_define_events();
@@ -527,20 +534,20 @@ namespace BCTKApp
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-              , 0
-              , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình nhóm
-              , (int)e_col_Number.SO_BILL // chỗ này là tên trường mà mình Count
-              , "{0}"
-              );
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
-                , 0
-                , (int)e_col_Number.TEN_PHONG_BAN
-                , (int)e_col_Number.SO_TIEN
-                , "{0}"
-                );
+            //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+            //  , 0
+            //  , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình nhóm
+            //  , (int)e_col_Number.SO_BILL // chỗ này là tên trường mà mình Count
+            //  , "{0}"
+            //  );
+            //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
+            //    , 0
+            //    , (int)e_col_Number.TEN_PHONG_BAN
+            //    , (int)e_col_Number.SO_TIEN
+            //    , "{0}"
+            //    );
 			m_fg.Redraw = true;
-            m_fg.Tree.Show(0);
+            //m_fg.Tree.Show(0);
 		}
 		private void grid2us_object(US_V_TONG_HOP_CPN_THEO_PHONG_BAN i_us
 			, int i_grid_row) {
@@ -624,18 +631,18 @@ namespace BCTKApp
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-              , 0
-              , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình nhóm
-              , (int)e_col_Number.SO_BILL // chỗ này là tên trường mà mình Count
-              , "{0}"
-              );
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
-                , 0
-                , (int)e_col_Number.TEN_PHONG_BAN
-                , (int)e_col_Number.SO_TIEN
-                , "{0}"
-                );
+            //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+            //  , 0
+            //  , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình nhóm
+            //  , (int)e_col_Number.SO_BILL // chỗ này là tên trường mà mình Count
+            //  , "{0}"
+            //  );
+            //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
+            //    , 0
+            //    , (int)e_col_Number.TEN_PHONG_BAN
+            //    , (int)e_col_Number.SO_TIEN
+            //    , "{0}"
+            //    );
             m_fg.Redraw = true;
         }
         private void export_2_excel()
@@ -695,8 +702,7 @@ namespace BCTKApp
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            m_txt_tu_khoa.TextChanged += new EventHandler(m_txt_nguoi_gui_TextChanged);
-            //m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_tim_kiem.Click += new EventHandler(m_cmd_tim_kiem_Click);
 		}
 		#endregion
 
@@ -829,19 +835,6 @@ namespace BCTKApp
                 DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
                 v_us.FillDataset(v_ds, "where id =" + v_dc_id_phong_ban);   
                 tim_kiem();
-            }
-        }
-
-        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                tim_kiem();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
