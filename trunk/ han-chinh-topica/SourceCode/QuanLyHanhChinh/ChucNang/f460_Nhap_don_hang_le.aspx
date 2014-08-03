@@ -21,6 +21,10 @@
                     <td></td>
                     <td></td>
                 </tr>
+                <tr>
+                    <td colspan="4" align="center">
+                        <asp:Label ID="m_lbl_title" runat="server" CssClass="cssManField" Font-Bold="true" Font-Size="Medium" ForeColor="GrayText"></asp:Label></td>
+                </tr>
             </table>
             <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
 
@@ -122,6 +126,15 @@
                                     <HeaderStyle HorizontalAlign="Center" />
                                     <ItemStyle HorizontalAlign="Center" Width="1%" />
                                 </asp:CommandField>
+                                   <asp:TemplateField HeaderText="Chi tiết" ItemStyle-Width="3%" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="m_lbt_detail" runat="server" CommandName="Detail" ToolTip="Chi tiết"
+                                            OnClick="m_lbt_detail_OnClick">
+                                            <img src="../Images/Button/detail.png" alt="Detail" />
+                                        </asp:LinkButton>
+                                    </ItemTemplate>
+                                    <ItemStyle />
+                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <%# Container.DataItemIndex + 1 %>
@@ -162,17 +175,21 @@
 
                 <tr>
                     <td class="cssPageTitleBG" colspan="8">
-                        <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" ForeColor="White"
-                            Text="Nhập thông tin phiếu đề nghị cấp và bàn giao VPP"></asp:Label>
+                        <asp:Label ID="m_lbl_title_ma_don_hang" runat="server" CssClass="cssPageTitle" ForeColor="White"
+                            Text="Nhập thông tin chi tiết đơn hàng"></asp:Label>
                         &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
                         <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
                     </td>
                 </tr>
                 <tr>
+                    <td style="width:8%">
+                        <asp:Label ID="Label5" runat="Server" Text="Mã phiếu:" CssClass="cssManField"></asp:Label>
+                        &nbsp <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" text="..." CssClass="cssManField" ForeColor="Blue"></asp:Label>
+                    </td>
                     <td align="right">
                         <asp:Label ID="m_lbl_chon_vpp" runat="Server" Text="Chọn VPP" CssClass="cssManField"></asp:Label>
                     </td>
-                    <td style="width: 30%">
+                    <td style="width: 28%">
                         <asp:DropDownList ID="m_cbo_vpp" runat="Server" CssClass="cssDorpdownlistDefault"
                             Width="91%" AutoPostBack="true" OnSelectedIndexChanged="m_cbo_vpp_SelectedIndexChanged">
                         </asp:DropDownList>
@@ -182,14 +199,13 @@
                     </td>
                     <td align="left" style="width: 10%">
                         <asp:TextBox ID="m_txt_so_luong" runat="server" CssClass="=cssTextBox" Width="20%"></asp:TextBox>
-                        &nbsp;<asp:Label ID="m_lbl_don_vi_tinh" runat="server" CssClass="cssManField" Text="Cái"></asp:Label>
+                        &nbsp <asp:Label ID="m_lbl_don_vi_tinh" runat="server" CssClass="cssManField" Text="Cái"></asp:Label>
                     </td>
                     <td align="right" style="width: 10%">
                         <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="Đơn giá chưa VAT: "></asp:Label>
                     </td>
-                    <td align="left">
-                        <asp:Label ID="m_lbl_don_gia" runat="server" CssClass="=cssManField" Width="20%" Text="0"></asp:Label>
-                        &nbsp;<asp:Label ID="Label3" runat="server" CssClass="cssManField" Text=" (VNĐ)"></asp:Label>
+                    <td align="left" style="width:15%">
+                        <asp:Label ID="m_lbl_don_gia" runat="server" CssClass="=cssManField" Text="0" ForeColor="Blue"></asp:Label>
                     </td>
                     <td align="left">
                         <asp:Button ID="m_cmd_them" runat="server" Text="Thêm vào phiếu" CssClass="cssGoogleButton" OnClick="m_cmd_them_Click" />
@@ -198,6 +214,7 @@
                         <asp:HiddenField ID="m_hdf_form_mode" runat="server" />
                         <asp:HiddenField ID="m_hdf_ma_trung_tam" runat="server" />
                         <asp:HiddenField ID="m_hdf_id_VPP" runat="server" />
+                        <asp:HiddenField ID="m_hdf_don_gia" runat="server" />
                         <asp:HiddenField ID="m_hdf_ID_GD_DON_DAT_HANG_DE" runat="server" />
                         <asp:HiddenField ID="m_hdf_ID_GD_DON_DAT_HANG" runat="server" />
                     </td>
@@ -243,7 +260,7 @@
                     <td colspan="4">
                         <asp:GridView ID="m_grv_phieu_de_nghi_cap_va_ban_giao_VPP" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
-                            EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
+                            EmptyDataText="Không có mặt hàng!" EmptyDataRowStyle-BorderColor="#810913"
                             CellPadding="8" PageSize="20"
                             OnRowEditing="m_grv_dm_bill_RowEditing"
                             OnRowDeleting="m_grv_dm_bill_RowDeleting"
