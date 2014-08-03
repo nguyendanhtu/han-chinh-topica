@@ -188,5 +188,12 @@ public class US_GD_DON_DAT_HANG_DETAIL : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void Delete_don_hang_de(DS_GD_DON_DAT_HANG_DETAIL ip_v_ds, decimal ip_id_don_hang)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_Delete_don_hang_de");
+        v_store_proc.addDecimalInputParam("@ID_DON_HANG", ip_id_don_hang);
+        v_store_proc.fillDataSetByCommand(this, ip_v_ds);
+    }
+}
 }
