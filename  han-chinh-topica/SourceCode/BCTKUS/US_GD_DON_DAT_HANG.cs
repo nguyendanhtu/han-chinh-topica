@@ -218,5 +218,16 @@ public class US_GD_DON_DAT_HANG : US_Object
         v_store_proc.addDecimalInputParam("@ID_DON_DAT_HANG ", ip_id_don_hang);
         v_store_proc.fillDataSetByCommand(this, ip_v_ds);
     }
+
+    public bool check_is_having_ma_don_hang(string ip_ma_don_hang)
+    {
+        DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
+        CStoredProc v_cstore = new CStoredProc("pr_check_is_having_ma_don_hang");
+        v_cstore.addNVarcharInputParam("@MA_DON_HANG", ip_ma_don_hang);
+        v_cstore.fillDataSetByCommand(this, v_ds);
+        if (v_ds.GD_DON_DAT_HANG.Rows.Count == 0)
+            return false;
+        return true;
+    }
 }
 }
