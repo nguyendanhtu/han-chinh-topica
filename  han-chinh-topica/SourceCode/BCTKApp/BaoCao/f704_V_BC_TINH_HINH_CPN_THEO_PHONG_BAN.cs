@@ -427,7 +427,7 @@ namespace BCTKApp
             DateTime temp = DateTime.Now.Date;
             //temp = temp.AddMonths(1);
             //temp = temp.AddDays(-(temp.Day));
-            //m_dt_den_ngay.Value = temp;
+            m_dt_den_ngay.Value = temp;
             load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
