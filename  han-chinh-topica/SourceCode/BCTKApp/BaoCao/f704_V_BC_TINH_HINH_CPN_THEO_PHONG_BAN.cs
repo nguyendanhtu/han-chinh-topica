@@ -424,10 +424,10 @@ namespace BCTKApp
 		private void set_initial_form_load(){
             m_obj_trans = get_trans_object(m_fg);
             m_dt_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
-            DateTime temp = DateTime.Now.Date;
+            //DateTime temp = DateTime.Now.Date;
             //temp = temp.AddMonths(1);
             //temp = temp.AddDays(-(temp.Day));
-            m_dt_den_ngay.Value = temp;
+            m_dt_den_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
             load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
