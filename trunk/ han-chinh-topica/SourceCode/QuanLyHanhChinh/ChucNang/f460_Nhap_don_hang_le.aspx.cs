@@ -128,9 +128,9 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     }
     private void save_don_hang_de()
     {
-        //if (!check_validate_is_ok()) return;
-        //if (!check_tien_bill()) return;
-        //if (!check_so_bill()) return;
+
+        if (!check_so_luong()) return;
+        if (!check_vpp_da_ton_tai()) return;
         form_to_us_object_don_hang_de();
         switch (get_form_mode(m_hdf_form_mode))
         {
@@ -149,7 +149,6 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         update_tong_tien_don_hang(m_us_gd_don_dat_hang_de.dcID_DON_DAT_HANG);
         Huy_thao_tac_don_hang_de();
     }
-
     private void update_tong_tien_don_hang(decimal ip_id_don_dat_hang)
     {
         US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
@@ -159,6 +158,8 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     }
     private void save_don_hang()
     {
+        if (!check_validate_is_ok()) return;
+        if (!check_so_lan()) return;
         form_to_us_object_don_hang();
         switch (get_form_mode(m_hdf_form_mode))
         {
@@ -294,67 +295,6 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
                 if (CIPConvert.ToDecimal(m_grv_don_hang_de.DataKeys[i].Value) == CIPConvert.ToDecimal(m_hdf_ID_GD_DON_DAT_HANG_DE.Value)) m_grv_don_hang_de.SelectedIndex = i;
         }
     }
-    //private bool check_tien_bill()
-    //{
-    //    decimal num;
-    //    bool isNumberic = decimal.TryParse(m_txt_so_tien.Text, out num);
-    //    if (!isNumberic)
-    //    {
-    //        thong_bao("Số tiền phải là kiểu số!");
-    //        return false;
-    //    }
-    //    else return true;
-    //}
-    //private bool check_so_bill()
-    //{
-    //    decimal num;
-    //    bool isNumberic = decimal.TryParse(m_txt_so_tien.Text, out num);
-    //    if (!isNumberic)
-    //    {
-    //        thong_bao("Số bill phải là kiểu số!");
-    //        return false;
-    //    }
-    //    else return true;
-    //}
-    //private bool check_validate_is_ok()
-    //{
-    //    string v_form_mode = get_form_mode(m_hdf_form_mode);
-    //    if (v_form_mode.Equals(LOAI_FORM.THEM) || v_form_mode.Equals(LOAI_FORM.SUA))
-    //    {
-    //        if (m_txt_so_bill.Text.Trim().Length != 8)
-    //        {
-    //            thong_bao("Số Bill gồm 8 chữ số!");
-    //            m_txt_so_bill.Focus();
-    //            return false;
-    //        }
-    //    }
-
-    //    //Kiểm tra nhập trùng số Bill
-    //    if (v_form_mode.Equals(LOAI_FORM.THEM))
-    //    {
-    //        if (m_us_dm_bill.check_is_having_so_bill(m_txt_so_bill.Text))
-    //        {
-    //            thong_bao("Số Bill đã tồn tại! ");
-    //            return false;
-    //        }
-    //    }
-    //    if (v_form_mode.Equals(LOAI_FORM.SUA))
-    //    {
-    //        US_DM_BILL v_us_dm_bill = new US_DM_BILL(CIPConvert.ToDecimal(m_hdf_id_bill.Value));
-    //        if (!m_txt_so_bill.Text.Equals(v_us_dm_bill.strSO_BILL))
-    //        {
-    //            if (m_us_dm_bill.check_is_having_so_bill(m_txt_so_bill.Text))
-    //            {
-    //                thong_bao("Số Bill đã tồn tại! ");
-    //                return false;
-    //            }
-    //        }
-    //    }
-    //    if (m_txt_nguoi_gui.Text == null || m_txt_nguoi_gui.Text == "") { thong_bao("Chưa nhập người gửi! "); m_txt_nguoi_gui.Focus(); return false; }
-    //    if (m_txt_nguoi_nhan.Text == null || m_txt_nguoi_nhan.Text == "") { thong_bao("Chưa nhập người nhận! "); m_txt_nguoi_nhan.Focus(); return false; }
-    //    if (m_txt_noi_nhan.Text == null || m_txt_noi_nhan.Text == "") { thong_bao("Chưa nhập nơi nhận! "); m_txt_noi_nhan.Focus(); return false; }
-    //    return true;
-    //}
 
     public void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible, bool ip_button_ok_visible)
     {
@@ -377,6 +317,86 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         v_us.FillDataset(v_ds, "where id=" + CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
         m_lbl_title_ma_don_hang.Text = "Nhập chi tiết đơn hàng " + v_ds.Tables[0].Rows[0]["MA"].ToString();
         m_lbl_ma_don_hang_de.Text = v_ds.Tables[0].Rows[0]["MA"].ToString();
+    }
+
+    private bool check_validate_is_ok()
+    {
+        string v_form_mode = get_form_mode(m_hdf_form_mode);
+
+        //Kiểm tra nhập trùng mã đơn hàng
+        if (v_form_mode.Equals(LOAI_FORM.THEM))
+        {
+            if (m_us_gd_don_dat_hang.check_is_having_ma_don_hang(m_txt_ma_don_hang.Text.Trim()))
+            {
+                thong_bao("Mã đơn hàng này đã tồn tại! ",true);
+                return false;
+            }
+        }
+        if (v_form_mode.Equals(LOAI_FORM.SUA))
+        {
+            US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
+            if (!m_txt_ma_don_hang.Text.Equals(v_us.strMA))
+            {
+                if (v_us.check_is_having_ma_don_hang(m_txt_ma_don_hang.Text))
+                {
+                    thong_bao("Mã đơn hàng này đã tồn tại! ",true);
+                    return false;
+                }
+            }
+        }
+        if (m_txt_ma_don_hang.Text == null || m_txt_ma_don_hang.Text == "") { thong_bao("Chưa nhập mã đơn hàng! "); m_txt_ma_don_hang.Focus(); return false; }
+        //if (m_txt_nguoi_nhan.Text == null || m_txt_nguoi_nhan.Text == "") { thong_bao("Chưa nhập người nhận! "); m_txt_nguoi_nhan.Focus(); return false; }
+        //if (m_txt_noi_nhan.Text == null || m_txt_noi_nhan.Text == "") { thong_bao("Chưa nhập nơi nhận! "); m_txt_noi_nhan.Focus(); return false; }
+        return true;
+    }
+    private bool check_so_luong()
+    {
+        decimal num;
+        bool isNumberic = decimal.TryParse(m_txt_so_luong.Text, out num);
+        if (!isNumberic)
+        {
+            thong_bao("Số lượng phải là kiểu số!");
+            return false;
+        }
+        else return true;
+    }
+    private bool check_so_lan()
+    {
+        decimal num;
+        bool isNumberic = decimal.TryParse(m_txt_so_lan.Text, out num);
+        if (!isNumberic)
+        {
+            thong_bao("Số lần phải là kiểu số!");
+            return false;
+        }
+        else return true;
+    }
+    private bool check_vpp_da_ton_tai()
+    {
+        string v_form_mode = get_form_mode(m_hdf_form_mode);
+
+        //Kiểm tra nhập trùng mã đơn hàng
+        if (v_form_mode.Equals(LOAI_FORM.THEM))
+        {
+            if (m_us_gd_don_dat_hang_de.check_is_having_vpp_don_hang_de(CIPConvert.ToDecimal(m_cbo_vpp.SelectedValue)))
+            {
+                thong_bao("Loại VPP này đã tồn tại!", true);
+                return false;
+            }
+        }
+        if (v_form_mode.Equals(LOAI_FORM.SUA))
+        {
+            US_GD_DON_DAT_HANG_DETAIL v_us = new US_GD_DON_DAT_HANG_DETAIL(CIPConvert.ToDecimal(m_hdf_ID_GD_DON_DAT_HANG_DE.Value));
+            if (CIPConvert.ToDecimal(m_cbo_vpp.SelectedValue) == v_us.dcID_VPP)
+            {
+                if (v_us.check_is_having_vpp_don_hang_de(CIPConvert.ToDecimal(m_cbo_vpp.SelectedValue)))
+                {
+                    thong_bao("Loại VPP này đã tồn tại!", true);
+                    return false;
+                }
+            }
+        }
+        return true;
     }
     #endregion
 
