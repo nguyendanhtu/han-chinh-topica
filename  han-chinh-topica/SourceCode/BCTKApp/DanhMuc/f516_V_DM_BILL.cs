@@ -549,8 +549,8 @@ namespace BCTKApp
             m_txt_tu_khoa.MouseClick += new MouseEventHandler(m_txt_tu_khoa_MouseClick);
             m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
             m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
-            m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
-            m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
+            //m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
+            //m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
             m_grv_bill.DoubleClick+=new EventHandler(m_grv_bill_DoubleClick);
             this.KeyDown+=new KeyEventHandler(f516_V_DM_BILL_KeyDown);
 		}
