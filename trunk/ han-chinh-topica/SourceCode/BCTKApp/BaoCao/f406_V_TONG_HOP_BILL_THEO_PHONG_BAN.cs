@@ -342,7 +342,6 @@ namespace BCTKApp
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(276, 20);
             this.m_txt_tim_kiem.TabIndex = 26;
-            this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
             // 
             // m_lbl_chu_thich
             // 
@@ -590,6 +589,7 @@ namespace BCTKApp
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_tim_kiem.Click += new EventHandler(m_cmd_tim_kiem_Click);
             this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             this.m_dt_tu_ngay.ValueChanged += new System.EventHandler(this.m_dt_tu_ngay_ValueChanged);
@@ -691,10 +691,10 @@ namespace BCTKApp
             tim_kiem();
         }
 
-        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
-        {
-            tim_kiem();
-        }
+        //private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
+        //{
+        //    tim_kiem();
+        //}
 
         private void m_fg_DoubleClick(object sender, EventArgs e)
         {
