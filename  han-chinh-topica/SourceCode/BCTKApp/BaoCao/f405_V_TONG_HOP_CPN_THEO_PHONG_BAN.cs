@@ -89,7 +89,7 @@ namespace BCTKApp
         private TextBox m_txt_tu_khoa;
         private ToolTip toolTip1;
         private Label m_lbl_ghi_chu;
-        private Button m_cmd_tim_kiem;
+        internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         private System.ComponentModel.IContainer components;
 		private void InitializeComponent()
 		{
@@ -116,7 +116,7 @@ namespace BCTKApp
             this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_lbl_ghi_chu = new System.Windows.Forms.Label();
-            this.m_cmd_tim_kiem = new System.Windows.Forms.Button();
+            this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -374,7 +374,6 @@ namespace BCTKApp
             this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
             this.m_txt_tu_khoa.Size = new System.Drawing.Size(368, 20);
             this.m_txt_tu_khoa.TabIndex = 14;
-            this.m_txt_tu_khoa.TextChanged += new System.EventHandler(this.m_txt_nguoi_gui_TextChanged);
             this.m_txt_tu_khoa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
             // 
             // toolTip1
@@ -394,12 +393,18 @@ namespace BCTKApp
             // 
             // m_cmd_tim_kiem
             // 
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(685, 127);
+            this.m_cmd_tim_kiem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_tim_kiem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_tim_kiem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_tim_kiem.ForeColor = System.Drawing.Color.Maroon;
+            this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_tim_kiem.ImageIndex = 18;
+            this.m_cmd_tim_kiem.ImageList = this.ImageList;
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(672, 121);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
-            this.m_cmd_tim_kiem.Size = new System.Drawing.Size(75, 23);
-            this.m_cmd_tim_kiem.TabIndex = 21;
+            this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_tim_kiem.TabIndex = 40;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
-            this.m_cmd_tim_kiem.UseVisualStyleBackColor = true;
             // 
             // f405_V_TONG_HOP_CPN_THEO_PHONG_BAN
             // 
@@ -850,18 +855,6 @@ namespace BCTKApp
             }
         }
 
-        private void m_txt_nguoi_gui_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                tim_kiem();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
         private void m_txt_nguoi_nhan_TextChanged(object sender, EventArgs e)
         {
             try
@@ -914,10 +907,6 @@ namespace BCTKApp
                 if (e.KeyData == Keys.Escape)
                 {
                     this.Close();
-                }
-                if (e.KeyData == Keys.E)
-                {
-                    export_2_excel();
                 }
             }
             catch (Exception v_e)
