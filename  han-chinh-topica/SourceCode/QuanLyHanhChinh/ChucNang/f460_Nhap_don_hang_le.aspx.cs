@@ -627,6 +627,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             m_lbl_don_vi_tinh.Text = v_ds.Tables[0].Rows[0]["DON_VI_TINH"].ToString();
             m_lbl_don_gia.Text = CIPConvert.ToStr(v_ds.Tables[0].Rows[0]["DON_GIA_CHUA_VAT"],"#,###")+ " (VNĐ)";
             m_hdf_don_gia.Value = CIPConvert.ToStr(v_ds.Tables[0].Rows[0]["DON_GIA_CHUA_VAT"]);
+            m_txt_so_luong.Focus();
         }
         catch (Exception v_e)
         {
