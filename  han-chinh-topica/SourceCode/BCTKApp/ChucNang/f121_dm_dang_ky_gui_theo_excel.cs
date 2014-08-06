@@ -341,6 +341,7 @@ namespace BCTKApp
                 v_us_dm_bill.CommitTransaction();
                 m_lbl_load.Visible = false;
                 ghi_log_he_thong();
+                m_i_flag = 0;
                 BaseMessages.MsgBox_Infor("Đã import dữ liệu nhận từ Bưu cục thành công");
             }
             catch (Exception v_e)
@@ -489,7 +490,7 @@ namespace BCTKApp
                 }
                 if (m_i_flag == 0)
                 {
-                    BaseMessages.MsgBox_Infor("Cần sửa dữ liệu trước khi lưu!");
+                    BaseMessages.MsgBox_Infor("Cần kiểm tra dữ liệu trước khi lưu!");
                     return;
                 }
 
