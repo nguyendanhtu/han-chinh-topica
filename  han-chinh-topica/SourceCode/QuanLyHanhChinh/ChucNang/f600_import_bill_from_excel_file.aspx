@@ -21,7 +21,32 @@
                 <asp:Label ID="m_lbl_message" runat="Server"></asp:Label></td>
         </tr>
     </table>
-
+    <asp:Panel ID="m_pnl_confirm_tg" runat="server">
+        <div class="cssLoadWapper">
+            <asp:MultiView ID="m_mtv_1" runat="server">
+                <asp:View ID="m_view_confirm" runat="server">
+                    <div class="cssLoadContent2" style="width: 50%">
+                        <table border="0" cellspacing="0" cellpadding="2" width="100%">
+                            <tr>
+                                <td align="center">
+                                    <br />
+                                    <asp:Label ID="m_lbl_popup_mess" CssClass="cssManField" Style="font-size: 14px" runat="server"></asp:Label>
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">
+                                    <asp:Button ID="m_cmd_ok" AccessKey="c" CssClass="cssGoogleButton" runat="server"
+                                        Text="OK" OnClick="m_cmd_ok_Click" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </asp:View>
+            </asp:MultiView>
+        </div>
+    </asp:Panel>
     <table border="0" cellspacing="0" cellpadding="0" width="100%">
         <tr>
             <td>
@@ -48,6 +73,7 @@
         </asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
+
                 <tr>
                     <td colspan="4">
                         <asp:GridView ID="m_grv_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
@@ -55,8 +81,8 @@
                             EmptyDataText="Đã import thành công!" EmptyDataRowStyle-BorderColor="#810913"
                             CellPadding="2" PageSize="50"
                             OnRowDeleting="m_grv_dm_bill_RowDeleting"
-                            OnPageIndexChanging = "m_grv_dm_bill_PageIndexChanging" 
-                            AllowSorting = "true">
+                            OnPageIndexChanging="m_grv_dm_bill_PageIndexChanging"
+                            AllowSorting="true">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />
@@ -119,7 +145,7 @@
                                 <asp:TemplateField ItemStyle-Width="10%" HeaderText="Ngày gửi" ItemStyle-VerticalAlign="Top">
                                     <ItemTemplate>
                                         <ew:CalendarPopup ID="m_dat_ngay_gui" runat="server" TextBoxLabelStyle-BorderColor="#810913"
-                                            TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN" 
+                                            TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
                                             DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
                                             ShowGoToToday="true" Width="70%">
                                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
