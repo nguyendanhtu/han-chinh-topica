@@ -31,6 +31,27 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     #endregion
 
     #region Private Methods
+    private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
+    {
+        m_mtv_1.SetActiveView(m_view_confirm);
+        m_lbl_popup_mess.Text = ip_str_mess;
+        m_pnl_confirm_tg.Visible = ip_panel_thong_bao_visible;
+        m_cmd_ok.Visible = ip_panel_thong_bao_visible;
+    }
+    public void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible, bool ip_button_ok_visible)
+    {
+        m_mtv_1.SetActiveView(m_view_confirm);
+        m_lbl_popup_mess.Text = ip_str_mess;
+        m_pnl_confirm_tg.Visible = ip_panel_thong_bao_visible;
+        m_cmd_ok.Visible = ip_button_ok_visible;
+    }
+    public void thong_bao(string ip_str_mess)
+    {
+        m_mtv_1.SetActiveView(m_view_confirm);
+        m_lbl_popup_mess.Text = ip_str_mess;
+        m_pnl_confirm_tg.Visible = true;
+        m_cmd_ok.Visible = true;
+    }
     private void save_file_upload(string ip_str_our_dir)
     {
         if (m_fu_chon_file_import.HasFile)
@@ -177,9 +198,9 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                            v_us_dm_bill.strNUOC_NGOAI = "x";
                        }
                        v_us_dm_bill.Insert();
-
                        m_grv_dm_bill.DeleteRow(i);
                        m_grv_dm_bill.DataBind();
+                       thong_bao("Đã import thành công!", true);
                    }
                //}
                //if (numbers_record_limited == 50)
@@ -328,6 +349,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             && !Path.GetExtension(ip_str_file_name).Equals(".xlsx")) return false;
         return true;
     }
+
     #endregion
 
     #region Events
@@ -354,7 +376,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                     DS_HT_QUAN_HE_SU_DUNG_DU_LIEU v_ds_ht_qh_sd_dl = new DS_HT_QUAN_HE_SU_DUNG_DU_LIEU();
                     v_us_ht_qh_sd_dl.FillDataset(v_ds_ht_qh_sd_dl, "where ID_USER_GROUP =" + v_id_user_group);
                     m_hdf_id_trung_tam.Value = v_ds_ht_qh_sd_dl.HT_QUAN_HE_SU_DUNG_DU_LIEU.Rows[0]["ID_PHONG_BAN"].ToString();
-                    delete_file_imported(m_hdf_dir_save_excel.Value);
+                    thong_bao("", false);
                 }
                 else
                 {
@@ -362,6 +384,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }
             }
+            thong_bao("",false);
         }
         catch (Exception v_e)
         {
@@ -388,18 +411,6 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             m_sm.ExceptionHanlde(this, v_e);
         }
     }
-
-    private bool check_validate_is_having_so_bill(string ip_str_so_bill)
-    {
-        bool v_b_result = true;
-        US_DM_BILL v_us_dm_bill = new US_DM_BILL();
-        DS_DM_BILL v_ds_dm_bill = new DS_DM_BILL();
-        v_us_dm_bill.FillDataset(v_ds_dm_bill, "where so_bill = '" + ip_str_so_bill + "'");
-        if (v_ds_dm_bill.DM_BILL.Count > 0) v_b_result = false;
-        return v_b_result;
-    }
-
-    #endregion
     protected void m_cmd_kiem_tra_va_import_Click(object sender, EventArgs e)
     {
         try
@@ -437,4 +448,26 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    private bool check_validate_is_having_so_bill(string ip_str_so_bill)
+    {
+        bool v_b_result = true;
+        US_DM_BILL v_us_dm_bill = new US_DM_BILL();
+        DS_DM_BILL v_ds_dm_bill = new DS_DM_BILL();
+        v_us_dm_bill.FillDataset(v_ds_dm_bill, "where so_bill = '" + ip_str_so_bill + "'");
+        if (v_ds_dm_bill.DM_BILL.Count > 0) v_b_result = false;
+        return v_b_result;
+    }
+    protected void m_cmd_ok_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            thong_bao("", false);
+        }
+        catch (System.Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    #endregion
+  
 }
