@@ -6,6 +6,29 @@ using System.Configuration;
 
 namespace BCTKDS.CDBNames
 {
+    public class RPT_BC_CHI_TIET_DM {
+        public const string ID =  "ID";
+        public const string TEN_THONG_KE =  "TEN_THONG_KE";
+        public const string ID_CO_SO_DINH_MUC =  "ID_CO_SO_DINH_MUC";
+        public const string MA =  "MA";
+        public const string MO_TA =  "MO_TA";
+        public const string ID_LOAI_THOI_GIAN =  "ID_LOAI_THOI_GIAN";
+        public const string LOAI_THOI_GIAN =  "LOAI_THOI_GIAN";
+        public const string TU_NGAY =  "TU_NGAY";
+        public const string DEN_NGAY =  "DEN_NGAY";
+        public const string DON_GIA =  "DON_GIA";
+        public const string GIA_TRI_THONG_KE =  "GIA_TRI_THONG_KE";
+        public const string TONG_TIEN_DM =  "TONG_TIEN_DM";
+        public const string ID_DON_VI_THONG_KE =  "ID_DON_VI_THONG_KE";
+        public const string DON_VI_THONG_KE =  "DON_VI_THONG_KE";
+        public const string ID_DM_CO_SO =  "ID_DM_CO_SO";
+        public const string MA_CO_SO_DINH_MUC =  "MA_CO_SO_DINH_MUC";
+        public const string TEN_CO_SO_DINH_MUC =  "TEN_CO_SO_DINH_MUC";
+        public const string GHI_CHU_1 =  "GHI_CHU_1";
+        public const string GHI_CHU_2 =  "GHI_CHU_2";
+        public const string GHI_CHU_3 =  "GHI_CHU_3";
+    }
+
     public class V_DM_VPP
     {
         public const string ID_VPP = "ID_VPP";
