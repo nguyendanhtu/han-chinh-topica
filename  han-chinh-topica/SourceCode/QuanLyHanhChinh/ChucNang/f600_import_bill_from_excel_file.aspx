@@ -38,7 +38,6 @@
         </tr>
 
         <tr>
-
             <td align="left">
 
                 <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Kiểm tra và cập nhật danh sách bill" CssClass="cssGoogleButton"
@@ -54,8 +53,10 @@
                         <asp:GridView ID="m_grv_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                             Width="99%" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Đã import thành công!" EmptyDataRowStyle-BorderColor="#810913"
-                            CellPadding="2" PageSize="200"
-                            OnRowDeleting="m_grv_dm_bill_RowDeleting">
+                            CellPadding="2" PageSize="50"
+                            OnRowDeleting="m_grv_dm_bill_RowDeleting"
+                            OnPageIndexChanging = "m_grv_dm_bill_PageIndexChanging" 
+                            AllowSorting = "true">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />
@@ -105,7 +106,7 @@
                                     <ItemTemplate>
                                         <asp:TextBox ID="m_txt_so_bill_grid" CssClass="cssTextBoxGrid" Style="text-align: right" AutoPostBack="true" Height="50%" runat="server" Text='<%#Eval("SO_BILL") %>'></asp:TextBox>
                                         <br />
-                                        <asp:Label ID="m_lbl_so_bill_message" runat="Server"></asp:Label>
+                                        <asp:Label ID="m_lbl_so_bill_message" AutoPostBack="true" runat="Server"></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField ItemStyle-Width="10%" HeaderText="Người gửi" ItemStyle-VerticalAlign="Top">
@@ -118,7 +119,7 @@
                                 <asp:TemplateField ItemStyle-Width="10%" HeaderText="Ngày gửi" ItemStyle-VerticalAlign="Top">
                                     <ItemTemplate>
                                         <ew:CalendarPopup ID="m_dat_ngay_gui" runat="server" TextBoxLabelStyle-BorderColor="#810913"
-                                            TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN" SelectedDate='<%#Eval("NGAY_GUI") %>'
+                                            TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN" 
                                             DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
                                             ShowGoToToday="true" Width="70%">
                                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
@@ -140,6 +141,7 @@
                                             <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
                                                 Font-Size="XX-Small" ForeColor="Black" />
                                         </ew:CalendarPopup>
+                                        <%--<asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid" ID="m_txt_ngay_gui_grid" Height="50%" AutoPostBack="false" runat="server" Text='<%#Eval("NGAY_GUI") %>'></asp:TextBox>--%>
                                         <br />
                                         <asp:Label ID="m_lbl_ngay_gui_message" runat="Server"></asp:Label>
                                     </ItemTemplate>
