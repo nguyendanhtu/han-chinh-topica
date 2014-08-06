@@ -40,7 +40,6 @@ namespace BCTKApp
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         private TextBox m_txt_tim_kiem;
         private Label m_lbl_tu_khoa;
-        private DateTimePicker m_dt_den_ngay;
         private DateTimePicker m_dt_tu_ngay;
         private Label m_lbl_den_ngay;
         private Label m_lbl_tu_ngay;
@@ -52,6 +51,7 @@ namespace BCTKApp
         private Label m_lbl_tong_so_vuot_dm;
         private Label label3;
         private ToolTip toolTip2;
+        private DateTimePicker m_dt_den_ngay;
 		private System.ComponentModel.IContainer components;
 
 		public f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN()
@@ -99,7 +99,6 @@ namespace BCTKApp
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_tu_khoa = new System.Windows.Forms.Label();
-            this.m_dt_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_dt_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_den_ngay = new System.Windows.Forms.Label();
             this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
@@ -111,6 +110,7 @@ namespace BCTKApp
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.m_dt_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -206,7 +206,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 18;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(761, 58);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(741, 58);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_tim_kiem.TabIndex = 39;
@@ -215,55 +215,41 @@ namespace BCTKApp
             // 
             // m_txt_tim_kiem
             // 
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(346, 60);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(326, 60);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(395, 20);
             this.m_txt_tim_kiem.TabIndex = 38;
             this.toolTip2.SetToolTip(this.m_txt_tim_kiem, "Nhập Mã trung tâm, Tên trung tâm cần tìm!");
-            this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
             // 
             // m_lbl_tu_khoa
             // 
             this.m_lbl_tu_khoa.AutoSize = true;
             this.m_lbl_tu_khoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.m_lbl_tu_khoa.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tu_khoa.Location = new System.Drawing.Point(266, 66);
+            this.m_lbl_tu_khoa.Location = new System.Drawing.Point(246, 66);
             this.m_lbl_tu_khoa.Name = "m_lbl_tu_khoa";
             this.m_lbl_tu_khoa.Size = new System.Drawing.Size(50, 13);
             this.m_lbl_tu_khoa.TabIndex = 35;
             this.m_lbl_tu_khoa.Text = "Từ khóa:";
-            // 
-            // m_dt_den_ngay
-            // 
-            this.m_dt_den_ngay.Checked = false;
-            this.m_dt_den_ngay.CustomFormat = "MM/yyyy";
-            this.m_dt_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dt_den_ngay.Location = new System.Drawing.Point(621, 25);
-            this.m_dt_den_ngay.Name = "m_dt_den_ngay";
-            this.m_dt_den_ngay.ShowUpDown = true;
-            this.m_dt_den_ngay.Size = new System.Drawing.Size(120, 20);
-            this.m_dt_den_ngay.TabIndex = 33;
-            this.m_dt_den_ngay.ValueChanged += new System.EventHandler(this.m_dt_den_ngay_ValueChanged);
             // 
             // m_dt_tu_ngay
             // 
             this.m_dt_tu_ngay.Checked = false;
             this.m_dt_tu_ngay.CustomFormat = "MM/yyyy";
             this.m_dt_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dt_tu_ngay.Location = new System.Drawing.Point(346, 25);
+            this.m_dt_tu_ngay.Location = new System.Drawing.Point(326, 25);
             this.m_dt_tu_ngay.Name = "m_dt_tu_ngay";
             this.m_dt_tu_ngay.ShowUpDown = true;
             this.m_dt_tu_ngay.Size = new System.Drawing.Size(120, 20);
             this.m_dt_tu_ngay.TabIndex = 34;
             this.m_dt_tu_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
-            this.m_dt_tu_ngay.ValueChanged += new System.EventHandler(this.m_dt_tu_ngay_ValueChanged);
             // 
             // m_lbl_den_ngay
             // 
             this.m_lbl_den_ngay.AutoSize = true;
             this.m_lbl_den_ngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.m_lbl_den_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_den_ngay.Location = new System.Drawing.Point(540, 25);
+            this.m_lbl_den_ngay.Location = new System.Drawing.Point(520, 25);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
             this.m_lbl_den_ngay.Size = new System.Drawing.Size(60, 13);
             this.m_lbl_den_ngay.TabIndex = 31;
@@ -274,7 +260,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.AutoSize = true;
             this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(266, 25);
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(246, 25);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(53, 13);
             this.m_lbl_tu_ngay.TabIndex = 32;
@@ -294,11 +280,11 @@ namespace BCTKApp
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_dt_den_ngay);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.m_lbl_tong_so_vuot_dm);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.m_dt_den_ngay);
             this.panel1.Controls.Add(this.m_lbl_tu_ngay);
             this.panel1.Controls.Add(this.m_cmd_tim_kiem);
             this.panel1.Controls.Add(this.m_lbl_den_ngay);
@@ -358,6 +344,18 @@ namespace BCTKApp
             // toolTip2
             // 
             this.toolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // m_dt_den_ngay
+            // 
+            this.m_dt_den_ngay.Checked = false;
+            this.m_dt_den_ngay.CustomFormat = "MM/yyyy";
+            this.m_dt_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dt_den_ngay.Location = new System.Drawing.Point(611, 25);
+            this.m_dt_den_ngay.Name = "m_dt_den_ngay";
+            this.m_dt_den_ngay.ShowUpDown = true;
+            this.m_dt_den_ngay.Size = new System.Drawing.Size(120, 20);
+            this.m_dt_den_ngay.TabIndex = 45;
+            this.m_dt_den_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
             // 
             // f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
             // 
@@ -427,7 +425,7 @@ namespace BCTKApp
             //DateTime temp = DateTime.Now.Date;
             //temp = temp.AddMonths(1);
             //temp = temp.AddDays(-(temp.Day));
-            m_dt_den_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
+            m_dt_den_ngay.Value = DateTime.Now.Date.AddMonths(1).Date.AddDays(-DateTime.Now.Date.Day);
             load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -609,21 +607,17 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(ex);	
             }
         }
-        private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (m_trang_thai == true)
-            {
+        private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e) {
+            if(m_trang_thai == true) {
                 tim_kiem();
             }
         }
 
-        private void m_dt_tu_ngay_ValueChanged(object sender, EventArgs e)
-        {
+        private void m_dt_tu_ngay_ValueChanged(object sender, EventArgs e) {
             tim_kiem();
         }
 
-        private void m_dt_den_ngay_ValueChanged(object sender, EventArgs e)
-        {
+        private void m_dt_den_ngay_ValueChanged(object sender, EventArgs e) {
             tim_kiem();
         }
 
@@ -632,8 +626,7 @@ namespace BCTKApp
             tim_kiem();
         }
 
-        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
-        {
+        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e) {
             tim_kiem();
         }
 
