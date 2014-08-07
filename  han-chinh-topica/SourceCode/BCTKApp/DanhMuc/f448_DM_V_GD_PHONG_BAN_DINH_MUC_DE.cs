@@ -224,6 +224,7 @@ namespace BCTKApp.DanhMuc
             load_cbo_dm_co_co();
             load_cbo_trung_tam();
             load_cbo_loai_dinh_muc();
+            load_cbo_co_tinh_dinh_muc(CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue));
         }
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
