@@ -42,6 +42,7 @@
             this.ribbonBar5 = new DevComponents.DotNetBar.RibbonBar();
             this.m_cmd_co_so_dinh_muc = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_co_dinh_muc_trung_tam = new DevComponents.DotNetBar.ButtonItem();
+            this.m_cmd_dinh_muc_tung_phong_ban = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_pnl_CPN = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.m_cmd_tra_cuu_trang_thai_CPN = new DevComponents.DotNetBar.ButtonItem();
@@ -78,7 +79,6 @@
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.m_cmd_dinh_muc_tung_phong_ban = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_control_TAD.SuspendLayout();
             this.m_rib_pnl_quan_ly_dinh_muc.SuspendLayout();
             this.m_rib_pnl_CPN.SuspendLayout();
@@ -98,8 +98,8 @@
             this.m_rib_control_TAD.CaptionVisible = true;
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_quan_ly_dinh_muc);
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_CPN);
-            this.m_rib_control_TAD.Controls.Add(this.ribbonPanel1);
             this.m_rib_control_TAD.Controls.Add(this.m_rib_pnl_he_thong);
+            this.m_rib_control_TAD.Controls.Add(this.ribbonPanel1);
             this.m_rib_control_TAD.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_rib_control_TAD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_rib_control_TAD.ForeColor = System.Drawing.Color.DarkOrange;
@@ -182,7 +182,7 @@
             this.m_cmd_dm_co_so,
             this.m_cmd_phong_ban_phap_nhan});
             this.ribbonBar3.ItemSpacing = 10;
-            this.ribbonBar3.Location = new System.Drawing.Point(428, 0);
+            this.ribbonBar3.Location = new System.Drawing.Point(344, 0);
             this.ribbonBar3.Name = "ribbonBar3";
             this.ribbonBar3.Size = new System.Drawing.Size(243, 101);
             this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -225,6 +225,7 @@
             this.m_cmd_phong_ban_phap_nhan.Name = "m_cmd_phong_ban_phap_nhan";
             this.m_cmd_phong_ban_phap_nhan.SubItemsExpandWidth = 14;
             this.m_cmd_phong_ban_phap_nhan.Text = "Trung tâm - Pháp nhân";
+            this.m_cmd_phong_ban_phap_nhan.Visible = false;
             // 
             // ribbonBar1
             // 
@@ -245,7 +246,7 @@
             this.m_cmd_tk_nhan_su,
             this.m_cmd_tk_hv});
             this.ribbonBar1.ItemSpacing = 10;
-            this.ribbonBar1.Location = new System.Drawing.Point(274, 0);
+            this.ribbonBar1.Location = new System.Drawing.Point(190, 0);
             this.ribbonBar1.Name = "ribbonBar1";
             this.ribbonBar1.Size = new System.Drawing.Size(154, 101);
             this.ribbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -303,10 +304,10 @@
             this.m_cmd_dinh_muc_tung_phong_ban});
             this.ribbonBar5.ItemSpacing = 10;
             this.ribbonBar5.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar5.MaximumSize = new System.Drawing.Size(271, 101);
-            this.ribbonBar5.MinimumSize = new System.Drawing.Size(271, 101);
+            this.ribbonBar5.MaximumSize = new System.Drawing.Size(187, 101);
+            this.ribbonBar5.MinimumSize = new System.Drawing.Size(187, 101);
             this.ribbonBar5.Name = "ribbonBar5";
-            this.ribbonBar5.Size = new System.Drawing.Size(271, 101);
+            this.ribbonBar5.Size = new System.Drawing.Size(187, 101);
             this.ribbonBar5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar5.TabIndex = 7;
             this.ribbonBar5.Text = "Quản lý cách tính định mức";
@@ -337,6 +338,16 @@
             this.m_cmd_co_dinh_muc_trung_tam.Name = "m_cmd_co_dinh_muc_trung_tam";
             this.m_cmd_co_dinh_muc_trung_tam.SubItemsExpandWidth = 14;
             this.m_cmd_co_dinh_muc_trung_tam.Text = "Cách tính từng trung tâm";
+            // 
+            // m_cmd_dinh_muc_tung_phong_ban
+            // 
+            this.m_cmd_dinh_muc_tung_phong_ban.Icon = ((System.Drawing.Icon)(resources.GetObject("m_cmd_dinh_muc_tung_phong_ban.Icon")));
+            this.m_cmd_dinh_muc_tung_phong_ban.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.m_cmd_dinh_muc_tung_phong_ban.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.m_cmd_dinh_muc_tung_phong_ban.Name = "m_cmd_dinh_muc_tung_phong_ban";
+            this.m_cmd_dinh_muc_tung_phong_ban.SubItemsExpandWidth = 14;
+            this.m_cmd_dinh_muc_tung_phong_ban.Text = "Tổng tiền định mức theo tháng";
+            this.m_cmd_dinh_muc_tung_phong_ban.Visible = false;
             // 
             // m_rib_pnl_CPN
             // 
@@ -889,15 +900,6 @@
             // buttonItem1
             // 
             this.buttonItem1.Name = "buttonItem1";
-            // 
-            // m_cmd_dinh_muc_tung_phong_ban
-            // 
-            this.m_cmd_dinh_muc_tung_phong_ban.Icon = ((System.Drawing.Icon)(resources.GetObject("m_cmd_dinh_muc_tung_phong_ban.Icon")));
-            this.m_cmd_dinh_muc_tung_phong_ban.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.m_cmd_dinh_muc_tung_phong_ban.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.m_cmd_dinh_muc_tung_phong_ban.Name = "m_cmd_dinh_muc_tung_phong_ban";
-            this.m_cmd_dinh_muc_tung_phong_ban.SubItemsExpandWidth = 14;
-            this.m_cmd_dinh_muc_tung_phong_ban.Text = "Tổng tiền định mức theo tháng";
             // 
             // f400_menu_main
             // 
