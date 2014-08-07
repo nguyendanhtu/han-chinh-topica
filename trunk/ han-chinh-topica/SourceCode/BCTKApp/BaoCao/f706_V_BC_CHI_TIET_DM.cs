@@ -426,7 +426,7 @@ namespace BCTKApp
                 );
             m_fg.Redraw = true;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-
+            CGridUtils.MakeSoTT(0, m_fg);
             m_fg.Redraw = true;
         }
         private void grid2us_object(US_RPT_BC_CHI_TIET_DM i_us
