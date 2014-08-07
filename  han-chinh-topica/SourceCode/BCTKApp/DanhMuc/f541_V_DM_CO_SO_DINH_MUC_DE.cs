@@ -111,7 +111,7 @@ namespace BCTKApp.DanhMuc
             m_us_dm_co_so_dinh_muc.strMA_CO_SO_DINH_MUC = m_txt_ma_co_so.Text;
             m_us_dm_co_so_dinh_muc.strTEN_CO_SO_DINH_MUC = m_txt_ten_co_so.Text;
             m_us_dm_co_so_dinh_muc.dcID_LOAI_DINH_MUC = CIPConvert.ToDecimal(m_cbo_loai_dinh_muc.SelectedValue);
-            m_us_dm_co_so_dinh_muc.dcDON_GIA_DINH_MUC = CIPConvert.ToDecimal(m_txt_don_gia_dinh_muc.Text);
+            m_us_dm_co_so_dinh_muc.dcDON_GIA_DINH_MUC = CIPConvert.ToDecimal(m_txt_don_gia_dinh_muc.Text.Replace(",", "").Replace(".", ""));
             v_ap_dung_tu_ngay = m_dat_ap_dung_tu_ngay.Value.ToString();
             v_ap_dung_tu_ngay = v_ap_dung_tu_ngay.Substring(0, v_ap_dung_tu_ngay.IndexOf(" "));
             m_us_dm_co_so_dinh_muc.datAP_DUNG_TU_NGAY = CIPConvert.ToDatetime(v_ap_dung_tu_ngay);
@@ -166,6 +166,7 @@ namespace BCTKApp.DanhMuc
         {
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_txt_don_gia_dinh_muc.TextChanged+=new EventHandler(m_txt_don_gia_dinh_muc_Click);
         }
 
         #endregion
@@ -194,6 +195,19 @@ namespace BCTKApp.DanhMuc
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+        private void m_txt_don_gia_dinh_muc_Click(object sender, EventArgs e)
+        {
+            if (m_txt_don_gia_dinh_muc.Text == "")
+            {
+                m_txt_don_gia_dinh_muc.SelectionStart = m_txt_don_gia_dinh_muc.Text.Length + 1;
+            }
+            else
+            {
+                m_txt_don_gia_dinh_muc.Text = string.Format("{0:#,###}", CIPConvert.ToDecimal(m_txt_don_gia_dinh_muc.Text.Trim()));
+                m_txt_don_gia_dinh_muc.SelectionStart = m_txt_don_gia_dinh_muc.Text.Length + 1;
+            }
+
         }
     }
 }
