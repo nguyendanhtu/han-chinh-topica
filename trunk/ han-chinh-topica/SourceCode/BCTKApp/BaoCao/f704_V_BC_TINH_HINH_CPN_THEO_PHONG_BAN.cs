@@ -486,7 +486,7 @@ namespace BCTKApp
                         continue;
                     }
                 if (!CIPConvert.is_valid_number(m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT])) continue;
-                if (CIPConvert.ToDecimal((m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT]).ToString()) > 20)
+                if (CIPConvert.ToDecimal((m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT]).ToString()) > 0)
                 {
                     m_fg.Rows[i].Style = m_fg.Styles["CustomStyle1"];
                     v_dc_tong_so_vuot_dm++;
