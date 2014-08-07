@@ -211,6 +211,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_tim_kiem.TabIndex = 39;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
+            this.m_cmd_tim_kiem.Visible = false;
             this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
             // 
             // m_txt_tim_kiem
@@ -239,7 +240,6 @@ namespace BCTKApp
             this.m_dt_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dt_tu_ngay.Location = new System.Drawing.Point(326, 25);
             this.m_dt_tu_ngay.Name = "m_dt_tu_ngay";
-            this.m_dt_tu_ngay.ShowUpDown = true;
             this.m_dt_tu_ngay.Size = new System.Drawing.Size(120, 20);
             this.m_dt_tu_ngay.TabIndex = 34;
             this.m_dt_tu_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
@@ -352,7 +352,6 @@ namespace BCTKApp
             this.m_dt_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dt_den_ngay.Location = new System.Drawing.Point(611, 25);
             this.m_dt_den_ngay.Name = "m_dt_den_ngay";
-            this.m_dt_den_ngay.ShowUpDown = true;
             this.m_dt_den_ngay.Size = new System.Drawing.Size(120, 20);
             this.m_dt_den_ngay.TabIndex = 45;
             this.m_dt_den_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
@@ -425,7 +424,13 @@ namespace BCTKApp
             //DateTime temp = DateTime.Now.Date;
             //temp = temp.AddMonths(1);
             //temp = temp.AddDays(-(temp.Day));
-            m_dt_den_ngay.Value = DateTime.Now.Date.AddMonths(1).Date.AddDays(-DateTime.Now.Date.Day);
+            //m_dt_den_ngay.Value = DateTime.Now.Date.AddMonths(1).Date.AddDays(-DateTime.Now.Date.Day);
+
+            DateTime dtResult = DateTime.Now.Date;
+            dtResult = dtResult.AddMonths(1);
+            dtResult = dtResult.AddDays(-(dtResult.Day));
+            m_dt_den_ngay.Value = dtResult;
+
             load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
