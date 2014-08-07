@@ -401,7 +401,7 @@ namespace BCTKApp
         private void load_data_2_grid()
         {
             m_ds = new DS_RPT_BC_CHI_TIET_DM();
-
+            if(m_dt_tu_ngay > m_dt_den_ngay) return;
             m_us.FillDataset_chi_tiet_dm(m_ds, m_dt_tu_ngay, m_dt_den_ngay,174,m_id_phong_ban);
             m_fg.Redraw = false;
             decimal v_dc_tong_doanh_thu = 0;
