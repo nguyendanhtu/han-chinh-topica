@@ -368,9 +368,10 @@ namespace BCTKApp
         private void set_caption_of_grid(){
             m_fg.Rows.Fixed = 2;
             m_fg.Cols[0].Caption = "STT";
-            m_fg[1,(int)e_col_Number.TONG_TIEN_DM] = "(1)=(4)*(5)";
+            m_fg[1,(int)e_col_Number.TONG_TIEN_DM] = "(1)=(2)*(3)";
             for (int v_i_cur_col = (int)e_col_Number.TU_NGAY; v_i_cur_col < m_fg.Cols.Count;v_i_cur_col++ ){
-                m_fg[1,v_i_cur_col] = "("+v_i_cur_col.ToString()+")";
+
+                m_fg[1,v_i_cur_col] = "("+(v_i_cur_col-2).ToString()+")";
             }
 
                 
