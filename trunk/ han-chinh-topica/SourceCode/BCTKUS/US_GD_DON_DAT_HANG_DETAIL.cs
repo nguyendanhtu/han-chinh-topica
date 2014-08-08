@@ -206,5 +206,13 @@ public class US_GD_DON_DAT_HANG_DETAIL : US_Object
             return false;
         return true;
     }
+
+    public void update_so_luong_VPP_da_ton_tai(DS_GD_DON_DAT_HANG_DETAIL ip_m_ds_gd_don_dat_hang_de, decimal ip_id_vpp, decimal ip_so_luong)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_Update_so_luong_vpp");
+        v_store_proc.addDecimalInputParam("@ID_VPP", ip_id_vpp);
+        v_store_proc.addDecimalInputParam("@SO_LUONG", ip_so_luong);
+        v_store_proc.fillDataSetByCommand(this, ip_m_ds_gd_don_dat_hang_de);
+    }
 }
 }
