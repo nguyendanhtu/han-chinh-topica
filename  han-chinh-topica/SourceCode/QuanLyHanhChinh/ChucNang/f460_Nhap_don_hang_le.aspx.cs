@@ -11,6 +11,7 @@ using BCTKDS.CDBNames;
 using IP.Core.IPCommon;
 using IP.Core.WinFormControls;
 using IP.Core.IPUserService;
+using System.Windows.Forms;
 
 public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
 {
@@ -34,12 +35,17 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     #endregion
 
     #region Private Methods
-    private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
+
+    private void set_inital_form_mode()
     {
-        m_mtv_1.SetActiveView(m_view_confirm);
-        m_lbl_popup_mess.Text = ip_str_mess;
-        m_pnl_confirm_tg.Visible = ip_panel_thong_bao_visible;
-        m_cmd_ok.Visible = ip_panel_thong_bao_visible;
+        load_ma_ten_trung_tam();
+        load_cbo_VPP();
+        load_don_vi_tinh_don_gia();
+        m_cmd_cap_nhat_don_hang.Visible = false;
+        m_cmd_cap_nhat_don_hang_de.Visible = false;
+        load_data_to_grid_don_hang();
+        load_ma_don_hang_nhap_gan_nhat();
+        thong_bao("", false);
     }
     private string get_form_mode(HiddenField ip_hdf_form_mode)
     {
@@ -73,6 +79,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         }
         thong_bao("", false);
     }
+
     private void form_to_us_object_don_hang_de()
     {
         switch (get_form_mode(m_hdf_form_mode))
@@ -109,6 +116,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_us_gd_don_dat_hang.dcID_TRANG_THAI = 209;
         m_us_gd_don_dat_hang.strMA = m_txt_ma_don_hang.Text;
     }
+
     private void us_object_to_form_don_hang()
     {
         US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
@@ -126,11 +134,12 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_cbo_vpp.DataTextField = v_ds.Tables[0].Rows[0]["TEN_VPP"].ToString();
         m_lbl_don_gia.Text =CIPConvert.ToStr(v_ds.Tables[0].Rows[0]["DON_GIA_CHUA_VAT"],"#,###") + " (VNĐ)";
     }
+
     private void save_don_hang_de()
     {
 
         if (!check_so_luong()) return;
-        if (!check_vpp_da_ton_tai()) return;
+        if (!check_vpp_da_ton_tai(CIPConvert.ToDecimal(m_txt_so_luong.Text))) return;
         form_to_us_object_don_hang_de();
         switch (get_form_mode(m_hdf_form_mode))
         {
@@ -209,18 +218,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_hdf_ID_GD_DON_DAT_HANG_DE.Value = "0";
     }
 
-    private void set_inital_form_mode()
-    {
-        load_ma_ten_trung_tam();
-        load_cbo_VPP();
-        load_don_vi_tinh_don_gia();
-        m_cmd_cap_nhat_don_hang.Visible = false;
-        m_cmd_cap_nhat_don_hang_de.Visible = false;
-        load_data_to_grid_don_hang();
-        load_ma_don_hang_nhap_gan_nhat();
-        thong_bao("", false);
-    }
-
+ 
     private void load_ma_don_hang_nhap_gan_nhat()
     {
         US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
@@ -234,7 +232,6 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         }
         else return;
     }
-
     private void load_don_vi_tinh_don_gia()
     {
         US_V_DM_VPP v_us = new US_V_DM_VPP();
@@ -244,7 +241,6 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_lbl_don_gia.Text = CIPConvert.ToStr(v_ds.Tables[0].Rows[0]["DON_GIA_CHUA_VAT"], "#,###") + " (VNĐ)";
         m_hdf_don_gia.Value = CIPConvert.ToStr(v_ds.Tables[0].Rows[0]["DON_GIA_CHUA_VAT"]);
     }
-
     private void load_cbo_VPP()
     {
         US_V_DM_VPP v_us = new US_V_DM_VPP();
@@ -295,7 +291,22 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
                 if (CIPConvert.ToDecimal(m_grv_don_hang_de.DataKeys[i].Value) == CIPConvert.ToDecimal(m_hdf_ID_GD_DON_DAT_HANG_DE.Value)) m_grv_don_hang_de.SelectedIndex = i;
         }
     }
+    private void load_ma_don_hang_title()
+    {
+        US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
+        DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
+        v_us.FillDataset(v_ds, "where id=" + CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
+        m_lbl_title_ma_don_hang.Text = "Nhập chi tiết đơn hàng " + v_ds.Tables[0].Rows[0]["MA"].ToString();
+        m_lbl_ma_don_hang_de.Text = v_ds.Tables[0].Rows[0]["MA"].ToString();
+    }
 
+    private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
+    {
+        m_mtv_1.SetActiveView(m_view_confirm);
+        m_lbl_popup_mess.Text = ip_str_mess;
+        m_pnl_confirm_tg.Visible = ip_panel_thong_bao_visible;
+        m_cmd_ok.Visible = ip_panel_thong_bao_visible;
+    }
     public void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible, bool ip_button_ok_visible)
     {
         m_mtv_1.SetActiveView(m_view_confirm);
@@ -310,15 +321,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_pnl_confirm_tg.Visible = true;
         m_cmd_ok.Visible = true;
     }
-    private void load_ma_don_hang_title()
-    {
-        US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
-        DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
-        v_us.FillDataset(v_ds, "where id=" + CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
-        m_lbl_title_ma_don_hang.Text = "Nhập chi tiết đơn hàng " + v_ds.Tables[0].Rows[0]["MA"].ToString();
-        m_lbl_ma_don_hang_de.Text = v_ds.Tables[0].Rows[0]["MA"].ToString();
-    }
-
+   
     private bool check_validate_is_ok()
     {
         string v_form_mode = get_form_mode(m_hdf_form_mode);
@@ -371,16 +374,20 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         }
         else return true;
     }
-    private bool check_vpp_da_ton_tai()
+    private bool check_vpp_da_ton_tai(decimal ip_so_luong)
     {
         string v_form_mode = get_form_mode(m_hdf_form_mode);
 
-        //Kiểm tra nhập trùng mã đơn hàng
+        //Kiểm tra loại vpp đã tồn tại
         if (v_form_mode.Equals(LOAI_FORM.THEM))
         {
             if (m_us_gd_don_dat_hang_de.check_is_having_vpp_don_hang_de(CIPConvert.ToDecimal(m_cbo_vpp.SelectedValue)))
             {
-                thong_bao("Loại VPP này đã tồn tại!", true);
+                //thong_bao("Loại VPP này đã tồn tại!", true);
+                m_us_gd_don_dat_hang_de.update_so_luong_VPP_da_ton_tai(m_ds_gd_don_dat_hang_de, CIPConvert.ToDecimal(m_cbo_vpp.SelectedValue),ip_so_luong);
+                update_tong_tien_don_hang(m_us_gd_don_dat_hang_de.dcID_DON_DAT_HANG);
+                Huy_thao_tac_don_hang_de();
+                thong_bao("Đã thêm số lượng mới vào loại VPP này!", true);
                 return false;
             }
         }
@@ -391,7 +398,11 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             {
                 if (v_us.check_is_having_vpp_don_hang_de(CIPConvert.ToDecimal(m_cbo_vpp.SelectedValue)))
                 {
-                    thong_bao("Loại VPP này đã tồn tại!", true);
+                    //thong_bao("Loại VPP này đã tồn tại!", true);
+                    m_us_gd_don_dat_hang_de.update_so_luong_VPP_da_ton_tai(m_ds_gd_don_dat_hang_de, CIPConvert.ToDecimal(m_cbo_vpp.SelectedValue), ip_so_luong);
+                    update_tong_tien_don_hang(m_us_gd_don_dat_hang_de.dcID_DON_DAT_HANG);
+                    Huy_thao_tac_don_hang_de();
+                    thong_bao("Đã thêm số lượng mới vào loại VPP này!", true);
                     return false;
                 }
             }
