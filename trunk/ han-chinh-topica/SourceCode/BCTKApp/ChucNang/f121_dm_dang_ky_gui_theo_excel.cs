@@ -131,6 +131,7 @@ namespace BCTKApp
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(m_fg_load_file, v_htb, m_ds.CM_DM_DANG_KY_GUI_DANH_SACH_TUNG_PHONG.NewCM_DM_DANG_KY_GUI_DANH_SACH_TUNG_PHONGRow());
             return v_obj_trans;
         }
+        
         private void load_danh_sach_excel()
         {
             if (m_dgl_open_file.ShowDialog() == DialogResult.OK)

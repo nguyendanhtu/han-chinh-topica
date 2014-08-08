@@ -365,6 +365,19 @@ public class US_DM_BILL : US_Object
         v_store_proc.addNVarcharInputParam("@NGUOI_GUI",ip_v_nguoi_gui);
         v_store_proc.fillDataSetByCommand(this, ip_v_ds_dm_bill);
     }
+
+    public void load_dm_by_so_bill(DS_DM_BILL op_ds, string ip_str_so_bill) {
+        CStoredProc v_proc = new CStoredProc("pr_load_dm_by_ma_so_bill");
+        v_proc.addNVarcharInputParam("@ma_so", ip_str_so_bill);
+        v_proc.fillDataSetByCommand(this, op_ds);
+    }
+
+    public void update_diem_by_so_bill(string ip_str_so_bill, decimal ip_dc_so_tien) {
+        CStoredProc v_proc = new CStoredProc("pr_Update_so_tien_dm_dang_ky_gui");
+        v_proc.addNVarcharInputParam("@sobill", ip_str_so_bill);
+        v_proc.addDecimalInputParam("@sotien", ip_dc_so_tien);
+        v_proc.ExecuteCommand(this);
+    }
 }
 	
 }
