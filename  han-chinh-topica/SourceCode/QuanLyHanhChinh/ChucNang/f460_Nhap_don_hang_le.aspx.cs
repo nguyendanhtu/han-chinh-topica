@@ -385,7 +385,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             {
                 //thong_bao("Loại VPP này đã tồn tại!", true);
                 m_us_gd_don_dat_hang_de.update_so_luong_VPP_da_ton_tai(m_ds_gd_don_dat_hang_de, CIPConvert.ToDecimal(m_cbo_vpp.SelectedValue),ip_so_luong);
-                update_tong_tien_don_hang(m_us_gd_don_dat_hang_de.dcID_DON_DAT_HANG);
+                update_tong_tien_don_hang(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
                 Huy_thao_tac_don_hang_de();
                 thong_bao("Đã thêm số lượng mới vào loại VPP này!", true);
                 return false;
@@ -400,7 +400,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
                 {
                     //thong_bao("Loại VPP này đã tồn tại!", true);
                     m_us_gd_don_dat_hang_de.update_so_luong_VPP_da_ton_tai(m_ds_gd_don_dat_hang_de, CIPConvert.ToDecimal(m_cbo_vpp.SelectedValue), ip_so_luong);
-                    update_tong_tien_don_hang(m_us_gd_don_dat_hang_de.dcID_DON_DAT_HANG);
+                    update_tong_tien_don_hang(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
                     Huy_thao_tac_don_hang_de();
                     thong_bao("Đã thêm số lượng mới vào loại VPP này!", true);
                     return false;
