@@ -104,13 +104,13 @@ namespace BCTKApp
             this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_dt_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.m_lbl_tong_so_vuot_dm = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.m_dt_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -297,6 +297,17 @@ namespace BCTKApp
             this.panel1.Size = new System.Drawing.Size(990, 123);
             this.panel1.TabIndex = 2830;
             // 
+            // m_dt_den_ngay
+            // 
+            this.m_dt_den_ngay.Checked = false;
+            this.m_dt_den_ngay.CustomFormat = "MM/yyyy";
+            this.m_dt_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dt_den_ngay.Location = new System.Drawing.Point(611, 25);
+            this.m_dt_den_ngay.Name = "m_dt_den_ngay";
+            this.m_dt_den_ngay.Size = new System.Drawing.Size(120, 20);
+            this.m_dt_den_ngay.TabIndex = 45;
+            this.m_dt_den_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -344,17 +355,6 @@ namespace BCTKApp
             // toolTip2
             // 
             this.toolTip2.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            // 
-            // m_dt_den_ngay
-            // 
-            this.m_dt_den_ngay.Checked = false;
-            this.m_dt_den_ngay.CustomFormat = "MM/yyyy";
-            this.m_dt_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dt_den_ngay.Location = new System.Drawing.Point(611, 25);
-            this.m_dt_den_ngay.Name = "m_dt_den_ngay";
-            this.m_dt_den_ngay.Size = new System.Drawing.Size(120, 20);
-            this.m_dt_den_ngay.TabIndex = 45;
-            this.m_dt_den_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
             // 
             // f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
             // 

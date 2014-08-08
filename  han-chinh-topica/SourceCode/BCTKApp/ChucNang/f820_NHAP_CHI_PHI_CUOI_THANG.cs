@@ -107,7 +107,7 @@ namespace BCTKApp.ChucNang {
             wb = Workbook.getWorkbook(m_obj_dialog.FileName);
             Sheet sheet = wb.getSheet(0);
             //->Cái này để thêm hàng vào grid, cho tới khi row ở cột barcode rỗng
-            int v_count_row = 2;
+            int v_count_row = 1;
             while(sheet.getCell(3, v_count_row).Contents != "") {
                 v_count_row = v_count_row + 1;
                 //m_fg.Rows.Add();

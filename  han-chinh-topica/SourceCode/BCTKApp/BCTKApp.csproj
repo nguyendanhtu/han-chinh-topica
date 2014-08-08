@@ -363,6 +363,12 @@
     <Compile Include="ChucNang\f121_dm_dang_ky_gui_theo_excel.Designer.cs">
       <DependentUpon>f121_dm_dang_ky_gui_theo_excel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChucNang\f130_chuc_nang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\f130_chuc_nang.Designer.cs">
+      <DependentUpon>f130_chuc_nang.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChucNang\f401_DON_GIA_DINH_MUC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -631,6 +637,9 @@
     <EmbeddedResource Include="ChucNang\f121_dm_dang_ky_gui_theo_excel.resx">
       <DependentUpon>f121_dm_dang_ky_gui_theo_excel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\f130_chuc_nang.resx">
+      <DependentUpon>f130_chuc_nang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f401_DON_GIA_DINH_MUC.resx">
       <DependentUpon>f401_DON_GIA_DINH_MUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -813,42 +822,42 @@
   <ItemGroup>
     <PublishFile Include="DevComponents.DotNetBar2">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="mscorcfg">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="office">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="stdole">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
