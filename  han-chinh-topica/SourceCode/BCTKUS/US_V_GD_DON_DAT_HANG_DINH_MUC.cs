@@ -313,5 +313,13 @@ public class US_V_GD_DON_DAT_HANG_DINH_MUC : US_Object
         pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
     }
     #endregion
-	}
+
+    public void FillDatasetSearch(DS_V_GD_DON_DAT_HANG_DINH_MUC ip_ds, decimal ip_dc_id_trung_tam,decimal ip_id_trang_thai)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_V_GD_DON_DAT_HANG_DINH_MUC_Search");
+        v_store_proc.addDecimalInputParam("@PHONG_BAN",ip_dc_id_trung_tam );
+        v_store_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_id_trang_thai);
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
+}
 }
