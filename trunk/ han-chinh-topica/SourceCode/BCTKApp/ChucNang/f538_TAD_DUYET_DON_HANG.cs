@@ -274,7 +274,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_grv_don_hang);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f538_TAD_DUYET_DON_HANG";
-            this.Text = "f538_TAD_DUYET_DON_HANG";
+            this.Text = "F538 - Duyệt đơn đặt hàng";
             this.Load += new System.EventHandler(this.f538_TAD_DUYET_DON_HANG_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang)).EndInit();
