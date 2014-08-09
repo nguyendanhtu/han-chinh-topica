@@ -4,6 +4,23 @@ using System.Text;
 
 namespace BCTKUS
 {
+    public class CONST_ID_TRANG_THAI_DON_HANG
+    { 
+        public const decimal NHAP = 209;
+        public const decimal DA_DUYET = 210;
+        public const decimal XIN_TAD_DUYET = 211;
+        public const decimal XIN_CC_DUYET = 212;
+        public const decimal TAD_KHONG_DUYET = 213;
+        public const decimal CC_KHONG_DUYET = 214;
+        public const decimal XIN_TD_DUYET = 215 ;
+        public const decimal TD_KHONG_DUYET = 216;
+    }
+    public class CONST_ID_TRANG_THAI_DON_HANG_DE
+    {
+        public const decimal TAD_NHAN_HANG = 217;
+        public const decimal TT_NHAN_HANG = 218;
+        public const decimal TT_DANG_KI_DON_HANG = 221;
+    }
     public class CONST_ID_LOAI_CO_SO_DINH_MUC {
         public const decimal ID_NHAN_VIEN = 201;
         public const decimal ID_L8 = 204;
