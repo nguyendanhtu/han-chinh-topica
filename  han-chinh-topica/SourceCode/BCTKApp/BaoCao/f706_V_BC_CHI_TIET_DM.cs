@@ -297,7 +297,8 @@ namespace BCTKApp
         public void Display_for_chi_tiet(
             decimal ip_v_id_phong_ban
             , DateTime ip_v_dt_tu_ngay
-            , DateTime ip_v_dt_den_ngay)
+            , DateTime ip_v_dt_den_ngay
+            ,decimal ip_v_id_loai_dm)
         {
             m_obj_trans = get_trans_object(m_fg);
             format_controls();
@@ -313,7 +314,7 @@ namespace BCTKApp
             m_dt_den_ngay = ip_v_dt_den_ngay;
             m_dt_tu_ngay = ip_v_dt_tu_ngay;
             m_id_phong_ban = ip_v_id_phong_ban;
-
+            m_id_loai_dm = ip_v_id_loai_dm;
            
         
             this.ShowDialog();
@@ -344,6 +345,7 @@ namespace BCTKApp
         DateTime m_dt_tu_ngay, m_dt_den_ngay;
         DS_RPT_BC_CHI_TIET_DM m_ds = new DS_RPT_BC_CHI_TIET_DM();
         US_RPT_BC_CHI_TIET_DM m_us = new US_RPT_BC_CHI_TIET_DM();
+        decimal m_id_loai_dm;
 
         #endregion
 
@@ -380,7 +382,8 @@ namespace BCTKApp
         private void set_initial_form_load()
         {
             m_obj_trans = get_trans_object(m_fg);
-            load_data_2_grid();
+            if(m_id_loai_dm==174) load_data_2_grid();
+            if (m_id_loai_dm == 173) load_data_2_grid_2();
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -398,6 +401,36 @@ namespace BCTKApp
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.RPT_BC_CHI_TIET_DM.NewRow());
             return v_obj_trans;
+        }
+        private void load_data_2_grid_2()
+        {
+            m_ds = new DS_RPT_BC_CHI_TIET_DM();
+            if (m_dt_tu_ngay > m_dt_den_ngay) return;
+            m_us.FillDataset_chi_tiet_dm(m_ds, m_dt_tu_ngay, m_dt_den_ngay, 173, m_id_phong_ban);
+            m_fg.Redraw = false;
+            decimal v_dc_tong_doanh_thu = 0;
+            //m_v_us.get_tong_doanh_thu(v_dc_tong_doanh_thu);
+            for (int i = 0; i < m_ds.RPT_BC_CHI_TIET_DM.Count; i++)
+            {
+                v_dc_tong_doanh_thu += CIPConvert.ToDecimal(m_ds.Tables[0].Rows[i][m_ds.RPT_BC_CHI_TIET_DM.TONG_TIEN_DMColumn]);
+            }
+            m_lbl_tong_dm.Text = CIPConvert.ToStr(v_dc_tong_doanh_thu, "#,###.##") + "   VNĐ";
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+             , 0
+             , -1 // chỗ này là tên trường mà mình nhóm
+             , (int)e_col_Number.GIA_TRI_THONG_KE // chỗ này là tên trường mà mình Count
+             , "{0}"
+             );
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
+                , 0
+                , -1
+                , (int)e_col_Number.TONG_TIEN_DM
+                , "{0}"
+                );
+            m_fg.Redraw = true;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_fg);
+            m_fg.Redraw = true;
         }
         private void load_data_2_grid()
         {
