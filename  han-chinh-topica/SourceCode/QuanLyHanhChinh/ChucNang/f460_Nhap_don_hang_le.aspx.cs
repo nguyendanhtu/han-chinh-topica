@@ -93,7 +93,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         }
         //insert đơn đặt hàng detail:
         m_us_gd_don_dat_hang_de.dcID_VPP = CIPConvert.ToDecimal(m_cbo_vpp.SelectedValue);
-        m_us_gd_don_dat_hang_de.dcID_TRANG_THAI_HANG = 219;
+        m_us_gd_don_dat_hang_de.dcID_TRANG_THAI_HANG = CONST_ID_TRANG_THAI_DON_HANG_DE.TT_DANG_KI_DON_HANG;
         m_us_gd_don_dat_hang_de.dcID_DON_DAT_HANG = CIPConvert.ToDecimal(m_hdf_id_don_hang.Value);
         m_us_gd_don_dat_hang_de.dcSO_LUONG = CIPConvert.ToDecimal(m_txt_so_luong.Text);
         m_us_gd_don_dat_hang_de.dcDON_GIA_CHUA_VAT =CIPConvert.ToDecimal(m_hdf_don_gia.Value);
@@ -113,7 +113,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_us_gd_don_dat_hang.datNGAY_DAT_HANG = m_dat_ngay_gui.SelectedDate;
         m_us_gd_don_dat_hang.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         m_us_gd_don_dat_hang.dcLAN = CIPConvert.ToDecimal(m_txt_so_lan.Text);
-        m_us_gd_don_dat_hang.dcID_TRANG_THAI = 209;
+        m_us_gd_don_dat_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET;
         m_us_gd_don_dat_hang.strMA = m_txt_ma_don_hang.Text;
     }
 
@@ -223,7 +223,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     {
         US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
         DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
-        v_us.FillDataset(v_ds, "SELECT TOP(1) * FROM GD_DON_DAT_HANG WHERE ID_TRANG_THAI=209 ORDER BY NGAY_DAT_HANG DESC, LAN DESC");
+        v_us.FillDataset(v_ds, "SELECT TOP(1) * FROM GD_DON_DAT_HANG WHERE ID_TRANG_THAI= " + CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET + " ORDER BY NGAY_DAT_HANG DESC, LAN DESC");
         if (v_ds.Tables[0].Rows.Count != 0)
         {
             m_hdf_id_don_hang.Value = v_ds.Tables[0].Rows[0]["ID"].ToString();
@@ -267,7 +267,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         //load grid đơn hàng:
         US_GD_DON_DAT_HANG v_us_don_hang = new US_GD_DON_DAT_HANG();
         DS_GD_DON_DAT_HANG v_ds_don_hang = new DS_GD_DON_DAT_HANG();
-        v_us_don_hang.FillDataset(v_ds_don_hang,"where ID_TRANG_THAI = 209 order by ngay_dat_hang desc");
+        v_us_don_hang.FillDataset(v_ds_don_hang,"where ID_TRANG_THAI = "+ CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET +" order by ngay_dat_hang desc");
         m_grv_don_hang_nhap.DataSource = v_ds_don_hang.GD_DON_DAT_HANG;
         m_grv_don_hang_nhap.DataBind();
         string v_str_thong_tin_don_hang = " (Có " + v_ds_don_hang.GD_DON_DAT_HANG.Rows.Count + " đơn hàng)";
@@ -455,6 +455,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     {
         try
         {
+            set_form_mode(LOAI_FORM.THEM);
             save_don_hang();
             load_data_to_grid_don_hang();
         }
@@ -554,6 +555,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     {
         try
         {
+            set_form_mode(LOAI_FORM.THEM);
             save_don_hang_de();
             load_data_to_grid_don_hang_de();
         }
