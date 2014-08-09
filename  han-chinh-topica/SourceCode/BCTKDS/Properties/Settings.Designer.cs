@@ -86,5 +86,16 @@ namespace BCTKDS.Properties {
                 return ((string)(this["ADMIN_SOFTConnectionString3"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DUNGNT\\MSSQLEXPRESS;Initial Catalog=ADMIN_SOFT;User ID=sa;Password=sa" +
+            "")]
+        public string ADMIN_SOFTConnectionString4 {
+            get {
+                return ((string)(this["ADMIN_SOFTConnectionString4"]));
+            }
+        }
     }
 }
