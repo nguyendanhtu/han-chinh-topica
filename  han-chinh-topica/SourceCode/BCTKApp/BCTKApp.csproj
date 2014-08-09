@@ -288,11 +288,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="bin\Debug\Help\help.chm" />
     <Content Include="App.ico" />
-    <None Include="bin\Debug\Reports\Templates\F260_file_template_import.xls" />
-    <None Include="bin\Debug\Reports\Templates\Temp_CHUNGNHAN-HOU_DTU_TVU_CLB_SV.xls" />
-    <None Include="bin\Debug\Reports\Templates\Temp_PRTT_Temp1_E-learning-04042013_V1.1.xls" />
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Resources\Reports\Templates\BCTK_Chuyen_phat_nhanh.xlsx" />
@@ -388,6 +384,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChucNang\f535_gui_don_dat_hang_cho_NCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\f538_TAD_DUYET_DON_HANG.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChucNang\f702_v_dinh_muc_cpn_tung_phong_ban.cs">
@@ -658,6 +657,9 @@
     <EmbeddedResource Include="ChucNang\f535_gui_don_dat_hang_cho_NCC.resx">
       <DependentUpon>f535_gui_don_dat_hang_cho_NCC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\f538_TAD_DUYET_DON_HANG.resx">
+      <DependentUpon>f538_TAD_DUYET_DON_HANG.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f702_v_dinh_muc_cpn_tung_phong_ban.resx">
       <DependentUpon>f702_v_dinh_muc_cpn_tung_phong_ban.cs</DependentUpon>
     </EmbeddedResource>
@@ -799,9 +801,7 @@
   <ItemGroup>
     <Service Include="{CF845C55-C321-4742-B673-E6212D061ED9}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Debug\Reports\Output\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
