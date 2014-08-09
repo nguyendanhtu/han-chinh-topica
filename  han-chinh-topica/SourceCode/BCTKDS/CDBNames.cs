@@ -778,5 +778,19 @@ namespace BCTKDS.CDBNames
         public const string ID_TRANG_THAI_HANG = "ID_TRANG_THAI_HANG";
         public const string TRANG_THAI_HANG = "TRANG_THAI_HANG";
     }
+    public class V_GD_DON_DAT_HANG_DINH_MUC
+    {
+        public const string NGAY_DAT_HANG = "NGAY_DAT_HANG";
+        public const string MA_DON_HANG = "MA_DON_HANG";
+        public const string LAN_DAT_HANG = "LAN_DAT_HANG";
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string TEN_TRANG_THAI = "TEN_TRANG_THAI";
+        public const string GIA_TRI_CHUA_VAT = "GIA_TRI_CHUA_VAT";
+        public const string GIA_TRI_DA_VAT = "GIA_TRI_DA_VAT";
+        public const string TONG_TIEN_DINH_MUC = "TONG_TIEN_DINH_MUC";
+        public const string TY_LE_VUOT = "TY_LE_VUOT";
+    }
     #endregion
 }
