@@ -780,6 +780,7 @@ namespace BCTKDS.CDBNames
     }
     public class V_GD_DON_DAT_HANG_DINH_MUC
     {
+        public const string ID = "ID";
         public const string NGAY_DAT_HANG = "NGAY_DAT_HANG";
         public const string MA_DON_HANG = "MA_DON_HANG";
         public const string LAN_DAT_HANG = "LAN_DAT_HANG";
