@@ -100,8 +100,9 @@ namespace BCTKApp
         {
             CControlFormat.setFormStyle(this);
             CControlFormat.setC1FlexFormat(m_fg_load_file);
+            CGridUtils.AddSave_Excel_Handlers(m_fg_load_file);
             this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            m_xuat_excel.Visible = false;
+            //m_xuat_excel.Visible = false;
             m_cmd_kiem_tra.Visible = false;
             m_fg_load_file.Cols[(int)e_col_Number.ID].Visible = false;
             m_fg_load_file.AllowEditing = true;
