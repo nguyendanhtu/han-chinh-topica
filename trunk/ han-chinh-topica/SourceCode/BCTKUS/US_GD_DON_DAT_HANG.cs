@@ -229,5 +229,11 @@ public class US_GD_DON_DAT_HANG : US_Object
             return false;
         return true;
     }
+    public void load_ddh_xin_td_duyet(DS_GD_DON_DAT_HANG ip_ds, decimal ip_id_trung_tam, DateTime ip_thang) {
+        CStoredProc v_store_proc = new CStoredProc("pr_td_duyet_don_dat_hang");
+        v_store_proc.addDecimalInputParam("@ID_TRUNG_TAM ", ip_id_trung_tam);
+        v_store_proc.addDatetimeInputParam("@THANG", ip_thang);
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
 }
 }
