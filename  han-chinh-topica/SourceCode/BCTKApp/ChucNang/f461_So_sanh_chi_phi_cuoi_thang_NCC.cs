@@ -44,7 +44,6 @@ namespace BCTKApp.ChucNang
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.MakeSoTT(0, m_fg);
             progressBar1.Visible = false;
-
             set_define_event();
             this.KeyPreview = true;
         }
