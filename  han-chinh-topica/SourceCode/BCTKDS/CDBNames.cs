@@ -28,6 +28,18 @@ namespace BCTKDS.CDBNames
         public const string GHI_CHU_2 =  "GHI_CHU_2";
         public const string GHI_CHU_3 =  "GHI_CHU_3";
     }
+    public class RPT_BANG_CHI_PHI_CUOI_THANG_NCC
+    {
+        public const string ID = "ID";
+        public const string NGAY = "NGAY";
+        public const string MA_HD = "MA_HD";
+        public const string TEN_VPP = "TEN_VPP";
+        public const string DVT = "DVT";
+        public const string SO_LUONG = "SO_LUONG";
+        public const string GIA_BAN = "GIA_BAN";
+        public const string DOANH_THU = "DOANH_THU";
+    }
+
 
     public class V_DM_VPP
     {
