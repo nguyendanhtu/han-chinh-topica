@@ -283,10 +283,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCCxsd.Designer.cs">
+    <Compile Include="DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCCxsd.xsd</DependentUpon>
+      <DependentUpon>DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_RPT_BANG_DINH_MUC.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -788,16 +788,16 @@
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </None>
-    <None Include="DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCCxsd.xsc">
-      <DependentUpon>DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCCxsd.xsd</DependentUpon>
+    <None Include="DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.xsc">
+      <DependentUpon>DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.xsd</DependentUpon>
     </None>
-    <None Include="DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCCxsd.xsd">
+    <None Include="DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCCxsd.Designer.cs</LastGenOutput>
+      <LastGenOutput>DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCCxsd.xss">
-      <DependentUpon>DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCCxsd.xsd</DependentUpon>
+    <None Include="DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.xss">
+      <DependentUpon>DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.xsd</DependentUpon>
     </None>
     <None Include="DS_RPT_BANG_DINH_MUC.xsc">
       <DependentUpon>DS_RPT_BANG_DINH_MUC.xsd</DependentUpon>
