@@ -425,5 +425,12 @@ public class US_V_GD_DON_DAT_HANG_DETAIL : US_Object
         v_stored_proc.addDatetimeInputParam("@NGAY", ip_dat_thang);
         v_stored_proc.fillDataSetByCommand(this, ip_ds);
     }
+
+    public void FillDatasetSearch_hdchitiet(DS_V_GD_DON_DAT_HANG_DETAIL ip_ds, decimal ip_dc_id_hoa_don)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_DON_DAT_HANG_DETAIL_Search_hd_detail");
+        v_stored_proc.addDecimalInputParam("@ID_DON_HANG", ip_dc_id_hoa_don);
+        v_stored_proc.fillDataSetByCommand(this, ip_ds);
+    }
 }
 }
