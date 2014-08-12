@@ -39,6 +39,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     private void set_inital_form_mode()
     {
         load_ma_ten_trung_tam();
+        set_so_phieu();
         load_cbo_VPP();
         load_don_vi_tinh_don_gia();
         m_cmd_cap_nhat_don_hang.Visible = false;
@@ -46,6 +47,10 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         load_data_to_grid_don_hang();
         load_ma_don_hang_nhap_gan_nhat();
         thong_bao("", false);
+    }
+    private void set_so_phieu()
+    {
+        m_lbl_hien_thi_so_phieu.Text = CIPConvert.ToStr(m_hdf_ma_trung_tam.Value)+"-"+DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day +DateTime.Now.Hour +DateTime.Now.Minute+ DateTime.Now.Second;
     }
     private string get_form_mode(HiddenField ip_hdf_form_mode)
     {
@@ -114,13 +119,13 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_us_gd_don_dat_hang.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         m_us_gd_don_dat_hang.dcLAN = CIPConvert.ToDecimal(m_txt_so_lan.Text);
         m_us_gd_don_dat_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET;
-        m_us_gd_don_dat_hang.strMA = m_txt_ma_don_hang.Text;
+        m_us_gd_don_dat_hang.strMA = m_lbl_hien_thi_so_phieu.Text;
     }
 
     private void us_object_to_form_don_hang()
     {
         US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
-        m_txt_ma_don_hang.Text = v_us.strMA.ToString();
+        m_lbl_hien_thi_so_phieu.Text = v_us.strMA.ToString();
         m_txt_so_lan.Text = v_us.dcLAN.ToString();
         m_dat_ngay_gui.SelectedValue = v_us.datNGAY_DAT_HANG;
     }
@@ -204,7 +209,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     }
     private void Huy_thao_tac_don_hang()
     {
-        m_txt_ma_don_hang.Text = "";
+        m_lbl_hien_thi_so_phieu.Text = "";
         m_txt_so_lan.Text = "";
         m_dat_ngay_gui.SelectedValue = DateTime.Now.Date;
         m_grv_don_hang_nhap.SelectedIndex = -1;
@@ -329,7 +334,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         //Kiểm tra nhập trùng mã đơn hàng
         if (v_form_mode.Equals(LOAI_FORM.THEM))
         {
-            if (m_us_gd_don_dat_hang.check_is_having_ma_don_hang(m_txt_ma_don_hang.Text.Trim()))
+            if (m_us_gd_don_dat_hang.check_is_having_ma_don_hang(m_lbl_hien_thi_so_phieu.Text.Trim()))
             {
                 thong_bao("Mã đơn hàng này đã tồn tại! ",true);
                 return false;
@@ -338,16 +343,16 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         if (v_form_mode.Equals(LOAI_FORM.SUA))
         {
             US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
-            if (!m_txt_ma_don_hang.Text.Equals(v_us.strMA))
+            if (!m_lbl_hien_thi_so_phieu.Text.Equals(v_us.strMA))
             {
-                if (v_us.check_is_having_ma_don_hang(m_txt_ma_don_hang.Text))
+                if (v_us.check_is_having_ma_don_hang(m_lbl_hien_thi_so_phieu.Text))
                 {
                     thong_bao("Mã đơn hàng này đã tồn tại! ",true);
                     return false;
                 }
             }
         }
-        if (m_txt_ma_don_hang.Text == null || m_txt_ma_don_hang.Text == "") { thong_bao("Chưa nhập mã đơn hàng! "); m_txt_ma_don_hang.Focus(); return false; }
+        if (m_lbl_hien_thi_so_phieu.Text == null || m_lbl_hien_thi_so_phieu.Text == "") { thong_bao("Chưa nhập mã đơn hàng! "); return false; }
         //if (m_txt_nguoi_nhan.Text == null || m_txt_nguoi_nhan.Text == "") { thong_bao("Chưa nhập người nhận! "); m_txt_nguoi_nhan.Focus(); return false; }
         //if (m_txt_noi_nhan.Text == null || m_txt_noi_nhan.Text == "") { thong_bao("Chưa nhập nơi nhận! "); m_txt_noi_nhan.Focus(); return false; }
         return true;
@@ -456,6 +461,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         try
         {
             set_form_mode(LOAI_FORM.THEM);
+            set_so_phieu();
             save_don_hang();
             load_data_to_grid_don_hang();
         }
