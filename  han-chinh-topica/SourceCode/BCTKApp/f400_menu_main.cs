@@ -62,6 +62,8 @@ namespace BCTKApp
             m_cmd_nhap_theo_t.Click += m_cmd_nhap_theo_t_Click;
             m_cmd_nha_cc.Click+=new EventHandler(m_cmd_nha_cc_Click);
             m_cmd_tra_cuu_don_hang.Click+=new EventHandler(m_cmd_tra_cuu_don_hang_Click);
+            m_cmd_gui_don_dh.Click+=new EventHandler(m_cmd_gui_don_dh_Click);
+            m_cmd_duyet_don_hang.Click+=new EventHandler(m_cmd_duyet_don_hang_Click);
         }
 
         void f400_menu_main_Load(object sender, EventArgs e)
@@ -420,6 +422,32 @@ namespace BCTKApp
             {
                 f531_TRA_CUU_DON_HANG v_frm = new f531_TRA_CUU_DON_HANG();
                 v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_gui_don_dh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f535_gui_don_dat_hang_cho_NCC v_frm = new f535_gui_don_dat_hang_cho_NCC();
+                v_frm.display();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_duyet_don_hang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f538_TAD_DUYET_DON_HANG v_frm = new f538_TAD_DUYET_DON_HANG();
+                v_frm.display();
             }
             catch (Exception v_e)
             {
