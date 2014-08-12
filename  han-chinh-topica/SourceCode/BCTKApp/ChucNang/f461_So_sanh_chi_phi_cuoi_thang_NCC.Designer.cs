@@ -36,10 +36,11 @@
             this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_grid = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_lbl_loading = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.m_lbl_loading = new System.Windows.Forms.Label();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_OpenFile_dlg = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_header.SuspendLayout();
             this.m_pnl_btn.SuspendLayout();
             this.m_pnl_grid.SuspendLayout();
@@ -129,13 +130,24 @@
             this.m_pnl_grid.Size = new System.Drawing.Size(972, 200);
             this.m_pnl_grid.TabIndex = 2;
             // 
-            // panel1
+            // progressBar1
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 411);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(972, 171);
-            this.panel1.TabIndex = 3;
+            this.progressBar1.Location = new System.Drawing.Point(285, 92);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(109, 18);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 23;
+            // 
+            // m_lbl_loading
+            // 
+            this.m_lbl_loading.AutoSize = true;
+            this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
+            this.m_lbl_loading.Location = new System.Drawing.Point(409, 92);
+            this.m_lbl_loading.Name = "m_lbl_loading";
+            this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
+            this.m_lbl_loading.TabIndex = 22;
+            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
             // 
             // m_fg
             // 
@@ -149,24 +161,17 @@
             this.m_fg.TabIndex = 2;
             this.m_fg.TabStop = false;
             // 
-            // m_lbl_loading
+            // panel1
             // 
-            this.m_lbl_loading.AutoSize = true;
-            this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
-            this.m_lbl_loading.Location = new System.Drawing.Point(409, 92);
-            this.m_lbl_loading.Name = "m_lbl_loading";
-            this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
-            this.m_lbl_loading.TabIndex = 22;
-            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 411);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(972, 171);
+            this.panel1.TabIndex = 3;
             // 
-            // progressBar1
+            // m_OpenFile_dlg
             // 
-            this.progressBar1.Location = new System.Drawing.Point(285, 92);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(109, 18);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 23;
+            this.m_OpenFile_dlg.FileName = "openFileDialog1";
             // 
             // f461_So_sanh_chi_phi_cuoi_thang_NCC
             // 
@@ -201,5 +206,6 @@
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.Label m_lbl_loading;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.OpenFileDialog m_OpenFile_dlg;
     }
 }
