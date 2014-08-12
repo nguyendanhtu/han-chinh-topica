@@ -3,10 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 using IP.Core.IPCommon;
+using IP.Core.IPExcelReport;
+using BCTKUS;
+
+using BCTKUS;
+using BCTKDS.CDBNames;
+using System.Collections;
+using System.Globalization;
+using IP.Core.IPException;
+using IP.Core.IPSystemAdmin;
+using BCTKDS;
+
 using IP.Core.IPExcelReport;
 using NExcel;
 
@@ -17,18 +28,37 @@ namespace BCTKApp.ChucNang
         public f461_So_sanh_chi_phi_cuoi_thang_NCC()
         {
             InitializeComponent();
+            set_initial_form_load();
+            set_define_event();
         }
 
         #region Public interface
         #endregion
 
         #region Data structure
+        private enum e_col_Number
+        {
+            NGAY = 1,
+            MA_HD = 2,
+            TEN_VPP = 3,
+            DVT = 4,
+            SO_LUONG = 5,
+            GIA_BAN = 6,
+            DOANH_THU = 7
+        }		
         #endregion
 
         #region Members
+        US_RPT_BANG_CHI_PHI_CUOI_THANG_NCC m_us = new US_RPT_BANG_CHI_PHI_CUOI_THANG_NCC();
+        DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC m_ds = new DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC();
+        ITransferDataRow m_obj_trans_xls;
         #endregion
 
         #region Private method
+        private void set_initial_form_load()
+        {
+            m_obj_trans_xls = get_2_us_obj_xls();
+        }
         private void format_controls()
         {
             CControlFormat.setFormStyle(this);
@@ -47,48 +77,46 @@ namespace BCTKApp.ChucNang
             set_define_event();
             this.KeyPreview = true;
         }
+        private ITransferDataRow get_2_us_obj_xls()
+        {
+            Hashtable v_hst = new Hashtable();
+            v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.NGAY, e_col_Number.NGAY);
+            v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.MA_HD, e_col_Number.MA_HD);
+            v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.TEN_VPP, e_col_Number.TEN_VPP);
+            v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.SO_LUONG, e_col_Number.SO_LUONG);
+            v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.DVT, e_col_Number.DVT);
+            v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.GIA_BAN, e_col_Number.GIA_BAN);
+            v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.DOANH_THU, e_col_Number.DOANH_THU);
+            CC1TransferDataRow v_obj = new CC1TransferDataRow(m_fg, v_hst, m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.NewRPT_BANG_CHI_PHI_CUOI_THANG_NCCRow());
+            return v_obj;
+        }
         private void load_danh_sach_excel()
         {
-            //Chọn đường dẫn tới file excel
-            var m_obj_dialog = new System.Windows.Forms.OpenFileDialog();
-            m_obj_dialog.ShowDialog();
-
-            //Mở sheet đầu tiên
-            Workbook wb = null;
-            wb = Workbook.getWorkbook(m_obj_dialog.FileName);
-            Sheet sheet = wb.getSheet(0);
-            //->Cái này để thêm hàng vào grid, cho tới khi row ở cột barcode rỗng
-            int v_count_row = 1;
-            while (sheet.getCell(3, v_count_row).Contents != "")
+            if (m_OpenFile_dlg.ShowDialog() == DialogResult.OK)
             {
-                v_count_row = v_count_row + 1;
-                //m_fg.Rows.Add();
-            }
-            m_fg.Rows.Count = v_count_row + 1;
+                string v_str_path_and_file_name = m_OpenFile_dlg.FileName;
+                string v_str_file_name = v_str_path_and_file_name.Substring(v_str_path_and_file_name.LastIndexOf("\\") + 1, v_str_path_and_file_name.Length - v_str_path_and_file_name.LastIndexOf("\\") - 1);
+                CExcelReport v_xls_file = new CExcelReport(v_str_path_and_file_name);
+                DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC v_ds = new DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC();
+                try
+                {
+                    m_lbl_loading.Visible = true;
+                    v_ds.EnforceConstraints = false;
+                    v_xls_file.Export2DatasetDSPhongThi(v_ds, v_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.TableName, 14);
 
-            wb.close();//Đóng connection khi sử dụng NExcel
-
-            //Load dữ liệu lên lưới
-            CExcelReport v_obj_excel_rpt = new CExcelReport(m_obj_dialog.FileName);
-            m_lbl_loading.Visible = true;
-            int v_i_start_excel_row = 2;
-            int v_i_sheet_col = 1;
-            for (int v_i_cur_col = m_fg.Cols.Fixed; v_i_cur_col < m_fg.Cols.Count; v_i_cur_col++)
-            {
-                progressBar1.Visible = true;
-                progressBar1.Minimum = 1;
-                progressBar1.Maximum = m_fg.Cols.Count;
-                progressBar1.Value = v_i_cur_col;
-                v_obj_excel_rpt.Export2Grid(m_fg,
-                    v_i_start_excel_row
-                    , v_i_sheet_col
-                    , v_i_cur_col);
-                v_i_sheet_col = v_i_sheet_col + 1;
+                    CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans_xls);
+                    //m_i_flag = 0;
+                    //m_lbl_tong_so_luong.Text = CIPConvert.ToStr(m_fg_load_file.Rows.Count - 1);
+                    m_lbl_loading.Visible = false;
+                }
+                catch (Exception v_e)
+                {
+                    if (v_e.Message.ToString() == "Cannot set Column 'STT' to be null. Please use DBNull instead.")
+                        BaseMessages.MsgBox_Error(THONG_BAO.ER_COT_STT_DE_TRONG);
+                    else CSystemLog_301.ExceptionHandle(v_e);
+                }
+            
             }
-            //m_fg.Rows[m_fg.Rows.Count - 1].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
-            m_lbl_loading.Visible = false;
-            progressBar1.Visible = false;
-            m_fg.Select(0, 0);
         }
         private void set_define_event()
         {
