@@ -253,5 +253,13 @@ public class US_V_GD_DON_DAT_HANG : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDatasetSearch(DS_V_GD_DON_DAT_HANG ip_ds, DateTime ip_dat_thang, decimal ip_dc_id_trung_tam)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_DON_DAT_HANG_Search");
+        v_stored_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_dc_id_trung_tam);
+        v_stored_proc.addDatetimeInputParam("@NGAY", ip_dat_thang);
+        v_stored_proc.fillDataSetByCommand(this, ip_ds);
+    }
+}
 }
