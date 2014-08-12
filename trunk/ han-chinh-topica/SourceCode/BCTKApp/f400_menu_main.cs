@@ -420,7 +420,7 @@ namespace BCTKApp
         {
             try
             {
-                f531_TRA_CUU_DON_HANG v_frm = new f531_TRA_CUU_DON_HANG();
+                f532_TRA_CUU_DON_HANG v_frm = new f532_TRA_CUU_DON_HANG();
                 v_frm.ShowDialog();
             }
             catch (Exception v_e)
