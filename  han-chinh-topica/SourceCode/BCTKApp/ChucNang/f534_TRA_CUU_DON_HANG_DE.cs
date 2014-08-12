@@ -350,8 +350,9 @@ namespace BCTKApp
             m_lbl_ten_trung_tam.Text = ip_us_v.strTEN_PHONG_BAN;
             m_lbl_ma_hd.Text = ip_us_v.strMA_HD;
             m_lbl_tong_tien.Text = CIPConvert.ToStr(ip_us_v.dcGIA_TRI_DA_VAT, "#,##0") + "   (VNĐ)";
-            m_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
-            m_us.FillDatasetSearch_hdchitiet(m_ds,v_dc_id_hoa_don);
+            US_V_GD_DON_DAT_HANG_DETAIL v_us = new US_V_GD_DON_DAT_HANG_DETAIL();
+            DS_V_GD_DON_DAT_HANG_DETAIL v_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
+            v_us.FillDatasetSearch_hdchitiet(v_ds,v_dc_id_hoa_don);
             m_grv_don_hang_de.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_don_hang_de, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_don_hang_de);
