@@ -338,12 +338,15 @@ namespace BCTKApp
 			CGridUtils.AddSave_Excel_Handlers(m_grv_don_hang);
             m_grv_don_hang.Tree.Column = (int)e_col_Number.NGAY_DAT_HANG;
             m_grv_don_hang.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
+            m_grv_don_hang.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
             CGridUtils.AddSearch_Handlers(m_grv_don_hang);
+            m_dtp_thang.Value = DateTime.Now.Date;
             load_data_2_cbo_trung_tam();
 			set_define_events();
 			this.KeyPreview = true;		
 		}
-		private void set_initial_form_load(){						
+		private void set_initial_form_load(){
+            m_dtp_thang.Value = DateTime.Now.Date;			
 			m_obj_trans = get_trans_object(m_grv_don_hang);
 			load_data_2_grid();		
 		}	
@@ -454,6 +457,8 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_xuat_excel.Click += new EventHandler(m_cmd_view_Click);
+            m_dtp_thang.ValueChanged+=new EventHandler(m_dtp_thang_ValueChanged);
+            m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
 		}
 		#endregion
 
@@ -516,6 +521,28 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+        private void m_dtp_thang_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cbo_trung_tam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 	}
 }
