@@ -44,9 +44,9 @@
         </tr>
         <tr>
             <td colspan="" align="right">
-                <asp:Label ID="m_lbl_ma_don_hang" runat="server" CssClass="cssManField" Text="Mã đơn hàng:" ForeColor="Blue"></asp:Label>
+                <asp:Label ID="m_lbl_so_phieu" runat="server" CssClass="cssManField" Text="Số phiếu:" ForeColor="Blue"></asp:Label>
             </td>
-            <td align="left">&nbsp;<asp:TextBox ID="m_txt_ma_don_hang" runat="server" CssClass="cssManField" Font-Bold="true"></asp:TextBox>
+            <td align="left">&nbsp; <asp:Label ID="m_lbl_hien_thi_so_phieu" runat="server" CssClass="cssManField" text="0000" ForeColor="Blue"></asp:Label>
             </td>
             <td align="right">
                 <asp:Label ID="m_lbl_lan" runat="server" CssClass="cssManField" Text="Lần "></asp:Label>
@@ -82,7 +82,6 @@
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_them_don_hang" runat="server" Text="Thêm đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_them_don_hang_Click" />
-            </td>
             </td>
                         <td align="left">
                             <asp:Button ID="m_cmd_cap_nhat_don_hang" runat="server" Text="Cập nhật đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" />
@@ -152,7 +151,7 @@
                             ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:dd/MM/yyyy}">
                             <ItemStyle HorizontalAlign="Left" Width="7%" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="MA" ItemStyle-HorizontalAlign="left" HeaderText="Mã hóa đơn"
+                        <asp:BoundField DataField="MA" ItemStyle-HorizontalAlign="left" HeaderText="Số phiếu"
                             ItemStyle-Width="7%">
                             <ItemStyle HorizontalAlign="right" Width="5%" />
                         </asp:BoundField>
