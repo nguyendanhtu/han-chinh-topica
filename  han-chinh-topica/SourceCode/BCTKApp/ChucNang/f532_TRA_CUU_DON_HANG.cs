@@ -459,6 +459,7 @@ namespace BCTKApp
 			m_cmd_xuat_excel.Click += new EventHandler(m_cmd_view_Click);
             m_dtp_thang.ValueChanged+=new EventHandler(m_dtp_thang_ValueChanged);
             m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
+            m_grv_don_hang.DoubleClick+=new EventHandler(m_grv_don_hang_DoubleClick);
 		}
 		#endregion
 
@@ -537,6 +538,22 @@ namespace BCTKApp
             try
             {
                 load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_grv_don_hang_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_don_hang)) return;
+                if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_don_hang, m_grv_don_hang.Row)) return;
+                US_V_GD_DON_DAT_HANG v_us = new US_V_GD_DON_DAT_HANG();
+                grid2us_object(v_us, m_grv_don_hang.Row);
+                f534_TRA_CUU_DON_HANG_DE v_frm = new f534_TRA_CUU_DON_HANG_DE();
+                v_frm.display_for_chi_tiet(v_us);
             }
             catch (Exception v_e)
             {
