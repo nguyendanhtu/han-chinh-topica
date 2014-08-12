@@ -305,7 +305,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_grv_don_hang);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f535_gui_don_dat_hang_cho_NCC";
-            this.Text = "f535_gui_don_dat_hang_cho_NCC";
+            this.Text = "F535- Gửi đơn hàng cho NCC";
             this.Load += new System.EventHandler(this.f535_gui_don_dat_hang_cho_NCC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang)).EndInit();
