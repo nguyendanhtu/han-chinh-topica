@@ -36,6 +36,7 @@
             this.m_cmd_tra_cuu_don_hang = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_gui_don_dh = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_duyet_don_hang = new DevComponents.DotNetBar.ButtonItem();
+            this.m_cmd_so_sanh_chi_phi_NCC = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_bar_nha_cc = new DevComponents.DotNetBar.RibbonBar();
             this.m_cmd_nha_cc = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_pnl_CPN = new DevComponents.DotNetBar.RibbonPanel();
@@ -81,7 +82,6 @@
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.m_cmd_so_sanh_chi_phi_NCC = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_control_TAD.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.m_rib_pnl_CPN.SuspendLayout();
@@ -184,7 +184,7 @@
             this.m_cmd_so_sanh_chi_phi_NCC});
             this.m_rib_bar_tra_cuu_vpp.Location = new System.Drawing.Point(103, 0);
             this.m_rib_bar_tra_cuu_vpp.Name = "m_rib_bar_tra_cuu_vpp";
-            this.m_rib_bar_tra_cuu_vpp.Size = new System.Drawing.Size(327, 101);
+            this.m_rib_bar_tra_cuu_vpp.Size = new System.Drawing.Size(363, 101);
             this.m_rib_bar_tra_cuu_vpp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.m_rib_bar_tra_cuu_vpp.TabIndex = 1;
             this.m_rib_bar_tra_cuu_vpp.Text = "Tra cứu";
@@ -208,15 +208,30 @@
             // 
             // m_cmd_gui_don_dh
             // 
+            this.m_cmd_gui_don_dh.Image = global::BCTKApp.Properties.Resources.lorrygreen;
+            this.m_cmd_gui_don_dh.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.m_cmd_gui_don_dh.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.m_cmd_gui_don_dh.Name = "m_cmd_gui_don_dh";
             this.m_cmd_gui_don_dh.SubItemsExpandWidth = 14;
-            this.m_cmd_gui_don_dh.Text = "Gửi cho NCC";
+            this.m_cmd_gui_don_dh.Text = "Gửi đơn hàng cho NCC";
             // 
             // m_cmd_duyet_don_hang
             // 
+            this.m_cmd_duyet_don_hang.Image = global::BCTKApp.Properties.Resources._1407849431_98245;
+            this.m_cmd_duyet_don_hang.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.m_cmd_duyet_don_hang.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.m_cmd_duyet_don_hang.Name = "m_cmd_duyet_don_hang";
             this.m_cmd_duyet_don_hang.SubItemsExpandWidth = 14;
             this.m_cmd_duyet_don_hang.Text = "Duyệt đơn hàng";
+            // 
+            // m_cmd_so_sanh_chi_phi_NCC
+            // 
+            this.m_cmd_so_sanh_chi_phi_NCC.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_so_sanh_chi_phi_NCC.Image")));
+            this.m_cmd_so_sanh_chi_phi_NCC.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.m_cmd_so_sanh_chi_phi_NCC.Name = "m_cmd_so_sanh_chi_phi_NCC";
+            this.m_cmd_so_sanh_chi_phi_NCC.SubItemsExpandWidth = 14;
+            this.m_cmd_so_sanh_chi_phi_NCC.Text = "So sánh chi phí cuối tháng";
+            this.m_cmd_so_sanh_chi_phi_NCC.Click += new System.EventHandler(this.m_cmd_so_sanh_chi_phi_NCC_Click);
             // 
             // m_rib_bar_nha_cc
             // 
@@ -918,15 +933,6 @@
             // buttonItem1
             // 
             this.buttonItem1.Name = "buttonItem1";
-            // 
-            // m_cmd_so_sanh_chi_phi_NCC
-            // 
-            this.m_cmd_so_sanh_chi_phi_NCC.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_so_sanh_chi_phi_NCC.Image")));
-            this.m_cmd_so_sanh_chi_phi_NCC.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.m_cmd_so_sanh_chi_phi_NCC.Name = "m_cmd_so_sanh_chi_phi_NCC";
-            this.m_cmd_so_sanh_chi_phi_NCC.SubItemsExpandWidth = 14;
-            this.m_cmd_so_sanh_chi_phi_NCC.Text = "So sánh chi phí cuối tháng";
-            this.m_cmd_so_sanh_chi_phi_NCC.Click += new System.EventHandler(this.m_cmd_so_sanh_chi_phi_NCC_Click);
             // 
             // f400_menu_main
             // 

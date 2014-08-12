@@ -283,6 +283,8 @@
   <ItemGroup>
     <Content Include="application_certificate.ico" />
     <Content Include="post_office.ico" />
+    <None Include="Resources\lorrygreen.jpg" />
+    <None Include="Resources\1407849431_98245.jpg" />
     <Content Include="Resources\Reports\Output\Readme.txt" />
     <Content Include="Resources\Reports\Templates\Readme.txt" />
     <None Include="App.config">
