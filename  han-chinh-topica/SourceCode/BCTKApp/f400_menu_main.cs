@@ -455,5 +455,19 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_cmd_so_sanh_chi_phi_NCC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f461_So_sanh_chi_phi_cuoi_thang_NCC v_frm = new f461_So_sanh_chi_phi_cuoi_thang_NCC();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
