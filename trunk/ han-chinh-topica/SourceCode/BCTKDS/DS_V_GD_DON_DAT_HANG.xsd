@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_GD_DON_DAT_HANG" targetNamespace="http://tempuri.org/DS_V_GD_DON_DAT_HANG.xsd" xmlns:mstns="http://tempuri.org/DS_V_GD_DON_DAT_HANG.xsd" xmlns="http://tempuri.org/DS_V_GD_DON_DAT_HANG.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ADMIN_SOFTConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ADMIN_SOFTConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.ADMIN_SOFTConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_GD_DON_DAT_HANGTableAdapter" GeneratorDataComponentClassName="V_GD_DON_DAT_HANGTableAdapter" Name="V_GD_DON_DAT_HANG" UserDataComponentName="V_GD_DON_DAT_HANGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ADMIN_SOFTConnectionString1 (Settings)" DbObjectName="ADMIN_SOFT.dbo.V_GD_DON_DAT_HANG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, NGAY_DAT_HANG, LAN, ID_TRANG_THAI, TRANG_THAI, ID_PHONG_BAN, TEN_PHONG_BAN, MA_HD, GIA_TRI_CHUA_VAT, GIA_TRI_DA_VAT FROM dbo.V_GD_DON_DAT_HANG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="NGAY_DAT_HANG" DataSetColumn="NGAY_DAT_HANG" />
+              <Mapping SourceColumn="LAN" DataSetColumn="LAN" />
+              <Mapping SourceColumn="ID_TRANG_THAI" DataSetColumn="ID_TRANG_THAI" />
+              <Mapping SourceColumn="TRANG_THAI" DataSetColumn="TRANG_THAI" />
+              <Mapping SourceColumn="ID_PHONG_BAN" DataSetColumn="ID_PHONG_BAN" />
+              <Mapping SourceColumn="TEN_PHONG_BAN" DataSetColumn="TEN_PHONG_BAN" />
+              <Mapping SourceColumn="MA_HD" DataSetColumn="MA_HD" />
+              <Mapping SourceColumn="GIA_TRI_CHUA_VAT" DataSetColumn="GIA_TRI_CHUA_VAT" />
+              <Mapping SourceColumn="GIA_TRI_DA_VAT" DataSetColumn="GIA_TRI_DA_VAT" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_GD_DON_DAT_HANG" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_GD_DON_DAT_HANG" msprop:Generator_UserDSName="DS_V_GD_DON_DAT_HANG">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_GD_DON_DAT_HANG" msprop:Generator_TableClassName="V_GD_DON_DAT_HANGDataTable" msprop:Generator_TableVarName="tableV_GD_DON_DAT_HANG" msprop:Generator_TablePropName="V_GD_DON_DAT_HANG" msprop:Generator_RowDeletingName="V_GD_DON_DAT_HANGRowDeleting" msprop:Generator_UserTableName="V_GD_DON_DAT_HANG" msprop:Generator_RowChangingName="V_GD_DON_DAT_HANGRowChanging" msprop:Generator_RowEvHandlerName="V_GD_DON_DAT_HANGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_DON_DAT_HANGRowDeleted" msprop:Generator_RowEvArgName="V_GD_DON_DAT_HANGRowChangeEvent" msprop:Generator_RowChangedName="V_GD_DON_DAT_HANGRowChanged" msprop:Generator_RowClassName="V_GD_DON_DAT_HANGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="NGAY_DAT_HANG" msprop:Generator_ColumnVarNameInTable="columnNGAY_DAT_HANG" msprop:Generator_ColumnPropNameInRow="NGAY_DAT_HANG" msprop:Generator_ColumnPropNameInTable="NGAY_DAT_HANGColumn" msprop:Generator_UserColumnName="NGAY_DAT_HANG" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LAN" msprop:Generator_ColumnVarNameInTable="columnLAN" msprop:Generator_ColumnPropNameInRow="LAN" msprop:Generator_ColumnPropNameInTable="LANColumn" msprop:Generator_UserColumnName="LAN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_THAI" msprop:Generator_ColumnPropNameInRow="ID_TRANG_THAI" msprop:Generator_ColumnPropNameInTable="ID_TRANG_THAIColumn" msprop:Generator_UserColumnName="ID_TRANG_THAI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI" msprop:Generator_ColumnPropNameInRow="TRANG_THAI" msprop:Generator_ColumnPropNameInTable="TRANG_THAIColumn" msprop:Generator_UserColumnName="TRANG_THAI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_PHONG_BAN" msprop:Generator_ColumnVarNameInTable="columnID_PHONG_BAN" msprop:Generator_ColumnPropNameInRow="ID_PHONG_BAN" msprop:Generator_ColumnPropNameInTable="ID_PHONG_BANColumn" msprop:Generator_UserColumnName="ID_PHONG_BAN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TEN_PHONG_BAN" msprop:Generator_ColumnVarNameInTable="columnTEN_PHONG_BAN" msprop:Generator_ColumnPropNameInRow="TEN_PHONG_BAN" msprop:Generator_ColumnPropNameInTable="TEN_PHONG_BANColumn" msprop:Generator_UserColumnName="TEN_PHONG_BAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_HD" msprop:Generator_ColumnVarNameInTable="columnMA_HD" msprop:Generator_ColumnPropNameInRow="MA_HD" msprop:Generator_ColumnPropNameInTable="MA_HDColumn" msprop:Generator_UserColumnName="MA_HD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GIA_TRI_CHUA_VAT" msprop:Generator_ColumnVarNameInTable="columnGIA_TRI_CHUA_VAT" msprop:Generator_ColumnPropNameInRow="GIA_TRI_CHUA_VAT" msprop:Generator_ColumnPropNameInTable="GIA_TRI_CHUA_VATColumn" msprop:Generator_UserColumnName="GIA_TRI_CHUA_VAT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GIA_TRI_DA_VAT" msprop:Generator_ColumnVarNameInTable="columnGIA_TRI_DA_VAT" msprop:Generator_ColumnPropNameInRow="GIA_TRI_DA_VAT" msprop:Generator_ColumnPropNameInTable="GIA_TRI_DA_VATColumn" msprop:Generator_UserColumnName="GIA_TRI_DA_VAT" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_GD_DON_DAT_HANG" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
