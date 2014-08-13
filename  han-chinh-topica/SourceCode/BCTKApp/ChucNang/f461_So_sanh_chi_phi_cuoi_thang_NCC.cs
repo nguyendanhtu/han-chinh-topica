@@ -30,6 +30,7 @@ namespace BCTKApp.ChucNang
             InitializeComponent();
             set_initial_form_load();
             set_define_event();
+            format_controls();
         }
 
         #region Public interface
@@ -71,8 +72,15 @@ namespace BCTKApp.ChucNang
             m_fg.AutoSearch = C1.Win.C1FlexGrid.AutoSearchEnum.None;
             m_fg.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
             m_fg.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
+            CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
-            CGridUtils.MakeSoTT(0, m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            //Tree view
+            //m_fg.Tree.Column = (int)e_col_Number.NGAY;
+            //m_fg.Cols[(int)e_col_Number.NGAY].Visible = false;
+            //m_fg.Cols[(int)e_col_Number.NGAY_GUI].Visible = false;
+            //m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
+            //m_fg.AutoResize = false;
             //progressBar1.Visible = false;
             set_define_event();
             m_lbl_loading.Visible = false;
@@ -102,23 +110,23 @@ namespace BCTKApp.ChucNang
         //    v_objExcelApp = new Excel.Application();
         //    try
         //    {
-        //        System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US"); 
+        //        System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
         //        v_objExcelApp.Workbooks.Open(ip_path_and_file_name);
         //        v_objExcelApp.Workbooks[1].Worksheets.Select(1);
         //        v_objExcelWorksheet = (Excel.Worksheet)v_objExcelApp.Workbooks[1].Worksheets[1];
         //        int i_iExcelRow = 0;
-        //        int i_iExcelCol = 0; 
+        //        int i_iExcelCol = 0;
         //        bool v_bol_stop = false;
         //        while (!v_bol_stop)
         //        {
         //            System.Data.DataRow v_iDataRow;
-        //            v_iDataRow = i_DataSet.Tables[0].NewRow(); 
+        //            v_iDataRow = i_DataSet.Tables[0].NewRow();
         //            v_iDataRow[i_iExcelCol] = i_iExcelCol + 1;
         //            for (i_iExcelCol = 0; i_iExcelCol <= i_DataSet.Tables[0].Columns.Count - 2; i_iExcelCol++)
         //            {
-        //                if (!object.ReferenceEquals(v_objExcelWorksheet.Cells[i_iExcelRow + i_iSheetStartRow,3], null))
+        //                if (!object.ReferenceEquals(v_objExcelWorksheet.Cells[i_iExcelRow + i_iSheetStartRow, 3], null))
         //                {
-        //                    if (!(v_objExcelWorksheet.Cells[i_iExcelRow + i_iSheetStartRow,i_iExcelCol + 1] == null))
+        //                    if (!(v_objExcelWorksheet.Cells[i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 1] == null))
         //                    {
         //                        v_iDataRow[i_iExcelCol + 1] = v_objExcelWorksheet.Cells[i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 1];
         //                    }
@@ -156,16 +164,63 @@ namespace BCTKApp.ChucNang
                 string v_str_path_and_file_name = m_OpenFile_dlg.FileName;
                 string v_str_file_name = v_str_path_and_file_name.Substring(v_str_path_and_file_name.LastIndexOf("\\") + 1, v_str_path_and_file_name.Length - v_str_path_and_file_name.LastIndexOf("\\") - 1);
                 CExcelReport v_xls_file = new CExcelReport(v_str_path_and_file_name);
-                DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC v_ds = new DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC();
                 try
                 {
                     m_lbl_loading.Visible = true;
-                    v_ds.EnforceConstraints = false;
+                    m_ds.EnforceConstraints = false;
                     //Export2Dataset_BangChiPhiCuoiThangNCC(v_str_path_and_file_name, v_ds, 14);
-                    v_xls_file.Export2DatasetDSPhongThi(v_ds, v_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.TableName, 14);
+                    v_xls_file.Export2DatasetDSPhongThi(m_ds, m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.TableName, 14);
 
-                    CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans_xls);
-                    //m_i_flag = 0;
+                    //set MA_HD_NCC cho từng bản ghi
+                    //int v_i_row_fg = 0;
+                    //string v_str_ma_don_hang_ncc = "";
+
+                    //for (v_i_row_fg = 0; v_i_row_fg < m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count; v_i_row_fg++)
+                    //{
+                    //    if (m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2].ToString() != "")
+                    //    {
+                    //        v_str_ma_don_hang_ncc = m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2].ToString();
+                    //    }
+                    //    else
+                    //    {
+                    //        m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2] = v_str_ma_don_hang_ncc;
+                    //    }
+                    //}
+
+                    //set NGAY cho từng hóa đơn
+                    //v_i_row_fg = 0;
+                    //DateTime v_dat_ngay = DateTime.Parse(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][1].ToString());
+                    //for (v_i_row_fg = 0; v_i_row_fg < m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count; v_i_row_fg++)
+                    //{
+                    //    if (m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][1].ToString() != "")
+                    //    {
+                    //        v_dat_ngay = DateTime.Parse(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][1].ToString());
+                    //    }
+                    //    else
+                    //    {
+                    //        m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][1] = v_dat_ngay;
+                    //    }
+                    //}
+
+                    // Đưa dữ liệu lên lưới:
+                    CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans_xls);
+                    
+                    //CGridUtils.MakeSoTT(0, m_fg);
+                    //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+                    //    , 0
+                    //    , (int)e_col_Number.NGAY // chỗ này là tên trường mà mình nhóm
+                    //    , (int)e_col_Number.TEN_VPP // chỗ này là tên trường mà mình Count
+                    //     , "{0}"
+                    //     );
+                    //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Sum
+                    //    , 0
+                    //    , (int)e_col_Number.NGAY
+                    //    , (int)e_col_Number.DOANH_THU
+                    //    , "{0}"
+                    //    );
+                    //m_fg.Redraw = true;
+                    //m_fg.Tree.Show(1);
+        
                     //m_lbl_tong_so_luong.Text = CIPConvert.ToStr(m_fg_load_file.Rows.Count - 1);
                     m_lbl_loading.Visible = false;
                 }
@@ -178,11 +233,32 @@ namespace BCTKApp.ChucNang
             
             }
         }
+        private void so_sanh_chi_phi_voi_don_hang()
+        {
+            US_GD_DON_DAT_HANG v_us_don_dat_hang = new BCTKUS.US_GD_DON_DAT_HANG();
+            DS_GD_DON_DAT_HANG v_ds_don_dat_hang = new DS_GD_DON_DAT_HANG();
+            int v_i_row_fg = 0;
+            string v_str_ma_don_hang_ncc = "";
+
+            for (v_i_row_fg = 0; v_i_row_fg < m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count; v_i_row_fg++)
+            {
+                if (m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2].ToString() != "")
+                {
+                    v_str_ma_don_hang_ncc = m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2].ToString();
+                }
+                else
+                {
+                    m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2] = v_str_ma_don_hang_ncc;
+                }
+            }
+           
+       
+        }
         private void set_define_event()
         {
             //m_cmd_thoat.Click += new EventHandler(m_cmd_thoat_Click);
             m_cmd_nhap_excel.Click += new EventHandler(m_cmd_nhap_excel_Click);
-            //m_cmd_so_sanh.Click += new EventHandler(m_cmd_so_sanh_Click);
+            m_cmd_so_sanh_chi_phi.Click += new EventHandler(m_cmd_so_sanh_chi_phi_Click);
             //m_cmd_kiem_tra_dl.Click += new EventHandler(m_cmd_kiem_tra_dl_Click);
             //m_lbox_ds_loi_bill.Click += new EventHandler(m_lbox_ds_loi_Click);
             //m_cmd_del.Click += new EventHandler(m_cmd_del_Click);
@@ -195,34 +271,22 @@ namespace BCTKApp.ChucNang
         {
             try
             {
-                //if (m_status == (int)status.begin)
-                //{
                 load_danh_sach_excel();
-                //    m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
-                //    m_status = (int)status.ok_import;
-                //    hien_thi_tong_tien();
-                //    make_stt(m_fg);
-                //}
-                //else
-                //{
-                //    if (BaseMessages.MsgBox_Confirm("Bạn có muốn nhập lại từ file Excel?"))
-                //    {
-                //        remove_row_after_nhap_lai();
-                //        m_lbox_ds_loi_bill.DataSource = null;
-                //        load_danh_sach_excel();
-                //        m_lbl_tong_so_bill.Text = CIPConvert.ToStr(count_record_in_grid(m_fg));
-                //        m_status = (int)status.ok_import;
-                //        hien_thi_tong_tien();
-                //        make_stt(m_fg);
-                //    }
-                //}
             }
             catch (Exception v_e)
             {
-                //m_status = (int)status.fail_import;
-                //BaseMessages.MsgBox_Error("Bạn không chọn file Excel /hoặc file Excel không đúng mẫu/ hoặc file Excel đang được mở!");
-                //m_lbox_ds_loi_bill.DataSource = null;
-                //CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_so_sanh_chi_phi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                so_sanh_chi_phi_voi_don_hang();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         #endregion
