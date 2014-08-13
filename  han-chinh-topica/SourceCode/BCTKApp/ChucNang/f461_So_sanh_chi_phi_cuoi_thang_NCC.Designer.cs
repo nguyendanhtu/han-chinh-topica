@@ -52,7 +52,7 @@
             this.m_pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_header.Location = new System.Drawing.Point(0, 0);
             this.m_pnl_header.Name = "m_pnl_header";
-            this.m_pnl_header.Size = new System.Drawing.Size(972, 42);
+            this.m_pnl_header.Size = new System.Drawing.Size(978, 42);
             this.m_pnl_header.TabIndex = 0;
             // 
             // m_lbl_header
@@ -73,7 +73,7 @@
             this.m_pnl_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_btn.Location = new System.Drawing.Point(0, 42);
             this.m_pnl_btn.Name = "m_pnl_btn";
-            this.m_pnl_btn.Size = new System.Drawing.Size(972, 88);
+            this.m_pnl_btn.Size = new System.Drawing.Size(978, 88);
             this.m_pnl_btn.TabIndex = 1;
             // 
             // m_lbl_loading
@@ -136,7 +136,7 @@
             this.m_pnl_grid.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_grid.Location = new System.Drawing.Point(0, 130);
             this.m_pnl_grid.Name = "m_pnl_grid";
-            this.m_pnl_grid.Size = new System.Drawing.Size(972, 397);
+            this.m_pnl_grid.Size = new System.Drawing.Size(978, 397);
             this.m_pnl_grid.TabIndex = 2;
             // 
             // m_fg
@@ -146,7 +146,7 @@
             this.m_fg.Location = new System.Drawing.Point(0, 6);
             this.m_fg.Name = "m_fg";
             this.m_fg.Rows.Count = 2;
-            this.m_fg.Size = new System.Drawing.Size(972, 391);
+            this.m_fg.Size = new System.Drawing.Size(978, 391);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 2;
             this.m_fg.TabStop = false;
@@ -156,7 +156,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 533);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(972, 49);
+            this.panel1.Size = new System.Drawing.Size(978, 49);
             this.panel1.TabIndex = 3;
             // 
             // m_OpenFile_dlg
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 582);
+            this.ClientSize = new System.Drawing.Size(978, 582);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_grid);
             this.Controls.Add(this.m_pnl_btn);
