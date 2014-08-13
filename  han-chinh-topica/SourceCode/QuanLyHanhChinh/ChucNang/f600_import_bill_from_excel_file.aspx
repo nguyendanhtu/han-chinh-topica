@@ -5,6 +5,22 @@
 <%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <%@ Import Namespace="IP.Core.IPCommon" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/jquery.ui.datepicker-vi.js")%>'></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$(".txtdatetime").datepicker();
+            $(".txtdatetime").datepicker({
+                //buttonImageOnly: true,
+                changeMonth: true,
+                changeYear: true,
+                required: true,
+                yearRange: '1950:2050',
+                //onClose: function () {
+                //    var a = $(this).valid();
+                //},
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -14,6 +30,9 @@
                     Text="Import bill từ file excel"></asp:Label>
                 &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
                 <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
+                <asp:HiddenField ID="m_hdf_so_ban_ghi" runat="server" />
+                <asp:HiddenField ID="m_hdf_so_trang" runat="server" />
+                <asp:HiddenField ID="m_hdf_so_ban_ghi_da_them" runat="server" />
             </td>
         </tr>
         <tr>
@@ -79,7 +98,7 @@
                         <asp:GridView ID="m_grv_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                             Width="99%" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Đã import thành công!" EmptyDataRowStyle-BorderColor="#810913"
-                            CellPadding="2" PageSize="50"
+                            CellPadding="2" PageSize="20"
                             OnRowDeleting="m_grv_dm_bill_RowDeleting"
                             OnPageIndexChanging="m_grv_dm_bill_PageIndexChanging"
                             AllowSorting="true">
@@ -132,7 +151,7 @@
                                     <ItemTemplate>
                                         <asp:TextBox ID="m_txt_so_bill_grid" CssClass="cssTextBoxGrid" Style="text-align: right" AutoPostBack="true" Height="50%" runat="server" Text='<%#Eval("SO_BILL") %>'></asp:TextBox>
                                         <br />
-                                        <asp:Label ID="m_lbl_so_bill_message" AutoPostBack="true" runat="Server"></asp:Label>
+                                        <asp:Label ID="m_lbl_so_bill_message"  runat="Server"></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField ItemStyle-Width="10%" HeaderText="Người gửi" ItemStyle-VerticalAlign="Top">
@@ -144,9 +163,9 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField ItemStyle-Width="10%" HeaderText="Ngày gửi" ItemStyle-VerticalAlign="Top">
                                     <ItemTemplate>
-                                        <ew:CalendarPopup ID="m_dat_ngay_gui" runat="server" TextBoxLabelStyle-BorderColor="#810913"
+                                       <%-- <ew:CalendarPopup ID="m_dat_ngay_gui" runat="server" TextBoxLabelStyle-BorderColor="#810913"
                                             TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
-                                            DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
+                                            DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" SelectedDate='<%# Eval("NGAY_GUI") %>'
                                             ShowGoToToday="true" Width="70%">
                                             <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
                                                 ForeColor="Black" />
@@ -166,15 +185,15 @@
                                                 ForeColor="Black" />
                                             <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
                                                 Font-Size="XX-Small" ForeColor="Black" />
-                                        </ew:CalendarPopup>
-                                        <%--<asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid" ID="m_txt_ngay_gui_grid" Height="50%" AutoPostBack="false" runat="server" Text='<%#Eval("NGAY_GUI") %>'></asp:TextBox>--%>
+                                        </ew:CalendarPopup>--%>
+                                        <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid txtdatetime"  ID="m_txt_ngay_gui_grid" Height="50%" AutoPostBack="false" runat="server" Text='<%#Eval("NGAY_GUI") %>'></asp:TextBox>
                                         <br />
                                         <asp:Label ID="m_lbl_ngay_gui_message" runat="Server"></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField ItemStyle-Width="8%" HeaderText="Mã phòng ban" ItemStyle-HorizontalAlign="Right" ItemStyle-VerticalAlign="Top">
                                     <ItemTemplate>
-                                        <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid" ID="m_txt_ma_phong_ban_grid" Height="50%" AutoPostBack="false" runat="server" Text='<%#Eval("MA_PHONG_BAN") %>'></asp:TextBox>
+                                        <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid  d" ID="m_txt_ma_phong_ban_grid" Height="50%" AutoPostBack="false" runat="server" Text='<%#Eval("MA_PHONG_BAN") %>'></asp:TextBox>
                                         <br />
                                         <asp:Label ID="m_lbl_ma_phong_ban_message" runat="Server"></asp:Label>
                                     </ItemTemplate>
