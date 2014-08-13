@@ -73,8 +73,9 @@ namespace BCTKApp.ChucNang
             m_fg.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.MakeSoTT(0, m_fg);
-            progressBar1.Visible = false;
+            //progressBar1.Visible = false;
             set_define_event();
+            m_lbl_loading.Visible = false;
             this.KeyPreview = true;
         }
         private ITransferDataRow get_2_us_obj_xls()
@@ -90,6 +91,64 @@ namespace BCTKApp.ChucNang
             CC1TransferDataRow v_obj = new CC1TransferDataRow(m_fg, v_hst, m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.NewRPT_BANG_CHI_PHI_CUOI_THANG_NCCRow());
             return v_obj;
         }
+        private void Export2Dataset_BangChiPhiCuoiThangNCC(string ip_path_and_file_name, System.Data.DataSet i_DataSet, int i_iSheetStartRow)
+        {
+            // khởi tạo đường dẫn InitPath()
+            string m_strOutputPath = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Reports\\Templates\\";
+            string m_strTemplatesPath = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Reports\\Output\\";
+            //Khởi tạo đối tượng Excel
+            Excel.Application v_objExcelApp;
+            Excel.Worksheet v_objExcelWorksheet;
+            v_objExcelApp = new Excel.Application();
+            try
+            {
+                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US"); 
+                v_objExcelApp.Workbooks.Open(ip_path_and_file_name);
+                v_objExcelApp.Workbooks[1].Worksheets.Select(1);
+                v_objExcelWorksheet = (Excel.Worksheet)v_objExcelApp.Workbooks[1].Worksheets[1];
+                int i_iExcelRow = 0;
+                int i_iExcelCol = 0; 
+                bool v_bol_stop = false;
+                while (!v_bol_stop)
+                {
+                    System.Data.DataRow v_iDataRow;
+                    v_iDataRow = i_DataSet.Tables[0].NewRow(); 
+                    v_iDataRow[i_iExcelCol] = i_iExcelCol + 1;
+                    for (i_iExcelCol = 0; i_iExcelCol <= i_DataSet.Tables[0].Columns.Count - 2; i_iExcelCol++)
+                    {
+                        if (!object.ReferenceEquals(v_objExcelWorksheet.Cells[i_iExcelRow + i_iSheetStartRow,3], null))
+                        {
+                            if (!(v_objExcelWorksheet.Cells[i_iExcelRow + i_iSheetStartRow,i_iExcelCol + 1] == null))
+                            {
+                                v_iDataRow[i_iExcelCol + 1] = v_objExcelWorksheet.Cells[i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 1];
+                            }
+                        }
+                        else
+                        {
+                            v_bol_stop = true;
+                        }
+                    }
+                    if (!v_bol_stop)
+                    {
+                        i_DataSet.Tables[0].Rows.InsertAt(v_iDataRow, i_iExcelRow);
+                        i_iExcelRow += 1;
+                    }
+                }
+                v_objExcelApp.Workbooks.Close();
+                v_objExcelApp.Quit();
+                //Unmount
+                v_objExcelWorksheet = null;
+		        v_objExcelApp = null;
+            }
+            catch (Exception v_e)
+            {
+                v_objExcelApp.Workbooks.Close();
+                //Unmount
+                v_objExcelWorksheet = null;
+		        v_objExcelApp = null;
+                throw v_e;
+            }
+        }
         private void load_danh_sach_excel()
         {
             if (m_OpenFile_dlg.ShowDialog() == DialogResult.OK)
@@ -102,6 +161,7 @@ namespace BCTKApp.ChucNang
                 {
                     m_lbl_loading.Visible = true;
                     v_ds.EnforceConstraints = false;
+                    //Export2Dataset_BangChiPhiCuoiThangNCC(v_str_path_and_file_name, v_ds, 14);
                     v_xls_file.Export2DatasetDSPhongThi(v_ds, v_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.TableName, 14);
 
                     CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans_xls);

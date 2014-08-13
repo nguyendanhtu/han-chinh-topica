@@ -33,11 +33,10 @@
             this.m_pnl_header = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_pnl_btn = new System.Windows.Forms.Panel();
+            this.m_lbl_loading = new System.Windows.Forms.Label();
             this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_grid = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.m_lbl_loading = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_OpenFile_dlg = new System.Windows.Forms.OpenFileDialog();
@@ -69,12 +68,24 @@
             // 
             // m_pnl_btn
             // 
+            this.m_pnl_btn.Controls.Add(this.m_lbl_loading);
             this.m_pnl_btn.Controls.Add(this.m_cmd_nhap_excel);
             this.m_pnl_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_btn.Location = new System.Drawing.Point(0, 42);
             this.m_pnl_btn.Name = "m_pnl_btn";
-            this.m_pnl_btn.Size = new System.Drawing.Size(972, 76);
+            this.m_pnl_btn.Size = new System.Drawing.Size(972, 88);
             this.m_pnl_btn.TabIndex = 1;
+            // 
+            // m_lbl_loading
+            // 
+            this.m_lbl_loading.AutoSize = true;
+            this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
+            this.m_lbl_loading.Location = new System.Drawing.Point(400, 36);
+            this.m_lbl_loading.Name = "m_lbl_loading";
+            this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
+            this.m_lbl_loading.TabIndex = 22;
+            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
             // 
             // m_cmd_nhap_excel
             // 
@@ -85,9 +96,9 @@
             this.m_cmd_nhap_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_nhap_excel.ImageIndex = 19;
             this.m_cmd_nhap_excel.ImageList = this.imageList1;
-            this.m_cmd_nhap_excel.Location = new System.Drawing.Point(12, 18);
+            this.m_cmd_nhap_excel.Location = new System.Drawing.Point(22, 18);
             this.m_cmd_nhap_excel.Name = "m_cmd_nhap_excel";
-            this.m_cmd_nhap_excel.Size = new System.Drawing.Size(235, 34);
+            this.m_cmd_nhap_excel.Size = new System.Drawing.Size(191, 34);
             this.m_cmd_nhap_excel.TabIndex = 31;
             this.m_cmd_nhap_excel.Text = "Chọn File Excel chi phí từ NCC";
             this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
@@ -121,42 +132,21 @@
             // 
             // m_pnl_grid
             // 
-            this.m_pnl_grid.Controls.Add(this.progressBar1);
-            this.m_pnl_grid.Controls.Add(this.m_lbl_loading);
             this.m_pnl_grid.Controls.Add(this.m_fg);
             this.m_pnl_grid.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_pnl_grid.Location = new System.Drawing.Point(0, 118);
+            this.m_pnl_grid.Location = new System.Drawing.Point(0, 130);
             this.m_pnl_grid.Name = "m_pnl_grid";
-            this.m_pnl_grid.Size = new System.Drawing.Size(972, 200);
+            this.m_pnl_grid.Size = new System.Drawing.Size(972, 397);
             this.m_pnl_grid.TabIndex = 2;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(285, 92);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(109, 18);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 23;
-            // 
-            // m_lbl_loading
-            // 
-            this.m_lbl_loading.AutoSize = true;
-            this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
-            this.m_lbl_loading.Location = new System.Drawing.Point(409, 92);
-            this.m_lbl_loading.Name = "m_lbl_loading";
-            this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
-            this.m_lbl_loading.TabIndex = 22;
-            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
             // 
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 0);
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg.Location = new System.Drawing.Point(0, 6);
             this.m_fg.Name = "m_fg";
             this.m_fg.Rows.Count = 2;
-            this.m_fg.Size = new System.Drawing.Size(972, 200);
+            this.m_fg.Size = new System.Drawing.Size(972, 391);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 2;
             this.m_fg.TabStop = false;
@@ -164,9 +154,9 @@
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 411);
+            this.panel1.Location = new System.Drawing.Point(0, 533);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(972, 171);
+            this.panel1.Size = new System.Drawing.Size(972, 49);
             this.panel1.TabIndex = 3;
             // 
             // m_OpenFile_dlg
@@ -187,8 +177,8 @@
             this.m_pnl_header.ResumeLayout(false);
             this.m_pnl_header.PerformLayout();
             this.m_pnl_btn.ResumeLayout(false);
+            this.m_pnl_btn.PerformLayout();
             this.m_pnl_grid.ResumeLayout(false);
-            this.m_pnl_grid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
 
@@ -205,7 +195,6 @@
         private System.Windows.Forms.Panel panel1;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.Label m_lbl_loading;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.OpenFileDialog m_OpenFile_dlg;
     }
 }
