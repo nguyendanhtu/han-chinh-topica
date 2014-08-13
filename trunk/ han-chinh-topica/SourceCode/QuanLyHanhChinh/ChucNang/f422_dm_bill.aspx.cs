@@ -91,7 +91,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
             m_us_dm_bill.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text.Trim());
         else
             m_us_dm_bill.dcSO_TIEN = 0;
-        m_us_dm_bill.datNGAY_GUI = m_dat_ngay_gui.SelectedDate;
+        m_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(m_txt_ngay_gui.Text);
         m_us_dm_bill.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         m_us_dm_bill.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
         if (m_rdb_trong_nuoc.Checked == true)
@@ -114,7 +114,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_txt_noi_dung.Text = v_us_dm_bill.strNOI_DUNG.Trim();
         m_txt_ghi_chu.Text = v_us_dm_bill.strGHI_CHU.Trim();
         m_txt_so_tien.Text = v_us_dm_bill.dcSO_TIEN.ToString();
-        m_dat_ngay_gui.Text = v_us_dm_bill.datNGAY_GUI.ToString();
+        m_txt_ngay_gui.Text = v_us_dm_bill.datNGAY_GUI.ToShortDateString();
         if (v_us_dm_bill.strTRONG_NUOC == "x")
         {
             m_rdb_trong_nuoc.Checked = true;
@@ -134,11 +134,11 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             case LOAI_FORM.THEM:
                 m_us_dm_bill.Insert();
-                thong_bao("Đã gửi đăng kí Bill cho TAD!", true);
+                load_data_to_grid();
                 break;
             case LOAI_FORM.SUA:
                 m_us_dm_bill.Update();
-                thong_bao("Đã cập nhật và gửi đăng kí lại cho TAD!", true);
+                load_data_to_grid();
                 m_cmd_them.Visible = false;
                 m_cmd_sua.Visible = true;
                 set_form_mode(LOAI_FORM.THEM);
@@ -163,7 +163,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_txt_nguoi_gui.Text = "";
         m_txt_so_tien.Text = "";
         m_rdb_trong_nuoc.Checked = true;
-        m_dat_ngay_gui.Text = DateTime.Now.ToShortDateString();
+        m_txt_ngay_gui.Text = DateTime.Now.ToShortDateString();
         this.m_hdf_id_bill.Value = "0";
         set_form_mode(LOAI_FORM.THEM);
         m_grv_dm_bill.SelectedIndex = -1;
@@ -171,7 +171,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     private void set_inital_form_mode()
     {
         load_title();
-        //load_data_to_cbo_don_vi_cap_tren(m_rdb_cong_ty, m_rdb_cong_ty_con, m_rdb_chi_nhanh);
+        m_txt_ngay_gui.Text = DateTime.Now.ToShortDateString();
         m_cmd_sua.Visible = false;
         m_cmd_them.Visible = true;
         load_data_to_grid();
@@ -347,7 +347,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             //m_lbl_mess.Text = "";
             save_data();
-            load_data_to_grid();
+            thong_bao("Đã gửi đăng kí Bill cho TAD!", true);
         }
         catch (Exception v_e)
         {
@@ -360,9 +360,9 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             //m_lbl_mess.Text = "";
             save_data();
-            load_data_to_grid();
             m_cmd_sua.Visible = false;
             m_cmd_them.Visible = true;
+            thong_bao("Đã cập nhật và gửi đăng kí lại cho TAD!", true);
         }
         catch (Exception v_e)
         {
