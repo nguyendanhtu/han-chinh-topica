@@ -789,6 +789,7 @@ namespace BCTKDS.CDBNames
         public const string GIA_TRI_DA_VAT = "GIA_TRI_DA_VAT";
         public const string ID_TRANG_THAI_HANG = "ID_TRANG_THAI_HANG";
         public const string TRANG_THAI_HANG = "TRANG_THAI_HANG";
+        public const string MA_HD_NCC = "MA_HD_NCC";
     }
     public class V_GD_DON_DAT_HANG_DINH_MUC
     {
