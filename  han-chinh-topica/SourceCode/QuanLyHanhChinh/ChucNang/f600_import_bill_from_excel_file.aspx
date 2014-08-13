@@ -5,7 +5,6 @@
 <%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <%@ Import Namespace="IP.Core.IPCommon" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-    <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/jquery.ui.datepicker-vi.js")%>'></script>
     <script type="text/javascript">
         $(document).ready(function () {
             //$(".txtdatetime").datepicker();
@@ -66,25 +65,44 @@
             </asp:MultiView>
         </div>
     </asp:Panel>
-    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <table>
+        <td align="center">
+              <asp:Label ID="m_lbl_header" runat="server" CssClass="cssManField" Text="IMPORT DANH SÁCH THƯ FILE EXCEL VÀ GỬI CHO TAD" Font-Size="Larger" Font-Bold="true"></asp:Label>
+            </td>
+        </table>
+    <table border="0" cellspacing="0" cellpadding="0" width="40%">
         <tr>
             <td>
-                <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" /></td>
+                <asp:Label ID="Textbox1" runat="server" CssClass="cssManField" Text="Tải file import mẫu tại link"></asp:Label>
+            </td>
+            <td>
+                <asp:HyperLink ID="m_lnk_import_mau" runat="server" Text="File import mẫu" ForeColor="Blue" Font-Italic="false" NavigateUrl="https://docs.google.com/uc?authuser=0&id=0BwKzsZuPh5A1SkpnSV83eDh0bHM&export=download" Target="blank"></asp:HyperLink>
+            </td>
+            <td align="left"></td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Label ID="m_lbl_hd_1" runat="server" CssClass="cssManField" Text="B1: Chọn file danh sách thư cần gửi  "></asp:Label>
+            </td>
+            <td>
+                <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" />
+            </td>
         </tr>
         <tr>
             <td align="left">
+                <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="B2: Hiển thị danh sách lên web "></asp:Label>
+            </td>
+            <td>
                 <asp:Button ID="m_cmd_upload" runat="Server" Text="Bắt đầu upload file" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
                 <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
             </td>
         </tr>
         <tr>
-            <td></td>
-        </tr>
-
-        <tr>
             <td align="left">
-
-                <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Kiểm tra và cập nhật danh sách bill" CssClass="cssGoogleButton"
+                <asp:Label ID="Label2" runat="server" CssClass="cssManField" Text="B3: Kiểm tra và gửi cho TAD  "></asp:Label>
+            </td>
+            <td>
+                <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Kiểm tra và gửi cho TAD" CssClass="cssGoogleButton"
                     OnClick="m_cmd_kiem_tra_va_import_Click" />
             </td>
         </tr>
@@ -92,7 +110,7 @@
         </asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-
+                <table width="100%">
                 <tr>
                     <td colspan="4">
                         <asp:GridView ID="m_grv_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
@@ -151,7 +169,7 @@
                                     <ItemTemplate>
                                         <asp:TextBox ID="m_txt_so_bill_grid" CssClass="cssTextBoxGrid" Style="text-align: right" AutoPostBack="true" Height="50%" runat="server" Text='<%#Eval("SO_BILL") %>'></asp:TextBox>
                                         <br />
-                                        <asp:Label ID="m_lbl_so_bill_message"  runat="Server"></asp:Label>
+                                        <asp:Label ID="m_lbl_so_bill_message" runat="Server"></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField ItemStyle-Width="10%" HeaderText="Người gửi" ItemStyle-VerticalAlign="Top">
@@ -163,7 +181,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField ItemStyle-Width="10%" HeaderText="Ngày gửi" ItemStyle-VerticalAlign="Top">
                                     <ItemTemplate>
-                                       <%-- <ew:CalendarPopup ID="m_dat_ngay_gui" runat="server" TextBoxLabelStyle-BorderColor="#810913"
+                                        <%-- <ew:CalendarPopup ID="m_dat_ngay_gui" runat="server" TextBoxLabelStyle-BorderColor="#810913"
                                             TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
                                             DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" SelectedDate='<%# Eval("NGAY_GUI") %>'
                                             ShowGoToToday="true" Width="70%">
@@ -186,7 +204,7 @@
                                             <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
                                                 Font-Size="XX-Small" ForeColor="Black" />
                                         </ew:CalendarPopup>--%>
-                                        <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid txtdatetime"  ID="m_txt_ngay_gui_grid" Height="50%" AutoPostBack="false" runat="server" Text='<%#Eval("NGAY_GUI") %>'></asp:TextBox>
+                                        <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid txtdatetime" ID="m_txt_ngay_gui_grid" Height="50%" AutoPostBack="false" runat="server" Text='<%#Eval("NGAY_GUI") %>'></asp:TextBox>
                                         <br />
                                         <asp:Label ID="m_lbl_ngay_gui_message" runat="Server"></asp:Label>
                                     </ItemTemplate>
@@ -209,6 +227,7 @@
                         </asp:GridView>
                     </td>
                 </tr>
+                    </table>
             </ContentTemplate>
         </asp:UpdatePanel>
     </table>
