@@ -14,6 +14,7 @@ using BCTKUS;
 using IP.Core.IPUserService;
 using BCTKDS;
 using BCTKDS.CDBNames;
+using System.Globalization;
 public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.Page
 {
 
@@ -75,6 +76,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     }
     private void excel_file_to_grid(GridView ip_grv, int ip_i_start_row, string ip_str_file_dir)
     {
+        m_hdf_so_ban_ghi.Value = "0";
         FileStream v_fs_stream = File.Open(ip_str_file_dir, FileMode.Open, FileAccess.Read);
         IExcelDataReader v_edr = ExcelReaderFactory.CreateBinaryReader(v_fs_stream);
         DataSet v_ds_result = v_edr.AsDataSet();
@@ -99,11 +101,12 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 i--;
             }
         }
+        CultureInfo v_ct = new CultureInfo("en-US");
         for (int i = 0; i < v_ds_result.Tables[0].Rows.Count; i++)
         {
             //string temp = DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).t
-            v_ds_result.Tables[0].Rows[i][8] =
-               CIPConvert.ToDatetime(DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).ToShortDateString());
+            v_ds_result.Tables[0].Rows[i][8] = DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).ToString("dd/MM/yyyy");
+            //DateTime.Parse(DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).ToString(), v_ct);
         }
 
         if (v_ds_result.Tables[0].Columns.Count < 11) return;
@@ -121,6 +124,8 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         v_ds_result.Tables[0].Columns[11].ColumnName = "TEN_PHONG_BAN";
 
         ip_grv.DataSource = v_ds_result;
+        m_hdf_so_ban_ghi.Value = (v_ds_result.Tables[0].Rows.Count / m_grv_dm_bill.PageSize +1).ToString();
+        m_grv_dm_bill.Visible = true;
         ip_grv.DataBind();
         //v_edr.Close();
     }
@@ -136,77 +141,84 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         System.Web.UI.WebControls.TextBox v_txt_noi_dung_gui;
         System.Web.UI.WebControls.TextBox v_txt_noi_ghi_chu;
         System.Web.UI.WebControls.RadioButton v_rdb_trong_nuoc;
-        eWorld.UI.CalendarPopup v_dat_ngay_gui;
+        //eWorld.UI.CalendarPopup v_dat_ngay_gui;
         m_grv_dm_bill.Rows.CopyTo(v_arr_gvr, 0);
 
         //Phải chia nhỏ để insert nếu số lượng bản ghi lớn
 
-            int start_number = 0; //vị trí bản ghi bắt đầu insert
-            int numbers_record_limited = v_arr_gvr.Length; // số bản ghi được insert k vượt quá 50
-           //int numbers_record_remain = v_arr_gvr.Length; //số bản ghi còn lại sau mỗi lần insert
+        int start_number = 0; //vị trí bản ghi bắt đầu insert
+        int numbers_record_limited = v_arr_gvr.Length; // số bản ghi được insert k vượt quá 50
+        //int numbers_record_remain = v_arr_gvr.Length; //số bản ghi còn lại sau mỗi lần insert
 
-           //while (numbers_record_remain >= 0)
-           //{
-           //    if (numbers_record_remain - 50 > 0)
-           //        numbers_record_limited = 50;
-           //    else
-           //        numbers_record_limited = numbers_record_remain;
-               for (int i = start_number; i < numbers_record_limited; i++)
-               {
-                   v_txt_so_bill = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_so_bill_grid");
-                   v_txt_ma_phong_ban = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_ma_phong_ban_grid");
-                   v_txt_nguoi_nhan = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_nguoi_nhan_grid");
-                   v_txt_nguoi_gui = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_nguoi_gui_grid");
-                   v_txt_noi_nhan = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_noi_nhan_grid");
-                   v_txt_noi_dung_gui = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_noi_dung_grid");
-                   v_txt_noi_ghi_chu = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_ghi_chu_grid");
-                   v_rdb_trong_nuoc = (System.Web.UI.WebControls.RadioButton)v_arr_gvr[i].FindControl("m_rdb_trong_nuoc");
-                   v_dat_ngay_gui = (eWorld.UI.CalendarPopup)v_arr_gvr[i].FindControl("m_dat_ngay_gui");
-                   //System.Web.UI.WebControls.TextBox v_txt_ngay_gui = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_ngay_gui_grid");
+        //while (numbers_record_remain >= 0)
+        //{
+        //    if (numbers_record_remain - 50 > 0)
+        //        numbers_record_limited = 50;
+        //    else
+        //        numbers_record_limited = numbers_record_remain;
+        for (int i = start_number; i < numbers_record_limited; i++)
+        {
+            v_txt_so_bill = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_so_bill_grid");
+            v_txt_ma_phong_ban = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_ma_phong_ban_grid");
+            v_txt_nguoi_nhan = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_nguoi_nhan_grid");
+            v_txt_nguoi_gui = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_nguoi_gui_grid");
+            v_txt_noi_nhan = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_noi_nhan_grid");
+            v_txt_noi_dung_gui = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_noi_dung_grid");
+            v_txt_noi_ghi_chu = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_ghi_chu_grid");
+            v_rdb_trong_nuoc = (System.Web.UI.WebControls.RadioButton)v_arr_gvr[i].FindControl("m_rdb_trong_nuoc");
+            //v_dat_ngay_gui = (eWorld.UI.CalendarPopup)v_arr_gvr[i].FindControl("m_dat_ngay_gui");
+            System.Web.UI.WebControls.TextBox v_txt_ngay_gui = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_ngay_gui_grid");
 
 
-                   US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
-                   DS_DM_PHONG_BAN v_ds_dm_phong_ban = new DS_DM_PHONG_BAN();
-                   // chỗ này kiêm tra điêu kiên phân quyen du lieu
-                   // chi cho luu du lieu cua phong ban duoc phan quyen
+            US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds_dm_phong_ban = new DS_DM_PHONG_BAN();
+            // chỗ này kiêm tra điêu kiên phân quyen du lieu
+            // chi cho luu du lieu cua phong ban duoc phan quyen
 
-                   //em bỏ check ơr ma phong ban roi
-                   v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban, "where id=" + CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value));
-                   if (v_ds_dm_phong_ban.DM_PHONG_BAN.Count < 1) continue;
-                   else
-                   {
-                       v_us_dm_bill = new US_DM_BILL();
-                       //v_us_dm_bill.BeginTransaction();
-                       v_us_dm_bill.dcID_PHONG_BAN = CIPConvert.ToDecimal(v_ds_dm_phong_ban.DM_PHONG_BAN[0][0]);
-                       v_us_dm_bill.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
-                       v_us_dm_bill.strSO_BILL = v_txt_so_bill.Text.Trim();
-                       v_us_dm_bill.strGHI_CHU = v_txt_noi_ghi_chu.Text.Trim();
-                       v_us_dm_bill.strNGUOI_GUI = v_txt_nguoi_gui.Text.Trim();
-                       v_us_dm_bill.strNGUOI_NHAN = v_txt_nguoi_nhan.Text.Trim();
-                       v_us_dm_bill.strNOI_NHAN = v_txt_noi_nhan.Text.Trim();
-                       v_us_dm_bill.strNOI_DUNG = v_txt_noi_dung_gui.Text.Trim();
-                       v_us_dm_bill.datNGAY_GUI = v_dat_ngay_gui.SelectedDate;
-                       //v_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(v_txt_ngay_gui.Text.Trim(),"dd/MM/yyyy");
-                       if (v_rdb_trong_nuoc.Checked == true)
-                       {
-                           v_us_dm_bill.strTRONG_NUOC = "x";
-                           v_us_dm_bill.SetNUOC_NGOAINull();
-                       }
-                       else
-                       {
-                           v_us_dm_bill.SetTRONG_NUOCNull();
-                           v_us_dm_bill.strNUOC_NGOAI = "x";
-                       }
-                       v_us_dm_bill.Insert();
-                       m_grv_dm_bill.DeleteRow(i);
-                       m_grv_dm_bill.DataBind();
-                       thong_bao("Đã import thành công!", true);
-                   }
-               //}
-               //if (numbers_record_limited == 50)
-               //    start_number = start_number + 50; // lấy vị trí bản ghi tiếp theo sẽ dc insert nếu còn
-               //numbers_record_remain = numbers_record_remain - 50; // tính số bản ghi còn lại chưa insert
-           }
+            //em bỏ check ơr ma phong ban roi
+            if (CIPConvert.ToDecimal(m_hdf_so_ban_ghi.Value) == m_grv_dm_bill.PageIndex) return;
+            v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban, "where id=" + CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value));
+            if (v_ds_dm_phong_ban.DM_PHONG_BAN.Count < 1) continue;
+            else
+            {
+                v_us_dm_bill = new US_DM_BILL();
+                //v_us_dm_bill.BeginTransaction();
+                v_us_dm_bill.dcID_PHONG_BAN = CIPConvert.ToDecimal(v_ds_dm_phong_ban.DM_PHONG_BAN[0][0]);
+                v_us_dm_bill.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
+                v_us_dm_bill.strSO_BILL = v_txt_so_bill.Text.Trim();
+                v_us_dm_bill.strGHI_CHU = v_txt_noi_ghi_chu.Text.Trim();
+                v_us_dm_bill.strNGUOI_GUI = v_txt_nguoi_gui.Text.Trim();
+                v_us_dm_bill.strNGUOI_NHAN = v_txt_nguoi_nhan.Text.Trim();
+                v_us_dm_bill.strNOI_NHAN = v_txt_noi_nhan.Text.Trim();
+                v_us_dm_bill.strNOI_DUNG = v_txt_noi_dung_gui.Text.Trim();
+                //v_us_dm_bill.datNGAY_GUI = v_dat_ngay_gui.SelectedDate;
+                v_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(v_txt_ngay_gui.Text.Trim(), "dd/MM/yyyy");
+                if (v_rdb_trong_nuoc.Checked == true)
+                {
+                    v_us_dm_bill.strTRONG_NUOC = "x";
+                    v_us_dm_bill.SetNUOC_NGOAINull();
+                }
+                else
+                {
+                    v_us_dm_bill.SetTRONG_NUOCNull();
+                    v_us_dm_bill.strNUOC_NGOAI = "x";
+                }
+                v_us_dm_bill.Insert();
+
+                thong_bao("Đã import thành công!", true);
+            }
+            //}
+            //if (numbers_record_limited == 50)
+            //    start_number = start_number + 50; // lấy vị trí bản ghi tiếp theo sẽ dc insert nếu còn
+            //numbers_record_remain = numbers_record_remain - 50; // tính số bản ghi còn lại chưa insert
+        }
+        m_grv_dm_bill.PageIndex = m_grv_dm_bill.PageIndex + 1;
+        if (CIPConvert.ToDecimal(m_hdf_so_ban_ghi.Value) == m_grv_dm_bill.PageIndex)
+        {
+            m_grv_dm_bill.DataSource = null;
+            m_grv_dm_bill.Visible = false;
+        }
+        m_grv_dm_bill.DataBind();
     }
     private bool check_validate_grid_is_ok()
     {
@@ -345,8 +357,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     }
     private bool check_file_upload_is_ok(string ip_str_file_name)
     {
-        if (!Path.GetExtension(ip_str_file_name).Equals(".xls")
-            && !Path.GetExtension(ip_str_file_name).Equals(".xlsx")) return false;
+        if (!Path.GetExtension(ip_str_file_name).Equals(".xls")) return false;
         return true;
     }
 
@@ -384,7 +395,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }
             }
-            thong_bao("",false);
+            thong_bao("", false);
         }
         catch (Exception v_e)
         {
@@ -400,7 +411,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 string v_str_file_save = DateTime.Now.ToString("ss.fff") + m_fu_chon_file_import.FileName;
                 m_hdf_dir_save_excel.Value = Server.MapPath("~") + "//TempImportExcel//" + v_str_file_save;
                 save_file_upload(m_hdf_dir_save_excel.Value);
-                excel_file_to_grid(m_grv_dm_bill, 1 , m_hdf_dir_save_excel.Value);
+                excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
                 check_validate_grid_is_ok();
                 //delete_file_imported(m_hdf_dir_save_excel.Value);
             }
@@ -425,7 +436,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         }
         catch (Exception v_e)
         {
-            m_sm.ExceptionHanlde(this, v_e);
+            CSystemLog_301.ExceptionHandle(this, v_e);
         }
 
     }
@@ -469,5 +480,5 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         }
     }
     #endregion
-  
+
 }

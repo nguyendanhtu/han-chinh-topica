@@ -13,8 +13,9 @@ public partial class MessageError : System.Web.UI.Page
     {
         try {
 
-            if (Request.QueryString["Message"] != null) {
-                lblErrorMessage.Text = Request.QueryString["Message"].ToString().Replace("%20", " ");
+            if (Request.QueryString["mess"] != null)
+            {
+                lblErrorMessage.Text = Request.QueryString["mess"].ToString().Replace("%20", " ");
             }
         }
         catch (Exception v_e) {
