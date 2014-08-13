@@ -424,10 +424,10 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             //this.Form.DefaultButton = m_cmd_tim_kiem.UniqueID;
             if (!IsPostBack)
             {
-                if (!Person.check_user_have_menu())
-                {
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script type = 'text/javascript'>alert('Bạn không có quyền sử dụng chức năng này!');window.location.replace('/TraCuuKeToan/')</script>");
-                }
+                //if (!Person.check_user_have_menu())
+                //{
+                //    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script type = 'text/javascript'>alert('Bạn không có quyền sử dụng chức năng này!');window.location.replace('/TraCuuKeToan/')</script>");
+                //}
                 US_HT_NGUOI_SU_DUNG v_us_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
                 if (Session[SESSION.AccounLoginYN] == "Y")
                 {
