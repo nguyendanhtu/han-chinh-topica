@@ -32,7 +32,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
         DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
         v_ds.Clear();
-        v_us.FillDataset(v_ds, v_id_trung_tam, m_dat_tu_ngay.SelectedDate, m_dat_den_ngay.SelectedDate);
+        v_us.FillDataset(v_ds, v_id_trung_tam, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
         m_grv_v_bc_tinh_hinh_CPN.DataSource = v_ds.V_BC_TINH_HINH_CPN_THEO_PHONG_BAN;
         //string v_str_thong_tin = " (Có " + v_ds.V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.Rows.Count + " bản ghi)";
         //m_lbl_thong_tim_grv_dm_bill.Text = v_str_thong_tin;
@@ -54,7 +54,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_us = new US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
         DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_ds = new DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        v_us.Fill_TONG_HOP_BILL_CHUA_GUI_CHO_CPN(v_ds, v_id_trung_tam, m_dat_tu_ngay.SelectedDate, m_dat_den_ngay.SelectedDate);
+        v_us.Fill_TONG_HOP_BILL_CHUA_GUI_CHO_CPN(v_ds, v_id_trung_tam, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
         if (v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows.Count == 0)
             m_lbl_so_bill_bi_tra_lai_khong_mat_phi.Text = "0";
         else
@@ -67,7 +67,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_us = new US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
         DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_ds = new DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        v_us.Fill_TONG_HOP_BILL_DA_GUI_THANH_CONG(v_ds, v_id_trung_tam, m_dat_tu_ngay.SelectedDate, m_dat_den_ngay.SelectedDate);
+        v_us.Fill_TONG_HOP_BILL_DA_GUI_THANH_CONG(v_ds, v_id_trung_tam, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
         if (v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows.Count == 0)
         {
             m_lbl_so_bill_da_gui_thanh_cong.Text = "0";
@@ -88,7 +88,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_us = new US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
         DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_ds = new DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        v_us.Fill_TONG_HOP_BILL_MAT_PHI(v_ds, v_id_trung_tam, m_dat_tu_ngay.SelectedDate, m_dat_den_ngay.SelectedDate);
+        v_us.Fill_TONG_HOP_BILL_MAT_PHI(v_ds, v_id_trung_tam, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
         if (v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows.Count == 0)
         {
             m_lbl_so_bill_bi_tra_lai_mat_phi.Text = "0";
@@ -108,7 +108,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_us = new US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
         DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_ds = new DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        v_us.Fill_TONG_HOP_BILL_KHONG_MAT_PHI(v_ds, v_id_trung_tam, m_dat_tu_ngay.SelectedDate, m_dat_den_ngay.SelectedDate);
+        v_us.Fill_TONG_HOP_BILL_KHONG_MAT_PHI(v_ds, v_id_trung_tam, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
         if (v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows.Count == 0)
             m_lbl_so_bill_bi_tra_lai_khong_mat_phi.Text = "0";
         else
@@ -133,7 +133,11 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
     }
     private void set_time_set_ten_trung_tam()
     {
-        m_dat_tu_ngay.SelectedDate = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
+        DateTime today = DateTime.Today;
+        int numberOfDaysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
+        m_txt_tu_ngay.Text = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).ToShortDateString();
+        DateTime v_dat_den_ngay = new DateTime(today.Year, today.Month, numberOfDaysInMonth);
+        m_txt_den_ngay.Text = v_dat_den_ngay.ToShortDateString();
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
@@ -143,11 +147,14 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
 
     private bool check_thoi_gian()
     {
-        if (m_dat_tu_ngay.SelectedDate > m_dat_den_ngay.SelectedDate)
+        if (CIPConvert.ToDatetime(m_txt_tu_ngay.Text) > CIPConvert.ToDatetime(m_txt_den_ngay.Text))
         {
             thong_bao("Bạn đã chọn khoảng thời gian không hợp lệ!", true);
-            m_dat_tu_ngay.SelectedDate = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
-            m_dat_den_ngay.SelectedDate = DateTime.Now.Date;
+            DateTime today = DateTime.Today;
+            int numberOfDaysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
+            m_txt_tu_ngay.Text = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).ToShortDateString();
+            DateTime v_dat_den_ngay = new DateTime(today.Year, today.Month, numberOfDaysInMonth);
+            m_txt_den_ngay.Text = v_dat_den_ngay.ToShortDateString();
             return false;
         }
         else
@@ -224,28 +231,37 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         }
     }
 
-    //protected void m_dat_tu_ngay_DateChanged(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        load_data_to_grid();
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
-    //protected void m_dat_den_ngay_DateChanged(object sender, EventArgs e)
-    //{
-    //    try
-    //    {
-    //        load_data_to_grid();
-    //    }
-    //    catch (Exception v_e)
-    //    {
-    //        CSystemLog_301.ExceptionHandle(this, v_e);
-    //    }
-    //}
+    protected void Tu_ngay_OnTextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            DateTime v_tu_ngay, v_ngay_chon;
+            v_ngay_chon = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+            v_tu_ngay = new  DateTime(v_ngay_chon.Year, v_ngay_chon.Month, 1);
+            m_txt_tu_ngay.Text = v_tu_ngay.ToShortDateString();
+            load_data_to_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void Den_ngay_OnTextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            DateTime v_den_ngay, v_ngay_chon;
+            v_ngay_chon = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+            int numberOfDaysInMonth = DateTime.DaysInMonth(v_ngay_chon.Year, v_ngay_chon.Month);
+            v_den_ngay = new DateTime(v_ngay_chon.Year, v_ngay_chon.Month, numberOfDaysInMonth);
+            m_txt_den_ngay.Text = v_den_ngay.ToShortDateString();
+            load_data_to_grid();
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     protected void m_cmd_ok_Click(object sender, EventArgs e)
     {
         try

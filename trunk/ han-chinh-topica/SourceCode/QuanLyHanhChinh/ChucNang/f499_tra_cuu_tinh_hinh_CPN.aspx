@@ -4,6 +4,26 @@
     TagPrefix="asp" %>
 <%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#<%=m_txt_tu_ngay.ClientID%>").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                required: true,
+                yearRange: '1950:2050',
+            });
+        });
+    </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#<%=m_txt_den_ngay.ClientID%>").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    required: true,
+                    yearRange: '1950:2050',
+                });
+            });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -25,57 +45,13 @@
                         <asp:Label ID="m_lbl_tu_ngay" runat="server" Text="Từ ngày: " CssClass="cssManField"></asp:Label>
                     </td>
                     <td>
-                        <ew:CalendarPopup ID="m_dat_tu_ngay" runat="server" TextBoxLabelStyle-BorderColor="#810913"
-                            TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
-                            DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
-                            ShowGoToToday="false" Width="35%">
-                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
-                                ForeColor="Black" />
-                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
-                            <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Gray" />
-                            <SelectedDateStyle BackColor="#810913" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <MonthHeaderStyle BackColor="#810913" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="White" />
-                            <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
-                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
-                            <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Black" />
-                        </ew:CalendarPopup>
+                       <asp:TextBox ID="m_txt_tu_ngay" runat="Server" OnTextChanged="Tu_ngay_OnTextChanged" AutoPostBack="true"></asp:TextBox>
                     </td>
                     <td align="right" colspan="2">
                         <asp:Label ID="m_lbl_den_ngay" runat="server" Text="Đến ngày: " CssClass="cssManField"></asp:Label>
                     </td>
                     <td>
-                        <ew:CalendarPopup ID="m_dat_den_ngay" runat="server" TextBoxLabelStyle-BorderColor="#810913"
-                            TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
-                            DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
-                            ShowGoToToday="true" Width="35%">
-                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
-                                ForeColor="Black" />
-                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
-                            <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Gray" />
-                            <SelectedDateStyle BackColor="#810913" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <MonthHeaderStyle BackColor="#810913" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="White" />
-                            <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Black" />
-                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
-                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                ForeColor="Black" />
-                            <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                Font-Size="XX-Small" ForeColor="Black" />
-                        </ew:CalendarPopup>
+                      <asp:TextBox ID="m_txt_den_ngay" runat="Server" OnTextChanged="Den_ngay_OnTextChanged" AutoPostBack="true"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
