@@ -235,11 +235,12 @@ namespace BCTKApp.ChucNang
         }
         private void so_sanh_chi_phi_voi_don_hang()
         {
-            US_GD_DON_DAT_HANG v_us_don_dat_hang = new BCTKUS.US_GD_DON_DAT_HANG();
-            DS_GD_DON_DAT_HANG v_ds_don_dat_hang = new DS_GD_DON_DAT_HANG();
+            US_V_GD_DON_DAT_HANG_DETAIL v_us_v_don_dat_hang_de = new US_V_GD_DON_DAT_HANG_DETAIL();
+            DS_V_GD_DON_DAT_HANG_DETAIL v_ds_v_don_dat_hang_de = new DS_V_GD_DON_DAT_HANG_DETAIL();
             int v_i_row_fg = 0;
             string v_str_ma_don_hang_ncc = "";
 
+            //set mã hóa đơn MA_HD cho từng bản ghi
             for (v_i_row_fg = 0; v_i_row_fg < m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count; v_i_row_fg++)
             {
                 if (m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2].ToString() != "")
@@ -251,12 +252,37 @@ namespace BCTKApp.ChucNang
                     m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2] = v_str_ma_don_hang_ncc;
                 }
             }
-           
+           //so sánh từng hóa đơn với MA_HD_NCC trong cơ sở dữ liệu
+            for (v_i_row_fg = 0; v_i_row_fg < m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count; v_i_row_fg++)
+            {
+                v_ds_v_don_dat_hang_de.Clear();
+                v_us_v_don_dat_hang_de.So_sanh_hoa_don_theo_ma_NCC(v_ds_v_don_dat_hang_de, m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2].ToString(), m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][3].ToString());
+                if (v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows.Count != 0)
+                {
+                    if (CIPConvert.ToDecimal(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][5]) != CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["SO_LUONG"]))
+                    {
+                        m_fg.Rows[v_i_row_fg][5] = Color.Yellow;
+                    }
+                    if (CIPConvert.ToDecimal(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][6]) != CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["DON_GIA_CHUA_VAT"]))
+                    {
+                        m_fg.Rows[v_i_row_fg][6] = Color.Yellow;
+                    }
+                    if (CIPConvert.ToDecimal(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][7]) != (CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["DON_GIA_CHUA_VAT"])*CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["SO_LUONG"])))
+                    {
+                        m_fg.Rows[v_i_row_fg][7] = Color.Yellow;
+                    }
+                }
+                else
+                {
+                    m_fg.Rows[v_i_row_fg].StyleDisplay.BackColor = Color.Red;
+                    m_fg.Rows[v_i_row_fg].StyleDisplay.ForeColor = Color.White;
+                }
+            }
        
         }
         private void set_define_event()
         {
-            //m_cmd_thoat.Click += new EventHandler(m_cmd_thoat_Click);
+            m_cmd_thoat.Click += new EventHandler(m_cmd_thoat_Click);
             m_cmd_nhap_excel.Click += new EventHandler(m_cmd_nhap_excel_Click);
             m_cmd_so_sanh_chi_phi.Click += new EventHandler(m_cmd_so_sanh_chi_phi_Click);
             //m_cmd_kiem_tra_dl.Click += new EventHandler(m_cmd_kiem_tra_dl_Click);
@@ -283,6 +309,17 @@ namespace BCTKApp.ChucNang
             try
             {
                 so_sanh_chi_phi_voi_don_hang();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_thoat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
             }
             catch (Exception v_e)
             {
