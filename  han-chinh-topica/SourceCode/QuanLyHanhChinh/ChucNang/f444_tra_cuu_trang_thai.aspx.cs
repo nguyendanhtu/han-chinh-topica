@@ -31,7 +31,7 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
         US_V_DM_BILL v_us_v_dm_bill = new US_V_DM_BILL();
         DS_V_DM_BILL v_ds_v_dm_bill = new DS_V_DM_BILL();
         v_ds_v_dm_bill.Clear();
-        v_us_v_dm_bill.FillDataset(v_ds_v_dm_bill, v_id_trung_tam, m_dat_tu_ngay.SelectedDate, m_dat_den_ngay.SelectedDate, v_dc_id_trang_thai, v_str_tu_khoa);
+        v_us_v_dm_bill.FillDataset(v_ds_v_dm_bill, v_id_trung_tam, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text), v_dc_id_trang_thai, v_str_tu_khoa);
         m_grv_v_dm_bill.DataSource = v_ds_v_dm_bill.V_DM_BILL;
         string v_str_thong_tin = " (Có " + v_ds_v_dm_bill.V_DM_BILL.Rows.Count + " bản ghi)";
         m_lbl_thong_tim_grv_dm_bill.Text = v_str_thong_tin;
@@ -62,7 +62,8 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
     }
     private void set_time()
     {
-        m_dat_tu_ngay.SelectedDate = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).AddMonths(-6);
+        m_txt_tu_ngay.Text = (DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).AddMonths(-6)).ToShortDateString();
+        m_txt_den_ngay.Text = DateTime.Now.ToShortDateString();
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
@@ -81,11 +82,11 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
     }
     private bool check_thoi_gian()
     {
-        if (m_dat_tu_ngay.SelectedDate > m_dat_den_ngay.SelectedDate)
+        if (CIPConvert.ToDatetime(m_txt_tu_ngay.Text) > CIPConvert.ToDatetime(m_txt_den_ngay.Text))
         {
             thong_bao("Bạn đã chọn khoảng thời gian không hợp lệ!", true);
-            m_dat_tu_ngay.SelectedDate = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).AddMonths(-6);
-            m_dat_den_ngay.SelectedDate = DateTime.Now.Date;
+            m_txt_tu_ngay.Text = (DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).AddMonths(-6)).ToShortDateString();
+            m_txt_den_ngay.Text = DateTime.Now.ToShortDateString();
             return false;
         }
         else
@@ -116,7 +117,6 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
                     DS_HT_QUAN_HE_SU_DUNG_DU_LIEU v_ds_ht_qh_sd_dl = new DS_HT_QUAN_HE_SU_DUNG_DU_LIEU();
                     v_us_ht_qh_sd_dl.FillDataset(v_ds_ht_qh_sd_dl, "where ID_USER_GROUP =" + v_id_user_group);
                     m_hdf_id_trung_tam.Value = v_ds_ht_qh_sd_dl.HT_QUAN_HE_SU_DUNG_DU_LIEU.Rows[0]["ID_PHONG_BAN"].ToString();
-
                 }
                 else
                 {
@@ -163,28 +163,28 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_dat_tu_ngay_DateChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            load_data_to_grid();
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_dat_den_ngay_DateChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            load_data_to_grid();
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
+    //protected void m_dat_tu_ngay_DateChanged(object sender, EventArgs e)
+    //{
+    //    try
+    //    {
+    //        load_data_to_grid();
+    //    }
+    //    catch (Exception v_e)
+    //    {
+    //        CSystemLog_301.ExceptionHandle(this, v_e);
+    //    }
+    //}
+    //protected void m_dat_den_ngay_DateChanged(object sender, EventArgs e)
+    //{
+    //    try
+    //    {
+    //        load_data_to_grid();
+    //    }
+    //    catch (Exception v_e)
+    //    {
+    //        CSystemLog_301.ExceptionHandle(this, v_e);
+    //    }
+    //}
     protected void m_cmd_ok_Click(object sender, EventArgs e)
     {
         try
