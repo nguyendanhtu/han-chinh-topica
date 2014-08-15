@@ -483,5 +483,13 @@ public class US_V_GD_DON_DAT_HANG_DETAIL : US_Object
         v_stored_proc.addDecimalInputParam("@ID_DON_HANG", ip_dc_id_hoa_don);
         v_stored_proc.fillDataSetByCommand(this, ip_ds);
     }
+
+    public void So_sanh_hoa_don_theo_ma_NCC(DS_V_GD_DON_DAT_HANG_DETAIL v_ds_v_don_dat_hang_de, string ip_ma_don_hang_NCC, string ip_ma_ten_vpp)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_So_sanh_chi_phi_NCC");
+        v_stored_proc.addNVarcharInputParam("@MA_HD_NCC", ip_ma_don_hang_NCC);
+        v_stored_proc.addNVarcharInputParam("@MA_TEN_VPP", ip_ma_ten_vpp);
+        v_stored_proc.fillDataSetByCommand(this, v_ds_v_don_dat_hang_de);
+    }
 }
 }
