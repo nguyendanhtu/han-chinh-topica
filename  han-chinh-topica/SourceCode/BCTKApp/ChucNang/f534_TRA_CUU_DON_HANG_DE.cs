@@ -95,13 +95,13 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_don_hang_de = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_lbl_trung_tam = new System.Windows.Forms.Label();
-            this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.m_lbl_ten_trung_tam = new System.Windows.Forms.Label();
-            this.m_lbl_tong_tien = new System.Windows.Forms.Label();
-            this.m_lbl_tong = new System.Windows.Forms.Label();
             this.m_lbl_ma_hd = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.m_lbl_tong_tien = new System.Windows.Forms.Label();
+            this.m_lbl_tong = new System.Windows.Forms.Label();
+            this.m_lbl_ten_trung_tam = new System.Windows.Forms.Label();
+            this.m_lbl_trung_tam = new System.Windows.Forms.Label();
+            this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang_de)).BeginInit();
             this.panel1.SuspendLayout();
@@ -248,6 +248,56 @@ namespace BCTKApp
             this.panel1.Size = new System.Drawing.Size(752, 144);
             this.panel1.TabIndex = 22;
             // 
+            // m_lbl_ma_hd
+            // 
+            this.m_lbl_ma_hd.AutoSize = true;
+            this.m_lbl_ma_hd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ma_hd.Location = new System.Drawing.Point(384, 74);
+            this.m_lbl_ma_hd.Name = "m_lbl_ma_hd";
+            this.m_lbl_ma_hd.Size = new System.Drawing.Size(68, 16);
+            this.m_lbl_ma_hd.TabIndex = 34;
+            this.m_lbl_ma_hd.Text = "...............";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(281, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 16);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Mã hóa đơn : ";
+            // 
+            // m_lbl_tong_tien
+            // 
+            this.m_lbl_tong_tien.AutoSize = true;
+            this.m_lbl_tong_tien.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tong_tien.Location = new System.Drawing.Point(159, 112);
+            this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
+            this.m_lbl_tong_tien.Size = new System.Drawing.Size(68, 16);
+            this.m_lbl_tong_tien.TabIndex = 32;
+            this.m_lbl_tong_tien.Text = "...............";
+            // 
+            // m_lbl_tong
+            // 
+            this.m_lbl_tong.AutoSize = true;
+            this.m_lbl_tong.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tong.Location = new System.Drawing.Point(23, 112);
+            this.m_lbl_tong.Name = "m_lbl_tong";
+            this.m_lbl_tong.Size = new System.Drawing.Size(130, 16);
+            this.m_lbl_tong.TabIndex = 31;
+            this.m_lbl_tong.Text = "Tổng tiền (có VAT ) :";
+            // 
+            // m_lbl_ten_trung_tam
+            // 
+            this.m_lbl_ten_trung_tam.AutoSize = true;
+            this.m_lbl_ten_trung_tam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ten_trung_tam.Location = new System.Drawing.Point(384, 44);
+            this.m_lbl_ten_trung_tam.Name = "m_lbl_ten_trung_tam";
+            this.m_lbl_ten_trung_tam.Size = new System.Drawing.Size(68, 16);
+            this.m_lbl_ten_trung_tam.TabIndex = 30;
+            this.m_lbl_ten_trung_tam.Text = "...............";
+            // 
             // m_lbl_trung_tam
             // 
             this.m_lbl_trung_tam.AutoSize = true;
@@ -268,56 +318,6 @@ namespace BCTKApp
             this.m_lbl_tieu_de.TabIndex = 28;
             this.m_lbl_tieu_de.Text = "CHI TIẾT ĐƠN ĐẶT HÀNG";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // m_lbl_ten_trung_tam
-            // 
-            this.m_lbl_ten_trung_tam.AutoSize = true;
-            this.m_lbl_ten_trung_tam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ten_trung_tam.Location = new System.Drawing.Point(384, 44);
-            this.m_lbl_ten_trung_tam.Name = "m_lbl_ten_trung_tam";
-            this.m_lbl_ten_trung_tam.Size = new System.Drawing.Size(68, 16);
-            this.m_lbl_ten_trung_tam.TabIndex = 30;
-            this.m_lbl_ten_trung_tam.Text = "...............";
-            // 
-            // m_lbl_tong_tien
-            // 
-            this.m_lbl_tong_tien.AutoSize = true;
-            this.m_lbl_tong_tien.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tong_tien.Location = new System.Drawing.Point(200, 112);
-            this.m_lbl_tong_tien.Name = "m_lbl_tong_tien";
-            this.m_lbl_tong_tien.Size = new System.Drawing.Size(68, 16);
-            this.m_lbl_tong_tien.TabIndex = 32;
-            this.m_lbl_tong_tien.Text = "...............";
-            // 
-            // m_lbl_tong
-            // 
-            this.m_lbl_tong.AutoSize = true;
-            this.m_lbl_tong.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tong.Location = new System.Drawing.Point(23, 112);
-            this.m_lbl_tong.Name = "m_lbl_tong";
-            this.m_lbl_tong.Size = new System.Drawing.Size(169, 16);
-            this.m_lbl_tong.TabIndex = 31;
-            this.m_lbl_tong.Text = "Tổng tiền (có VAT ) (VNĐ) :";
-            // 
-            // m_lbl_ma_hd
-            // 
-            this.m_lbl_ma_hd.AutoSize = true;
-            this.m_lbl_ma_hd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ma_hd.Location = new System.Drawing.Point(384, 74);
-            this.m_lbl_ma_hd.Name = "m_lbl_ma_hd";
-            this.m_lbl_ma_hd.Size = new System.Drawing.Size(68, 16);
-            this.m_lbl_ma_hd.TabIndex = 34;
-            this.m_lbl_ma_hd.Text = "...............";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(281, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 16);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Mã hóa đơn : ";
             // 
             // f534_TRA_CUU_DON_HANG_DE
             // 
@@ -346,17 +346,18 @@ namespace BCTKApp
         {
             m_obj_trans = get_trans_object(m_grv_don_hang_de);
             format_controls();
-            decimal v_dc_id_hoa_don = ip_us_v.dcID;
+            m_id_hoa_don = ip_us_v.dcID;
             m_lbl_ten_trung_tam.Text = ip_us_v.strTEN_PHONG_BAN;
             m_lbl_ma_hd.Text = ip_us_v.strMA_HD;
             m_lbl_tong_tien.Text = CIPConvert.ToStr(ip_us_v.dcGIA_TRI_DA_VAT, "#,##0") + "   (VNĐ)";
-            US_V_GD_DON_DAT_HANG_DETAIL v_us = new US_V_GD_DON_DAT_HANG_DETAIL();
-            DS_V_GD_DON_DAT_HANG_DETAIL v_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
-            v_us.FillDatasetSearch_hdchitiet(v_ds,v_dc_id_hoa_don);
-            m_grv_don_hang_de.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_grv_don_hang_de, m_obj_trans);
-            CGridUtils.MakeSoTT(0, m_grv_don_hang_de);
-            m_grv_don_hang_de.Redraw = true;
+            //US_V_GD_DON_DAT_HANG_DETAIL v_us = new US_V_GD_DON_DAT_HANG_DETAIL();
+            //DS_V_GD_DON_DAT_HANG_DETAIL v_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
+            //m_ds.Clear();
+            //v_us.FillDatasetSearch_hdchitiet(m_ds,v_dc_id_hoa_don);
+            //m_grv_don_hang_de.Redraw = false;
+            //CGridUtils.Dataset2C1Grid(m_ds, m_grv_don_hang_de, m_obj_trans);
+            //CGridUtils.MakeSoTT(0, m_grv_don_hang_de);
+            //m_grv_don_hang_de.Redraw = true;
             this.ShowDialog();
         }
 		#endregion
@@ -371,6 +372,7 @@ namespace BCTKApp
 		ITransferDataRow m_obj_trans;		
 		DS_V_GD_DON_DAT_HANG_DETAIL m_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
 		US_V_GD_DON_DAT_HANG_DETAIL m_us = new US_V_GD_DON_DAT_HANG_DETAIL();
+        decimal m_id_hoa_don;
 		#endregion
 
 		#region Private Methods
@@ -381,13 +383,13 @@ namespace BCTKApp
             m_lbl_ten_trung_tam.Font = new System.Drawing.Font("Tahoma", 13, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			CControlFormat.setC1FlexFormat(m_grv_don_hang_de);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_don_hang_de);
-            			CGridUtils.AddSearch_Handlers(m_grv_don_hang_de);
+            CGridUtils.AddSearch_Handlers(m_grv_don_hang_de);
 			set_define_events();
 			this.KeyPreview = true;		
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_don_hang_de);
-			load_data_2_grid();		
+            load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -396,10 +398,11 @@ namespace BCTKApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();			
-			m_us.FillDataset(m_ds);
+			m_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
+            m_us.FillDatasetSearch_hdchitiet(m_ds, m_id_hoa_don);
 			m_grv_don_hang_de.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_don_hang_de, m_obj_trans);
+            CGridUtils.MakeSoTT(0, m_grv_don_hang_de);
 			m_grv_don_hang_de.Redraw = true;
 		}
 		private void grid2us_object(US_V_GD_DON_DAT_HANG_DETAIL i_us
