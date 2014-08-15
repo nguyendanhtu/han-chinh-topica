@@ -29,7 +29,6 @@ namespace BCTKApp.ChucNang
         {
             InitializeComponent();
             set_initial_form_load();
-            set_define_event();
             format_controls();
         }
 
@@ -84,6 +83,7 @@ namespace BCTKApp.ChucNang
             //progressBar1.Visible = false;
             set_define_event();
             m_lbl_loading.Visible = false;
+            progressBar1.Visible = false;
             this.KeyPreview = true;
         }
         private ITransferDataRow get_2_us_obj_xls()
@@ -222,6 +222,21 @@ namespace BCTKApp.ChucNang
                     //m_fg.Tree.Show(1);
         
                     //m_lbl_tong_so_luong.Text = CIPConvert.ToStr(m_fg_load_file.Rows.Count - 1);
+                    
+                    //set mã hóa đơn MA_HD cho từng bản ghi
+                    int v_i_row_fg = 0;
+                    string v_str_ma_don_hang_ncc = "";
+                    for (v_i_row_fg = 0; v_i_row_fg < m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count; v_i_row_fg++)
+                    {
+                        if (m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.MA_HD].ToString() != "")
+                        {
+                            v_str_ma_don_hang_ncc = m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.MA_HD].ToString();
+                        }
+                        else
+                        {
+                            m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.MA_HD] = v_str_ma_don_hang_ncc;
+                        }
+                    }
                     m_lbl_loading.Visible = false;
                 }
                 catch (Exception v_e)
@@ -238,47 +253,55 @@ namespace BCTKApp.ChucNang
             US_V_GD_DON_DAT_HANG_DETAIL v_us_v_don_dat_hang_de = new US_V_GD_DON_DAT_HANG_DETAIL();
             DS_V_GD_DON_DAT_HANG_DETAIL v_ds_v_don_dat_hang_de = new DS_V_GD_DON_DAT_HANG_DETAIL();
             int v_i_row_fg = 0;
-            string v_str_ma_don_hang_ncc = "";
 
-            //set mã hóa đơn MA_HD cho từng bản ghi
-            for (v_i_row_fg = 0; v_i_row_fg < m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count; v_i_row_fg++)
-            {
-                if (m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2].ToString() != "")
-                {
-                    v_str_ma_don_hang_ncc = m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2].ToString();
-                }
-                else
-                {
-                    m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2] = v_str_ma_don_hang_ncc;
-                }
-            }
+            //set Style cell
+             C1.Win.C1FlexGrid.CellStyle v_cell_style_err = this.m_fg.Styles.Add("RowColorErr");
+                v_cell_style_err.BackColor = Color.Red;
+                C1.Win.C1FlexGrid.CellStyle v_cell_style_err2 = this.m_fg.Styles.Add("RowColorErr2");
+                v_cell_style_err2.BackColor = Color.Yellow;
+                v_cell_style_err2.ForeColor = Color.DarkRed;
+
+                C1.Win.C1FlexGrid.CellStyle v_cell_style_ok = this.m_fg.Styles.Add("RowColorOk");
+                v_cell_style_ok.BackColor = Color.White;
+                C1.Win.C1FlexGrid.CellStyle v_cell_style_chu_ok = this.m_fg.Styles.Add("RowColor");
+                v_cell_style_chu_ok.BackColor = Color.Black;
+
+                C1.Win.C1FlexGrid.CellStyle v_cell_style_notOK_in_data = this.m_fg.Styles.Add("RowColorNotOk");
+                v_cell_style_notOK_in_data.BackColor = Color.Green;
+          
            //so sánh từng hóa đơn với MA_HD_NCC trong cơ sở dữ liệu
             for (v_i_row_fg = 0; v_i_row_fg < m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count; v_i_row_fg++)
             {
-                v_ds_v_don_dat_hang_de.Clear();
-                v_us_v_don_dat_hang_de.So_sanh_hoa_don_theo_ma_NCC(v_ds_v_don_dat_hang_de, m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][2].ToString(), m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][3].ToString());
-                if (v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows.Count != 0)
+                m_lbl_loading.Visible = true;
+                progressBar1.Visible = true;
+                progressBar1.Minimum = 0;
+                progressBar1.Maximum = m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count;
+                progressBar1.Value = v_i_row_fg;
+                v_us_v_don_dat_hang_de.So_sanh_hoa_don_theo_ma_NCC(v_ds_v_don_dat_hang_de, m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.MA_HD].ToString(), m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.TEN_VPP].ToString());
+                if (v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows.Count > 0)
                 {
-                    if (CIPConvert.ToDecimal(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][5]) != CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["SO_LUONG"]))
+                    if (CIPConvert.ToDecimal(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][ (int)e_col_Number.SO_LUONG]) != CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["SO_LUONG"]))
                     {
-                        m_fg.Rows[v_i_row_fg][5] = Color.Yellow;
+                        m_fg.SetCellStyle(v_i_row_fg, (int)e_col_Number.SO_LUONG, v_cell_style_err2);
                     }
-                    if (CIPConvert.ToDecimal(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][6]) != CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["DON_GIA_CHUA_VAT"]))
+                    if (CIPConvert.ToDecimal(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.GIA_BAN]) != CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["DON_GIA_CHUA_VAT"]))
                     {
-                        m_fg.Rows[v_i_row_fg][6] = Color.Yellow;
+                        m_fg.SetCellStyle(v_i_row_fg, (int)e_col_Number.GIA_BAN, v_cell_style_err2);
                     }
-                    if (CIPConvert.ToDecimal(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][7]) != (CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["DON_GIA_CHUA_VAT"])*CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["SO_LUONG"])))
+                    if (CIPConvert.ToDecimal(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.DOANH_THU]) != (CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["DON_GIA_CHUA_VAT"])*CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["SO_LUONG"])))
                     {
-                        m_fg.Rows[v_i_row_fg][7] = Color.Yellow;
+                        m_fg.SetCellStyle(v_i_row_fg, (int)e_col_Number.DOANH_THU, v_cell_style_err2);
                     }
                 }
                 else
                 {
-                    m_fg.Rows[v_i_row_fg].StyleDisplay.BackColor = Color.Red;
+                    m_fg.SetCellStyle(v_i_row_fg, (int)e_col_Number.TEN_VPP, v_cell_style_err);
                     //m_fg.Rows[v_i_row_fg].StyleDisplay.ForeColor = Color.White;
                 }
+                v_ds_v_don_dat_hang_de.Clear();
             }
-       
+            m_lbl_loading.Visible = false;
+            progressBar1.Visible = false;
         }
         private void set_define_event()
         {
@@ -327,6 +350,5 @@ namespace BCTKApp.ChucNang
             }
         }
         #endregion
-
     }
 }
