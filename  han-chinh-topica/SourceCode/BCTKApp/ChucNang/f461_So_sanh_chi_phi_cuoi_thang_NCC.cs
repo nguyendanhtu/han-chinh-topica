@@ -275,7 +275,7 @@ namespace BCTKApp.ChucNang
                 else
                 {
                     m_fg.Rows[v_i_row_fg].StyleDisplay.BackColor = Color.Red;
-                    m_fg.Rows[v_i_row_fg].StyleDisplay.ForeColor = Color.White;
+                    //m_fg.Rows[v_i_row_fg].StyleDisplay.ForeColor = Color.White;
                 }
             }
        
