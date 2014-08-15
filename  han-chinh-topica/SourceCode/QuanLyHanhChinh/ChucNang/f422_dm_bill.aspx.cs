@@ -135,6 +135,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
             case LOAI_FORM.THEM:
                 m_us_dm_bill.Insert();
                 load_data_to_grid();
+                thong_bao("Đã gửi đăng kí Bill cho TAD!", true);
                 break;
             case LOAI_FORM.SUA:
                 m_us_dm_bill.Update();
@@ -142,6 +143,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
                 m_cmd_them.Visible = false;
                 m_cmd_sua.Visible = true;
                 set_form_mode(LOAI_FORM.THEM);
+                thong_bao("Đã cập nhật và gửi đăng kí lại cho TAD!", true);
                 break;
         }
         Huy_thao_tac();
@@ -347,7 +349,6 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             //m_lbl_mess.Text = "";
             save_data();
-            thong_bao("Đã gửi đăng kí Bill cho TAD!", true);
         }
         catch (Exception v_e)
         {
@@ -362,7 +363,6 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
             save_data();
             m_cmd_sua.Visible = false;
             m_cmd_them.Visible = true;
-            thong_bao("Đã cập nhật và gửi đăng kí lại cho TAD!", true);
         }
         catch (Exception v_e)
         {
