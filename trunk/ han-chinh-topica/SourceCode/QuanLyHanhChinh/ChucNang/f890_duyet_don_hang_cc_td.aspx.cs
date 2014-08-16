@@ -13,14 +13,78 @@ using IP.Core.WinFormControls;
 using IP.Core.IPUserService;
 
 public partial class ChucNang_f890_duyet_don_hang_cc_td : System.Web.UI.Page {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        DS_GD_DON_DAT_HANG v_ds= new DS_GD_DON_DAT_HANG();
-        US_GD_DON_DAT_HANG v_us= new US_GD_DON_DAT_HANG();
-        string temp = "01/08/2014";
-        v_us.load_ddh_xin_td_duyet(v_ds, 132, CIPConvert.ToDatetime(temp));
-        m_lbl_title.Text = "Trung tâm TAD";
-        m_grv_don_hang_nhap.DataSource = v_ds.GD_DON_DAT_HANG;
-        m_grv_don_hang_nhap.DataBind();
+    protected void Page_Load(object sender, EventArgs e) {
+
+        try {
+            //this.Form.DefaultButton = m_cmd_tim_kiem.UniqueID;
+            if(!IsPostBack) {
+                if(!Person.check_user_have_menu()) {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script type = 'text/javascript'>alert('Bạn không có quyền sử dụng chức năng này!');window.location.replace('/TraCuuKeToan/')</script>");
+                }
+                US_HT_NGUOI_SU_DUNG v_us_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
+                if(Session[SESSION.AccounLoginYN] == "Y") {
+                    decimal v_id_user = CIPConvert.ToDecimal(Session[SESSION.UserID]);
+                    US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
+                    IP.Core.IPData.DS_HT_NGUOI_SU_DUNG v_ds_ht_nguoi_su_dung = new IP.Core.IPData.DS_HT_NGUOI_SU_DUNG();
+                    v_us_ht_nguoi_su_dung.FillDataset(v_ds_ht_nguoi_su_dung, " WHERE ID =" + v_id_user);
+                    decimal v_id_user_group = CIPConvert.ToDecimal(v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Rows[0]["ID_USER_GROUP"]);
+                    US_HT_QUAN_HE_SU_DUNG_DU_LIEU v_us_ht_qh_sd_dl = new US_HT_QUAN_HE_SU_DUNG_DU_LIEU();
+                    DS_HT_QUAN_HE_SU_DUNG_DU_LIEU v_ds_ht_qh_sd_dl = new DS_HT_QUAN_HE_SU_DUNG_DU_LIEU();
+                    v_us_ht_qh_sd_dl.FillDataset(v_ds_ht_qh_sd_dl, "where ID_USER_GROUP =" + v_id_user_group);
+                    m_hdf_id_trung_tam.Value = v_ds_ht_qh_sd_dl.HT_QUAN_HE_SU_DUNG_DU_LIEU.Rows[0]["ID_PHONG_BAN"].ToString();
+                    set_inital_form_mode();
+                }
+                else {
+                    Response.Redirect("../Default.aspx", false);
+                    HttpContext.Current.ApplicationInstance.CompleteRequest();
+                }
+                //thong_bao("", false);
+            }
+        }
+        catch(Exception v_e) {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
     }
+
+    private void set_inital_form_mode() {
+        decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
+        US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+        DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+        v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
+        m_lbl_title.Text = "Trung tâm - ban: " + v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
+        // lấy mã trung tâm
+        m_hdf_ma_trung_tam.Value = v_ds.DM_PHONG_BAN.Rows[0]["MA_PHONG_BAN"].ToString();
+
+        DS_GD_DON_DAT_HANG v_ds_gd_don_dat_hang = new DS_GD_DON_DAT_HANG();
+        US_GD_DON_DAT_HANG v_us_gd_don_dat_hang = new US_GD_DON_DAT_HANG();
+        string temp = "01/08/2014";
+        v_us_gd_don_dat_hang.load_ddh_xin_td_duyet(v_ds_gd_don_dat_hang, 132, CIPConvert.ToDatetime(temp));
+        m_grv_don_hang_nhap.DataSource = v_ds_gd_don_dat_hang.GD_DON_DAT_HANG;
+        m_grv_don_hang_nhap.DataBind();
+
+        //Lay tong tien dinh muc
+        DateTime v_dau_thang = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day+1);
+        DateTime v_cuoi_thang = DateTime.Now.Date.AddMonths(1).AddDays(-DateTime.Now.Date.Day);
+        m_lbl_tong_tien_dm.Text = v_us_gd_don_dat_hang.get_tong_tien_dinh_muc_hang_thang(v_id_trung_tam, 174, v_dau_thang, v_cuoi_thang).ToString();
+    }
+    //private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible) {
+    //    m_mtv_1.SetActiveView(m_view_confirm);
+    //    m_lbl_popup_mess.Text = ip_str_mess;
+    //    m_pnl_confirm_tg.Visible = ip_panel_thong_bao_visible;
+    //    m_cmd_ok.Visible = ip_panel_thong_bao_visible;
+    //}
+    //public void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible, bool ip_button_ok_visible) {
+    //    m_mtv_1.SetActiveView(m_view_confirm);
+    //    m_lbl_popup_mess.Text = ip_str_mess;
+    //    m_pnl_confirm_tg.Visible = ip_panel_thong_bao_visible;
+    //    m_cmd_ok.Visible = ip_button_ok_visible;
+    //}
+    //public void thong_bao(string ip_str_mess) {
+    //    m_mtv_1.SetActiveView(m_view_confirm);
+    //    m_lbl_popup_mess.Text = ip_str_mess;
+    //    m_pnl_confirm_tg.Visible = true;
+    //    m_cmd_ok.Visible = true;
+    //}
+
 }
+

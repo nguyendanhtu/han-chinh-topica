@@ -49,12 +49,14 @@
                 <tr>
                     <td style="text-align: center">
                         <asp:Label ID="Label1" runat="Server" Text="Tổng tiền định mức: "></asp:Label>&nbsp&nbsp
-                        &nbsp&nbsp<asp:Label ID="Label3" runat="Server" Text="0"></asp:Label>
+                        &nbsp&nbsp<asp:Label ID="m_lbl_tong_tien_dm" runat="Server" Text="0"></asp:Label>
+                        <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
+                        <asp:HiddenField ID="m_hdf_ma_trung_tam" runat="server" />
                     </td>
                 </tr>
                 <tr>
                     <td style="text-align: center">
-                        <asp:Label ID="Label4" runat="Server" Text=" Số tiền đã chi thực tế: "></asp:Label>
+                        <asp:Label ID="m_lbl_so_tien_da_chi" runat="Server" Text=" Số tiền đã chi thực tế: "></asp:Label>
                         &nbsp&nbsp<asp:Label ID="Label5" runat="Server" Text="0"></asp:Label>
                     </td>
                 </tr>
@@ -66,7 +68,7 @@
                         <asp:GridView ID="m_grv_don_hang_nhap" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Không có đơn hàng nào!" EmptyDataRowStyle-BorderColor="#810913"
-                            CellPadding="8" PageSize="20">
+                            CellPadding="8" PageSize="20"> <%--OnSelectedIndexChanged="m_grv_don_hang_nhap_SelectedIndexChanged"--%>
                             <%--OnRowEditing="m_grv_don_hang_nhap_RowEditing"
                         OnRowDeleting="m_grv_don_hang_nhap_RowDeleting"
                         OnPageIndexChanging="m_grv_don_hang_PageIndexChanging">--%>
@@ -81,7 +83,7 @@
                             <Columns>
                                 <asp:TemplateField HeaderText="Không duyệt" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa">
+                                        <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Không duyệt đơn này">
                                             <%--OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">--%>
                                                 <img src="../Images/Button/deletered.png" alt="Delete" />
                                         </asp:LinkButton>
@@ -123,19 +125,19 @@
                                     <ItemStyle HorizontalAlign="Right" Width="5%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="GIA_TRI_CHUA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ CHƯA VAT (VNĐ)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:F3}">
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="GIA_TRI_DA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ GỒM VAT (VNĐ)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:F3}">
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="SO_TIEN_SAU_DON" ItemStyle-HorizontalAlign="Right" HeaderText="Số tiền chi sau đơn (VNĐ)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:F3}">
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="PHAN_TRAM_VUOT" ItemStyle-HorizontalAlign="Right" HeaderText="Phần trăm vượt (%)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:F3}">
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
                                 <%--<asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
@@ -146,6 +148,7 @@
                         </asp:GridView>
                     </td>
                 </tr>
+
             </table>
 
         </ContentTemplate>

@@ -257,5 +257,19 @@ public class US_GD_DON_DAT_HANG : US_Object
         v_store_proc.addDatetimeInputParam("@THANG", ip_thang);
         v_store_proc.fillDataSetByCommand(this, ip_ds);
     }
+    public decimal get_tong_tien_dinh_muc_hang_thang(decimal ip_id_trung_tam, decimal ip_id_loai_dinh_muc, DateTime ip_dau_thang, DateTime ip_cuoi_thang) {
+        CStoredProc v_store_proc = new CStoredProc("[pr_get_tong_tien_dm_theo_thang]");
+        v_store_proc.addDecimalInputParam("@ID_TRUNG_TAM ", ip_id_trung_tam);
+        v_store_proc.addDatetimeInputParam("@DAU_THANG", ip_dau_thang.Date);
+        v_store_proc.addDatetimeInputParam("@CUOI_THANG", ip_cuoi_thang.Date);
+        v_store_proc.addDecimalInputParam("@ID_LOAI_DINH_MUC", ip_id_loai_dinh_muc);
+        SqlParameter v_obj_tong_tien_dinh_muc = v_store_proc.addDecimalOutputParam("@TONG_TIEN", 0);
+
+
+        v_store_proc.ExecuteCommand(this);
+        if(v_obj_tong_tien_dinh_muc.Value!=null)
+            return CIPConvert.ToDecimal(v_obj_tong_tien_dinh_muc.Value);
+        return 0;
+    }
 }
 }
