@@ -5,7 +5,7 @@
     TagPrefix="asp" %>
 <%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-   <%-- <script type="text/javascript">
+    <%-- <script type="text/javascript">
         $(document).ready(function () {
             $("#<%=m_txt_tu_ngay.ClientID%>").datepicker({
                 changeMonth: true,
@@ -93,15 +93,19 @@
                 <asp:TextBox ID="m_txt_den_ngay" runat="Server"></asp:TextBox>
             </td>
         </tr>
-        <tr>
-            <td align="center" colspan="4">
-                <asp:Label ID="Label2" runat="server" Text="Nội dung tìm kiếm " CssClass="cssManField"></asp:Label>
-                <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="350px" Height="15px" CssClass="cssTextBox" placeholder="Nhập số Bill, người gửi, người nhận, nội dung"></asp:TextBox>
-                &nbsp;
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <tr>
+                    <td align="center" colspan="4">
+                        <asp:Label ID="Label2" runat="server" Text="Nội dung tìm kiếm " CssClass="cssManField"></asp:Label>
+                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="350px" Height="15px" CssClass="cssTextBox" placeholder="Nhập số Bill, người gửi, người nhận, nội dung"></asp:TextBox>
+                        &nbsp;
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
-            </td>
-        </tr>
-    </table>
+                    </td>
+                </tr>
+                </table>
     <asp:Panel ID="m_pnl_confirm_tg" runat="server">
         <div class="cssLoadWapper">
             <asp:MultiView ID="m_mtv_1" runat="server">
@@ -128,46 +132,42 @@
             </asp:MultiView>
         </div>
     </asp:Panel>
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
-            <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                <tr>
-                    <td class="cssPageTitleBG" colspan="6">
-                        <asp:Label ID="m_lbl_danh_muc_bill" runat="server" CssClass="cssPageTitle" ForeColor="White"
-                            Text="Danh mục Bill theo trạng thái"></asp:Label>
-                        <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"
-                            ForeColor="White"></asp:Label>
-                        &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left">
-                        <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssManField" />
-                    </td>
-                    <td>&nbsp;
-                    </td>
-                    <td>
-                        <asp:HiddenField ID="m_hdf_id_bill" runat="server" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <asp:GridView ID="m_grv_v_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
-                            Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
-                            EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
-                            CellPadding="8" PageSize="20" OnPageIndexChanging="m_grv_v_dm_bill_PageIndexChanging">
-                            <PagerSettings Position="TopAndBottom" />
-                            <AlternatingRowStyle BackColor="White" />
-                            <FooterStyle CssClass="GridViewFooterStyle" />
-                            <RowStyle CssClass="GridViewRowStyle" />
-                            <SelectedRowStyle CssClass="GridViewSelectedRowStyle" />
-                            <PagerStyle CssClass="GridViewPagerStyle" />
-                            <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
-                            <HeaderStyle CssClass="GridViewHeaderStyle" />
-                            <Columns>
-                                <%-- <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
+                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                    <tr>
+                        <td class="cssPageTitleBG" colspan="6">
+                            <asp:Label ID="m_lbl_danh_muc_bill" runat="server" CssClass="cssPageTitle" ForeColor="White"
+                                Text="Danh mục Bill theo trạng thái"></asp:Label>
+                            <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"
+                                ForeColor="White"></asp:Label>
+                            &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssManField" />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <asp:HiddenField ID="m_hdf_id_bill" runat="server" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <asp:GridView ID="m_grv_v_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
+                                Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
+                                EmptyDataText="Không có dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
+                                CellPadding="8" PageSize="20" OnPageIndexChanging="m_grv_v_dm_bill_PageIndexChanging">
+                                <PagerSettings Position="TopAndBottom" />
+                                <AlternatingRowStyle BackColor="White" />
+                                <FooterStyle CssClass="GridViewFooterStyle" />
+                                <RowStyle CssClass="GridViewRowStyle" />
+                                <SelectedRowStyle CssClass="GridViewSelectedRowStyle" />
+                                <PagerStyle CssClass="GridViewPagerStyle" />
+                                <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
+                                <HeaderStyle CssClass="GridViewHeaderStyle" />
+                                <Columns>
+                                    <%-- <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
                                             OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
@@ -176,64 +176,64 @@
                                     </ItemTemplate>
                                     <ItemStyle />
                                 </asp:TemplateField>--%>
-                                <%--<asp:CommandField ItemStyle-Width="1%" EditText="Sửa" EditImageUrl="../Images/Button/edit.png"
+                                    <%--<asp:CommandField ItemStyle-Width="1%" EditText="Sửa" EditImageUrl="../Images/Button/edit.png"
                                     ShowEditButton="true" ButtonType="Image" HeaderText="Sửa" ItemStyle-HorizontalAlign="Center"
                                     HeaderStyle-HorizontalAlign="Center">
                                     <HeaderStyle HorizontalAlign="Center" />
                                     <ItemStyle HorizontalAlign="Center" Width="1%" />
                                 </asp:CommandField>--%>
-                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <%# Container.DataItemIndex + 1 %>
-                                        <headerstyle width="15px" />
-                                    </ItemTemplate>
-                                    <ItemStyle HorizontalAlign="Center" Width="2%" />
-                                </asp:TemplateField>
-                                <%--     <asp:BoundField DataField="TEN_PHONG_BAN" ItemStyle-HorizontalAlign="Left" HeaderText="TÊN TRUNG TÂM"
+                                    <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
+                                        <ItemTemplate>
+                                            <%# Container.DataItemIndex + 1 %>
+                                            <headerstyle width="15px" />
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" Width="2%" />
+                                    </asp:TemplateField>
+                                    <%--     <asp:BoundField DataField="TEN_PHONG_BAN" ItemStyle-HorizontalAlign="Left" HeaderText="TÊN TRUNG TÂM"
                                     ItemStyle-Width="7%">
                                     <ItemStyle HorizontalAlign="Left" Width="12%" />
                                 </asp:BoundField>--%>
-                                <asp:BoundField DataField="SO_BILL" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ BILL"
-                                    ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Right" Width="3%" />
-                                </asp:BoundField>
-                                <asp:BoundField DataField="TRANG_THAI_THU" ItemStyle-HorizontalAlign="Left" HeaderText="TRẠNG THÁI"
-                                    ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
-                                </asp:BoundField>
-                                <asp:BoundField DataField="SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ TIỀN (VNĐ)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
-                                    <ItemStyle HorizontalAlign="Right" Width="5%" />
-                                </asp:BoundField>
-                                <asp:BoundField DataField="NGAY_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGÀY GỬI"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:dd/MM/yyyy}">
-                                    <ItemStyle HorizontalAlign="Left" Width="3%" />
-                                </asp:BoundField>
-                                <asp:BoundField DataField="NGUOI_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI GỬI"
-                                    ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
-                                </asp:BoundField>
-                                <asp:BoundField DataField="NGUOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI NHẬN"
-                                    ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
-                                </asp:BoundField>
-                                <asp:BoundField DataField="NOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
-                                    ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="15%" />
-                                </asp:BoundField>
-                                <asp:BoundField DataField="NOI_DUNG" ItemStyle-HorizontalAlign="Left" HeaderText="NỘI DUNG"
-                                    ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="Left" Width="5%" />
-                                </asp:BoundField>
-                                <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
-                                    Visible="False">
-                                    <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                </asp:CommandField>
-                            </Columns>
-                        </asp:GridView>
-                    </td>
-                </tr>
-            </table>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+                                    <asp:BoundField DataField="SO_BILL" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ BILL"
+                                        ItemStyle-Width="7%">
+                                        <ItemStyle HorizontalAlign="Right" Width="3%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="TRANG_THAI_THU" ItemStyle-HorizontalAlign="Left" HeaderText="TRẠNG THÁI"
+                                        ItemStyle-Width="7%">
+                                        <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ TIỀN (VNĐ)"
+                                        ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                        <ItemStyle HorizontalAlign="Right" Width="5%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="NGAY_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGÀY GỬI"
+                                        ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:dd/MM/yyyy}">
+                                        <ItemStyle HorizontalAlign="Left" Width="3%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="NGUOI_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI GỬI"
+                                        ItemStyle-Width="7%">
+                                        <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="NGUOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI NHẬN"
+                                        ItemStyle-Width="7%">
+                                        <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="NOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
+                                        ItemStyle-Width="7%">
+                                        <ItemStyle HorizontalAlign="Left" Width="15%" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="NOI_DUNG" ItemStyle-HorizontalAlign="Left" HeaderText="NỘI DUNG"
+                                        ItemStyle-Width="7%">
+                                        <ItemStyle HorizontalAlign="Left" Width="5%" />
+                                    </asp:BoundField>
+                                    <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
+                                        Visible="False">
+                                        <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                                    </asp:CommandField>
+                                </Columns>
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                </table>
+            </ContentTemplate>
+        </asp:UpdatePanel>
 </asp:Content>
