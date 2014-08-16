@@ -427,6 +427,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_TONG_HOP_BILL_THEO_PHONG_BAN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_TONG_HOP_CHI_PHI_VPP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_TONG_HOP_CHI_PHI_VPP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_TONG_HOP_CPN_THEO_PHONG_BAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1095,6 +1100,17 @@
     </None>
     <None Include="DS_V_TONG_HOP_BILL_THEO_PHONG_BAN.xss">
       <DependentUpon>DS_V_TONG_HOP_BILL_THEO_PHONG_BAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_TONG_HOP_CHI_PHI_VPP.xsc">
+      <DependentUpon>DS_V_TONG_HOP_CHI_PHI_VPP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_TONG_HOP_CHI_PHI_VPP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_TONG_HOP_CHI_PHI_VPP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_TONG_HOP_CHI_PHI_VPP.xss">
+      <DependentUpon>DS_V_TONG_HOP_CHI_PHI_VPP.xsd</DependentUpon>
     </None>
     <None Include="DS_V_TONG_HOP_CPN_THEO_PHONG_BAN.xsc">
       <DependentUpon>DS_V_TONG_HOP_CPN_THEO_PHONG_BAN.xsd</DependentUpon>

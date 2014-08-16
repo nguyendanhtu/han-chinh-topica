@@ -831,6 +831,14 @@ namespace BCTKDS.CDBNames
         public const string GIA_TRI_DA_VAT = "GIA_TRI_DA_VAT";
         public const string MA_HD_NCC = "MA_HD_NCC";
     }
-
+    public class V_TONG_HOP_CHI_PHI_VPP
+    {
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string TONG_SO_HOA_DON = "TONG_SO_HOA_DON";
+        public const string TONG_TIEN_CHUA_VAT = "TONG_TIEN_CHUA_VAT";
+        public const string THUE_VAT = "THUE_VAT";
+        public const string TONG_TIEN_DA_VAT = "TONG_TIEN_DA_VAT";
+    }
     #endregion
 }

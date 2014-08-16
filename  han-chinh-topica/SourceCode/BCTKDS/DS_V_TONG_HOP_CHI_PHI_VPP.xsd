@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_TONG_HOP_CHI_PHI_VPP" targetNamespace="http://tempuri.org/DS_V_TONG_HOP_CHI_PHI_VPP.xsd" xmlns:mstns="http://tempuri.org/DS_V_TONG_HOP_CHI_PHI_VPP.xsd" xmlns="http://tempuri.org/DS_V_TONG_HOP_CHI_PHI_VPP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ADMIN_SOFTConnectionString4" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ADMIN_SOFTConnectionString4 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.ADMIN_SOFTConnectionString4" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_TONG_HOP_CHI_PHI_VPPTableAdapter" GeneratorDataComponentClassName="V_TONG_HOP_CHI_PHI_VPPTableAdapter" Name="V_TONG_HOP_CHI_PHI_VPP" UserDataComponentName="V_TONG_HOP_CHI_PHI_VPPTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ADMIN_SOFTConnectionString4 (Settings)" DbObjectName="ADMIN_SOFT.dbo.V_TONG_HOP_CHI_PHI_VPP" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_PHONG_BAN, TEN_PHONG_BAN, TONG_SO_HOA_DON, TONG_TIEN_CHUA_VAT, THUE_VAT, TONG_TIEN_DA_VAT FROM dbo.V_TONG_HOP_CHI_PHI_VPP</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_PHONG_BAN" DataSetColumn="ID_PHONG_BAN" />
+              <Mapping SourceColumn="TEN_PHONG_BAN" DataSetColumn="TEN_PHONG_BAN" />
+              <Mapping SourceColumn="TONG_SO_HOA_DON" DataSetColumn="TONG_SO_HOA_DON" />
+              <Mapping SourceColumn="TONG_TIEN_CHUA_VAT" DataSetColumn="TONG_TIEN_CHUA_VAT" />
+              <Mapping SourceColumn="THUE_VAT" DataSetColumn="THUE_VAT" />
+              <Mapping SourceColumn="TONG_TIEN_DA_VAT" DataSetColumn="TONG_TIEN_DA_VAT" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_TONG_HOP_CHI_PHI_VPP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_TONG_HOP_CHI_PHI_VPP" msprop:Generator_UserDSName="DS_V_TONG_HOP_CHI_PHI_VPP">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_TONG_HOP_CHI_PHI_VPP" msprop:Generator_TableClassName="V_TONG_HOP_CHI_PHI_VPPDataTable" msprop:Generator_TableVarName="tableV_TONG_HOP_CHI_PHI_VPP" msprop:Generator_TablePropName="V_TONG_HOP_CHI_PHI_VPP" msprop:Generator_RowDeletingName="V_TONG_HOP_CHI_PHI_VPPRowDeleting" msprop:Generator_UserTableName="V_TONG_HOP_CHI_PHI_VPP" msprop:Generator_RowChangingName="V_TONG_HOP_CHI_PHI_VPPRowChanging" msprop:Generator_RowEvHandlerName="V_TONG_HOP_CHI_PHI_VPPRowChangeEventHandler" msprop:Generator_RowDeletedName="V_TONG_HOP_CHI_PHI_VPPRowDeleted" msprop:Generator_RowEvArgName="V_TONG_HOP_CHI_PHI_VPPRowChangeEvent" msprop:Generator_RowChangedName="V_TONG_HOP_CHI_PHI_VPPRowChanged" msprop:Generator_RowClassName="V_TONG_HOP_CHI_PHI_VPPRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_PHONG_BAN" msprop:Generator_ColumnVarNameInTable="columnID_PHONG_BAN" msprop:Generator_ColumnPropNameInRow="ID_PHONG_BAN" msprop:Generator_ColumnPropNameInTable="ID_PHONG_BANColumn" msprop:Generator_UserColumnName="ID_PHONG_BAN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TEN_PHONG_BAN" msprop:Generator_ColumnVarNameInTable="columnTEN_PHONG_BAN" msprop:Generator_ColumnPropNameInRow="TEN_PHONG_BAN" msprop:Generator_ColumnPropNameInTable="TEN_PHONG_BANColumn" msprop:Generator_UserColumnName="TEN_PHONG_BAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TONG_SO_HOA_DON" msprop:Generator_ColumnVarNameInTable="columnTONG_SO_HOA_DON" msprop:Generator_ColumnPropNameInRow="TONG_SO_HOA_DON" msprop:Generator_ColumnPropNameInTable="TONG_SO_HOA_DONColumn" msprop:Generator_UserColumnName="TONG_SO_HOA_DON" type="xs:int" minOccurs="0" />
+              <xs:element name="TONG_TIEN_CHUA_VAT" msprop:Generator_ColumnVarNameInTable="columnTONG_TIEN_CHUA_VAT" msprop:Generator_ColumnPropNameInRow="TONG_TIEN_CHUA_VAT" msprop:Generator_ColumnPropNameInTable="TONG_TIEN_CHUA_VATColumn" msprop:Generator_UserColumnName="TONG_TIEN_CHUA_VAT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="THUE_VAT" msprop:Generator_ColumnVarNameInTable="columnTHUE_VAT" msprop:Generator_ColumnPropNameInRow="THUE_VAT" msprop:Generator_ColumnPropNameInTable="THUE_VATColumn" msprop:Generator_UserColumnName="THUE_VAT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TONG_TIEN_DA_VAT" msprop:Generator_ColumnVarNameInTable="columnTONG_TIEN_DA_VAT" msprop:Generator_ColumnPropNameInRow="TONG_TIEN_DA_VAT" msprop:Generator_ColumnPropNameInTable="TONG_TIEN_DA_VATColumn" msprop:Generator_UserColumnName="TONG_TIEN_DA_VAT" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:V_TONG_HOP_CHI_PHI_VPP" />
+      <xs:field xpath="mstns:ID_PHONG_BAN" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
