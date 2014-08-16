@@ -82,7 +82,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="m_lbl_hd_1" runat="server" CssClass="cssManField" Text="B1: Chọn file danh sách thư cần gửi  "></asp:Label>
+                <asp:Label ID="m_lbl_hd_1" runat="server" CssClass="cssManField" Text="Bước 1: Chọn file danh sách thư cần gửi  "></asp:Label>
             </td>
             <td>
                 <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" />
@@ -90,7 +90,7 @@
         </tr>
         <tr>
             <td align="left">
-                <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="B2: Hiển thị danh sách lên web "></asp:Label>
+                <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="Bước 2: Hiển thị danh sách lên web "></asp:Label>
             </td>
             <td>
                 <asp:Button ID="m_cmd_upload" runat="Server" Text="Bắt đầu upload file" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
@@ -99,7 +99,7 @@
         </tr>
         <tr>
             <td align="left">
-                <asp:Label ID="Label2" runat="server" CssClass="cssManField" Text="B3: Kiểm tra và gửi cho TAD  "></asp:Label>
+                <asp:Label ID="Label2" runat="server" CssClass="cssManField" Text="Bước 3: Kiểm tra và gửi cho TAD  "></asp:Label>
             </td>
             <td>
                 <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Kiểm tra và gửi cho TAD" CssClass="cssGoogleButton"
