@@ -251,7 +251,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         try
         {
             DateTime v_den_ngay, v_ngay_chon;
-            v_ngay_chon = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
+            v_ngay_chon = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
             int numberOfDaysInMonth = DateTime.DaysInMonth(v_ngay_chon.Year, v_ngay_chon.Month);
             v_den_ngay = new DateTime(v_ngay_chon.Year, v_ngay_chon.Month, numberOfDaysInMonth);
             m_txt_den_ngay.Text = v_den_ngay.ToShortDateString();

@@ -4,19 +4,9 @@
     TagPrefix="asp" %>
 <%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#<%=m_txt_tu_ngay.ClientID%>").datepicker({
-                changeMonth: true,
-                changeYear: true,
-                required: true,
-                yearRange: '1950:2050',
-            });
-        });
-    </script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#<%=m_txt_den_ngay.ClientID%>").datepicker({
+<%--    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#<%=m_txt_tu_ngay.ClientID%>").datepicker({
                     changeMonth: true,
                     changeYear: true,
                     required: true,
@@ -24,68 +14,97 @@
                 });
             });
     </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#<%=m_txt_den_ngay.ClientID%>").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    required: true,
+                    yearRange: '1950:2050',
+                });
+            });
+    </script>--%>
+        <script type="text/javascript">
+            $(function () {
+                $("#<%=m_txt_tu_ngay.ClientID%>").datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                onClose: function (selectedDate) {
+                    $("#<%=m_txt_den_ngay.ClientID%>").datepicker("option", "minDate", selectedDate);
+                }
+            });
+            $("#<%=m_txt_den_ngay.ClientID%>").datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                onClose: function (selectedDate) {
+                    $("#<%=m_txt_tu_ngay.ClientID%>").datepicker("option", "maxDate", selectedDate);
+                }
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+
+    <table cellspacing="0" cellpadding="1" style="width: 100%" class="cssTable" border="0">
+        <tr>
+            <td class="cssPageTitleBG" colspan="6">
+
+                <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" Text="Tra cứu tình hình CPN"
+                    ForeColor="White" />
+                &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server"></asp:HiddenField>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" colspan="2">
+                <asp:Label ID="m_lbl_tu_ngay" runat="server" Text="Từ ngày: " CssClass="cssManField"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="m_txt_tu_ngay" runat="Server" OnTextChanged="Tu_ngay_OnTextChanged" AutoPostBack="true"></asp:TextBox>
+            </td>
+            <td align="right" colspan="2">
+                <asp:Label ID="m_lbl_den_ngay" runat="server" Text="Đến ngày: " CssClass="cssManField"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="m_txt_den_ngay" runat="Server" OnTextChanged="Den_ngay_OnTextChanged" AutoPostBack="true"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" colspan="6">
+                <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Xem báo cáo" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
+            </td>
+        </tr>
+    </table>
+    <asp:Panel ID="m_pnl_confirm_tg" runat="server">
+        <div class="cssLoadWapper">
+            <asp:MultiView ID="m_mtv_1" runat="server">
+                <asp:View ID="m_view_confirm" runat="server">
+                    <div class="cssLoadContent2" style="width: 50%">
+                        <table border="0" cellspacing="0" cellpadding="2" width="100%">
+                            <tr>
+                                <td align="center">
+                                    <br />
+                                    <asp:Label ID="m_lbl_popup_mess" CssClass="cssManField" Style="font-size: 14px" runat="server"></asp:Label>
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">
+                                    <asp:Button ID="m_cmd_ok" AccessKey="c" CssClass="cssGoogleButton" runat="server"
+                                        Text="OK" OnClick="m_cmd_ok_Click" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </asp:View>
+            </asp:MultiView>
+        </div>
+    </asp:Panel>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            <table cellspacing="0" cellpadding="1" style="width: 100%" class="cssTable" border="0">
-                <tr>
-                    <td class="cssPageTitleBG" colspan="6">
-
-                        <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" Text="Tra cứu tình hình CPN"
-                            ForeColor="White" />
-                        &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
-                        <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server"></asp:HiddenField>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right" colspan="2">
-                        <asp:Label ID="m_lbl_tu_ngay" runat="server" Text="Từ ngày: " CssClass="cssManField"></asp:Label>
-                    </td>
-                    <td>
-                       <asp:TextBox ID="m_txt_tu_ngay" runat="Server" OnTextChanged="Tu_ngay_OnTextChanged" AutoPostBack="true"></asp:TextBox>
-                    </td>
-                    <td align="right" colspan="2">
-                        <asp:Label ID="m_lbl_den_ngay" runat="server" Text="Đến ngày: " CssClass="cssManField"></asp:Label>
-                    </td>
-                    <td>
-                      <asp:TextBox ID="m_txt_den_ngay" runat="Server" OnTextChanged="Den_ngay_OnTextChanged" AutoPostBack="true"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" colspan="6">
-                        <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Xem báo cáo" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
-                    </td>
-                </tr>
-            </table>
-            <asp:Panel ID="m_pnl_confirm_tg" runat="server">
-                <div class="cssLoadWapper">
-                    <asp:MultiView ID="m_mtv_1" runat="server">
-                        <asp:View ID="m_view_confirm" runat="server">
-                            <div class="cssLoadContent2" style="width: 50%">
-                                <table border="0" cellspacing="0" cellpadding="2" width="100%">
-                                    <tr>
-                                        <td align="center">
-                                            <br />
-                                            <asp:Label ID="m_lbl_popup_mess" CssClass="cssManField" Style="font-size: 14px" runat="server"></asp:Label>
-                                            <br />
-                                            <br />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center">
-                                            <asp:Button ID="m_cmd_ok" AccessKey="c" CssClass="cssGoogleButton" runat="server"
-                                                Text="OK" OnClick="m_cmd_ok_Click" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </asp:View>
-                    </asp:MultiView>
-                </div>
-            </asp:Panel>
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
@@ -170,16 +189,16 @@
                         </td>
                     </tr>
                     <tr style="background-color: lightgrey">
-                        <td align="center" style="width:25%">
+                        <td align="center" style="width: 25%">
                             <asp:Label ID="Label7" runat="server" Text="Trạng thái Bill" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
-                        <td align="center" style="width:25%">
+                        <td align="center" style="width: 25%">
                             <asp:Label ID="Label8" runat="server" Text="Tổng số Bill" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
-                        <td align="center" style="width:25%">
+                        <td align="center" style="width: 25%">
                             <asp:Label ID="Label9" runat="server" Text="Tổng số tiền đã tính VAT (VNĐ)" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
-                        <td align="center" style="width:25%">
+                        <td align="center" style="width: 25%">
                             <asp:Label ID="Label6" runat="server" Text="Click xem chi tiết" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
                     </tr>
