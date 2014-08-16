@@ -63,7 +63,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             }
             else
             {
-                m_lbl_message.Text = "File import phải là file excel!";
+                m_lbl_message.Text = "File import phải là file excel đuôi .xls!";
             }
         }
     }
@@ -357,7 +357,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     }
     private bool check_file_upload_is_ok(string ip_str_file_name)
     {
-        if (!Path.GetExtension(ip_str_file_name).Equals(".xls")) return false;
+        if (!Path.GetExtension(ip_str_file_name).Equals(".xls")) {return false;}
         return true;
     }
 
@@ -411,13 +411,22 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 string v_str_file_save = DateTime.Now.ToString("ss.fff") + m_fu_chon_file_import.FileName;
                 m_hdf_dir_save_excel.Value = Server.MapPath("~") + "//TempImportExcel//" + v_str_file_save;
                 save_file_upload(m_hdf_dir_save_excel.Value);
-                excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
-                check_validate_grid_is_ok();
+                if (check_file_upload_is_ok(m_fu_chon_file_import.FileName))
+                {
+                    excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
+                    check_validate_grid_is_ok();
+                }
+                else
+                {
+                    thong_bao("Bạn phải import file excel .xls",true);
+                }
+                
                 //delete_file_imported(m_hdf_dir_save_excel.Value);
             }
         }
         catch (Exception v_e)
         {
+            thong_bao("Import không thành công",true);
             delete_file_imported(m_hdf_dir_save_excel.Value);
             m_sm.ExceptionHanlde(this, v_e);
         }
