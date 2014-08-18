@@ -77,6 +77,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     private void excel_file_to_grid(GridView ip_grv, int ip_i_start_row, string ip_str_file_dir)
     {
         m_hdf_so_ban_ghi.Value = "0";
+        m_lbl_dang_upload.Visible = true;
         FileStream v_fs_stream = File.Open(ip_str_file_dir, FileMode.Open, FileAccess.Read);
         IExcelDataReader v_edr = ExcelReaderFactory.CreateBinaryReader(v_fs_stream);
         DataSet v_ds_result = v_edr.AsDataSet();
@@ -127,6 +128,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         m_hdf_so_ban_ghi.Value = (v_ds_result.Tables[0].Rows.Count / m_grv_dm_bill.PageSize +1).ToString();
         m_grv_dm_bill.Visible = true;
         ip_grv.DataBind();
+        m_lbl_dang_upload.Visible = false;
         //v_edr.Close();
     }
     private void save_grid_to_database()
@@ -387,6 +389,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                     DS_HT_QUAN_HE_SU_DUNG_DU_LIEU v_ds_ht_qh_sd_dl = new DS_HT_QUAN_HE_SU_DUNG_DU_LIEU();
                     v_us_ht_qh_sd_dl.FillDataset(v_ds_ht_qh_sd_dl, "where ID_USER_GROUP =" + v_id_user_group);
                     m_hdf_id_trung_tam.Value = v_ds_ht_qh_sd_dl.HT_QUAN_HE_SU_DUNG_DU_LIEU.Rows[0]["ID_PHONG_BAN"].ToString();
+                    m_lbl_dang_upload.Visible = false;
                     thong_bao("", false);
                 }
                 else
@@ -437,7 +440,6 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         {
             if (check_validate_grid_is_ok())
             {
-
                 save_grid_to_database();
                 excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
                 check_validate_grid_is_ok();
