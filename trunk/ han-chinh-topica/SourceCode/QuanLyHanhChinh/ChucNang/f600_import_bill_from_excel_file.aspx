@@ -105,33 +105,36 @@
                 <br />
             </td>
         </tr>
-        <tr>
-            <td align="left">
-                <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="Bước 2: Hiển thị danh sách lên web "></asp:Label>
-            </td>
-            <td>
-                <asp:Button ID="m_cmd_upload" runat="Server" Text="Bắt đầu upload file" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
-                <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <br />
-            </td>
-        </tr>
-        <tr>
-            <td align="left">
-                <asp:Label ID="Label2" runat="server" CssClass="cssManField" Text="Bước 3: Kiểm tra và gửi cho TAD  "></asp:Label>
-            </td>
-            <td>
-                <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Kiểm tra và gửi cho TAD" CssClass="cssGoogleButton"
-                    OnClick="m_cmd_kiem_tra_va_import_Click" />
-            </td>
-        </tr>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
+                <tr>
+                    <td align="left">
+                        <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="Bước 2: Hiển thị danh sách lên web "></asp:Label>
+                    </td>
+                    <td>
+                        <asp:Button ID="m_cmd_upload" runat="Server" Text="Bắt đầu upload file" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
+                        <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
+                    </td>
+                    <td>
+                        <asp:Label ID="m_lbl_dang_upload" runat="server" Text="Đang upload... Vui lòng đợi!" CssClass="cssManField"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <asp:Label ID="Label2" runat="server" CssClass="cssManField" Text="Bước 3: Kiểm tra và gửi cho TAD  "></asp:Label>
+                    </td>
+                    <td>
+                        <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Kiểm tra và gửi cho TAD" CssClass="cssGoogleButton"
+                            OnClick="m_cmd_kiem_tra_va_import_Click" />
+                    </td>
+                </tr>
                 <table width="100%">
                     <tr>
                         <td colspan="4">
