@@ -4,7 +4,7 @@
     TagPrefix="asp" %>
 <%@ Register Assembly="eWorld.UI" Namespace="eWorld.UI" TagPrefix="ew" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-<%--    <script type="text/javascript">
+    <%--    <script type="text/javascript">
         $(document).ready(function () {
             $("#<%=m_txt_tu_ngay.ClientID%>").datepicker({
                     changeMonth: true,
@@ -24,22 +24,22 @@
                 });
             });
     </script>--%>
-        <script type="text/javascript">
-            $(function () {
-                $("#<%=m_txt_tu_ngay.ClientID%>").datepicker({
+    <script type="text/javascript">
+        $(function () {
+            $("#<%=m_txt_tu_ngay.ClientID%>").datepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
                 onClose: function (selectedDate) {
                     $("#<%=m_txt_den_ngay.ClientID%>").datepicker("option", "minDate", selectedDate);
-                }
+                    }
             });
             $("#<%=m_txt_den_ngay.ClientID%>").datepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
                 onClose: function (selectedDate) {
                     $("#<%=m_txt_tu_ngay.ClientID%>").datepicker("option", "maxDate", selectedDate);
-                }
-            });
+                    }
+                });
         });
     </script>
 </asp:Content>
@@ -47,11 +47,8 @@
 
     <table cellspacing="0" cellpadding="1" style="width: 100%" class="cssTable" border="0">
         <tr>
-            <td class="cssPageTitleBG" colspan="6">
-
-                <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" Text="Tra cứu tình hình CPN"
-                    ForeColor="White" />
-                &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+            <td align="center" colspan="6">
+                <asp:Label ID="m_lbl_header" runat="server" Text="BÁO CÁO TÌNH HÌNH CHUYỂN PHÁT NHANH" CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
                 <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server"></asp:HiddenField>
             </td>
         </tr>
@@ -108,11 +105,9 @@
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
-                        <asp:Label ID="m_lbl_ten_trung_tam" runat="server" CssClass="cssPageTitle" ForeColor="White">
-                        </asp:Label>
-                        <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"
-                            ForeColor="White"></asp:Label>
-                        &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                        <asp:Label ID="m_lbl_ten_trung_tam" runat="server" CssClass="cssPageTitle"></asp:Label>
+                        <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"></asp:Label>
+                        <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
                     </td>
                 </tr>
                 <tr>
@@ -182,9 +177,8 @@
                     <tr>
                         <td class="cssPageTitleBG" colspan="6">
 
-                            <asp:Label ID="Label1" runat="server" CssClass="cssPageTitle" Text="Chi tiết tổng hợp tình hình CPN"
-                                ForeColor="White" />
-                            &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                            <asp:Label ID="Label1" runat="server" CssClass="cssPageTitle" Text="Chi tiết tổng hợp tình hình CPN" />
+                            <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
                             <asp:HiddenField ID="HiddenField1" runat="server"></asp:HiddenField>
                         </td>
                     </tr>
