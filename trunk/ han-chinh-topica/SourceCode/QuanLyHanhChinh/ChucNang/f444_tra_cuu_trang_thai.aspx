@@ -48,25 +48,29 @@
 
     <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
         <tr>
-            <td class="cssPageTitleBG" colspan="6">
-                <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" Text="Tra cứu trạng thái"
-                    ForeColor="White" />
-                &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+            <td align="center" colspan="4">
+                <asp:Label ID="m_lbl_header" runat="server" Text="TRA CỨU TRẠNG THÁI" CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
                 <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server"></asp:HiddenField>
             </td>
         </tr>
         <tr>
-            <td align="right">
-                <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="Trung tâm-ban:"></asp:Label>
+            <td align="center" colspan="4">
+                <asp:Label ID="m_lbl_ten_trung_tam" runat="server" CssClass="cssManField" ForeColor="GrayText" Font-Bold="true" Font-Size="Medium"></asp:Label>
             </td>
-            <td align="left">
-                <asp:Label ID="m_lbl_ten_trung_tam" runat="server" CssClass="cssManField" Font-Bold="true" Font-Size="Medium"></asp:Label>
-            </td>
+        </tr>
+        <tr>
             <td align="right">
                 <asp:Label ID="m_lbl_tu_ngay" runat="server" Text="Từ ngày: " CssClass="cssManField"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="m_txt_tu_ngay" runat="Server"></asp:TextBox>
+            </td>
+
+            <td align="right">
+                <asp:Label ID="m_lbl_den_ngay" runat="server" Text="Đến ngày: " CssClass="cssManField"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="m_txt_den_ngay" runat="Server"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -86,12 +90,6 @@
                     Width="45%">
                 </asp:DropDownList>
             </td>
-            <td align="right">
-                <asp:Label ID="m_lbl_den_ngay" runat="server" Text="Đến ngày: " CssClass="cssManField"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="m_txt_den_ngay" runat="Server"></asp:TextBox>
-            </td>
         </tr>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
@@ -100,7 +98,7 @@
                 <tr>
                     <td align="center" colspan="4">
                         <asp:Label ID="Label2" runat="server" Text="Nội dung tìm kiếm " CssClass="cssManField"></asp:Label>
-                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="350px" Height="15px" CssClass="cssTextBox" placeholder="Nhập số Bill, người gửi, người nhận, nội dung"></asp:TextBox>
+                        <asp:TextBox ID="m_txt_tim_kiem" runat="server" Width="350px" Height="20px" CssClass="cssTextBox" placeholder="Nhập số Bill, người gửi, người nhận, nội dung"></asp:TextBox>
                         &nbsp;
                         <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Tìm kiếm" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
                     </td>
@@ -135,11 +133,10 @@
                 <table border="0" cellspacing="0" cellpadding="0" width="100%">
                     <tr>
                         <td class="cssPageTitleBG" colspan="6">
-                            <asp:Label ID="m_lbl_danh_muc_bill" runat="server" CssClass="cssPageTitle" ForeColor="White"
+                            <asp:Label ID="m_lbl_danh_muc_bill" runat="server" CssClass="cssPageTitle"
                                 Text="Danh mục Bill theo trạng thái"></asp:Label>
-                            <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"
-                                ForeColor="White"></asp:Label>
-                            &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                            <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"></asp:Label>
+                            <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
                         </td>
                     </tr>
                     <tr>
