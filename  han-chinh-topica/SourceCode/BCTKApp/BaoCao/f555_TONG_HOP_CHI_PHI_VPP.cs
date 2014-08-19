@@ -93,11 +93,11 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_tong_tien = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_tong_tien)).BeginInit();
             this.panel1.SuspendLayout();
@@ -242,6 +242,25 @@ namespace BCTKApp
             this.panel1.Size = new System.Drawing.Size(754, 115);
             this.panel1.TabIndex = 23;
             // 
+            // m_dtp_den_ngay
+            // 
+            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(486, 44);
+            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
+            this.m_dtp_den_ngay.Size = new System.Drawing.Size(134, 20);
+            this.m_dtp_den_ngay.TabIndex = 35;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(395, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 16);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Đến ngày";
+            // 
             // m_dtp_tu_ngay
             // 
             this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
@@ -274,25 +293,6 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Text = "TỔNG HỢP CHI PHÍ VPP";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(395, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 16);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Đến ngày";
-            // 
-            // m_dtp_den_ngay
-            // 
-            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_den_ngay.Location = new System.Drawing.Point(486, 44);
-            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
-            this.m_dtp_den_ngay.Size = new System.Drawing.Size(134, 20);
-            this.m_dtp_den_ngay.TabIndex = 35;
-            // 
             // f555_TONG_HOP_CHI_PHI_VPP
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -301,7 +301,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_grv_tong_tien);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f555_TONG_HOP_CHI_PHI_VPP";
-            this.Text = "f555_TONG_HOP_CHI_PHI_VPP";
+            this.Text = "F555- Tổng hợp chi phí vpp theo trung tâm";
             this.Load += new System.EventHandler(this.f555_TONG_HOP_CHI_PHI_VPP_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_tong_tien)).EndInit();
