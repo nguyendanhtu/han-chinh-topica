@@ -87,10 +87,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_us_dm_bill.strNGUOI_GUI = m_txt_nguoi_gui.Text.Trim();
         m_us_dm_bill.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
         m_us_dm_bill.strGHI_CHU = m_txt_ghi_chu.Text.Trim();
-        if (m_txt_so_tien.Text.Trim() != "")
-            m_us_dm_bill.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text.Trim());
-        else
-            m_us_dm_bill.dcSO_TIEN = 0;
+        m_us_dm_bill.dcSO_TIEN = 0;
         m_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(m_txt_ngay_gui.Text);
         m_us_dm_bill.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         m_us_dm_bill.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
@@ -113,7 +110,6 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_txt_nguoi_gui.Text = v_us_dm_bill.strNGUOI_GUI.Trim();
         m_txt_noi_dung.Text = v_us_dm_bill.strNOI_DUNG.Trim();
         m_txt_ghi_chu.Text = v_us_dm_bill.strGHI_CHU.Trim();
-        m_txt_so_tien.Text = v_us_dm_bill.dcSO_TIEN.ToString();
         m_txt_ngay_gui.Text = v_us_dm_bill.datNGAY_GUI.ToShortDateString();
         if (v_us_dm_bill.strTRONG_NUOC == "x")
         {
@@ -165,7 +161,6 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_txt_noi_dung.Text = "";
         m_txt_ghi_chu.Text = "";
         m_txt_nguoi_gui.Text = "";
-        m_txt_so_tien.Text = "";
         m_rdb_trong_nuoc.Checked = true;
         m_txt_ngay_gui.Text = DateTime.Now.ToShortDateString();
         this.m_hdf_id_bill.Value = "0";
@@ -180,19 +175,14 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_cmd_them.Visible = true;
         load_data_to_grid();
         thong_bao("", false);
-        m_txt_so_tien.Text = "0";
-        m_txt_so_tien.Visible = false;
-        m_lbl_so_tien.Visible = false;
-        m_lbl_vnd.Visible = false;
     }
     private void load_title()
     {
-        m_lbl_title.Text = "Nhập thông tin Bill";
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
         v_us.FillDataset(v_ds,"where id="+v_id_trung_tam);
-        m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
+        m_lbl_ten_trung_tam.Text ="Trung tâm - ban:" + v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
     }
     private void load_data_to_grid()
     {
