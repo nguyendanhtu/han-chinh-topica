@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 using BCTKDS;
 using BCTKDS.CDBNames;
 using BCTKUS;
-
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 
@@ -78,6 +77,15 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
         m_cbo_trang_thai.DataSource = v_ds.CM_DM_TU_DIEN;
         m_cbo_trang_thai.DataValueField = CM_DM_TU_DIEN.ID;
         m_cbo_trang_thai.DataTextField = CM_DM_TU_DIEN.TEN;
+        DataRow v_dr = v_ds.CM_DM_TU_DIEN.NewRow();
+        v_dr[CM_DM_TU_DIEN.ID] = -1;
+        v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 12;
+        v_dr[CM_DM_TU_DIEN.TEN] = "-----Tất cả-----";
+        v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "-----Tất cả-----";
+        v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "TRANG_THAI_THU";
+        v_dr[CM_DM_TU_DIEN.GHI_CHU] = " ";
+        v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+        m_cbo_trang_thai.SelectedIndex = 0;
         m_cbo_trang_thai.DataBind();
     }
     private bool check_thoi_gian()
