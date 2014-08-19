@@ -169,5 +169,14 @@ public class US_V_TONG_HOP_CHI_PHI_VPP : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDatasetSearch(DS_V_TONG_HOP_CHI_PHI_VPP ip_ds, decimal ip_id_trang_thai, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_TONG_HOP_CHI_PHI_VPP");
+        v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+        v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+        v_stored_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_id_trang_thai);
+        v_stored_proc.fillDataSetByCommand(this, ip_ds);
+    }
+}
 }
