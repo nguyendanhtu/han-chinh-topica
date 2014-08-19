@@ -26,8 +26,12 @@ user agent stylesheetdiv {
 }
 
 .cssGoogleButton {
-    background: -webkit-linear-gradient(top,#810913,#810913);
-    background: -moz-linear-gradient(top,#810913,#810913);
+    background: linear-gradient(top,#810913,#810913) !important; /*standard*/
+    background: linear-gradient(top,#810913\9,#810913\9);
+    background: -webkit-linear-gradient(top,#810913,#810913); /*googlechorm*/
+    background: -moz-linear-gradient(top,#810913,#810913); /*moliza firefox*/
+    _background: linear-gradient(top,#810913,#810913); /*IE7 below*/
+    *background: linear-gradient(top,#810913,#810913); /*IE6 below*/
     border: 1px solid #dcdcdc;
     border-color: rgba(0,0,0,0.1);
     color: White !important;
@@ -55,6 +59,8 @@ user agent stylesheetdiv {
         border-color: #c6c6c6;
         color: White !important;
         -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.15);
+        -moz-box-shadow: 0 1px 0 rgba(0,0,0,.15);
+        -ms-box-shadow: 0 1px 0 rgba(0,0,0,.15); 
         box-shadow: 0 1px 0 rgba(0,0,0,.15);
         background: #810913;
         background: -webkit-linear-gradient(top,#810913,#810913);
@@ -75,7 +81,7 @@ body {
 .cssLogout {
     background-color: Transparent;
     border: #C9BDAB 0px solid;
-    cursor: hand;
+    cursor: wait;
 }
 
 .cssButtonViewNews {
@@ -112,7 +118,7 @@ body {
 
 .cssManField {
     /*color: #143fbc;*/
-    color: #810913;
+    color:DarkSlateBlue;
     font-family: Arial, Tahoma, Times New Roman;
     font-size: 12px;
     font-weight: bold;
@@ -142,7 +148,7 @@ body {
     vertical-align: middle;
     text-align: center;
     background-image: url('../images/Button/BGButton.jpg');
-    cursor: hand;
+    cursor: alias;
 }
 
 .cssSearchItem {
@@ -160,7 +166,7 @@ body {
     font-size: 11px;
     font-weight: bold;
     text-align: center;
-    cursor: hand;
+    cursor: alias;
     padding-top: 3px;
     vertical-align: bottom;
 }
@@ -240,8 +246,8 @@ select > option:hover {
 }
 
 .cssTextBoxDefault {
-    border: 1px solid tranparent;
-    background-color: tranparent;
+    border: 1px solid groove;
+    background-color: aquamarine;
     font-family: Tahoma, Arial, Times New Roman;
     font-size: 12px;
     padding-left: 2px;
@@ -298,7 +304,7 @@ input[type=text]:focus, textarea:focus {
     font-size: 12px;
     font-family: Tahoma;
     font-size: 13px;
-    color: White;
+    color: darkblue;
     font-weight: bold;
     text-align: left;
     display: inline-block;
@@ -306,7 +312,7 @@ input[type=text]:focus, textarea:focus {
 
 .cssPageTitleBG {
     border: solid 1px #b4b4b4;
-    background-color: #810913;
+    background-color: ActiveCaption;
     height: 26px;
 }
 
@@ -331,7 +337,7 @@ input[type=text]:focus, textarea:focus {
     font-size: 12px;
     font-weight: bold;
     text-decoration: none;
-    cursor: hand;
+    cursor: ;
 }
 
     .cssGridLink:hover {
@@ -340,7 +346,7 @@ input[type=text]:focus, textarea:focus {
         font-size: 12px;
         text-decoration: none;
         font-weight: bold;
-        cursor: hand;
+        cursor: alias;
     }
 
 .cssGridHeader {
@@ -360,7 +366,7 @@ input[type=text]:focus, textarea:focus {
     color: #000040;
     text-decoration: none;
     padding-left: 4px;
-    cursor: hand;
+    cursor: alias;
 }
 
     .cssGridCellText:Hover {
@@ -370,7 +376,7 @@ input[type=text]:focus, textarea:focus {
         font-weight: bold;
         text-decoration: none;
         padding-left: 4px;
-        cursor: hand;
+        cursor: alias;
     }
 
 .cssGridCell {
@@ -379,7 +385,7 @@ input[type=text]:focus, textarea:focus {
     background-color: #ffffff;
     color: #000000;
     height: 24px;
-    cursor: hand;
+    cursor: alias;
 }
 
 .cssGridAlterCell {
@@ -388,7 +394,7 @@ input[type=text]:focus, textarea:focus {
     background-color: #E8EEF7;
     color: #000000;
     height: 24px;
-    cursor: Hand;
+    cursor: alias;
 }
 
 .cssGridEdit {
@@ -397,7 +403,7 @@ input[type=text]:focus, textarea:focus {
     font-size: 12px;
     color: #ffffff;
     height: 24px;
-    cursor: Hand;
+    cursor: alias;
 }
 
 .cssSelectedRow {
@@ -406,7 +412,7 @@ input[type=text]:focus, textarea:focus {
     background-color: #C5BBAF;
     color: #000080;
     height: 24px;
-    cursor: hand;
+    cursor: alias;
 }
 
 .cssGridPager {
@@ -425,7 +431,7 @@ input[type=text]:focus, textarea:focus {
         font-weight: bold;
         color: #000000;
         height: 29px;
-        cursor: hand;
+        cursor: alias;
     }
 
     .cssGridPager:Active {
@@ -435,7 +441,7 @@ input[type=text]:focus, textarea:focus {
         font-weight: bold;
         color: #000000;
         height: 29px;
-        cursor: hand;
+        cursor: alias;
     }
 /*
 .cssGrid
@@ -678,7 +684,7 @@ input[type=text]:focus, textarea:focus {
     padding-bottom: 1px;
     padding-left: 3px;
     padding-right: 3px;
-    cursor: hand;
+    cursor: alias;
 }
 
 .SelectedTreeNode {
@@ -690,7 +696,7 @@ input[type=text]:focus, textarea:focus {
     padding-bottom: 0px;
     padding-left: 2px;
     padding-right: 2px;
-    cursor: hand;
+    cursor: alias;
 }
 
 .HoverPopupTreeNode {
@@ -704,7 +710,7 @@ input[type=text]:focus, textarea:focus {
     padding-right: 2px;
     position: absolute;
     filter: progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=2);
-    cursor: hand;
+    cursor: alias;
 }
 
 .HoverPopup {
@@ -728,7 +734,7 @@ input[type=text]:focus, textarea:focus {
 /*End TreeView*/
 .cssHyperLinkIcon {
     border: #5d5d5d 0px solid;
-    cursor: hand;
+    cursor: alias;
 }
 
 
