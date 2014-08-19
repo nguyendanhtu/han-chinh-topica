@@ -31,15 +31,15 @@
                 changeMonth: true,
                 onClose: function (selectedDate) {
                     $("#<%=m_txt_den_ngay.ClientID%>").datepicker("option", "minDate", selectedDate);
-                    }
+                }
             });
             $("#<%=m_txt_den_ngay.ClientID%>").datepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
                 onClose: function (selectedDate) {
                     $("#<%=m_txt_tu_ngay.ClientID%>").datepicker("option", "maxDate", selectedDate);
-                    }
-                });
+                }
+            });
         });
     </script>
 </asp:Content>
@@ -50,6 +50,11 @@
             <td align="center" colspan="6">
                 <asp:Label ID="m_lbl_header" runat="server" Text="BÁO CÁO TÌNH HÌNH CHUYỂN PHÁT NHANH" CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
                 <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server"></asp:HiddenField>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" colspan="6">
+                <asp:Label ID="m_lbl_ten_trung_tam" runat="server"  CssClass="cssManField" ForeColor="GrayText" Font-Bold="true" Font-Size="Medium"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -105,7 +110,6 @@
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
-                        <asp:Label ID="m_lbl_ten_trung_tam" runat="server" CssClass="cssPageTitle"></asp:Label>
                         <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"></asp:Label>
                         <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
                     </td>
