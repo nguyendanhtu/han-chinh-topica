@@ -32,6 +32,14 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     #endregion
 
     #region Private Methods
+    private void set_intinal_form_load()
+    {
+        decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
+        US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+        DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+        v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
+        m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
+    }
     private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
     {
         m_mtv_1.SetActiveView(m_view_confirm);
@@ -389,6 +397,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                     DS_HT_QUAN_HE_SU_DUNG_DU_LIEU v_ds_ht_qh_sd_dl = new DS_HT_QUAN_HE_SU_DUNG_DU_LIEU();
                     v_us_ht_qh_sd_dl.FillDataset(v_ds_ht_qh_sd_dl, "where ID_USER_GROUP =" + v_id_user_group);
                     m_hdf_id_trung_tam.Value = v_ds_ht_qh_sd_dl.HT_QUAN_HE_SU_DUNG_DU_LIEU.Rows[0]["ID_PHONG_BAN"].ToString();
+                    set_intinal_form_load();
                     m_lbl_dang_upload.Visible = false;
                     thong_bao("", false);
                 }
@@ -405,6 +414,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+
     protected void m_cmd_upload_Click(object sender, EventArgs e)
     {
         try
