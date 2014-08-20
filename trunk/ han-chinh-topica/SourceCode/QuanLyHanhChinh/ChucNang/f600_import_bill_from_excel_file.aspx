@@ -95,7 +95,7 @@
                 <asp:Label ID="Label1" runat="server" text="Bước 1:" CssClass="cssManField" Font-Bold="true"></asp:Label>
             </td>
             <td align="left">
-                <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" EnableViewState="false" BorderStyle="Groove" BackColor="SteelBlue" ForeColor="White" BorderColor="WhiteSmoke" ToolTip="Chọn đường dẫn đến file Excel DS Bill cần gửi"/>
+                <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" EnableViewState="false"   BorderStyle="Groove" BackColor="SteelBlue" ForeColor="White" BorderColor="WhiteSmoke" ToolTip="Chọn đường dẫn đến file Excel DS Bill cần gửi"  />
             </td>
 
             <td align="right">
@@ -130,7 +130,7 @@
                                 <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
                                 <HeaderStyle CssClass="GridViewHeaderStyle" />
                                 <Columns>
-                                    <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderText="STT" ItemStyle-Width="4%" ItemStyle-Height="95px" HeaderStyle-Height="40px">
+                                    <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderText="STT" ItemStyle-Width="4%" ItemStyle-Height="40px" HeaderStyle-Height="40px">
                                         <ItemTemplate>
                                             <%# Container.DataItemIndex + 1 %>
                                         </ItemTemplate>
@@ -138,23 +138,23 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-Width="10%" HeaderText="Nội dung" ItemStyle-VerticalAlign="Top">
                                         <ItemTemplate>
-                                            <asp:TextBox ID="m_txt_noi_dung_grid" CssClass="cssTextBoxGrid" AutoPostBack="false" Height="70%" TextMode="MultiLine" runat="server" Text='<%#Eval("NOI_DUNG") %>'></asp:TextBox>
-                                            <br />
-                                            <asp:Label ID="m_lbl_noi_dung_message" runat="Server" CssClass="cssManField"></asp:Label>
+                                            <asp:TextBox ID="m_txt_noi_dung_grid" CssClass="cssTextBoxGrid" AutoPostBack="false"  TextMode="MultiLine" ToolTip="Nhập nội dung gửi" runat="server" Text='<%#Eval("NOI_DUNG") %>'></asp:TextBox>
+                                           <%-- <br />--%>
+                                            <%--<asp:Label ID="m_lbl_noi_dung_message" runat="Server" CssClass="cssManField"></asp:Label>--%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-Width="15%" HeaderText="Nơi nhận" ItemStyle-VerticalAlign="Top">
                                         <ItemTemplate>
-                                            <asp:TextBox ID="m_txt_noi_nhan_grid" CssClass="cssTextBoxGrid" AutoPostBack="false" Height="70%" TextMode="MultiLine" runat="server" Text='<%#Eval("NOI_NHAN") %>'></asp:TextBox>
-                                            <br />
-                                            <asp:Label ID="m_lbl_noi_nhan_message" runat="Server"></asp:Label>
+                                            <asp:TextBox ID="m_txt_noi_nhan_grid" CssClass="cssTextBoxGrid" AutoPostBack="false"  TextMode="MultiLine" ToolTip="Nơi nhận không hợp lệ" runat="server" Text='<%#Eval("NOI_NHAN") %>'></asp:TextBox>
+                                           <%-- <br />
+                                            <asp:Label ID="m_lbl_noi_nhan_message" runat="Server"></asp:Label>--%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-Width="15%" HeaderText="Người nhận" ItemStyle-VerticalAlign="Top">
                                         <ItemTemplate>
-                                            <asp:TextBox ID="m_txt_nguoi_nhan_grid" CssClass="cssTextBoxGrid" AutoPostBack="false" Height="70%" TextMode="MultiLine" runat="server" Text='<%#Eval("NGUOI_NHAN") %>'></asp:TextBox>
-                                            <br />
-                                            <asp:Label ID="m_lbl_nguoi_nhan_message" runat="Server"></asp:Label>
+                                            <asp:TextBox ID="m_txt_nguoi_nhan_grid" CssClass="cssTextBoxGrid" AutoPostBack="false"  TextMode="MultiLine" runat="server" Text='<%#Eval("NGUOI_NHAN") %>'></asp:TextBox>
+                                           <%-- <br />
+                                            <asp:Label ID="m_lbl_nguoi_nhan_message" runat="Server"></asp:Label>--%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-Width="10%" HeaderText="Loại thư" ItemStyle-VerticalAlign="Middle">
@@ -168,60 +168,37 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-Width="8%" HeaderText="Số bill" ItemStyle-HorizontalAlign="Right" ItemStyle-VerticalAlign="Top">
                                         <ItemTemplate>
-                                            <asp:TextBox ID="m_txt_so_bill_grid" CssClass="cssTextBoxGrid" Style="text-align: right" AutoPostBack="true" Height="50%" runat="server" Text='<%#Eval("SO_BILL") %>'></asp:TextBox>
-                                            <br />
-                                            <asp:Label ID="m_lbl_so_bill_message" runat="Server"></asp:Label>
+                                            <asp:TextBox ID="m_txt_so_bill_grid" CssClass="cssTextBoxGrid" Style="text-align: right" AutoPostBack="true" Height="70%" runat="server" Text='<%#Eval("SO_BILL") %>'></asp:TextBox>
+                                           <%-- <br />
+                                            <asp:Label ID="m_lbl_so_bill_message" runat="Server"></asp:Label>--%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-Width="10%" HeaderText="Người gửi" ItemStyle-VerticalAlign="Top">
                                         <ItemTemplate>
-                                            <asp:TextBox Style="text-align: left" CssClass="cssTextBoxGrid" ID="m_txt_nguoi_gui_grid" Height="70%" AutoPostBack="false" runat="server" TextMode="MultiLine" Text='<%#Eval("NGUOI_GUI") %>'></asp:TextBox>
-                                            <br />
-                                            <asp:Label ID="m_lbl_nguoi_gui_message" runat="Server"></asp:Label>
+                                            <asp:TextBox Style="text-align: left" CssClass="cssTextBoxGrid" ID="m_txt_nguoi_gui_grid"  AutoPostBack="false" runat="server" TextMode="MultiLine" Text='<%#Eval("NGUOI_GUI") %>'></asp:TextBox>
+                                          <%--  <br />
+                                            <asp:Label ID="m_lbl_nguoi_gui_message" runat="Server"></asp:Label>--%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-Width="10%" HeaderText="Ngày gửi" ItemStyle-VerticalAlign="Top">
                                         <ItemTemplate>
-                                            <%-- <ew:CalendarPopup ID="m_dat_ngay_gui" runat="server" TextBoxLabelStyle-BorderColor="#810913"
-                                            TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
-                                            DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif" SelectedDate='<%# Eval("NGAY_GUI") %>'
-                                            ShowGoToToday="true" Width="70%">
-                                            <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
-                                                ForeColor="Black" />
-                                            <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                                ForeColor="Black" />
-                                            <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                                Font-Size="XX-Small" ForeColor="Gray" />
-                                            <SelectedDateStyle BackColor="#810913" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                                Font-Size="XX-Small" ForeColor="Black" />
-                                            <MonthHeaderStyle BackColor="#810913" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                                Font-Size="XX-Small" ForeColor="White" />
-                                            <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                                Font-Size="XX-Small" ForeColor="Black" />
-                                            <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                                ForeColor="Black" />
-                                            <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                                ForeColor="Black" />
-                                            <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                                Font-Size="XX-Small" ForeColor="Black" />
-                                        </ew:CalendarPopup>--%>
-                                            <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid txtdatetime" ID="m_txt_ngay_gui_grid" Height="50%" AutoPostBack="false" runat="server" Text='<%#Eval("NGAY_GUI") %>'></asp:TextBox>
-                                            <br />
-                                            <asp:Label ID="m_lbl_ngay_gui_message" runat="Server"></asp:Label>
+                                            <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid txtdatetime" ID="m_txt_ngay_gui_grid"  AutoPostBack="false" runat="server" Text='<%#Eval("NGAY_GUI") %>'></asp:TextBox>
+                                           <%-- <br />
+                                            <asp:Label ID="m_lbl_ngay_gui_message" runat="Server"></asp:Label>--%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-Width="8%" HeaderText="Mã phòng ban" ItemStyle-HorizontalAlign="Right" ItemStyle-VerticalAlign="Top">
                                         <ItemTemplate>
-                                            <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid  d" ID="m_txt_ma_phong_ban_grid" Height="50%" AutoPostBack="false" runat="server" Text='<%#Eval("MA_PHONG_BAN") %>'></asp:TextBox>
-                                            <br />
-                                            <asp:Label ID="m_lbl_ma_phong_ban_message" runat="Server"></asp:Label>
+                                            <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid" ID="m_txt_ma_phong_ban_grid"  AutoPostBack="false" ToolTip="Nhập mã phòng ban" runat="server" Text='<%#Eval("MA_PHONG_BAN") %>'></asp:TextBox>
+                                           <%-- <br />
+                                            <asp:Label ID="m_lbl_ma_phong_ban_message" runat="Server"></asp:Label>--%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-Width="10%" HeaderText="Ghi chú" ItemStyle-VerticalAlign="Top">
                                         <ItemTemplate>
-                                            <asp:TextBox ID="m_txt_ghi_chu_grid" CssClass="cssTextBoxGrid" AutoPostBack="false" Height="70%" TextMode="MultiLine" runat="server" Text='<%#Eval("GHI_CHU") %>'></asp:TextBox>
-                                            <br />
-                                            <asp:Label ID="m_lbl_ghi_chu_message" runat="Server"></asp:Label>
+                                            <asp:TextBox ID="m_txt_ghi_chu_grid" CssClass="cssTextBoxGrid" AutoPostBack="false" TextMode="MultiLine" ToolTip="Nhập ghi chú" runat="server" Text='<%#Eval("GHI_CHU") %>'></asp:TextBox>
+                                          <%--  <br />
+                                            <asp:Label ID="m_lbl_ghi_chu_message" runat="Server"></asp:Label>--%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
