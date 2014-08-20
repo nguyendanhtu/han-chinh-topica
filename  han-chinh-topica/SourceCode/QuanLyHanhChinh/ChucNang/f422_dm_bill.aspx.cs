@@ -231,15 +231,15 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     private bool check_validate_is_ok()
     {
         string v_form_mode = get_form_mode(m_hdf_form_mode);
-        if (v_form_mode.Equals(LOAI_FORM.THEM) || v_form_mode.Equals(LOAI_FORM.SUA))
-        {
-            if (m_txt_so_bill.Text.Trim().Length != 8)
-            {
-                thong_bao("Số Bill gồm 8 chữ số!");
-                m_txt_so_bill.Focus();
-                return false;
-            }
-        }
+        //if (v_form_mode.Equals(LOAI_FORM.THEM) || v_form_mode.Equals(LOAI_FORM.SUA))
+        //{
+        //    if (m_txt_so_bill.Text.Trim().Length != 8)
+        //    {
+        //        thong_bao("Số Bill gồm 8 chữ số!");
+        //        m_txt_so_bill.Focus();
+        //        return false;
+        //    }
+        //}
 
         //Kiểm tra nhập trùng số Bill
         if (v_form_mode.Equals(LOAI_FORM.THEM))
@@ -262,6 +262,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
                 }
             }
         }
+        if (m_txt_so_bill.Text == null || m_txt_so_bill.Text == "") { thong_bao("Chưa nhập số Bill! "); m_txt_so_bill.Focus(); return false; }
         if (m_txt_nguoi_gui.Text == null || m_txt_nguoi_gui.Text == "") { thong_bao("Chưa nhập người gửi! "); m_txt_nguoi_gui.Focus(); return false; }
         if (m_txt_nguoi_nhan.Text == null || m_txt_nguoi_nhan.Text == "") { thong_bao("Chưa nhập người nhận! "); m_txt_nguoi_nhan.Focus(); return false; }
         if (m_txt_noi_nhan.Text == null || m_txt_noi_nhan.Text == "") { thong_bao("Chưa nhập nơi nhận! "); m_txt_noi_nhan.Focus(); return false; }
