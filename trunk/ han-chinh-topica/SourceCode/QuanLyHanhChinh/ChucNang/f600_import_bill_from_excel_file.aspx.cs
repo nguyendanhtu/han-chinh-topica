@@ -39,7 +39,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
         v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
         m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
-        m_lbl_thong_tim_grv_dm_bill.Text = "(Dữ liệu chưa được tải lên)";
+        m_lbl_thong_tim_grv_dm_bill.Text = "(Chưa có Bill nào được import)";
     }
     private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
     {
@@ -323,7 +323,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             if (!v_txt_nguoi_nhan.Text.Equals(""))
             {
                 v_txt_nguoi_nhan.BackColor = v_color_normal;
-                v_txt_nguoi_nhan.ToolTip = "Đã có dữ liệu. Click nếu muốn thay đổi"; 
+                v_txt_nguoi_nhan.ToolTip = "Đã có dữ liệu. Click nếu muốn thay đổi";
                 //v_lbl_nguoi_nhan_message.Text = "Dữ liệu hợp lý!";
                 //v_lbl_nguoi_nhan_message.ForeColor = v_color_ok;
                 //v_lbl_nguoi_nhan_message.Font.Bold = true;
@@ -341,7 +341,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             if (!v_txt_noi_nhan.Text.Equals(""))
             {
                 v_txt_noi_nhan.BackColor = v_color_normal;
-                v_txt_noi_nhan.ToolTip = "Đã có dữ liệu. Click nếu muốn thay đổi"; 
+                v_txt_noi_nhan.ToolTip = "Đã có dữ liệu. Click nếu muốn thay đổi";
                 //v_lbl_noi_nhan_message.Text = "Dữ liệu hợp lý!";
                 //v_lbl_noi_nhan_message.ForeColor = v_color_ok; ;
                 //v_lbl_noi_nhan_message.Font.Bold = true;
@@ -375,7 +375,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     }
     private bool check_file_upload_is_ok(string ip_str_file_name)
     {
-        if (!Path.GetExtension(ip_str_file_name).Equals(".xls")) {return false;}
+        if (!Path.GetExtension(ip_str_file_name).Equals(".xls")) { return false; }
         return true;
     }
 
@@ -438,15 +438,15 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 }
                 else
                 {
-                    thong_bao("Bạn phải import file excel .xls",true);
+                    thong_bao("Bạn phải import file excel .xls", true);
                 }
-                
+
                 //delete_file_imported(m_hdf_dir_save_excel.Value);
             }
         }
         catch (Exception v_e)
         {
-            thong_bao("Import không thành công",true);
+            thong_bao("Import không thành công", true);
             delete_file_imported(m_hdf_dir_save_excel.Value);
             m_sm.ExceptionHanlde(this, v_e);
         }
