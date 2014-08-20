@@ -81,15 +81,15 @@
                     <td align="right">
                         <asp:Label ID="m_lbl_noi_nhan" runat="Server" CssClass="cssManField" Text="Nơi nhận(*)"></asp:Label>
                     </td>
-                    <td rowspan="1">
-                        <asp:TextBox ID="m_txt_noi_nhan" runat="Server" TextMode="MultiLine" CssClass="cssTextBox"
+                    <td>
+                        <asp:TextBox ID="m_txt_noi_nhan" runat="Server" CssClass="cssTextBox"
                             Width="90%" placeholder="Nhập nơi nhận"></asp:TextBox>
                     </td>
                     <td align="right">
                         <asp:Label ID="m_lbl_ghi_chu" runat="Server" Text="Ghi chú" CssClass="cssManField"></asp:Label>
                     </td>
-                    <td rowspan="1">
-                        <asp:TextBox ID="m_txt_ghi_chu" runat="Server" TextMode="MultiLine" CssClass="cssTextBox"
+                    <td>
+                        <asp:TextBox ID="m_txt_ghi_chu" runat="Server" CssClass="cssTextBox"
                             Width="45%" placeholder="Nhập ghi chú"></asp:TextBox>
                     </td>
                 </tr>
