@@ -23,11 +23,23 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table border="0" cellspacing="0" cellpadding="0" width="100%">
+         <tr>
+            <td align="center" colspan="4">
+                <asp:Label ID="m_lbl_header" runat="server" CssClass="cssManField" Text="IMPORT DANH SÁCH THƯ FILE EXCEL VÀ GỬI CHO TAD" Font-Size="X-Large" Font-Bold="true"></asp:Label>
+            </td>
+        </tr>
+           <tr>
+            <td align="center" colspan="4">
+                <asp:Label ID="m_lbl_ten_trung_tam" runat="server" CssClass="cssManField" ForeColor="GrayText" Font-Bold="true" Font-Size="Medium"></asp:Label>
+            </td>
+        </tr>
         <tr>
-            <td class="cssPageTitleBG" colspan="4">
-                <asp:Label ID="m_lbl_title" runat="server" CssClass="cssPageTitle" ForeColor="White"
-                    Text="Import bill từ file excel"></asp:Label>
-                &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+            <td>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
                 <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
                 <asp:HiddenField ID="m_hdf_so_ban_ghi" runat="server" />
                 <asp:HiddenField ID="m_hdf_so_trang" runat="server" />
@@ -65,25 +77,13 @@
             </asp:MultiView>
         </div>
     </asp:Panel>
-    <table>
-        <tr>
-            <td align="center">
-                <asp:Label ID="m_lbl_header" runat="server" CssClass="cssManField" Text="IMPORT DANH SÁCH THƯ FILE EXCEL VÀ GỬI CHO TAD" Font-Size="Larger" Font-Bold="true"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <br />
-            </td>
-        </tr>
-    </table>
     <table border="0" cellspacing="0" cellpadding="0" width="40%">
         <tr>
-            <td>
-                <asp:Label ID="Textbox1" runat="server" CssClass="cssManField" Text="File import phải là file Excel đuôi .xls"></asp:Label>
+            <td align="right">
+                <asp:HyperLink ID="m_lnk_import_mau" runat="server" Text="Tải file import mẫu tại đây" ForeColor="Blue" Font-Italic="false" NavigateUrl="https://docs.google.com/uc?authuser=0&id=0BwKzsZuPh5A1SkpnSV83eDh0bHM&export=download" Target="blank"></asp:HyperLink>&nbsp;
             </td>
-            <td>
-                <asp:HyperLink ID="m_lnk_import_mau" runat="server" Text="Tải file import mẫu tại đây" ForeColor="Blue" Font-Italic="false" NavigateUrl="https://docs.google.com/uc?authuser=0&id=0BwKzsZuPh5A1SkpnSV83eDh0bHM&export=download" Target="blank"></asp:HyperLink>
+             <td>
+                &nbsp;<asp:Label ID="ghi_chu" runat="server" CssClass="cssManField" Text="(*File import phải là file Excel đuôi .xls)" ForeColor="Gray" Font-Size="Smaller"></asp:Label>
             </td>
             <td align="left"></td>
         </tr>
