@@ -39,6 +39,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
         v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
         m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
+        m_lbl_thong_tim_grv_dm_bill.Text = "(Dữ liệu chưa được tải lên)";
     }
     private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
     {
@@ -132,9 +133,10 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         v_ds_result.Tables[0].Columns[11].ColumnName = "TEN_PHONG_BAN";
 
         ip_grv.DataSource = v_ds_result;
-        m_hdf_so_ban_ghi.Value = (v_ds_result.Tables[0].Rows.Count / m_grv_dm_bill.PageSize +1).ToString();
+        m_hdf_so_ban_ghi.Value = (v_ds_result.Tables[0].Rows.Count).ToString();
         m_grv_dm_bill.Visible = true;
         ip_grv.DataBind();
+        m_lbl_thong_tim_grv_dm_bill.Text = "( Có " + m_hdf_so_ban_ghi.Value.ToString() + " bản ghi)";
         //v_edr.Close();
     }
     private void save_grid_to_database()
