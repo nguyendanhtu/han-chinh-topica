@@ -261,26 +261,28 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             System.Web.UI.WebControls.TextBox v_txt_noi_nhan = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_noi_nhan_grid");
             System.Web.UI.WebControls.TextBox v_txt_noi_dung_gui = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_noi_dung_grid");
 
-            System.Web.UI.WebControls.Label v_lbl_so_bill_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_so_bill_message");
-            System.Web.UI.WebControls.Label v_lbl_ma_phong_ban_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_ma_phong_ban_message");
-            System.Web.UI.WebControls.Label v_lbl_nguoi_nhan_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_nguoi_nhan_message");
-            System.Web.UI.WebControls.Label v_lbl_nguoi_gui_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_nguoi_gui_message");
-            System.Web.UI.WebControls.Label v_lbl_noi_nhan_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_noi_nhan_message");
-            System.Web.UI.WebControls.Label v_lbl_noi_dung_gui_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_noi_dung_message");
+            //System.Web.UI.WebControls.Label v_lbl_so_bill_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_so_bill_message");
+            //System.Web.UI.WebControls.Label v_lbl_ma_phong_ban_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_ma_phong_ban_message");
+            //System.Web.UI.WebControls.Label v_lbl_nguoi_nhan_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_nguoi_nhan_message");
+            //System.Web.UI.WebControls.Label v_lbl_nguoi_gui_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_nguoi_gui_message");
+            //System.Web.UI.WebControls.Label v_lbl_noi_nhan_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_noi_nhan_message");
+            //System.Web.UI.WebControls.Label v_lbl_noi_dung_gui_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_noi_dung_message");
             // check so bill
             if (!v_txt_so_bill.Text.Equals("") && check_validate_is_having_so_bill(v_txt_so_bill.Text.Trim()))
             {
                 v_txt_so_bill.BackColor = v_color_normal;
-                v_lbl_so_bill_message.Text = "Dữ liệu hợp lý!";
-                v_lbl_so_bill_message.ForeColor = v_color_ok;
-                v_lbl_so_bill_message.Font.Bold = true;
+                v_txt_so_bill.ToolTip = "Đã có dữ liệu. Click nếu muốn thay đổi";
+                //v_lbl_so_bill_message.Text = "Dữ liệu hợp lý!";
+                //v_lbl_so_bill_message.ForeColor = v_color_ok;
+                //v_lbl_so_bill_message.Font.Bold = true;
             }
             else
             {
                 v_txt_so_bill.BackColor = v_color_dangerous;
-                v_lbl_so_bill_message.Text = "Số bill đã tồn tại hoặc đang để trống!";
-                v_lbl_so_bill_message.ForeColor = v_color_dangerous_message;
-                v_lbl_so_bill_message.Font.Bold = true;
+                //v_lbl_so_bill_message.Text = "Số bill đã tồn tại hoặc đang để trống!";
+                v_txt_so_bill.ToolTip = "Số bill đã tồn tại hoặc đang để trống! Click để thêm hoặc chỉnh sửa";
+                //v_lbl_so_bill_message.ForeColor = v_color_dangerous_message;
+                //v_lbl_so_bill_message.Font.Bold = true;
                 v_b_result = false;
             }
             ////check ma phong ban
@@ -301,48 +303,54 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             if (!v_txt_nguoi_gui.Text.Equals(""))
             {
                 v_txt_nguoi_gui.BackColor = v_color_normal;
-                v_lbl_nguoi_gui_message.Text = "Dữ liệu hợp lý!";
-                v_lbl_nguoi_gui_message.ForeColor = v_color_ok;
-                v_lbl_nguoi_gui_message.Font.Bold = true;
+                v_txt_nguoi_gui.ToolTip = "Dã có dữ liệu. Click nếu muốn thay đổi";
+                //v_lbl_nguoi_gui_message.Text = "Dữ liệu hợp lý!";
+                //v_lbl_nguoi_gui_message.ForeColor = v_color_ok;
+                //v_lbl_nguoi_gui_message.Font.Bold = true;
             }
             else
             {
                 v_txt_nguoi_gui.BackColor = v_color_dangerous;
-                v_lbl_nguoi_gui_message.Text = "Bạn phải nhập người gửi!";
-                v_lbl_nguoi_gui_message.ForeColor = v_color_dangerous_message;
-                v_lbl_nguoi_gui_message.Font.Bold = true;
+                //v_lbl_nguoi_gui_message.Text = "Bạn phải nhập người gửi!";
+                v_txt_nguoi_gui.ToolTip = "Bạn phải nhập người gửi";
+                //v_lbl_nguoi_gui_message.ForeColor = v_color_dangerous_message;
+                //v_lbl_nguoi_gui_message.Font.Bold = true;
                 v_b_result = false;
             }
             //check so nguoi nhan
             if (!v_txt_nguoi_nhan.Text.Equals(""))
             {
                 v_txt_nguoi_nhan.BackColor = v_color_normal;
-                v_lbl_nguoi_nhan_message.Text = "Dữ liệu hợp lý!";
-                v_lbl_nguoi_nhan_message.ForeColor = v_color_ok;
-                v_lbl_nguoi_nhan_message.Font.Bold = true;
+                v_txt_nguoi_nhan.ToolTip = "Đã có dữ liệu. Click nếu muốn thay đổi"; 
+                //v_lbl_nguoi_nhan_message.Text = "Dữ liệu hợp lý!";
+                //v_lbl_nguoi_nhan_message.ForeColor = v_color_ok;
+                //v_lbl_nguoi_nhan_message.Font.Bold = true;
             }
             else
             {
                 v_txt_nguoi_nhan.BackColor = v_color_dangerous;
-                v_lbl_nguoi_nhan_message.Text = "Bạn phải nhập người nhận!";
-                v_lbl_nguoi_nhan_message.ForeColor = v_color_dangerous_message;
-                v_lbl_nguoi_nhan_message.Font.Bold = true;
+                //v_lbl_nguoi_nhan_message.Text = "Bạn phải nhập người nhận!";
+                v_txt_noi_nhan.ToolTip = "Bạn phải nhập người nhận";
+                //v_lbl_nguoi_nhan_message.ForeColor = v_color_dangerous_message;
+                //v_lbl_nguoi_nhan_message.Font.Bold = true;
                 v_b_result = false;
             }
             //check so noi nhan
             if (!v_txt_noi_nhan.Text.Equals(""))
             {
                 v_txt_noi_nhan.BackColor = v_color_normal;
-                v_lbl_noi_nhan_message.Text = "Dữ liệu hợp lý!";
-                v_lbl_noi_nhan_message.ForeColor = v_color_ok; ;
-                v_lbl_noi_nhan_message.Font.Bold = true;
+                v_txt_noi_nhan.ToolTip = "Đã có dữ liệu. Click nếu muốn thay đổi"; 
+                //v_lbl_noi_nhan_message.Text = "Dữ liệu hợp lý!";
+                //v_lbl_noi_nhan_message.ForeColor = v_color_ok; ;
+                //v_lbl_noi_nhan_message.Font.Bold = true;
             }
             else
             {
                 v_txt_noi_nhan.BackColor = v_color_dangerous;
-                v_lbl_noi_nhan_message.Text = "Bạn phải nhập nơi nhận!";
-                v_lbl_noi_nhan_message.ForeColor = v_color_dangerous_message;
-                v_lbl_noi_nhan_message.Font.Bold = true;
+                //v_lbl_noi_nhan_message.Text = "Bạn phải nhập nơi nhận!";
+                v_txt_noi_nhan.ToolTip = "Bạn phải nhập người gửi";
+                //v_lbl_noi_nhan_message.ForeColor = v_color_dangerous_message;
+                //v_lbl_noi_nhan_message.Font.Bold = true;
                 v_b_result = false;
             }
             ////check so noi dung gui
