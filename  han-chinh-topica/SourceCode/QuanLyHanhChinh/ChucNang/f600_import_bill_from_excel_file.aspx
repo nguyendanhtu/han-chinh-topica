@@ -99,11 +99,11 @@
             </td>
 
             <td align="right">
-                <asp:Button ID="m_cmd_upload" runat="Server" Text="Bước 2: Hiển thị và kiểm tra danh sách Bill" CssClass="cssGoogleButton"  OnClick="m_cmd_upload_Click" />
+                <asp:Button ID="m_cmd_upload" runat="Server" Text="Bước 2: Hiển thị danh sách Bill" CssClass="cssGoogleButton"  OnClick="m_cmd_upload_Click" />
                 <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
             </td>
             <td align="right">
-                <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Bước 3: Gửi cho TAD" CssClass="cssGoogleButton"
+                <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Bước 3:Kiểm tra và Gửi cho TAD" CssClass="cssGoogleButton"
                     OnClick="m_cmd_kiem_tra_va_import_Click" />
             </td>
         </tr>
@@ -112,6 +112,15 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <table width="100%">
+                        <tr>
+                            <td class="cssPageTitleBG" colspan="6">
+                                <asp:Label ID="m_lbl_danh_muc_bill" runat="server" CssClass="cssPageTitle" ForeColor="DarkBlue"
+                                    Text="Danh sách các Bill đã được import"></asp:Label>
+                                <asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"
+                                    ForeColor="DarkBlue"></asp:Label>
+                                <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
+                            </td>
+                        </tr>
                     <tr>
                         <td colspan="4">
                             <asp:GridView ID="m_grv_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
