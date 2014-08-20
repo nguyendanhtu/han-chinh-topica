@@ -23,12 +23,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table border="0" cellspacing="0" cellpadding="0" width="100%">
-         <tr>
+        <tr>
             <td align="center" colspan="4">
                 <asp:Label ID="m_lbl_header" runat="server" CssClass="cssManField" Text="IMPORT DANH SÁCH THƯ FILE EXCEL VÀ GỬI CHO TAD" Font-Size="X-Large" Font-Bold="true"></asp:Label>
             </td>
         </tr>
-           <tr>
+        <tr>
             <td align="center" colspan="4">
                 <asp:Label ID="m_lbl_ten_trung_tam" runat="server" CssClass="cssManField" ForeColor="GrayText" Font-Bold="true" Font-Size="Medium"></asp:Label>
             </td>
@@ -77,64 +77,40 @@
             </asp:MultiView>
         </div>
     </asp:Panel>
-    <table border="0" cellspacing="0" cellpadding="0" width="40%">
+    <table border="0" cellspacing="0" cellpadding="0" width="60%">
         <tr>
-            <td align="right">
+            <td align="right" colspan="2">
                 <asp:HyperLink ID="m_lnk_import_mau" runat="server" Text="Tải file import mẫu tại đây" ForeColor="Blue" Font-Italic="false" NavigateUrl="https://docs.google.com/uc?authuser=0&id=0BwKzsZuPh5A1SkpnSV83eDh0bHM&export=download" Target="blank"></asp:HyperLink>&nbsp;
             </td>
-             <td>
-                &nbsp;<asp:Label ID="ghi_chu" runat="server" CssClass="cssManField" Text="(*File import phải là file Excel đuôi .xls)" ForeColor="Gray" Font-Size="Smaller"></asp:Label>
-            </td>
-            <td align="left"></td>
-        </tr>
-        <tr>
-            <td>
-                <br />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Label ID="m_lbl_hd_1" runat="server" CssClass="cssManField" Text="Bước 1: Chọn file danh sách thư cần gửi  "></asp:Label>
-            </td>
-            <td>
-                <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" />
+            <td colspan="2">&nbsp;<asp:Label ID="ghi_chu" runat="server" CssClass="cssManField" Text="(*File import phải là file Excel đuôi .xls)" ForeColor="Gray" Font-Size="Smaller"></asp:Label>
             </td>
         </tr>
         <tr>
             <td>
                 <br />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <asp:Label ID="Label1" runat="server" text="Bước 1:" CssClass="cssManField" Font-Bold="true"></asp:Label>
+            </td>
+            <td align="left">
+                <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" EnableViewState="false" BorderStyle="Groove" BackColor="SteelBlue" ForeColor="White" BorderColor="WhiteSmoke" ToolTip="Chọn đường dẫn đến file Excel DS Bill cần gửi"/>
+            </td>
+
+            <td align="right">
+                <asp:Button ID="m_cmd_upload" runat="Server" Text="Bước 2: Hiển thị và kiểm tra danh sách Bill" CssClass="cssGoogleButton"  OnClick="m_cmd_upload_Click" />
+                <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
+            </td>
+            <td align="right">
+                <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Bước 3: Gửi cho TAD" CssClass="cssGoogleButton"
+                    OnClick="m_cmd_kiem_tra_va_import_Click" />
             </td>
         </tr>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <tr>
-                    <td align="left">
-                        <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="Bước 2: Hiển thị danh sách lên web "></asp:Label>
-                    </td>
-                    <td>
-                        <asp:Button ID="m_cmd_upload" runat="Server" Text="Bắt đầu upload file" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
-                        <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
-                    </td>
-                    <td>
-                        <asp:Label ID="m_lbl_dang_upload" runat="server" Text="Đang upload... Vui lòng đợi!" CssClass="cssManField"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left">
-                        <asp:Label ID="Label2" runat="server" CssClass="cssManField" Text="Bước 3: Kiểm tra và gửi cho TAD  "></asp:Label>
-                    </td>
-                    <td>
-                        <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Kiểm tra và gửi cho TAD" CssClass="cssGoogleButton"
-                            OnClick="m_cmd_kiem_tra_va_import_Click" />
-                    </td>
-                </tr>
                 <table width="100%">
                     <tr>
                         <td colspan="4">
