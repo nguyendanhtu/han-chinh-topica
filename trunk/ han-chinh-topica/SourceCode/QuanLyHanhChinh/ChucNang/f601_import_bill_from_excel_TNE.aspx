@@ -77,12 +77,12 @@
             </asp:MultiView>
         </div>
     </asp:Panel>
-    <table border="0" cellspacing="0" cellpadding="0" width="60%">
+    <table border="0" cellspacing="0" cellpadding="0" width="78%">
         <tr>
-            <td align="right" colspan="2">
+            <td align="right" colspan="4">
                 <asp:HyperLink ID="m_lnk_import_mau" runat="server" Text="Tải file import mẫu tại đây" ForeColor="Blue" Font-Italic="false" NavigateUrl="https://docs.google.com/uc?authuser=0&id=0BwKzsZuPh5A1SkpnSV83eDh0bHM&export=download" Target="blank"></asp:HyperLink>&nbsp;
             </td>
-            <td colspan="2">&nbsp;<asp:Label ID="ghi_chu" runat="server" CssClass="cssManField" Text="(*File import phải là file Excel đuôi .xls)" ForeColor="Gray" Font-Size="Smaller"></asp:Label>
+            <td colspan="4">&nbsp;<asp:Label ID="ghi_chu" runat="server" CssClass="cssManField" Text="(*File import phải là file Excel đuôi .xls)" ForeColor="Gray" Font-Size="Smaller"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -92,7 +92,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label2" runat="server" CssClass="cssManField" Font-Bold="true"></asp:Label></td>
+                <asp:Label ID="Label4" runat="server" CssClass="cssManField" Font-Bold="true"></asp:Label></td>
             <td align="right">
                 <asp:Label ID="Label1" runat="server" Text="Bước 1:" CssClass="cssManField" Font-Bold="true"></asp:Label>
             </td>
@@ -107,6 +107,19 @@
             <td align="right">
                 <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Bước 3:Kiểm tra và Gửi cho TAD" CssClass="cssGoogleButton"
                     OnClick="m_cmd_kiem_tra_va_import_Click" />
+            </td>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+            <td align="right">
+                <asp:TextBox ID="ghi_chu_box" runat="server" BackColor="LightGreen" Width="40px" Height="20px" Enabled="false"></asp:TextBox>
+                </td>
+            <td align="left">
+                <asp:Label ID="ghi_chu_txt_box" runat="server" Text="Bill đã import" CssClass="cssManField"></asp:Label>
+            </td>
+             <td align="right">
+                &nbsp&nbsp<asp:TextBox ID="TextBox1" runat="server" BackColor="LightPink" Width="40px" Height="20px"  Enabled="false"></asp:TextBox>
+                </td>
+            <td align="left">
+                <asp:Label ID="Label3" runat="server" Text="Chưa nhập dữ liệu" CssClass="cssManField"></asp:Label>
             </td>
         </tr>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -193,14 +206,14 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-Width="10%" HeaderText="Ngày gửi" ItemStyle-VerticalAlign="Top">
                                         <ItemTemplate>
-                                            <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid txtdatetime" ID="m_txt_ngay_gui_grid" AutoPostBack="false" runat="server" Text='<%#Eval("NGAY_GUI") %>'></asp:TextBox>
+                                            <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid txtdatetime" ID="m_txt_ngay_gui_grid" Height="70%" AutoPostBack="false" runat="server" Text='<%#Eval("NGAY_GUI") %>'></asp:TextBox>
                                             <%-- <br />
                                             <asp:Label ID="m_lbl_ngay_gui_message" runat="Server"></asp:Label>--%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField ItemStyle-Width="8%" HeaderText="Mã phòng ban" ItemStyle-HorizontalAlign="Right" ItemStyle-VerticalAlign="Top">
                                         <ItemTemplate>
-                                            <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid" ID="m_txt_ma_phong_ban_grid" AutoPostBack="false" ToolTip="Nhập mã phòng ban" runat="server" Text='<%#Eval("MA_PHONG_BAN") %>'></asp:TextBox>
+                                            <asp:TextBox Style="text-align: center" CssClass="cssTextBoxGrid" ID="m_txt_ma_phong_ban_grid" AutoPostBack="false" Height="70%" ToolTip="Nhập mã phòng ban" runat="server" Text='<%#Eval("MA_PHONG_BAN") %>'></asp:TextBox>
                                             <%-- <br />
                                             <asp:Label ID="m_lbl_ma_phong_ban_message" runat="Server"></asp:Label>--%>
                                         </ItemTemplate>
