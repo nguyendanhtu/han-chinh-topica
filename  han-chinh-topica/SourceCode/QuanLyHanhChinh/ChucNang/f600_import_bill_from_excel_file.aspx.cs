@@ -280,7 +280,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             }
             else
             {
-                v_txt_so_bill.BackColor = v_color_dangerous;
+                v_txt_so_bill.BackColor = v_color_alert;
                 //v_lbl_so_bill_message.Text = "Số bill đã tồn tại hoặc đang để trống!";
                 v_txt_so_bill.ToolTip = "Số bill đã tồn tại hoặc đang để trống! Click để thêm hoặc chỉnh sửa";
                 //v_lbl_so_bill_message.ForeColor = v_color_dangerous_message;
