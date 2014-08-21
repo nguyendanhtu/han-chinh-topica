@@ -469,7 +469,7 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RPT_DS_IMPORT_BILL_EXCEL_WEBRow AddRPT_DS_IMPORT_BILL_EXCEL_WEBRow(decimal STT, string NOI_DUNG, string NOI_NHAN, string NGUOI_NHAN, string TRONG_NUOC, string NUOC_NGOAI, string SO_BILL, string NGUOI_GUI, System.DateTime NGAY_GUI, string GHI_CHU, string MA_PHONG_BAN, string TEN_PHONG_BAN) {
+            public RPT_DS_IMPORT_BILL_EXCEL_WEBRow AddRPT_DS_IMPORT_BILL_EXCEL_WEBRow(decimal STT, string NOI_DUNG, string NOI_NHAN, string NGUOI_NHAN, string TRONG_NUOC, string NUOC_NGOAI, string SO_BILL, string NGUOI_GUI, string NGAY_GUI, string GHI_CHU, string MA_PHONG_BAN, string TEN_PHONG_BAN) {
                 RPT_DS_IMPORT_BILL_EXCEL_WEBRow rowRPT_DS_IMPORT_BILL_EXCEL_WEBRow = ((RPT_DS_IMPORT_BILL_EXCEL_WEBRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STT,
@@ -545,7 +545,7 @@ namespace BCTKDS {
                 base.Columns.Add(this.columnSO_BILL);
                 this.columnNGUOI_GUI = new global::System.Data.DataColumn("NGUOI_GUI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGUOI_GUI);
-                this.columnNGAY_GUI = new global::System.Data.DataColumn("NGAY_GUI", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnNGAY_GUI = new global::System.Data.DataColumn("NGAY_GUI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_GUI);
                 this.columnGHI_CHU = new global::System.Data.DataColumn("GHI_CHU", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGHI_CHU);
@@ -554,13 +554,14 @@ namespace BCTKDS {
                 this.columnTEN_PHONG_BAN = new global::System.Data.DataColumn("TEN_PHONG_BAN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTEN_PHONG_BAN);
                 this.columnNOI_DUNG.MaxLength = 100;
-                this.columnNOI_NHAN.MaxLength = 150;
+                this.columnNOI_NHAN.MaxLength = 250;
                 this.columnNGUOI_NHAN.MaxLength = 50;
                 this.columnTRONG_NUOC.MaxLength = 10;
                 this.columnNUOC_NGOAI.MaxLength = 10;
                 this.columnSO_BILL.AllowDBNull = false;
                 this.columnSO_BILL.MaxLength = 20;
                 this.columnNGUOI_GUI.MaxLength = 50;
+                this.columnNGAY_GUI.MaxLength = 50;
                 this.columnGHI_CHU.MaxLength = 100;
                 this.columnMA_PHONG_BAN.MaxLength = 10;
                 this.columnTEN_PHONG_BAN.MaxLength = 100;
@@ -835,10 +836,10 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime NGAY_GUI {
+            public string NGAY_GUI {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableRPT_DS_IMPORT_BILL_EXCEL_WEB.NGAY_GUIColumn]));
+                        return ((string)(this[this.tableRPT_DS_IMPORT_BILL_EXCEL_WEB.NGAY_GUIColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'NGAY_GUI\' in table \'RPT_DS_IMPORT_BILL_EXCEL_WEB\' is DBNull" +
@@ -1218,7 +1219,7 @@ namespace BCTKDS.DS_RPT_DS_IMPORT_BILL_EXCEL_WEBTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NUOC_NGOAI", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NUOC_NGOAI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SO_BILL", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SO_BILL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGUOI_GUI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGUOI_GUI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGAY_GUI", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAY_GUI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGAY_GUI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAY_GUI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_PHONG_BAN", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEN_PHONG_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1300,7 +1301,7 @@ namespace BCTKDS.DS_RPT_DS_IMPORT_BILL_EXCEL_WEBTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<decimal> STT, string NOI_DUNG, string NOI_NHAN, string NGUOI_NHAN, string TRONG_NUOC, string NUOC_NGOAI, string SO_BILL, string NGUOI_GUI, global::System.Nullable<global::System.DateTime> NGAY_GUI, string GHI_CHU, string MA_PHONG_BAN, string TEN_PHONG_BAN) {
+        public virtual int Insert(global::System.Nullable<decimal> STT, string NOI_DUNG, string NOI_NHAN, string NGUOI_NHAN, string TRONG_NUOC, string NUOC_NGOAI, string SO_BILL, string NGUOI_GUI, string NGAY_GUI, string GHI_CHU, string MA_PHONG_BAN, string TEN_PHONG_BAN) {
             if ((STT.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(STT.Value));
             }
@@ -1349,11 +1350,11 @@ namespace BCTKDS.DS_RPT_DS_IMPORT_BILL_EXCEL_WEBTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(NGUOI_GUI));
             }
-            if ((NGAY_GUI.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(NGAY_GUI.Value));
+            if ((NGAY_GUI == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(NGAY_GUI));
             }
             if ((GHI_CHU == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
