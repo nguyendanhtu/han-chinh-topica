@@ -39,7 +39,21 @@ namespace BCTKDS.CDBNames
         public const string GIA_BAN = "GIA_BAN";
         public const string DOANH_THU = "DOANH_THU";
     }
-
+    public class RPT_DS_IMPORT_BILL_EXCEL_WEB
+    {
+        public const string STT = "STT";
+        public const string NOI_DUNG = "NOI_DUNG";
+        public const string NOI_NHAN = "NOI_NHAN";
+        public const string NGUOI_NHAN = "NGUOI_NHAN";
+        public const string TRONG_NUOC = "TRONG_NUOC";
+        public const string NUOC_NGOAI = "NUOC_NGOAI";
+        public const string SO_BILL = "SO_BILL";
+        public const string NGUOI_GUI = "NGUOI_GUI";
+        public const string NGAY_GUI = "NGAY_GUI";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+    }
 
     public class V_DM_VPP
     {
