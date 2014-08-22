@@ -137,7 +137,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
         int numberOfDaysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
         m_txt_tu_ngay.Text = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).ToShortDateString();
         DateTime v_dat_den_ngay = new DateTime(today.Year, today.Month, numberOfDaysInMonth);
-        m_txt_den_ngay.Text = v_dat_den_ngay.ToShortDateString();
+        m_txt_den_ngay.Text = v_dat_den_ngay.ToString("dd/MM/yyyy");
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
@@ -154,7 +154,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
             int numberOfDaysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
             m_txt_tu_ngay.Text = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).ToShortDateString();
             DateTime v_dat_den_ngay = new DateTime(today.Year, today.Month, numberOfDaysInMonth);
-            m_txt_den_ngay.Text = v_dat_den_ngay.ToShortDateString();
+            m_txt_den_ngay.Text = v_dat_den_ngay.ToString("dd/MM/yyyy");
             return false;
         }
         else
@@ -238,7 +238,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
             DateTime v_tu_ngay, v_ngay_chon;
             v_ngay_chon = CIPConvert.ToDatetime(m_txt_tu_ngay.Text);
             v_tu_ngay = new  DateTime(v_ngay_chon.Year, v_ngay_chon.Month, 1);
-            m_txt_tu_ngay.Text = v_tu_ngay.ToShortDateString();
+            m_txt_tu_ngay.Text = v_tu_ngay.ToString("dd/MM/yyyy");
             load_data_to_grid();
         }
         catch (Exception v_e)
@@ -254,7 +254,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
             v_ngay_chon = CIPConvert.ToDatetime(m_txt_den_ngay.Text);
             int numberOfDaysInMonth = DateTime.DaysInMonth(v_ngay_chon.Year, v_ngay_chon.Month);
             v_den_ngay = new DateTime(v_ngay_chon.Year, v_ngay_chon.Month, numberOfDaysInMonth);
-            m_txt_den_ngay.Text = v_den_ngay.ToShortDateString();
+            m_txt_den_ngay.Text = v_den_ngay.ToString("dd/MM/yyyy");
             load_data_to_grid();
         }
         catch (Exception v_e)
