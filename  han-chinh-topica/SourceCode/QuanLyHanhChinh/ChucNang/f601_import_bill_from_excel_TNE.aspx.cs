@@ -117,20 +117,20 @@ public partial class ChucNang_f601_import_bill_from_excel_TNE : System.Web.UI.Pa
             v_dr["TRONG_NUOC"] = "X"; // trong nước
             v_dr["NUOC_NGOAI"] = "";   //ngoài nước
             v_dr["SO_BILL"] = v_ds_result.Tables[0].Rows[i][6].ToString();
-            v_dr["NGUOI_GUI"] = "TNE";
-            v_dr["NGAY_GUI"] = DateTime.Now.Date.ToShortDateString();
+            v_dr["NGUOI_GUI"] = v_ds_result.Tables[0].Rows[i][8].ToString();
+            v_dr["NGAY_GUI"] = v_ds_result.Tables[0].Rows[i][7];
             v_dr["GHI_CHU"] = "";
             v_dr["MA_PHONG_BAN"] = "TNE";
             v_dr["TEN_PHONG_BAN"] = "TNE-Trung tâm Đào tạo NEU-EDUTOP";
             v_ds_merge.Tables[0].Rows.Add(v_dr);
         }
         CultureInfo v_ct = new CultureInfo("en-US");
-        //for (int i = 0; i < v_ds_merge.Tables[0].Rows.Count; i++)
-        //{
-        //    //string temp = DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).t
-        //    v_ds_result.Tables[0].Rows[i][8] = DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).ToString("dd/MM/yyyy");
-        //    //DateTime.Parse(DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).ToString(), v_ct);
-        //}
+        for (int i = 0; i < v_ds_merge.Tables[0].Rows.Count; i++)
+        {
+            //string temp = DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).t
+            v_ds_merge.Tables[0].Rows[i][8] = DateTime.FromOADate(Convert.ToDouble(v_ds_merge.Tables[0].Rows[i][8])).ToString("dd/MM/yyyy");
+            //DateTime.Parse(DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).ToString(), v_ct);
+        }
 
         if (v_ds_merge.Tables[0].Columns.Count < 11) return;
         v_ds_merge.Tables[0].Columns[0].ColumnName = "STT";
