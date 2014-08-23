@@ -43,37 +43,43 @@
         });
     </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
 
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table cellspacing="0" cellpadding="1" style="width: 100%" class="cssTable" border="0">
         <tr>
-            <td align="center" colspan="6">
+            <td align="center">
                 <asp:Label ID="m_lbl_header" runat="server" Text="BÁO CÁO TÌNH HÌNH CHUYỂN PHÁT NHANH" CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
                 <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server"></asp:HiddenField>
             </td>
         </tr>
         <tr>
-            <td align="center" colspan="6">
-                <asp:Label ID="m_lbl_ten_trung_tam" runat="server"  CssClass="cssManField" ForeColor="GrayText" Font-Bold="true" Font-Size="Medium"></asp:Label>
+            <td align="center">
+                <asp:Label ID="m_lbl_ten_trung_tam" runat="server" CssClass="cssManField" ForeColor="GrayText" Font-Bold="true" Font-Size="Medium"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" colspan="2">
+            <td>
+                <br />
+                <br />
+
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
                 <asp:Label ID="m_lbl_tu_ngay" runat="server" Text="Từ ngày: " CssClass="cssManField"></asp:Label>
-            </td>
-            <td>
+
                 <asp:TextBox ID="m_txt_tu_ngay" runat="Server" OnTextChanged="Tu_ngay_OnTextChanged" AutoPostBack="true"></asp:TextBox>
-            </td>
-            <td align="right" colspan="2">
+
                 <asp:Label ID="m_lbl_den_ngay" runat="server" Text="Đến ngày: " CssClass="cssManField"></asp:Label>
-            </td>
-            <td>
+
                 <asp:TextBox ID="m_txt_den_ngay" runat="Server" OnTextChanged="Den_ngay_OnTextChanged" AutoPostBack="true"></asp:TextBox>
+
+                <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Xem báo cáo" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
             </td>
         </tr>
         <tr>
-            <td align="center" colspan="6">
-                <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Xem báo cáo" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
+            <td>
+                <br />
             </td>
         </tr>
     </table>
@@ -177,7 +183,7 @@
                         </asp:GridView>
                     </td>
                 </tr>
-                <table cellspacing="0" cellpadding="1" style="width: 100%" class="cssTable" border="1">
+                <table cellspacing="0" cellpadding="1" style="width: 100%;" class="cssTable" border="1">
                     <tr>
                         <td class="cssPageTitleBG" colspan="6">
 
