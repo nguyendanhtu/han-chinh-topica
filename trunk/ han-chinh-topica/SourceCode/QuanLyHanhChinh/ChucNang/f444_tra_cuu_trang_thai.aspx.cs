@@ -61,12 +61,13 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
     }
     private void set_time()
     {
-        m_txt_tu_ngay.Text = (DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).AddMonths(-6)).ToShortDateString();
-        m_txt_den_ngay.Text = DateTime.Now.ToShortDateString();
+        m_txt_tu_ngay.Text = (DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).AddMonths(-6)).ToString("dd/MM/yyyy");
+        m_txt_den_ngay.Text = DateTime.Now.ToString("dd/MM/yyyy");
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
         v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
+        if(v_ds.DM_PHONG_BAN.Count>0)
         m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
     }
     private void load_cbo_trang_thai()
