@@ -145,7 +145,7 @@
                                 OnRowDeleting="m_grv_dm_bill_RowDeleting"
                                 OnPageIndexChanging="m_grv_dm_bill_PageIndexChanging"
                                 AllowSorting="true">
-                                <PagerSettings Position="TopAndBottom" />
+                              <%--  <PagerSettings Position="TopAndBottom" />--%>
                                 <AlternatingRowStyle BackColor="White" />
                                 <FooterStyle CssClass="GridViewFooterStyle" />
                                 <RowStyle CssClass="GridViewRowStyle" />

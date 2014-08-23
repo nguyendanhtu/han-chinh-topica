@@ -227,14 +227,14 @@ public partial class ChucNang_f601_import_bill_from_excel_TNE : System.Web.UI.Pa
                     v_us_dm_bill.SetTRONG_NUOCNull();
                     v_us_dm_bill.strNUOC_NGOAI = "x";
                 }
-                v_us_dm_bill.Insert();    
+                v_us_dm_bill.Insert();
+                thong_bao("Đã import thành công " + (m_grv_dm_bill.PageIndex + 1) + "/" + m_grv_dm_bill.PageCount, true);
             }
             //}
             //if (numbers_record_limited == 50)
             //    start_number = start_number + 50; // lấy vị trí bản ghi tiếp theo sẽ dc insert nếu còn
             //numbers_record_remain = numbers_record_remain - 50; // tính số bản ghi còn lại chưa insert
         }
-        thong_bao("Đã import thành công!", true);
         m_grv_dm_bill.PageIndex = m_grv_dm_bill.PageIndex + 1;
         if (CIPConvert.ToDecimal(m_hdf_so_ban_ghi.Value) == m_grv_dm_bill.PageIndex)
         {
