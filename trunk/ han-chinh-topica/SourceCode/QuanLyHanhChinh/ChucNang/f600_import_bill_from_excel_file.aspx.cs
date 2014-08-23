@@ -78,9 +78,9 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     }
     private void delete_file_imported(string ip_str_file_dir)
     {
-        //if (Directory.Exists(ip_str_file_dir.Replace("/","\\")))
+        //if (Directory.Exists(ip_str_file_dir.Replace("//", "\\")))
         //{
-        File.Delete(ip_str_file_dir);
+        File.Delete(ip_str_file_dir.Replace("//", "\\"));
         //}
     }
     private void excel_file_to_grid(GridView ip_grv, int ip_i_start_row, string ip_str_file_dir)
@@ -215,7 +215,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 }
                 v_us_dm_bill.Insert();
 
-                thong_bao("Đã import thành công!", true);
+                thong_bao("Đã import thành công " + (m_grv_dm_bill.PageIndex + 1) + "/" + m_grv_dm_bill.PageCount, true);
             }
             //}
             //if (numbers_record_limited == 50)
@@ -223,7 +223,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             //numbers_record_remain = numbers_record_remain - 50; // tính số bản ghi còn lại chưa insert
         }
         m_grv_dm_bill.PageIndex = m_grv_dm_bill.PageIndex + 1;
-        if (CIPConvert.ToDecimal(m_hdf_so_ban_ghi.Value) == m_grv_dm_bill.PageIndex)
+        if (m_grv_dm_bill.PageCount == m_grv_dm_bill.PageIndex)
         {
             m_grv_dm_bill.DataSource = null;
             m_grv_dm_bill.Visible = false;
@@ -447,7 +447,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         catch (Exception v_e)
         {
             thong_bao("Import không thành công", true);
-            delete_file_imported(m_hdf_dir_save_excel.Value);
+            //delete_file_imported(m_hdf_dir_save_excel.Value);
             m_sm.ExceptionHanlde(this, v_e);
         }
     }
@@ -457,13 +457,15 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         {
             if (check_validate_grid_is_ok())
             {
-                save_grid_to_database();
                 excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
                 check_validate_grid_is_ok();
+                save_grid_to_database();
+                //delete_file_imported(m_hdf_dir_save_excel.Value);
             }
         }
         catch (Exception v_e)
         {
+            //delete_file_imported(m_hdf_dir_save_excel.Value);
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
 
