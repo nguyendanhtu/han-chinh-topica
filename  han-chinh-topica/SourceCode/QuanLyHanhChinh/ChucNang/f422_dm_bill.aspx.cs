@@ -151,7 +151,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         //if (!check_validate_is_ok()) return;
         m_us_dm_bill.DeleteByID(CIPConvert.ToDecimal(m_hdf_id_bill.Value));
         load_data_to_grid();
-        thong_bao("Đã hủy đăng ký gửi BIll cho TAD", true);
+        thong_bao("Đã hủy đăng ký gửi BIll cho TAD",true);
     }
     private void Huy_thao_tac()
     {
@@ -219,14 +219,15 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     //}
     private bool check_so_bill()
     {
-        decimal num;
-        bool isNumberic = decimal.TryParse(m_txt_so_bill.Text, out num);
-        if (!isNumberic)
-        {
-            thong_bao("Số bill phải là kiểu số!");
-            return false;
-        }
-        else return true;
+       //decimal num;
+        //bool isNumberic = decimal.TryParse(m_txt_so_bill.Text, out num);
+        //if (!isNumberic)
+        //{
+        //    thong_bao("Số bill phải là kiểu số!");
+        //    return false;
+        //}
+        //else 
+            return true;
     }
     private bool check_validate_is_ok()
     {
@@ -400,11 +401,12 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     {
         try
         {
-            Huy_thao_tac();
+            
             m_grv_dm_bill.SelectedIndex = e.RowIndex;
             set_form_mode(LOAI_FORM.XOA);
             m_hdf_id_bill.Value = CIPConvert.ToStr(m_grv_dm_bill.DataKeys[e.RowIndex].Value);
             delete_data();
+            //Huy_thao_tac();
         }
         catch (Exception v_e)
         {
