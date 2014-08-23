@@ -107,6 +107,7 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
     {
         try
         {
+            //Test
             if (!IsPostBack)
             {
                 if (!Person.check_user_have_menu())
