@@ -91,14 +91,14 @@ public partial class ChucNang_f444_tra_cuu_trang_thai : System.Web.UI.Page
     }
     private bool check_thoi_gian()
     {
-        if (CIPConvert.ToDatetime(m_txt_tu_ngay.Text) > CIPConvert.ToDatetime(m_txt_den_ngay.Text))
-        {
-            thong_bao("Bạn đã chọn khoảng thời gian không hợp lệ!", true);
-            m_txt_tu_ngay.Text = (DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).AddMonths(-6)).ToShortDateString();
-            m_txt_den_ngay.Text = DateTime.Now.ToShortDateString();
-            return false;
-        }
-        else
+        //if (CIPConvert.ToDatetime(m_txt_tu_ngay.Text) > CIPConvert.ToDatetime(m_txt_den_ngay.Text))
+        //{
+        //    thong_bao("Bạn đã chọn khoảng thời gian không hợp lệ!", true);
+        //    m_txt_tu_ngay.Text = (DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).AddMonths(-6)).ToString("dd/MM/yyyy");
+        //    m_txt_den_ngay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        //    return false;
+        //}
+        //else
             return true;
     }
     #endregion
