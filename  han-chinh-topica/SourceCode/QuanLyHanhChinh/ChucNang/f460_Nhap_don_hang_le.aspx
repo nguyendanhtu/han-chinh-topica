@@ -5,10 +5,20 @@
     TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-   
+
     <script type="text/javascript">
         $(document).ready(function () {
             $("#<%=m_cbo_vpp.ClientID%>").select2();
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#<%=m_txt_ngay_nhap.ClientID%>").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                required: true,
+                yearRange: '1950:2050',
+            });
         });
     </script>
 </asp:Content>
@@ -20,12 +30,9 @@
 
     <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
         <tr>
-            <td></td>
             <td align="center" colspan="4">
                 <asp:Label ID="m_lbl_header" runat="server" Text="PHIẾU ĐỀ NGHỊ CẤP VÀ BÀN GIAO VPP" CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
             </td>
-            <td></td>
-            <td></td>
         </tr>
         <tr>
             <td colspan="4" align="center">
@@ -35,10 +42,10 @@
     <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
 
         <tr>
-            <td class="cssPageTitleBG" colspan="8">
-                <asp:Label ID="Label4" runat="server" CssClass="cssPageTitle" ForeColor="White"
+            <td class="cssPageTitleBG" colspan="9">
+                <asp:Label ID="Label4" runat="server" CssClass="cssPageTitle"
                     Text="Nhập thông tin đơn hàng"></asp:Label>
-                &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
                 <asp:HiddenField ID="m_hdf_id_don_hang" runat="server" />
             </td>
         </tr>
@@ -46,7 +53,8 @@
             <td colspan="" align="right">
                 <asp:Label ID="m_lbl_so_phieu" runat="server" CssClass="cssManField" Text="Số phiếu:" ForeColor="Blue"></asp:Label>
             </td>
-            <td align="left">&nbsp; <asp:Label ID="m_lbl_hien_thi_so_phieu" runat="server" CssClass="cssManField" text="0000" ForeColor="Blue"></asp:Label>
+            <td align="left">&nbsp;
+                <asp:Label ID="m_lbl_hien_thi_so_phieu" runat="server" CssClass="cssManField" Text="0000" ForeColor="Blue"></asp:Label>
             </td>
             <td align="right">
                 <asp:Label ID="m_lbl_lan" runat="server" CssClass="cssManField" Text="Lần "></asp:Label>
@@ -56,46 +64,27 @@
             <td align="right">
                 <asp:Label ID="m_lbl_ngay_gui" runat="Server" Text="Ngày nhập " CssClass="cssManField"></asp:Label>
             </td>
-            <td align="left">&nbsp;<ew:CalendarPopup ID="m_dat_ngay_gui" runat="server" TextBoxLabelStyle-BorderColor="#810913"
-                TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
-                DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
-                ShowGoToToday="true" Width="35%">
-                <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
-                    ForeColor="Black" />
-                <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                    ForeColor="Black" />
-                <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                    Font-Size="XX-Small" ForeColor="Gray" />
-                <SelectedDateStyle BackColor="#810913" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                    Font-Size="XX-Small" ForeColor="Black" />
-                <MonthHeaderStyle BackColor="#810913" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                    Font-Size="XX-Small" ForeColor="White" />
-                <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                    Font-Size="XX-Small" ForeColor="Black" />
-                <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                    ForeColor="Black" />
-                <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                    ForeColor="Black" />
-                <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                    Font-Size="XX-Small" ForeColor="Black" />
-            </ew:CalendarPopup>
+            <td>
+                <asp:TextBox ID="m_txt_ngay_nhap" runat="Server"></asp:TextBox>
             </td>
             <td align="left">
                 <asp:Button ID="m_cmd_them_don_hang" runat="server" Text="Thêm đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_them_don_hang_Click" />
             </td>
-                        <td align="left">
-                            <asp:Button ID="m_cmd_cap_nhat_don_hang" runat="server" Text="Cập nhật đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" />
-                        </td>
+            <td align="left">
+                <asp:Button ID="m_cmd_cap_nhat_don_hang" runat="server" Text="Cập nhật đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" />
+            </td>
+            <td align="left">
+                <asp:Button ID="m_cmd_gui_td" runat="server" Text="Gửi cho TD" CssClass="cssGoogleButton" OnClick="m_cmd_gui_td_Click" />
+            </td>
         </tr>
     </table>
     <table border="0" cellspacing="0" cellpadding="0" width="100%">
         <tr>
             <td class="cssPageTitleBG" colspan="6">
-                <asp:Label ID="Label2" runat="server" CssClass="cssPageTitle" ForeColor="White"
+                <asp:Label ID="Label2" runat="server" CssClass="cssPageTitle"
                     Text="Danh sách đơn hàng nháp"></asp:Label>
-                <asp:Label ID="m_lbl_thong_tin_don_hang" runat="server" CssClass="cssPageTitle"
-                    ForeColor="White"></asp:Label>
-                &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                <asp:Label ID="m_lbl_thong_tin_don_hang" runat="server" CssClass="cssPageTitle"></asp:Label>
+                <%--  &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
             </td>
         </tr>
         <tr>
@@ -103,7 +92,7 @@
                 <asp:GridView ID="m_grv_don_hang_nhap" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                     Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                     EmptyDataText="Không có đơn hàng nào!" EmptyDataRowStyle-BorderColor="#810913"
-                    CellPadding="8" PageSize="20"
+                    CellPadding="8" PageSize="10"
                     OnRowEditing="m_grv_don_hang_nhap_RowEditing"
                     OnRowDeleting="m_grv_don_hang_nhap_RowDeleting"
                     OnPageIndexChanging="m_grv_don_hang_PageIndexChanging">
@@ -180,17 +169,17 @@
 
         <tr>
             <td class="cssPageTitleBG" colspan="9">
-                <asp:Label ID="m_lbl_title_ma_don_hang" runat="server" CssClass="cssPageTitle" ForeColor="White"
+                <asp:Label ID="m_lbl_title_ma_don_hang" runat="server" CssClass="cssPageTitle"
                     Text="Nhập thông tin chi tiết đơn hàng"></asp:Label>
-                &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
                 <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
             </td>
         </tr>
         <tr>
-            <td style="width: 8%">
-                <asp:Label ID="Label5" runat="Server" Text="Mã phiếu:" CssClass="cssManField"></asp:Label>
+            <td style="width: 12%">
+                <asp:Label ID="Label5" runat="Server" Text="MP:" CssClass="cssManField"></asp:Label>
                 &nbsp
-                        <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField" ForeColor="Blue"></asp:Label>
+                        <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField"></asp:Label>
             </td>
             <td align="right">
                 <asp:Label ID="m_lbl_chon_vpp" runat="Server" Text="Chọn VPP" CssClass="cssManField"></asp:Label>
@@ -257,11 +246,10 @@
     <table border="0" cellspacing="0" cellpadding="0" width="100%">
         <tr>
             <td class="cssPageTitleBG" colspan="6">
-                <asp:Label ID="m_lbl_phieu_de_nghi_va_ban_giao_VPP" runat="server" CssClass="cssPageTitle" ForeColor="White"
+                <asp:Label ID="m_lbl_phieu_de_nghi_va_ban_giao_VPP" runat="server" CssClass="cssPageTitle"
                     Text="Danh sách VPP đề nghị cấp"></asp:Label>
-                <asp:Label ID="m_lbl_thong_tim_grv_don_hang_de" runat="server" CssClass="cssPageTitle"
-                    ForeColor="White"></asp:Label>
-                &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>
+                <asp:Label ID="m_lbl_thong_tim_grv_don_hang_de" runat="server" CssClass="cssPageTitle"></asp:Label>
+                <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
             </td>
         </tr>
         <tr>
