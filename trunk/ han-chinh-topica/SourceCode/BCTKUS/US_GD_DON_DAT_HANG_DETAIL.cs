@@ -196,11 +196,12 @@ public class US_GD_DON_DAT_HANG_DETAIL : US_Object
         v_store_proc.fillDataSetByCommand(this, ip_v_ds);
     }
 
-    public bool check_is_having_vpp_don_hang_de(decimal ip_id_vpp)
+    public bool check_is_having_vpp_don_hang_de(decimal ip_id_vpp, decimal ip_id_don_hang)
     {
         DS_GD_DON_DAT_HANG_DETAIL v_ds = new DS_GD_DON_DAT_HANG_DETAIL();
         CStoredProc v_cstore = new CStoredProc("pr_check_is_having_vpp_don_hang_de");
         v_cstore.addNVarcharInputParam("@ID_VPP", ip_id_vpp);
+        v_cstore.addDecimalInputParam("@ID_DON_HANG", ip_id_don_hang);
         v_cstore.fillDataSetByCommand(this, v_ds);
         if (v_ds.GD_DON_DAT_HANG_DETAIL.Rows.Count == 0)
             return false;
