@@ -469,6 +469,7 @@ namespace BCTKApp
 			m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
             m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
             m_dtp_thang.ValueChanged+=new EventHandler(m_dtp_thang_ValueChanged);
+            this.KeyDown+=new KeyEventHandler(f535_gui_don_dat_hang_cho_NCC_KeyDown);
 		}
 		#endregion
 
@@ -486,7 +487,20 @@ namespace BCTKApp
 			}
 		
 		}
-
+        private void f535_gui_don_dat_hang_cho_NCC_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
 			try{
 				this.Close();
