@@ -448,25 +448,25 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             case "tawl":
                 m_pnl_import.Visible = true;
                 m_pnl_import_grid.Visible = true;
-                m_lnk_import_mau.NavigateUrl = "#";
+                m_lnk_import_mau.NavigateUrl = "https://docs.google.com/spreadsheets/d/1EsFtp2P5G6vk-5C20x29va88WDRQ2fIgyRWTfcdZvPA/edit?usp=sharing";
                 m_lnk_import_mau.Text = "Tải mẫu import của TAW (Lụa)";
                 break;
             case "tawh":
                 m_pnl_import.Visible = true;
                 m_pnl_import_grid.Visible = true;
-                m_lnk_import_mau.NavigateUrl = "#";
+                m_lnk_import_mau.NavigateUrl = "https://docs.google.com/spreadsheets/d/1_n19Y5oxwEPz2jUr8dEdC1CnzmgxfJ-emc9CHoQl5wQ/edit#gid=337873717";
                 m_lnk_import_mau.Text = "Tải mẫu import của TAW (Hồng)";
                 break;
             case "tmh":
                 m_pnl_import.Visible = true;
                 m_pnl_import_grid.Visible = true;
-                m_lnk_import_mau.NavigateUrl = "#";
+                m_lnk_import_mau.NavigateUrl = "https://docs.google.com/spreadsheets/d/1EqEV10yIiMWMwwHrGagFVRHjefQaJbeDdAtfMNvgBqQ/edit?usp=sharing";
                 m_lnk_import_mau.Text = "Tải mẫu import của TMH";
                 break;
             case "tne":
                 m_pnl_import.Visible = true;
                 m_pnl_import_grid.Visible = true;
-                m_lnk_import_mau.NavigateUrl = "#";
+                m_lnk_import_mau.NavigateUrl = "https://docs.google.com/spreadsheets/d/1qtmFe5ftjLaJZRdtvtFVuecs8JV95GarXboAgnIRvR4/edit#gid=61115495";
                 m_lnk_import_mau.Text = "Tải mẫu import của TNE";
                 break;
             default:
