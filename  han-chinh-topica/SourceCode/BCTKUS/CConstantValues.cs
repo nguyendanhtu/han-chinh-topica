@@ -49,7 +49,6 @@ namespace BCTKUS
     {
         public const decimal ID_DA_NHAN_NOI_BO = 156;
         public const decimal ID_DA_CHUYEN_CPN = 158;
-        public const decimal ID_DANG_TREN_DUONG = 160;
         public const decimal ID_BI_TRA_LAI = 161;
         public const decimal ID_NOI_BO_NHAN_TRA_LAI = 162;
     }
