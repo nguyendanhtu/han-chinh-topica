@@ -841,7 +841,7 @@ input[type=text]:focus, textarea:focus {
 
 .cssLoadContent2 {
     margin: 250px auto 0 auto;
-    padding: 10px 0 10px 0;
+    padding: 0px 0 10px 0;
     width: 80%;
     height: auto;
     border: 1px solid;
