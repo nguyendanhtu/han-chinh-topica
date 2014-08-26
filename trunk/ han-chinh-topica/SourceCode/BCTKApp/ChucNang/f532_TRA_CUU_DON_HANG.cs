@@ -460,6 +460,7 @@ namespace BCTKApp
             m_dtp_thang.ValueChanged+=new EventHandler(m_dtp_thang_ValueChanged);
             m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
             m_grv_don_hang.DoubleClick+=new EventHandler(m_grv_don_hang_DoubleClick);
+            this.KeyDown+=new KeyEventHandler(f532_TRA_CUU_DON_HANG_KeyDown);
 		}
 		#endregion
 
@@ -477,6 +478,20 @@ namespace BCTKApp
 			}
 		
 		}
+        private void f532_TRA_CUU_DON_HANG_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
 			try{
