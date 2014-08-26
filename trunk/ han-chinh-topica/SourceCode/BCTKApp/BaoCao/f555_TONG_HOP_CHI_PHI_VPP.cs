@@ -23,6 +23,7 @@ using BCTKDS;
 using BCTKDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using IP.Core.IPExcelReport;
 
 namespace BCTKApp
 {
@@ -38,7 +39,7 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_update;
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-        internal SIS.Controls.Button.SiSButton m_cmd_view;
+        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Panel panel1;
         private DateTimePicker m_dtp_den_ngay;
         private Label label1;
@@ -88,7 +89,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_tong_tien = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -134,7 +135,7 @@ namespace BCTKApp
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -174,20 +175,20 @@ namespace BCTKApp
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
             // 
-            // m_cmd_view
+            // m_cmd_xuat_excel
             // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xem";
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xuat_excel.TabIndex = 21;
+            this.m_cmd_xuat_excel.Text = "Xuất &Excel";
             // 
             // m_cmd_delete
             // 
@@ -290,7 +291,7 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
             this.m_lbl_tieu_de.Size = new System.Drawing.Size(754, 32);
             this.m_lbl_tieu_de.TabIndex = 28;
-            this.m_lbl_tieu_de.Text = "TỔNG HỢP CHI PHÍ VPP";
+            this.m_lbl_tieu_de.Text = "TỔNG HỢP CHI PHÍ VĂN PHÒNG PHẨM";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // f555_TONG_HOP_CHI_PHI_VPP
@@ -419,12 +420,20 @@ namespace BCTKApp
 		//	f555_TONG_HOP_CHI_PHI_VPP_DE v_fDE = new f555_TONG_HOP_CHI_PHI_VPP_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void export_2_excel()
+        {
+            CExcelReport v_obj_excel_report = new CExcelReport("f555_tong_hop_chi_phi_vpp.xls", 6, 1);
+            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dtp_tu_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dtp_den_ngay.Text);
+            v_obj_excel_report.FindAndReplace(false);
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_grv_tong_tien, 0, m_grv_tong_tien.Cols.Count - 1, true);
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
             m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
             m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
 		}
@@ -481,9 +490,10 @@ namespace BCTKApp
 			}
 		}
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
 			try{
-				view_v_tong_hop_chi_phi_vpp();
+                export_2_excel();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
