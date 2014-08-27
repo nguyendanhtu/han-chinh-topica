@@ -111,7 +111,93 @@
     </asp:Panel>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel_grv_detail" runat="server">
+        <ContentTemplate>
+            <asp:Panel ID="m_pnl_detail_grv" runat="server">
+                <div class="cssLoadWapper">
+                    <asp:MultiView ID="mtv_detail" runat="server">
+                        <asp:View ID="View_detail" runat="server">
+                            <div class="cssLoadContent2" style="width: 100%; margin: 100px auto 0 auto; overflow-y: scroll;">
+                                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                    <tr>
+                                        <td align="left" style="width: 20%">
+                                            <asp:Label ID="m_lbl_grv_detail" runat="server" CssClass="cssPageTitle" BackColor="White"></asp:Label>
+                                        </td>
+                                        <td align="center" style="width: 60%">
+                                            <asp:Label ID="m_lbl_ten_detail" runat="server" CssClass="cssPageTitle" Font-Size="Large" BackColor="White"></asp:Label>
+                                        </td>
+                                        <td align="right" style="width: 20%">
+                                            <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="45px" Height="30px" runat="server"
+                                                OnClick="m_cmd_detail_exit_Click" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <asp:GridView ID="m_grv_detail" runat="Server"
+                                            AutoGenerateColumns="false" CssClass="GridViewStyle"
+                                            Width="99%" DataKeyNames="ID_PHONG_BAN" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
+                                            EmptyDataText="Chưa có dữ liệu báo cáo!" EmptyDataRowStyle-BorderColor="#810913"
+                                            CellPadding="8" PageSize="10" OnPageIndexChanging="m_grv_detail_PageIndexChanging">
+                                            <PagerSettings Position="TopAndBottom" />
+                                            <AlternatingRowStyle BackColor="White" />
+                                            <EmptyDataRowStyle BorderColor="#810913" />
+                                            <FooterStyle CssClass="GridViewFooterStyle" />
+                                            <RowStyle CssClass="GridViewRowStyle" />
+                                            <SelectedRowStyle CssClass="GridViewSelectedRowStyle" />
+                                            <PagerStyle CssClass="GridViewPagerStyle" />
+                                            <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
+                                            <HeaderStyle CssClass="GridViewHeaderStyle" />
+                                            <Columns>
+                                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
+                                                    <ItemTemplate>
+                                                        <%# Container.DataItemIndex + 1 %>
+                                                        <headerstyle width="15px" />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Center" Width="2%" />
+                                                </asp:TemplateField>
+                                                <asp:BoundField DataField="SO_BILL" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ BILL"
+                                                    ItemStyle-Width="7%">
+                                                    <ItemStyle HorizontalAlign="Right" Width="3%" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="TRANG_THAI_THU" ItemStyle-HorizontalAlign="Left" HeaderText="TRẠNG THÁI"
+                                                    ItemStyle-Width="7%">
+                                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ TIỀN (VNĐ)"
+                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                                    <ItemStyle HorizontalAlign="Right" Width="5%" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="NGAY_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGÀY GỬI"
+                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:dd/MM/yyyy}">
+                                                    <ItemStyle HorizontalAlign="Left" Width="3%" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="NGUOI_GUI" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI GỬI"
+                                                    ItemStyle-Width="7%">
+                                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="NGUOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NGƯỜI NHẬN"
+                                                    ItemStyle-Width="7%">
+                                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="NOI_NHAN" ItemStyle-HorizontalAlign="Left" HeaderText="NƠI NHẬN"
+                                                    ItemStyle-Width="7%">
+                                                    <ItemStyle HorizontalAlign="Left" Width="15%" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="NOI_DUNG" ItemStyle-HorizontalAlign="Left" HeaderText="NỘI DUNG"
+                                                    ItemStyle-Width="7%">
+                                                    <ItemStyle HorizontalAlign="Left" Width="5%" />
+                                                </asp:BoundField>
+                                            </Columns>
+                                        </asp:GridView>
+                            </div>
+                        </asp:View>
+                    </asp:MultiView>
+                    </tr>
+                    </table>
+                </div>
+            </asp:Panel>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <asp:UpdatePanel ID="UpdatePanel_grv_bc" runat="server">
         <ContentTemplate>
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
                 <tr>
@@ -189,7 +275,7 @@
 
                             <asp:Label ID="Label1" runat="server" CssClass="cssPageTitle" Text="Chi tiết tổng hợp tình hình CPN" />
                             <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
-                            <asp:HiddenField ID="HiddenField1" runat="server"></asp:HiddenField>
+                            <asp:HiddenField ID="m_hdf_trang_thai_thu" runat="server"></asp:HiddenField>
                         </td>
                     </tr>
                     <tr style="background-color: lightgrey">
@@ -217,14 +303,13 @@
                             <asp:Label ID="Label10" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" Text="0" />
                         </td>
                         <td align="center" style="width: 150px">
-                            <asp:ImageButton ID="Button1" ImageUrl="../Images/Button/detail.png"
-                                PostBackUrl="/QuanLyHanhChinh/ChucNang/f444_tra_cuu_trang_thai.aspx" runat="Server" />
+                            <asp:ImageButton ID="m_cmd_bill_chua_gui_cho_chuyen_phat_nhanh" ImageUrl="../Images/Button/detail.png" runat="server"
+                                OnClick="m_cmd_bill_chua_gui_cho_CPN_Click" />
                         </td>
                     </tr>
                     <tr>
                         <td align="left">
                             <asp:Label ID="Label4" runat="server" Text="Bill đã gửi cho CPN" CssClass="cssPageTitle" ForeColor="Black" />
-
                         </td>
                         <td align="right">
                             <asp:Label ID="m_lbl_so_bill_da_gui_thanh_cong" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
@@ -233,8 +318,8 @@
                             <asp:Label ID="m_lbl_tong_tien_da_gui_thanh_cong" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
                         <td align="center" style="width: 150px">
-                            <asp:ImageButton ID="ImageButton1" ImageUrl="../Images/Button/detail.png"
-                                PostBackUrl="/QuanLyHanhChinh/ChucNang/f444_tra_cuu_trang_thai.aspx" runat="Server" />
+                            <asp:ImageButton ID="m_cmd_bill_da_gui_cho_CPN" ImageUrl="../Images/Button/detail.png"
+                                OnClick="m_cmd_bill_da_gui_cho_CPN_Click" runat="Server" />
                         </td>
                     </tr>
                     <tr>
@@ -248,8 +333,8 @@
                             <asp:Label ID="m_lbl_so_tien_bill_bi_tra_lai_mat_phi" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" />
                         </td>
                         <td align="center" style="width: 150px">
-                            <asp:ImageButton ID="ImageButton2" ImageUrl="../Images/Button/detail.png"
-                                PostBackUrl="/QuanLyHanhChinh/ChucNang/f444_tra_cuu_trang_thai.aspx" runat="Server" />
+                            <asp:ImageButton ID="m_cmd_bill_tra_lai_mat_phi" ImageUrl="../Images/Button/detail.png"
+                                OnClick="m_cmd_bill_tra_lai_mat_phi_Click" runat="Server" />
                         </td>
                     </tr>
                     <tr>
@@ -263,8 +348,8 @@
                             <asp:Label ID="m_lbl_so_tien_bill_tra_lai_khong_mat_phi" runat="server" CssClass="cssPageTitle" ForeColor="Maroon" Text="0" />
                         </td>
                         <td align="center" style="width: 150px">
-                            <asp:ImageButton ID="ImageButton3" ImageUrl="../Images/Button/detail.png"
-                                PostBackUrl="/QuanLyHanhChinh/ChucNang/f444_tra_cuu_trang_thai.aspx" runat="Server" />
+                            <asp:ImageButton ID="m_cmd_bill_tra_lai_khong_mat_phi" ImageUrl="../Images/Button/detail.png"
+                                OnClick="m_cmd_bill_tra_lai_khong_mat_phi_Click" runat="Server" />
                         </td>
                     </tr>
                 </table>
