@@ -303,15 +303,19 @@ namespace BCTKApp.ChucNang
             m_lbl_loading.Visible = false;
             progressBar1.Visible = false;
         }
+        private void export_2_excel()
+        {
+            CExcelReport v_obj_excel_report = new CExcelReport("F461_Bao_cao_so_sanh_chi_phi_cuoi_thang.xls", 8, 1);
+            v_obj_excel_report.AddFindAndReplaceItem("<ngay>", DateTime.Now.ToShortDateString());
+            v_obj_excel_report.FindAndReplace(false);
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
+        }
         private void set_define_event()
         {
             m_cmd_thoat.Click += new EventHandler(m_cmd_thoat_Click);
             m_cmd_nhap_excel.Click += new EventHandler(m_cmd_nhap_excel_Click);
             m_cmd_so_sanh_chi_phi.Click += new EventHandler(m_cmd_so_sanh_chi_phi_Click);
-            //m_cmd_kiem_tra_dl.Click += new EventHandler(m_cmd_kiem_tra_dl_Click);
-            //m_lbox_ds_loi_bill.Click += new EventHandler(m_lbox_ds_loi_Click);
-            //m_cmd_del.Click += new EventHandler(m_cmd_del_Click);
-            //m_cmd_insert_row.Click += m_cmd_insert_row_Click;
+            m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
         }
         #endregion
 
@@ -346,6 +350,32 @@ namespace BCTKApp.ChucNang
             }
             catch (Exception v_e)
             {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                export_2_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void f461_So_sanh_chi_phi_cuoi_thang_NCC_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }

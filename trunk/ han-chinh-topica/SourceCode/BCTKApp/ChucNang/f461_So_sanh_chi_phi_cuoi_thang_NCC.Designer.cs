@@ -34,19 +34,19 @@
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_pnl_btn = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.m_lbl_loading = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.m_cmd_so_sanh_chi_phi = new SIS.Controls.Button.SiSButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.m_lbl_loading = new System.Windows.Forms.Label();
             this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_grid = new System.Windows.Forms.Panel();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_thoat = new SIS.Controls.Button.SiSButton();
-            this.m_xuat_excel = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_OpenFile_dlg = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_header.SuspendLayout();
             this.m_pnl_btn.SuspendLayout();
@@ -101,6 +101,17 @@
             this.label2.Size = new System.Drawing.Size(229, 15);
             this.label2.TabIndex = 36;
             this.label2.Text = "Giá trị sai lệch với giá trị trong phần mềm";
+            // 
+            // m_lbl_loading
+            // 
+            this.m_lbl_loading.AutoSize = true;
+            this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
+            this.m_lbl_loading.Location = new System.Drawing.Point(429, 30);
+            this.m_lbl_loading.Name = "m_lbl_loading";
+            this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
+            this.m_lbl_loading.TabIndex = 22;
+            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
             // 
             // label1
             // 
@@ -181,17 +192,6 @@
             this.imageList1.Images.SetKeyName(20, "");
             this.imageList1.Images.SetKeyName(21, "");
             // 
-            // m_lbl_loading
-            // 
-            this.m_lbl_loading.AutoSize = true;
-            this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
-            this.m_lbl_loading.Location = new System.Drawing.Point(429, 30);
-            this.m_lbl_loading.Name = "m_lbl_loading";
-            this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
-            this.m_lbl_loading.TabIndex = 22;
-            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
-            // 
             // m_cmd_nhap_excel
             // 
             this.m_cmd_nhap_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -232,7 +232,7 @@
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_thoat);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_xuat_excel);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 546);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
@@ -255,21 +255,21 @@
             this.m_cmd_thoat.Text = "Thoát";
             this.m_cmd_thoat.UseVisualStyleBackColor = true;
             // 
-            // m_xuat_excel
+            // m_cmd_xuat_excel
             // 
-            this.m_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_xuat_excel.ImageIndex = 19;
-            this.m_xuat_excel.ImageList = this.imageList1;
-            this.m_xuat_excel.Location = new System.Drawing.Point(0, 0);
-            this.m_xuat_excel.Name = "m_xuat_excel";
-            this.m_xuat_excel.Size = new System.Drawing.Size(133, 36);
-            this.m_xuat_excel.TabIndex = 1;
-            this.m_xuat_excel.Text = "Xuất Excel";
-            this.m_xuat_excel.UseVisualStyleBackColor = true;
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.imageList1;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(133, 36);
+            this.m_cmd_xuat_excel.TabIndex = 1;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.UseVisualStyleBackColor = true;
             // 
             // m_OpenFile_dlg
             // 
@@ -286,6 +286,7 @@
             this.Controls.Add(this.m_pnl_header);
             this.Name = "f461_So_sanh_chi_phi_cuoi_thang_NCC";
             this.Text = "f461- So sánh chi phí cuối tháng từ nhà cung  cấp";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f461_So_sanh_chi_phi_cuoi_thang_NCC_KeyDown);
             this.m_pnl_header.ResumeLayout(false);
             this.m_pnl_header.PerformLayout();
             this.m_pnl_btn.ResumeLayout(false);
@@ -310,7 +311,7 @@
         private System.Windows.Forms.Label m_lbl_loading;
         private System.Windows.Forms.OpenFileDialog m_OpenFile_dlg;
         private SIS.Controls.Button.SiSButton m_cmd_so_sanh_chi_phi;
-        private SIS.Controls.Button.SiSButton m_xuat_excel;
+        private SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private SIS.Controls.Button.SiSButton m_cmd_thoat;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
