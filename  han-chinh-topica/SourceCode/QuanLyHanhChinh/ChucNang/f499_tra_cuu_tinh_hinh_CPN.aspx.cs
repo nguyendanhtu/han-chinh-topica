@@ -58,7 +58,6 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
 
     private void load_data_grv_detail(decimal ip_id_trang_thai)
     {
-        m_lbl_ten_detail.Text = "Chi tiết danh sách các Bill chưa gửi cho CPN";
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_V_DM_BILL v_us_v_dm_bill = new US_V_DM_BILL();
         DS_V_DM_BILL v_ds_v_dm_bill = new DS_V_DM_BILL();
@@ -315,6 +314,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
     {
         try
         {
+            m_lbl_ten_detail.Text = "Chi tiết danh sách các Bill chưa gửi cho CPN";
             view_detail_grv(true);
             m_hdf_trang_thai_thu.Value = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO.ToString();
             load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO);
@@ -328,6 +328,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
     {
         try
         {
+            m_lbl_ten_detail.Text = "Chi tiết danh sách các Bill đã gửi cho CPN";
             view_detail_grv(true);
             m_hdf_trang_thai_thu.Value = CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN.ToString();
             load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN);
@@ -341,6 +342,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
     {
         try
         {
+            m_lbl_ten_detail.Text = "Chi tiết danh sách các Bill bị trả lại mất phí";
             view_detail_grv(true);
             m_hdf_trang_thai_thu.Value = CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_MAT_PHI.ToString();
             load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_MAT_PHI);
@@ -354,6 +356,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
     {
         try
         {
+            m_lbl_ten_detail.Text = "Chi tiết danh sách các Bill bị trả lại không mất phí";
             view_detail_grv(true);
             m_hdf_trang_thai_thu.Value = CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_KHONG_MAT_PHI.ToString();
             load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_KHONG_MAT_PHI);
