@@ -271,5 +271,12 @@ public class US_GD_DON_DAT_HANG : US_Object
             return CIPConvert.ToDecimal(v_obj_tong_tien_dinh_muc.Value);
         return 0;
     }
+
+    public void Chuyen_trang_thai_gui_cho_td(DS_GD_DON_DAT_HANG ip_v_ds, string ip_ma_phieu)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_chuyen_trang_thai_xin_td_duyet");
+        v_store_proc.addNVarcharInputParam("@MA_PHIEU",ip_ma_phieu);
+        v_store_proc.fillDataSetByCommand(this, ip_v_ds);
+    }
 }
 }
