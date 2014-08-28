@@ -38,7 +38,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
 
     private void set_inital_form_mode()
     {
-        m_txt_ngay_nhap.Text = DateTime.Now.Date.ToShortDateString();
+        m_txt_ngay_nhap.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
         m_txt_so_lan.Text = "1";
         load_ma_ten_trung_tam();
         set_so_phieu();
@@ -48,7 +48,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_cmd_cap_nhat_don_hang_de.Visible = false;
         load_data_to_grid_don_hang();
         load_ma_don_hang_nhap_gan_nhat();
-        thong_bao("", false);
+        //thong_bao("", false);
     }
     private void set_so_phieu()
     {
@@ -117,7 +117,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
                 m_us_gd_don_dat_hang = new US_GD_DON_DAT_HANG();
                 break;
         }
-        m_us_gd_don_dat_hang.datNGAY_DAT_HANG = CIPConvert.ToDatetime(m_txt_ngay_nhap.Text);
+        m_us_gd_don_dat_hang.datNGAY_DAT_HANG = CIPConvert.ToDatetime(m_txt_ngay_nhap.Text,"dd/MM/yyyy");
         m_us_gd_don_dat_hang.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         m_us_gd_don_dat_hang.dcLAN = CIPConvert.ToDecimal(m_txt_so_lan.Text);
         m_us_gd_don_dat_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.NHAP;
@@ -155,14 +155,14 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         {
             case LOAI_FORM.THEM:
                 m_us_gd_don_dat_hang_de.Insert();
-                thong_bao("Đã thêm vào phiếu",true);
+                thong_bao("Đã thêm VPP mới vào phiếu",true);
                 break;
             case LOAI_FORM.SUA:
                 m_us_gd_don_dat_hang_de.Update();
                 m_cmd_them_don_hang_de.Visible = false;
                 m_cmd_cap_nhat_don_hang_de.Visible = true;
                 set_form_mode(LOAI_FORM.THEM);
-                thong_bao("Đã cập nhật lại vào phiếu",true);
+                thong_bao("Đã cập nhật lại VPP vào phiếu",true);
                 break;
         }
         update_tong_tien_don_hang(m_us_gd_don_dat_hang_de.dcID_DON_DAT_HANG);
@@ -312,6 +312,31 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_lbl_ma_don_hang_de.Text = v_ds.Tables[0].Rows[0]["MA"].ToString();
     }
 
+    private void chuyen_trang_thai_sang_gui_td()
+    {
+        bool v_flag = false;
+        foreach (GridViewRow row in m_grv_don_hang_nhap.Rows)
+        {
+            if (row.RowType == DataControlRowType.DataRow)
+            {
+                System.Web.UI.WebControls.CheckBox chkRow = (row.Cells[0].FindControl("chkRow") as System.Web.UI.WebControls.CheckBox);
+                if (chkRow.Checked)
+                {
+                    US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
+                    DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
+                    string ma_don_hang = row.Cells[6].Text;
+                    v_us.Chuyen_trang_thai_gui_cho_td(v_ds, ma_don_hang);
+                    v_flag = true;
+                }
+            }
+        }
+        load_data_to_grid_don_hang();
+        if (v_flag == true)
+            thong_bao("Bạn đã gửi thành công phiếu cho TD duyệt", true);
+        else
+            thong_bao("Bạn chưa tích chọn phiếu đơn hàng nào",true);
+    }
+
     private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
     {
         m_mtv_1.SetActiveView(m_view_confirm);
@@ -457,12 +482,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
                     m_hdf_id_trung_tam.Value = v_ds_ht_qh_sd_dl.HT_QUAN_HE_SU_DUNG_DU_LIEU.Rows[0]["ID_PHONG_BAN"].ToString();
                     set_inital_form_mode();
                 }
-                else
-                {
-                    Response.Redirect("../Default.aspx", false);
-                    HttpContext.Current.ApplicationInstance.CompleteRequest();
-                }
-                thong_bao("", false);      
+                thong_bao("", false,false);      
             }
         }
         catch (Exception v_e)
@@ -482,7 +502,8 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         }
         catch (Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(this, v_e);
+            thong_bao("Lỗi: " + v_e.ToString());
+            //CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
     protected void m_cmd_cap_nhat_don_hang_Click(object sender, EventArgs e)
@@ -656,11 +677,12 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     {
         try
         {
-            
+            chuyen_trang_thai_sang_gui_td();
         }
         catch (System.Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(this, v_e);
+            thong_bao(v_e.ToString(),true);
+            //CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
     protected void m_cbo_vpp_SelectedIndexChanged(object sender, EventArgs e)
@@ -676,6 +698,17 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             m_txt_so_luong.Focus();
         }
         catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void OnCheckedChanged_chkRow(object sender, EventArgs e)
+    {
+        try
+        {
+            
+        }
+        catch (System.Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
