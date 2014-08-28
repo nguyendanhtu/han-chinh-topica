@@ -74,7 +74,7 @@
                 <asp:Button ID="m_cmd_cap_nhat_don_hang" runat="server" Text="Cập nhật đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" />
             </td>
             <td align="left">
-                <asp:Button ID="m_cmd_gui_td" runat="server" Text="Gửi cho TD" CssClass="cssGoogleButton" OnClick="m_cmd_gui_td_Click" />
+                <asp:Button ID="m_cmd_gui_td" runat="server" Text="Gửi cho TD duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_td_Click" />
             </td>
         </tr>
     </table>
@@ -105,6 +105,11 @@
                     <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
                     <HeaderStyle CssClass="GridViewHeaderStyle" />
                     <Columns>
+                        <asp:TemplateField HeaderText="Chọn" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
+                            <ItemTemplate>
+                                <asp:CheckBox ID="chkRow" runat="server" OnCheckedChanged="OnCheckedChanged_chkRow" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
                             <ItemTemplate>
                                 <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
