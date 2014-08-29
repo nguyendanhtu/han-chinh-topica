@@ -356,6 +356,9 @@
     <Compile Include="BaoCao\f870_RPT_CHI_PHI_THEO_PHAP_NHAN.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f871_RPT_CHI_TIET_CHI_PHI_PHAP_NHAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BaoCao\f880_RPT_TONG_TIEN_DINH_MUC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -655,6 +658,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f870_RPT_CHI_PHI_THEO_PHAP_NHAN.resx">
       <DependentUpon>f870_RPT_CHI_PHI_THEO_PHAP_NHAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f871_RPT_CHI_TIET_CHI_PHI_PHAP_NHAN.resx">
+      <DependentUpon>f871_RPT_CHI_TIET_CHI_PHI_PHAP_NHAN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f880_RPT_TONG_TIEN_DINH_MUC.resx">
       <DependentUpon>f880_RPT_TONG_TIEN_DINH_MUC.cs</DependentUpon>
