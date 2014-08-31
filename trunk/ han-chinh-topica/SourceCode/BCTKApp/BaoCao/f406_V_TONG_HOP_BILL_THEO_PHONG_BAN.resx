@@ -260,9 +260,6 @@
         AQMBgAEPAYEB/wHAAQ8BwAEHAYgBHwHDA/8BwAEPAZ8B/ws=
 </value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>121, 17</value>
-  </metadata>
   <data name="m_fg.ColumnInfo" xml:space="preserve">
     <value>8,1,0,0,0,85,Columns:0{Width:31;AllowSorting:False;Caption:"STT";AllowEditing:False;ImageAlign:CenterCenter;}	1{Visible:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	2{Width:100;Caption:"Mã phòng ban";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	3{Width:253;Caption:"Tên phòng ban";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	4{Width:94;Caption:"Tổng số Bill";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	5{Width:175;Caption:"Tổng tiền chưa tính VAT (VNĐ)";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	6{Width:95;Name:"VAT";Caption:"Thuế VAT (VNĐ)";DataType:System.Decimal;Format:"#,##0";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	7{Width:130;Name:"TONG_TIEN_THANH_TOAN";Caption:"Tổng tiền đã tính VAT (VNĐ)";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	</value>
   </data>
