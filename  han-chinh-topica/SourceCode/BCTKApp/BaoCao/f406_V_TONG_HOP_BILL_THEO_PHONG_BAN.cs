@@ -50,7 +50,7 @@ namespace BCTKApp
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private ToolTip toolTip1;
-        private ComboBox comboBox1;
+        private ComboBox m_cbo_phap_nhan;
         private Label label1;
 		private System.ComponentModel.IContainer components;
 
@@ -109,7 +109,7 @@ namespace BCTKApp
             this.m_lbl_chu_thich = new System.Windows.Forms.Label();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -319,7 +319,7 @@ namespace BCTKApp
             // 
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(258, 85);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(276, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(338, 20);
             this.m_txt_tim_kiem.TabIndex = 26;
             // 
             // m_lbl_chu_thich
@@ -342,7 +342,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 18;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(564, 80);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(600, 80);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_tim_kiem.TabIndex = 29;
@@ -353,20 +353,20 @@ namespace BCTKApp
             // 
             this.toolTip1.AutomaticDelay = 300;
             // 
-            // comboBox1
+            // m_cbo_phap_nhan
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(528, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 30;
+            this.m_cbo_phap_nhan.FormattingEnabled = true;
+            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(442, 51);
+            this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
+            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(154, 21);
+            this.m_cbo_phap_nhan.TabIndex = 30;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(458, 57);
+            this.label1.Location = new System.Drawing.Point(372, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 15);
             this.label1.TabIndex = 22;
@@ -376,7 +376,7 @@ namespace BCTKApp
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.m_cbo_phap_nhan);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_cbo_trang_thai);
@@ -450,6 +450,7 @@ namespace BCTKApp
 			set_define_events();
 			this.KeyPreview = true;
             load_cbo_trang_thai();
+            load_cbo_phap_nhan();
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
@@ -513,6 +514,24 @@ namespace BCTKApp
             v_dr[CM_DM_TU_DIEN.GHI_CHU] = " ";
             v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
             m_cbo_trang_thai.SelectedIndex = 0;
+            m_trang_thai = true;
+        }
+        private void load_cbo_phap_nhan()
+        {
+            m_trang_thai = false;
+            US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN();
+            DS_DM_PHAP_NHAN v_ds = new DS_DM_PHAP_NHAN();
+            v_us.FillDataset(v_ds);
+            m_cbo_phap_nhan.DataSource = v_ds.DM_PHAP_NHAN;
+            m_cbo_phap_nhan.ValueMember = DM_PHAP_NHAN.ID;
+            m_cbo_phap_nhan.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
+            DataRow v_dr = v_ds.DM_PHAP_NHAN.NewRow();
+            v_dr[DM_PHAP_NHAN.ID] = -1;
+            v_dr[DM_PHAP_NHAN.MA_PHAP_NHAN] = "";
+            v_dr[DM_PHAP_NHAN.TEN_PHAP_NHAN] = "Tất cả";
+            v_dr[DM_PHAP_NHAN.GHI_CHU] = " ";
+            v_ds.DM_PHAP_NHAN.Rows.InsertAt(v_dr, 0);
+            m_cbo_phap_nhan.SelectedIndex = 0;
             m_trang_thai = true;
         }
         private void tim_kiem() {
@@ -586,7 +605,8 @@ namespace BCTKApp
             m_cmd_tim_kiem.Click += new EventHandler(m_cmd_tim_kiem_Click);
             this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
-            this.m_dt_chon_thang.ValueChanged += new System.EventHandler(this.m_dt_chon_thang_ValueChanged);   
+            this.m_dt_chon_thang.ValueChanged += new System.EventHandler(this.m_dt_chon_thang_ValueChanged);
+            this.m_cbo_phap_nhan.SelectedIndexChanged += new System.EventHandler(this.m_cbo_phap_nhan_SelectedIndexChanged);
 		}
 		#endregion
 
@@ -647,6 +667,13 @@ namespace BCTKApp
 		}
 
         private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (m_trang_thai == true)
+            {
+                tim_kiem();
+            }
+        }
+        private void m_cbo_phap_nhan_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (m_trang_thai == true)
             {
