@@ -253,11 +253,11 @@ namespace BCTKApp
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(227, 9);
+            this.m_lbl_header.Location = new System.Drawing.Point(312, 9);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(415, 22);
+            this.m_lbl_header.Size = new System.Drawing.Size(241, 22);
             this.m_lbl_header.TabIndex = 21;
-            this.m_lbl_header.Text = "BẢNG TỔNG HỢP THÔNG TIN CUỐI THÁNG";
+            this.m_lbl_header.Text = "THỐNG KÊ CUỐI THÁNG";
             // 
             // m_lbl_tu_ngay
             // 
@@ -306,9 +306,9 @@ namespace BCTKApp
             // 
             this.m_cbo_trang_thai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_trang_thai.FormattingEnabled = true;
-            this.m_cbo_trang_thai.Location = new System.Drawing.Point(752, 51);
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(822, 51);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
-            this.m_cbo_trang_thai.Size = new System.Drawing.Size(128, 21);
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(58, 21);
             this.m_cbo_trang_thai.TabIndex = 25;
             this.m_cbo_trang_thai.Visible = false;
             this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
@@ -318,7 +318,7 @@ namespace BCTKApp
             this.m_lbl_trang_thai.AutoSize = true;
             this.m_lbl_trang_thai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_trang_thai.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_trang_thai.Location = new System.Drawing.Point(672, 51);
+            this.m_lbl_trang_thai.Location = new System.Drawing.Point(751, 55);
             this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
             this.m_lbl_trang_thai.Size = new System.Drawing.Size(65, 15);
             this.m_lbl_trang_thai.TabIndex = 24;
@@ -392,7 +392,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f406_V_TONG_HOP_BILL_THEO_PHONG_BAN";
-            this.Text = "F406- Bảng tổng hợp thông tin cuối tháng";
+            this.Text = "F406- Thống kê cuối tháng";
             this.Load += new System.EventHandler(this.f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
@@ -438,12 +438,13 @@ namespace BCTKApp
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_header.Location = new System.Drawing.Point(275, 9);
+            this.m_lbl_header.Location = new System.Drawing.Point(312, 9);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(392, 22);
+            this.m_lbl_header.Size = new System.Drawing.Size(241, 22);
             this.m_lbl_header.TabIndex = 21;
-            this.m_lbl_header.Text = "BẢNG TỔNG HỢP THÔNG TIN CUỐI THÁNG";
-            //
+            this.m_lbl_header.Text = "THỐNG KÊ CUỐI THÁNG";
+            // 
+
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
