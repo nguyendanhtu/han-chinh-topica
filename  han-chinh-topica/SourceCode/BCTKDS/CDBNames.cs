@@ -854,7 +854,9 @@ namespace BCTKDS.CDBNames
         public const string MA_HD = "MA_HD";
         public const string GIA_TRI_CHUA_VAT = "GIA_TRI_CHUA_VAT";
         public const string GIA_TRI_DA_VAT = "GIA_TRI_DA_VAT";
+        public const string MA_HD_NCC = "MA_HD_NCC";
     }
+
     public class GD_DON_DAT_HANG
     {
         public const string ID = "ID";
