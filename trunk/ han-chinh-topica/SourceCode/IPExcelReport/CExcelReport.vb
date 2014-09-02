@@ -327,11 +327,16 @@ Public Class CExcelReport
                     i_iExcelRow += 1
                 End If
             End While
+            m_objExcelApp.DisplayAlerts = False
             m_objExcelApp.Workbooks.Close()
+            m_objExcelApp.DisplayAlerts = True
             m_objExcelApp.Quit()
             Unmount()
         Catch v_e As Exception
+            m_objExcelApp.DisplayAlerts = False
             m_objExcelApp.Workbooks.Close()
+            m_objExcelApp.DisplayAlerts = True
+            m_objExcelApp.Quit()
             Unmount()
             Throw v_e
         End Try

@@ -34,7 +34,7 @@
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <OldToolsVersion>2.0</OldToolsVersion>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <TargetFrameworkProfile />
@@ -511,6 +511,9 @@
     <Compile Include="DanhMuc\f529_DM_NHA_CC_DE.Designer.cs">
       <DependentUpon>f529_DM_NHA_CC_DE.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\F603_cap_nhat_danh_sach_vpp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DanhMuc\f708_V_DM_VPP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -773,6 +776,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f541_V_DM_CO_SO_DINH_MUC_DE.resx">
       <DependentUpon>f541_V_DM_CO_SO_DINH_MUC_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F603_cap_nhat_danh_sach_vpp.resx">
+      <DependentUpon>F603_cap_nhat_danh_sach_vpp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f708_V_DM_VPP.resx">
       <DependentUpon>f708_V_DM_VPP.cs</DependentUpon>
