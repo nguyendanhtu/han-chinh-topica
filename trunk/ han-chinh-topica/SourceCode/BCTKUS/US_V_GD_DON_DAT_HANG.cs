@@ -226,6 +226,27 @@ public class US_V_GD_DON_DAT_HANG : US_Object
 	public void SetGIA_TRI_DA_VATNull() {
 		pm_objDR["GIA_TRI_DA_VAT"] = System.Convert.DBNull;
 	}
+    public string strMA_HD_NCC
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MA_HD_NCC", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MA_HD_NCC"] = value;
+        }
+    }
+
+    public bool IsMA_HD_NCCNull()
+    {
+        return pm_objDR.IsNull("MA_HD_NCC");
+    }
+
+    public void SetMA_HD_NCCNull()
+    {
+        pm_objDR["MA_HD_NCC"] = System.Convert.DBNull;
+    }
 
 #endregion
 #region "Init Functions"
