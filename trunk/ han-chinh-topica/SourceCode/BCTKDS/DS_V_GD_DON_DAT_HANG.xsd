@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="ADMIN_SOFTConnectionString1 (Settings)" DbObjectName="ADMIN_SOFT.dbo.V_GD_DON_DAT_HANG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, NGAY_DAT_HANG, LAN, ID_TRANG_THAI, TRANG_THAI, ID_PHONG_BAN, TEN_PHONG_BAN, MA_HD, GIA_TRI_CHUA_VAT, GIA_TRI_DA_VAT FROM dbo.V_GD_DON_DAT_HANG</CommandText>
+                    <CommandText>SELECT ID, NGAY_DAT_HANG, LAN, ID_TRANG_THAI, TRANG_THAI, ID_PHONG_BAN, TEN_PHONG_BAN, MA_HD, GIA_TRI_CHUA_VAT, GIA_TRI_DA_VAT, MA_HD_NCC FROM dbo.V_GD_DON_DAT_HANG</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -29,6 +29,7 @@
               <Mapping SourceColumn="MA_HD" DataSetColumn="MA_HD" />
               <Mapping SourceColumn="GIA_TRI_CHUA_VAT" DataSetColumn="GIA_TRI_CHUA_VAT" />
               <Mapping SourceColumn="GIA_TRI_DA_VAT" DataSetColumn="GIA_TRI_DA_VAT" />
+              <Mapping SourceColumn="MA_HD_NCC" DataSetColumn="MA_HD_NCC" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -40,7 +41,7 @@
   <xs:element name="DS_V_GD_DON_DAT_HANG" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_GD_DON_DAT_HANG" msprop:Generator_UserDSName="DS_V_GD_DON_DAT_HANG">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_GD_DON_DAT_HANG" msprop:Generator_TableClassName="V_GD_DON_DAT_HANGDataTable" msprop:Generator_TableVarName="tableV_GD_DON_DAT_HANG" msprop:Generator_TablePropName="V_GD_DON_DAT_HANG" msprop:Generator_RowDeletingName="V_GD_DON_DAT_HANGRowDeleting" msprop:Generator_UserTableName="V_GD_DON_DAT_HANG" msprop:Generator_RowChangingName="V_GD_DON_DAT_HANGRowChanging" msprop:Generator_RowEvHandlerName="V_GD_DON_DAT_HANGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_DON_DAT_HANGRowDeleted" msprop:Generator_RowEvArgName="V_GD_DON_DAT_HANGRowChangeEvent" msprop:Generator_RowChangedName="V_GD_DON_DAT_HANGRowChanged" msprop:Generator_RowClassName="V_GD_DON_DAT_HANGRow">
+        <xs:element name="V_GD_DON_DAT_HANG" msprop:Generator_TableClassName="V_GD_DON_DAT_HANGDataTable" msprop:Generator_TableVarName="tableV_GD_DON_DAT_HANG" msprop:Generator_TablePropName="V_GD_DON_DAT_HANG" msprop:Generator_RowDeletingName="V_GD_DON_DAT_HANGRowDeleting" msprop:Generator_RowChangingName="V_GD_DON_DAT_HANGRowChanging" msprop:Generator_RowEvHandlerName="V_GD_DON_DAT_HANGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_DON_DAT_HANGRowDeleted" msprop:Generator_UserTableName="V_GD_DON_DAT_HANG" msprop:Generator_RowChangedName="V_GD_DON_DAT_HANGRowChanged" msprop:Generator_RowEvArgName="V_GD_DON_DAT_HANGRowChangeEvent" msprop:Generator_RowClassName="V_GD_DON_DAT_HANGRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
@@ -71,6 +72,13 @@
               </xs:element>
               <xs:element name="GIA_TRI_CHUA_VAT" msprop:Generator_ColumnVarNameInTable="columnGIA_TRI_CHUA_VAT" msprop:Generator_ColumnPropNameInRow="GIA_TRI_CHUA_VAT" msprop:Generator_ColumnPropNameInTable="GIA_TRI_CHUA_VATColumn" msprop:Generator_UserColumnName="GIA_TRI_CHUA_VAT" type="xs:decimal" minOccurs="0" />
               <xs:element name="GIA_TRI_DA_VAT" msprop:Generator_ColumnVarNameInTable="columnGIA_TRI_DA_VAT" msprop:Generator_ColumnPropNameInRow="GIA_TRI_DA_VAT" msprop:Generator_ColumnPropNameInTable="GIA_TRI_DA_VATColumn" msprop:Generator_UserColumnName="GIA_TRI_DA_VAT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_HD_NCC" msprop:Generator_ColumnVarNameInTable="columnMA_HD_NCC" msprop:Generator_ColumnPropNameInRow="MA_HD_NCC" msprop:Generator_ColumnPropNameInTable="MA_HD_NCCColumn" msprop:Generator_UserColumnName="MA_HD_NCC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
