@@ -535,7 +535,6 @@ namespace BCTKApp
                     v_us_dm_vpp.Update();
                 }
             }
-            MsgBox
         }
         private void excel_file_to_dataset(string ip_str_file_path)
         {
