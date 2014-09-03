@@ -438,10 +438,9 @@ namespace BCTKApp {
         }
         void m_xuat_excel_Click(object sender, EventArgs e) {
             try {
-                CExcelReport v_excel = new CExcelReport("BCTK_Thong_tin_import_from_excel_can_kiem_tra.xlsx", 7, 1);
-
-                v_excel.Export2ExcelWithoutFixedRows(m_fg_load_file, (int)e_col_Number.SOCT, (int)e_col_Number.DIEN_GIAI, false);
-                v_excel.FindAndReplace(true);
+                CExcelReport v_excel = new CExcelReport("f130_chuc_nang.xls", 6, 1);
+                v_excel.FindAndReplace(false);
+                v_excel.Export2ExcelWithoutFixedRows(m_fg_load_file, (int)e_col_Number.SOCT, (int)e_col_Number.GHICHU, true);
                 //v_excel.OpenExcelFile();
             }
             catch(Exception v_e) {
