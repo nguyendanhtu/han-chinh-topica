@@ -380,7 +380,7 @@
     <Compile Include="ChucNang\f401_DON_GIA_DINH_MUC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChucNang\f461_Nhap_ma_hoa_don_NCC.cs">
+    <Compile Include="ChucNang\f462_Nhap_ma_hoa_don_NCC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChucNang\f461_So_sanh_chi_phi_cuoi_thang_NCC.cs">
@@ -681,8 +681,8 @@
     <EmbeddedResource Include="ChucNang\f401_DON_GIA_DINH_MUC.resx">
       <DependentUpon>f401_DON_GIA_DINH_MUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChucNang\f461_Nhap_ma_hoa_don_NCC.resx">
-      <DependentUpon>f461_Nhap_ma_hoa_don_NCC.cs</DependentUpon>
+    <EmbeddedResource Include="ChucNang\f462_Nhap_ma_hoa_don_NCC.resx">
+      <DependentUpon>f462_Nhap_ma_hoa_don_NCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f461_So_sanh_chi_phi_cuoi_thang_NCC.resx">
       <DependentUpon>f461_So_sanh_chi_phi_cuoi_thang_NCC.cs</DependentUpon>
