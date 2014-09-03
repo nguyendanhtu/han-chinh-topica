@@ -363,7 +363,7 @@ namespace BCTKApp
             DateTime v_dat_thang = temp;
             decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);	
 			m_ds = new DS_V_GD_DON_DAT_HANG();
-            m_us.FillDatasetSearch(m_ds, v_dat_thang, v_dc_id_trung_tam);
+            m_us.FillDatasetSearch(m_ds, v_dat_thang, v_dc_id_trung_tam,CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
 			m_grv_don_hang.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_don_hang, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_don_hang);
