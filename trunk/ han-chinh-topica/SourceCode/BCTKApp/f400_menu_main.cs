@@ -422,8 +422,8 @@ namespace BCTKApp
         {
             try
             {
-                //f461_Nhap_ma_hoa_don_NCC v_frm = new f461_Nhap_ma_hoa_don_NCC();
-                //v_frm.ShowDialog();
+                f461_Nhap_ma_hoa_don_NCC v_frm = new f461_Nhap_ma_hoa_don_NCC();
+                v_frm.ShowDialog();
             }
             catch (Exception v_e)
             {
