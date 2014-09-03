@@ -80,7 +80,7 @@ namespace BCTKApp
         {
             try
             {
-                f130_chuc_nang v_frm = new f130_chuc_nang();
+                f876_so_sanh_chi_phi_cuoi_thang v_frm = new f876_so_sanh_chi_phi_cuoi_thang();
                 v_frm.Display();
             }
             catch (Exception v_e)

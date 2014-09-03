@@ -569,25 +569,25 @@ namespace BCTKDS.CDBNames
         public const string SO_TIEN = "SO_TIEN";
         public const string PHONG_BAN_ID = "PHONG_BAN_ID";
     }
-    public class CM_DM_BANG_CHI_TIET_CUOI_THANG
-    {
-        public const string ID = "ID";
-        public const string STT = "STT";
-        public const string NGAY = "NGAY";
-        public const string LOAI = "LOAI";
-        public const string BARCODE = "BARCODE";
-        public const string NOIDEN = "NOIDEN";
-        public const string TRLUONG = "TRLUONG";
-        public const string CUOC = "CUOC";
-        public const string PHI = "PHI";
-        public const string PHIXD = "PHIXD";
-        public const string TIENCK = "TIENCK";
-        public const string PHIHK = "PHIHK";
-        public const string TIEN = "TIEN";
-        public const string GHICHU = "GHICHU";
+    public class CM_DM_BANG_CHI_TIET_CUOI_THANG {
+        public const string ID =  "ID";
+        public const string SOCT =  "SOCT";
+        public const string NGAY =  "NGAY";
+        public const string LOAI =  "LOAI";
+        public const string BARCODE =  "BARCODE";
+        public const string NOIDEN =  "NOIDEN";
+        public const string TRLUONG =  "TRLUONG";
+        public const string CUOC =  "CUOC";
+        public const string PHI =  "PHI";
+        public const string PHIXD =  "PHIXD";
+        public const string TIENCK =  "TIENCK";
+        public const string TIEN =  "TIEN";
+        public const string GHICHU =  "GHICHU";
         public const string TRANG_THAI = "TRANG_THAI";
         public const string DIEN_GIAI = "DIEN_GIAI";
     }
+
+    
     public class CM_DM_TONG_HOP_TIEN_CHUYEN_PHAT_NHANH
     {
         public const string PHONG_BAN_ID = "PHONG_BAN_ID";
