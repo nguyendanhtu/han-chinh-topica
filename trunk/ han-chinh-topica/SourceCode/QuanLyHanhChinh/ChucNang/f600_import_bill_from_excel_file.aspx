@@ -82,10 +82,12 @@
         <tr>
             <td style="text-align: center" colspan="8">
                 <span>Bạn thuộc phòng ban nào</span>
+                <asp:RadioButton ID="m_rdb_tad" Text="Mẫu chung" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tad_CheckedChanged"/>
                 <asp:RadioButton ID="m_rdb_tawl" Text="TAW-L" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tawl_CheckedChanged" />
                 <asp:RadioButton ID="m_rdb_tawh" Text="TAW-H" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tawh_CheckedChanged" />
                 <asp:RadioButton ID="m_rdb_thm" Text="TMH" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_thm_CheckedChanged" />
                 <asp:RadioButton ID="m_rdb_tne" Text="TNE" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tne_CheckedChanged" />
+                <asp:RadioButton ID="m_rdb_tos" Text="TOS" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tos_CheckedChanged"/>
             </td>
         </tr>
         <asp:Panel ID="m_pnl_import" runat="server">
