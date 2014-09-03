@@ -22,11 +22,13 @@ namespace BCTKDS.CDBNames
         public const string ID_TRANG_THAI =  "ID_TRANG_THAI";
         public const string ID_PHAP_NHAN =  "ID_PHAP_NHAN";
         public const string TY_TRONG =  "TY_TRONG";
+        public const string TIEN_PN =  "TIEN_PN";
         public const string MA_PHONG_BAN =  "MA_PHONG_BAN";
         public const string TEN_PHONG_BAN =  "TEN_PHONG_BAN";
         public const string MA_PHAP_NHAN =  "MA_PHAP_NHAN";
         public const string TEN_PHAP_NHAN =  "TEN_PHAP_NHAN";
     }
+
 
     public class RPT_BC_CHI_TIET_DM {
         public const string ID =  "ID";

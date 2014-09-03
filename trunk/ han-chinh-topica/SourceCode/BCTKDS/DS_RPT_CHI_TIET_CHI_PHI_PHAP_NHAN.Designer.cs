@@ -309,6 +309,8 @@ namespace BCTKDS {
             
             private global::System.Data.DataColumn columnTY_TRONG;
             
+            private global::System.Data.DataColumn columnTIEN_PN;
+            
             private global::System.Data.DataColumn columnMA_PHONG_BAN;
             
             private global::System.Data.DataColumn columnTEN_PHONG_BAN;
@@ -472,6 +474,14 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TIEN_PNColumn {
+                get {
+                    return this.columnTIEN_PN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn MA_PHONG_BANColumn {
                 get {
                     return this.columnMA_PHONG_BAN;
@@ -555,6 +565,7 @@ namespace BCTKDS {
                         decimal ID_TRANG_THAI, 
                         decimal ID_PHAP_NHAN, 
                         decimal TY_TRONG, 
+                        decimal TIEN_PN, 
                         string MA_PHONG_BAN, 
                         string TEN_PHONG_BAN, 
                         string MA_PHAP_NHAN, 
@@ -576,6 +587,7 @@ namespace BCTKDS {
                         ID_TRANG_THAI,
                         ID_PHAP_NHAN,
                         TY_TRONG,
+                        TIEN_PN,
                         MA_PHONG_BAN,
                         TEN_PHONG_BAN,
                         MA_PHAP_NHAN,
@@ -623,6 +635,7 @@ namespace BCTKDS {
                 this.columnID_TRANG_THAI = base.Columns["ID_TRANG_THAI"];
                 this.columnID_PHAP_NHAN = base.Columns["ID_PHAP_NHAN"];
                 this.columnTY_TRONG = base.Columns["TY_TRONG"];
+                this.columnTIEN_PN = base.Columns["TIEN_PN"];
                 this.columnMA_PHONG_BAN = base.Columns["MA_PHONG_BAN"];
                 this.columnTEN_PHONG_BAN = base.Columns["TEN_PHONG_BAN"];
                 this.columnMA_PHAP_NHAN = base.Columns["MA_PHAP_NHAN"];
@@ -662,6 +675,8 @@ namespace BCTKDS {
                 base.Columns.Add(this.columnID_PHAP_NHAN);
                 this.columnTY_TRONG = new global::System.Data.DataColumn("TY_TRONG", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTY_TRONG);
+                this.columnTIEN_PN = new global::System.Data.DataColumn("TIEN_PN", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTIEN_PN);
                 this.columnMA_PHONG_BAN = new global::System.Data.DataColumn("MA_PHONG_BAN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMA_PHONG_BAN);
                 this.columnTEN_PHONG_BAN = new global::System.Data.DataColumn("TEN_PHONG_BAN", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1078,6 +1093,23 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TIEN_PN {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRPT_CHI_TIET_CHI_PHI_PHAP_NHAN.TIEN_PNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TIEN_PN\' in table \'RPT_CHI_TIET_CHI_PHI_PHAP_NHAN\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPT_CHI_TIET_CHI_PHI_PHAP_NHAN.TIEN_PNColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MA_PHONG_BAN {
                 get {
                     try {
@@ -1326,6 +1358,18 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTIEN_PNNull() {
+                return this.IsNull(this.tableRPT_CHI_TIET_CHI_PHI_PHAP_NHAN.TIEN_PNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTIEN_PNNull() {
+                this[this.tableRPT_CHI_TIET_CHI_PHI_PHAP_NHAN.TIEN_PNColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMA_PHONG_BANNull() {
                 return this.IsNull(this.tableRPT_CHI_TIET_CHI_PHI_PHAP_NHAN.MA_PHONG_BANColumn);
             }
@@ -1547,6 +1591,7 @@ namespace BCTKDS.DS_RPT_CHI_TIET_CHI_PHI_PHAP_NHANTableAdapters {
             tableMapping.ColumnMappings.Add("ID_TRANG_THAI", "ID_TRANG_THAI");
             tableMapping.ColumnMappings.Add("ID_PHAP_NHAN", "ID_PHAP_NHAN");
             tableMapping.ColumnMappings.Add("TY_TRONG", "TY_TRONG");
+            tableMapping.ColumnMappings.Add("TIEN_PN", "TIEN_PN");
             tableMapping.ColumnMappings.Add("MA_PHONG_BAN", "MA_PHONG_BAN");
             tableMapping.ColumnMappings.Add("TEN_PHONG_BAN", "TEN_PHONG_BAN");
             tableMapping.ColumnMappings.Add("MA_PHAP_NHAN", "MA_PHAP_NHAN");
@@ -1554,7 +1599,7 @@ namespace BCTKDS.DS_RPT_CHI_TIET_CHI_PHI_PHAP_NHANTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[RPT_CHI_TIET_CHI_PHI_PHAP_NHAN] ([ID], [NOI_DUNG], [NOI_NHAN], [NGUOI_NHAN], [TRONG_NUOC], [NUOC_NGOAI], [SO_BILL], [NGUOI_GUI], [NGAY_GUI], [GHI_CHU], [ID_PHONG_BAN], [SO_TIEN], [ID_TRANG_THAI], [ID_PHAP_NHAN], [TY_TRONG], [MA_PHONG_BAN], [TEN_PHONG_BAN], [MA_PHAP_NHAN], [TEN_PHAP_NHAN]) VALUES (@ID, @NOI_DUNG, @NOI_NHAN, @NGUOI_NHAN, @TRONG_NUOC, @NUOC_NGOAI, @SO_BILL, @NGUOI_GUI, @NGAY_GUI, @GHI_CHU, @ID_PHONG_BAN, @SO_TIEN, @ID_TRANG_THAI, @ID_PHAP_NHAN, @TY_TRONG, @MA_PHONG_BAN, @TEN_PHONG_BAN, @MA_PHAP_NHAN, @TEN_PHAP_NHAN)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[RPT_CHI_TIET_CHI_PHI_PHAP_NHAN] ([ID], [NOI_DUNG], [NOI_NHAN], [NGUOI_NHAN], [TRONG_NUOC], [NUOC_NGOAI], [SO_BILL], [NGUOI_GUI], [NGAY_GUI], [GHI_CHU], [ID_PHONG_BAN], [SO_TIEN], [ID_TRANG_THAI], [ID_PHAP_NHAN], [TY_TRONG], [TIEN_PN], [MA_PHONG_BAN], [TEN_PHONG_BAN], [MA_PHAP_NHAN], [TEN_PHAP_NHAN]) VALUES (@ID, @NOI_DUNG, @NOI_NHAN, @NGUOI_NHAN, @TRONG_NUOC, @NUOC_NGOAI, @SO_BILL, @NGUOI_GUI, @NGAY_GUI, @GHI_CHU, @ID_PHONG_BAN, @SO_TIEN, @ID_TRANG_THAI, @ID_PHAP_NHAN, @TY_TRONG, @TIEN_PN, @MA_PHONG_BAN, @TEN_PHONG_BAN, @MA_PHAP_NHAN, @TEN_PHAP_NHAN)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOI_DUNG", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOI_DUNG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1571,6 +1616,7 @@ namespace BCTKDS.DS_RPT_CHI_TIET_CHI_PHI_PHAP_NHANTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_TRANG_THAI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_TRANG_THAI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_PHAP_NHAN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_PHAP_NHAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TY_TRONG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 16, 10, "TY_TRONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TIEN_PN", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "TIEN_PN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_PHONG_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEN_PHONG_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN_PHONG_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_PHAP_NHAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHAP_NHAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1590,7 +1636,7 @@ namespace BCTKDS.DS_RPT_CHI_TIET_CHI_PHI_PHAP_NHANTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, NOI_DUNG, NOI_NHAN, NGUOI_NHAN, TRONG_NUOC, NUOC_NGOAI, SO_BILL, NGUOI_GUI, NGAY_GUI, GHI_CHU, ID_PHONG_BAN, SO_TIEN, ID_TRANG_THAI, ID_PHAP_NHAN, TY_TRONG, MA_PHONG_BAN, TEN_PHONG_BAN, MA_PHAP_NHAN, TEN_PHAP_NHAN FROM dbo.RPT_CHI_TIET_CHI_PHI_PHAP_NHAN";
+            this._commandCollection[0].CommandText = @"SELECT ID, NOI_DUNG, NOI_NHAN, NGUOI_NHAN, TRONG_NUOC, NUOC_NGOAI, SO_BILL, NGUOI_GUI, NGAY_GUI, GHI_CHU, ID_PHONG_BAN, SO_TIEN, ID_TRANG_THAI, ID_PHAP_NHAN, TY_TRONG, TIEN_PN, MA_PHONG_BAN, TEN_PHONG_BAN, MA_PHAP_NHAN, TEN_PHAP_NHAN FROM dbo.RPT_CHI_TIET_CHI_PHI_PHAP_NHAN";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1667,6 +1713,7 @@ namespace BCTKDS.DS_RPT_CHI_TIET_CHI_PHI_PHAP_NHANTableAdapters {
                     global::System.Nullable<decimal> ID_TRANG_THAI, 
                     global::System.Nullable<decimal> ID_PHAP_NHAN, 
                     global::System.Nullable<decimal> TY_TRONG, 
+                    global::System.Nullable<decimal> TIEN_PN, 
                     string MA_PHONG_BAN, 
                     string TEN_PHONG_BAN, 
                     string MA_PHAP_NHAN, 
@@ -1761,29 +1808,35 @@ namespace BCTKDS.DS_RPT_CHI_TIET_CHI_PHI_PHAP_NHANTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((MA_PHONG_BAN == null)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            if ((TIEN_PN.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((decimal)(TIEN_PN.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(MA_PHONG_BAN));
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((TEN_PHONG_BAN == null)) {
+            if ((MA_PHONG_BAN == null)) {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(TEN_PHONG_BAN));
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(MA_PHONG_BAN));
             }
-            if ((MA_PHAP_NHAN == null)) {
+            if ((TEN_PHONG_BAN == null)) {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(MA_PHAP_NHAN));
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(TEN_PHONG_BAN));
             }
-            if ((TEN_PHAP_NHAN == null)) {
+            if ((MA_PHAP_NHAN == null)) {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(TEN_PHAP_NHAN));
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(MA_PHAP_NHAN));
+            }
+            if ((TEN_PHAP_NHAN == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(TEN_PHAP_NHAN));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

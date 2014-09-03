@@ -128,5 +128,11 @@ public class US_DM_PHONG_BAN_PHAP_NHAN : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    public void timTyTrongTrungTam(DS_DM_PHONG_BAN_PHAP_NHAN op_ds, decimal ip_id_phap_nhan, decimal ip_id_trung_tam) {
+        CStoredProc v_proc = new CStoredProc("pr_tim_ty_trong_phap_nhan");
+        v_proc.addNVarcharInputParam("@ID_TRUNG_TAM", ip_id_trung_tam);
+        v_proc.addNVarcharInputParam("@ID_PHAP_NHAN", ip_id_phap_nhan);
+        v_proc.fillDataSetByCommand(this, op_ds);
+    }
 	}
 }
