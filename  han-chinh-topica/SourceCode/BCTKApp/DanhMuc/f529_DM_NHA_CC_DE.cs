@@ -120,6 +120,7 @@ namespace BCTKApp
         {
            m_cmd_save.Click+=new EventHandler(m_cmd_save_Click);
            m_cmd_exit.Click+=new EventHandler(m_cmd_exit_Click);
+            this.KeyDown+=new KeyEventHandler(f529_DM_NHA_CC_DE_KeyDown);
         }
         #endregion
 
@@ -146,6 +147,20 @@ namespace BCTKApp
             catch (Exception v_e)
             {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void f529_DM_NHA_CC_DE_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }

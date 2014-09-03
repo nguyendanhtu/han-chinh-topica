@@ -438,6 +438,7 @@ namespace BCTKApp
 			m_cmd_khong_duyet.Click += new EventHandler(m_cmd_khong_duyet_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
+            this.KeyDown+=new KeyEventHandler(f538_TAD_DUYET_DON_HANG_KeyDown);
 		}
 		#endregion
 
@@ -506,6 +507,20 @@ namespace BCTKApp
             try
             {
                 load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void f538_TAD_DUYET_DON_HANG_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
             }
             catch (Exception v_e)
             {
