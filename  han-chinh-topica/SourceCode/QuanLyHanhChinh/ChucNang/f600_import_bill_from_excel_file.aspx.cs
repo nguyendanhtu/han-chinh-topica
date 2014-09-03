@@ -17,8 +17,6 @@ using BCTKDS.CDBNames;
 using System.Globalization;
 public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.Page
 {
-
-
     #region Public Interfaces
 
     #endregion
@@ -118,8 +116,8 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             {
                 case "tawl":
                     v_str_ma_phong_ban = "TAW";
-                    v_dr["STT"] =0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
-                    v_dr["NOI_DUNG"] =  v_ds_result.Tables[0].Rows[i][5].ToString(); // nội dung
+                    v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
+                    v_dr["NOI_DUNG"] = v_ds_result.Tables[0].Rows[i][5].ToString(); // nội dung
                     v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][10].ToString(); // nơi nhận
                     v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][3].ToString() + " " + v_ds_result.Tables[0].Rows[i][4].ToString(); //người nhận
                     v_dr["TRONG_NUOC"] = "X"; // trong nước
@@ -133,10 +131,10 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                     break;
                 case "tawh":
                     v_str_ma_phong_ban = "TAW";
-                    v_dr["STT"]  =0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
+                    v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
                     v_dr["NOI_DUNG"] = ""; // nội dung
                     v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][10].ToString(); // nơi nhận
-                    v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][7].ToString() ;
+                    v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][7].ToString();
                     v_dr["TRONG_NUOC"] = "X"; // trong nước
                     v_dr["NUOC_NGOAI"] = "";   //ngoài nước
                     v_dr["SO_BILL"] = v_ds_result.Tables[0].Rows[i][12].ToString();
@@ -148,8 +146,8 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                     break;
                 case "tne":
                     v_str_ma_phong_ban = "TNE";
-                    v_dr["STT"]  =0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
-                    v_dr["NOI_DUNG"] =""; // nội dung
+                    v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
+                    v_dr["NOI_DUNG"] = ""; // nội dung
                     v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][4].ToString(); // nơi nhận
                     v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][1].ToString() + " " + v_ds_result.Tables[0].Rows[i][3].ToString(); //người nhận
                     v_dr["TRONG_NUOC"] = "X"; // trong nước
@@ -176,6 +174,37 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                     v_dr["MA_PHONG_BAN"] = v_str_ma_phong_ban;
                     v_dr["TEN_PHONG_BAN"] = "TMH-Trung tâm Đào tạo TOPICA - HOU";
                     break;
+                case "tad":
+                    v_str_ma_phong_ban = "TMH";
+                    v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
+                    v_dr["NOI_DUNG"] = v_ds_result.Tables[0].Rows[i][1].ToString();; // nội dung
+                    v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][2].ToString(); // nơi nhận
+                    v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][3].ToString();
+                    v_dr["TRONG_NUOC"] = "X"; // trong nước
+                    v_dr["NUOC_NGOAI"] = "";   //ngoài nước
+                    v_dr["SO_BILL"] = v_ds_result.Tables[0].Rows[i][6].ToString();
+                    v_dr["NGUOI_GUI"] = v_ds_result.Tables[0].Rows[i][7].ToString();
+                    v_dr["NGAY_GUI"] = v_ds_result.Tables[0].Rows[i][8];
+                    v_dr["GHI_CHU"] = v_ds_result.Tables[0].Rows[i][9];
+                    v_dr["MA_PHONG_BAN"] = v_str_ma_phong_ban;
+                    v_dr["TEN_PHONG_BAN"] = "TAD";
+                    break;
+                case "tos":
+                    v_str_ma_phong_ban = "TMH";
+                    v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
+                    v_dr["NOI_DUNG"] = v_ds_result.Tables[0].Rows[i][1].ToString(); ; // nội dung
+                    v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][2].ToString(); // nơi nhận
+                    v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][3].ToString();
+                    v_dr["TRONG_NUOC"] = "X"; // trong nước
+                    v_dr["NUOC_NGOAI"] = "";   //ngoài nước
+                    v_dr["SO_BILL"] = v_ds_result.Tables[0].Rows[i][6].ToString();
+                    v_dr["NGUOI_GUI"] = v_ds_result.Tables[0].Rows[i][7].ToString();
+                    v_dr["NGAY_GUI"] = v_ds_result.Tables[0].Rows[i][8];
+                    v_dr["GHI_CHU"] = v_ds_result.Tables[0].Rows[i][9];
+                    v_dr["MA_PHONG_BAN"] = v_str_ma_phong_ban;
+                    v_dr["TEN_PHONG_BAN"] = "TOS";
+                    break;
+                
             }
             v_ds_merge.Tables[0].Rows.Add(v_dr);
         }
@@ -469,6 +498,18 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 m_lnk_import_mau.NavigateUrl = "https://docs.google.com/spreadsheets/d/1qtmFe5ftjLaJZRdtvtFVuecs8JV95GarXboAgnIRvR4/edit#gid=61115495";
                 m_lnk_import_mau.Text = "Tải mẫu import của TNE";
                 break;
+            case "tad":
+                m_pnl_import.Visible = true;
+                m_pnl_import_grid.Visible = true;
+                m_lnk_import_mau.NavigateUrl = "https://drive.google.com/file/d/0B9iodcNpN7ZYT0pXQkdnUmt5aUE/edit?usp=sharing";
+                m_lnk_import_mau.Text = "Tải mẫu import chung (TAD)";
+                break;
+            case "tos":
+                m_pnl_import.Visible = true;
+                m_pnl_import_grid.Visible = true;
+                m_lnk_import_mau.NavigateUrl = "https://drive.google.com/file/d/0B9iodcNpN7ZYOGN2SEtRU3hCR2c/edit?usp=sharing";
+                m_lnk_import_mau.Text = "Tải mẫu import của TOS";
+                break;
             default:
                 m_pnl_import.Visible = false;
                 m_pnl_import_grid.Visible = false;
@@ -527,9 +568,9 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         {
             if (m_fu_chon_file_import.HasFile)
             {
-                string v_str_file_save =DateTime.Now.Year.ToString()+"."+DateTime.Now.Month.ToString()+
-                    "."+DateTime.Now.Day.ToString()+"."+ DateTime.Now.ToString("ss.fff") + m_fu_chon_file_import.FileName;
-                m_hdf_dir_save_excel.Value = Server.MapPath("~")  + "//TempImportExcel//" + v_str_file_save;
+                string v_str_file_save = DateTime.Now.Year.ToString() + "." + DateTime.Now.Month.ToString() +
+                    "." + DateTime.Now.Day.ToString() + "." + DateTime.Now.ToString("ss.fff") + m_fu_chon_file_import.FileName;
+                m_hdf_dir_save_excel.Value = Server.MapPath("~") + "//TempImportExcel//" + v_str_file_save;
                 save_file_upload(m_hdf_dir_save_excel.Value);
                 if (check_file_upload_is_ok(m_fu_chon_file_import.FileName))
                 {
@@ -545,7 +586,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         }
         catch (Exception v_e)
         {
-            thong_bao("Import không thành công. Lỗi: "+v_e.ToString());
+            thong_bao("Import không thành công. Lỗi: " + v_e.ToString());
             m_grv_dm_bill.EmptyDataText = "Import không thành công!";
             delete_file_imported(m_hdf_dir_save_excel.Value);
         }
@@ -556,7 +597,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         {
             if (check_validate_grid_is_ok())
             {
-               // excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
+                // excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
                 check_validate_grid_is_ok();
                 save_grid_to_database();
                 delete_file_imported(m_hdf_dir_save_excel.Value);
@@ -639,7 +680,20 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             show_import("tne");
         }
     }
+    protected void m_rdb_tad_CheckedChanged(object sender, EventArgs e)
+    {
+        if (m_rdb_tad.Checked == true)
+        {
+            show_import("tad");
+        }
+    }
+    protected void m_rdb_tos_CheckedChanged(object sender, EventArgs e)
+    {
+        if (m_rdb_tos.Checked == true)
+        {
+            show_import("tos");
+        }
+
+    }
     #endregion
-
-
 }
