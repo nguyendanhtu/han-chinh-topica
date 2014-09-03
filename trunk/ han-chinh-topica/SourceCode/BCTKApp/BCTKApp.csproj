@@ -437,6 +437,12 @@
     <Compile Include="ChucNang\f820_NHAP_CHI_PHI_CUOI_THANG.Designer.cs">
       <DependentUpon>f820_NHAP_CHI_PHI_CUOI_THANG.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChucNang\f876_so_sanh_chi_phi_cuoi_thang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\f876_so_sanh_chi_phi_cuoi_thang.Designer.cs">
+      <DependentUpon>f876_so_sanh_chi_phi_cuoi_thang.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\f446_DM_V_GD_PHONG_BAN_DINH_MUC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -723,6 +729,9 @@
     <EmbeddedResource Include="ChucNang\f820_NHAP_CHI_PHI_CUOI_THANG.resx">
       <DependentUpon>f820_NHAP_CHI_PHI_CUOI_THANG.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\f876_so_sanh_chi_phi_cuoi_thang.resx">
+      <DependentUpon>f876_so_sanh_chi_phi_cuoi_thang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f446_DM_V_GD_PHONG_BAN_DINH_MUC.resx">
       <DependentUpon>f446_DM_V_GD_PHONG_BAN_DINH_MUC.cs</DependentUpon>
