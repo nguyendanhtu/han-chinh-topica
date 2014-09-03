@@ -436,6 +436,7 @@ namespace BCTKApp
             m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
             m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
             m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
+            this.KeyDown+=new KeyEventHandler(f555_TONG_HOP_CHI_PHI_VPP_KeyDown);
 		}
 		#endregion
 
@@ -515,6 +516,20 @@ namespace BCTKApp
             try
             {
                 load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void f555_TONG_HOP_CHI_PHI_VPP_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
             }
             catch (Exception v_e)
             {
