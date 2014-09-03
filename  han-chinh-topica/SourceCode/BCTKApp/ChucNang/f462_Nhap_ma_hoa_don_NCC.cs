@@ -233,6 +233,7 @@ namespace BCTKApp
             this.m_fg_don_dat_hang.Size = new System.Drawing.Size(921, 163);
             this.m_fg_don_dat_hang.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_don_dat_hang.Styles"));
             this.m_fg_don_dat_hang.TabIndex = 20;
+            this.m_fg_don_dat_hang.Click += new System.EventHandler(this.m_fg_don_dat_hang_Click);
             // 
             // m_pnl_header
             // 
@@ -358,8 +359,11 @@ namespace BCTKApp
 		private void format_controls(){
 			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_fg_don_dat_hang);
+            CControlFormat.setC1FlexFormat(m_fg_don_dat_hang_de);
 			CGridUtils.AddSave_Excel_Handlers(m_fg_don_dat_hang);
             CGridUtils.AddSearch_Handlers(m_fg_don_dat_hang);
+            m_fg_don_dat_hang.AllowEditing = true;
+            m_fg_don_dat_hang_de.AllowEditing = true;
             // m_lbl_header
             // 
             this.m_lbl_header.AutoSize = true;
@@ -395,11 +399,17 @@ namespace BCTKApp
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_GD_DON_DAT_HANG();			
-			m_us.FillDataset(m_ds);
+			m_us.FillDataset(m_ds,"Where ID_TRANG_THAI="+CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
 			m_fg_don_dat_hang.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg_don_dat_hang, m_obj_trans);
 			m_fg_don_dat_hang.Redraw = true;
 		}
+        private void load_don_dat_hang_de(string ip_v_ma_phieu)
+        {
+            US_V_GD_DON_DAT_HANG_DETAIL v_us = new US_V_GD_DON_DAT_HANG_DETAIL();
+            DS_V_GD_DON_DAT_HANG_DETAIL v_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
+            v_us.FillDataset(v_ds,"Where MA_DON_HANG ="+ip_v_ma_phieu);
+        }
 		private void grid2us_object(US_V_GD_DON_DAT_HANG i_us
 			, int i_grid_row) {
 			DataRow v_dr;
@@ -528,6 +538,25 @@ namespace BCTKApp
 			}
 		}
 
+        private void m_fg_don_dat_hang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_fg_don_dat_hang.Rows[m_fg_don_dat_hang.Row].IsNode)
+                {
+                    return;
+                }
+                string v_ma_phieu;
+                int i_grid_row = m_fg_don_dat_hang.Selection.TopRow;
+                DataRow v_dr = (DataRow)m_fg_don_dat_hang.Rows[i_grid_row].UserData;
+                v_ma_phieu = CIPConvert.ToStr(v_dr[4]);
+                load_don_dat_hang_de(v_ma_phieu);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 	}
 }
 
