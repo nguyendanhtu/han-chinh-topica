@@ -71,7 +71,7 @@
                         </asp:TemplateField>
                         <asp:BoundField DataField="MA" ItemStyle-HorizontalAlign="Left" HeaderText="MÃ VPP"
                             ItemStyle-Width="5%">
-                            <ItemStyle HorizontalAlign="Right" Width="12%" />
+                            <ItemStyle HorizontalAlign="Right" Width="5%" />
                         </asp:BoundField>
                         <asp:BoundField DataField="TEN_VPP" ItemStyle-HorizontalAlign="Left" HeaderText="TÊN VPP"
                             ItemStyle-Width="7%">
