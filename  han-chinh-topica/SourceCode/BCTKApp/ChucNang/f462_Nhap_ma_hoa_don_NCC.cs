@@ -242,6 +242,7 @@ namespace BCTKApp
             this.m_fg_don_dat_hang.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg_don_dat_hang.Location = new System.Drawing.Point(0, 47);
             this.m_fg_don_dat_hang.Name = "m_fg_don_dat_hang";
+            this.m_fg_don_dat_hang.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.m_fg_don_dat_hang.Size = new System.Drawing.Size(921, 135);
             this.m_fg_don_dat_hang.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_don_dat_hang.Styles"));
             this.m_fg_don_dat_hang.TabIndex = 20;
