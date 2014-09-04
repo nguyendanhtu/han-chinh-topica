@@ -46,6 +46,8 @@ namespace BCTKApp
         private Panel m_pnl_don_dat_hang_de;
         private Label m_lbl_ds_don_dat_hang_de;
         private C1FlexGrid m_fg_don_dat_hang_de;
+        private DateTimePicker m_dt_chon_thang;
+        private Label m_lbl_tu_ngay;
 		private System.ComponentModel.IContainer components;
 
 		public f462_Nhap_ma_hoa_don_NCC()
@@ -100,6 +102,8 @@ namespace BCTKApp
             this.m_pnl_don_dat_hang_de = new System.Windows.Forms.Panel();
             this.m_lbl_ds_don_dat_hang_de = new System.Windows.Forms.Label();
             this.m_fg_don_dat_hang_de = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_dt_chon_thang = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_don_dat_hang)).BeginInit();
             this.m_pnl_header.SuspendLayout();
@@ -228,9 +232,9 @@ namespace BCTKApp
             // 
             this.m_fg_don_dat_hang.ColumnInfo = resources.GetString("m_fg_don_dat_hang.ColumnInfo");
             this.m_fg_don_dat_hang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg_don_dat_hang.Location = new System.Drawing.Point(0, 19);
+            this.m_fg_don_dat_hang.Location = new System.Drawing.Point(0, 32);
             this.m_fg_don_dat_hang.Name = "m_fg_don_dat_hang";
-            this.m_fg_don_dat_hang.Size = new System.Drawing.Size(921, 163);
+            this.m_fg_don_dat_hang.Size = new System.Drawing.Size(921, 150);
             this.m_fg_don_dat_hang.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_don_dat_hang.Styles"));
             this.m_fg_don_dat_hang.TabIndex = 20;
             this.m_fg_don_dat_hang.Click += new System.EventHandler(this.m_fg_don_dat_hang_Click);
@@ -241,7 +245,7 @@ namespace BCTKApp
             this.m_pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_header.Location = new System.Drawing.Point(0, 0);
             this.m_pnl_header.Name = "m_pnl_header";
-            this.m_pnl_header.Size = new System.Drawing.Size(921, 50);
+            this.m_pnl_header.Size = new System.Drawing.Size(921, 47);
             this.m_pnl_header.TabIndex = 21;
             // 
             // m_lbl_header
@@ -257,10 +261,12 @@ namespace BCTKApp
             // 
             // m_pnl_don_dat_hang
             // 
+            this.m_pnl_don_dat_hang.Controls.Add(this.m_dt_chon_thang);
             this.m_pnl_don_dat_hang.Controls.Add(this.m_lbl_ds_don_dat_hang);
+            this.m_pnl_don_dat_hang.Controls.Add(this.m_lbl_tu_ngay);
             this.m_pnl_don_dat_hang.Controls.Add(this.m_fg_don_dat_hang);
             this.m_pnl_don_dat_hang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_pnl_don_dat_hang.Location = new System.Drawing.Point(0, 50);
+            this.m_pnl_don_dat_hang.Location = new System.Drawing.Point(0, 47);
             this.m_pnl_don_dat_hang.Name = "m_pnl_don_dat_hang";
             this.m_pnl_don_dat_hang.Size = new System.Drawing.Size(921, 182);
             this.m_pnl_don_dat_hang.TabIndex = 22;
@@ -268,7 +274,7 @@ namespace BCTKApp
             // m_lbl_ds_don_dat_hang
             // 
             this.m_lbl_ds_don_dat_hang.AutoSize = true;
-            this.m_lbl_ds_don_dat_hang.Location = new System.Drawing.Point(1, 3);
+            this.m_lbl_ds_don_dat_hang.Location = new System.Drawing.Point(4, 13);
             this.m_lbl_ds_don_dat_hang.Name = "m_lbl_ds_don_dat_hang";
             this.m_lbl_ds_don_dat_hang.Size = new System.Drawing.Size(127, 13);
             this.m_lbl_ds_don_dat_hang.TabIndex = 21;
@@ -302,6 +308,28 @@ namespace BCTKApp
             this.m_fg_don_dat_hang_de.Size = new System.Drawing.Size(921, 276);
             this.m_fg_don_dat_hang_de.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_don_dat_hang_de.Styles"));
             this.m_fg_don_dat_hang_de.TabIndex = 21;
+            // 
+            // m_dt_chon_thang
+            // 
+            this.m_dt_chon_thang.Checked = false;
+            this.m_dt_chon_thang.CustomFormat = "MM/yyyy";
+            this.m_dt_chon_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dt_chon_thang.Location = new System.Drawing.Point(257, 6);
+            this.m_dt_chon_thang.Name = "m_dt_chon_thang";
+            this.m_dt_chon_thang.Size = new System.Drawing.Size(84, 20);
+            this.m_dt_chon_thang.TabIndex = 25;
+            this.m_dt_chon_thang.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
+            // 
+            // m_lbl_tu_ngay
+            // 
+            this.m_lbl_tu_ngay.AutoSize = true;
+            this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(181, 11);
+            this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
+            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(70, 15);
+            this.m_lbl_tu_ngay.TabIndex = 24;
+            this.m_lbl_tu_ngay.Text = "Chọn tháng";
             // 
             // f462_Nhap_ma_hoa_don_NCC
             // 
@@ -380,7 +408,9 @@ namespace BCTKApp
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg_don_dat_hang);
-			load_data_2_grid();		
+			load_data_2_grid();
+            m_dt_chon_thang.Checked = true;
+            m_dt_chon_thang.Value = DateTime.Now.Date;
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -398,8 +428,20 @@ namespace BCTKApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_V_GD_DON_DAT_HANG();			
-			m_us.FillDataset(m_ds,"Where ID_TRANG_THAI="+CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
+			m_ds = new DS_V_GD_DON_DAT_HANG();
+            DateTime v_dt_tu_ngay;
+            DateTime v_dt_den_ngay;
+            if (!m_dt_chon_thang.Checked)
+            {
+                v_dt_tu_ngay = new DateTime(1900, 1, 1);
+                v_dt_den_ngay = new DateTime(2789, 1, 1);
+            }
+            else
+            {
+                v_dt_tu_ngay = m_dt_chon_thang.Value.AddDays(-m_dt_chon_thang.Value.Date.Day + 1);
+                v_dt_den_ngay = m_dt_chon_thang.Value.AddMonths(1).AddDays(-m_dt_chon_thang.Value.Day);
+            }
+			m_us.Nhap_ma_hoa_don_NCC(m_ds,v_dt_tu_ngay,v_dt_den_ngay,CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
 			m_fg_don_dat_hang.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg_don_dat_hang, m_obj_trans);
 			m_fg_don_dat_hang.Redraw = true;
@@ -475,6 +517,7 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            this.m_dt_chon_thang.ValueChanged += new System.EventHandler(this.m_dt_chon_thang_ValueChanged);
 		}
 		#endregion
 
@@ -556,6 +599,19 @@ namespace BCTKApp
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+        private void m_dt_chon_thang_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
         }
 	}
 }
