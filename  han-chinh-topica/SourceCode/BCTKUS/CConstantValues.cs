@@ -19,7 +19,7 @@ namespace BCTKUS
     {
         public const decimal TAD_NHAN_HANG = 217;
         public const decimal TT_NHAN_HANG = 218;
-        public const decimal TT_DANG_KI_DON_HANG = 221;
+        public const decimal TT_DANG_KI_DON_HANG = 219;
     }
     public class CONST_ID_LOAI_CO_SO_DINH_MUC {
         public const decimal ID_NHAN_VIEN = 201;
