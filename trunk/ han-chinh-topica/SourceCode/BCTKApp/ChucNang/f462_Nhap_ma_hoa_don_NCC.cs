@@ -240,10 +240,10 @@ namespace BCTKApp
             // 
             this.m_fg_don_dat_hang.ColumnInfo = resources.GetString("m_fg_don_dat_hang.ColumnInfo");
             this.m_fg_don_dat_hang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg_don_dat_hang.Location = new System.Drawing.Point(0, 47);
+            this.m_fg_don_dat_hang.Location = new System.Drawing.Point(0, 49);
             this.m_fg_don_dat_hang.Name = "m_fg_don_dat_hang";
             this.m_fg_don_dat_hang.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
-            this.m_fg_don_dat_hang.Size = new System.Drawing.Size(921, 135);
+            this.m_fg_don_dat_hang.Size = new System.Drawing.Size(921, 133);
             this.m_fg_don_dat_hang.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_don_dat_hang.Styles"));
             this.m_fg_don_dat_hang.TabIndex = 20;
             this.m_fg_don_dat_hang.Click += new System.EventHandler(this.m_fg_don_dat_hang_Click);
@@ -286,15 +286,18 @@ namespace BCTKApp
             // 
             // m_cmd_save
             // 
+            this.m_cmd_save.BackColor = System.Drawing.Color.White;
+            this.m_cmd_save.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.m_cmd_save.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 13;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(669, 5);
+            this.m_cmd_save.Location = new System.Drawing.Point(666, 6);
             this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(180, 36);
+            this.m_cmd_save.Size = new System.Drawing.Size(190, 26);
             this.m_cmd_save.TabIndex = 27;
             this.m_cmd_save.Text = "Kiểm tra và lưu mã HD NCC";
-            this.m_cmd_save.UseVisualStyleBackColor = true;
+            this.m_cmd_save.UseVisualStyleBackColor = false;
             // 
             // m_cbo_loc
             // 
@@ -345,7 +348,7 @@ namespace BCTKApp
             this.m_lbl_loading.AutoSize = true;
             this.m_lbl_loading.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_loading.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_loading.Location = new System.Drawing.Point(374, 92);
+            this.m_lbl_loading.Location = new System.Drawing.Point(337, 31);
             this.m_lbl_loading.Name = "m_lbl_loading";
             this.m_lbl_loading.Size = new System.Drawing.Size(139, 15);
             this.m_lbl_loading.TabIndex = 24;
@@ -536,6 +539,7 @@ namespace BCTKApp
         }
         private void load_data_2_grid()
         {
+            kiem_tra_du_lieu_don_dat_hang();
             m_ds = new DS_V_GD_DON_DAT_HANG();
             DateTime v_dt_tu_ngay;
             DateTime v_dt_den_ngay;
@@ -636,11 +640,27 @@ namespace BCTKApp
         {
             US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
             DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
-            int v_i_row_fg = 0;
+            int v_i_row_fg = 1;
+
+            for (v_i_row_fg = 1; v_i_row_fg < m_ds.V_GD_DON_DAT_HANG.Count; v_i_row_fg++)
+            {
+                if (m_fg_don_dat_hang.Rows[v_i_row_fg][(int)e_col_Number.MA_HD_NCC].ToString().Trim() != "")
+                {
+                    v_us.Insert_ma_hdncc(v_ds, m_fg_don_dat_hang.Rows[v_i_row_fg][(int)e_col_Number.MA_HD_NCC].ToString().Trim(), m_fg_don_dat_hang.Rows[v_i_row_fg][(int)e_col_Number.MA_HD].ToString());
+                }
+                v_ds.Clear();
+            }
+           
+        }
+        private void kiem_tra_du_lieu_don_dat_hang()
+        {
+            US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
+            DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
+            int v_i_row_fg = 1;
 
             //set Style cell
             C1.Win.C1FlexGrid.CellStyle v_cell_style_err = this.m_fg_don_dat_hang.Styles.Add("RowColorErr");
-            v_cell_style_err.BackColor = Color.Red;
+            v_cell_style_err.BackColor = Color.Yellow;
             C1.Win.C1FlexGrid.CellStyle v_cell_style_err2 = this.m_fg_don_dat_hang.Styles.Add("RowColorErr2");
             v_cell_style_err2.BackColor = Color.Yellow;
             v_cell_style_err2.ForeColor = Color.DarkRed;
@@ -653,7 +673,7 @@ namespace BCTKApp
             C1.Win.C1FlexGrid.CellStyle v_cell_style_notOK_in_data = this.m_fg_don_dat_hang.Styles.Add("RowColorNotOk");
             v_cell_style_notOK_in_data.BackColor = Color.Green;
 
-            for (v_i_row_fg = 0; v_i_row_fg < m_ds.V_GD_DON_DAT_HANG.Count; v_i_row_fg++)
+            for (v_i_row_fg = 1; v_i_row_fg < m_ds.V_GD_DON_DAT_HANG.Count; v_i_row_fg++)
             {
                 m_lbl_loading.Visible = true;
                 v_us.Kiem_tra_don_dat_hang_hdncc(v_ds, m_ds.V_GD_DON_DAT_HANG.Rows[v_i_row_fg][(int)e_col_Number.MA_HD].ToString());
@@ -662,7 +682,6 @@ namespace BCTKApp
                     if (CIPConvert.ToStr(m_ds.V_GD_DON_DAT_HANG.Rows[v_i_row_fg][(int)e_col_Number.MA_HD_NCC]).Trim() != null)
                     {
                         m_fg_don_dat_hang.SetCellStyle(v_i_row_fg, (int)e_col_Number.MA_HD_NCC, v_cell_style_ok);
-                        v_us.Insert_ma_hdncc(v_ds, m_ds.V_GD_DON_DAT_HANG.Rows[v_i_row_fg][(int)e_col_Number.MA_HD_NCC].ToString());
                     }
                 }
                 else
@@ -801,6 +820,7 @@ namespace BCTKApp
             try
             {
                 save_ma_HD_NCC();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
