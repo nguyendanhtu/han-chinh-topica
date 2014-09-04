@@ -39,6 +39,12 @@
             this.m_cmd_thoat = new SIS.Controls.Button.SiSButton();
             this.m_lbl_tong_so_luong = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_lbl_loading = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,13 +56,7 @@
             this.m_cmd_kiem_tra = new SIS.Controls.Button.SiSButton();
             this.m_cmd_load_ds = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.m_lbl_loading = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_load_file)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -199,6 +199,64 @@
             this.panel3.Size = new System.Drawing.Size(939, 114);
             this.panel3.TabIndex = 5;
             // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(621, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 19);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "Lưu ý:";
+            this.label8.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Enabled = false;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(708, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(216, 16);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Bill chưa được nhập vào phần mềm";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Yellow;
+            this.textBox1.Location = new System.Drawing.Point(609, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(90, 20);
+            this.textBox1.TabIndex = 30;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(495, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(120, 13);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Bước 3: Kiểm tra";
+            this.label7.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(287, 38);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(19, 13);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "-->";
+            // 
+            // m_lbl_loading
+            // 
+            this.m_lbl_loading.AutoSize = true;
+            this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
+            this.m_lbl_loading.Location = new System.Drawing.Point(322, 92);
+            this.m_lbl_loading.Name = "m_lbl_loading";
+            this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
+            this.m_lbl_loading.TabIndex = 14;
+            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -330,17 +388,6 @@
             this.panel2.Size = new System.Drawing.Size(939, 53);
             this.panel2.TabIndex = 4;
             // 
-            // m_lbl_loading
-            // 
-            this.m_lbl_loading.AutoSize = true;
-            this.m_lbl_loading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_loading.ForeColor = System.Drawing.Color.DarkRed;
-            this.m_lbl_loading.Location = new System.Drawing.Point(488, 87);
-            this.m_lbl_loading.Name = "m_lbl_loading";
-            this.m_lbl_loading.Size = new System.Drawing.Size(154, 16);
-            this.m_lbl_loading.TabIndex = 14;
-            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi ....";
-            // 
             // m_lbl_header
             // 
             this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
@@ -351,53 +398,6 @@
             this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "F130 - Nhập thông tin chi phí cuối tháng";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(287, 38);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 13);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "-->";
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(495, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 13);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Bước 3: Kiểm tra";
-            this.label7.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Enabled = false;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(708, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(216, 16);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Bill chưa được nhập vào phần mềm";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Yellow;
-            this.textBox1.Location = new System.Drawing.Point(609, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(90, 20);
-            this.textBox1.TabIndex = 30;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(621, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 19);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "Lưu ý:";
-            this.label8.Visible = false;
             // 
             // f876_so_sanh_chi_phi_cuoi_thang
             // 
