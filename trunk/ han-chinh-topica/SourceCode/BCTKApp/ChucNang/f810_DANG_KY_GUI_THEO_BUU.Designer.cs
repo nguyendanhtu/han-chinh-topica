@@ -330,7 +330,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_tieu_de);
             this.Name = "f810_DANG_KY_GUI_THEO_BUU";
-            this.Text = "Nhập thông tin Bill lẻ";
+            this.Text = "F810 - Nhập thông tin Bill lẻ";
             this.m_pnl_tieu_de.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
