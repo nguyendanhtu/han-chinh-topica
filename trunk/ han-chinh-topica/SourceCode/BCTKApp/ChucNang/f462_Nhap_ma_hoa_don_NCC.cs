@@ -29,16 +29,16 @@ namespace BCTKApp
 
 
 
-	public class f462_Nhap_ma_hoa_don_NCC : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg_don_dat_hang;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+    public class f462_Nhap_ma_hoa_don_NCC : System.Windows.Forms.Form
+    {
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg_don_dat_hang;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_view;
         private Panel m_pnl_header;
         private Label m_lbl_header;
         private Panel m_pnl_don_dat_hang;
@@ -52,43 +52,43 @@ namespace BCTKApp
         private Label m_lbl_chon_trang_thai;
         private Button m_cmd_save;
         private Label m_lbl_loading;
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components;
 
-		public f462_Nhap_ma_hoa_don_NCC()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public f462_Nhap_ma_hoa_don_NCC()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f462_Nhap_ma_hoa_don_NCC));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -102,16 +102,16 @@ namespace BCTKApp
             this.m_pnl_header = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_pnl_don_dat_hang = new System.Windows.Forms.Panel();
+            this.m_cmd_save = new System.Windows.Forms.Button();
+            this.m_cbo_loc = new System.Windows.Forms.ComboBox();
             this.m_dt_chon_thang = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ds_don_dat_hang = new System.Windows.Forms.Label();
+            this.m_lbl_chon_trang_thai = new System.Windows.Forms.Label();
+            this.m_lbl_loading = new System.Windows.Forms.Label();
             this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
             this.m_pnl_don_dat_hang_de = new System.Windows.Forms.Panel();
             this.m_lbl_ds_don_dat_hang_de = new System.Windows.Forms.Label();
             this.m_fg_don_dat_hang_de = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cbo_loc = new System.Windows.Forms.ComboBox();
-            this.m_lbl_chon_trang_thai = new System.Windows.Forms.Label();
-            this.m_cmd_save = new System.Windows.Forms.Button();
-            this.m_lbl_loading = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_don_dat_hang)).BeginInit();
             this.m_pnl_header.SuspendLayout();
@@ -283,6 +283,31 @@ namespace BCTKApp
             this.m_pnl_don_dat_hang.Size = new System.Drawing.Size(921, 182);
             this.m_pnl_don_dat_hang.TabIndex = 22;
             // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_save.ImageIndex = 13;
+            this.m_cmd_save.ImageList = this.ImageList;
+            this.m_cmd_save.Location = new System.Drawing.Point(669, 5);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(180, 36);
+            this.m_cmd_save.TabIndex = 27;
+            this.m_cmd_save.Text = "Kiểm tra và lưu mã HD NCC";
+            this.m_cmd_save.UseVisualStyleBackColor = true;
+            // 
+            // m_cbo_loc
+            // 
+            this.m_cbo_loc.FormattingEnabled = true;
+            this.m_cbo_loc.Items.AddRange(new object[] {
+            "----------Tất cả---------",
+            "Chưa có mã HD từ NCC",
+            "Đã có mã HD từ NCC"});
+            this.m_cbo_loc.Location = new System.Drawing.Point(445, 10);
+            this.m_cbo_loc.Name = "m_cbo_loc";
+            this.m_cbo_loc.Size = new System.Drawing.Size(180, 21);
+            this.m_cbo_loc.TabIndex = 26;
+            this.m_cbo_loc.Text = "Chưa có mã HD từ NCC";
+            // 
             // m_dt_chon_thang
             // 
             this.m_dt_chon_thang.Checked = false;
@@ -302,6 +327,29 @@ namespace BCTKApp
             this.m_lbl_ds_don_dat_hang.Size = new System.Drawing.Size(127, 13);
             this.m_lbl_ds_don_dat_hang.TabIndex = 21;
             this.m_lbl_ds_don_dat_hang.Text = "Danh sách đơn đặt hàng";
+            // 
+            // m_lbl_chon_trang_thai
+            // 
+            this.m_lbl_chon_trang_thai.AutoSize = true;
+            this.m_lbl_chon_trang_thai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_chon_trang_thai.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_chon_trang_thai.Location = new System.Drawing.Point(397, 16);
+            this.m_lbl_chon_trang_thai.Name = "m_lbl_chon_trang_thai";
+            this.m_lbl_chon_trang_thai.Size = new System.Drawing.Size(30, 15);
+            this.m_lbl_chon_trang_thai.TabIndex = 24;
+            this.m_lbl_chon_trang_thai.Text = "Lọc ";
+            // 
+            // m_lbl_loading
+            // 
+            this.m_lbl_loading.AutoSize = true;
+            this.m_lbl_loading.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_loading.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_loading.Location = new System.Drawing.Point(374, 92);
+            this.m_lbl_loading.Name = "m_lbl_loading";
+            this.m_lbl_loading.Size = new System.Drawing.Size(139, 15);
+            this.m_lbl_loading.TabIndex = 24;
+            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi...";
+            this.m_lbl_loading.Visible = false;
             // 
             // m_lbl_tu_ngay
             // 
@@ -343,54 +391,6 @@ namespace BCTKApp
             this.m_fg_don_dat_hang_de.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_don_dat_hang_de.Styles"));
             this.m_fg_don_dat_hang_de.TabIndex = 21;
             // 
-            // m_cbo_loc
-            // 
-            this.m_cbo_loc.FormattingEnabled = true;
-            this.m_cbo_loc.Items.AddRange(new object[] {
-            "----------Tất cả---------",
-            "Chưa có mã HD từ NCC",
-            "Đã có mã HD từ NCC"});
-            this.m_cbo_loc.Location = new System.Drawing.Point(445, 10);
-            this.m_cbo_loc.Name = "m_cbo_loc";
-            this.m_cbo_loc.Size = new System.Drawing.Size(180, 21);
-            this.m_cbo_loc.TabIndex = 26;
-            this.m_cbo_loc.Text = "Chưa có mã HD từ NCC";
-            // 
-            // m_lbl_chon_trang_thai
-            // 
-            this.m_lbl_chon_trang_thai.AutoSize = true;
-            this.m_lbl_chon_trang_thai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_chon_trang_thai.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_chon_trang_thai.Location = new System.Drawing.Point(397, 16);
-            this.m_lbl_chon_trang_thai.Name = "m_lbl_chon_trang_thai";
-            this.m_lbl_chon_trang_thai.Size = new System.Drawing.Size(30, 15);
-            this.m_lbl_chon_trang_thai.TabIndex = 24;
-            this.m_lbl_chon_trang_thai.Text = "Lọc ";
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_save.ImageIndex = 13;
-            this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(669, 5);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(180, 36);
-            this.m_cmd_save.TabIndex = 27;
-            this.m_cmd_save.Text = "Kiểm tra và lưu mã HD NCC";
-            this.m_cmd_save.UseVisualStyleBackColor = true;
-            // 
-            // m_lbl_loading
-            // 
-            this.m_lbl_loading.AutoSize = true;
-            this.m_lbl_loading.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_loading.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_loading.Location = new System.Drawing.Point(374, 92);
-            this.m_lbl_loading.Name = "m_lbl_loading";
-            this.m_lbl_loading.Size = new System.Drawing.Size(139, 15);
-            this.m_lbl_loading.TabIndex = 24;
-            this.m_lbl_loading.Text = "Đang thực hiện, xin đợi...";
-            this.m_lbl_loading.Visible = false;
-            // 
             // f462_Nhap_ma_hoa_don_NCC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -413,45 +413,76 @@ namespace BCTKApp
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_don_dat_hang_de)).EndInit();
             this.ResumeLayout(false);
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-		#endregion
+        #region Public Interface
+        public void display()
+        {
+            this.ShowDialog();
+        }
+        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			GIA_TRI_CHUA_VAT = 7
-,ID = 9
-,NGAY_DAT_HANG = 1
-,TRANG_THAI = 4
-,LAN = 3
-,TEN_PHONG_BAN = 2
-,GIA_TRI_DA_VAT = 8
-,MA_HD = 5
-,MA_HD_NCC = 6
+        #region Data Structure
+        private enum e_col_Number
+        {
+            GIA_TRI_CHUA_VAT = 7
+,
+            ID = 9
+                ,
+            NGAY_DAT_HANG = 1
+                ,
+            TRANG_THAI = 4
+                ,
+            LAN = 3
+                ,
+            TEN_PHONG_BAN = 2
+                ,
+            GIA_TRI_DA_VAT = 8
+                ,
+            MA_HD = 5
+                , MA_HD_NCC = 6
 
-		}			
-		#endregion
+        }
+        private enum e_col_Number_de
+        {
+            MA_VPP = 1
+,
+            TEN_VPP = 2
+                ,
+            DON_VI_TINH = 3
+                ,
+            SO_LUONG = 4
+                ,
+            DON_GIA_CHUA_VAT = 5
+                ,
+            DON_GIA_GOM_VAT= 6
+        }
+        #endregion
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_GD_DON_DAT_HANG m_ds = new DS_V_GD_DON_DAT_HANG();
-		US_V_GD_DON_DAT_HANG m_us = new US_V_GD_DON_DAT_HANG();
-		#endregion
+        #region Members
+        ITransferDataRow m_obj_trans;
+        ITransferDataRow m_obj_trans_de;
+        DS_V_GD_DON_DAT_HANG m_ds = new DS_V_GD_DON_DAT_HANG();
+        US_V_GD_DON_DAT_HANG m_us = new US_V_GD_DON_DAT_HANG();
+        US_V_GD_DON_DAT_HANG_DETAIL m_us_de = new US_V_GD_DON_DAT_HANG_DETAIL();
+        DS_V_GD_DON_DAT_HANG_DETAIL m_ds_de = new DS_V_GD_DON_DAT_HANG_DETAIL();
+        #endregion
 
-		#region Private Methods
-		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_fg_don_dat_hang);
+        #region Private Methods
+        private void format_controls()
+        {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_fg_don_dat_hang);
             CControlFormat.setC1FlexFormat(m_fg_don_dat_hang_de);
-			CGridUtils.AddSave_Excel_Handlers(m_fg_don_dat_hang);
+            CGridUtils.AddSave_Excel_Handlers(m_fg_don_dat_hang);
             CGridUtils.AddSearch_Handlers(m_fg_don_dat_hang);
             m_fg_don_dat_hang.AllowEditing = true;
-            m_fg_don_dat_hang_de.AllowEditing = true;
+            m_fg_don_dat_hang_de.AllowEditing = false;
+            m_fg_don_dat_hang.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None;
+            m_fg_don_dat_hang.AutoSearch = C1.Win.C1FlexGrid.AutoSearchEnum.None;
+            m_fg_don_dat_hang.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
+            m_fg_don_dat_hang.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
             // m_lbl_header
             // 
             this.m_lbl_header.AutoSize = true;
@@ -463,32 +494,48 @@ namespace BCTKApp
             this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "NHẬP MÃ HÓA ĐƠN TỪ NCC";
             // 
-			set_define_events();
-			this.KeyPreview = true;		
-		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg_don_dat_hang);
-			load_data_2_grid();
+            set_define_events();
+            this.KeyPreview = true;
+        }
+        private void set_initial_form_load()
+        {
+            m_obj_trans = get_trans_object(m_fg_don_dat_hang);
+            m_obj_trans_de = get_trans_object_de(m_fg_don_dat_hang_de);
+            load_data_2_grid();
             m_dt_chon_thang.Checked = true;
             m_dt_chon_thang.Value = DateTime.Now.Date;
-		}
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_GD_DON_DAT_HANG.GIA_TRI_CHUA_VAT, e_col_Number.GIA_TRI_CHUA_VAT);
-			v_htb.Add(V_GD_DON_DAT_HANG.ID, e_col_Number.ID);
-			v_htb.Add(V_GD_DON_DAT_HANG.NGAY_DAT_HANG, e_col_Number.NGAY_DAT_HANG);
-			v_htb.Add(V_GD_DON_DAT_HANG.TRANG_THAI, e_col_Number.TRANG_THAI);
-			v_htb.Add(V_GD_DON_DAT_HANG.LAN, e_col_Number.LAN);
-			v_htb.Add(V_GD_DON_DAT_HANG.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
-			v_htb.Add(V_GD_DON_DAT_HANG.GIA_TRI_DA_VAT, e_col_Number.GIA_TRI_DA_VAT);
-			v_htb.Add(V_GD_DON_DAT_HANG.MA_HD, e_col_Number.MA_HD);
-			v_htb.Add(V_GD_DON_DAT_HANG.MA_HD_NCC, e_col_Number.MA_HD_NCC);
-									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_DON_DAT_HANG.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_V_GD_DON_DAT_HANG();
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_DON_DAT_HANG.GIA_TRI_CHUA_VAT, e_col_Number.GIA_TRI_CHUA_VAT);
+            v_htb.Add(V_GD_DON_DAT_HANG.ID, e_col_Number.ID);
+            v_htb.Add(V_GD_DON_DAT_HANG.NGAY_DAT_HANG, e_col_Number.NGAY_DAT_HANG);
+            v_htb.Add(V_GD_DON_DAT_HANG.TRANG_THAI, e_col_Number.TRANG_THAI);
+            v_htb.Add(V_GD_DON_DAT_HANG.LAN, e_col_Number.LAN);
+            v_htb.Add(V_GD_DON_DAT_HANG.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
+            v_htb.Add(V_GD_DON_DAT_HANG.GIA_TRI_DA_VAT, e_col_Number.GIA_TRI_DA_VAT);
+            v_htb.Add(V_GD_DON_DAT_HANG.MA_HD, e_col_Number.MA_HD);
+            v_htb.Add(V_GD_DON_DAT_HANG.MA_HD_NCC, e_col_Number.MA_HD_NCC);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_DON_DAT_HANG.NewRow());
+            return v_obj_trans;
+        }
+        private ITransferDataRow get_trans_object_de(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_DON_DAT_HANG_DETAIL.MA_VPP, e_col_Number_de.MA_VPP);
+            v_htb.Add(V_GD_DON_DAT_HANG_DETAIL.TEN_VPP, e_col_Number_de.TEN_VPP);
+            v_htb.Add(V_GD_DON_DAT_HANG_DETAIL.SO_LUONG, e_col_Number_de.SO_LUONG);
+            v_htb.Add(V_GD_DON_DAT_HANG_DETAIL.DON_VI_TINH, e_col_Number_de.DON_VI_TINH);
+            v_htb.Add(V_GD_DON_DAT_HANG_DETAIL.DON_GIA_CHUA_VAT, e_col_Number_de.DON_GIA_CHUA_VAT);
+            v_htb.Add(V_GD_DON_DAT_HANG_DETAIL.DON_GIA_GOM_VAT, e_col_Number_de.DON_GIA_GOM_VAT);
+            ITransferDataRow v_obj_trans_de = new CC1TransferDataRow(i_fg, v_htb, m_ds_de.V_GD_DON_DAT_HANG_DETAIL.NewRow());
+            return v_obj_trans_de;
+        }
+        private void load_data_2_grid()
+        {
+            m_ds = new DS_V_GD_DON_DAT_HANG();
             DateTime v_dt_tu_ngay;
             DateTime v_dt_den_ngay;
             if (!m_dt_chon_thang.Checked)
@@ -501,76 +548,87 @@ namespace BCTKApp
                 v_dt_tu_ngay = m_dt_chon_thang.Value.AddDays(-m_dt_chon_thang.Value.Date.Day + 1);
                 v_dt_den_ngay = m_dt_chon_thang.Value.AddMonths(1).AddDays(-m_dt_chon_thang.Value.Day);
             }
-			m_us.Nhap_ma_hoa_don_NCC(m_ds,v_dt_tu_ngay,v_dt_den_ngay,CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
-			m_fg_don_dat_hang.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg_don_dat_hang, m_obj_trans);
-			m_fg_don_dat_hang.Redraw = true;
-		}
+            m_us.Nhap_ma_hoa_don_NCC(m_ds, v_dt_tu_ngay, v_dt_den_ngay, CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
+            m_fg_don_dat_hang.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg_don_dat_hang, m_obj_trans);
+            m_fg_don_dat_hang.Redraw = true;
+        }
         private void load_don_dat_hang_de(string ip_v_ma_phieu)
         {
             US_V_GD_DON_DAT_HANG_DETAIL v_us = new US_V_GD_DON_DAT_HANG_DETAIL();
             DS_V_GD_DON_DAT_HANG_DETAIL v_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
-            v_us.FillDataset(v_ds,"Where MA_DON_HANG ="+ip_v_ma_phieu);
+            v_us.FillDataset(v_ds, "Where MA_DON_HANG =" + "'"+ip_v_ma_phieu+"' order by NGAY_DAT_HANG DESC");
+            m_fg_don_dat_hang_de.Redraw = false;
+            CGridUtils.Dataset2C1Grid(v_ds, m_fg_don_dat_hang_de, m_obj_trans_de);
+            m_fg_don_dat_hang_de.Redraw = true;
         }
-		private void grid2us_object(US_V_GD_DON_DAT_HANG i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg_don_dat_hang.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
-
-	
-		private void us_object2grid(US_V_GD_DON_DAT_HANG i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg_don_dat_hang.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+        private void grid2us_object(US_V_GD_DON_DAT_HANG i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg_don_dat_hang.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
 
-		private void insert_v_gd_don_dat_hang(){			
-		//	f461_Nhap_ma_hoa_don_NCC_DE v_fDE = new  f461_Nhap_ma_hoa_don_NCC_DE();								
-		//	v_fDE.display();
-			load_data_2_grid();
-		}
+        private void us_object2grid(US_V_GD_DON_DAT_HANG i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr = (DataRow)m_fg_don_dat_hang.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
 
-		private void update_v_gd_don_dat_hang(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_don_dat_hang)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_don_dat_hang, m_fg_don_dat_hang.Row)) return;			
-			grid2us_object(m_us, m_fg_don_dat_hang.Row);
-		//	f461_Nhap_ma_hoa_don_NCC_DE v_fDE = new f461_Nhap_ma_hoa_don_NCC_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
-		}
-				
-		private void delete_v_gd_don_dat_hang(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_don_dat_hang)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_don_dat_hang, m_fg_don_dat_hang.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_GD_DON_DAT_HANG v_us = new US_V_GD_DON_DAT_HANG();
-			grid2us_object(v_us, m_fg_don_dat_hang.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_fg_don_dat_hang.Rows.Remove(m_fg_don_dat_hang.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
 
-		private void view_v_gd_don_dat_hang(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_don_dat_hang)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_don_dat_hang, m_fg_don_dat_hang.Row)) return;
-			grid2us_object(m_us, m_fg_don_dat_hang.Row);
-		//	f461_Nhap_ma_hoa_don_NCC_DE v_fDE = new f461_Nhap_ma_hoa_don_NCC_DE();			
-		//	v_fDE.display(m_us);
-		}
+        private void insert_v_gd_don_dat_hang()
+        {
+            //	f461_Nhap_ma_hoa_don_NCC_DE v_fDE = new  f461_Nhap_ma_hoa_don_NCC_DE();								
+            //	v_fDE.display();
+            load_data_2_grid();
+        }
+
+        private void update_v_gd_don_dat_hang()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_don_dat_hang)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_don_dat_hang, m_fg_don_dat_hang.Row)) return;
+            grid2us_object(m_us, m_fg_don_dat_hang.Row);
+            //	f461_Nhap_ma_hoa_don_NCC_DE v_fDE = new f461_Nhap_ma_hoa_don_NCC_DE();
+            //	v_fDE.display(m_us);
+            load_data_2_grid();
+        }
+
+        private void delete_v_gd_don_dat_hang()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_don_dat_hang)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_don_dat_hang, m_fg_don_dat_hang.Row)) return;
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            US_V_GD_DON_DAT_HANG v_us = new US_V_GD_DON_DAT_HANG();
+            grid2us_object(v_us, m_fg_don_dat_hang.Row);
+            try
+            {
+                v_us.BeginTransaction();
+                v_us.Delete();
+                v_us.CommitTransaction();
+                m_fg_don_dat_hang.Rows.Remove(m_fg_don_dat_hang.Row);
+            }
+            catch (Exception v_e)
+            {
+                v_us.Rollback();
+                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_objErrHandler.showErrorMessage();
+            }
+        }
+
+        private void view_v_gd_don_dat_hang()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_don_dat_hang)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_don_dat_hang, m_fg_don_dat_hang.Row)) return;
+            grid2us_object(m_us, m_fg_don_dat_hang.Row);
+            //	f461_Nhap_ma_hoa_don_NCC_DE v_fDE = new f461_Nhap_ma_hoa_don_NCC_DE();			
+            //	v_fDE.display(m_us);
+        }
 
 
         private void save_ma_HD_NCC()
@@ -603,7 +661,7 @@ namespace BCTKApp
                     if (CIPConvert.ToStr(m_ds.V_GD_DON_DAT_HANG.Rows[v_i_row_fg][(int)e_col_Number.MA_HD_NCC]).Trim() != null)
                     {
                         m_fg_don_dat_hang.SetCellStyle(v_i_row_fg, (int)e_col_Number.MA_HD_NCC, v_cell_style_ok);
-                        v_us.Insert_ma_hdncc(v_ds,m_ds.V_GD_DON_DAT_HANG.Rows[v_i_row_fg][(int)e_col_Number.MA_HD_NCC].ToString());
+                        v_us.Insert_ma_hdncc(v_ds, m_ds.V_GD_DON_DAT_HANG.Rows[v_i_row_fg][(int)e_col_Number.MA_HD_NCC].ToString());
                     }
                 }
                 else
@@ -615,76 +673,95 @@ namespace BCTKApp
             }
         }
 
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+        private void set_define_events()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             this.m_dt_chon_thang.ValueChanged += new System.EventHandler(this.m_dt_chon_thang_ValueChanged);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
-		}
-		#endregion
+        }
+        #endregion
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f461_Nhap_ma_hoa_don_NCC_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        //
+        //
+        //		EVENT HANLDERS
+        //
+        //
+        private void f461_Nhap_ma_hoa_don_NCC_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_gd_don_dat_hang();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_gd_don_dat_hang();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_gd_don_dat_hang();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_gd_don_dat_hang();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_gd_don_dat_hang();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_v_gd_don_dat_hang();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_v_gd_don_dat_hang();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                view_v_gd_don_dat_hang();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         private void m_fg_don_dat_hang_Click(object sender, EventArgs e)
         {
@@ -697,7 +774,7 @@ namespace BCTKApp
                 string v_ma_phieu;
                 int i_grid_row = m_fg_don_dat_hang.Selection.TopRow;
                 DataRow v_dr = (DataRow)m_fg_don_dat_hang.Rows[i_grid_row].UserData;
-                v_ma_phieu = CIPConvert.ToStr(v_dr[4]);
+                v_ma_phieu = CIPConvert.ToStr(v_dr[7]);
                 load_don_dat_hang_de(v_ma_phieu);
             }
             catch (Exception v_e)
@@ -729,6 +806,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-	}
+    }
 }
 
