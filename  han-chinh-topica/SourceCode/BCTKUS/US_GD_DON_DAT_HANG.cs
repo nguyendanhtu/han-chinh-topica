@@ -286,10 +286,11 @@ public class US_GD_DON_DAT_HANG : US_Object
         v_store_proc.fillDataSetByCommand(this, ip_v_ds);
     }
 
-    public void Insert_ma_hdncc(DS_GD_DON_DAT_HANG ip_v_ds, string ip_ma_hd_ncc)
+    public void Insert_ma_hdncc(DS_GD_DON_DAT_HANG ip_v_ds, string ip_ma_hd_ncc, string ip_ma_hd)
     {
         CStoredProc v_store_proc = new CStoredProc("pr_Insert_ma_hdncc");
-        v_store_proc.addDecimalInputParam("@MA_HD_NCC ", ip_ma_hd_ncc);
+        v_store_proc.addNVarcharInputParam("@MA_HD_NCC ", ip_ma_hd_ncc);
+        v_store_proc.addNVarcharInputParam("@MA_HD ", ip_ma_hd);
         v_store_proc.fillDataSetByCommand(this, ip_v_ds);
     }
 }
