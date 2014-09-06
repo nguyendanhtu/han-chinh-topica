@@ -30,13 +30,13 @@ namespace BCTKApp
 
 
 
-	public class f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+    public class f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN : System.Windows.Forms.Form
+    {
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         private TextBox m_txt_tim_kiem;
         private Label m_lbl_tu_khoa;
@@ -52,43 +52,43 @@ namespace BCTKApp
         private Label label3;
         private ToolTip toolTip2;
         private DateTimePicker m_dt_den_ngay;
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components;
 
-		public f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -194,8 +194,7 @@ namespace BCTKApp
             this.m_fg.Size = new System.Drawing.Size(990, 329);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào các cột: Tổng số bill đã gửi, Tổng số tiền thực tế và Tổng" +
-        " số tiền định mức để xem chi tiết!");
+            this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào cột: Mã Trung Tâm - Ban để xem chi tiết!");
             // 
             // m_cmd_tim_kiem
             // 
@@ -211,7 +210,6 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_tim_kiem.TabIndex = 39;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
-            this.m_cmd_tim_kiem.Visible = false;
             this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
             // 
             // m_txt_tim_kiem
@@ -225,11 +223,11 @@ namespace BCTKApp
             // m_lbl_tu_khoa
             // 
             this.m_lbl_tu_khoa.AutoSize = true;
-            this.m_lbl_tu_khoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.m_lbl_tu_khoa.Font = new System.Drawing.Font("Arial", 8.25F);
             this.m_lbl_tu_khoa.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_tu_khoa.Location = new System.Drawing.Point(246, 66);
             this.m_lbl_tu_khoa.Name = "m_lbl_tu_khoa";
-            this.m_lbl_tu_khoa.Size = new System.Drawing.Size(50, 13);
+            this.m_lbl_tu_khoa.Size = new System.Drawing.Size(49, 14);
             this.m_lbl_tu_khoa.TabIndex = 35;
             this.m_lbl_tu_khoa.Text = "Từ khóa:";
             // 
@@ -247,22 +245,22 @@ namespace BCTKApp
             // m_lbl_den_ngay
             // 
             this.m_lbl_den_ngay.AutoSize = true;
-            this.m_lbl_den_ngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.m_lbl_den_ngay.Font = new System.Drawing.Font("Arial", 8.25F);
             this.m_lbl_den_ngay.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_den_ngay.Location = new System.Drawing.Point(520, 25);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
-            this.m_lbl_den_ngay.Size = new System.Drawing.Size(60, 13);
+            this.m_lbl_den_ngay.Size = new System.Drawing.Size(60, 14);
             this.m_lbl_den_ngay.TabIndex = 31;
             this.m_lbl_den_ngay.Text = "Đến tháng:";
             // 
             // m_lbl_tu_ngay
             // 
             this.m_lbl_tu_ngay.AutoSize = true;
-            this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Arial", 8.25F);
             this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_tu_ngay.Location = new System.Drawing.Point(246, 25);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
-            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(53, 13);
+            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(53, 14);
             this.m_lbl_tu_ngay.TabIndex = 32;
             this.m_lbl_tu_ngay.Text = "Từ tháng:";
             // 
@@ -275,7 +273,7 @@ namespace BCTKApp
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(990, 35);
             this.m_lbl_header.TabIndex = 30;
-            this.m_lbl_header.Text = "BÁO CÁO TÌNH HÌNH CPN THEO TRUNG TÂM - BAN";
+            this.m_lbl_header.Text = "TÌNH HÌNH CPN THEO TRUNG TÂM - BAN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -313,26 +311,26 @@ namespace BCTKApp
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(557, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 14);
             this.label3.TabIndex = 44;
             // 
             // m_lbl_tong_so_vuot_dm
             // 
             this.m_lbl_tong_so_vuot_dm.AutoSize = true;
-            this.m_lbl_tong_so_vuot_dm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tong_so_vuot_dm.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tong_so_vuot_dm.Location = new System.Drawing.Point(260, 102);
             this.m_lbl_tong_so_vuot_dm.Name = "m_lbl_tong_so_vuot_dm";
-            this.m_lbl_tong_so_vuot_dm.Size = new System.Drawing.Size(14, 13);
+            this.m_lbl_tong_so_vuot_dm.Size = new System.Drawing.Size(13, 14);
             this.m_lbl_tong_so_vuot_dm.TabIndex = 43;
             this.m_lbl_tong_so_vuot_dm.Text = "0";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 13);
+            this.label1.Size = new System.Drawing.Size(226, 14);
             this.label1.TabIndex = 42;
             this.label1.Text = "Tổng số trung tâm- ban vượt định mức: ";
             // 
@@ -341,7 +339,7 @@ namespace BCTKApp
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(727, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(251, 13);
+            this.label2.Size = new System.Drawing.Size(254, 14);
             this.label2.TabIndex = 41;
             this.label2.Text = "Các trung tâm vượt định mức sẽ được đánh dấu đỏ";
             // 
@@ -374,37 +372,43 @@ namespace BCTKApp
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-		#endregion
+        #region Public Interface
+        public void display()
+        {
+            this.ShowDialog();
+        }
+        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			TI_LE_DA_VUOT = 6
-,TEN_PHONG_BAN = 2
-,MA_PHONG_BAN = 1
-,TONG_SO_BILL = 3
-,DINH_MUC = 5
-,TONG_SO_TIEN = 4
+        #region Data Structure
+        private enum e_col_Number
+        {
+            TI_LE_DA_VUOT = 6
+,
+            TEN_PHONG_BAN = 2
+                ,
+            MA_PHONG_BAN = 1
+                ,
+            TONG_SO_BILL = 3
+                ,
+            DINH_MUC = 5
+                , TONG_SO_TIEN = 4
 
-		}			
-		#endregion
+        }
+        #endregion
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN m_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
-		US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN m_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+        #region Members
+        ITransferDataRow m_obj_trans;
+        DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN m_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+        US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN m_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
         bool m_trang_thai = false;
         DateTime v_dt_tu_ngay;
         DateTime v_dt_den_ngay;
-		#endregion
+        #endregion
 
-		#region Private Methods
+        #region Private Methods
         private void format_controls()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
@@ -412,13 +416,14 @@ namespace BCTKApp
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
             m_lbl_header.Font = new System.Drawing.Font("Tahoma", 18, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			
+
             m_fg.Cols[0].Caption = "STT";
             set_define_events();
             this.KeyPreview = true;
             //load_cbo_trang_thai();
         }
-		private void set_initial_form_load(){
+        private void set_initial_form_load()
+        {
             m_obj_trans = get_trans_object(m_fg);
             m_dt_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
             //DateTime temp = DateTime.Now.Date;
@@ -431,20 +436,21 @@ namespace BCTKApp
             dtResult = dtResult.AddDays(-(dtResult.Day));
             m_dt_den_ngay.Value = dtResult;
 
-            load_data_2_grid();		
-		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TI_LE_DA_VUOT, e_col_Number.TI_LE_DA_VUOT);
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.MA_PHONG_BAN, e_col_Number.MA_PHONG_BAN);
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_BILL, e_col_Number.TONG_SO_BILL);
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.DINH_MUC, e_col_Number.DINH_MUC);
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_TIEN, e_col_Number.TONG_SO_TIEN);
-									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.NewRow());
-			return v_obj_trans;			
-		}
+            load_data_2_grid();
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TI_LE_DA_VUOT, e_col_Number.TI_LE_DA_VUOT);
+            v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
+            v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.MA_PHONG_BAN, e_col_Number.MA_PHONG_BAN);
+            v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_BILL, e_col_Number.TONG_SO_BILL);
+            v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.DINH_MUC, e_col_Number.DINH_MUC);
+            v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_TIEN, e_col_Number.TONG_SO_TIEN);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.NewRow());
+            return v_obj_trans;
+        }
         private void load_data_2_grid()
         {
             //decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
@@ -474,7 +480,7 @@ namespace BCTKApp
             string v_id_tu_khoa = m_txt_tim_kiem.Text;
             //decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
             decimal v_id_trang_thai = -1;
-            v_dt_tu_ngay = m_dt_tu_ngay.Value.AddDays(-m_dt_tu_ngay.Value.Date.Day+1);
+            v_dt_tu_ngay = m_dt_tu_ngay.Value.AddDays(-m_dt_tu_ngay.Value.Date.Day + 1);
             v_dt_den_ngay = m_dt_den_ngay.Value.AddMonths(1).AddDays(-m_dt_den_ngay.Value.Day);
             decimal v_dc_tong_so_vuot_dm = 0;
             US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
@@ -485,11 +491,11 @@ namespace BCTKApp
             CGridUtils.MakeSoTT(0, m_fg);
             for (int i = m_fg.Rows.Fixed; i < m_fg.Rows.Count; i++)
             {
-                if (m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT] == null || CIPConvert.ToDecimal(m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT].ToString()) <0)
-                    {
-                        m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT] = 0;
-                        continue;
-                    }
+                if (m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT] == null || CIPConvert.ToDecimal(m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT].ToString()) < 0)
+                {
+                    m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT] = 0;
+                    continue;
+                }
                 if (!CIPConvert.is_valid_number(m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT])) continue;
                 if (CIPConvert.ToDecimal((m_fg[i, (int)e_col_Number.TI_LE_DA_VUOT]).ToString()) > 0)
                 {
@@ -502,65 +508,73 @@ namespace BCTKApp
             else m_lbl_tong_so_vuot_dm.Text = CIPConvert.ToStr(v_dc_tong_so_vuot_dm, "#,###");
             m_fg.Redraw = true;
         }
-		private void grid2us_object(US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
-
-	
-		private void us_object2grid(US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+        private void grid2us_object(US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
 
-		private void insert_v_bc_tinh_hinh_cpn_theo_phong_ban(){			
-		//	f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE v_fDE = new  f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE();								
-		//	v_fDE.display();
-			load_data_2_grid();
-		}
+        private void us_object2grid(US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
 
-		private void update_v_bc_tinh_hinh_cpn_theo_phong_ban(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
-		//	f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE v_fDE = new f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
-		}
-				
-		private void delete_v_bc_tinh_hinh_cpn_theo_phong_ban(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
-			grid2us_object(v_us, m_fg.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
 
-		private void view_v_bc_tinh_hinh_cpn_theo_phong_ban(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
-		//	f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE v_fDE = new f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE();			
-		//	v_fDE.display(m_us);
-		}
+        private void insert_v_bc_tinh_hinh_cpn_theo_phong_ban()
+        {
+            //	f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE v_fDE = new  f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE();								
+            //	v_fDE.display();
+            load_data_2_grid();
+        }
+
+        private void update_v_bc_tinh_hinh_cpn_theo_phong_ban()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            //	f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE v_fDE = new f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE();
+            //	v_fDE.display(m_us);
+            load_data_2_grid();
+        }
+
+        private void delete_v_bc_tinh_hinh_cpn_theo_phong_ban()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            grid2us_object(v_us, m_fg.Row);
+            try
+            {
+                v_us.BeginTransaction();
+                v_us.Delete();
+                v_us.CommitTransaction();
+                m_fg.Rows.Remove(m_fg.Row);
+            }
+            catch (Exception v_e)
+            {
+                v_us.Rollback();
+                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_objErrHandler.showErrorMessage();
+            }
+        }
+
+        private void view_v_bc_tinh_hinh_cpn_theo_phong_ban()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            //	f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE v_fDE = new f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_DE();			
+            //	v_fDE.display(m_us);
+        }
         private void export_2_excel()
         {
             CExcelReport v_obj_excel_report = new CExcelReport("f704_bc_tinh_hinh_CPN_theo_phong_ban.xlsx", 7, 1);
@@ -569,63 +583,68 @@ namespace BCTKApp
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
         }
-		private void set_define_events(){
+        private void set_define_events()
+        {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            
+
             m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             m_dt_tu_ngay.ValueChanged += new EventHandler(m_dt_tu_ngay_ValueChanged);
             m_dt_den_ngay.ValueChanged += new EventHandler(m_dt_den_ngay_ValueChanged);
             m_txt_tim_kiem.TextChanged += new EventHandler(m_txt_tim_kiem_TextChanged);
-		}
-		#endregion
+        }
+        #endregion
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_Load(object sender, System.EventArgs e) {
-			try  {
-				set_initial_form_load();
-                tim_kiem();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
-
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_xuat_excel_Click(object sender, EventArgs e){
+        //
+        //
+        //		EVENT HANLDERS
+        //
+        //
+        private void f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN_Load(object sender, System.EventArgs e)
+        {
             try
             {
-                export_2_excel();
+                set_initial_form_load();
+                tim_kiem();
             }
-            catch (System.Exception ex)
+            catch (Exception v_e)
             {
-                CSystemLog_301.ExceptionHandle(ex);	
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e) {
-            if(m_trang_thai == true) {
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            export_2_excel();
+        }
+        private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (m_trang_thai == true)
+            {
                 tim_kiem();
             }
         }
 
-        private void m_dt_tu_ngay_ValueChanged(object sender, EventArgs e) {
+        private void m_dt_tu_ngay_ValueChanged(object sender, EventArgs e)
+        {
             tim_kiem();
         }
 
-        private void m_dt_den_ngay_ValueChanged(object sender, EventArgs e) {
+        private void m_dt_den_ngay_ValueChanged(object sender, EventArgs e)
+        {
             tim_kiem();
         }
 
@@ -634,7 +653,8 @@ namespace BCTKApp
             tim_kiem();
         }
 
-        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e) {
+        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
+        {
             tim_kiem();
         }
 
@@ -649,7 +669,7 @@ namespace BCTKApp
                 DateTime v_dt_tu_ngay = m_dt_tu_ngay.Value;
                 DateTime v_dt_den_ngay = m_dt_den_ngay.Value;
                 int i_grid_row = m_fg.Selection.TopRow;
-                int i_grid_col=m_fg.Selection.LeftCol;
+                int i_grid_col = m_fg.Selection.LeftCol;
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
                 //Data v_dc = (DataColumn)m_fg.Cols[i_grid_row].UserData;
                 v_id_phong_ban = CIPConvert.ToDecimal(v_dr[0]);
@@ -661,22 +681,24 @@ namespace BCTKApp
                     v_tong_tien = CIPConvert.ToDecimal(v_dr[4]);
                 else
                     v_tong_tien = 0;
-                if (i_grid_col == (int)e_col_Number.DINH_MUC)
-                {
-                    f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
-                    v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay,174);
-                }
-                else 
-                if (((i_grid_col == (int)e_col_Number.TONG_SO_BILL) || (i_grid_col == (int)e_col_Number.TONG_SO_TIEN)))// && v_dr[4].ToString() != "")
-                {
-                    //f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
-                    //v_frm1.Display_for_chi_tiet(v_id_phong_ban, -1, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
-                    BaseMessages.MsgBox_Infor("Chỗ này là chi tiết VPP của từng phòng ban!");
-                }
-                else {
-                    //BaseMessages.MsgBox_Infor("Bạn nhấp đúp chuột vào các cột: tổng số bill, tổng tiền thanh toán để xem chi tiết");
-                    BaseMessages.MsgBox_Infor("Bạn nhấp đúp chuột vào các cột: Tổng số bill đã gửi, Tổng số tiền thực tế và Tổng số tiền định mức để xem chi tiết!");
-              }
+                f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
+                v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay, 174);
+                //if (i_grid_col == (int)e_col_Number.DINH_MUC)
+                //  {
+                //      f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
+                //      v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay,174);
+                //  }
+                //  else 
+                //  if (((i_grid_col == (int)e_col_Number.TONG_SO_BILL) || (i_grid_col == (int)e_col_Number.TONG_SO_TIEN)))// && v_dr[4].ToString() != "")
+                //  {
+                //      //f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
+                //      //v_frm1.Display_for_chi_tiet(v_id_phong_ban, -1, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
+                //      //BaseMessages.MsgBox_Infor("Chỗ này là chi tiết VPP của từng phòng ban!");
+                //  }
+                //  else {
+                //      //BaseMessages.MsgBox_Infor("Bạn nhấp đúp chuột vào các cột: tổng số bill, tổng tiền thanh toán để xem chi tiết");
+                //      BaseMessages.MsgBox_Infor("Bạn nhấp đúp chuột vào các cột: Tổng số bill đã gửi, Tổng số tiền thực tế và Tổng số tiền định mức để xem chi tiết!");
+                //}
             }
             catch (Exception v_e)
             {
@@ -692,7 +714,7 @@ namespace BCTKApp
                 {
                     this.Close();
                 }
-                
+
             }
             catch (Exception v_e)
             {
@@ -700,6 +722,6 @@ namespace BCTKApp
             }
         }
 
-	}
+    }
 }
 

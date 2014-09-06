@@ -491,7 +491,7 @@ namespace BCTKApp
                 }
                 if (m_i_flag == 0)
                 {
-                    BaseMessages.MsgBox_Infor("Cần kiểm tra dữ liệu trước khi lưu!");
+                    BaseMessages.MsgBox_Infor("Dữ liệu chưa đúng!");
                     return;
                 }
 

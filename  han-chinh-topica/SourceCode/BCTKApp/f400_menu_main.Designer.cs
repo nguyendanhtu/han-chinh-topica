@@ -458,7 +458,7 @@
             this.m_cmd_bc_thu_tra_lai.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.m_cmd_bc_thu_tra_lai.Name = "m_cmd_bc_thu_tra_lai";
             this.m_cmd_bc_thu_tra_lai.SubItemsExpandWidth = 14;
-            this.m_cmd_bc_thu_tra_lai.Text = "Báo cáo thư bị trả lại";
+            this.m_cmd_bc_thu_tra_lai.Text = "Thư bị trả lại";
             // 
             // m_cmd_tong_hop_bill_theo_phong_ban
             // 
