@@ -307,7 +307,8 @@ namespace BCTKApp {
         private DataTable database_2_datatable(DateTime ip_dau_thang, DateTime ip_cuoi_thang) {
             DS_DM_BILL v_ds_dm_bill = new DS_DM_BILL();
             US_DM_BILL v_us_dm_bill = new US_DM_BILL();
-            v_us_dm_bill.FillDataset(v_ds_dm_bill, "where NGAY_GUI >='"+ip_dau_thang.Date +"' and NGAY_GUI <= '"+ip_cuoi_thang.Date+"'");
+            //v_us_dm_bill.FillDataset(v_ds_dm_bill, "where NGAY_GUI >='"+ip_dau_thang +"' and NGAY_GUI <= '"+ip_cuoi_thang+"'");
+            v_us_dm_bill.get_dm_bill(ip_dau_thang, ip_cuoi_thang, v_ds_dm_bill);
 
             DataTable v_dt = v_ds_dm_bill.DM_BILL;
             return v_dt;
@@ -316,14 +317,12 @@ namespace BCTKApp {
             try {
                 //Tim ngay dau thang, cuoi thang
                 DateTime v_dau_thang = m_dat_thang.Value.AddDays(-m_dat_thang.Value.Day + 1).Date;
-                DateTime v_cuoi_thang = m_dat_thang.Value.AddMonths(1).Date.AddDays(-m_dat_thang.Value.Day).Date;
-
+                DateTime v_cuoi_thang = v_dau_thang.AddMonths(1).Date.AddDays(-1).Date;
                 //Lay ra 1 DataTable chua danh sach bill da gui trong thang tu CSDL
                 DataTable v_dt = null;
                 //if(database_2_datatable(v_dau_thang, v_cuoi_thang)!= null) {
                 v_dt = database_2_datatable(v_dau_thang, v_cuoi_thang);
                 //}
-
 
                 C1.Win.C1FlexGrid.CellStyle v_cell_style_err = this.m_fg_load_file.Styles.Add("RowColorErr");
                 v_cell_style_err.BackColor = Color.Yellow;
@@ -352,7 +351,7 @@ namespace BCTKApp {
                 ghi_log_he_thong();
             }
             catch(Exception v_e) {
-                throw v_e;
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         

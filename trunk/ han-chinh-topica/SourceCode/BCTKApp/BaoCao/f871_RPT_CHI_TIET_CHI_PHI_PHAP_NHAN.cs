@@ -409,6 +409,7 @@ namespace BCTKApp {
             //m_fg.Cols["MA_PHAP_NHAN"].Visible = false;
             //m_fg.Tree.Column = (int)e_col_Number.NGAY_GUI;
             this.KeyPreview = true;
+            m_cmd_exit.Visible = true;
         }
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
