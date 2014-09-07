@@ -76,10 +76,14 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     }
     private void delete_file_imported(string ip_str_file_dir)
     {
-        //if (Directory.Exists(ip_str_file_dir.Replace("//", "\\")))
-        //{
-        File.Delete(ip_str_file_dir.Replace("//", "\\"));
-        //}
+        try
+        {
+            File.Delete(ip_str_file_dir.Replace("//", "\\"));
+        }
+        catch (Exception)
+        {
+            File.Delete(ip_str_file_dir);
+        }
     }
     private void excel_file_to_grid(GridView ip_grv, int ip_i_start_row, string ip_str_file_dir)
     {
@@ -242,21 +246,13 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         System.Web.UI.WebControls.TextBox v_txt_noi_dung_gui;
         System.Web.UI.WebControls.TextBox v_txt_noi_ghi_chu;
         System.Web.UI.WebControls.RadioButton v_rdb_trong_nuoc;
-        //eWorld.UI.CalendarPopup v_dat_ngay_gui;
         m_grv_dm_bill.Rows.CopyTo(v_arr_gvr, 0);
 
         //Phải chia nhỏ để insert nếu số lượng bản ghi lớn
 
         int start_number = 0; //vị trí bản ghi bắt đầu insert
         int numbers_record_limited = v_arr_gvr.Length; // số bản ghi được insert k vượt quá 50
-        //int numbers_record_remain = v_arr_gvr.Length; //số bản ghi còn lại sau mỗi lần insert
 
-        //while (numbers_record_remain >= 0)
-        //{
-        //    if (numbers_record_remain - 50 > 0)
-        //        numbers_record_limited = 50;
-        //    else
-        //        numbers_record_limited = numbers_record_remain;
         for (int i = start_number; i < numbers_record_limited; i++)
         {
             v_txt_so_bill = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_so_bill_grid");
@@ -283,7 +279,6 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             else
             {
                 v_us_dm_bill = new US_DM_BILL();
-                //v_us_dm_bill.BeginTransaction();
                 v_us_dm_bill.dcID_PHONG_BAN = CIPConvert.ToDecimal(v_ds_dm_phong_ban.DM_PHONG_BAN[0][0]);
                 v_us_dm_bill.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
                 v_us_dm_bill.strSO_BILL = v_txt_so_bill.Text.Trim();
@@ -292,7 +287,6 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 v_us_dm_bill.strNGUOI_NHAN = v_txt_nguoi_nhan.Text.Trim();
                 v_us_dm_bill.strNOI_NHAN = v_txt_noi_nhan.Text.Trim();
                 v_us_dm_bill.strNOI_DUNG = v_txt_noi_dung_gui.Text.Trim();
-                //v_us_dm_bill.datNGAY_GUI = v_dat_ngay_gui.SelectedDate;
                 v_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(v_txt_ngay_gui.Text.Trim(), "dd/MM/yyyy");
                 if (v_rdb_trong_nuoc.Checked == true)
                 {
@@ -306,18 +300,16 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 }
                 v_us_dm_bill.Insert();
 
-                thong_bao("Đã import thành công " + (m_grv_dm_bill.PageIndex + 1) + "/" + m_grv_dm_bill.PageCount, true);
             }
-            //}
-            //if (numbers_record_limited == 50)
-            //    start_number = start_number + 50; // lấy vị trí bản ghi tiếp theo sẽ dc insert nếu còn
-            //numbers_record_remain = numbers_record_remain - 50; // tính số bản ghi còn lại chưa insert
         }
+        thong_bao("Đã import thành công " + (m_grv_dm_bill.PageIndex + 1) + "/" + m_grv_dm_bill.PageCount, true);
+        excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
         m_grv_dm_bill.PageIndex = m_grv_dm_bill.PageIndex + 1;
         if (m_grv_dm_bill.PageCount == m_grv_dm_bill.PageIndex)
         {
             m_grv_dm_bill.DataSource = null;
             m_grv_dm_bill.Visible = false;
+            delete_file_imported(m_hdf_dir_save_excel.Value);
         }
         m_grv_dm_bill.DataBind();
     }
@@ -525,13 +517,8 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     {
         try
         {
-            //this.Form.DefaultButton = m_cmd_tim_kiem.UniqueID;
             if (!IsPostBack)
             {
-                if (!Person.check_user_have_menu())
-                {
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script type = 'text/javascript'>alert('Bạn không có quyền sử dụng chức năng này!');window.location.replace('/TraCuuKeToan/')</script>");
-                }
                 US_HT_NGUOI_SU_DUNG v_us_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
                 if (Session[SESSION.AccounLoginYN] == "Y")
                 {
@@ -547,11 +534,6 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                     set_intinal_form_load();
                     thong_bao("", false);
                     show_import("");
-                }
-                else
-                {
-                    Response.Redirect("../Default.aspx", false);
-                    HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }
             }
             thong_bao("", false);
@@ -598,16 +580,15 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             if (check_validate_grid_is_ok())
             {
                 // excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
-                check_validate_grid_is_ok();
                 save_grid_to_database();
-                delete_file_imported(m_hdf_dir_save_excel.Value);
             }
+            else
+            thong_bao("Dữ liệu không hợp lệ, bạn hãy kiểm tra lại!");
         }
         catch (Exception v_e)
         {
             m_grv_dm_bill.DataSource = null;
             m_grv_dm_bill.DataBind();
-            //delete_file_imported(m_hdf_dir_save_excel.Value);
             thong_bao("Import không thành công. Lỗi: " + v_e.ToString());
         }
 
@@ -623,7 +604,6 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             m_grv_dm_bill.PageIndex = e.NewPageIndex;
             excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
             check_validate_grid_is_ok();
-            //m_grv_dm_bill.DataBind();
         }
         catch (Exception v_e)
         {

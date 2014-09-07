@@ -140,7 +140,7 @@
                                 <asp:GridView ID="m_grv_dm_bill" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                                     Width="99%" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                                     EmptyDataText="Đã import thành công!" EmptyDataRowStyle-BorderColor="#810913"
-                                    CellPadding="2" PageSize="50"
+                                    CellPadding="2" PageSize="100"
                                     OnRowDeleting="m_grv_dm_bill_RowDeleting"
                                     OnPageIndexChanging="m_grv_dm_bill_PageIndexChanging"
                                     AllowSorting="true">

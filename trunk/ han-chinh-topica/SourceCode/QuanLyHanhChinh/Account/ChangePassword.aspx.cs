@@ -37,7 +37,7 @@ public partial class Account_ChangePassword : System.Web.UI.Page
     private bool check_validate_is_ok() {
         string v_str_ten_dang_nhap = CIPConvert.ToStr(Session[SESSION.UserName]);
         // Kiểm tra mật khẩu cũ nhập vào đã chuẩn chưa?
-        if (!m_txt_old_password.Text.Equals(get_current_password(v_str_ten_dang_nhap))) {
+        if (!CIPConvert.Encoding(m_txt_old_password.Text.Trim()).Equals(get_current_password(v_str_ten_dang_nhap))) {
             m_lbl_mess.Text = "Mật khẩu cũ nhập vào chưa đúng!";
             return false;
         }
@@ -62,7 +62,7 @@ public partial class Account_ChangePassword : System.Web.UI.Page
     }
     private void form_2_us_nguoi_su_dung() {
 
-        m_us_ht_nguoi_su_dung.strMAT_KHAU = m_txt_new_password.Text;
+        m_us_ht_nguoi_su_dung.strMAT_KHAU =CIPConvert.Encoding(m_txt_new_password.Text);
         m_us_ht_nguoi_su_dung.strTEN_TRUY_CAP = CIPConvert.ToStr(Session[SESSION.UserName]);
     }
     #endregion
