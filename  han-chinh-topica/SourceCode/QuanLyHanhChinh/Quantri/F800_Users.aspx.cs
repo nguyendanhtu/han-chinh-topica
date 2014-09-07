@@ -97,25 +97,6 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
         {
             m_us_user.FillDataset(m_ds_user, " WHERE ID_USER_GROUP =" + CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue) + " order by ten_truy_cap");
             m_grv_dm_tu_dien.DataSource = m_ds_user.HT_NGUOI_SU_DUNG;
-            //if (m_cbo_user_group.SelectedValue != "6")
-            //{
-            //    m_lbl_email_group.Visible = false;
-            //    m_txt_email_group.Visible = false;
-            //}
-            //else
-            //{
-            //    m_lbl_email_group.Visible = true;
-            //    m_txt_email_group.Visible = true;
-            //    m_txt_email_group.Text = "";
-
-            //    for (int i = 0; i < m_ds_user.HT_NGUOI_SU_DUNG.Count - 1; i++)
-            //    {
-            //        m_txt_email_group.Text += m_ds_user.HT_NGUOI_SU_DUNG.Rows[i][1].ToString() + ", ";
-            //    }
-
-            //    m_txt_email_group.Text += m_ds_user.HT_NGUOI_SU_DUNG.Rows[m_ds_user.HT_NGUOI_SU_DUNG.Count - 1][1].ToString();
-            //}
-
             m_grv_dm_tu_dien.DataBind();
             if (!m_hdf_id_nguoi_su_dung.Value.Equals(""))
             {
@@ -243,12 +224,12 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
             this.m_ctv_mk_go_lai.IsValid = false;
             return false;
         }
-        if ((!check_ten_dang_nhap_is_ok()) && (m_e_form_mode == DataEntryFormMode.InsertDataState))
+        if ((!check_ten_dang_nhap_is_ok()) && (get_form_mode(m_hdf_form_mode)==LOAI_FORM.THEM))
         {
             m_lbl_mess.Text = "Tên đăng nhập đã tồn tại, vui lòng nhập Tên đăng nhập khác!";
             return false;
         }
-        if ((this.m_hdf_id_user_group.Value == "") && (m_e_form_mode == DataEntryFormMode.UpdateDataState))
+        if ((this.m_hdf_id_user_group.Value == "") && (get_form_mode(m_hdf_form_mode) == LOAI_FORM.SUA))
         {
             m_lbl_mess.Text = "Bạn phải chọn Người dùng cần cập nhật!"; return false;
         }
@@ -291,7 +272,6 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
             if (!check_validate_is_ok()) return;
             form_2_us_object();
 
-            m_us_user.dcID = CIPConvert.ToDecimal(this.m_hdf_id_user_group.Value);
             m_us_user.Update();
             clear_data();
             m_lbl_mess.Text = "Đã cập nhật tài khoản thành công!";
@@ -314,13 +294,14 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     }
     private void form_2_us_object()
     {
+        m_us_user = new US_HT_NGUOI_SU_DUNG(CIPConvert.ToDecimal(m_hdf_id_nguoi_su_dung.Value));
         m_us_user.dcID_USER_GROUP = CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue);
         m_us_user.strTEN_TRUY_CAP = m_txt_ten_dang_nhap.Text.TrimEnd();
         m_us_user.strTEN = m_txt_ho_va_ten.Text.TrimEnd();
-        m_us_user.strNGUOI_TAO = Session[SESSION.UserName].ToString();
+        m_us_user.strNGUOI_TAO = "admin";
         if (m_chk_lock_yn.Checked) m_us_user.strTRANG_THAI = "1";
         else m_us_user.strTRANG_THAI = "0";
-        if (m_txt_mat_khau.Text.Length > 0) m_us_user.strMAT_KHAU = m_txt_mat_khau.Text.TrimEnd();
+        if (m_txt_mat_khau.Text.Length > 0) m_us_user.strMAT_KHAU =CIPConvert.Encoding( m_txt_mat_khau.Text.TrimEnd());
         else m_us_user.strMAT_KHAU = m_hdf_pw.Value;
         m_us_user.strBUILT_IN_YN = "Y";
     }
@@ -430,7 +411,7 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
         }
         catch (Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(this, v_e);
+            thong_bao("Lỗi: " + v_e.Message);
         }
     }
     protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)

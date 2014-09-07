@@ -378,6 +378,14 @@ public class US_DM_BILL : US_Object
         v_proc.addDecimalInputParam("@sotien", ip_dc_so_tien);
         v_proc.ExecuteCommand(this);
     }
+
+    public void get_dm_bill(DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay, DS_DM_BILL op_ds)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_DM_BILL_get_bill_from_date_to_date");
+        v_store_proc.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+        v_store_proc.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+        v_store_proc.fillDataSetByCommand(this, op_ds);
+    }
 }
 	
 }
