@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F506_CAP_NHAT_TRANG_THAI));
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
             this.m_grv_da_nhan = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
@@ -63,6 +63,11 @@
             this.m_cmd_nhan_tra_lai_2_tra_lai = new SIS.Controls.Button.SiSButton();
             this.m_grv_noi_bo_nhan_tra_lai = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_den_ngay = new System.Windows.Forms.Label();
+            this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_rdb_tat_ca = new System.Windows.Forms.RadioButton();
+            this.m_rdb_chon_thang = new System.Windows.Forms.RadioButton();
+            this.m_rdb_chon_ngay = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_da_nhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_da_chuyen)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -93,15 +98,15 @@
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 43;
             // 
-            // label7
+            // m_lbl_tu_ngay
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(502, 52);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 16);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "Tại ngày";
+            this.m_lbl_tu_ngay.AutoSize = true;
+            this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(521, 86);
+            this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
+            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(56, 16);
+            this.m_lbl_tu_ngay.TabIndex = 41;
+            this.m_lbl_tu_ngay.Text = "Từ ngày";
             // 
             // m_grv_da_nhan
             // 
@@ -119,10 +124,9 @@
             this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(565, 50);
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(583, 84);
             this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
-            this.m_dtp_tu_ngay.ShowCheckBox = true;
-            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(148, 23);
+            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(113, 23);
             this.m_dtp_tu_ngay.TabIndex = 1;
             this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 7, 14, 0, 0, 0, 0);
             // 
@@ -134,7 +138,7 @@
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(521, 91);
+            this.m_cmd_search.Location = new System.Drawing.Point(521, 121);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 5;
@@ -295,7 +299,7 @@
             // 
             // m_txt_key_word
             // 
-            this.m_txt_key_word.Location = new System.Drawing.Point(214, 94);
+            this.m_txt_key_word.Location = new System.Drawing.Point(214, 124);
             this.m_txt_key_word.Name = "m_txt_key_word";
             this.m_txt_key_word.Size = new System.Drawing.Size(277, 20);
             this.m_txt_key_word.TabIndex = 53;
@@ -307,10 +311,10 @@
             this.m_tab_main.Controls.Add(this.m_tm_bill_bi_tra_lai);
             this.m_tab_main.Controls.Add(this.m_tm_noi_bo_nhan_tra_lai);
             this.m_tab_main.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_tab_main.Location = new System.Drawing.Point(0, 146);
+            this.m_tab_main.Location = new System.Drawing.Point(0, 166);
             this.m_tab_main.Name = "m_tab_main";
             this.m_tab_main.SelectedIndex = 0;
-            this.m_tab_main.Size = new System.Drawing.Size(924, 386);
+            this.m_tab_main.Size = new System.Drawing.Size(924, 366);
             this.m_tab_main.TabIndex = 61;
             // 
             // m_tm_bill_da_nhan
@@ -322,7 +326,7 @@
             this.m_tm_bill_da_nhan.Location = new System.Drawing.Point(4, 22);
             this.m_tm_bill_da_nhan.Name = "m_tm_bill_da_nhan";
             this.m_tm_bill_da_nhan.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_bill_da_nhan.Size = new System.Drawing.Size(916, 360);
+            this.m_tm_bill_da_nhan.Size = new System.Drawing.Size(916, 340);
             this.m_tm_bill_da_nhan.TabIndex = 0;
             this.m_tm_bill_da_nhan.Text = "DS bill đã nhận";
             this.m_tm_bill_da_nhan.UseVisualStyleBackColor = true;
@@ -484,17 +488,79 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(135, 98);
+            this.label1.Location = new System.Drawing.Point(135, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 62;
             this.label1.Text = "Từ khóa";
+            // 
+            // m_lbl_den_ngay
+            // 
+            this.m_lbl_den_ngay.AutoSize = true;
+            this.m_lbl_den_ngay.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_den_ngay.Location = new System.Drawing.Point(716, 86);
+            this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
+            this.m_lbl_den_ngay.Size = new System.Drawing.Size(67, 16);
+            this.m_lbl_den_ngay.TabIndex = 64;
+            this.m_lbl_den_ngay.Text = "Đến  ngày";
+            // 
+            // m_dtp_den_ngay
+            // 
+            this.m_dtp_den_ngay.Checked = false;
+            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_den_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(789, 84);
+            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
+            this.m_dtp_den_ngay.Size = new System.Drawing.Size(113, 23);
+            this.m_dtp_den_ngay.TabIndex = 63;
+            this.m_dtp_den_ngay.Value = new System.DateTime(2014, 7, 14, 0, 0, 0, 0);
+            // 
+            // m_rdb_tat_ca
+            // 
+            this.m_rdb_tat_ca.AutoSize = true;
+            this.m_rdb_tat_ca.Checked = true;
+            this.m_rdb_tat_ca.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_rdb_tat_ca.Location = new System.Drawing.Point(212, 84);
+            this.m_rdb_tat_ca.Name = "m_rdb_tat_ca";
+            this.m_rdb_tat_ca.Size = new System.Drawing.Size(62, 20);
+            this.m_rdb_tat_ca.TabIndex = 65;
+            this.m_rdb_tat_ca.TabStop = true;
+            this.m_rdb_tat_ca.Text = "Tất cả";
+            this.m_rdb_tat_ca.UseVisualStyleBackColor = true;
+            // 
+            // m_rdb_chon_thang
+            // 
+            this.m_rdb_chon_thang.AutoSize = true;
+            this.m_rdb_chon_thang.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_rdb_chon_thang.Location = new System.Drawing.Point(290, 84);
+            this.m_rdb_chon_thang.Name = "m_rdb_chon_thang";
+            this.m_rdb_chon_thang.Size = new System.Drawing.Size(92, 20);
+            this.m_rdb_chon_thang.TabIndex = 66;
+            this.m_rdb_chon_thang.Text = "Chọn tháng";
+            this.m_rdb_chon_thang.UseVisualStyleBackColor = true;
+            // 
+            // m_rdb_chon_ngay
+            // 
+            this.m_rdb_chon_ngay.AutoSize = true;
+            this.m_rdb_chon_ngay.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_rdb_chon_ngay.Location = new System.Drawing.Point(397, 84);
+            this.m_rdb_chon_ngay.Name = "m_rdb_chon_ngay";
+            this.m_rdb_chon_ngay.Size = new System.Drawing.Size(88, 20);
+            this.m_rdb_chon_ngay.TabIndex = 67;
+            this.m_rdb_chon_ngay.Text = "Chọn ngày";
+            this.m_rdb_chon_ngay.UseVisualStyleBackColor = true;
             // 
             // F506_CAP_NHAT_TRANG_THAI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 569);
+            this.Controls.Add(this.m_rdb_chon_ngay);
+            this.Controls.Add(this.m_rdb_chon_thang);
+            this.Controls.Add(this.m_rdb_tat_ca);
+            this.Controls.Add(this.m_lbl_den_ngay);
+            this.Controls.Add(this.m_dtp_den_ngay);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_tab_main);
             this.Controls.Add(this.m_txt_key_word);
@@ -503,7 +569,7 @@
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.m_lbl_tu_ngay);
             this.Controls.Add(this.m_dtp_tu_ngay);
             this.Controls.Add(this.m_cmd_search);
             this.Name = "F506_CAP_NHAT_TRANG_THAI";
@@ -527,7 +593,7 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label m_lbl_tu_ngay;
         private System.Windows.Forms.DateTimePicker m_dtp_tu_ngay;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private C1.Win.C1FlexGrid.C1FlexGrid m_grv_da_nhan;
@@ -558,5 +624,10 @@
         private C1.Win.C1FlexGrid.C1FlexGrid m_grv_noi_bo_nhan_tra_lai;
         internal SIS.Controls.Button.SiSButton m_cmd_tra_lai_2_noi_bo_nhan_tl_all;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label m_lbl_den_ngay;
+        private System.Windows.Forms.DateTimePicker m_dtp_den_ngay;
+        private System.Windows.Forms.RadioButton m_rdb_tat_ca;
+        private System.Windows.Forms.RadioButton m_rdb_chon_thang;
+        private System.Windows.Forms.RadioButton m_rdb_chon_ngay;
     }
 }
