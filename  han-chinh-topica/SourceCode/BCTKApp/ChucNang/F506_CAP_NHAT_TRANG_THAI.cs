@@ -77,20 +77,30 @@ namespace BCTKApp
         }
         private void load_data_2_grid(decimal ip_dc_trang_thai, C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
-            DateTime v_dat_ngay = m_dtp_tu_ngay.Value.Date;
+            DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value.Date;
+            DateTime v_dat_den_ngay = m_dtp_den_ngay.Value.Date;
             decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             decimal v_dc_id_trang_thai = ip_dc_trang_thai; //CIPConvert.ToDecimal(m_cbo_trang_thai_cu.SelectedValue);
             string v_str_key_word = m_txt_key_word.Text;
             if (v_str_key_word == m_str_goi_y_so_bill) v_str_key_word = "";
             m_ds = new DS_V_DM_BILL();
-            if (m_dtp_tu_ngay.Checked == true)
+            if (m_rdb_tat_ca.Checked == true)
             {
-                v_dat_ngay = m_dtp_tu_ngay.Value.Date;
-                m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
+                m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_tu_ngay, v_dat_den_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
             }
-            else
+            if (m_rdb_chon_ngay.Checked == true)
             {
-                m_us.FillDatasetSearch_grid(m_ds, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
+                v_dat_den_ngay = v_dat_tu_ngay;
+                m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_tu_ngay, v_dat_den_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
+            }
+            if (m_rdb_chon_thang.Checked == true)
+            {
+                v_dat_tu_ngay = m_dtp_tu_ngay.Value.Date.AddDays(-m_dtp_tu_ngay.Value.Date.Day + 1);
+                DateTime temp = m_dtp_tu_ngay.Value.Date;
+                temp = temp.AddMonths(1);
+                temp = temp.AddDays(-(temp.Day));
+                v_dat_den_ngay = temp;
+                m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_tu_ngay, v_dat_den_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
             }
             i_fg.Redraw = false;
             m_obj_trans = get_trans_object(i_fg);
@@ -220,12 +230,15 @@ namespace BCTKApp
             m_cmd_left_2_right_all.Click += new EventHandler(m_cmd_left_2_right_all_Click);
             m_cmd_right_2_left_all.Click += new EventHandler(m_cmd_right_2_left_all_Click);
             m_cbo_trung_tam.SelectedIndexChanged += new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
-            this.m_dtp_tu_ngay.ValueChanged += new System.EventHandler(this.m_dtp_tu_ngay_ValueChanged);
+            //this.m_dtp_tu_ngay.ValueChanged += new System.EventHandler(this.m_dtp_tu_ngay_ValueChanged);
             m_cmd_da_chuyen_2_tra_lai.Click+=new EventHandler(m_cmd_da_chuyen_2_tra_lai_Click);
             m_cmd_tra_lai_2_noi_bo_nhan_tl.Click+=new EventHandler(m_cmd_tra_lai_2_noi_bo_nhan_tl_Click);
             m_cmd_tra_lai_2_da_chuyen.Click+=new EventHandler(m_cmd_tra_lai_2_da_chuyen_Click);
             m_cmd_nhan_tra_lai_2_tra_lai.Click+=new EventHandler(m_cmd_nhan_tra_lai_2_tra_lai_Click);
             m_cmd_tra_lai_2_noi_bo_nhan_tl_all.Click+=new EventHandler(m_cmd_tra_lai_2_noi_bo_nhan_tl_all_Click);
+            m_rdb_tat_ca.CheckedChanged+=new EventHandler(m_rdb_tat_ca_CheckedChanged);
+            m_rdb_chon_ngay.CheckedChanged+=new EventHandler(m_rdb_chon_ngay_CheckedChanged);
+            m_rdb_chon_thang.CheckedChanged+=new EventHandler(m_rdb_chon_thang_CheckedChanged);
             this.KeyDown+=new KeyEventHandler(F506_CAP_NHAT_TRANG_THAI_KeyDown);
         }
 
@@ -501,6 +514,68 @@ namespace BCTKApp
             }
             catch (Exception v_e)
             {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_rdb_tat_ca_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_rdb_tat_ca.Checked == true)
+                {
+                    m_dtp_tu_ngay.Visible = false;
+                    m_lbl_tu_ngay.Visible = false;
+                    m_dtp_den_ngay.Visible = false;
+                    m_lbl_den_ngay.Visible = false;
+                    m_dtp_den_ngay.Value = DateTime.Now.Date;
+                    this.m_dtp_tu_ngay.Value = new System.DateTime(2010, 1, 14, 0, 0, 0, 0);
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_rdb_chon_ngay_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_rdb_chon_ngay.Checked == true)
+                {
+                    m_dtp_tu_ngay.Visible = true;
+                    m_lbl_tu_ngay.Visible = true;
+                    m_lbl_tu_ngay.Text = "Ngày";
+                    m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
+                    m_dtp_tu_ngay.Value = DateTime.Now.Date;
+                    m_dtp_den_ngay.Visible = false;
+                    m_lbl_den_ngay.Visible = false;
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_rdb_chon_thang_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_rdb_chon_thang.Checked == true)
+                {
+                    m_dtp_tu_ngay.Visible = true;
+                    m_lbl_tu_ngay.Visible = true;
+                    m_lbl_tu_ngay.Text = "Tháng";
+                    m_dtp_tu_ngay.CustomFormat = "MM/yyyy";
+                    m_dtp_tu_ngay.Value = DateTime.Now.Date;
+                    m_dtp_den_ngay.Visible = false;
+                    m_lbl_den_ngay.Visible = false;
+                }
+            }
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
