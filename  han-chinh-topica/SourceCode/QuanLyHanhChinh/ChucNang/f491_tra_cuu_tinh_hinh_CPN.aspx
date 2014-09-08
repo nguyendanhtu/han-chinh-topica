@@ -78,7 +78,7 @@
 
                 <asp:TextBox ID="m_txt_nguoi_gui_tk" runat="Server" CssClass="cssTextBox" placeholder="Tất cả người gửi" Width="12%" ToolTip="Nhập tên người gửi để xem báo cáo theo người gửi" AutoPostBack="true"></asp:TextBox>
                 &nbsp;&nbsp;
-                <asp:Button ID="m_cmd_tim_kiem" runat="server" Text="Xem báo cáo" CssClass="cssGoogleButton" CausesValidation="false" OnClick="m_cmd_tim_kiem_Click" />
+                <asp:Button ID="m_cmd_xem_bao_cao" runat="server" Text="Xem báo cáo" CssClass="cssGoogleButton" OnClick="m_cmd_xem_bao_cao_Click" />
             </td>
         </tr>
         <tr>
