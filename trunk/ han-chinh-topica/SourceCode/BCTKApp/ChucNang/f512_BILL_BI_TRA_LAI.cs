@@ -46,6 +46,7 @@ namespace BCTKApp
         private Label label7;
         private Label m_lbl_tieu_de;
         private DateTimePicker m_dtp_tu_ngay;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
 		private System.ComponentModel.IContainer components;
 
 		public f512_BILL_BI_TRA_LAI()
@@ -99,6 +100,7 @@ namespace BCTKApp
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_bill)).BeginInit();
             this.m_pnl_top.SuspendLayout();
@@ -224,14 +226,15 @@ namespace BCTKApp
             // 
             this.m_grv_bill.ColumnInfo = resources.GetString("m_grv_bill.ColumnInfo");
             this.m_grv_bill.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_bill.Location = new System.Drawing.Point(0, 97);
+            this.m_grv_bill.Location = new System.Drawing.Point(0, 125);
             this.m_grv_bill.Name = "m_grv_bill";
-            this.m_grv_bill.Size = new System.Drawing.Size(884, 429);
+            this.m_grv_bill.Size = new System.Drawing.Size(884, 401);
             this.m_grv_bill.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_bill.Styles"));
             this.m_grv_bill.TabIndex = 20;
             // 
             // m_pnl_top
             // 
+            this.m_pnl_top.Controls.Add(this.m_cmd_search);
             this.m_pnl_top.Controls.Add(this.m_dtp_tu_ngay);
             this.m_pnl_top.Controls.Add(this.m_dtp_den_ngay);
             this.m_pnl_top.Controls.Add(this.label6);
@@ -240,7 +243,7 @@ namespace BCTKApp
             this.m_pnl_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_top.Location = new System.Drawing.Point(0, 0);
             this.m_pnl_top.Name = "m_pnl_top";
-            this.m_pnl_top.Size = new System.Drawing.Size(884, 91);
+            this.m_pnl_top.Size = new System.Drawing.Size(884, 119);
             this.m_pnl_top.TabIndex = 22;
             // 
             // m_dtp_tu_ngay
@@ -297,6 +300,20 @@ namespace BCTKApp
             this.m_lbl_tieu_de.TabIndex = 27;
             this.m_lbl_tieu_de.Text = "TỔNG HỢP THƯ BỊ TRẢ LẠI TOÀN TOPICA";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(400, 83);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 34;
+            this.m_cmd_search.Text = "Tìm kiếm";
             // 
             // f512_BILL_BI_TRA_LAI
             // 
@@ -475,8 +492,9 @@ namespace BCTKApp
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
             //m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
-            m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
-            m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
+            //m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
+            //m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
+            m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
             this.KeyDown+=new KeyEventHandler(f512_BILL_BI_TRA_LAI_KeyDown);
 		}
 		#endregion
@@ -541,6 +559,17 @@ namespace BCTKApp
             try
             {
                 delete_v_dm_bill();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
