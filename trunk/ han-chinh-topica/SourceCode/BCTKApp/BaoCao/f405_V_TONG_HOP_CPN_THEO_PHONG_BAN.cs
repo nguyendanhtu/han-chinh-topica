@@ -243,8 +243,8 @@ namespace BCTKApp
             // 
             // m_fg
             // 
-            this.m_fg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.m_fg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 173);
@@ -258,8 +258,8 @@ namespace BCTKApp
             // 
             // m_lbl_header
             // 
-            this.m_lbl_header.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.m_lbl_header.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -275,11 +275,11 @@ namespace BCTKApp
             this.m_lbl_ten_pb.AutoSize = true;
             this.m_lbl_ten_pb.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ten_pb.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_ten_pb.Location = new System.Drawing.Point(222, 54);
+            this.m_lbl_ten_pb.Location = new System.Drawing.Point(181, 50);
             this.m_lbl_ten_pb.Name = "m_lbl_ten_pb";
-            this.m_lbl_ten_pb.Size = new System.Drawing.Size(57, 15);
+            this.m_lbl_ten_pb.Size = new System.Drawing.Size(96, 15);
             this.m_lbl_ten_pb.TabIndex = 3;
-            this.m_lbl_ten_pb.Text = "Chọn PB:";
+            this.m_lbl_ten_pb.Text = "Chọn Pháp nhân";
             // 
             // m_lbl_den_ngay
             // 
@@ -447,28 +447,29 @@ namespace BCTKApp
         #region Data Structure
         private enum e_col_Number
         {
-            NUOC_NGOAI = 11
+            NUOC_NGOAI = 12
 ,
-            TEN_PHONG_BAN = 1
+            TEN_PHONG_BAN = 2
                 ,
-            SO_BILL = 3
+            SO_BILL = 4
                 ,
-            GHI_CHU = 12
+            GHI_CHU = 13
                 ,
-            NOI_NHAN = 7
+            NOI_NHAN = 8
                 ,
-            NGUOI_NHAN = 6
+            NGUOI_NHAN = 7
                 ,
-            SO_TIEN = 4
+            SO_TIEN = 5
                 ,
-            TRONG_NUOC = 10
+            TRONG_NUOC = 11
                 ,
-            NOI_DUNG = 8
+            NOI_DUNG = 9
                 ,
-            NGUOI_GUI = 5
+            NGUOI_GUI = 6
                 ,
-            TRANG_THAI = 9
-                , NGAY_GUI = 2
+            TRANG_THAI = 10
+                , NGAY_GUI = 3
+            ,TEN_PHAP_NHAN = 1
 
         }
         #endregion
@@ -477,6 +478,8 @@ namespace BCTKApp
         ITransferDataRow m_obj_trans;
         DS_V_TONG_HOP_CPN_THEO_PHONG_BAN m_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
         US_V_TONG_HOP_CPN_THEO_PHONG_BAN m_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
+        DS_V_TONG_HOP_CPN_THEO_PHONG_BAN_PN m_ds_pn = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN_PN();
+        US_V_TONG_HOP_CPN_THEO_PHONG_BAN_PN m_us_pn = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN_PN();
         bool m_trang_thai = false;
         #endregion
 
@@ -533,28 +536,29 @@ namespace BCTKApp
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.NUOC_NGOAI, e_col_Number.NUOC_NGOAI);
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.SO_BILL, e_col_Number.SO_BILL);
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.GHI_CHU, e_col_Number.GHI_CHU);
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.NOI_NHAN, e_col_Number.NOI_NHAN);
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.NGUOI_NHAN, e_col_Number.NGUOI_NHAN);
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.SO_TIEN, e_col_Number.SO_TIEN);
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.TRONG_NUOC, e_col_Number.TRONG_NUOC);
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.NOI_DUNG, e_col_Number.NOI_DUNG);
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.NGUOI_GUI, e_col_Number.NGUOI_GUI);
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.TRANG_THAI, e_col_Number.TRANG_THAI);
-            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN.NGAY_GUI, e_col_Number.NGAY_GUI);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.NUOC_NGOAI, e_col_Number.NUOC_NGOAI);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.SO_BILL, e_col_Number.SO_BILL);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.GHI_CHU, e_col_Number.GHI_CHU);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.NOI_NHAN, e_col_Number.NOI_NHAN);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.NGUOI_NHAN, e_col_Number.NGUOI_NHAN);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.SO_TIEN, e_col_Number.SO_TIEN);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.TRONG_NUOC, e_col_Number.TRONG_NUOC);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.NOI_DUNG, e_col_Number.NOI_DUNG);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.NGUOI_GUI, e_col_Number.NGUOI_GUI);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.TRANG_THAI, e_col_Number.TRANG_THAI);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.NGAY_GUI, e_col_Number.NGAY_GUI);
+            v_htb.Add(V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.TEN_PHAP_NHAN, e_col_Number.TEN_PHAP_NHAN);
 
-            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_TONG_HOP_CPN_THEO_PHONG_BAN.NewRow());
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_pn.V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.NewRow());
             return v_obj_trans;
         }
         private void load_data_2_grid()
         {
-            m_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
-            m_us.FillDataset(m_ds);
+            m_ds_pn = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN_PN();
+            m_us_pn.FillDataset(m_ds_pn);
             m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.Dataset2C1Grid(m_ds_pn, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
             //m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
             //  , 0
@@ -611,23 +615,35 @@ namespace BCTKApp
         private void load_cbo_ten_pb()
         {
             m_trang_thai = false;
-            US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
-            DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
-            v_us.FillDataset(v_ds, "order by ten_phong_ban");
-            m_cbo_ten_pb.DataSource = v_ds.DM_PHONG_BAN;
-            m_cbo_ten_pb.ValueMember = DM_PHONG_BAN.ID;
-            m_cbo_ten_pb.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
-            DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
-            v_dr[DM_PHONG_BAN.ID] = -1;
-            v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
-            v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
-            v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
+            //US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+            //DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+            //v_us.FillDataset(v_ds, "order by ten_phong_ban");
+            //m_cbo_ten_pb.DataSource = v_ds.DM_PHONG_BAN;
+            //m_cbo_ten_pb.ValueMember = DM_PHONG_BAN.ID;
+            //m_cbo_ten_pb.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
+            //DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
+            //v_dr[DM_PHONG_BAN.ID] = -1;
+            //v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
+            //v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
+            //v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
+            //m_cbo_ten_pb.SelectedIndex = 0;
+            US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN();
+            DS_DM_PHAP_NHAN v_ds = new DS_DM_PHAP_NHAN();
+            v_us.FillDataset(v_ds);
+            m_cbo_ten_pb.DataSource = v_ds.DM_PHAP_NHAN;
+            m_cbo_ten_pb.ValueMember = DM_PHAP_NHAN.ID;
+            m_cbo_ten_pb.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
+            DataRow v_dr = v_ds.DM_PHAP_NHAN.NewRow();
+            v_dr[DM_PHAP_NHAN.ID] = -1;
+            v_dr[DM_PHAP_NHAN.MA_PHAP_NHAN] = "Tất cả";
+            v_dr[DM_PHAP_NHAN.TEN_PHAP_NHAN] = "Tất cả";
+            v_ds.DM_PHAP_NHAN.Rows.InsertAt(v_dr, 0);
             m_cbo_ten_pb.SelectedIndex = 0;
             m_trang_thai = true;
         }
         private void tim_kiem()
         {
-            decimal v_id_phong_ban = CIPConvert.ToDecimal(m_cbo_ten_pb.SelectedValue);
+            decimal v_id_phap_nhan = CIPConvert.ToDecimal(m_cbo_ten_pb.SelectedValue);
             decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
             string v_str_tu_khoa = m_txt_tu_khoa.Text;
             DateTime v_dt_tu_ngay;
@@ -649,9 +665,9 @@ namespace BCTKApp
             }
             v_dt_tu_ngay = m_dt_tu_ngay.Value;
             v_dt_den_ngay = m_dt_den_ngay.Value;
-            US_V_TONG_HOP_CPN_THEO_PHONG_BAN v_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN();
-            DS_V_TONG_HOP_CPN_THEO_PHONG_BAN v_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN();
-            v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai);
+            US_V_TONG_HOP_CPN_THEO_PHONG_BAN_PN v_us = new US_V_TONG_HOP_CPN_THEO_PHONG_BAN_PN();
+            DS_V_TONG_HOP_CPN_THEO_PHONG_BAN_PN v_ds = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN_PN();
+            v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phap_nhan, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
