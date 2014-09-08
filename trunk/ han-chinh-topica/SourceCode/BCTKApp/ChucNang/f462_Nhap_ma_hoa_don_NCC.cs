@@ -103,6 +103,7 @@ namespace BCTKApp
             this.m_pnl_header = new System.Windows.Forms.Panel();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_pnl_don_dat_hang = new System.Windows.Forms.Panel();
+            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cbo_loc = new System.Windows.Forms.ComboBox();
             this.m_dt_chon_thang = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ds_don_dat_hang = new System.Windows.Forms.Label();
@@ -112,7 +113,6 @@ namespace BCTKApp
             this.m_pnl_don_dat_hang_de = new System.Windows.Forms.Panel();
             this.m_lbl_ds_don_dat_hang_de = new System.Windows.Forms.Label();
             this.m_fg_don_dat_hang_de = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_don_dat_hang)).BeginInit();
@@ -248,7 +248,7 @@ namespace BCTKApp
             this.m_fg_don_dat_hang.Size = new System.Drawing.Size(921, 133);
             this.m_fg_don_dat_hang.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_don_dat_hang.Styles"));
             this.m_fg_don_dat_hang.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.m_fg_don_dat_hang, "Click chuột vào ô trên cột Mã HD của NCC để nhập ");
+            this.toolTip1.SetToolTip(this.m_fg_don_dat_hang, "Click chuột vào ô trên cột \"Mã HD của NCC\" để nhập ");
             this.m_fg_don_dat_hang.Click += new System.EventHandler(this.m_fg_don_dat_hang_Click);
             // 
             // m_pnl_header
@@ -287,6 +287,20 @@ namespace BCTKApp
             this.m_pnl_don_dat_hang.Size = new System.Drawing.Size(921, 182);
             this.m_pnl_don_dat_hang.TabIndex = 22;
             // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_save.ImageIndex = 10;
+            this.m_cmd_save.ImageList = this.ImageList;
+            this.m_cmd_save.Location = new System.Drawing.Point(653, 3);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(205, 35);
+            this.m_cmd_save.TabIndex = 27;
+            this.m_cmd_save.Text = "Kiểm tra và lưu mã HD NCC";
+            // 
             // m_cbo_loc
             // 
             this.m_cbo_loc.FormattingEnabled = true;
@@ -296,7 +310,7 @@ namespace BCTKApp
             "Đã có mã HD từ NCC"});
             this.m_cbo_loc.Location = new System.Drawing.Point(445, 13);
             this.m_cbo_loc.Name = "m_cbo_loc";
-            this.m_cbo_loc.Size = new System.Drawing.Size(180, 21);
+            this.m_cbo_loc.Size = new System.Drawing.Size(151, 21);
             this.m_cbo_loc.TabIndex = 26;
             this.m_cbo_loc.Text = "Chưa có mã HD từ NCC";
             this.m_cbo_loc.SelectedIndexChanged += new System.EventHandler(this.m_cbo_loc_SelectedIndexChanged);
@@ -306,7 +320,7 @@ namespace BCTKApp
             this.m_dt_chon_thang.Checked = false;
             this.m_dt_chon_thang.CustomFormat = "MM/yyyy";
             this.m_dt_chon_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dt_chon_thang.Location = new System.Drawing.Point(163, 12);
+            this.m_dt_chon_thang.Location = new System.Drawing.Point(224, 15);
             this.m_dt_chon_thang.Name = "m_dt_chon_thang";
             this.m_dt_chon_thang.Size = new System.Drawing.Size(84, 20);
             this.m_dt_chon_thang.TabIndex = 25;
@@ -315,6 +329,7 @@ namespace BCTKApp
             // m_lbl_ds_don_dat_hang
             // 
             this.m_lbl_ds_don_dat_hang.AutoSize = true;
+            this.m_lbl_ds_don_dat_hang.ForeColor = System.Drawing.Color.Blue;
             this.m_lbl_ds_don_dat_hang.Location = new System.Drawing.Point(4, 31);
             this.m_lbl_ds_don_dat_hang.Name = "m_lbl_ds_don_dat_hang";
             this.m_lbl_ds_don_dat_hang.Size = new System.Drawing.Size(127, 13);
@@ -349,7 +364,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.AutoSize = true;
             this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(89, 16);
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(150, 19);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(70, 15);
             this.m_lbl_tu_ngay.TabIndex = 24;
@@ -368,6 +383,7 @@ namespace BCTKApp
             // m_lbl_ds_don_dat_hang_de
             // 
             this.m_lbl_ds_don_dat_hang_de.AutoSize = true;
+            this.m_lbl_ds_don_dat_hang_de.ForeColor = System.Drawing.Color.Blue;
             this.m_lbl_ds_don_dat_hang_de.Location = new System.Drawing.Point(4, 7);
             this.m_lbl_ds_don_dat_hang_de.Name = "m_lbl_ds_don_dat_hang_de";
             this.m_lbl_ds_don_dat_hang_de.Size = new System.Drawing.Size(88, 13);
@@ -378,26 +394,11 @@ namespace BCTKApp
             // 
             this.m_fg_don_dat_hang_de.ColumnInfo = resources.GetString("m_fg_don_dat_hang_de.ColumnInfo");
             this.m_fg_don_dat_hang_de.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg_don_dat_hang_de.Location = new System.Drawing.Point(0, 32);
+            this.m_fg_don_dat_hang_de.Location = new System.Drawing.Point(0, 23);
             this.m_fg_don_dat_hang_de.Name = "m_fg_don_dat_hang_de";
-            this.m_fg_don_dat_hang_de.Size = new System.Drawing.Size(921, 276);
+            this.m_fg_don_dat_hang_de.Size = new System.Drawing.Size(921, 285);
             this.m_fg_don_dat_hang_de.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_don_dat_hang_de.Styles"));
             this.m_fg_don_dat_hang_de.TabIndex = 21;
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_save.ImageIndex = 13;
-            this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(684, 3);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(174, 35);
-            this.m_cmd_save.TabIndex = 27;
-            this.m_cmd_save.Text = "Kiểm tra và lưu mã HD NCC";
-            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
             // f462_Nhap_ma_hoa_don_NCC
             // 
@@ -410,6 +411,7 @@ namespace BCTKApp
             this.Name = "f462_Nhap_ma_hoa_don_NCC";
             this.Text = "f462 -Nhập mã hóa đơn từ NCC";
             this.Load += new System.EventHandler(this.f461_Nhap_ma_hoa_don_NCC_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f462_Nhap_ma_hoa_don_NCC_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_don_dat_hang)).EndInit();
             this.m_pnl_header.ResumeLayout(false);
@@ -502,6 +504,9 @@ namespace BCTKApp
             this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "NHẬP MÃ HÓA ĐƠN TỪ NCC";
             // 
+            this.m_lbl_ds_don_dat_hang.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_ds_don_dat_hang_de.ForeColor = System.Drawing.Color.Blue;
+
             set_define_events();
             this.KeyPreview = true;
         }
@@ -556,7 +561,18 @@ namespace BCTKApp
                 v_dt_tu_ngay = m_dt_chon_thang.Value.AddDays(-m_dt_chon_thang.Value.Date.Day + 1);
                 v_dt_den_ngay = m_dt_chon_thang.Value.AddMonths(1).AddDays(-m_dt_chon_thang.Value.Day);
             }
-            m_us.Nhap_ma_hoa_don_NCC(m_ds, v_dt_tu_ngay, v_dt_den_ngay, CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
+            if (m_cbo_loc.SelectedIndex == 0)
+            {
+                m_us.Nhap_ma_hoa_don_NCC(m_ds, v_dt_tu_ngay, v_dt_den_ngay, CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
+            }
+            if (m_cbo_loc.SelectedIndex == 1)
+            {
+                m_us.Loc_HD_chua_co_ma_hoa_don_NCC(m_ds, v_dt_tu_ngay, v_dt_den_ngay, CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
+            }
+            if (m_cbo_loc.SelectedIndex == 2)
+            {
+                m_us.Loc_HD_da_co_ma_hoa_don_NCC(m_ds, v_dt_tu_ngay, v_dt_den_ngay, CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
+            }
             m_fg_don_dat_hang.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg_don_dat_hang, m_obj_trans);
             m_fg_don_dat_hang.Redraw = true;
@@ -654,6 +670,7 @@ namespace BCTKApp
                 }
                 v_ds.Clear();
             }
+            BaseMessages.MsgBox_Infor("Bạn đã lưu thành công các mã HD NCC đã nhập!");
            
         }
         private void kiem_tra_du_lieu_don_dat_hang()
@@ -826,13 +843,36 @@ namespace BCTKApp
             }
             catch (Exception v_e)
             {
+                BaseMessages.MsgBox_Error("Lỗi. Chưa lưu mã HD NCC đã nhập");
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
         private void m_cbo_loc_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
+        private void f462_Nhap_ma_hoa_don_NCC_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }
