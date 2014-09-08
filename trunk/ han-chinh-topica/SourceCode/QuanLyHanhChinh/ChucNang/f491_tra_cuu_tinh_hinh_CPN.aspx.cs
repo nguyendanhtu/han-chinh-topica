@@ -254,7 +254,7 @@ public partial class ChucNang_f491_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+    protected void m_cmd_xem_bao_cao_Click(object sender, EventArgs e)
     {
         try
         {
