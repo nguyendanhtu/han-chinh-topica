@@ -90,6 +90,7 @@ namespace BCTKApp
         private ToolTip toolTip1;
         private Label m_lbl_ghi_chu;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
+        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel_pn_pb;
         private System.ComponentModel.IContainer components;
         private void InitializeComponent()
         {
@@ -97,6 +98,7 @@ namespace BCTKApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f405_V_TONG_HOP_CPN_THEO_PHONG_BAN));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_excel_pn_pb = new SIS.Controls.Button.SiSButton();
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
@@ -150,17 +152,33 @@ namespace BCTKApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel_pn_pb);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 591);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 601);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1034, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1034, 39);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_xuat_excel_pn_pb
+            // 
+            this.m_cmd_xuat_excel_pn_pb.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel_pn_pb.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel_pn_pb.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel_pn_pb.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel_pn_pb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel_pn_pb.ImageIndex = 19;
+            this.m_cmd_xuat_excel_pn_pb.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel_pn_pb.Location = new System.Drawing.Point(147, 4);
+            this.m_cmd_xuat_excel_pn_pb.Name = "m_cmd_xuat_excel_pn_pb";
+            this.m_cmd_xuat_excel_pn_pb.Size = new System.Drawing.Size(303, 31);
+            this.m_cmd_xuat_excel_pn_pb.TabIndex = 23;
+            this.m_cmd_xuat_excel_pn_pb.Text = "Xuất Excel DS Bill theo Pháp nhân - phòng ban";
             // 
             // m_cmd_xuat_excel
             // 
@@ -173,9 +191,9 @@ namespace BCTKApp
             this.m_cmd_xuat_excel.ImageList = this.ImageList;
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(143, 31);
             this.m_cmd_xuat_excel.TabIndex = 22;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Text = "Xuất Excel DS Bill";
             this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // m_cmd_insert
@@ -189,7 +207,7 @@ namespace BCTKApp
             this.m_cmd_insert.ImageList = this.ImageList;
             this.m_cmd_insert.Location = new System.Drawing.Point(678, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_insert.Size = new System.Drawing.Size(88, 31);
             this.m_cmd_insert.TabIndex = 12;
             this.m_cmd_insert.Text = "&Thêm";
             this.m_cmd_insert.Visible = false;
@@ -205,7 +223,7 @@ namespace BCTKApp
             this.m_cmd_update.ImageList = this.ImageList;
             this.m_cmd_update.Location = new System.Drawing.Point(766, 4);
             this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_update.Size = new System.Drawing.Size(88, 31);
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
             this.m_cmd_update.Visible = false;
@@ -221,7 +239,7 @@ namespace BCTKApp
             this.m_cmd_delete.ImageList = this.ImageList;
             this.m_cmd_delete.Location = new System.Drawing.Point(854, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_delete.Size = new System.Drawing.Size(88, 31);
             this.m_cmd_delete.TabIndex = 14;
             this.m_cmd_delete.Text = "&Xoá";
             this.m_cmd_delete.Visible = false;
@@ -237,7 +255,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageList = this.ImageList;
             this.m_cmd_exit.Location = new System.Drawing.Point(942, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 31);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
@@ -250,7 +268,7 @@ namespace BCTKApp
             this.m_fg.Location = new System.Drawing.Point(0, 173);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
-            this.m_fg.Size = new System.Drawing.Size(1022, 418);
+            this.m_fg.Size = new System.Drawing.Size(1022, 422);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.toolTip1.SetToolTip(this.m_fg, "Nhấp đúp chuột vào dòng để xem chi tiết.");
@@ -311,7 +329,6 @@ namespace BCTKApp
             this.m_cbo_ten_pb.Name = "m_cbo_ten_pb";
             this.m_cbo_ten_pb.Size = new System.Drawing.Size(466, 21);
             this.m_cbo_ten_pb.TabIndex = 4;
-            this.m_cbo_ten_pb.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ten_pb_SelectedIndexChanged);
             // 
             // m_dt_tu_ngay
             // 
@@ -323,7 +340,6 @@ namespace BCTKApp
             this.m_dt_tu_ngay.Size = new System.Drawing.Size(176, 20);
             this.m_dt_tu_ngay.TabIndex = 6;
             this.m_dt_tu_ngay.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
-            this.m_dt_tu_ngay.ValueChanged += new System.EventHandler(this.m_dt_tu_ngay_ValueChanged);
             // 
             // m_dt_den_ngay
             // 
@@ -334,7 +350,6 @@ namespace BCTKApp
             this.m_dt_den_ngay.Name = "m_dt_den_ngay";
             this.m_dt_den_ngay.Size = new System.Drawing.Size(174, 20);
             this.m_dt_den_ngay.TabIndex = 8;
-            this.m_dt_den_ngay.ValueChanged += new System.EventHandler(this.m_dt_den_ngay_ValueChanged);
             // 
             // m_lbl_trang_thai
             // 
@@ -355,7 +370,6 @@ namespace BCTKApp
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(176, 21);
             this.m_cbo_trang_thai.TabIndex = 10;
-            this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -409,7 +423,7 @@ namespace BCTKApp
             // f405_V_TONG_HOP_CPN_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(1034, 627);
+            this.ClientSize = new System.Drawing.Size(1034, 640);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tu_khoa);
             this.Controls.Add(this.m_dt_den_ngay);
@@ -509,6 +523,7 @@ namespace BCTKApp
             this.KeyPreview = true;
             //get_thoi_gian();
             m_cmd_tim_kiem.Visible = true;
+            m_cmd_tim_kiem.Enabled = true;
 
         }
 
@@ -690,7 +705,17 @@ namespace BCTKApp
             CExcelReport v_obj_excel_report = new CExcelReport("f405_Tra_cuc_so_Bill.xlsx", 6, 1);
             v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dt_tu_ngay.Text);
             v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dt_den_ngay.Text);
-            v_obj_excel_report.AddFindAndReplaceItem("<phong_ban>", m_cbo_ten_pb.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<phap_nhan>", m_cbo_ten_pb.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<trang_thai>", m_cbo_trang_thai.Text);
+            v_obj_excel_report.FindAndReplace(false);
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 3, m_fg.Cols.Count - 1, true);
+        }
+        private void export_2_excel_pn_pb()
+        {
+            CExcelReport v_obj_excel_report = new CExcelReport("f405_Tra_cuu_so_Bill_PN_PB.xlsx", 6, 1);
+            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dt_tu_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dt_den_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<phap_nhan>", m_cbo_ten_pb.Text);
             v_obj_excel_report.AddFindAndReplaceItem("<trang_thai>", m_cbo_trang_thai.Text);
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
@@ -750,6 +775,7 @@ namespace BCTKApp
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_tim_kiem.Click += new EventHandler(m_cmd_tim_kiem_Click);
+            m_cmd_xuat_excel_pn_pb.Click += new EventHandler(m_cmd_xuat_excel_pn_pb_Click);
         }
         #endregion
 
@@ -851,57 +877,57 @@ namespace BCTKApp
             }
         }
 
-        private void m_dt_tu_ngay_ValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                tim_kiem();
-            }
-            catch (Exception v_e)
-            {
+        //private void m_dt_tu_ngay_ValueChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        tim_kiem();
+        //    }
+        //    catch (Exception v_e)
+        //    {
 
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-
-
-
-        }
-
-        private void m_dt_den_ngay_ValueChanged(object sender, EventArgs e)
-        {
-
-            try
-            {
-                tim_kiem();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
 
 
-        }
 
-        private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (m_trang_thai == true)
-            {
-                tim_kiem();
-            }
-        }
+        //}
 
-        private void m_cbo_ten_pb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (m_trang_thai == true)
-            {
-                decimal v_dc_id_phong_ban = CIPConvert.ToDecimal(m_cbo_ten_pb.SelectedValue);
-                US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
-                DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
-                v_us.FillDataset(v_ds, "where id =" + v_dc_id_phong_ban);
-                tim_kiem();
-            }
-        }
+        //private void m_dt_den_ngay_ValueChanged(object sender, EventArgs e)
+        //{
+
+        //    try
+        //    {
+        //        tim_kiem();
+        //    }
+        //    catch (Exception v_e)
+        //    {
+
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
+
+
+        //}
+
+        //private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (m_trang_thai == true)
+        //    {
+        //        tim_kiem();
+        //    }
+        //}
+
+        //private void m_cbo_ten_pb_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (m_trang_thai == true)
+        //    {
+        //        decimal v_dc_id_phong_ban = CIPConvert.ToDecimal(m_cbo_ten_pb.SelectedValue);
+        //        US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+        //        DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+        //        v_us.FillDataset(v_ds, "where id =" + v_dc_id_phong_ban);
+        //        tim_kiem();
+        //    }
+        //}
 
         private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
         {
@@ -972,6 +998,17 @@ namespace BCTKApp
             catch (Exception v_e)
             {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_xuat_excel_pn_pb_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                export_2_excel_pn_pb();
+            }
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
