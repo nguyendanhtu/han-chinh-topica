@@ -29,6 +29,26 @@ namespace BCTKDS.CDBNames
         public const string TEN_PHAP_NHAN =  "TEN_PHAP_NHAN";
     }
 
+    public class V_TONG_HOP_CPN_THEO_PHONG_BAN_PN
+    {
+        public const string ID = "ID";
+        public const string NOI_DUNG = "NOI_DUNG";
+        public const string NOI_NHAN = "NOI_NHAN";
+        public const string NGUOI_NHAN = "NGUOI_NHAN";
+        public const string TRONG_NUOC = "TRONG_NUOC";
+        public const string NUOC_NGOAI = "NUOC_NGOAI";
+        public const string SO_BILL = "SO_BILL";
+        public const string NGUOI_GUI = "NGUOI_GUI";
+        public const string NGAY_GUI = "NGAY_GUI";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string TRANG_THAI = "TRANG_THAI";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
+    }
 
     public class RPT_BC_CHI_TIET_DM {
         public const string ID =  "ID";
