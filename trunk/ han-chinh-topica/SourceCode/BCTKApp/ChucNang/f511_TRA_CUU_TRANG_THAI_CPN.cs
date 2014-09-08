@@ -414,6 +414,7 @@ namespace BCTKApp
 		}
 		private void set_initial_form_load(){	
 			m_obj_trans = get_trans_object(m_grv_trang_thai);
+            m_dtp_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -578,8 +579,8 @@ namespace BCTKApp
             m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
             m_cmd_xuat_excel.Click+=new EventHandler(m_cmd_xuat_excel_Click);
             this.KeyDown+=new KeyEventHandler(f511_TRA_CUU_TRANG_THAI_CPN_KeyDown);
-            m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
-            m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
+            //m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
+            //m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
 		}
 		#endregion
 
