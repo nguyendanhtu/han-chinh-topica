@@ -355,7 +355,7 @@
             this.m_tm_bill_da_chuyen_cho_cpn.Location = new System.Drawing.Point(4, 22);
             this.m_tm_bill_da_chuyen_cho_cpn.Name = "m_tm_bill_da_chuyen_cho_cpn";
             this.m_tm_bill_da_chuyen_cho_cpn.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_bill_da_chuyen_cho_cpn.Size = new System.Drawing.Size(916, 360);
+            this.m_tm_bill_da_chuyen_cho_cpn.Size = new System.Drawing.Size(916, 340);
             this.m_tm_bill_da_chuyen_cho_cpn.TabIndex = 1;
             this.m_tm_bill_da_chuyen_cho_cpn.Text = "DS bill đã gửi thành công";
             this.m_tm_bill_da_chuyen_cho_cpn.UseVisualStyleBackColor = true;
@@ -395,7 +395,7 @@
             this.m_tm_bill_bi_tra_lai.Location = new System.Drawing.Point(4, 22);
             this.m_tm_bill_bi_tra_lai.Name = "m_tm_bill_bi_tra_lai";
             this.m_tm_bill_bi_tra_lai.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_bill_bi_tra_lai.Size = new System.Drawing.Size(916, 360);
+            this.m_tm_bill_bi_tra_lai.Size = new System.Drawing.Size(916, 340);
             this.m_tm_bill_bi_tra_lai.TabIndex = 2;
             this.m_tm_bill_bi_tra_lai.Text = "DS bill bị trả lại";
             this.m_tm_bill_bi_tra_lai.UseVisualStyleBackColor = true;
@@ -456,7 +456,7 @@
             this.m_tm_noi_bo_nhan_tra_lai.Location = new System.Drawing.Point(4, 22);
             this.m_tm_noi_bo_nhan_tra_lai.Name = "m_tm_noi_bo_nhan_tra_lai";
             this.m_tm_noi_bo_nhan_tra_lai.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tm_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(916, 360);
+            this.m_tm_noi_bo_nhan_tra_lai.Size = new System.Drawing.Size(916, 340);
             this.m_tm_noi_bo_nhan_tra_lai.TabIndex = 3;
             this.m_tm_noi_bo_nhan_tra_lai.Text = "DS bill đơn vị đã nhận trả lại";
             this.m_tm_noi_bo_nhan_tra_lai.UseVisualStyleBackColor = true;
@@ -521,6 +521,7 @@
             this.m_rdb_tat_ca.AutoSize = true;
             this.m_rdb_tat_ca.Checked = true;
             this.m_rdb_tat_ca.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_rdb_tat_ca.ForeColor = System.Drawing.Color.Maroon;
             this.m_rdb_tat_ca.Location = new System.Drawing.Point(212, 84);
             this.m_rdb_tat_ca.Name = "m_rdb_tat_ca";
             this.m_rdb_tat_ca.Size = new System.Drawing.Size(62, 20);
@@ -533,6 +534,7 @@
             // 
             this.m_rdb_chon_thang.AutoSize = true;
             this.m_rdb_chon_thang.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_rdb_chon_thang.ForeColor = System.Drawing.Color.Maroon;
             this.m_rdb_chon_thang.Location = new System.Drawing.Point(290, 84);
             this.m_rdb_chon_thang.Name = "m_rdb_chon_thang";
             this.m_rdb_chon_thang.Size = new System.Drawing.Size(92, 20);
@@ -544,6 +546,7 @@
             // 
             this.m_rdb_chon_ngay.AutoSize = true;
             this.m_rdb_chon_ngay.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_rdb_chon_ngay.ForeColor = System.Drawing.Color.Maroon;
             this.m_rdb_chon_ngay.Location = new System.Drawing.Point(397, 84);
             this.m_rdb_chon_ngay.Name = "m_rdb_chon_ngay";
             this.m_rdb_chon_ngay.Size = new System.Drawing.Size(88, 20);
