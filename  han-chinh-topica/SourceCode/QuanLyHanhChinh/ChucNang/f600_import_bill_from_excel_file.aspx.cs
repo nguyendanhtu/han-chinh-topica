@@ -212,13 +212,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             }
             v_ds_merge.Tables[0].Rows.Add(v_dr);
         }
-        CultureInfo v_ct = new CultureInfo("en-US");
-        for (int i = 0; i < v_ds_merge.Tables[0].Rows.Count; i++)
-        {
-            //string temp = DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).t
-            v_ds_merge.Tables[0].Rows[i][8] = DateTime.FromOADate(Convert.ToDouble(v_ds_merge.Tables[0].Rows[i][8])).ToString("dd/MM/yyyy");
-            //DateTime.Parse(DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).ToString(), v_ct);
-        }
+
         v_ds_merge.Tables[0].Columns[0].ColumnName = "STT";
         v_ds_merge.Tables[0].Columns[1].ColumnName = "NOI_DUNG";
         v_ds_merge.Tables[0].Columns[2].ColumnName = "NOI_NHAN";
