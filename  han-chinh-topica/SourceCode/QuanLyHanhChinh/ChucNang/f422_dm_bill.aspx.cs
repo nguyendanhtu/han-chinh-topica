@@ -110,7 +110,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_txt_nguoi_gui.Text = v_us_dm_bill.strNGUOI_GUI.Trim();
         m_txt_noi_dung.Text = v_us_dm_bill.strNOI_DUNG.Trim();
         m_txt_ghi_chu.Text = v_us_dm_bill.strGHI_CHU.Trim();
-        m_txt_ngay_gui.Text = v_us_dm_bill.datNGAY_GUI.ToShortDateString();
+        m_txt_ngay_gui.Text = v_us_dm_bill.datNGAY_GUI.ToString("dd/MM/yyyy");
         if (v_us_dm_bill.strTRONG_NUOC == "x")
         {
             m_rdb_trong_nuoc.Checked = true;
@@ -162,7 +162,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_txt_ghi_chu.Text = "";
         m_txt_nguoi_gui.Text = "";
         m_rdb_trong_nuoc.Checked = true;
-        m_txt_ngay_gui.Text = DateTime.Now.ToShortDateString();
+        m_txt_ngay_gui.Text = DateTime.Now.ToString("dd/MM/yyyy");
         this.m_hdf_id_bill.Value = "0";
         set_form_mode(LOAI_FORM.THEM);
         m_grv_dm_bill.SelectedIndex = -1;
@@ -170,7 +170,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     private void set_inital_form_mode()
     {
         load_title();
-        m_txt_ngay_gui.Text = DateTime.Now.ToShortDateString();
+        m_txt_ngay_gui.Text = DateTime.Now.ToString("dd/MM/yyyy");
         m_cmd_sua.Visible = false;
         m_cmd_them.Visible = true;
         load_data_to_grid();
@@ -219,28 +219,28 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     //}
     private bool check_so_bill()
     {
-       //decimal num;
-        //bool isNumberic = decimal.TryParse(m_txt_so_bill.Text, out num);
-        //if (!isNumberic)
-        //{
-        //    thong_bao("Số bill phải là kiểu số!");
-        //    return false;
-        //}
-        //else 
+        decimal num;
+        bool isNumberic = decimal.TryParse(m_txt_so_bill.Text, out num);
+        if (!isNumberic)
+        {
+            thong_bao("Số bill phải là kiểu số!");
+            return false;
+        }
+        else 
             return true;
     }
     private bool check_validate_is_ok()
     {
         string v_form_mode = get_form_mode(m_hdf_form_mode);
-        //if (v_form_mode.Equals(LOAI_FORM.THEM) || v_form_mode.Equals(LOAI_FORM.SUA))
-        //{
-        //    if (m_txt_so_bill.Text.Trim().Length != 8)
-        //    {
-        //        thong_bao("Số Bill gồm 8 chữ số!");
-        //        m_txt_so_bill.Focus();
-        //        return false;
-        //    }
-        //}
+        if (v_form_mode.Equals(LOAI_FORM.THEM) || v_form_mode.Equals(LOAI_FORM.SUA))
+        {
+            if (m_txt_so_bill.Text.Trim().Length != 8)
+            {
+                thong_bao("Số Bill gồm 8 chữ số!");
+                m_txt_so_bill.Focus();
+                return false;
+            }
+        }
 
         //Kiểm tra nhập trùng số Bill
         if (v_form_mode.Equals(LOAI_FORM.THEM))
