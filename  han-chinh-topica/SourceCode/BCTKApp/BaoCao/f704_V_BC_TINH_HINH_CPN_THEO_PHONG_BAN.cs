@@ -589,9 +589,9 @@ namespace BCTKApp
 
             m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
-            m_dt_tu_ngay.ValueChanged += new EventHandler(m_dt_tu_ngay_ValueChanged);
-            m_dt_den_ngay.ValueChanged += new EventHandler(m_dt_den_ngay_ValueChanged);
-            m_txt_tim_kiem.TextChanged += new EventHandler(m_txt_tim_kiem_TextChanged);
+            //m_dt_tu_ngay.ValueChanged += new EventHandler(m_dt_tu_ngay_ValueChanged);
+            //m_dt_den_ngay.ValueChanged += new EventHandler(m_dt_den_ngay_ValueChanged);
+            //m_txt_tim_kiem.TextChanged += new EventHandler(m_txt_tim_kiem_TextChanged);
         }
         #endregion
 
