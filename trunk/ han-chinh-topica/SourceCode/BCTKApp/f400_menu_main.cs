@@ -66,6 +66,7 @@ namespace BCTKApp
             m_cmd_duyet_don_hang.Click+=new EventHandler(m_cmd_duyet_don_hang_Click);
             m_cmd_bao_cao_tong_hop_chi_phi.Click+=new EventHandler(m_cmd_bao_cao_tong_hop_chi_phi_Click);
             m_cmd_tra_cuu_dh_VPP.Click += new EventHandler(m_cmd_tra_cuu_dh_VPP_Click);
+            m_cmd_DM_VPP.Click += m_cmd_DM_VPP_Click;
         }
 
         void f400_menu_main_Load(object sender, EventArgs e)
@@ -496,6 +497,18 @@ namespace BCTKApp
             {
 
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_DM_VPP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F603_cap_nhat_danh_sach_vpp v_frm = new F603_cap_nhat_danh_sach_vpp();
+                v_frm.ShowDialog();
+            }
+            catch (System.Exception ex)
+            {
+
             }
         }
     }

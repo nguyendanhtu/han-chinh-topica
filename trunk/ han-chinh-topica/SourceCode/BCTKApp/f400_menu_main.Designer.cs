@@ -36,9 +36,9 @@
             this.m_cmd_tra_cuu_dh_VPP = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_bao_cao_tong_hop_chi_phi = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_bar_nghiep_vu_VPP = new DevComponents.DotNetBar.RibbonBar();
-            this.m_cmd_tra_cuu_don_hang = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_gui_don_dh = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_duyet_don_hang = new DevComponents.DotNetBar.ButtonItem();
+            this.m_cmd_tra_cuu_don_hang = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_so_sanh_chi_phi_NCC = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_bar_danh_mục_VPP = new DevComponents.DotNetBar.RibbonBar();
             this.m_cmd_nha_cc = new DevComponents.DotNetBar.ButtonItem();
@@ -250,15 +250,6 @@
             // 
             this.m_rib_bar_nghiep_vu_VPP.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // m_cmd_tra_cuu_don_hang
-            // 
-            this.m_cmd_tra_cuu_don_hang.Icon = ((System.Drawing.Icon)(resources.GetObject("m_cmd_tra_cuu_don_hang.Icon")));
-            this.m_cmd_tra_cuu_don_hang.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Large;
-            this.m_cmd_tra_cuu_don_hang.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.m_cmd_tra_cuu_don_hang.Name = "m_cmd_tra_cuu_don_hang";
-            this.m_cmd_tra_cuu_don_hang.SubItemsExpandWidth = 14;
-            this.m_cmd_tra_cuu_don_hang.Text = "Nhập mã HD NCC";
-            // 
             // m_cmd_gui_don_dh
             // 
             this.m_cmd_gui_don_dh.Image = global::BCTKApp.Properties.Resources.lorrygreen;
@@ -276,6 +267,15 @@
             this.m_cmd_duyet_don_hang.Name = "m_cmd_duyet_don_hang";
             this.m_cmd_duyet_don_hang.SubItemsExpandWidth = 14;
             this.m_cmd_duyet_don_hang.Text = "Duyệt đơn hàng";
+            // 
+            // m_cmd_tra_cuu_don_hang
+            // 
+            this.m_cmd_tra_cuu_don_hang.Icon = ((System.Drawing.Icon)(resources.GetObject("m_cmd_tra_cuu_don_hang.Icon")));
+            this.m_cmd_tra_cuu_don_hang.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Large;
+            this.m_cmd_tra_cuu_don_hang.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.m_cmd_tra_cuu_don_hang.Name = "m_cmd_tra_cuu_don_hang";
+            this.m_cmd_tra_cuu_don_hang.SubItemsExpandWidth = 14;
+            this.m_cmd_tra_cuu_don_hang.Text = "Nhập mã HD NCC";
             // 
             // m_cmd_so_sanh_chi_phi_NCC
             // 
