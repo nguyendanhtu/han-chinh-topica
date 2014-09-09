@@ -542,6 +542,10 @@ namespace BCTKApp
             //get_thoi_gian();
             m_cmd_tim_kiem.Visible = true;
             m_cmd_tim_kiem.Enabled = true;
+            m_cmd_tim_kiem_bill_co_so_tien.Visible = true;
+            m_cmd_tim_kiem_bill_co_so_tien.Enabled = true;
+            m_cmd_xuat_excel_pn_pb.Visible = true;
+            m_cmd_xuat_excel_pn_pb.Enabled = true;
 
         }
 
@@ -791,6 +795,7 @@ namespace BCTKApp
             //v_obj_excel_report.AddFindAndReplaceItem("<trang_thai>", m_cbo_trang_thai.Text);
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 5, true);
+
         }
         private void insert_v_tong_hop_cpn_theo_phong_ban()
         {
