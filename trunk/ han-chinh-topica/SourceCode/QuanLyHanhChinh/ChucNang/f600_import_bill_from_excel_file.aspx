@@ -116,7 +116,7 @@
                     <asp:Label ID="ghi_chu_txt_box" runat="server" Text="Bill đã import hoặc chưa có số bill" CssClass="cssManField"></asp:Label>
 <asp:TextBox ID="TextBox1" runat="server" BackColor="LightPink" Width="40px" Height="20px" Enabled="false"></asp:TextBox>
 
-                    <asp:Label ID="Label3" runat="server" Text="Chưa nhập dữ liệu" CssClass="cssManField"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Chưa nhập dữ liệu hoặc dữ liệu lỗi" CssClass="cssManField"></asp:Label>
                 </td>
             </tr>
         </asp:Panel>
