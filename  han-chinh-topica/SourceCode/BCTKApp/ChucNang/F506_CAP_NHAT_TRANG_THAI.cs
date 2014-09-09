@@ -192,7 +192,13 @@ namespace BCTKApp
         }
         private void set_initial_form_load()
         {
-            m_dtp_tu_ngay.Value = DateTime.Now.Date;
+            //m_dtp_tu_ngay.Value = DateTime.Now.Date;
+            m_dtp_tu_ngay.Visible = false;
+            m_lbl_tu_ngay.Visible = false;
+            m_dtp_den_ngay.Visible = false;
+            m_lbl_den_ngay.Visible = false;
+            m_dtp_den_ngay.Value = DateTime.Now.Date;
+            this.m_dtp_tu_ngay.Value = new System.DateTime(2010, 1, 14, 0, 0, 0, 0);
             load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO,m_grv_da_nhan);
             load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN,m_grv_da_chuyen);
             load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI,m_grv_bi_tra_lai);
