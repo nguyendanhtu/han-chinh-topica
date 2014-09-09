@@ -181,7 +181,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 case "tad":
                     v_str_ma_phong_ban = "TMH";
                     v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
-                    v_dr["NOI_DUNG"] = v_ds_result.Tables[0].Rows[i][1].ToString();; // nội dung
+                    v_dr["NOI_DUNG"] = v_ds_result.Tables[0].Rows[i][1].ToString(); ; // nội dung
                     v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][2].ToString(); // nơi nhận
                     v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][3].ToString();
                     v_dr["TRONG_NUOC"] = "X"; // trong nước
@@ -208,7 +208,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                     v_dr["MA_PHONG_BAN"] = v_str_ma_phong_ban;
                     v_dr["TEN_PHONG_BAN"] = "TOS";
                     break;
-                
+
             }
             v_ds_merge.Tables[0].Rows.Add(v_dr);
         }
@@ -287,7 +287,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 v_us_dm_bill.strNGUOI_NHAN = v_txt_nguoi_nhan.Text.Trim();
                 v_us_dm_bill.strNOI_NHAN = v_txt_noi_nhan.Text.Trim();
                 v_us_dm_bill.strNOI_DUNG = v_txt_noi_dung_gui.Text.Trim();
-                v_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(v_txt_ngay_gui.Text.Trim(), "dd/MM/yyyy");
+                v_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(v_txt_ngay_gui.Text, "dd/MM/yyyy");
                 if (v_rdb_trong_nuoc.Checked == true)
                 {
                     v_us_dm_bill.strTRONG_NUOC = "x";
@@ -355,8 +355,29 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             // check so bill
             if (!v_txt_so_bill.Text.Equals("") && check_validate_is_having_so_bill(v_txt_so_bill.Text.Trim()))
             {
-                v_txt_so_bill.BackColor = v_color_normal;
-                v_txt_so_bill.ToolTip = "Đã có dữ liệu. Click nếu muốn thay đổi";
+                decimal num;
+                bool isNumberic = decimal.TryParse(v_txt_so_bill.Text, out num);
+                if (isNumberic == true && v_txt_so_bill.Text.Trim().Length == 8)
+                {
+                    v_txt_so_bill.BackColor = v_color_normal;
+                    v_txt_so_bill.ToolTip = "Đã có dữ liệu. Click nếu muốn thay đổi";
+                }
+                else
+                {
+                    if (isNumberic == false)
+                    {
+                        v_txt_so_bill.BackColor = v_color_dangerous;
+                        v_txt_so_bill.ToolTip = "Số bill phải là kiểu số. Click để sửa";
+                        v_b_result = false;
+                    }
+                     if (v_txt_so_bill.Text.Trim().Length != 8)
+                     {
+                         v_txt_so_bill.BackColor = v_color_dangerous;
+                         v_txt_so_bill.ToolTip = "Bạn phải nhập số bill có 8 chữ số";
+                         v_b_result = false;
+                     }
+                }
+               
                 //v_lbl_so_bill_message.Text = "Dữ liệu hợp lý!";
                 //v_lbl_so_bill_message.ForeColor = v_color_ok;
                 //v_lbl_so_bill_message.Font.Bold = true;
@@ -370,6 +391,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 //v_lbl_so_bill_message.Font.Bold = true;
                 v_b_result = false;
             }
+          
             ////check ma phong ban
             //if(!v_txt_ma_phong_ban.Text.Equals("") && v_str_ma_phong_ban.Contains(v_txt_ma_phong_ban.Text.Trim().ToUpper())) {
             //    v_txt_ma_phong_ban.BackColor = v_color_normal;
@@ -583,7 +605,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 save_grid_to_database();
             }
             else
-            thong_bao("Dữ liệu không hợp lệ, bạn hãy kiểm tra lại!");
+                thong_bao("Dữ liệu không hợp lệ, bạn hãy kiểm tra lại!");
         }
         catch (Exception v_e)
         {
