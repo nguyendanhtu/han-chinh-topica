@@ -212,7 +212,13 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             }
             v_ds_merge.Tables[0].Rows.Add(v_dr);
         }
-
+        CultureInfo v_ct = new CultureInfo("en-US");
+        for (int i = 0; i < v_ds_merge.Tables[0].Rows.Count; i++)
+        {
+            //string temp = DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).t
+            v_ds_merge.Tables[0].Rows[i][8] = DateTime.FromOADate(Convert.ToDouble(v_ds_merge.Tables[0].Rows[i][8])).ToString("dd/MM/yyyy");
+            //DateTime.Parse(DateTime.FromOADate(Convert.ToDouble(v_ds_result.Tables[0].Rows[i][8])).ToString(), v_ct);
+        }
         v_ds_merge.Tables[0].Columns[0].ColumnName = "STT";
         v_ds_merge.Tables[0].Columns[1].ColumnName = "NOI_DUNG";
         v_ds_merge.Tables[0].Columns[2].ColumnName = "NOI_NHAN";
@@ -287,7 +293,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 v_us_dm_bill.strNGUOI_NHAN = v_txt_nguoi_nhan.Text.Trim();
                 v_us_dm_bill.strNOI_NHAN = v_txt_noi_nhan.Text.Trim();
                 v_us_dm_bill.strNOI_DUNG = v_txt_noi_dung_gui.Text.Trim();
-                v_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(v_txt_ngay_gui.Text, "dd/MM/yyyy");
+                v_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(v_txt_ngay_gui.Text,"dd/MM/yyyy");
                 if (v_rdb_trong_nuoc.Checked == true)
                 {
                     v_us_dm_bill.strTRONG_NUOC = "x";
