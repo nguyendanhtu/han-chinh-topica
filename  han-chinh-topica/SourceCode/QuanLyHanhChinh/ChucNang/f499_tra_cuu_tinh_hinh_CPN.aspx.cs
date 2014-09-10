@@ -190,7 +190,7 @@ public partial class ChucNang_f499_tra_cuu_tinh_hinh_CPN : System.Web.UI.Page
             thong_bao("Bạn đã chọn khoảng thời gian không hợp lệ!", true);
             DateTime today = DateTime.Today;
             int numberOfDaysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
-            m_txt_tu_ngay.Text = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).ToShortDateString();
+            m_txt_tu_ngay.Text = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).ToString("dd/MM/yyyy");
             DateTime v_dat_den_ngay = new DateTime(today.Year, today.Month, numberOfDaysInMonth);
             m_txt_den_ngay.Text = v_dat_den_ngay.ToString("dd/MM/yyyy");
             return false;
