@@ -25,6 +25,7 @@ using BCTKDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using BCTKApp.BaoCao;
+using System.Collections.Generic;
 
 namespace BCTKApp
 {
@@ -92,6 +93,7 @@ namespace BCTKApp
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel_pn_pb;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem_bill_co_so_tien;
+        private C1FlexGrid m_fg_excel;
         private System.ComponentModel.IContainer components;
         private void InitializeComponent()
         {
@@ -121,8 +123,10 @@ namespace BCTKApp
             this.m_lbl_ghi_chu = new System.Windows.Forms.Label();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.m_cmd_tim_kiem_bill_co_so_tien = new SIS.Controls.Button.SiSButton();
+            this.m_fg_excel = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -437,10 +441,26 @@ namespace BCTKApp
             this.m_cmd_tim_kiem_bill_co_so_tien.TabIndex = 40;
             this.m_cmd_tim_kiem_bill_co_so_tien.Text = "Bill có số tiền";
             // 
+            // m_fg_excel
+            // 
+            this.m_fg_excel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_fg_excel.ColumnInfo = "0,0,0,0,0,85,Columns:";
+            this.m_fg_excel.Location = new System.Drawing.Point(26, 232);
+            this.m_fg_excel.Name = "m_fg_excel";
+            this.m_fg_excel.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
+            this.m_fg_excel.Size = new System.Drawing.Size(1022, 422);
+            this.m_fg_excel.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_excel.Styles"));
+            this.m_fg_excel.TabIndex = 20;
+            this.m_fg_excel.Visible = false;
+            this.m_fg_excel.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
+            // 
             // f405_V_TONG_HOP_CPN_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1034, 640);
+            this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_cmd_tim_kiem_bill_co_so_tien);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tu_khoa);
@@ -455,7 +475,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_lbl_den_ngay);
             this.Controls.Add(this.m_lbl_ten_pb);
             this.Controls.Add(this.m_lbl_header);
-            this.Controls.Add(this.m_fg);
+            this.Controls.Add(this.m_fg_excel);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f405_V_TONG_HOP_CPN_THEO_PHONG_BAN";
             this.Text = "F405- Tra cứu thông tin Bill";
@@ -463,6 +483,7 @@ namespace BCTKApp
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f405_V_TONG_HOP_CPN_THEO_PHONG_BAN_KeyDown);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,6 +498,7 @@ namespace BCTKApp
         #endregion
 
         #region Data Structure
+
         private enum e_col_Number
         {
             NUOC_NGOAI = 12
@@ -500,10 +522,12 @@ namespace BCTKApp
             NGUOI_GUI = 6
                 ,
             TRANG_THAI = 10
-                , NGAY_GUI = 3
-            ,TEN_PHAP_NHAN = 1
+                ,
+            NGAY_GUI = 3
+                , TEN_PHAP_NHAN = 1
 
         }
+
         #endregion
 
         #region Members
@@ -751,14 +775,14 @@ namespace BCTKApp
             v_us.FillDatasetSearch(v_ds, v_str_tu_khoa, v_id_phap_nhan, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai);
             //loai bo nhung bill khong co so tien
             for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
-			{
+            {
                 if (v_ds.Tables[0].Rows[i][V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.SO_TIEN].ToString().Trim().Equals(""))
                 {
                     v_ds.Tables[0].Rows.RemoveAt(i);
                     v_ds.AcceptChanges();
                     i--;
                 }
-			}
+            }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
@@ -778,13 +802,48 @@ namespace BCTKApp
         }
         private void export_2_excel()
         {
+
             CExcelReport v_obj_excel_report = new CExcelReport("f405_Tra_cuc_so_Bill.xls", 6, 2);
             v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dt_tu_ngay.Text);
             v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dt_den_ngay.Text);
             v_obj_excel_report.AddFindAndReplaceItem("<phap_nhan>", m_cbo_ten_pb.Text);
             //v_obj_excel_report.AddFindAndReplaceItem("<trang_thai>", m_cbo_trang_thai.Text);
             v_obj_excel_report.FindAndReplace(false);
-            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 3, m_fg.Cols.Count - 5, true);
+            DataSet v_ds = new DataSet();
+            v_ds=grid_to_dataset_export_excel(m_fg);
+            m_fg_excel.DataSource = v_ds.Tables[0];
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg_excel, 0, m_fg_excel.Cols.Count, true);
+        }
+        private DataSet grid_to_dataset_export_excel(C1FlexGrid ip_fg)
+        {
+            DataSet op_ds = new DataSet();
+            DataTable v_dt = new DataTable();
+            v_dt.Columns.Add("STT");
+            v_dt.Columns.Add("NOI_DUNG");
+            v_dt.Columns.Add("NGUOI_GUI");
+            v_dt.Columns.Add("NGUOI_NHAN");
+            v_dt.Columns.Add("NOI_NHAN");
+            v_dt.Columns.Add("NGAY_GUI");
+            v_dt.Columns.Add("SO_BILL");
+            v_dt.Columns.Add("SO_TIEN");
+            v_dt.Columns.Add("GHI_CHU");
+            op_ds.Tables.Add(v_dt);
+            for (int i = 1; i < ip_fg.Rows.Count; i++)
+            {
+                DataRow v_dr=v_dt.NewRow();
+                v_dr["STT"]=i+1;
+                v_dr["NOI_DUNG"] = ip_fg.Rows[i][(int)e_col_Number.NOI_DUNG] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.NOI_DUNG].ToString();
+                v_dr["NGUOI_GUI"] = ip_fg.Rows[i][(int)e_col_Number.NGUOI_GUI] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.NGUOI_GUI].ToString();
+                v_dr["NGUOI_NHAN"] = ip_fg.Rows[i][(int)e_col_Number.NGUOI_NHAN] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.NGUOI_NHAN].ToString();
+                v_dr["NOI_NHAN"] = ip_fg.Rows[i][(int)e_col_Number.NOI_NHAN] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.NOI_NHAN].ToString();
+                v_dr["NGAY_GUI"] = ip_fg.Rows[i][(int)e_col_Number.NGAY_GUI].ToString();
+                v_dr["SO_BILL"] = ip_fg.Rows[i][(int)e_col_Number.SO_BILL].ToString();
+                v_dr["SO_TIEN"] = ip_fg.Rows[i][(int)e_col_Number.SO_TIEN].ToString();
+                v_dr["GHI_CHU"] = ip_fg.Rows[i][(int)e_col_Number.GHI_CHU] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.GHI_CHU].ToString();
+                v_dt.Rows.Add(v_dr);
+            }
+            op_ds.AcceptChanges();
+            return op_ds;
         }
         private void export_2_excel_pn_pb()
         {
@@ -853,10 +912,10 @@ namespace BCTKApp
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_tim_kiem.Click += new EventHandler(m_cmd_tim_kiem_Click);
             m_cmd_xuat_excel_pn_pb.Click += new EventHandler(m_cmd_xuat_excel_pn_pb_Click);
-            m_cmd_tim_kiem_bill_co_so_tien.Click +=  new EventHandler(m_cmd_tim_kiem_bill_co_so_tien_Click);
+            m_cmd_tim_kiem_bill_co_so_tien.Click += new EventHandler(m_cmd_tim_kiem_bill_co_so_tien_Click);
         }
 
-        
+
         #endregion
 
         #region Event
