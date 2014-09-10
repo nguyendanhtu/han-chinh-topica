@@ -46,6 +46,7 @@ namespace BCTKApp
         private DateTimePicker m_dtp_tu_ngay;
         private Label label7;
         private Label m_lbl_tieu_de;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
 		private System.ComponentModel.IContainer components;
 
 		public f555_TONG_HOP_CHI_PHI_VPP()
@@ -99,6 +100,7 @@ namespace BCTKApp
             this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_tong_tien)).BeginInit();
             this.panel1.SuspendLayout();
@@ -232,6 +234,7 @@ namespace BCTKApp
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.m_dtp_den_ngay);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_dtp_tu_ngay);
@@ -294,6 +297,20 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Text = "TỔNG HỢP CHI PHÍ VĂN PHÒNG PHẨM";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(360, 78);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 36;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            // 
             // f555_TONG_HOP_CHI_PHI_VPP
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -337,7 +354,13 @@ namespace BCTKApp
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			CControlFormat.setC1FlexFormat(m_grv_tong_tien);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_tong_tien);
-            			CGridUtils.AddSearch_Handlers(m_grv_tong_tien);
+            CGridUtils.AddSearch_Handlers(m_grv_tong_tien);
+            m_cmd_search.Visible = true;
+            m_cmd_search.Enabled = true;
+            m_cmd_exit.Visible = true;
+            m_cmd_exit.Enabled = true;
+            m_cmd_xuat_excel.Visible = true;
+            m_cmd_xuat_excel.Enabled = true;
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -434,8 +457,9 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
-            m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
-            m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
+            m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
+            //m_dtp_tu_ngay.ValueChanged+=new EventHandler(m_dtp_tu_ngay_ValueChanged);
+            //m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
             this.KeyDown+=new KeyEventHandler(f555_TONG_HOP_CHI_PHI_VPP_KeyDown);
 		}
 		#endregion
@@ -500,7 +524,7 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-        private void m_dtp_tu_ngay_ValueChanged(object sender, EventArgs e)
+        private void m_cmd_search_Click(object sender, EventArgs e)
         {
             try
             {
