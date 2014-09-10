@@ -97,8 +97,10 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_trang_thai = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_top = new System.Windows.Forms.Panel();
+            this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
+            this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -109,8 +111,6 @@ namespace BCTKApp
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
-            this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai)).BeginInit();
             this.m_pnl_top.SuspendLayout();
@@ -216,8 +216,20 @@ namespace BCTKApp
             this.m_pnl_top.Size = new System.Drawing.Size(884, 190);
             this.m_pnl_top.TabIndex = 21;
             // 
+            // m_dtp_tu_ngay
+            // 
+            this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(317, 45);
+            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
+            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(139, 23);
+            this.m_dtp_tu_ngay.TabIndex = 35;
+            this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
+            // 
             // m_cbo_trung_tam
             // 
+            this.m_cbo_trung_tam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trung_tam.FormattingEnabled = true;
             this.m_cbo_trung_tam.Location = new System.Drawing.Point(317, 80);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
@@ -226,12 +238,25 @@ namespace BCTKApp
             // 
             // m_cbo_trang_thai
             // 
-            this.m_cbo_trang_thai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.m_cbo_trang_thai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trang_thai.FormattingEnabled = true;
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(317, 117);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(228, 21);
             this.m_cbo_trang_thai.TabIndex = 4;
+            // 
+            // m_dtp_den_ngay
+            // 
+            this.m_dtp_den_ngay.Checked = false;
+            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_den_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(542, 46);
+            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
+            this.m_dtp_den_ngay.RightToLeftLayout = true;
+            this.m_dtp_den_ngay.Size = new System.Drawing.Size(126, 23);
+            this.m_dtp_den_ngay.TabIndex = 2;
+            this.m_dtp_den_ngay.Value = new System.DateTime(2014, 6, 30, 9, 16, 0, 0);
             // 
             // label8
             // 
@@ -330,30 +355,6 @@ namespace BCTKApp
             this.m_lbl_tieu_de.TabIndex = 27;
             this.m_lbl_tieu_de.Text = "TRA CỨU TRẠNG THÁI CPN";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // m_dtp_tu_ngay
-            // 
-            this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(317, 45);
-            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
-            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(139, 23);
-            this.m_dtp_tu_ngay.TabIndex = 35;
-            this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
-            // 
-            // m_dtp_den_ngay
-            // 
-            this.m_dtp_den_ngay.Checked = false;
-            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_den_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_den_ngay.Location = new System.Drawing.Point(542, 46);
-            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
-            this.m_dtp_den_ngay.RightToLeftLayout = true;
-            this.m_dtp_den_ngay.Size = new System.Drawing.Size(126, 23);
-            this.m_dtp_den_ngay.TabIndex = 2;
-            this.m_dtp_den_ngay.Value = new System.DateTime(2014, 6, 30, 9, 16, 0, 0);
             // 
             // f511_TRA_CUU_TRANG_THAI_CPN
             // 

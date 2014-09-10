@@ -300,6 +300,7 @@ namespace BCTKApp
             // 
             // m_cbo_loai_dinh_muc
             // 
+            this.m_cbo_loai_dinh_muc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_loai_dinh_muc.FormattingEnabled = true;
             this.m_cbo_loai_dinh_muc.Location = new System.Drawing.Point(335, 4);
             this.m_cbo_loai_dinh_muc.Name = "m_cbo_loai_dinh_muc";
