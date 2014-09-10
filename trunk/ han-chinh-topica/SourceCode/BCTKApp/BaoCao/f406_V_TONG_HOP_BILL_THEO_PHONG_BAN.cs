@@ -237,8 +237,8 @@ namespace BCTKApp
             // m_fg
             // 
             this.m_fg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 130);
             this.m_fg.Name = "m_fg";
@@ -287,7 +287,7 @@ namespace BCTKApp
             this.m_cbo_trang_thai.FormattingEnabled = true;
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(822, 51);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
-            this.m_cbo_trang_thai.Size = new System.Drawing.Size(58, 22);
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(58, 21);
             this.m_cbo_trang_thai.TabIndex = 25;
             this.m_cbo_trang_thai.Visible = false;
             this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
@@ -355,10 +355,11 @@ namespace BCTKApp
             // 
             // m_cbo_phap_nhan
             // 
+            this.m_cbo_phap_nhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_phap_nhan.FormattingEnabled = true;
             this.m_cbo_phap_nhan.Location = new System.Drawing.Point(442, 51);
             this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
-            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(154, 22);
+            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(154, 21);
             this.m_cbo_phap_nhan.TabIndex = 30;
             // 
             // label1
