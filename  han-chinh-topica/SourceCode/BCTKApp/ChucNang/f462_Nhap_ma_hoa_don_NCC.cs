@@ -806,7 +806,7 @@ namespace BCTKApp
         {
             try
             {
-                if (m_fg_don_dat_hang.Rows[m_fg_don_dat_hang.Row].IsNode)
+                if (m_fg_don_dat_hang.Rows.Count == 1)
                 {
                     return;
                 }
