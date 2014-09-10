@@ -355,6 +355,8 @@ namespace BCTKApp
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
             			CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
+            m_cmd_tim_kiem.Visible = true;
+            m_cmd_tim_kiem.Enabled = true;
 			this.KeyPreview = true;		
 		}
 		private void set_initial_form_load(){						
@@ -447,10 +449,13 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-            m_dat_tu_ngay.ValueChanged += new EventHandler(m_dat_tu_ngay_ValueChanged);
-            m_dat_den_ngay.ValueChanged += new EventHandler(m_dat_den_ngay_ValueChanged);
+            m_cmd_tim_kiem.Click += new EventHandler(m_cmd_tim_kiem_Click);
+            //m_dat_tu_ngay.ValueChanged += new EventHandler(m_dat_tu_ngay_ValueChanged);
+            //m_dat_den_ngay.ValueChanged += new EventHandler(m_dat_den_ngay_ValueChanged);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
 		}
+
+        
         
 		#endregion
 
@@ -545,6 +550,14 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+        private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+        {
+            try{
+				load_data_2_grid();
+			}
+			catch (Exception v_e){
+				CSystemLog_301.ExceptionHandle(v_e);
+        }
 
 	}
 }
