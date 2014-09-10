@@ -551,11 +551,14 @@ this.ResumeLayout(false);
 		}
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
         {
-            try{
-				load_data_2_grid();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
 	}
