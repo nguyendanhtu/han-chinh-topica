@@ -803,7 +803,7 @@ namespace BCTKApp
         private void export_2_excel()
         {
 
-            CExcelReport v_obj_excel_report = new CExcelReport("f405_Tra_cuc_so_Bill.xls", 6, 2);
+            CExcelReport v_obj_excel_report = new CExcelReport("f405_Tra_cuc_so_Bill_new.xls", 6, 1);
             v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dt_tu_ngay.Text);
             v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dt_den_ngay.Text);
             v_obj_excel_report.AddFindAndReplaceItem("<phap_nhan>", m_cbo_ten_pb.Text);
@@ -811,8 +811,8 @@ namespace BCTKApp
             v_obj_excel_report.FindAndReplace(false);
             DataSet v_ds = new DataSet();
             v_ds=grid_to_dataset_export_excel(m_fg);
-            m_fg_excel.DataSource = v_ds.Tables[0];
-            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg_excel, 0, m_fg_excel.Cols.Count, true);
+            m_fg_excel.DataSource = v_ds.Tables[0].DefaultView;
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg_excel, 0, m_fg_excel.Cols.Count -1, true);
         }
         private DataSet grid_to_dataset_export_excel(C1FlexGrid ip_fg)
         {
@@ -831,7 +831,7 @@ namespace BCTKApp
             for (int i = 1; i < ip_fg.Rows.Count; i++)
             {
                 DataRow v_dr=v_dt.NewRow();
-                v_dr["STT"]=i+1;
+                v_dr["STT"]=i;
                 v_dr["NOI_DUNG"] = ip_fg.Rows[i][(int)e_col_Number.NOI_DUNG] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.NOI_DUNG].ToString();
                 v_dr["NGUOI_GUI"] = ip_fg.Rows[i][(int)e_col_Number.NGUOI_GUI] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.NGUOI_GUI].ToString();
                 v_dr["NGUOI_NHAN"] = ip_fg.Rows[i][(int)e_col_Number.NGUOI_NHAN] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.NGUOI_NHAN].ToString();
