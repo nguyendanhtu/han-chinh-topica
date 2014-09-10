@@ -314,6 +314,7 @@ namespace BCTKApp
             m_cmd_duyet.Visible = true;
             m_cmd_duyet.Enabled = true;
             m_cmd_exit.Visible = true;
+            m_cmd_exit.Enabled = true;
             m_cmd_khong_duyet.Visible = true;
             m_cmd_khong_duyet.Enabled = true;
 			set_define_events();
