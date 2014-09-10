@@ -311,6 +311,11 @@ namespace BCTKApp
 			CGridUtils.AddSave_Excel_Handlers(m_grv_don_hang);
             CGridUtils.AddSearch_Handlers(m_grv_don_hang);
             load_data_2_cbo_trung_tam();
+            m_cmd_duyet.Visible = true;
+            m_cmd_duyet.Enabled = true;
+            m_cmd_exit.Visible = true;
+            m_cmd_khong_duyet.Visible = true;
+            m_cmd_khong_duyet.Enabled = true;
 			set_define_events();
 			this.KeyPreview = true;		
 		}
