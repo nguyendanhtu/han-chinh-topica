@@ -43,7 +43,7 @@ namespace BCTKApp
         private Label m_lbl_tieu_de;
         private Label m_lbl_trung_tam;
         private Label m_lbl_ma_hd;
-        private Label label2;
+        private Label m_lbl_ma_hoa_don;
         private Label m_lbl_tong_tien;
         private Label m_lbl_tong;
         private Label m_lbl_ten_trung_tam;
@@ -96,7 +96,7 @@ namespace BCTKApp
             this.m_grv_don_hang_de = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_ma_hd = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.m_lbl_ma_hoa_don = new System.Windows.Forms.Label();
             this.m_lbl_tong_tien = new System.Windows.Forms.Label();
             this.m_lbl_tong = new System.Windows.Forms.Label();
             this.m_lbl_ten_trung_tam = new System.Windows.Forms.Label();
@@ -236,7 +236,7 @@ namespace BCTKApp
             // panel1
             // 
             this.panel1.Controls.Add(this.m_lbl_ma_hd);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.m_lbl_ma_hoa_don);
             this.panel1.Controls.Add(this.m_lbl_tong_tien);
             this.panel1.Controls.Add(this.m_lbl_tong);
             this.panel1.Controls.Add(this.m_lbl_ten_trung_tam);
@@ -258,15 +258,15 @@ namespace BCTKApp
             this.m_lbl_ma_hd.TabIndex = 34;
             this.m_lbl_ma_hd.Text = "...............";
             // 
-            // label2
+            // m_lbl_ma_hoa_don
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(281, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 16);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Mã hóa đơn : ";
+            this.m_lbl_ma_hoa_don.AutoSize = true;
+            this.m_lbl_ma_hoa_don.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ma_hoa_don.Location = new System.Drawing.Point(281, 74);
+            this.m_lbl_ma_hoa_don.Name = "m_lbl_ma_hoa_don";
+            this.m_lbl_ma_hoa_don.Size = new System.Drawing.Size(88, 16);
+            this.m_lbl_ma_hoa_don.TabIndex = 33;
+            this.m_lbl_ma_hoa_don.Text = "Mã hóa đơn : ";
             // 
             // m_lbl_tong_tien
             // 
@@ -381,10 +381,14 @@ namespace BCTKApp
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             m_lbl_trung_tam.Font = new System.Drawing.Font("Tahoma", 13, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             m_lbl_ten_trung_tam.Font = new System.Drawing.Font("Tahoma", 13, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            m_lbl_ma_hd.Font = new System.Drawing.Font("Tahoma", 13, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            m_lbl_ma_hoa_don.Font = new System.Drawing.Font("Tahoma", 13, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			CControlFormat.setC1FlexFormat(m_grv_don_hang_de);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_don_hang_de);
             CGridUtils.AddSearch_Handlers(m_grv_don_hang_de);
 			set_define_events();
+            m_cmd_exit.Visible = true;
+            m_cmd_exit.Enabled = true;            
 			this.KeyPreview = true;		
 		}
 		private void set_initial_form_load(){						

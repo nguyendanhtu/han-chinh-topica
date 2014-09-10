@@ -342,6 +342,8 @@ namespace BCTKApp
             CGridUtils.AddSearch_Handlers(m_grv_don_hang);
             m_dtp_thang.Value = DateTime.Now.Date;
             load_data_2_cbo_trung_tam();
+            m_cmd_exit.Visible = true;
+            m_cmd_exit.Enabled = true; 
 			set_define_events();
 			this.KeyPreview = true;		
 		}
