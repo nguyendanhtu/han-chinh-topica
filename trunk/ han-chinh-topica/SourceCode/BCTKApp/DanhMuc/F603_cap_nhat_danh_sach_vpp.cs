@@ -347,6 +347,14 @@ namespace BCTKApp
             CGridUtils.AddSearch_Handlers(m_fg);
             m_fg.ExtendLastCol = true;
             m_fg.AutoClipboard = true;
+            m_cmd_chon_file_bang_gia.Visible = true;
+            m_cmd_chon_file_bang_gia.Enabled = true;
+            m_cmd_exit.Visible = true;
+            m_cmd_exit.Enabled = true;
+            m_cmd_hien_thi_du_lieu.Visible = true;
+            m_cmd_hien_thi_du_lieu.Enabled = true;
+            m_cmd_cap_nhat_danh_sach_vpp.Visible = true;
+            m_cmd_cap_nhat_danh_sach_vpp.Enabled = true;
             set_define_events();
             this.KeyPreview = true;
         }
