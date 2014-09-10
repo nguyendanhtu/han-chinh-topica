@@ -364,6 +364,10 @@ namespace BCTKApp
             load_data_2_cbo_trung_tam();
             m_cmd_search.Visible = true;
             m_cmd_search.Enabled = true;
+            m_cmd_xuat_excel.Visible = true;
+            m_cmd_xuat_excel.Enabled = true;
+            m_cmd_exit.Visible = true;
+            m_cmd_exit.Enabled = true;
             set_define_events();
 			this.KeyPreview = true;		
 		}
