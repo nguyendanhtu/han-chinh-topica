@@ -82,12 +82,12 @@
         <tr>
             <td style="text-align: center" colspan="8">
                 <span>Bạn thuộc phòng ban nào</span>
-                <asp:RadioButton ID="m_rdb_tad" Text="Mẫu chung" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tad_CheckedChanged"/>
+                <asp:RadioButton ID="m_rdb_tad" Text="Mẫu chung" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tad_CheckedChanged" />
                 <asp:RadioButton ID="m_rdb_tawl" Text="TAW-L" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tawl_CheckedChanged" />
                 <asp:RadioButton ID="m_rdb_tawh" Text="TAW-H" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tawh_CheckedChanged" />
                 <asp:RadioButton ID="m_rdb_thm" Text="TMH" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_thm_CheckedChanged" />
                 <asp:RadioButton ID="m_rdb_tne" Text="TNE" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tne_CheckedChanged" />
-                <asp:RadioButton ID="m_rdb_tos" Text="TOS" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tos_CheckedChanged"/>
+                <asp:RadioButton ID="m_rdb_tos" Text="TOS" runat="server" GroupName="pb" AutoPostBack="true" OnCheckedChanged="m_rdb_tos_CheckedChanged" />
             </td>
         </tr>
         <asp:Panel ID="m_pnl_import" runat="server">
@@ -104,17 +104,17 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="8" style="text-align:center">
+                <td colspan="8" style="text-align: center">
                     <asp:Label ID="Label2" runat="server" CssClass="cssManField" Font-Bold="true"></asp:Label>
                     <asp:Label ID="Label1" runat="server" Text="Bước 1:" CssClass="cssManField" Font-Bold="true"></asp:Label>
                     <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" EnableViewState="false" BorderStyle="Groove" BackColor="SteelBlue" ForeColor="White" BorderColor="WhiteSmoke" ToolTip="Chọn đường dẫn đến file Excel DS Bill cần gửi" />
-                    <asp:Button ID="m_cmd_upload" runat="Server" Text="Bước 2: Hiển thị danh sách Bill" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
+                    <asp:Button ID="m_cmd_upload" runat="Server" Text="Bước 2:Kiểm tra và Gửi cho TAD" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
                     <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
-                    <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Bước 3:Kiểm tra và Gửi cho TAD" CssClass="cssGoogleButton"
+                    <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Bước 2:Kiểm tra và Gửi cho TAD" CssClass="cssGoogleButton"
                         OnClick="m_cmd_kiem_tra_va_import_Click" />
                     <asp:TextBox ID="ghi_chu_box" runat="server" BackColor="LightGreen" Width="40px" Height="20px" Enabled="false"></asp:TextBox>
                     <asp:Label ID="ghi_chu_txt_box" runat="server" Text="Bill đã import hoặc chưa có số bill" CssClass="cssManField"></asp:Label>
-<asp:TextBox ID="TextBox1" runat="server" BackColor="LightPink" Width="40px" Height="20px" Enabled="false"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" BackColor="LightPink" Width="40px" Height="20px" Enabled="false"></asp:TextBox>
 
                     <asp:Label ID="Label3" runat="server" Text="Chưa nhập dữ liệu hoặc dữ liệu lỗi" CssClass="cssManField"></asp:Label>
                 </td>
@@ -152,19 +152,25 @@
                                     <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
                                     <HeaderStyle CssClass="GridViewHeaderStyle" />
                                     <Columns>
-                                        <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderText="STT" ItemStyle-Width="4%" ItemStyle-Height="40px" HeaderStyle-Height="40px">
+                                        <asp:BoundField HeaderText="STT" DataField="STT" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="4%" HeaderStyle-Width="44px" />
+                                        <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
                                             <ItemTemplate>
-                                                <%# Container.DataItemIndex + 1 %>
+                                                <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
+                                                    OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
+                                            <img src="../Images/Button/deletered.png" alt="Delete" />
+                                                </asp:LinkButton>
                                             </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Center" />
+                                            <ItemStyle />
                                         </asp:TemplateField>
                                         <asp:TemplateField ItemStyle-Width="10%" HeaderText="Nội dung" ItemStyle-VerticalAlign="Top">
                                             <ItemTemplate>
                                                 <asp:TextBox ID="m_txt_noi_dung_grid" CssClass="cssTextBoxGrid" AutoPostBack="false" TextMode="MultiLine" ToolTip="Nhập nội dung gửi" runat="server" Text='<%#Eval("NOI_DUNG") %>'></asp:TextBox>
                                                 <%-- <br />--%>
                                                 <%--<asp:Label ID="m_lbl_noi_dung_message" runat="Server" CssClass="cssManField"></asp:Label>--%>
+                                                <asp:HiddenField ID="m_hdf_stt" runat="server" Value='<%#Eval("STT") %>' />
                                             </ItemTemplate>
                                         </asp:TemplateField>
+                                        
                                         <asp:TemplateField ItemStyle-Width="15%" HeaderText="Nơi nhận" ItemStyle-VerticalAlign="Top">
                                             <ItemTemplate>
                                                 <asp:TextBox ID="m_txt_noi_nhan_grid" CssClass="cssTextBoxGrid" AutoPostBack="false" TextMode="MultiLine" ToolTip="Nơi nhận không hợp lệ" runat="server" Text='<%#Eval("NOI_NHAN") %>'></asp:TextBox>

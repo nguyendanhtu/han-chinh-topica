@@ -57,7 +57,7 @@ public class Person
         {
             if (get_chuc_nang_without_query() == "Default.aspx") return true;
             if (get_chuc_nang_without_query() == "Account/ChangePassword.aspx") return true;
-
+            if (get_chuc_nang_without_query().Contains("MessageError.aspx")) return true;
             if (CIPConvert.ToDecimal(v_obj_id_user_login) == -1)
             {
                 return false;

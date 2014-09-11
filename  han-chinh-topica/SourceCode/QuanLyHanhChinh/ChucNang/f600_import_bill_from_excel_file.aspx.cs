@@ -26,7 +26,89 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     #endregion
 
     #region Data Structures
+    public class CImportBillExcelWeb
+    {
+        private string _STT;
+        private string _NOI_DUNG;
+        private string _NOI_NHAN;
+        private string _NGUOI_NHAN;
+        private string _TRONG_NUOC;
+        private string _NGOAI_NUOC;
+        private string _SO_BILL;
+        private string _NGUOI_GUI;
+        private string _NGAY_GUI;
+        private string _GHI_CHU;
+        private string _MA_PHONG_BAN;
+        private string _TEN_PHONG_BAN;
+        private string _TRANG_THAI;
+        public string STT
+        {
+            get { return _STT; }
+            set { _STT = value; }
+        }
+        public string NOI_DUNG
+        {
+            get { return _NOI_DUNG; }
+            set { _NOI_DUNG = value; }
+        }
+        public string NOI_NHAN
+        {
+            get { return _NOI_NHAN; }
+            set { _NOI_NHAN = value; }
+        }
+        public string NGUOI_NHAN
+        {
+            get { return _NGUOI_NHAN; }
+            set { _NGUOI_NHAN = value; }
+        }
+        public string TRONG_NUOC
+        {
+            get { return _TRONG_NUOC; }
+            set { _TRONG_NUOC = value; }
+        }
+        public string NGOAI_NUOC
+        {
+            get { return _NGOAI_NUOC; }
+            set { _NGOAI_NUOC = value; }
+        }
+        public string SO_BILL
+        {
+            get { return _SO_BILL; }
+            set { _SO_BILL = value; }
+        }
+        public string NGUOI_GUI
+        {
+            get { return _NGUOI_GUI; }
+            set { _NGUOI_GUI = value; }
+        }
+        public string NGAY_GUI
+        {
+            get { return _NGAY_GUI; }
+            set { _NGAY_GUI = value; }
+        }
+        public string GHI_CHU
+        {
+            get { return _GHI_CHU; }
+            set { _GHI_CHU = value; }
+        }
+        public string MA_PHONG_BAN
+        {
+            get { return _MA_PHONG_BAN; }
+            set { _MA_PHONG_BAN = value; }
+        }
+        public string TEN_PHONG_BAN
+        {
+            get { return _TEN_PHONG_BAN; }
+            set { _TEN_PHONG_BAN = value; }
+        }
+        public string TRANG_THAI
+        {
+            get { return _TRANG_THAI; }
+            set { _TRANG_THAI = value; }
+        }
 
+        public CImportBillExcelWeb() { }
+    }
     #endregion
 
     #region Private Methods
@@ -38,6 +120,8 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
         m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
         m_lbl_thong_tim_grv_dm_bill.Text = "(Chưa có Bill nào được import)";
+        m_cmd_upload.Visible = true;
+        m_cmd_kiem_tra_va_import.Visible = false;
     }
     private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
     {
@@ -87,12 +171,14 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     }
     private void excel_file_to_grid(GridView ip_grv, int ip_i_start_row, string ip_str_file_dir)
     {
+
         m_hdf_so_ban_ghi.Value = "0";
         FileStream v_fs_stream = File.Open(ip_str_file_dir, FileMode.Open, FileAccess.Read);
         IExcelDataReader v_edr = ExcelReaderFactory.CreateBinaryReader(v_fs_stream);
         DataSet v_ds_result = v_edr.AsDataSet();
 
-        DS_RPT_DS_IMPORT_BILL_EXCEL_WEB v_ds_merge = new DS_RPT_DS_IMPORT_BILL_EXCEL_WEB();
+        //DS_RPT_DS_IMPORT_BILL_EXCEL_WEB v_ds_merge = new DS_RPT_DS_IMPORT_BILL_EXCEL_WEB();
+        List<CImportBillExcelWeb> lst_import = new List<CImportBillExcelWeb>();
         if (ip_i_start_row < v_ds_result.Tables[0].Rows.Count)
         {
             for (int i = 0; i < ip_i_start_row; i++)
@@ -114,129 +200,204 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         }
         for (int i = 0; i < v_i_row_count; i++)
         {
-            DataRow v_dr = v_ds_merge.Tables[0].NewRow();
+            //DataRow v_dr = v_ds_merge.Tables[0].NewRow();
+            CImportBillExcelWeb v_bill = new CImportBillExcelWeb();
+            v_bill.TRANG_THAI = "KHONG_DAT";
             string v_str_ma_phong_ban = "";
             switch (m_hdf_phong_ban.Value)
             {
                 case "tawl":
                     v_str_ma_phong_ban = "TAW";
-                    v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
-                    v_dr["NOI_DUNG"] = v_ds_result.Tables[0].Rows[i][5].ToString(); // nội dung
-                    v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][10].ToString(); // nơi nhận
-                    v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][3].ToString() + " " + v_ds_result.Tables[0].Rows[i][4].ToString(); //người nhận
-                    v_dr["TRONG_NUOC"] = "X"; // trong nước
-                    v_dr["NUOC_NGOAI"] = "";   //ngoài nước
-                    v_dr["SO_BILL"] = v_ds_result.Tables[0].Rows[i][2].ToString();
-                    v_dr["NGUOI_GUI"] = v_ds_result.Tables[0].Rows[i][12].ToString();
-                    v_dr["NGAY_GUI"] = v_ds_result.Tables[0].Rows[i][13];
-                    v_dr["GHI_CHU"] = "";
-                    v_dr["MA_PHONG_BAN"] = v_str_ma_phong_ban;
-                    v_dr["TEN_PHONG_BAN"] = "TAW - Tư vấn tuyển sinh";
+                    v_bill.STT = "0";// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
+                    v_bill.NOI_DUNG = v_ds_result.Tables[0].Rows[i][5].ToString(); // nội dung
+                    v_bill.NOI_NHAN = v_ds_result.Tables[0].Rows[i][10].ToString(); // nơi nhận
+                    v_bill.NGUOI_NHAN = v_ds_result.Tables[0].Rows[i][3].ToString() + " " + v_ds_result.Tables[0].Rows[i][4].ToString(); //người nhận
+                    v_bill.TRONG_NUOC = "X"; // trong nước
+                    v_bill.NGOAI_NUOC = "";   //ngoài nước
+                    v_bill.SO_BILL = v_ds_result.Tables[0].Rows[i][2].ToString();
+                    v_bill.NGUOI_GUI = v_ds_result.Tables[0].Rows[i][12].ToString();
+                    v_bill.NGAY_GUI = v_ds_result.Tables[0].Rows[i][13].ToString();
+                    v_bill.GHI_CHU = "";
+                    v_bill.MA_PHONG_BAN = v_str_ma_phong_ban;
+                    v_bill.TEN_PHONG_BAN = "TAW - Tư vấn tuyển sinh";
                     break;
                 case "tawh":
                     v_str_ma_phong_ban = "TAW";
-                    v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
-                    v_dr["NOI_DUNG"] = ""; // nội dung
-                    v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][10].ToString(); // nơi nhận
-                    v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][7].ToString();
-                    v_dr["TRONG_NUOC"] = "X"; // trong nước
-                    v_dr["NUOC_NGOAI"] = "";   //ngoài nước
-                    v_dr["SO_BILL"] = v_ds_result.Tables[0].Rows[i][12].ToString();
-                    v_dr["NGUOI_GUI"] = v_ds_result.Tables[0].Rows[i][2].ToString();
-                    v_dr["NGAY_GUI"] = v_ds_result.Tables[0].Rows[i][1];
-                    v_dr["GHI_CHU"] = "";
-                    v_dr["MA_PHONG_BAN"] = v_str_ma_phong_ban;
-                    v_dr["TEN_PHONG_BAN"] = "TAW - Tư vấn tuyển sinh";
+                    v_bill.STT = "0";// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
+                    v_bill.NOI_DUNG = ""; // nội dung
+                    v_bill.NOI_NHAN = v_ds_result.Tables[0].Rows[i][10].ToString(); // nơi nhận
+                    v_bill.NGUOI_NHAN = v_ds_result.Tables[0].Rows[i][7].ToString();
+                    v_bill.TRONG_NUOC = "X"; // trong nước
+                    v_bill.NGOAI_NUOC = "";   //ngoài nước
+                    v_bill.SO_BILL = v_ds_result.Tables[0].Rows[i][12].ToString();
+                    v_bill.NGUOI_GUI = v_ds_result.Tables[0].Rows[i][2].ToString();
+                    v_bill.NGAY_GUI = v_ds_result.Tables[0].Rows[i][1].ToString();
+                    v_bill.GHI_CHU = "";
+                    v_bill.MA_PHONG_BAN = v_str_ma_phong_ban;
+                    v_bill.TEN_PHONG_BAN = "TAW - Tư vấn tuyển sinh";
                     break;
                 case "tne":
                     v_str_ma_phong_ban = "TNE";
-                    v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
-                    v_dr["NOI_DUNG"] = ""; // nội dung
-                    v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][4].ToString(); // nơi nhận
-                    v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][1].ToString() + " " + v_ds_result.Tables[0].Rows[i][3].ToString(); //người nhận
-                    v_dr["TRONG_NUOC"] = "X"; // trong nước
-                    v_dr["NUOC_NGOAI"] = "";   //ngoài nước
-                    v_dr["SO_BILL"] = v_ds_result.Tables[0].Rows[i][6].ToString();
-                    v_dr["NGUOI_GUI"] = v_ds_result.Tables[0].Rows[i][8].ToString();
-                    v_dr["NGAY_GUI"] = v_ds_result.Tables[0].Rows[i][7];
-                    v_dr["GHI_CHU"] = "";
-                    v_dr["MA_PHONG_BAN"] = v_str_ma_phong_ban;
-                    v_dr["TEN_PHONG_BAN"] = "TNE-Trung tâm Đào tạo NEU-EDUTOP";
+                    v_bill.STT = "0";// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
+                    v_bill.NOI_DUNG = ""; // nội dung
+                    v_bill.NOI_NHAN = v_ds_result.Tables[0].Rows[i][4].ToString(); // nơi nhận
+                    v_bill.NGUOI_NHAN = v_ds_result.Tables[0].Rows[i][1].ToString() + " " + v_ds_result.Tables[0].Rows[i][2].ToString(); //người nhận
+                    v_bill.TRONG_NUOC = "X"; // trong nước
+                    v_bill.NGOAI_NUOC = "";   //ngoài nước
+                    v_bill.SO_BILL = v_ds_result.Tables[0].Rows[i][6].ToString();
+                    v_bill.NGUOI_GUI = v_ds_result.Tables[0].Rows[i][8].ToString();
+                    v_bill.NGAY_GUI = v_ds_result.Tables[0].Rows[i][7].ToString();
+                    v_bill.GHI_CHU = "";
+                    v_bill.MA_PHONG_BAN = v_str_ma_phong_ban;
+                    v_bill.TEN_PHONG_BAN = "TNE-Trung tâm Đào tạo NEU-EDUTOP";
                     break;
                 case "tmh":
                     v_str_ma_phong_ban = "TMH";
-                    v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
-                    v_dr["NOI_DUNG"] = ""; // nội dung
-                    v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][10].ToString(); // nơi nhận
-                    v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][7].ToString();
-                    v_dr["TRONG_NUOC"] = "X"; // trong nước
-                    v_dr["NUOC_NGOAI"] = "";   //ngoài nước
-                    v_dr["SO_BILL"] = v_ds_result.Tables[0].Rows[i][12].ToString();
-                    v_dr["NGUOI_GUI"] = v_ds_result.Tables[0].Rows[i][2].ToString();
-                    v_dr["NGAY_GUI"] = v_ds_result.Tables[0].Rows[i][1];
-                    v_dr["GHI_CHU"] = "";
-                    v_dr["MA_PHONG_BAN"] = v_str_ma_phong_ban;
-                    v_dr["TEN_PHONG_BAN"] = "TMH-Trung tâm Đào tạo TOPICA - HOU";
+                    v_bill.STT = "0";// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
+                    v_bill.NOI_DUNG = ""; // nội dung
+                    v_bill.NOI_NHAN = v_ds_result.Tables[0].Rows[i][10].ToString(); // nơi nhận
+                    v_bill.NGUOI_NHAN = v_ds_result.Tables[0].Rows[i][7].ToString();
+                    v_bill.TRONG_NUOC = "X"; // trong nước
+                    v_bill.NGOAI_NUOC = "";   //ngoài nước
+                    v_bill.SO_BILL = v_ds_result.Tables[0].Rows[i][12].ToString();
+                    v_bill.NGUOI_GUI = v_ds_result.Tables[0].Rows[i][2].ToString();
+                    v_bill.NGAY_GUI = v_ds_result.Tables[0].Rows[i][1].ToString();
+                    v_bill.GHI_CHU = "";
+                    v_bill.MA_PHONG_BAN = v_str_ma_phong_ban;
+                    v_bill.TEN_PHONG_BAN = "TMH-Trung tâm Đào tạo TOPICA - HOU";
                     break;
                 case "tad":
                     v_str_ma_phong_ban = "TMH";
-                    v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
-                    v_dr["NOI_DUNG"] = v_ds_result.Tables[0].Rows[i][1].ToString(); ; // nội dung
-                    v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][2].ToString(); // nơi nhận
-                    v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][3].ToString();
-                    v_dr["TRONG_NUOC"] = "X"; // trong nước
-                    v_dr["NUOC_NGOAI"] = "";   //ngoài nước
-                    v_dr["SO_BILL"] = v_ds_result.Tables[0].Rows[i][6].ToString();
-                    v_dr["NGUOI_GUI"] = v_ds_result.Tables[0].Rows[i][7].ToString();
-                    v_dr["NGAY_GUI"] = v_ds_result.Tables[0].Rows[i][8];
-                    v_dr["GHI_CHU"] = v_ds_result.Tables[0].Rows[i][9];
-                    v_dr["MA_PHONG_BAN"] = v_str_ma_phong_ban;
-                    v_dr["TEN_PHONG_BAN"] = "TAD";
+                    v_bill.STT = "0";// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
+                    v_bill.NOI_DUNG = v_ds_result.Tables[0].Rows[i][1].ToString(); ; // nội dung
+                    v_bill.NOI_NHAN = v_ds_result.Tables[0].Rows[i][2].ToString(); // nơi nhận
+                    v_bill.NGUOI_NHAN = v_ds_result.Tables[0].Rows[i][3].ToString();
+                    v_bill.TRONG_NUOC = "X"; // trong nước
+                    v_bill.NGOAI_NUOC = "";   //ngoài nước
+                    v_bill.SO_BILL = v_ds_result.Tables[0].Rows[i][6].ToString();
+                    v_bill.NGUOI_GUI = v_ds_result.Tables[0].Rows[i][7].ToString();
+                    v_bill.NGAY_GUI = v_ds_result.Tables[0].Rows[i][8].ToString();
+                    v_bill.GHI_CHU = v_ds_result.Tables[0].Rows[i][9].ToString();
+                    v_bill.MA_PHONG_BAN = v_str_ma_phong_ban;
+                    v_bill.TEN_PHONG_BAN = "TAD";
                     break;
                 case "tos":
                     v_str_ma_phong_ban = "TMH";
-                    v_dr["STT"] = 0;// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
-                    v_dr["NOI_DUNG"] = v_ds_result.Tables[0].Rows[i][1].ToString(); ; // nội dung
-                    v_dr["NOI_NHAN"] = v_ds_result.Tables[0].Rows[i][2].ToString(); // nơi nhận
-                    v_dr["NGUOI_NHAN"] = v_ds_result.Tables[0].Rows[i][3].ToString();
-                    v_dr["TRONG_NUOC"] = "X"; // trong nước
-                    v_dr["NUOC_NGOAI"] = "";   //ngoài nước
-                    v_dr["SO_BILL"] = v_ds_result.Tables[0].Rows[i][6].ToString();
-                    v_dr["NGUOI_GUI"] = v_ds_result.Tables[0].Rows[i][7].ToString();
-                    v_dr["NGAY_GUI"] = v_ds_result.Tables[0].Rows[i][8];
-                    v_dr["GHI_CHU"] = v_ds_result.Tables[0].Rows[i][9];
-                    v_dr["MA_PHONG_BAN"] = v_str_ma_phong_ban;
-                    v_dr["TEN_PHONG_BAN"] = "TOS";
+                    v_bill.STT = "0";// CIPConvert.ToDecimal(v_ds_result.Tables[0].Rows[i][0]); //stt
+                    v_bill.NOI_DUNG = v_ds_result.Tables[0].Rows[i][1].ToString(); ; // nội dung
+                    v_bill.NOI_NHAN = v_ds_result.Tables[0].Rows[i][2].ToString(); // nơi nhận
+                    v_bill.NGUOI_NHAN = v_ds_result.Tables[0].Rows[i][3].ToString();
+                    v_bill.TRONG_NUOC = "X"; // trong nước
+                    v_bill.NGOAI_NUOC = "";   //ngoài nước
+                    v_bill.SO_BILL = v_ds_result.Tables[0].Rows[i][6].ToString();
+                    v_bill.NGUOI_GUI = v_ds_result.Tables[0].Rows[i][7].ToString();
+                    v_bill.NGAY_GUI = v_ds_result.Tables[0].Rows[i][8].ToString();
+                    v_bill.GHI_CHU = v_ds_result.Tables[0].Rows[i][9].ToString();
+                    v_bill.MA_PHONG_BAN = v_str_ma_phong_ban;
+                    v_bill.TEN_PHONG_BAN = "TOS";
                     break;
 
             }
-            v_ds_merge.Tables[0].Rows.Add(v_dr);
+            //v_ds_merge.Tables[0].Rows.Add(v_dr);
+            v_bill.STT = (i + 1).ToString();
+            lst_import.Add(v_bill);
         }
-
-        v_ds_merge.Tables[0].Columns[0].ColumnName = "STT";
-        v_ds_merge.Tables[0].Columns[1].ColumnName = "NOI_DUNG";
-        v_ds_merge.Tables[0].Columns[2].ColumnName = "NOI_NHAN";
-        v_ds_merge.Tables[0].Columns[3].ColumnName = "NGUOI_NHAN";
-        v_ds_merge.Tables[0].Columns[4].ColumnName = "TRONG_NUOC";
-        v_ds_merge.Tables[0].Columns[5].ColumnName = "NGOAI_NUOC";
-        v_ds_merge.Tables[0].Columns[6].ColumnName = "SO_BILL";
-        v_ds_merge.Tables[0].Columns[7].ColumnName = "NGUOI_GUI";
-        v_ds_merge.Tables[0].Columns[8].ColumnName = "NGAY_GUI";
-        v_ds_merge.Tables[0].Columns[9].ColumnName = "GHI_CHU";
-        v_ds_merge.Tables[0].Columns[10].ColumnName = "MA_PHONG_BAN";
-        v_ds_merge.Tables[0].Columns[11].ColumnName = "TEN_PHONG_BAN";
-
-        ip_grv.DataSource = v_ds_merge.Tables[0];
-
-        m_hdf_so_ban_ghi.Value = (v_ds_merge.Tables[0].Rows.Count).ToString();
-        m_grv_dm_bill.Visible = true;
-        ip_grv.DataBind();
-        m_lbl_thong_tim_grv_dm_bill.Text = "( Có " + m_hdf_so_ban_ghi.Value.ToString() + " bản ghi)";
+        Session["TempImportExcel"] = null;
+        Session["TempImportExcel"] = lst_import;
+        List<CImportBillExcelWeb> lst_err = loc_danh_sach_bill_khong_hop_le(lst_import);
+        if (lst_err.Count == 0)
+        {
+            save_data_to_database();
+            m_cmd_upload.Visible = true;
+            m_cmd_kiem_tra_va_import.Visible = false;
+            thong_bao("Đã cập nhật thành công " + lst_import.Count + " bill!");
+            m_lbl_thong_tim_grv_dm_bill.Text = "Đã cập nhật thành công " + lst_import.Count + " bill!";
+            m_grv_dm_bill.DataSource = null;
+            m_grv_dm_bill.DataBind();
+        }
+        else
+        {
+            string v_str_mess = "Có tất cả " + lst_import.Count + " bill. Trong đó có " + (lst_import.Count - lst_err.Count) + " bill hợp lệ và " + lst_err.Count + " bill không hợp lệ bên dưới. Bạn hãy sửa chúng!";
+            ip_grv.DataSource = lst_err;
+            //m_hdf_so_ban_ghi.Value = (lst_import.Count).ToString();
+            m_grv_dm_bill.Visible = true;
+            ip_grv.DataBind();
+            m_lbl_thong_tim_grv_dm_bill.Text = v_str_mess;
+            //check_validate_grid_is_ok();
+        }
+        
         //v_edr.Close();
     }
-    private void save_grid_to_database()
+
+    public void list_to_grid()
     {
-        US_DM_BILL v_us_dm_bill;
+        List<CImportBillExcelWeb> lst_import = (List<CImportBillExcelWeb>)Session["TempImportExcel"];
+        List<CImportBillExcelWeb> lst_err = loc_danh_sach_bill_khong_hop_le(lst_import);
+        if (lst_err.Count == 0)
+        {
+            save_data_to_database();
+            m_cmd_upload.Visible = true;
+            m_cmd_kiem_tra_va_import.Visible = false;
+            Session["TempImportExcel"] = null;
+            thong_bao("Đã cập nhật thành công " + lst_import.Count + " bill!");
+            m_lbl_thong_tim_grv_dm_bill.Text = "Đã cập nhật thành công " + lst_import.Count + " bill!";
+            m_grv_dm_bill.DataSource = null;
+            m_grv_dm_bill.DataBind();
+        }
+        else
+        {
+            string v_str_mess = "Có tất cả " + lst_import.Count + " bill. Trong đó có " + (lst_import.Count - lst_err.Count) + " bill hợp lệ và " + lst_err.Count + " bill không hợp lệ bên dưới. Bạn hãy sửa chúng!";
+            m_grv_dm_bill.DataSource = lst_err;
+            //m_hdf_so_ban_ghi.Value = (lst_import.Count).ToString();
+            m_grv_dm_bill.Visible = true;
+            m_grv_dm_bill.DataBind();
+            m_lbl_thong_tim_grv_dm_bill.Text = v_str_mess;
+            //check_validate_grid_is_ok();
+        }
+    }
+    public List<CImportBillExcelWeb> loc_danh_sach_bill_khong_hop_le(List<CImportBillExcelWeb> ip_lst)
+    {
+        List<CImportBillExcelWeb> lst_result = new List<CImportBillExcelWeb>();
+        for (int i = 0; i < ip_lst.Count; i++)
+        {
+            CImportBillExcelWeb v_bill = new CImportBillExcelWeb();
+            v_bill = ip_lst[i];
+            if (v_bill.NGUOI_GUI.Equals("") | v_bill.NGUOI_NHAN.Equals("") | v_bill.SO_BILL.Length != 8 | !isNumber(v_bill.SO_BILL) | !check_validate_so_bill_is_ok(v_bill.SO_BILL))
+                lst_result.Add(v_bill);
+        }
+        return lst_result;
+    }
+    private void save_data_to_database()
+    {
+        List<CImportBillExcelWeb> lst_import = new List<CImportBillExcelWeb>();
+        lst_import = (List<CImportBillExcelWeb>)Session["TempImportExcel"];
+        US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
+        DS_DM_PHONG_BAN v_ds_dm_phong_ban = new DS_DM_PHONG_BAN();
+        v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban, "where id=" + CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value));
+        if (v_ds_dm_phong_ban.DM_PHONG_BAN.Count >= 1)
+            for (int i = 0; i < lst_import.Count; i++)
+            {
+                US_DM_BILL v_us = new US_DM_BILL();
+                v_us.dcID_PHONG_BAN = CIPConvert.ToDecimal(v_ds_dm_phong_ban.DM_PHONG_BAN[0][0]);
+                v_us.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
+                v_us.strSO_BILL = lst_import[i].SO_BILL;
+                v_us.strGHI_CHU = lst_import[i].GHI_CHU;
+                v_us.strNGUOI_GUI = lst_import[i].NGUOI_GUI;
+                v_us.strNGUOI_NHAN = lst_import[i].NGUOI_NHAN;
+                v_us.strNOI_NHAN = lst_import[i].NOI_NHAN;
+                v_us.strNOI_DUNG = lst_import[i].NOI_DUNG;
+                v_us.datNGAY_GUI = CIPConvert.ToDatetime(lst_import[i].NGAY_GUI, "dd/MM/yyyy");
+                v_us.strNUOC_NGOAI = lst_import[i].NGOAI_NUOC;
+                v_us.strTRONG_NUOC = lst_import[i].TRONG_NUOC;
+                v_us.Insert();
+
+            }
+        Session["TempImportExcel"] = null;
+    }
+    private void save_grid_to_list()
+    {
+        List<CImportBillExcelWeb> lst_import=new List<CImportBillExcelWeb>();
+        lst_import = (List<CImportBillExcelWeb>)Session["TempImportExcel"];
         GridViewRow[] v_arr_gvr = new GridViewRow[m_grv_dm_bill.Rows.Count];
         System.Web.UI.WebControls.TextBox v_txt_so_bill;
         System.Web.UI.WebControls.TextBox v_txt_ma_phong_ban;
@@ -246,6 +407,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         System.Web.UI.WebControls.TextBox v_txt_noi_dung_gui;
         System.Web.UI.WebControls.TextBox v_txt_noi_ghi_chu;
         System.Web.UI.WebControls.RadioButton v_rdb_trong_nuoc;
+        System.Web.UI.WebControls.HiddenField v_hdf_stt;
         m_grv_dm_bill.Rows.CopyTo(v_arr_gvr, 0);
 
         //Phải chia nhỏ để insert nếu số lượng bản ghi lớn
@@ -263,55 +425,49 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             v_txt_noi_dung_gui = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_noi_dung_grid");
             v_txt_noi_ghi_chu = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_ghi_chu_grid");
             v_rdb_trong_nuoc = (System.Web.UI.WebControls.RadioButton)v_arr_gvr[i].FindControl("m_rdb_trong_nuoc");
-            //v_dat_ngay_gui = (eWorld.UI.CalendarPopup)v_arr_gvr[i].FindControl("m_dat_ngay_gui");
+            v_hdf_stt = (System.Web.UI.WebControls.HiddenField)v_arr_gvr[i].FindControl("m_hdf_stt");
             System.Web.UI.WebControls.TextBox v_txt_ngay_gui = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_ngay_gui_grid");
-
-
-            US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
-            DS_DM_PHONG_BAN v_ds_dm_phong_ban = new DS_DM_PHONG_BAN();
-            // chỗ này kiêm tra điêu kiên phân quyen du lieu
-            // chi cho luu du lieu cua phong ban duoc phan quyen
-
-            //em bỏ check ơr ma phong ban roi
-            if (CIPConvert.ToDecimal(m_hdf_so_ban_ghi.Value) == m_grv_dm_bill.PageIndex) return;
-            v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban, "where id=" + CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value));
-            if (v_ds_dm_phong_ban.DM_PHONG_BAN.Count < 1) continue;
+            int v_index =findBillHaveSTT(lst_import, v_hdf_stt.Value);
+            lst_import[v_index].SO_BILL = v_txt_so_bill.Text.Trim();
+            lst_import[v_index].MA_PHONG_BAN = v_txt_ma_phong_ban.Text;
+            lst_import[v_index].NGUOI_NHAN = v_txt_nguoi_nhan.Text;
+            lst_import[v_index].NGUOI_GUI = v_txt_nguoi_gui.Text;
+            lst_import[v_index].NOI_NHAN = v_txt_noi_nhan.Text;
+            lst_import[v_index].NOI_DUNG = v_txt_noi_dung_gui.Text;
+            lst_import[v_index].GHI_CHU = v_txt_noi_ghi_chu.Text;
+            if (v_rdb_trong_nuoc.Checked == true)
+            {
+                lst_import[v_index].TRONG_NUOC = "X";
+                lst_import[v_index].NGOAI_NUOC = "";
+            }
             else
             {
-                v_us_dm_bill = new US_DM_BILL();
-                v_us_dm_bill.dcID_PHONG_BAN = CIPConvert.ToDecimal(v_ds_dm_phong_ban.DM_PHONG_BAN[0][0]);
-                v_us_dm_bill.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
-                v_us_dm_bill.strSO_BILL = v_txt_so_bill.Text.Trim();
-                v_us_dm_bill.strGHI_CHU = v_txt_noi_ghi_chu.Text.Trim();
-                v_us_dm_bill.strNGUOI_GUI = v_txt_nguoi_gui.Text.Trim();
-                v_us_dm_bill.strNGUOI_NHAN = v_txt_nguoi_nhan.Text.Trim();
-                v_us_dm_bill.strNOI_NHAN = v_txt_noi_nhan.Text.Trim();
-                v_us_dm_bill.strNOI_DUNG = v_txt_noi_dung_gui.Text.Trim();
-                v_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(v_txt_ngay_gui.Text,"dd/MM/yyyy");
-                if (v_rdb_trong_nuoc.Checked == true)
-                {
-                    v_us_dm_bill.strTRONG_NUOC = "x";
-                    v_us_dm_bill.SetNUOC_NGOAINull();
-                }
-                else
-                {
-                    v_us_dm_bill.SetTRONG_NUOCNull();
-                    v_us_dm_bill.strNUOC_NGOAI = "x";
-                }
-                v_us_dm_bill.Insert();
+                lst_import[v_index].TRONG_NUOC = "";
+                lst_import[v_index].NGOAI_NUOC = "X";
+            }
 
+        }
+        Session["TempImportExcel"] = null;
+        Session["TempImportExcel"] = lst_import;
+    }
+    public int findBillHaveSTT(List<CImportBillExcelWeb> ip_lst, string ip_str_stt)
+    {
+        CImportBillExcelWeb v_bill = new CImportBillExcelWeb();
+        int i=0;
+        for ( i= 0; i < ip_lst.Count; i++)
+        {
+            if (ip_lst[i].STT == ip_str_stt)
+            {
+                v_bill = ip_lst[i];
+                break;
             }
         }
-        thong_bao("Đã import thành công " + (m_grv_dm_bill.PageIndex + 1) + "/" + m_grv_dm_bill.PageCount, true);
-        excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
-        m_grv_dm_bill.PageIndex = m_grv_dm_bill.PageIndex + 1;
-        if (m_grv_dm_bill.PageCount == m_grv_dm_bill.PageIndex)
-        {
-            m_grv_dm_bill.DataSource = null;
-            m_grv_dm_bill.Visible = false;
-            delete_file_imported(m_hdf_dir_save_excel.Value);
-        }
-        m_grv_dm_bill.DataBind();
+        return i;
+    }
+    public bool isNumber(string ip_str)
+    {
+        decimal num;
+        return decimal.TryParse(ip_str, out num);
     }
     private bool check_validate_grid_is_ok()
     {
@@ -353,7 +509,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             //System.Web.UI.WebControls.Label v_lbl_noi_nhan_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_noi_nhan_message");
             //System.Web.UI.WebControls.Label v_lbl_noi_dung_gui_message = (System.Web.UI.WebControls.Label)v_arr_gvr[i].FindControl("m_lbl_noi_dung_message");
             // check so bill
-            if (!v_txt_so_bill.Text.Equals("") && check_validate_is_having_so_bill(v_txt_so_bill.Text.Trim()))
+            if (!v_txt_so_bill.Text.Equals("") && check_validate_so_bill_is_ok(v_txt_so_bill.Text.Trim()))
             {
                 decimal num;
                 bool isNumberic = decimal.TryParse(v_txt_so_bill.Text, out num);
@@ -370,14 +526,14 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                         v_txt_so_bill.ToolTip = "Số bill phải là kiểu số. Click để sửa";
                         v_b_result = false;
                     }
-                     if (v_txt_so_bill.Text.Trim().Length != 8)
-                     {
-                         v_txt_so_bill.BackColor = v_color_dangerous;
-                         v_txt_so_bill.ToolTip = "Bạn phải nhập số bill có 8 chữ số";
-                         v_b_result = false;
-                     }
+                    if (v_txt_so_bill.Text.Trim().Length != 8)
+                    {
+                        v_txt_so_bill.BackColor = v_color_dangerous;
+                        v_txt_so_bill.ToolTip = "Bạn phải nhập số bill có 8 chữ số";
+                        v_b_result = false;
+                    }
                 }
-               
+
                 //v_lbl_so_bill_message.Text = "Dữ liệu hợp lý!";
                 //v_lbl_so_bill_message.ForeColor = v_color_ok;
                 //v_lbl_so_bill_message.Font.Bold = true;
@@ -391,7 +547,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 //v_lbl_so_bill_message.Font.Bold = true;
                 v_b_result = false;
             }
-          
+
             ////check ma phong ban
             //if(!v_txt_ma_phong_ban.Text.Equals("") && v_str_ma_phong_ban.Contains(v_txt_ma_phong_ban.Text.Trim().ToUpper())) {
             //    v_txt_ma_phong_ban.BackColor = v_color_normal;
@@ -531,7 +687,15 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 break;
         }
     }
-
+    public bool check_validate_so_bill_is_ok(string ip_str_so_bill)
+    {
+        bool v_b_result = true;
+        US_DM_BILL v_us_dm_bill = new US_DM_BILL();
+        DS_DM_BILL v_ds_dm_bill = new DS_DM_BILL();
+        v_us_dm_bill.FillDataset(v_ds_dm_bill, "where so_bill = '" + ip_str_so_bill + "'");
+        if (v_ds_dm_bill.DM_BILL.Count > 0) v_b_result = false;
+        return v_b_result;
+    }
     #endregion
 
     #region Events
@@ -585,7 +749,8 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 {
                     thong_bao("Bạn phải import file excel .xls", true);
                 }
-
+                m_cmd_upload.Visible = false;
+                m_cmd_kiem_tra_va_import.Visible = true;
             }
         }
         catch (Exception v_e)
@@ -599,32 +764,39 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     {
         try
         {
-            if (check_validate_grid_is_ok())
-            {
-                // excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
-                save_grid_to_database();
-            }
-            else
-                thong_bao("Dữ liệu không hợp lệ, bạn hãy kiểm tra lại!");
+            save_grid_to_list();
+            list_to_grid();
+            check_validate_grid_is_ok();
         }
         catch (Exception v_e)
         {
-            m_grv_dm_bill.DataSource = null;
-            m_grv_dm_bill.DataBind();
-            thong_bao("Import không thành công. Lỗi: " + v_e.ToString());
+            //m_grv_dm_bill.DataSource = null;
+            //m_grv_dm_bill.DataBind();
+            //thong_bao("Import không thành công. Lỗi: " + v_e.ToString());
         }
 
     }
     protected void m_grv_dm_bill_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-
+        HiddenField v_hdf_stt=(HiddenField)(m_grv_dm_bill.Rows[e.RowIndex]).FindControl("m_hdf_stt");
+        List<CImportBillExcelWeb> lst_import = new List<CImportBillExcelWeb>();
+        lst_import = (List<CImportBillExcelWeb>)Session["TempImportExcel"];
+        int v_index = findBillHaveSTT(lst_import, v_hdf_stt.Value);
+        lst_import.RemoveAt(v_index);
+        Session["TempImportExcel"] = null;
+        Session["TempImportExcel"] = lst_import;
+        list_to_grid();
+        check_validate_grid_is_ok();
     }
     protected void m_grv_dm_bill_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         try
         {
             m_grv_dm_bill.PageIndex = e.NewPageIndex;
-            excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
+            List<CImportBillExcelWeb> lst_import = new List<CImportBillExcelWeb>();
+            lst_import = (List<CImportBillExcelWeb>)Session["TempImportExcel"];
+            m_grv_dm_bill.DataSource = lst_import;
+            m_grv_dm_bill.DataBind();
             check_validate_grid_is_ok();
         }
         catch (Exception v_e)
@@ -633,15 +805,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    private bool check_validate_is_having_so_bill(string ip_str_so_bill)
-    {
-        bool v_b_result = true;
-        US_DM_BILL v_us_dm_bill = new US_DM_BILL();
-        DS_DM_BILL v_ds_dm_bill = new DS_DM_BILL();
-        v_us_dm_bill.FillDataset(v_ds_dm_bill, "where so_bill = '" + ip_str_so_bill + "'");
-        if (v_ds_dm_bill.DM_BILL.Count > 0) v_b_result = false;
-        return v_b_result;
-    }
+    
     protected void m_cmd_ok_Click(object sender, EventArgs e)
     {
         try

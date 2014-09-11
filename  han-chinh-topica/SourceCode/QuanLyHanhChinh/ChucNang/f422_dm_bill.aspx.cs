@@ -88,7 +88,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_us_dm_bill.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
         m_us_dm_bill.strGHI_CHU = m_txt_ghi_chu.Text.Trim();
         m_us_dm_bill.dcSO_TIEN = 0;
-        m_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(m_txt_ngay_gui.Text);
+        m_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(m_txt_ngay_gui.Text,"dd/MM/yyyy");
         m_us_dm_bill.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         m_us_dm_bill.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
         if (m_rdb_trong_nuoc.Checked == true)
