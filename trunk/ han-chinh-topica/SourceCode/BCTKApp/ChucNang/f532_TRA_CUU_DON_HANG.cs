@@ -45,6 +45,7 @@ namespace BCTKApp
         private DateTimePicker m_dtp_thang;
         private Label label7;
         private Label m_lbl_tieu_de;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
 		private System.ComponentModel.IContainer components;
 
 		public f532_TRA_CUU_DON_HANG()
@@ -98,6 +99,7 @@ namespace BCTKApp
             this.m_dtp_thang = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -223,14 +225,15 @@ namespace BCTKApp
             // 
             this.m_grv_don_hang.ColumnInfo = resources.GetString("m_grv_don_hang.ColumnInfo");
             this.m_grv_don_hang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_don_hang.Location = new System.Drawing.Point(0, 133);
+            this.m_grv_don_hang.Location = new System.Drawing.Point(0, 153);
             this.m_grv_don_hang.Name = "m_grv_don_hang";
-            this.m_grv_don_hang.Size = new System.Drawing.Size(751, 393);
+            this.m_grv_don_hang.Size = new System.Drawing.Size(751, 373);
             this.m_grv_don_hang.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_don_hang.Styles"));
             this.m_grv_don_hang.TabIndex = 20;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.m_cbo_trung_tam);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_dtp_thang);
@@ -239,7 +242,7 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(751, 127);
+            this.panel1.Size = new System.Drawing.Size(751, 147);
             this.panel1.TabIndex = 22;
             // 
             // m_cbo_trung_tam
@@ -293,6 +296,20 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Text = "TRA CỨU ĐƠN HÀNG THEO TỪNG TRUNG TÂM";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(336, 109);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 39;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            // 
             // f532_TRA_CUU_DON_HANG
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -343,7 +360,9 @@ namespace BCTKApp
             m_dtp_thang.Value = DateTime.Now.Date;
             load_data_2_cbo_trung_tam();
             m_cmd_exit.Visible = true;
-            m_cmd_exit.Enabled = true; 
+            m_cmd_exit.Enabled = true;
+            m_cmd_search.Visible = true;
+            m_cmd_search.Enabled = true;
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -459,8 +478,8 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_xuat_excel.Click += new EventHandler(m_cmd_view_Click);
-            m_dtp_thang.ValueChanged+=new EventHandler(m_dtp_thang_ValueChanged);
-            m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
+            m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
+            //m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
             m_grv_don_hang.DoubleClick+=new EventHandler(m_grv_don_hang_DoubleClick);
             this.KeyDown+=new KeyEventHandler(f532_TRA_CUU_DON_HANG_KeyDown);
 		}
@@ -539,7 +558,7 @@ namespace BCTKApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-        private void m_dtp_thang_ValueChanged(object sender, EventArgs e)
+        private void m_cmd_search_Click(object sender, EventArgs e)
         {
             try
             {
