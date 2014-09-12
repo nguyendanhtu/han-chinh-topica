@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using IP.Core.IPCommon;
+using System.Net;
 
 namespace BCTKApp.App_Code
 {
@@ -51,6 +52,33 @@ namespace BCTKApp.App_Code
                 ip_graphics.DrawString(ip_str_du_lieu_dien
                     , v_font, ip_str_font_color, v_pointf);
             }
+        }
+        public static bool SendEmailHanhChinhTopica(string ip_str_toEmail, string ip_str_subject, string ip_str_noi_dung)
+        {
+            try
+            {
+                string fromAddress = "topica.quanlyhanhchinh@gmail.com";// Gmail Address from where you send the mail
+                string toAddress = ip_str_toEmail;
+                const string fromPassword = "quanlyhanhchinh1992";//Password of your gmail address
+                string subject = ip_str_subject;
+                string body = ip_str_noi_dung;
+                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
+                {
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                    smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
+                    smtp.Timeout = 20000;
+                }
+                smtp.Send(fromAddress, toAddress, subject, body);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
     }
 }

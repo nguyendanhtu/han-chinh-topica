@@ -15,6 +15,8 @@ using IP.Core.IPUserService;
 using BCTKDS;
 using BCTKDS.CDBNames;
 using System.Globalization;
+using IP.Core.WinFormControls;
+using IP.Core.IPSystemAdmin;
 public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.Page
 {
     #region Public Interfaces
@@ -392,12 +394,29 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 v_us.Insert();
 
             }
+        string v_str_ten_phong_ban=v_ds_dm_phong_ban.DM_PHONG_BAN[0][DM_PHONG_BAN.TEN_PHONG_BAN].ToString();
+        string v_str_noi_dung=v_str_ten_phong_ban+" đã nhập "+lst_import.Count+" bill";
+        string v_str_subject="[WebsiteQuanLyHanhChinh] Phong ban "+v_str_ten_phong_ban+" nhap bill";
+        string v_str_send_mail_to = "";
+        US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG(69758);
+        v_str_send_mail_to = v_us_ht_nguoi_su_dung.strMAIL;
+        if (v_str_send_mail_to.Equals("")) return;
+        WinFormControls.SendEmailHanhChinhTopica(v_str_send_mail_to, v_str_subject, v_str_noi_dung);
+       
+        m_cmd_upload.Visible = true;
+        m_cmd_kiem_tra_va_import.Visible = false;
         Session["TempImportExcel"] = null;
     }
     private void save_grid_to_list()
     {
         List<CImportBillExcelWeb> lst_import=new List<CImportBillExcelWeb>();
         lst_import = (List<CImportBillExcelWeb>)Session["TempImportExcel"];
+        if (lst_import.Count == 0)
+        {
+            m_cmd_upload.Visible = true;
+            m_cmd_kiem_tra_va_import.Visible = false;
+            return;
+        }
         GridViewRow[] v_arr_gvr = new GridViewRow[m_grv_dm_bill.Rows.Count];
         System.Web.UI.WebControls.TextBox v_txt_so_bill;
         System.Web.UI.WebControls.TextBox v_txt_ma_phong_ban;
@@ -743,14 +762,13 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 if (check_file_upload_is_ok(m_fu_chon_file_import.FileName))
                 {
                     excel_file_to_grid(m_grv_dm_bill, 1, m_hdf_dir_save_excel.Value);
+                    delete_file_imported(m_hdf_dir_save_excel.Value);
                     check_validate_grid_is_ok();
                 }
                 else
                 {
                     thong_bao("Bạn phải import file excel .xls", true);
                 }
-                m_cmd_upload.Visible = false;
-                m_cmd_kiem_tra_va_import.Visible = true;
             }
         }
         catch (Exception v_e)

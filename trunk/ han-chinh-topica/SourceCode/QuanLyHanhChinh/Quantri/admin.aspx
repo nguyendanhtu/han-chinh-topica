@@ -14,6 +14,7 @@
                 <asp:RadioButton ID="m_rdb_excute" runat="server" Text="Excute" GroupName="pr" Checked="true" />
                 <asp:RadioButton ID="m_rdb_tim_proc" runat="server" Text="Tìm procedure" GroupName="pr" />
                 <asp:RadioButton ID="m_rdb_tim_view" runat="server" Text="Tìm view" GroupName="pr" />
+                <asp:RadioButton ID="m_rdb_tckt" runat="server" Text="Tra cứu kế toán" GroupName="pr" />
                 <asp:TextBox ID="m_txt_convert_encoding" runat="server" PlaceHolder="Convert Encoding to text"></asp:TextBox>
                 <asp:Button ID="m_cmd_convert" runat="server" CssClass="cssGoogleButton" Text="Convert" OnClick="m_cmd_convert_Click" />
             </td>

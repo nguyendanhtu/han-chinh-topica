@@ -75,10 +75,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 369);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 397);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(719, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(891, 39);
             this.m_pnl_out_place_dm.TabIndex = 21;
             // 
             // m_cmd_insert
@@ -90,9 +90,9 @@
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(363, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(535, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_insert.Size = new System.Drawing.Size(88, 31);
             this.m_cmd_insert.TabIndex = 0;
             this.m_cmd_insert.Text = "&Thêm";
             // 
@@ -105,9 +105,9 @@
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(451, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(623, 4);
             this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_update.Size = new System.Drawing.Size(88, 31);
             this.m_cmd_update.TabIndex = 1;
             this.m_cmd_update.Text = "&Sửa";
             // 
@@ -120,9 +120,9 @@
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(539, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(711, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_delete.Size = new System.Drawing.Size(88, 31);
             this.m_cmd_delete.TabIndex = 2;
             this.m_cmd_delete.Text = "&Xoá";
             // 
@@ -135,9 +135,9 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(627, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(799, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 31);
             this.m_cmd_exit.TabIndex = 3;
             this.m_cmd_exit.Text = "Trở về  (Esc)";
             // 
@@ -147,15 +147,15 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 0);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(719, 405);
+            this.m_fg.Size = new System.Drawing.Size(891, 436);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 0;
             // 
             // f999_ht_nguoi_su_dung
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 405);
+            this.ClientSize = new System.Drawing.Size(891, 436);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_fg);
             this.Name = "f999_ht_nguoi_su_dung";
