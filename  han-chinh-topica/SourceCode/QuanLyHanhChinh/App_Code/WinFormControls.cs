@@ -13,6 +13,7 @@ using IP.Core.IPData.DBNames;
 
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Net;
 
 
 namespace IP.Core.WinFormControls
@@ -24,45 +25,42 @@ namespace IP.Core.WinFormControls
     {
         public WinFormControls()
         {
-            //
-            // TODO: Add constructor logic here
-            //
+           
 
         }
-
+        public static bool SendEmailHanhChinhTopica(string ip_str_toEmail, string ip_str_subject, string ip_str_noi_dung)
+        {
+            try
+            {
+                string fromAddress = "topica.quanlyhanhchinh@gmail.com";// Gmail Address from where you send the mail
+                string toAddress = ip_str_toEmail;
+                const string fromPassword = "quanlyhanhchinh1992";//Password of your gmail address
+                string subject = ip_str_subject;
+                string body = ip_str_noi_dung;
+                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
+                {
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                    smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
+                    smtp.Timeout = 20000;
+                }
+                smtp.Send(fromAddress, toAddress, subject, body);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
+        }
         #region Public Interfaces
         public enum eTAT_CA
         {
             YES,
             NO
         }
-
-        public enum eLOAI_TU_DIEN
-        {
-            TRANG_THAI_DAT
-                ,
-            TRANG_THAI_NHA
-                ,
-            TRANG_THAI_OTO
-                ,
-            TRANG_THAI_TAI_SAN_KHAC
-                ,
-            LOAI_HINH_DON_VI
-                ,
-            PHAN_LOAI_TAI_SAN
-                ,
-            LOAI_BAO_CAO
-                ,
-            TINH_TRANG_TAI_SAN
-                , LY_DO_TANG_GIAM_TS
-        }
-
-        public enum eLOAI_TANG_GIAM_TAI_SAN
-        {
-            TANG_TAI_SAN
-            , GIAM_TAI_SAN
-        }
-
 
         #endregion
     }

@@ -207,6 +207,23 @@ Public Class US_HT_NGUOI_SU_DUNG
         pm_objDR("ID_TRAINING_PROJECT") = System.Convert.DBNull
     End Sub
 
+    Public Property strMAIL() As String
+        Get
+            Return CNull.RowNVLString(pm_objDR, "MAIL")
+        End Get
+        Set(ByVal Value As String)
+            pm_objDR.Item("MAIL") = Value
+        End Set
+    End Property
+
+    Public Function IsMAILNull() As Boolean
+        Return pm_objDR.IsNull("MAIL")
+    End Function
+
+    Public Sub SetMAILNull()
+        pm_objDR("MAIL") = System.Convert.DBNull
+    End Sub
+
     '=======================================================
     'Service provided by Telerik (www.telerik.com)
     'Conversion powered by NRefactory.

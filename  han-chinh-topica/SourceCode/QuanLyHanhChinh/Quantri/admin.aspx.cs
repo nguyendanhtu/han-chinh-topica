@@ -10,6 +10,30 @@ using IP.Core.IPCommon;
 public partial class Quantri_admin : System.Web.UI.Page
 {
     #region Private Methods
+    private SqlConnection getConnection()
+    {
+        SqlConnection cn = new SqlConnection();
+        string v_strServerName = System.Configuration.ConfigurationSettings.AppSettings["SERVER_HRM"];
+        string v_strDatabase = System.Configuration.ConfigurationSettings.AppSettings["DATABASE_HRM"];
+        string v_strUser = System.Configuration.ConfigurationSettings.AppSettings["USER_HRM"];
+        string v_strPwd = System.Configuration.ConfigurationSettings.AppSettings["PASS_WORD_HRM"];
+        string v_strDatabaseAccessMode = System.Configuration.ConfigurationSettings.AppSettings["DATABASE_ACCESS_MODE"];
+        string v_strConnectionString = null;
+        v_strConnectionString = "data source=" + v_strServerName + ";";
+        v_strConnectionString += "initial catalog=" + v_strDatabase + ";";
+        switch (v_strDatabaseAccessMode)
+        {
+            case "NO_USER_AND_PASSWORD":
+                v_strConnectionString += "Persist Security Info=True;";
+                break;
+            case "USER_AND_PASSWORD":
+                v_strConnectionString += "user id=" + v_strUser + ";";
+                v_strConnectionString += "password=" + v_strPwd;
+                break;
+        }
+        cn.ConnectionString = v_strConnectionString;
+        return cn;
+    }
     #endregion
 
     #region Events
@@ -36,8 +60,40 @@ public partial class Quantri_admin : System.Web.UI.Page
             else if (m_rdb_tim_proc.Checked == true) v_str_command =
                 "SELECT OBJECT_NAME(object_id)as 'procedure',definition as 'Script' FROM sys.sql_modules WHERE objectproperty(object_id,'IsProcedure') = 1 AND definition    like '%" + m_txt_command.Text + "%'";
             else if (m_rdb_tim_view.Checked == true) v_str_command =
-                    "Select table_name AS 'Table name', VIEW_DEFINITION AS 'Script' From INFORMATION_SCHEMA.VIEWS WHERE TABLE_NAME LIKE'%"+m_txt_command.Text+"%'";
+                    "Select table_name AS 'Table name', VIEW_DEFINITION AS 'Script' From INFORMATION_SCHEMA.VIEWS WHERE TABLE_NAME LIKE'%" + m_txt_command.Text + "%'";
+            else if (m_rdb_tckt.Checked == true)
+            {
+                string v_str_cmd = m_txt_command.Text;
+                SqlCommand i_SelectCmd = new SqlCommand(v_str_cmd);
+                System.Data.SqlClient.SqlDataAdapter v_da = CProvider.getAdapter();
+                const int C_COMMAND_TIME_OUT = 5;
 
+                // Tạo ra connection
+                System.Data.SqlClient.SqlConnection v_cn = getConnection();
+                // Tạo ra adapter
+                v_da.SelectCommand = i_SelectCmd;
+                v_da.SelectCommand.Connection = v_cn;
+
+                v_da.SelectCommand.CommandTimeout = C_COMMAND_TIME_OUT;
+                // Lấy dữ liệu từ DB
+                try
+                {
+                    v_da.Fill(op_ds, op_ds.Tables[0].TableName);
+                }
+                catch (System.Exception v_e)
+                {
+                    throw v_e;
+                }
+                finally
+                {
+                    v_da = null;
+                    GC.Collect();
+                }
+                m_lbl_mess.Text = "Command(s) completed successfully.";
+                m_grv.DataSource = op_ds.Tables[0];
+                m_grv.DataBind();
+                return;
+            }
             SqlCommand v_sql_cmd = new SqlCommand(v_str_command);
             v_bs.FillDatasetByCommand(op_ds, v_sql_cmd);
             m_lbl_mess.Text = "Command(s) completed successfully.";
@@ -59,5 +115,5 @@ public partial class Quantri_admin : System.Web.UI.Page
     #endregion
 
 
-    
+
 }

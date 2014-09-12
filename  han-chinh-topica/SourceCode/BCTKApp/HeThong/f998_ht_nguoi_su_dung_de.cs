@@ -76,6 +76,7 @@ namespace BCTKApp.HeThong
                 CIPConvert.ToStr(m_cbo_trang_thai.SelectedIndex);
             m_us_user.strNGUOI_TAO = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUser();
             m_us_user.dcID_USER_GROUP = CIPConvert.ToDecimal(m_cbo_nhom_quyen.SelectedValue);
+            m_us_user.strMAIL = m_txt_email.Text.Trim();
         }
         private void us_object_2_form()
         {
@@ -96,6 +97,7 @@ namespace BCTKApp.HeThong
             m_txt_go_lai_mat_khau.Text = CIPConvert.Deciphering(m_us_user.strMAT_KHAU);
             m_cbo_trang_thai.SelectedIndex =
                 (int)CIPConvert.ToDecimal(m_us_user.strTRANG_THAI);
+            m_txt_email.Text = m_us_user.strMAIL;
             //m_cbo_nhom_quyen.SelectedValue = m_us_user.dcID_NHOM_NGUOI_DUNG;
         }
         private bool check_validate()
@@ -106,6 +108,11 @@ namespace BCTKApp.HeThong
             if (m_txt_mat_khau.Text != m_txt_go_lai_mat_khau.Text)
             {
                 BaseMessages.MsgBox_Infor("Mật khẩu gõ chưa chính xác!");
+                return false;
+            }
+            if (!m_txt_email.Text.Contains("@gmail.com") &&!m_txt_email.Text.Contains("@topica.edu.vn"))
+            {
+                BaseMessages.MsgBox_Infor("Bạn hãy nhập mail của Topica!");
                 return false;
             }
             return true;

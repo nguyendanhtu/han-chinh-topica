@@ -42,6 +42,7 @@ Namespace DBNames
         Public Const TRANG_THAI As String = "TRANG_THAI"
         Public Const ID_DON_VI As String = "ID_DON_VI"
         Public Const BUILT_IN_YN As String = "BUILT_IN_YN"
+        Public Const MAIL As String = "MAIL"
     End Class
     '****************************
     Public Class HT_NHAT_KY_TRUY_NHAP

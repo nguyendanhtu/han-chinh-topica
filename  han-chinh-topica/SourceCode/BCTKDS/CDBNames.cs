@@ -540,7 +540,9 @@ namespace BCTKDS.CDBNames
         public const string BUILT_IN_YN = "BUILT_IN_YN";
         public const string ID_USER_GROUP = "ID_USER_GROUP";
         public const string ID_TRAINING_PROJECT = "ID_TRAINING_PROJECT";
+        public const string MAIL = "MAIL";
     }
+
 
 
     public class HT_THAM_SO_HE_THONG
