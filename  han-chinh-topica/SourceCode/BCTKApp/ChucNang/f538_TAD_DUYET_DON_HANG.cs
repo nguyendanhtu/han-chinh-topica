@@ -43,6 +43,7 @@ namespace BCTKApp
         private ComboBox m_cbo_trung_tam;
         private Label label1;
         private Label m_lbl_tieu_de;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
 		private System.ComponentModel.IContainer components;
 
 		public f538_TAD_DUYET_DON_HANG()
@@ -94,6 +95,7 @@ namespace BCTKApp
             this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -219,21 +221,22 @@ namespace BCTKApp
             // 
             this.m_grv_don_hang.ColumnInfo = resources.GetString("m_grv_don_hang.ColumnInfo");
             this.m_grv_don_hang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_don_hang.Location = new System.Drawing.Point(0, 108);
+            this.m_grv_don_hang.Location = new System.Drawing.Point(0, 123);
             this.m_grv_don_hang.Name = "m_grv_don_hang";
-            this.m_grv_don_hang.Size = new System.Drawing.Size(738, 343);
+            this.m_grv_don_hang.Size = new System.Drawing.Size(738, 328);
             this.m_grv_don_hang.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_don_hang.Styles"));
             this.m_grv_don_hang.TabIndex = 20;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.m_cbo_trung_tam);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_lbl_tieu_de);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 102);
+            this.panel1.Size = new System.Drawing.Size(738, 117);
             this.panel1.TabIndex = 23;
             // 
             // m_cbo_trung_tam
@@ -265,6 +268,20 @@ namespace BCTKApp
             this.m_lbl_tieu_de.TabIndex = 28;
             this.m_lbl_tieu_de.Text = "DUYỆT ĐƠN ĐẶT HÀNG";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(326, 77);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 38;
+            this.m_cmd_search.Text = "Tìm kiếm";
             // 
             // f538_TAD_DUYET_DON_HANG
             // 
@@ -317,6 +334,8 @@ namespace BCTKApp
             m_cmd_exit.Enabled = true;
             m_cmd_khong_duyet.Visible = true;
             m_cmd_khong_duyet.Enabled = true;
+            m_cmd_search.Visible = true;
+            m_cmd_search.Enabled = true;
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -443,9 +462,12 @@ namespace BCTKApp
 			m_cmd_duyet.Click += new EventHandler(m_cmd_duyet_Click);
 			m_cmd_khong_duyet.Click += new EventHandler(m_cmd_khong_duyet_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-            m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
+            //m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
+            m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
             this.KeyDown+=new KeyEventHandler(f538_TAD_DUYET_DON_HANG_KeyDown);
 		}
+
+       
 		#endregion
 
 //
@@ -533,7 +555,17 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
+       private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 	}
 }
