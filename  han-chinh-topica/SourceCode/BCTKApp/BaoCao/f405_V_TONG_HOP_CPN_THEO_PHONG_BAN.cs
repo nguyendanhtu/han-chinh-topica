@@ -267,9 +267,9 @@ namespace BCTKApp
             // 
             // m_fg
             // 
-            this.m_fg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_fg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 173);
             this.m_fg.Name = "m_fg";
@@ -282,9 +282,9 @@ namespace BCTKApp
             // 
             // m_lbl_header
             // 
-            this.m_lbl_header.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_lbl_header.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_lbl_header.AutoSize = true;
             this.m_lbl_header.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
@@ -329,11 +329,11 @@ namespace BCTKApp
             // 
             // m_cbo_ten_pb
             // 
-            this.m_cbo_ten_pb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbo_ten_pb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_ten_pb.FormattingEnabled = true;
             this.m_cbo_ten_pb.Location = new System.Drawing.Point(294, 48);
             this.m_cbo_ten_pb.Name = "m_cbo_ten_pb";
-            this.m_cbo_ten_pb.Size = new System.Drawing.Size(466, 22);
+            this.m_cbo_ten_pb.Size = new System.Drawing.Size(466, 21);
             this.m_cbo_ten_pb.TabIndex = 4;
             // 
             // m_dt_tu_ngay
@@ -374,7 +374,7 @@ namespace BCTKApp
             this.m_cbo_trang_thai.FormattingEnabled = true;
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(294, 102);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
-            this.m_cbo_trang_thai.Size = new System.Drawing.Size(176, 22);
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(176, 21);
             this.m_cbo_trang_thai.TabIndex = 10;
             // 
             // label3
@@ -443,9 +443,9 @@ namespace BCTKApp
             // 
             // m_fg_excel
             // 
-            this.m_fg_excel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_fg_excel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.m_fg_excel.ColumnInfo = "0,0,0,0,0,85,Columns:";
             this.m_fg_excel.Location = new System.Drawing.Point(26, 232);
             this.m_fg_excel.Name = "m_fg_excel";
