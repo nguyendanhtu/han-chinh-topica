@@ -88,7 +88,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         m_us_dm_bill.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
         m_us_dm_bill.strGHI_CHU = m_txt_ghi_chu.Text.Trim();
         m_us_dm_bill.dcSO_TIEN = 0;
-        m_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(m_txt_ngay_gui.Text,"dd/MM/yyyy");
+        m_us_dm_bill.datNGAY_GUI = CIPConvert.ToDatetime(m_txt_ngay_gui.Text, "dd/MM/yyyy");
         m_us_dm_bill.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         m_us_dm_bill.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO;
         if (m_rdb_trong_nuoc.Checked == true)
@@ -99,7 +99,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             m_us_dm_bill.strNUOC_NGOAI = "x";
         }
-       
+
     }
     private void us_object_to_form()
     {
@@ -130,6 +130,20 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         {
             case LOAI_FORM.THEM:
                 m_us_dm_bill.Insert();
+                //gui mail to sampt@topica.edu.vn
+                US_DM_PHONG_BAN v_us_dm_phong_ban = new US_DM_PHONG_BAN();
+                DS_DM_PHONG_BAN v_ds_dm_phong_ban = new DS_DM_PHONG_BAN();
+                v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban, "where id=" + CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value));
+                string v_str_ten_phong_ban = v_ds_dm_phong_ban.DM_PHONG_BAN[0][DM_PHONG_BAN.TEN_PHONG_BAN].ToString();
+                string v_str_noi_dung = "Thông báo\n TAD đã nhận được thông tin đặt hàng CPN:\n Tên phòng:" + v_str_ten_phong_ban + "\n Tổng số bill: 1 bill"
+            + "\n Ngày gửi: " + DateTime.Now.ToString("dd/MM/yyyy");
+                string v_str_subject = "[WebsiteQuanLyHanhChinh] Phong ban " + v_str_ten_phong_ban + " nhap bill";
+                string v_str_send_mail_to = "";
+                US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG(69758);
+                v_str_send_mail_to = v_us_ht_nguoi_su_dung.strMAIL;
+                if (!v_str_send_mail_to.Equals(""))
+                    WinFormControls.SendEmailHanhChinhTopica(v_str_send_mail_to, v_str_subject, v_str_noi_dung);
+                //
                 load_data_to_grid();
                 Huy_thao_tac();
                 thong_bao("Đã gửi đăng kí Bill cho TAD!");
@@ -144,14 +158,14 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
                 thong_bao("Đã cập nhật và gửi đăng kí lại cho TAD!");
                 break;
         }
-       
+
     }
     private void delete_data()
     {
         //if (!check_validate_is_ok()) return;
         m_us_dm_bill.DeleteByID(CIPConvert.ToDecimal(m_hdf_id_bill.Value));
         load_data_to_grid();
-        thong_bao("Đã hủy đăng ký gửi BIll cho TAD",true);
+        thong_bao("Đã hủy đăng ký gửi BIll cho TAD", true);
     }
     private void Huy_thao_tac()
     {
@@ -181,8 +195,8 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
-        v_us.FillDataset(v_ds,"where id="+v_id_trung_tam);
-        m_lbl_ten_trung_tam.Text =v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
+        v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
+        m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
     }
     private void load_data_to_grid()
     {
@@ -191,7 +205,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
         string v_nguoi_nhan = m_txt_tim_kiem.Text.Trim();
         string v_noi_nhan = m_txt_tim_kiem.Text.Trim();
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
-        m_us_dm_bill.FillDataset(m_ds_dm_bill, v_id_trung_tam, v_so_bill,v_nguoi_gui,v_nguoi_nhan, v_noi_nhan);
+        m_us_dm_bill.FillDataset(m_ds_dm_bill, v_id_trung_tam, v_so_bill, v_nguoi_gui, v_nguoi_nhan, v_noi_nhan);
         m_grv_dm_bill.DataSource = m_ds_dm_bill.DM_BILL;
         load_title();
         string v_str_thong_tin = " (Có " + m_ds_dm_bill.DM_BILL.Rows.Count + " bản ghi)";
@@ -226,7 +240,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
             thong_bao("Số bill phải là kiểu số!");
             return false;
         }
-        else 
+        else
             return true;
     }
     private bool check_validate_is_ok()
@@ -318,7 +332,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
                     Response.Redirect("../Default.aspx", false);
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }
-               
+
             }
         }
         catch (Exception v_e)
@@ -401,7 +415,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
     {
         try
         {
-            
+
             m_grv_dm_bill.SelectedIndex = e.RowIndex;
             set_form_mode(LOAI_FORM.XOA);
             m_hdf_id_bill.Value = CIPConvert.ToStr(m_grv_dm_bill.DataKeys[e.RowIndex].Value);
@@ -438,7 +452,7 @@ public partial class ChucNang_f422_dm_bill : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    
+
     #endregion
-    
+
 }
