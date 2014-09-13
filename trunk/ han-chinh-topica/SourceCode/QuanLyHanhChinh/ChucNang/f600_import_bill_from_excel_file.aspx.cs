@@ -395,7 +395,8 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
 
             }
         string v_str_ten_phong_ban=v_ds_dm_phong_ban.DM_PHONG_BAN[0][DM_PHONG_BAN.TEN_PHONG_BAN].ToString();
-        string v_str_noi_dung=v_str_ten_phong_ban+" đã nhập "+lst_import.Count+" bill";
+        string v_str_noi_dung = "Thông báo\n TAD đã nhận được thông tin đặt hàng CPN:\n Tên phòng:" + v_str_ten_phong_ban + "\n Tổng số bill: " + lst_import.Count + " bill"
+            + "\n Ngày gửi: " + DateTime.Now.ToString("dd/MM/yyyy");
         string v_str_subject="[WebsiteQuanLyHanhChinh] Phong ban "+v_str_ten_phong_ban+" nhap bill";
         string v_str_send_mail_to = "";
         US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG(69758);

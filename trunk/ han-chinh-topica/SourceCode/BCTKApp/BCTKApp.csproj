@@ -443,6 +443,12 @@
     <Compile Include="ChucNang\f876_so_sanh_chi_phi_cuoi_thang.Designer.cs">
       <DependentUpon>f876_so_sanh_chi_phi_cuoi_thang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TCDatetime.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TCDatetime.Designer.cs">
+      <DependentUpon>TCDatetime.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\f446_DM_V_GD_PHONG_BAN_DINH_MUC.cs">
       <SubType>Form</SubType>
     </Compile>
