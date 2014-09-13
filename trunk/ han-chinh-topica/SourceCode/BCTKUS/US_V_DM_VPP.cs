@@ -213,10 +213,10 @@ public class US_V_DM_VPP : US_Object
 	}
 #endregion
 
-    public void FillDatasetsearch(DS_V_DM_VPP ip_m_ds, decimal ip_v_id_ncc, string ip_v_str_tu_khoa)
+    public void FillDatasetsearch(DS_V_DM_VPP ip_m_ds, decimal ip_v_id_ncc, decimal ip_v_dc_tu_khoa)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_VPP_Search");
-        v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tu_khoa);
+        v_stored_proc.addDecimalInputParam("@ID_VPP", ip_v_dc_tu_khoa);
         v_stored_proc.addDecimalInputParam("@ID_NCC", ip_v_id_ncc);
         v_stored_proc.fillDataSetByCommand(this, ip_m_ds);
     }
