@@ -176,15 +176,14 @@
             <td class="cssPageTitleBG" colspan="9">
                 <asp:Label ID="m_lbl_title_ma_don_hang" runat="server" CssClass="cssPageTitle"
                     Text="Nhập thông tin chi tiết đơn hàng"></asp:Label>
-                <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
                 <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
             </td>
         </tr>
         <tr>
             <td style="width: 12%">
-                <asp:Label ID="Label5" runat="Server" Text="MP:" CssClass="cssManField"></asp:Label>
+                <asp:Label ID="m_lbl_MP" runat="Server" Text="MP:" CssClass="cssManField"></asp:Label>
                 &nbsp
-                        <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField"></asp:Label>
+                        <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField" Font-Bold="true"></asp:Label>
             </td>
             <td align="right">
                 <asp:Label ID="m_lbl_chon_vpp" runat="Server" Text="Chọn VPP" CssClass="cssManField"></asp:Label>
@@ -254,6 +253,7 @@
                 <asp:Label ID="m_lbl_phieu_de_nghi_va_ban_giao_VPP" runat="server" CssClass="cssPageTitle"
                     Text="Danh sách VPP đề nghị cấp"></asp:Label>
                 <asp:Label ID="m_lbl_thong_tim_grv_don_hang_de" runat="server" CssClass="cssPageTitle"></asp:Label>
+                &nbsp; &nbsp; <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssPageTitle" ForeColor="Green" Font-Italic="true" BackColor="White"></asp:Label>
                 <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
             </td>
         </tr>
