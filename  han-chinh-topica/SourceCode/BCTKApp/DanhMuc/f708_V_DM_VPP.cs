@@ -387,15 +387,15 @@ namespace BCTKApp
 		}
         private void tim_kiem()
         {
-            decimal v_id_ncc = CIPConvert.ToDecimal(m_cbo_ncc.SelectedValue);
-            string v_str_tu_khoa = m_txt_tu_khoa.Text.Trim();
-            m_ds = new DS_V_DM_VPP();
-            m_us.FillDatasetsearch(m_ds, v_id_ncc, v_str_tu_khoa);
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            CGridUtils.MakeSoTT(0, m_fg);
+            //decimal v_id_ncc = CIPConvert.ToDecimal(m_cbo_ncc.SelectedValue);
+            //string v_str_tu_khoa = m_txt_tu_khoa.Text.Trim();
+            //m_ds = new DS_V_DM_VPP();
+            //m_us.FillDatasetsearch(m_ds, v_id_ncc, v_str_tu_khoa);
+            //m_fg.Redraw = false;
+            //CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            //CGridUtils.MakeSoTT(0, m_fg);
             
-            m_fg.Redraw = true;
+            //m_fg.Redraw = true;
         }
         private void load_data_2_cbo()
         {
