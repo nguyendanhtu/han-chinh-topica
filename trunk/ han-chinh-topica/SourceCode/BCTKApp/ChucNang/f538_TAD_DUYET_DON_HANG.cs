@@ -405,6 +405,7 @@ namespace BCTKApp
 		//	f538_TAD_DUYET_DON_HANG_DE v_fDE = new f538_TAD_DUYET_DON_HANG_DE();
 		//	v_fDE.display(m_us);
             update_trang_thai(m_us, CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
+            BaseMessages.MsgBox_Infor("Đã duyệt đơn hàng thành công");
 			load_data_2_grid();
 		}
         private void khong_duyet_v_gd_don_dat_hang_dinh_muc()
@@ -414,7 +415,8 @@ namespace BCTKApp
             grid2us_object(m_us, m_grv_don_hang.Row);
             //	f538_TAD_DUYET_DON_HANG_DE v_fDE = new f538_TAD_DUYET_DON_HANG_DE();
             //	v_fDE.display(m_us);
-            update_trang_thai(m_us, CONST_ID_TRANG_THAI_DON_HANG.NHAP);
+            update_trang_thai(m_us, CONST_ID_TRANG_THAI_DON_HANG.TAD_KHONG_DUYET);
+            BaseMessages.MsgBox_Infor("Đơn hàng không được duyệt");
             load_data_2_grid();
         }		
 		private void delete_v_gd_don_dat_hang_dinh_muc(){
@@ -515,7 +517,7 @@ namespace BCTKApp
 
 		private void m_cmd_khong_duyet_Click(object sender, EventArgs e) {
 			try{
-                //delete_v_gd_don_dat_hang_dinh_muc();
+                khong_duyet_v_gd_don_dat_hang_dinh_muc();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
