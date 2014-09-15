@@ -170,12 +170,13 @@ public class US_V_TONG_HOP_CHI_PHI_VPP : US_Object
 	}
 #endregion
 
-    public void FillDatasetSearch(DS_V_TONG_HOP_CHI_PHI_VPP ip_ds, decimal ip_id_trang_thai, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    public void FillDatasetSearch(DS_V_TONG_HOP_CHI_PHI_VPP ip_ds, decimal ip_id_trang_thai, DateTime ip_dat_thang, decimal ip_id_phap_nhan,string ip_str_tu_khoa)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_TONG_HOP_CHI_PHI_VPP");
-        v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
-        v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+        v_stored_proc.addDatetimeInputParam("@NGAY", ip_dat_thang);
         v_stored_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_id_trang_thai);
+        v_stored_proc.addDecimalInputParam("@ID_PHAP_NHAN", ip_id_phap_nhan);
+        v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
         v_stored_proc.fillDataSetByCommand(this, ip_ds);
     }
 }
