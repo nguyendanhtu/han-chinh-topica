@@ -276,7 +276,7 @@ namespace BCTKApp
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
             this.m_fg.Size = new System.Drawing.Size(1022, 422);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
+            this.m_fg.TabIndex = 13;
             this.toolTip1.SetToolTip(this.m_fg, "Nhấp đúp chuột vào dòng để xem chi tiết.");
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
@@ -302,7 +302,7 @@ namespace BCTKApp
             this.m_lbl_ten_pb.Location = new System.Drawing.Point(181, 50);
             this.m_lbl_ten_pb.Name = "m_lbl_ten_pb";
             this.m_lbl_ten_pb.Size = new System.Drawing.Size(96, 15);
-            this.m_lbl_ten_pb.TabIndex = 3;
+            this.m_lbl_ten_pb.TabIndex = 1;
             this.m_lbl_ten_pb.Text = "Chọn Pháp nhân";
             // 
             // m_lbl_den_ngay
@@ -313,7 +313,7 @@ namespace BCTKApp
             this.m_lbl_den_ngay.Location = new System.Drawing.Point(510, 80);
             this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
             this.m_lbl_den_ngay.Size = new System.Drawing.Size(62, 15);
-            this.m_lbl_den_ngay.TabIndex = 7;
+            this.m_lbl_den_ngay.TabIndex = 5;
             this.m_lbl_den_ngay.Text = "Đến ngày:";
             // 
             // m_lbl_tu_ngay
@@ -324,7 +324,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.Location = new System.Drawing.Point(222, 80);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(55, 15);
-            this.m_lbl_tu_ngay.TabIndex = 5;
+            this.m_lbl_tu_ngay.TabIndex = 3;
             this.m_lbl_tu_ngay.Text = "Từ ngày:";
             // 
             // m_cbo_ten_pb
@@ -334,7 +334,7 @@ namespace BCTKApp
             this.m_cbo_ten_pb.Location = new System.Drawing.Point(294, 48);
             this.m_cbo_ten_pb.Name = "m_cbo_ten_pb";
             this.m_cbo_ten_pb.Size = new System.Drawing.Size(396, 21);
-            this.m_cbo_ten_pb.TabIndex = 4;
+            this.m_cbo_ten_pb.TabIndex = 2;
             // 
             // m_lbl_trang_thai
             // 
@@ -344,7 +344,7 @@ namespace BCTKApp
             this.m_lbl_trang_thai.Location = new System.Drawing.Point(215, 108);
             this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
             this.m_lbl_trang_thai.Size = new System.Drawing.Size(65, 15);
-            this.m_lbl_trang_thai.TabIndex = 9;
+            this.m_lbl_trang_thai.TabIndex = 7;
             this.m_lbl_trang_thai.Text = "Trạng thái:";
             // 
             // m_cbo_trang_thai
@@ -354,7 +354,7 @@ namespace BCTKApp
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(294, 102);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(176, 21);
-            this.m_cbo_trang_thai.TabIndex = 10;
+            this.m_cbo_trang_thai.TabIndex = 8;
             // 
             // label3
             // 
@@ -364,7 +364,7 @@ namespace BCTKApp
             this.label3.Location = new System.Drawing.Point(222, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 15);
-            this.label3.TabIndex = 13;
+            this.label3.TabIndex = 9;
             this.label3.Text = "Từ khóa :";
             // 
             // m_txt_tu_khoa
@@ -372,7 +372,7 @@ namespace BCTKApp
             this.m_txt_tu_khoa.Location = new System.Drawing.Point(294, 129);
             this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
             this.m_txt_tu_khoa.Size = new System.Drawing.Size(339, 20);
-            this.m_txt_tu_khoa.TabIndex = 14;
+            this.m_txt_tu_khoa.TabIndex = 10;
             this.m_txt_tu_khoa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_cmd_tim_kiem_KeyDown);
             // 
             // toolTip1
@@ -402,7 +402,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.Location = new System.Drawing.Point(649, 121);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_tim_kiem.TabIndex = 40;
+            this.m_cmd_tim_kiem.TabIndex = 11;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
             // 
             // m_cmd_tim_kiem_bill_co_so_tien
@@ -417,7 +417,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem_bill_co_so_tien.Location = new System.Drawing.Point(775, 121);
             this.m_cmd_tim_kiem_bill_co_so_tien.Name = "m_cmd_tim_kiem_bill_co_so_tien";
             this.m_cmd_tim_kiem_bill_co_so_tien.Size = new System.Drawing.Size(114, 28);
-            this.m_cmd_tim_kiem_bill_co_so_tien.TabIndex = 40;
+            this.m_cmd_tim_kiem_bill_co_so_tien.TabIndex = 12;
             this.m_cmd_tim_kiem_bill_co_so_tien.Text = "Bill có số tiền";
             // 
             // m_fg_excel
@@ -431,7 +431,7 @@ namespace BCTKApp
             this.m_fg_excel.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
             this.m_fg_excel.Size = new System.Drawing.Size(1022, 422);
             this.m_fg_excel.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_excel.Styles"));
-            this.m_fg_excel.TabIndex = 20;
+            this.m_fg_excel.TabIndex = 14;
             this.m_fg_excel.Visible = false;
             this.m_fg_excel.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
@@ -442,7 +442,7 @@ namespace BCTKApp
             this.m_dt_den_ngay.Mask = "00/00/0000";
             this.m_dt_den_ngay.Name = "m_dt_den_ngay";
             this.m_dt_den_ngay.Size = new System.Drawing.Size(100, 20);
-            this.m_dt_den_ngay.TabIndex = 41;
+            this.m_dt_den_ngay.TabIndex = 6;
             this.m_dt_den_ngay.ValidatingType = typeof(System.DateTime);
             // 
             // m_dt_tu_ngay
@@ -452,7 +452,7 @@ namespace BCTKApp
             this.m_dt_tu_ngay.Mask = "00/00/0000";
             this.m_dt_tu_ngay.Name = "m_dt_tu_ngay";
             this.m_dt_tu_ngay.Size = new System.Drawing.Size(100, 20);
-            this.m_dt_tu_ngay.TabIndex = 41;
+            this.m_dt_tu_ngay.TabIndex = 4;
             this.m_dt_tu_ngay.ValidatingType = typeof(System.DateTime);
             // 
             // f405_V_TONG_HOP_CPN_THEO_PHONG_BAN
