@@ -17,13 +17,13 @@ namespace BCTKApp
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Panel m_pnl_top;
-        private DateTimePicker m_dtp_den_ngay;
-        private Label label6;
-        private Label label7;
         private Label m_lbl_tieu_de;
-        private DateTimePicker m_dtp_tu_ngay;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         internal SIS.Controls.Button.SiSButton m_cmd_send_email;
+        private TCDatetime m_dtp_den_ngay;
+        private TCDatetime m_dtp_tu_ngay;
+        private Label label6;
+        private Label label7;
         private System.ComponentModel.IContainer components;
 
         public f512_BILL_BI_TRA_LAI()
@@ -65,6 +65,7 @@ namespace BCTKApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f512_BILL_BI_TRA_LAI));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_send_email = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
@@ -73,12 +74,11 @@ namespace BCTKApp
             this.m_grv_bill = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_top = new System.Windows.Forms.Panel();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
-            this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
-            this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_tieu_de = new System.Windows.Forms.Label();
+            this.m_dtp_den_ngay = new BCTKApp.TCDatetime();
+            this.m_dtp_tu_ngay = new BCTKApp.TCDatetime();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.m_cmd_send_email = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_bill)).BeginInit();
             this.m_pnl_top.SuspendLayout();
@@ -125,6 +125,21 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_send_email
+            // 
+            this.m_cmd_send_email.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_send_email.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_send_email.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_send_email.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_send_email.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_send_email.ImageIndex = 21;
+            this.m_cmd_send_email.ImageList = this.ImageList;
+            this.m_cmd_send_email.Location = new System.Drawing.Point(92, 4);
+            this.m_cmd_send_email.Name = "m_cmd_send_email";
+            this.m_cmd_send_email.Size = new System.Drawing.Size(215, 28);
+            this.m_cmd_send_email.TabIndex = 22;
+            this.m_cmd_send_email.Text = "Gửi mail thông báo cho các phòng";
             // 
             // m_cmd_insert
             // 
@@ -213,11 +228,11 @@ namespace BCTKApp
             // 
             // m_pnl_top
             // 
-            this.m_pnl_top.Controls.Add(this.m_cmd_search);
-            this.m_pnl_top.Controls.Add(this.m_dtp_tu_ngay);
             this.m_pnl_top.Controls.Add(this.m_dtp_den_ngay);
+            this.m_pnl_top.Controls.Add(this.m_dtp_tu_ngay);
             this.m_pnl_top.Controls.Add(this.label6);
             this.m_pnl_top.Controls.Add(this.label7);
+            this.m_pnl_top.Controls.Add(this.m_cmd_search);
             this.m_pnl_top.Controls.Add(this.m_lbl_tieu_de);
             this.m_pnl_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_top.Location = new System.Drawing.Point(0, 0);
@@ -239,50 +254,6 @@ namespace BCTKApp
             this.m_cmd_search.TabIndex = 34;
             this.m_cmd_search.Text = "Tìm kiếm";
             // 
-            // m_dtp_tu_ngay
-            // 
-            this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(216, 67);
-            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
-            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(133, 23);
-            this.m_dtp_tu_ngay.TabIndex = 33;
-            this.m_dtp_tu_ngay.Value = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
-            // 
-            // m_dtp_den_ngay
-            // 
-            this.m_dtp_den_ngay.Checked = false;
-            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_den_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_den_ngay.Location = new System.Drawing.Point(457, 65);
-            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
-            this.m_dtp_den_ngay.RightToLeftLayout = true;
-            this.m_dtp_den_ngay.Size = new System.Drawing.Size(126, 23);
-            this.m_dtp_den_ngay.TabIndex = 2;
-            this.m_dtp_den_ngay.Value = new System.DateTime(2014, 7, 12, 0, 0, 0, 0);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(363, 68);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 16);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Đến ngày";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(139, 71);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 16);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "Từ ngày";
-            // 
             // m_lbl_tieu_de
             // 
             this.m_lbl_tieu_de.Dock = System.Windows.Forms.DockStyle.Top;
@@ -294,20 +265,46 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Text = "TỔNG HỢP THƯ BỊ TRẢ LẠI TOÀN TOPICA";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // m_cmd_send_email
+            // m_dtp_den_ngay
             // 
-            this.m_cmd_send_email.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_send_email.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_send_email.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_send_email.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_send_email.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_send_email.ImageIndex = 21;
-            this.m_cmd_send_email.ImageList = this.ImageList;
-            this.m_cmd_send_email.Location = new System.Drawing.Point(92, 4);
-            this.m_cmd_send_email.Name = "m_cmd_send_email";
-            this.m_cmd_send_email.Size = new System.Drawing.Size(215, 28);
-            this.m_cmd_send_email.TabIndex = 22;
-            this.m_cmd_send_email.Text = "Gửi mail thông báo cho các phòng";
+            this.m_dtp_den_ngay.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(479, 66);
+            this.m_dtp_den_ngay.Mask = "00/00/0000";
+            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
+            this.m_dtp_den_ngay.Size = new System.Drawing.Size(100, 20);
+            this.m_dtp_den_ngay.TabIndex = 41;
+            this.m_dtp_den_ngay.ValidatingType = typeof(System.DateTime);
+            // 
+            // m_dtp_tu_ngay
+            // 
+            this.m_dtp_tu_ngay.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(273, 69);
+            this.m_dtp_tu_ngay.Mask = "00/00/0000";
+            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
+            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(100, 20);
+            this.m_dtp_tu_ngay.TabIndex = 40;
+            this.m_dtp_tu_ngay.Text = "01012014";
+            this.m_dtp_tu_ngay.ValidatingType = typeof(System.DateTime);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(406, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 16);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Đến ngày";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(197, 70);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 16);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Từ ngày";
             // 
             // f512_BILL_BI_TRA_LAI
             // 
@@ -380,7 +377,7 @@ namespace BCTKApp
         private void set_initial_form_load()
         {
             m_obj_trans = get_trans_object(m_grv_bill);
-            m_dtp_den_ngay.Value = DateTime.Now.Date;
+            m_dtp_den_ngay.Text = DateTime.Now.Date.ToString();
             load_data_2_grid();
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
@@ -401,8 +398,8 @@ namespace BCTKApp
         private void load_data_2_grid()
         {
             decimal v_dc_id_trang_thai = CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI;
-            DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value.Date;
-            DateTime v_dat_den_ngay = m_dtp_den_ngay.Value.Date;
+            DateTime v_dat_tu_ngay = CIPConvert.ToDatetime(m_dtp_tu_ngay.Text);
+            DateTime v_dat_den_ngay = CIPConvert.ToDatetime(m_dtp_den_ngay.Text);
             m_ds = new DS_V_DM_BILL();
             m_us.FillDatasetSearch_bitralai(m_ds, v_dc_id_trang_thai, v_dat_tu_ngay, v_dat_den_ngay);
             m_grv_bill.Redraw = false;
@@ -635,8 +632,8 @@ namespace BCTKApp
             try
             {
                 decimal v_dc_id_trang_thai = CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI;
-                DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value.Date;
-                DateTime v_dat_den_ngay = m_dtp_den_ngay.Value.Date;
+                DateTime v_dat_tu_ngay = CIPConvert.ToDatetime(m_dtp_tu_ngay.Text);
+                DateTime v_dat_den_ngay = CIPConvert.ToDatetime(m_dtp_den_ngay.Text);
                 DataSet v_ds = new DataSet();
                 DataTable v_dt = new DataTable();
                 v_ds.Tables.Add(v_dt);
