@@ -38,8 +38,6 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Panel m_pnl_top;
-        private Label label6;
-        private Label label7;
         private Label label3;
         private Label label4;
         private Label m_lbl_tieu_de;
@@ -50,8 +48,10 @@ namespace BCTKApp
         private TextBox m_txt_so_bill;
         private Label label2;
         private ComboBox m_cbo_trung_tam;
-        private DateTimePicker m_dtp_tu_ngay;
-        private DateTimePicker m_dtp_den_ngay;
+        private TCDatetime m_dtp_den_ngay;
+        private TCDatetime m_dtp_tu_ngay;
+        private Label label6;
+        private Label label7;
 		private System.ComponentModel.IContainer components;
 
 		public f511_TRA_CUU_TRANG_THAI_CPN()
@@ -97,20 +97,20 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_trang_thai = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_top = new System.Windows.Forms.Panel();
-            this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
-            this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.m_txt_so_bill = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
+            this.m_dtp_den_ngay = new BCTKApp.TCDatetime();
+            this.m_dtp_tu_ngay = new BCTKApp.TCDatetime();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai)).BeginInit();
             this.m_pnl_top.SuspendLayout();
@@ -196,16 +196,16 @@ namespace BCTKApp
             // 
             // m_pnl_top
             // 
+            this.m_pnl_top.Controls.Add(this.m_dtp_den_ngay);
             this.m_pnl_top.Controls.Add(this.m_dtp_tu_ngay);
+            this.m_pnl_top.Controls.Add(this.label6);
+            this.m_pnl_top.Controls.Add(this.label7);
             this.m_pnl_top.Controls.Add(this.m_cbo_trung_tam);
             this.m_pnl_top.Controls.Add(this.m_cbo_trang_thai);
-            this.m_pnl_top.Controls.Add(this.m_dtp_den_ngay);
             this.m_pnl_top.Controls.Add(this.label8);
             this.m_pnl_top.Controls.Add(this.m_cmd_search);
             this.m_pnl_top.Controls.Add(this.label1);
-            this.m_pnl_top.Controls.Add(this.label6);
             this.m_pnl_top.Controls.Add(this.m_txt_so_bill);
-            this.m_pnl_top.Controls.Add(this.label7);
             this.m_pnl_top.Controls.Add(this.label2);
             this.m_pnl_top.Controls.Add(this.label3);
             this.m_pnl_top.Controls.Add(this.label4);
@@ -215,17 +215,6 @@ namespace BCTKApp
             this.m_pnl_top.Name = "m_pnl_top";
             this.m_pnl_top.Size = new System.Drawing.Size(884, 190);
             this.m_pnl_top.TabIndex = 21;
-            // 
-            // m_dtp_tu_ngay
-            // 
-            this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(317, 45);
-            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
-            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(139, 23);
-            this.m_dtp_tu_ngay.TabIndex = 35;
-            this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
             // 
             // m_cbo_trung_tam
             // 
@@ -244,19 +233,6 @@ namespace BCTKApp
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(228, 21);
             this.m_cbo_trang_thai.TabIndex = 4;
-            // 
-            // m_dtp_den_ngay
-            // 
-            this.m_dtp_den_ngay.Checked = false;
-            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_den_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_den_ngay.Location = new System.Drawing.Point(542, 46);
-            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
-            this.m_dtp_den_ngay.RightToLeftLayout = true;
-            this.m_dtp_den_ngay.Size = new System.Drawing.Size(126, 23);
-            this.m_dtp_den_ngay.TabIndex = 2;
-            this.m_dtp_den_ngay.Value = new System.DateTime(2014, 6, 30, 9, 16, 0, 0);
             // 
             // label8
             // 
@@ -292,32 +268,12 @@ namespace BCTKApp
             this.label1.TabIndex = 31;
             this.label1.Text = "Từ khóa";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(462, 50);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 16);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Đến ngày";
-            // 
             // m_txt_so_bill
             // 
             this.m_txt_so_bill.Location = new System.Drawing.Point(317, 152);
             this.m_txt_so_bill.Name = "m_txt_so_bill";
             this.m_txt_so_bill.Size = new System.Drawing.Size(228, 20);
             this.m_txt_so_bill.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(239, 51);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 16);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "Từ ngày";
             // 
             // label2
             // 
@@ -355,6 +311,46 @@ namespace BCTKApp
             this.m_lbl_tieu_de.TabIndex = 27;
             this.m_lbl_tieu_de.Text = "TRA CỨU TRẠNG THÁI CPN";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // m_dtp_den_ngay
+            // 
+            this.m_dtp_den_ngay.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(528, 43);
+            this.m_dtp_den_ngay.Mask = "00/00/0000";
+            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
+            this.m_dtp_den_ngay.Size = new System.Drawing.Size(100, 20);
+            this.m_dtp_den_ngay.TabIndex = 41;
+            this.m_dtp_den_ngay.ValidatingType = typeof(System.DateTime);
+            // 
+            // m_dtp_tu_ngay
+            // 
+            this.m_dtp_tu_ngay.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(318, 45);
+            this.m_dtp_tu_ngay.Mask = "00/00/0000";
+            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
+            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(100, 20);
+            this.m_dtp_tu_ngay.TabIndex = 40;
+            this.m_dtp_tu_ngay.ValidatingType = typeof(System.DateTime);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(451, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 16);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Đến ngày";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(237, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 16);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Từ ngày";
             // 
             // f511_TRA_CUU_TRANG_THAI_CPN
             // 
@@ -407,7 +403,6 @@ namespace BCTKApp
             m_grv_trang_thai.Cols[0].Caption = "STT";
             m_grv_trang_thai.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
             load_data_2_cbo();
-            m_dtp_den_ngay.Value = DateTime.Now.Date;
             load_data_2_cbo_trung_tam();	
 			set_define_events();
             set_search_so_bill_format_before();
@@ -415,8 +410,9 @@ namespace BCTKApp
 		}
 		private void set_initial_form_load(){	
 			m_obj_trans = get_trans_object(m_grv_trang_thai);
-            m_dtp_tu_ngay.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
-			load_data_2_grid();		
+            m_dtp_tu_ngay.Text = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).ToString();
+            m_dtp_den_ngay.Text = DateTime.Now.Date.ToString();
+            load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -430,8 +426,8 @@ namespace BCTKApp
             decimal v_dc_id_phong_ban = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             if (v_str_so_bill == m_str_goi_y_so_bill) v_str_so_bill = "";
             decimal v_dc_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
-            DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value;
-            DateTime v_dat_den_ngay = m_dtp_den_ngay.Value;
+            DateTime v_dat_tu_ngay = CIPConvert.ToDatetime(m_dtp_tu_ngay.Text);
+            DateTime v_dat_den_ngay = CIPConvert.ToDatetime(m_dtp_den_ngay.Text);
 			m_ds = new DS_V_DM_BILL();			
 			m_us.FillDatasetSearch(m_ds,v_dc_id_phong_ban,v_str_so_bill,v_dc_id_trang_thai,v_dat_tu_ngay,v_dat_den_ngay);
 			m_grv_trang_thai.Redraw = false;
