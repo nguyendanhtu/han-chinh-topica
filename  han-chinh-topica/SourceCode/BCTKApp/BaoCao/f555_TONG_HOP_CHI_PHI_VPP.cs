@@ -41,12 +41,14 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Panel panel1;
-        private DateTimePicker m_dtp_den_ngay;
-        private Label label1;
-        private DateTimePicker m_dtp_tu_ngay;
-        private Label label7;
         private Label m_lbl_tieu_de;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private TextBox m_txt_tu_khoa;
+        private ComboBox m_cbo_phap_nhan;
+        private Label label2;
+        private Label label1;
+        private DateTimePicker m_dtp_thang;
+        private Label label7;
 		private System.ComponentModel.IContainer components;
 
 		public f555_TONG_HOP_CHI_PHI_VPP()
@@ -95,12 +97,14 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_tong_tien = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
+            this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_dtp_thang = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_tong_tien)).BeginInit();
             this.panel1.SuspendLayout();
@@ -234,11 +238,13 @@ namespace BCTKApp
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_cmd_search);
-            this.panel1.Controls.Add(this.m_dtp_den_ngay);
+            this.panel1.Controls.Add(this.m_txt_tu_khoa);
+            this.panel1.Controls.Add(this.m_cbo_phap_nhan);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.m_dtp_tu_ngay);
+            this.panel1.Controls.Add(this.m_dtp_thang);
             this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.m_lbl_tieu_de);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -246,45 +252,76 @@ namespace BCTKApp
             this.panel1.Size = new System.Drawing.Size(754, 115);
             this.panel1.TabIndex = 23;
             // 
-            // m_dtp_den_ngay
+            // m_txt_tu_khoa
             // 
-            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_den_ngay.Location = new System.Drawing.Point(486, 44);
-            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
-            this.m_dtp_den_ngay.Size = new System.Drawing.Size(134, 20);
-            this.m_dtp_den_ngay.TabIndex = 35;
+            this.m_txt_tu_khoa.Location = new System.Drawing.Point(229, 80);
+            this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
+            this.m_txt_tu_khoa.Size = new System.Drawing.Size(341, 20);
+            this.m_txt_tu_khoa.TabIndex = 46;
+            // 
+            // m_cbo_phap_nhan
+            // 
+            this.m_cbo_phap_nhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_phap_nhan.FormattingEnabled = true;
+            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(434, 43);
+            this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
+            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(136, 21);
+            this.m_cbo_phap_nhan.TabIndex = 45;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(350, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 16);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Pháp nhân";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(395, 48);
+            this.label1.Location = new System.Drawing.Point(161, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 16);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Đến ngày";
+            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Từ khóa";
             // 
-            // m_dtp_tu_ngay
+            // m_dtp_thang
             // 
-            this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(251, 42);
-            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
-            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(126, 23);
-            this.m_dtp_tu_ngay.TabIndex = 32;
-            this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 5, 24, 0, 0, 0, 0);
+            this.m_dtp_thang.CustomFormat = "MM/yyyy";
+            this.m_dtp_thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dtp_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_thang.Location = new System.Drawing.Point(229, 45);
+            this.m_dtp_thang.Name = "m_dtp_thang";
+            this.m_dtp_thang.Size = new System.Drawing.Size(109, 23);
+            this.m_dtp_thang.TabIndex = 41;
+            this.m_dtp_thang.Value = new System.DateTime(2014, 7, 24, 0, 0, 0, 0);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(181, 47);
+            this.label7.Location = new System.Drawing.Point(161, 48);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 16);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Từ ngày";
+            this.label7.Size = new System.Drawing.Size(47, 16);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Tháng";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(582, 78);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 36;
+            this.m_cmd_search.Text = "Tìm kiếm";
             // 
             // m_lbl_tieu_de
             // 
@@ -296,20 +333,6 @@ namespace BCTKApp
             this.m_lbl_tieu_de.TabIndex = 28;
             this.m_lbl_tieu_de.Text = "TỔNG HỢP CHI PHÍ VĂN PHÒNG PHẨM";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_search.ImageIndex = 18;
-            this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(360, 78);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 36;
-            this.m_cmd_search.Text = "Tìm kiếm";
             // 
             // f555_TONG_HOP_CHI_PHI_VPP
             // 
@@ -361,6 +384,7 @@ namespace BCTKApp
             m_cmd_exit.Enabled = true;
             m_cmd_xuat_excel.Visible = true;
             m_cmd_xuat_excel.Enabled = true;
+            load_cbo_phap_nhan();
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -374,11 +398,16 @@ namespace BCTKApp
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_TONG_HOP_CHI_PHI_VPP.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){
-            DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value.Date;
-            DateTime v_dat_den_ngay = m_dtp_den_ngay.Value.Date;
+		private void load_data_2_grid()
+        {
+            DateTime temp = m_dtp_thang.Value.Date;
+            temp = temp.AddMonths(1);
+            temp = temp.AddDays(-(temp.Day));
+            DateTime v_dat_thang = temp;
+            decimal v_dc_id_phap_nhan = CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue);
+            string v_str_tu_khoa = m_txt_tu_khoa.Text;
 			m_ds = new DS_V_TONG_HOP_CHI_PHI_VPP();			
-			m_us.FillDatasetSearch(m_ds,CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET,v_dat_tu_ngay,v_dat_den_ngay);
+			m_us.FillDatasetSearch(m_ds,CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET,v_dat_thang,v_dc_id_phap_nhan,v_str_tu_khoa);
 			m_grv_tong_tien.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_tong_tien, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_tong_tien);
@@ -400,7 +429,22 @@ namespace BCTKApp
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
 
-
+        private void load_cbo_phap_nhan()
+        {
+            US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN();
+            DS_DM_PHAP_NHAN v_ds = new DS_DM_PHAP_NHAN();
+            v_us.FillDataset(v_ds);
+            m_cbo_phap_nhan.DataSource = v_ds.DM_PHAP_NHAN;
+            m_cbo_phap_nhan.ValueMember = DM_PHAP_NHAN.ID;
+            m_cbo_phap_nhan.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
+            DataRow v_dr = v_ds.DM_PHAP_NHAN.NewRow();
+            v_dr[DM_PHAP_NHAN.ID] = -1;
+            v_dr[DM_PHAP_NHAN.MA_PHAP_NHAN] = "";
+            v_dr[DM_PHAP_NHAN.TEN_PHAP_NHAN] = "Tất cả";
+            v_dr[DM_PHAP_NHAN.GHI_CHU] = " ";
+            v_ds.DM_PHAP_NHAN.Rows.InsertAt(v_dr, 0);
+            m_cbo_phap_nhan.SelectedIndex = 0;
+        }
 		private void insert_v_tong_hop_chi_phi_vpp(){			
 		//	f555_TONG_HOP_CHI_PHI_VPP_DE v_fDE = new  f555_TONG_HOP_CHI_PHI_VPP_DE();								
 		//	v_fDE.display();
@@ -446,8 +490,7 @@ namespace BCTKApp
         private void export_2_excel()
         {
             CExcelReport v_obj_excel_report = new CExcelReport("f555_tong_hop_chi_phi_vpp.xls", 6, 1);
-            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dtp_tu_ngay.Text);
-            v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dtp_den_ngay.Text);
+            v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dtp_thang.Text);
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_grv_tong_tien, 0, m_grv_tong_tien.Cols.Count - 1, true);
         }
