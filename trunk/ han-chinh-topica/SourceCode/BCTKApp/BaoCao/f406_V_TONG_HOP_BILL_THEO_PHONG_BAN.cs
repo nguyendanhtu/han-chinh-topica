@@ -245,7 +245,7 @@ namespace BCTKApp
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.m_fg.Size = new System.Drawing.Size(884, 395);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
+            this.m_fg.TabIndex = 7;
             this.toolTip1.SetToolTip(this.m_fg, "Nháy đúp chuột vào mỗi dòng để xem chi tiết từng bill theo ngày");
             // 
             // m_lbl_header
@@ -256,7 +256,7 @@ namespace BCTKApp
             this.m_lbl_header.Location = new System.Drawing.Point(312, 9);
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(241, 22);
-            this.m_lbl_header.TabIndex = 21;
+            this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "THỐNG KÊ CUỐI THÁNG";
             // 
             // m_lbl_tu_ngay
@@ -267,7 +267,7 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.Location = new System.Drawing.Point(178, 55);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(70, 15);
-            this.m_lbl_tu_ngay.TabIndex = 22;
+            this.m_lbl_tu_ngay.TabIndex = 1;
             this.m_lbl_tu_ngay.Text = "Chọn tháng";
             // 
             // m_cbo_trang_thai
@@ -309,7 +309,7 @@ namespace BCTKApp
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(258, 85);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(338, 20);
-            this.m_txt_tim_kiem.TabIndex = 26;
+            this.m_txt_tim_kiem.TabIndex = 5;
             // 
             // m_lbl_chu_thich
             // 
@@ -334,7 +334,7 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.Location = new System.Drawing.Point(600, 80);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_tim_kiem.TabIndex = 29;
+            this.m_cmd_tim_kiem.TabIndex = 6;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
             this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
             // 
@@ -349,7 +349,7 @@ namespace BCTKApp
             this.m_cbo_phap_nhan.Location = new System.Drawing.Point(442, 51);
             this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
             this.m_cbo_phap_nhan.Size = new System.Drawing.Size(154, 21);
-            this.m_cbo_phap_nhan.TabIndex = 30;
+            this.m_cbo_phap_nhan.TabIndex = 4;
             // 
             // label1
             // 
@@ -359,7 +359,7 @@ namespace BCTKApp
             this.label1.Location = new System.Drawing.Point(372, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 15);
-            this.label1.TabIndex = 22;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Pháp nhân";
             // 
             // m_dt_chon_thang
@@ -369,7 +369,7 @@ namespace BCTKApp
             this.m_dt_chon_thang.Mask = "00/0000";
             this.m_dt_chon_thang.Name = "m_dt_chon_thang";
             this.m_dt_chon_thang.Size = new System.Drawing.Size(100, 20);
-            this.m_dt_chon_thang.TabIndex = 31;
+            this.m_dt_chon_thang.TabIndex = 2;
             this.m_dt_chon_thang.ValidatingType = typeof(System.DateTime);
             // 
             // f406_V_TONG_HOP_BILL_THEO_PHONG_BAN
