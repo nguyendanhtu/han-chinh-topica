@@ -70,7 +70,7 @@ namespace BCTKApp
                 m_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text.Replace(",", "").Replace(".", ""));
             }
             
-            m_us.datNGAY_GUI = m_dtp_ngay_gui.Value.Date;
+            m_us.datNGAY_GUI = CIPConvert.ToDatetime(m_dtp_ngay_gui.Text);
         }
         private void us_obj_2_form(US_V_DM_BILL ip_us)
         {
@@ -86,7 +86,7 @@ namespace BCTKApp
             m_cbo_trang_thai.SelectedValue = ip_us.dcID_TRANG_THAI;
             m_cbo_trung_tam.SelectedValue = ip_us.dcID_PHONG_BAN;
             m_txt_so_tien.Text = ip_us.dcSO_TIEN.ToString();
-            m_dtp_ngay_gui.Value = ip_us.datNGAY_GUI.Date;
+            m_dtp_ngay_gui.Text = ip_us.datNGAY_GUI.Date.ToString();
             
         }
         private void save_data()
@@ -124,7 +124,7 @@ namespace BCTKApp
             m_txt_nguoi_gui.Clear();
             m_txt_noi_dung.Clear();
             m_txt_noi_nhan.Clear();
-            m_dtp_ngay_gui.Value = DateTime.Now.Date;
+            m_dtp_ngay_gui.Text = DateTime.Now.Date.ToString();
             m_e_form_mode = DataEntryFormMode.InsertDataState;
         }
         private bool validate_data_is_ok()
