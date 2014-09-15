@@ -43,7 +43,6 @@
             this.m_lbl_ma_phong_ban = new System.Windows.Forms.Label();
             this.m_lbl_ten_phong_ban = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.m_dtp_ngay_gui = new System.Windows.Forms.DateTimePicker();
             this.m_txt_nguoi_nhan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.m_txt_noi_nhan = new System.Windows.Forms.TextBox();
@@ -58,6 +57,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.m_txt_nguoi_gui = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.m_dtp_ngay_gui = new BCTKApp.TCDatetime();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,15 +209,6 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "Ngày gửi";
             // 
-            // m_dtp_ngay_gui
-            // 
-            this.m_dtp_ngay_gui.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_ngay_gui.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_ngay_gui.Location = new System.Drawing.Point(411, 32);
-            this.m_dtp_ngay_gui.Name = "m_dtp_ngay_gui";
-            this.m_dtp_ngay_gui.Size = new System.Drawing.Size(217, 20);
-            this.m_dtp_ngay_gui.TabIndex = 2;
-            // 
             // m_txt_nguoi_nhan
             // 
             this.m_txt_nguoi_nhan.Location = new System.Drawing.Point(102, 114);
@@ -336,11 +327,21 @@
             this.label8.TabIndex = 45;
             this.label8.Text = "Người gửi";
             // 
+            // m_dtp_ngay_gui
+            // 
+            this.m_dtp_ngay_gui.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+            this.m_dtp_ngay_gui.Location = new System.Drawing.Point(411, 35);
+            this.m_dtp_ngay_gui.Name = "m_dtp_ngay_gui";
+            this.m_dtp_ngay_gui.Size = new System.Drawing.Size(217, 20);
+            this.m_dtp_ngay_gui.TabIndex = 46;
+            this.m_dtp_ngay_gui.ValidatingType = typeof(System.DateTime);
+            // 
             // f517_V_DM_BILL_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(659, 335);
+            this.Controls.Add(this.m_dtp_ngay_gui);
             this.Controls.Add(this.m_txt_nguoi_gui);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.m_txt_ghi_chu);
@@ -355,7 +356,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.m_txt_nguoi_nhan);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.m_dtp_ngay_gui);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.m_chk_close_form);
             this.Controls.Add(this.m_cbo_trung_tam);
@@ -389,7 +389,6 @@
         private System.Windows.Forms.Label m_lbl_ma_phong_ban;
         private System.Windows.Forms.Label m_lbl_ten_phong_ban;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker m_dtp_ngay_gui;
         private System.Windows.Forms.TextBox m_txt_nguoi_nhan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox m_txt_noi_nhan;
@@ -404,5 +403,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox m_txt_nguoi_gui;
         private System.Windows.Forms.Label label8;
+        private TCDatetime m_dtp_ngay_gui;
     }
 }
