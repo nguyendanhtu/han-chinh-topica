@@ -41,7 +41,6 @@ namespace BCTKApp
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private Label m_lbl_header;
         private Label m_lbl_tu_ngay;
-        private DateTimePicker m_dt_chon_thang;
         private ComboBox m_cbo_trang_thai;
         private Label m_lbl_trang_thai;
         private Label m_lbl_tu_khoa;
@@ -52,6 +51,7 @@ namespace BCTKApp
         private ToolTip toolTip1;
         private ComboBox m_cbo_phap_nhan;
         private Label label1;
+        private TCDatetime m_dt_chon_thang;
         private System.ComponentModel.IContainer components;
 
         public f406_V_TONG_HOP_BILL_THEO_PHONG_BAN()
@@ -101,7 +101,6 @@ namespace BCTKApp
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
-            this.m_dt_chon_thang = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
             this.m_lbl_trang_thai = new System.Windows.Forms.Label();
             this.m_lbl_tu_khoa = new System.Windows.Forms.Label();
@@ -111,6 +110,7 @@ namespace BCTKApp
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_dt_chon_thang = new BCTKApp.TCDatetime();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -236,9 +236,9 @@ namespace BCTKApp
             // 
             // m_fg
             // 
-            this.m_fg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_fg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 130);
             this.m_fg.Name = "m_fg";
@@ -264,22 +264,11 @@ namespace BCTKApp
             this.m_lbl_tu_ngay.AutoSize = true;
             this.m_lbl_tu_ngay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tu_ngay.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(177, 50);
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(178, 55);
             this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
             this.m_lbl_tu_ngay.Size = new System.Drawing.Size(70, 15);
             this.m_lbl_tu_ngay.TabIndex = 22;
             this.m_lbl_tu_ngay.Text = "Chọn tháng";
-            // 
-            // m_dt_chon_thang
-            // 
-            this.m_dt_chon_thang.Checked = false;
-            this.m_dt_chon_thang.CustomFormat = "MM/yyyy";
-            this.m_dt_chon_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dt_chon_thang.Location = new System.Drawing.Point(257, 50);
-            this.m_dt_chon_thang.Name = "m_dt_chon_thang";
-            this.m_dt_chon_thang.Size = new System.Drawing.Size(84, 20);
-            this.m_dt_chon_thang.TabIndex = 23;
-            this.m_dt_chon_thang.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
             // 
             // m_cbo_trang_thai
             // 
@@ -373,10 +362,21 @@ namespace BCTKApp
             this.label1.TabIndex = 22;
             this.label1.Text = "Pháp nhân";
             // 
+            // m_dt_chon_thang
+            // 
+            this.m_dt_chon_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
+            this.m_dt_chon_thang.Location = new System.Drawing.Point(258, 50);
+            this.m_dt_chon_thang.Mask = "00/0000";
+            this.m_dt_chon_thang.Name = "m_dt_chon_thang";
+            this.m_dt_chon_thang.Size = new System.Drawing.Size(100, 20);
+            this.m_dt_chon_thang.TabIndex = 31;
+            this.m_dt_chon_thang.ValidatingType = typeof(System.DateTime);
+            // 
             // f406_V_TONG_HOP_BILL_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.m_dt_chon_thang);
             this.Controls.Add(this.m_cbo_phap_nhan);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tim_kiem);
@@ -384,7 +384,6 @@ namespace BCTKApp
             this.Controls.Add(this.m_lbl_chu_thich);
             this.Controls.Add(this.m_lbl_tu_khoa);
             this.Controls.Add(this.m_lbl_trang_thai);
-            this.Controls.Add(this.m_dt_chon_thang);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_tu_ngay);
             this.Controls.Add(this.m_lbl_header);
@@ -433,6 +432,7 @@ namespace BCTKApp
         DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN m_ds = new DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
         US_V_TONG_TIEN_BILL_THEO_PHONG_BAN m_us = new US_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
         bool m_trang_thai = false;
+        DateTime m_dat_chon_thang;
         #endregion
 
         #region Private Methods
@@ -464,9 +464,8 @@ namespace BCTKApp
         private void set_initial_form_load()
         {
             m_obj_trans = get_trans_object(m_fg);
-            m_dt_chon_thang.Value = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
-            m_dt_chon_thang.Checked = true;
-            m_dt_chon_thang.Value = DateTime.Now.Date;
+            m_dt_chon_thang.Text = DateTime.Now.Date.ToString("MM/yyyy");
+            m_dat_chon_thang = DateTime.Now.Date;
             tim_kiem();
             //load_data_2_grid();		
         }
@@ -553,18 +552,9 @@ namespace BCTKApp
             string v_id_tu_khoa = m_txt_tim_kiem.Text;
             decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
             decimal v_id_phap_nhan = CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue);
-            DateTime v_dt_tu_ngay;
-            DateTime v_dt_den_ngay;
-            if (!m_dt_chon_thang.Checked)
-            {
-                v_dt_tu_ngay = new DateTime(1900, 1, 1);
-                v_dt_den_ngay = new DateTime(2789, 1, 1);
-            }
-            else
-            {
-                v_dt_tu_ngay = m_dt_chon_thang.Value.AddDays(-m_dt_chon_thang.Value.Date.Day + 1);
-                v_dt_den_ngay = m_dt_chon_thang.Value.AddMonths(1).AddDays(-m_dt_chon_thang.Value.Day);
-            }
+            m_dat_chon_thang = CIPConvert.ToDatetime("01/"+m_dt_chon_thang.Text);
+            DateTime v_dt_tu_ngay = m_dat_chon_thang;
+            DateTime v_dt_den_ngay = m_dat_chon_thang.AddMonths(1).AddDays(-m_dat_chon_thang.Day);
             US_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_us = new US_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
             DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN v_ds = new DS_V_TONG_TIEN_BILL_THEO_PHONG_BAN();
             v_us.FillDatasetSearch(v_ds, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai, v_id_tu_khoa, v_id_phap_nhan);
@@ -733,7 +723,7 @@ namespace BCTKApp
             m_cmd_tim_kiem.Click += new EventHandler(m_cmd_tim_kiem_Click);
             this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
-            this.m_dt_chon_thang.ValueChanged += new System.EventHandler(this.m_dt_chon_thang_ValueChanged);
+            //this.m_dt_chon_thang.ValueChanged += new System.EventHandler(this.m_dt_chon_thang_ValueChanged);
             this.m_cbo_phap_nhan.SelectedIndexChanged += new System.EventHandler(this.m_cbo_phap_nhan_SelectedIndexChanged);
             m_fg.AfterSort += m_fg_AfterSort;
         }
@@ -833,19 +823,19 @@ namespace BCTKApp
             }
         }
 
-        private void m_dt_chon_thang_ValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                //tim_kiem();
-            }
-            catch (Exception v_e)
-            {
+        //private void m_dt_chon_thang_ValueChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        //tim_kiem();
+        //    }
+        //    catch (Exception v_e)
+        //    {
 
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
 
-        }
+        //}
 
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
         {
@@ -865,8 +855,9 @@ namespace BCTKApp
                 decimal v_tong_bill;
                 decimal v_tong_tien;
                 decimal v_id_trang_thai = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
-                DateTime v_dt_tu_ngay = m_dt_chon_thang.Value.AddDays(-m_dt_chon_thang.Value.Date.Day + 1);
-                DateTime v_dt_den_ngay = m_dt_chon_thang.Value.AddMonths(1).AddDays(-m_dt_chon_thang.Value.Day);
+                m_dat_chon_thang = CIPConvert.ToDatetime("01/" + m_dt_chon_thang.Text);
+                DateTime v_dt_tu_ngay = m_dat_chon_thang;
+                DateTime v_dt_den_ngay = m_dat_chon_thang.AddMonths(1).AddDays(-m_dat_chon_thang.Day);
                 int i_grid_row = m_fg.Selection.TopRow;
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
                 v_id_phong_ban = CIPConvert.ToDecimal(v_dr[0]);
@@ -901,8 +892,9 @@ namespace BCTKApp
 
         private void export_2_excel()
         {
-            DateTime v_dt_tu_ngay = m_dt_chon_thang.Value.AddDays(-m_dt_chon_thang.Value.Date.Day + 1);
-            DateTime v_dt_den_ngay = m_dt_chon_thang.Value.AddMonths(1).AddDays(-m_dt_chon_thang.Value.Day);
+            m_dat_chon_thang = CIPConvert.ToDatetime("01/" + m_dt_chon_thang.Text);
+            DateTime v_dt_tu_ngay = m_dat_chon_thang;
+            DateTime v_dt_den_ngay = m_dat_chon_thang.AddMonths(1).AddDays(-m_dat_chon_thang.Day);
             CExcelReport v_obj_excel_report = new CExcelReport("f406_bc_Tong_hop_bill_theo_phong_ban.xlsx", 5, 1);
             US_HT_NGUOI_SU_DUNG v_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG(CAppContext_201.getCurrentUserID());
             //v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", v_dt_tu_ngay.ToShortDateString());
