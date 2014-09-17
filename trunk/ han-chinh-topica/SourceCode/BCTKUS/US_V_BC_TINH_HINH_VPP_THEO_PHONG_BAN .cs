@@ -18,9 +18,9 @@ using System.Data;
 
 namespace BCTKUS{
 
-public class US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN  : US_Object
+public class US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN: US_Object
 {
-	private const string c_TableName = "V_BC_TINH_HINH_VPP_THEO_PHONG_BAN ";
+	private const string c_TableName = "V_BC_TINH_HINH_VPP_THEO_PHONG_BAN";
 #region "Public Properties"
 	public string strMA_PHONG_BAN 
 	{
@@ -168,7 +168,7 @@ public class US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN  : US_Object
 #region "Init Functions"
 	public US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN () 
 	{
-		pm_objDS = new DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN ();
+		pm_objDS = new DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
 		pm_strTableName = c_TableName;
 		pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
 	}
@@ -180,7 +180,7 @@ public class US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN  : US_Object
 
 	public US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN (decimal i_dbID) 
 	{
-		pm_objDS = new DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN ();
+		pm_objDS = new DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
 		pm_strTableName = c_TableName;
 		IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
 		v_objMkCmd.AddCondition("ID", i_dbID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
