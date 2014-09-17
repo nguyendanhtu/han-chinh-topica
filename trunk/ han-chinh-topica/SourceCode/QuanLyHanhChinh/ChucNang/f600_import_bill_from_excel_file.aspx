@@ -108,9 +108,9 @@
                     <asp:Label ID="Label2" runat="server" CssClass="cssManField" Font-Bold="true"></asp:Label>
                     <asp:Label ID="Label1" runat="server" Text="Bước 1:" CssClass="cssManField" Font-Bold="true"></asp:Label>
                     <asp:FileUpload ID="m_fu_chon_file_import" runat="Server" EnableViewState="false" BorderStyle="Groove" BackColor="SteelBlue" ForeColor="White" BorderColor="WhiteSmoke" ToolTip="Chọn đường dẫn đến file Excel DS Bill cần gửi" />
-                    <asp:Button ID="m_cmd_upload" runat="Server" Text="Bước 2: Kiểm tra dữ liệu" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
+                    <asp:Button ID="m_cmd_upload" runat="Server" Text="Bước 2: Hiển thị dữ liệu" CssClass="cssGoogleButton" OnClick="m_cmd_upload_Click" />
                     <asp:HiddenField ID="m_hdf_dir_save_excel" runat="Server" Value="" />
-                    <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Bước 3: Gửi cho TAD" CssClass="cssGoogleButton"
+                    <asp:Button ID="m_cmd_kiem_tra_va_import" runat="Server" Text="Bước 3: Kiểm tra và Gửi cho TAD" CssClass="cssGoogleButton"
                         OnClick="m_cmd_kiem_tra_va_import_Click" />
                     <asp:TextBox ID="ghi_chu_box" runat="server" BackColor="LightGreen" Width="40px" Height="20px" Enabled="false"></asp:TextBox>
                     <asp:Label ID="ghi_chu_txt_box" runat="server" Text="Bill đã import hoặc chưa có số bill" CssClass="cssManField"></asp:Label>

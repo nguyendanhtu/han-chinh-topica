@@ -25,9 +25,11 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
 
     #region Members
     CSystemMessage m_sm = new CSystemMessage();
+    int m_i_error_cout = 0;
     #endregion
 
     #region Data Structures
+
     public class CImportBillExcelWeb
     {
         private string _STT;
@@ -123,7 +125,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
         m_lbl_thong_tim_grv_dm_bill.Text = "(Chưa có Bill nào được import)";
         m_cmd_upload.Visible = true;
-        m_cmd_kiem_tra_va_import.Visible = false;
+        m_cmd_kiem_tra_va_import.Visible = true;
     }
     private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
     {
@@ -306,40 +308,41 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         }
         Session["TempImportExcel"] = null;
         Session["TempImportExcel"] = lst_import;
-        List<CImportBillExcelWeb> lst_err = loc_danh_sach_bill_khong_hop_le(lst_import);
-        if (lst_err.Count == 0)
+        List<CImportBillExcelWeb> lst_order = OrderByTrangThai(lst_import);
+
+        if (m_i_error_cout==0)
         {
-            save_data_to_database();
-            m_cmd_upload.Visible = true;
-            m_cmd_kiem_tra_va_import.Visible = false;
-            thong_bao("Đã cập nhật thành công " + lst_import.Count + " bill!");
-            m_lbl_thong_tim_grv_dm_bill.Text = "Đã cập nhật thành công " + lst_import.Count + " bill!";
+            //save_data_to_database();
+            //m_cmd_upload.Visible = true;
+            //m_cmd_kiem_tra_va_import.Visible = false;
+            //thong_bao("Đã cập nhật thành công " + lst_import.Count + " bill!");
+            m_lbl_thong_tim_grv_dm_bill.Text = "Có tất cả " + lst_order.Count + " bill hợp lệ!";
             m_grv_dm_bill.DataSource = null;
             m_grv_dm_bill.DataBind();
         }
         else
         {
-            string v_str_mess = "Có tất cả " + lst_import.Count + " bill. Trong đó có " + (lst_import.Count - lst_err.Count) + " bill hợp lệ và " + lst_err.Count + " bill không hợp lệ bên dưới. Bạn hãy sửa chúng!";
-            ip_grv.DataSource = lst_err;
+            string v_str_mess = "Có tất cả " + lst_import.Count + " bill. Trong đó có " + (lst_import.Count - m_i_error_cout) + " bill hợp lệ và " + m_i_error_cout + " bill không hợp lệ bên dưới. Bạn hãy sửa chúng!";
+            ip_grv.DataSource = lst_order;
             //m_hdf_so_ban_ghi.Value = (lst_import.Count).ToString();
             m_grv_dm_bill.Visible = true;
             ip_grv.DataBind();
             m_lbl_thong_tim_grv_dm_bill.Text = v_str_mess;
             //check_validate_grid_is_ok();
         }
-        
+
         //v_edr.Close();
     }
 
-    public void list_to_grid()
+    public void list_to_grid(string ip_mode)
     {
         List<CImportBillExcelWeb> lst_import = (List<CImportBillExcelWeb>)Session["TempImportExcel"];
-        List<CImportBillExcelWeb> lst_err = loc_danh_sach_bill_khong_hop_le(lst_import);
-        if (lst_err.Count == 0)
+        List<CImportBillExcelWeb> lst_err = OrderByTrangThai(lst_import);
+        if (m_i_error_cout==0&&ip_mode.Equals("Save"))
         {
             save_data_to_database();
-            m_cmd_upload.Visible = true;
-            m_cmd_kiem_tra_va_import.Visible = false;
+            //m_cmd_upload.Visible = true;
+            //m_cmd_kiem_tra_va_import.Visible = false;
             Session["TempImportExcel"] = null;
             thong_bao("Đã cập nhật thành công " + lst_import.Count + " bill!");
             m_lbl_thong_tim_grv_dm_bill.Text = "Đã cập nhật thành công " + lst_import.Count + " bill!";
@@ -357,17 +360,29 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             //check_validate_grid_is_ok();
         }
     }
-    public List<CImportBillExcelWeb> loc_danh_sach_bill_khong_hop_le(List<CImportBillExcelWeb> ip_lst)
+    public List<CImportBillExcelWeb> OrderByTrangThai(List<CImportBillExcelWeb> ip_lst)
     {
-        List<CImportBillExcelWeb> lst_result = new List<CImportBillExcelWeb>();
+        List<CImportBillExcelWeb> op_lst = new List<CImportBillExcelWeb>();
         for (int i = 0; i < ip_lst.Count; i++)
         {
             CImportBillExcelWeb v_bill = new CImportBillExcelWeb();
             v_bill = ip_lst[i];
             if (v_bill.NGUOI_GUI.Equals("") | v_bill.NGUOI_NHAN.Equals("") | v_bill.SO_BILL.Length != 8 | !isNumber(v_bill.SO_BILL) | !check_validate_so_bill_is_ok(v_bill.SO_BILL))
-                lst_result.Add(v_bill);
+                ip_lst[i].TRANG_THAI = "N";
+            else ip_lst[i].TRANG_THAI = "Y";
         }
-        return lst_result;
+        for (int i = 0; i < ip_lst.Count; i++)
+        {
+            if (ip_lst[i].TRANG_THAI == "N")
+                op_lst.Add(ip_lst[i]);
+        }
+        m_i_error_cout = op_lst.Count;
+        for (int i = 0; i < ip_lst.Count; i++)
+        {
+            if (ip_lst[i].TRANG_THAI == "Y")
+                op_lst.Add(ip_lst[i]);
+        }
+        return op_lst;
     }
     private void save_data_to_database()
     {
@@ -394,28 +409,28 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 v_us.Insert();
 
             }
-        string v_str_ten_phong_ban=v_ds_dm_phong_ban.DM_PHONG_BAN[0][DM_PHONG_BAN.TEN_PHONG_BAN].ToString();
+        string v_str_ten_phong_ban = v_ds_dm_phong_ban.DM_PHONG_BAN[0][DM_PHONG_BAN.TEN_PHONG_BAN].ToString();
         string v_str_noi_dung = "Thông báo\n TAD đã nhận được thông tin đặt hàng CPN:\n Tên phòng:" + v_str_ten_phong_ban + "\n Tổng số bill: " + lst_import.Count + " bill"
             + "\n Ngày gửi: " + DateTime.Now.ToString("dd/MM/yyyy");
-        string v_str_subject="[WebsiteQuanLyHanhChinh] Phong ban "+v_str_ten_phong_ban+" nhap bill";
+        string v_str_subject = "[WebsiteQuanLyHanhChinh] Phong ban " + v_str_ten_phong_ban + " nhap bill";
         string v_str_send_mail_to = "";
         US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG(69758);
         v_str_send_mail_to = v_us_ht_nguoi_su_dung.strMAIL;
         if (v_str_send_mail_to.Equals("")) return;
         WinFormControls.SendEmailHanhChinhTopica(v_str_send_mail_to, v_str_subject, v_str_noi_dung);
-       
-        m_cmd_upload.Visible = true;
-        m_cmd_kiem_tra_va_import.Visible = false;
+
+        //m_cmd_upload.Visible = true;
+        //m_cmd_kiem_tra_va_import.Visible = false;
         Session["TempImportExcel"] = null;
     }
     private void save_grid_to_list()
     {
-        List<CImportBillExcelWeb> lst_import=new List<CImportBillExcelWeb>();
+        List<CImportBillExcelWeb> lst_import = new List<CImportBillExcelWeb>();
         lst_import = (List<CImportBillExcelWeb>)Session["TempImportExcel"];
         if (lst_import.Count == 0)
         {
-            m_cmd_upload.Visible = true;
-            m_cmd_kiem_tra_va_import.Visible = false;
+            //m_cmd_upload.Visible = true;
+            //m_cmd_kiem_tra_va_import.Visible = false;
             return;
         }
         GridViewRow[] v_arr_gvr = new GridViewRow[m_grv_dm_bill.Rows.Count];
@@ -447,7 +462,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             v_rdb_trong_nuoc = (System.Web.UI.WebControls.RadioButton)v_arr_gvr[i].FindControl("m_rdb_trong_nuoc");
             v_hdf_stt = (System.Web.UI.WebControls.HiddenField)v_arr_gvr[i].FindControl("m_hdf_stt");
             System.Web.UI.WebControls.TextBox v_txt_ngay_gui = (System.Web.UI.WebControls.TextBox)v_arr_gvr[i].FindControl("m_txt_ngay_gui_grid");
-            int v_index =findBillHaveSTT(lst_import, v_hdf_stt.Value);
+            int v_index = findBillHaveSTT(lst_import, v_hdf_stt.Value);
             lst_import[v_index].SO_BILL = v_txt_so_bill.Text.Trim();
             lst_import[v_index].MA_PHONG_BAN = v_txt_ma_phong_ban.Text;
             lst_import[v_index].NGUOI_NHAN = v_txt_nguoi_nhan.Text;
@@ -473,8 +488,8 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     public int findBillHaveSTT(List<CImportBillExcelWeb> ip_lst, string ip_str_stt)
     {
         CImportBillExcelWeb v_bill = new CImportBillExcelWeb();
-        int i=0;
-        for ( i= 0; i < ip_lst.Count; i++)
+        int i = 0;
+        for (i = 0; i < ip_lst.Count; i++)
         {
             if (ip_lst[i].STT == ip_str_stt)
             {
@@ -784,7 +799,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         try
         {
             save_grid_to_list();
-            list_to_grid();
+            list_to_grid("Save");
             check_validate_grid_is_ok();
         }
         catch (Exception v_e)
@@ -797,14 +812,14 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
     }
     protected void m_grv_dm_bill_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-        HiddenField v_hdf_stt=(HiddenField)(m_grv_dm_bill.Rows[e.RowIndex]).FindControl("m_hdf_stt");
+        HiddenField v_hdf_stt = (HiddenField)(m_grv_dm_bill.Rows[e.RowIndex]).FindControl("m_hdf_stt");
         List<CImportBillExcelWeb> lst_import = new List<CImportBillExcelWeb>();
         lst_import = (List<CImportBillExcelWeb>)Session["TempImportExcel"];
         int v_index = findBillHaveSTT(lst_import, v_hdf_stt.Value);
         lst_import.RemoveAt(v_index);
         Session["TempImportExcel"] = null;
         Session["TempImportExcel"] = lst_import;
-        list_to_grid();
+        list_to_grid("NoSave");
         check_validate_grid_is_ok();
     }
     protected void m_grv_dm_bill_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -813,7 +828,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         {
             m_grv_dm_bill.PageIndex = e.NewPageIndex;
             List<CImportBillExcelWeb> lst_import = new List<CImportBillExcelWeb>();
-            lst_import = (List<CImportBillExcelWeb>)Session["TempImportExcel"];
+            lst_import = OrderByTrangThai((List<CImportBillExcelWeb>)Session["TempImportExcel"]);
             m_grv_dm_bill.DataSource = lst_import;
             m_grv_dm_bill.DataBind();
             check_validate_grid_is_ok();
@@ -824,7 +839,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    
+
     protected void m_cmd_ok_Click(object sender, EventArgs e)
     {
         try
