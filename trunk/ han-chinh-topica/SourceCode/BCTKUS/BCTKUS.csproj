@@ -170,6 +170,7 @@
     <Compile Include="US_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.cs" />
     <Compile Include="US_V_BC_CHI_TIET_DM.cs" />
     <Compile Include="US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.cs" />
+    <Compile Include="US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN .cs" />
     <Compile Include="US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.cs" />
     <Compile Include="US_V_DINH_MUC_CPN_TUNG_PHONG_BAN.cs" />
     <Compile Include="US_V_DM_BILL.cs" />
