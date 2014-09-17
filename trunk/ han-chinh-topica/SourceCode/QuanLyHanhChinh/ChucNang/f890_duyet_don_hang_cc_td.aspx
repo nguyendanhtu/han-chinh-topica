@@ -68,10 +68,8 @@
                         <asp:GridView ID="m_grv_don_hang_nhap" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Không có đơn hàng nào!" EmptyDataRowStyle-BorderColor="#810913"
-                            CellPadding="8" PageSize="20"> <%--OnSelectedIndexChanged="m_grv_don_hang_nhap_SelectedIndexChanged"--%>
-                            <%--OnRowEditing="m_grv_don_hang_nhap_RowEditing"
-                        OnRowDeleting="m_grv_don_hang_nhap_RowDeleting"
-                        OnPageIndexChanging="m_grv_don_hang_PageIndexChanging">--%>
+                            CellPadding="8" PageSize="20"
+                            OnRowCommand="m_grv_don_hang_nhap_RowCommand">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />
@@ -83,28 +81,22 @@
                             <Columns>
                                 <asp:TemplateField HeaderText="Không duyệt" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Không duyệt đơn này">
-                                            <%--OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">--%>
-                                                <img src="../Images/Button/deletered.png" alt="Delete" />
+                                        <asp:LinkButton ID="m_lbt_khong_duyet" runat="server" CommandName="KhongDuyet" ToolTip="Không duyệt đơn này" CommandArgument='<%#Eval("ID") %>'
+                                            OnClientClick="return confirm ('Bạn có thực sự muốn huỷ duyệt đơn hàng này?')">
+                                                <img src="../Images/Button/deletered.png" alt="Huỷ duyệt" />
                                         </asp:LinkButton>
                                     </ItemTemplate>
                                     <ItemStyle />
                                 </asp:TemplateField>
-                                <asp:CommandField ItemStyle-Width="1%" EditText="Duyệt" EditImageUrl="../Images/Button/edit.png"
-                                    ShowEditButton="true" ButtonType="Image" HeaderText="Duyệt" ItemStyle-HorizontalAlign="Center"
-                                    HeaderStyle-HorizontalAlign="Center">   
-                                    <HeaderStyle HorizontalAlign="Center" />
-                                    <ItemStyle HorizontalAlign="Center" Width="1%" />
-                                </asp:CommandField>
-                                <%--<asp:TemplateField HeaderText="Chi tiết" ItemStyle-Width="3%" ItemStyle-HorizontalAlign="Center">
+                                <asp:TemplateField HeaderText="Duyệt" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="m_lbt_detail" runat="server" CommandName="Detail" ToolTip="Chi tiết">   
-                                            OnClick="m_lbt_detail_OnClick">
-                                                <img src="../Images/Button/detail.png" alt="Detail" />
+                                        <asp:LinkButton ID="m_lbt_duyet" runat="server" CommandName="Duyet" ToolTip="Không duyệt đơn này" CommandArgument='<%#Eval("ID") %>'
+                                            OnClientClick="return confirm ('Bạn có thực sự muốn duyệt đơn hàng này?')">
+                                                <img src="../Images/Button/edit.png" alt="Delete" />
                                         </asp:LinkButton>
                                     </ItemTemplate>
                                     <ItemStyle />
-                                </asp:TemplateField>--%>
+                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <%# Container.DataItemIndex + 1 %>
