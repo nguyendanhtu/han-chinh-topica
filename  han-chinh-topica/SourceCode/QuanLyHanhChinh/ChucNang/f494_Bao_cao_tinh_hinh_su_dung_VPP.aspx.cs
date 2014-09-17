@@ -49,13 +49,17 @@ public partial class ChucNang_f494_Bao_cao_tinh_hinh_su_dung_VPP : System.Web.UI
             for (int i = 0; i < m_grv_v_bc_tinh_hinh_VPP.Rows.Count; i++)
                 if (CIPConvert.ToDecimal(m_grv_v_bc_tinh_hinh_VPP.DataKeys[i].Value) == CIPConvert.ToDecimal(m_hdf_id_bill.Value)) m_grv_v_bc_tinh_hinh_VPP.SelectedIndex = i;
         }
-        load_data_tra_lai_mat_phi();
-        load_data_tra_lai_khong_mat_phi();
-        load_data_bill_gui_thanh_cong();
-        load_data_bill_chua_gui_CPN();
-
+        load_data_to_chi_tiet_grid();
     }
-
+    private void load_data_to_chi_tiet_grid()
+    {
+        decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
+        US_V_GD_DON_DAT_HANG v_us = new US_V_GD_DON_DAT_HANG();
+        DS_V_GD_DON_DAT_HANG v_ds = new DS_V_GD_DON_DAT_HANG();
+        v_us.FillDataset(v_ds, v_id_trung_tam, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
+        m_grv_chi_tiet_bc.DataSource = v_ds.V_GD_DON_DAT_HANG;
+        m_grv_chi_tiet_bc.DataBind();
+    }
     private void load_data_grv_detail(decimal ip_id_trang_thai)
     {
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
@@ -87,74 +91,6 @@ public partial class ChucNang_f494_Bao_cao_tinh_hinh_su_dung_VPP : System.Web.UI
         if (v_ds_v_dm_bill.V_DM_BILL.Count == 0)
             thong_bao("Không tìm thấy Bill!", true);
     }
-    private void load_data_bill_chua_gui_CPN()
-    {
-        decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
-        US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_us = new US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_ds = new DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        v_us.Fill_TONG_HOP_BILL_CHUA_GUI_CHO_CPN(v_ds, v_id_trung_tam, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
-        if (v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows.Count == 0)
-            m_lbl_so_bill_bi_tra_lai_khong_mat_phi.Text = "0";
-        else
-        {
-            m_lbl_bill_chua_gui_cho_CPN.Text = CIPConvert.ToStr(v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows[0][0], "#,###");
-        }
-    }
-    private void load_data_bill_gui_thanh_cong()
-    {
-        decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
-        US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_us = new US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_ds = new DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        v_us.Fill_TONG_HOP_BILL_DA_GUI_THANH_CONG(v_ds, v_id_trung_tam, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
-        if (v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows.Count == 0)
-        {
-            m_lbl_so_bill_da_gui_thanh_cong.Text = "0";
-            m_lbl_tong_tien_da_gui_thanh_cong.Text = "0";
-        }
-        else
-        {
-            m_lbl_so_bill_da_gui_thanh_cong.Text = CIPConvert.ToStr(v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows[0][0], "#,###");
-            if (v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows[0][1].ToString() != "")
-                m_lbl_tong_tien_da_gui_thanh_cong.Text = CIPConvert.ToStr(v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows[0][1], "#,###");
-            else
-                m_lbl_tong_tien_da_gui_thanh_cong.Text = "0";
-        }
-    }
-
-    private void load_data_tra_lai_mat_phi()
-    {
-        decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
-        US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_us = new US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_ds = new DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        v_us.Fill_TONG_HOP_BILL_MAT_PHI(v_ds, v_id_trung_tam, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
-        if (v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows.Count == 0)
-        {
-            m_lbl_so_bill_bi_tra_lai_mat_phi.Text = "0";
-            m_lbl_so_tien_bill_bi_tra_lai_mat_phi.Text = "0";
-        }
-        else
-        {
-            m_lbl_so_bill_bi_tra_lai_mat_phi.Text = CIPConvert.ToStr(v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows[0][0], "#,###");
-            if (v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows[0][1].ToString() == "")
-                m_lbl_so_tien_bill_bi_tra_lai_mat_phi.Text = "0";
-            else
-                m_lbl_so_tien_bill_bi_tra_lai_mat_phi.Text = CIPConvert.ToStr(v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows[0][1], "#,###");
-        }
-    }
-    private void load_data_tra_lai_khong_mat_phi()
-    {
-        decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
-        US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_us = new US_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB v_ds = new DS_V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB();
-        v_us.Fill_TONG_HOP_BILL_KHONG_MAT_PHI(v_ds, v_id_trung_tam, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
-        if (v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows.Count == 0)
-            m_lbl_so_bill_bi_tra_lai_khong_mat_phi.Text = "0";
-        else
-        {
-            m_lbl_so_bill_bi_tra_lai_khong_mat_phi.Text = CIPConvert.ToStr(v_ds.V_BC_TONG_HOP_BILL_BI_TRA_LAI_WEB.Rows[0][0], "#,###");
-        }
-    }
-
     private void thong_bao(string ip_str_mess)
     {
         m_mtv_1.SetActiveView(m_view_confirm);
@@ -256,6 +192,19 @@ public partial class ChucNang_f494_Bao_cao_tinh_hinh_su_dung_VPP : System.Web.UI
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_grv_chi_tiet_bc_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            m_grv_v_bc_tinh_hinh_VPP.PageIndex = e.NewPageIndex;
+            m_grv_v_bc_tinh_hinh_VPP.DataBind();
+        }
+        catch (Exception v_e)
+        {
+
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     protected void m_cmd_xem_bao_cao_Click(object sender, EventArgs e)
     {
         try
@@ -312,62 +261,6 @@ public partial class ChucNang_f494_Bao_cao_tinh_hinh_su_dung_VPP : System.Web.UI
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cmd_bill_chua_gui_cho_CPN_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            m_lbl_ten_detail.Text = "Chi tiết danh sách các Bill chưa gửi cho CPN";
-            view_detail_grv(true);
-            m_hdf_trang_thai_thu.Value = CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO.ToString();
-            load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO);
-        }
-        catch (System.Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_cmd_bill_da_gui_cho_CPN_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            m_lbl_ten_detail.Text = "Chi tiết danh sách các Bill đã gửi cho CPN";
-            view_detail_grv(true);
-            m_hdf_trang_thai_thu.Value = CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN.ToString();
-            load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN);
-        }
-        catch (System.Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_cmd_bill_tra_lai_mat_phi_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            m_lbl_ten_detail.Text = "Chi tiết danh sách các Bill bị trả lại mất phí";
-            view_detail_grv(true);
-            m_hdf_trang_thai_thu.Value = CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_MAT_PHI.ToString();
-            load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_MAT_PHI);
-        }
-        catch (System.Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
-    protected void m_cmd_bill_tra_lai_khong_mat_phi_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            m_lbl_ten_detail.Text = "Chi tiết danh sách các Bill bị trả lại không mất phí";
-            view_detail_grv(true);
-            m_hdf_trang_thai_thu.Value = CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_KHONG_MAT_PHI.ToString();
-            load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_KHONG_MAT_PHI);
-        }
-        catch (System.Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
     protected void m_cmd_detail_exit_Click(object sender, EventArgs e)
     {
         try
@@ -384,22 +277,22 @@ public partial class ChucNang_f494_Bao_cao_tinh_hinh_su_dung_VPP : System.Web.UI
         try
         {
             m_grv_detail.PageIndex = e.NewPageIndex;
-            if (m_hdf_trang_thai_thu.Value == CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO.ToString())
-            {
-                load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO);
-            }
-            if (m_hdf_trang_thai_thu.Value == CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN.ToString())
-            {
-                load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN);
-            }
-            if (m_hdf_trang_thai_thu.Value == CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_KHONG_MAT_PHI.ToString())
-            {
-                load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_KHONG_MAT_PHI);
-            }
-            if (m_hdf_trang_thai_thu.Value == CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_MAT_PHI.ToString())
-            {
-                load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_MAT_PHI);
-            }
+            //if (m_hdf_trang_thai_thu.Value == CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO.ToString())
+            //{
+            //    load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO);
+            //}
+            //if (m_hdf_trang_thai_thu.Value == CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN.ToString())
+            //{
+            //    load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN);
+            //}
+            //if (m_hdf_trang_thai_thu.Value == CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_KHONG_MAT_PHI.ToString())
+            //{
+            //    load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_KHONG_MAT_PHI);
+            //}
+            //if (m_hdf_trang_thai_thu.Value == CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_MAT_PHI.ToString())
+            //{
+            //    load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_MAT_PHI);
+            //}
             m_grv_detail.DataBind();
         }
         catch (Exception v_e)
