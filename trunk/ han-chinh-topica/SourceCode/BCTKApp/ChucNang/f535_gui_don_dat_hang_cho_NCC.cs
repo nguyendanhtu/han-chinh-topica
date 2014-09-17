@@ -42,13 +42,13 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Panel panel1;
         private Label label1;
-        private DateTimePicker m_dtp_thang;
         private Label label7;
         private Label m_lbl_tieu_de;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private ComboBox m_cbo_phap_nhan;
         private Label label2;
         private TextBox m_txt_tu_khoa;
+        private TCDatetime m_dtp_thang;
 		private System.ComponentModel.IContainer components;
 
 		public f535_gui_don_dat_hang_cho_NCC()
@@ -97,14 +97,14 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_don_hang = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.m_dtp_thang = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
+            this.m_dtp_thang = new BCTKApp.TCDatetime();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -241,12 +241,12 @@ namespace BCTKApp
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_dtp_thang);
             this.panel1.Controls.Add(this.m_txt_tu_khoa);
             this.panel1.Controls.Add(this.m_cbo_phap_nhan);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.m_dtp_thang);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.m_lbl_tieu_de);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -254,6 +254,13 @@ namespace BCTKApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(738, 117);
             this.panel1.TabIndex = 22;
+            // 
+            // m_txt_tu_khoa
+            // 
+            this.m_txt_tu_khoa.Location = new System.Drawing.Point(225, 81);
+            this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
+            this.m_txt_tu_khoa.Size = new System.Drawing.Size(341, 20);
+            this.m_txt_tu_khoa.TabIndex = 40;
             // 
             // m_cbo_phap_nhan
             // 
@@ -298,17 +305,6 @@ namespace BCTKApp
             this.label1.TabIndex = 34;
             this.label1.Text = "Từ khóa";
             // 
-            // m_dtp_thang
-            // 
-            this.m_dtp_thang.CustomFormat = "MM/yyyy";
-            this.m_dtp_thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thang.Location = new System.Drawing.Point(225, 46);
-            this.m_dtp_thang.Name = "m_dtp_thang";
-            this.m_dtp_thang.Size = new System.Drawing.Size(109, 23);
-            this.m_dtp_thang.TabIndex = 32;
-            this.m_dtp_thang.Value = new System.DateTime(2014, 7, 24, 0, 0, 0, 0);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -330,12 +326,15 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Text = "ĐƠN HÀNG THEO TỪNG TRUNG TÂM";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // m_txt_tu_khoa
+            // m_dtp_thang
             // 
-            this.m_txt_tu_khoa.Location = new System.Drawing.Point(225, 81);
-            this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
-            this.m_txt_tu_khoa.Size = new System.Drawing.Size(341, 20);
-            this.m_txt_tu_khoa.TabIndex = 40;
+            this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
+            this.m_dtp_thang.Location = new System.Drawing.Point(225, 45);
+            this.m_dtp_thang.Mask = "00/0000";
+            this.m_dtp_thang.Name = "m_dtp_thang";
+            this.m_dtp_thang.Size = new System.Drawing.Size(99, 20);
+            this.m_dtp_thang.TabIndex = 47;
+            this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
             // 
             // f535_gui_don_dat_hang_cho_NCC
             // 
@@ -396,7 +395,7 @@ namespace BCTKApp
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_don_hang);
-            m_dtp_thang.Value = DateTime.Now.Date;
+            m_dtp_thang.Text = DateTime.Now.Date.ToString("MM/yyyy");
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -411,7 +410,7 @@ namespace BCTKApp
         {
             decimal v_dc_id_phap_nhan = CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue);
             string v_str_tu_khoa = m_txt_tu_khoa.Text;
-		    DateTime temp = m_dtp_thang.Value.Date;
+            DateTime temp = CIPConvert.ToDatetime("01/"+m_dtp_thang.Text);
             temp = temp.AddMonths(1);
             temp = temp.AddDays(-(temp.Day));
             DateTime v_dat_thang = temp;
