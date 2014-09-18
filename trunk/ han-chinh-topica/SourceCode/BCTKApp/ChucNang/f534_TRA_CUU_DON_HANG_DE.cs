@@ -389,7 +389,7 @@ namespace BCTKApp
             CGridUtils.AddSearch_Handlers(m_grv_don_hang_de);
             m_cmd_exit.Visible = true;
             m_cmd_exit.Enabled = true;
-            m_cmd_xuat_excel.Visible = true;
+            m_cmd_xuat_excel.Visible = false;
             m_cmd_xuat_excel.Enabled = true;
             set_define_events();    
 			this.KeyPreview = true;		
