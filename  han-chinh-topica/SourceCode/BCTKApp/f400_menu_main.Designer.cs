@@ -276,6 +276,7 @@
             this.m_cmd_tra_cuu_don_hang.Name = "m_cmd_tra_cuu_don_hang";
             this.m_cmd_tra_cuu_don_hang.SubItemsExpandWidth = 14;
             this.m_cmd_tra_cuu_don_hang.Text = "Nhập mã HD NCC";
+            this.m_cmd_tra_cuu_don_hang.Visible = false;
             // 
             // m_cmd_so_sanh_chi_phi_NCC
             // 
