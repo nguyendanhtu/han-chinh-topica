@@ -371,7 +371,7 @@ namespace BCTKApp
 		ITransferDataRow m_obj_trans;		
 		DS_V_GD_DON_DAT_HANG_DETAIL m_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
 		US_V_GD_DON_DAT_HANG_DETAIL m_us = new US_V_GD_DON_DAT_HANG_DETAIL();
-        private const String m_str_goi_y = "Nhập tên trung tâm";
+        private const String m_str_goi_y = "Nhập mã,tên trung tâm";
 		#endregion
 
 		#region Private Methods
@@ -535,9 +535,9 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
-            m_txt_tu_khoa.KeyDown += new KeyEventHandler(m_txt_so_bill_KeyDown);
-            m_txt_tu_khoa.Leave += new EventHandler(m_txt_so_bill_Leave);
-            m_txt_tu_khoa.MouseClick += new MouseEventHandler(m_txt_so_bill_MouseClick);
+            m_txt_tu_khoa.KeyDown += new KeyEventHandler(m_txt_tu_khoa_KeyDown);
+            m_txt_tu_khoa.Leave += new EventHandler(m_txt_tu_khoa_Leave);
+            m_txt_tu_khoa.MouseClick += new MouseEventHandler(m_txt_tu_khoa_MouseClick);
             //m_dtp_thang.ValueChanged+=new EventHandler(m_dtp_thang_ValueChanged);
             m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
             this.KeyDown+=new KeyEventHandler(f535_gui_don_dat_hang_cho_NCC_KeyDown);
@@ -627,7 +627,7 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void m_txt_so_bill_KeyDown(object sender, KeyEventArgs e)
+        private void m_txt_tu_khoa_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
@@ -646,7 +646,7 @@ namespace BCTKApp
             }
         }
 
-        private void m_txt_so_bill_MouseClick(object sender, MouseEventArgs e)
+        private void m_txt_tu_khoa_MouseClick(object sender, MouseEventArgs e)
         {
             try
             {
@@ -658,7 +658,7 @@ namespace BCTKApp
             }
         }
 
-        private void m_txt_so_bill_Leave(object sender, EventArgs e)
+        private void m_txt_tu_khoa_Leave(object sender, EventArgs e)
         {
             try
             {
