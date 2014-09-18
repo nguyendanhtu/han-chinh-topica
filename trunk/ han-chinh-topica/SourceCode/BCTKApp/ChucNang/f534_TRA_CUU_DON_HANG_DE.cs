@@ -346,7 +346,7 @@ namespace BCTKApp
         public void display_for_chi_tiet(US_V_GD_DON_DAT_HANG ip_us_v) 
         {
             m_obj_trans = get_trans_object(m_grv_don_hang_de);
-            format_controls();
+            //format_controls();
             m_id_hoa_don = ip_us_v.dcID;
             m_lbl_ten_trung_tam.Text = ip_us_v.strTEN_PHONG_BAN;
             m_lbl_ma_hd.Text = ip_us_v.strMA_HD;
@@ -389,7 +389,7 @@ namespace BCTKApp
             CGridUtils.AddSearch_Handlers(m_grv_don_hang_de);
             m_cmd_exit.Visible = true;
             m_cmd_exit.Enabled = true;
-            m_cmd_xuat_excel.Visible = false;
+            m_cmd_xuat_excel.Visible = true;
             m_cmd_xuat_excel.Enabled = true;
             set_define_events();    
 			this.KeyPreview = true;		
@@ -476,7 +476,7 @@ namespace BCTKApp
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            //m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
+            m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
             this.KeyDown+=new KeyEventHandler(f534_TRA_CUU_DON_HANG_DE_KeyDown);
 		}
 		#endregion
