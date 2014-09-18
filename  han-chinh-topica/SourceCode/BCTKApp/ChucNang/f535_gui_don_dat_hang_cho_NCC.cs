@@ -371,6 +371,7 @@ namespace BCTKApp
 		ITransferDataRow m_obj_trans;		
 		DS_V_GD_DON_DAT_HANG_DETAIL m_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
 		US_V_GD_DON_DAT_HANG_DETAIL m_us = new US_V_GD_DON_DAT_HANG_DETAIL();
+        private const String m_str_goi_y = "Nhập tên trung tâm";
 		#endregion
 
 		#region Private Methods
@@ -390,6 +391,7 @@ namespace BCTKApp
             m_cmd_xuat_excel.Enabled = true;
             m_cmd_exit.Visible = true;
             m_cmd_exit.Enabled = true;
+            set_search_tu_khoa_format_before();
             set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -410,6 +412,7 @@ namespace BCTKApp
         {
             decimal v_dc_id_phap_nhan = CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue);
             string v_str_tu_khoa = m_txt_tu_khoa.Text;
+            if (v_str_tu_khoa == m_str_goi_y) v_str_tu_khoa = "";
             DateTime temp = CIPConvert.ToDatetime("01/"+m_dtp_thang.Text);
             temp = temp.AddMonths(1);
             temp = temp.AddDays(-(temp.Day));
@@ -503,6 +506,22 @@ namespace BCTKApp
 		//	f535_gui_don_dat_hang_cho_NCC_DE v_fDE = new f535_gui_don_dat_hang_cho_NCC_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void set_search_tu_khoa_format_before()
+        {
+            if (m_txt_tu_khoa.Text == "")
+            {
+                m_txt_tu_khoa.Text = m_str_goi_y;
+                m_txt_tu_khoa.ForeColor = Color.Gray;
+            }
+        }
+        private void set_search_tu_khoa_format_after()
+        {
+            if (m_txt_tu_khoa.Text == m_str_goi_y)
+            {
+                m_txt_tu_khoa.Text = "";
+            }
+            m_txt_tu_khoa.ForeColor = Color.Black;
+        }
         private void export_2_excel()
         {
             CExcelReport v_obj_excel_report = new CExcelReport("f535_gui_don_hang_cho_NCC.xls", 6,1);
@@ -516,6 +535,9 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
+            m_txt_tu_khoa.KeyDown += new KeyEventHandler(m_txt_so_bill_KeyDown);
+            m_txt_tu_khoa.Leave += new EventHandler(m_txt_so_bill_Leave);
+            m_txt_tu_khoa.MouseClick += new MouseEventHandler(m_txt_so_bill_MouseClick);
             //m_dtp_thang.ValueChanged+=new EventHandler(m_dtp_thang_ValueChanged);
             m_cmd_search.Click+=new EventHandler(m_cmd_search_Click);
             this.KeyDown+=new KeyEventHandler(f535_gui_don_dat_hang_cho_NCC_KeyDown);
@@ -599,6 +621,48 @@ namespace BCTKApp
             try
             {
                 load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_so_bill_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid();
+                }
+                else
+                {
+                    set_search_tu_khoa_format_after();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_so_bill_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                set_search_tu_khoa_format_after();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_so_bill_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                set_search_tu_khoa_format_before();
             }
             catch (Exception v_e)
             {
