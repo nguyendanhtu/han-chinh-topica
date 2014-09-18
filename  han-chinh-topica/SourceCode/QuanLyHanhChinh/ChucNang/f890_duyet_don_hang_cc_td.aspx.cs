@@ -63,15 +63,17 @@ public partial class ChucNang_f890_duyet_don_hang_cc_td : System.Web.UI.Page
 
         DS_GD_DON_DAT_HANG v_ds_gd_don_dat_hang = new DS_GD_DON_DAT_HANG();
         US_GD_DON_DAT_HANG v_us_gd_don_dat_hang = new US_GD_DON_DAT_HANG();
-        string temp = "01/08/2014";
-        v_us_gd_don_dat_hang.load_ddh_xin_td_duyet(v_ds_gd_don_dat_hang, v_id_trung_tam, CIPConvert.ToDatetime(temp));
+        //string temp = "01/08/2014";
+        v_us_gd_don_dat_hang.load_ddh_xin_td_duyet(v_ds_gd_don_dat_hang, v_id_trung_tam, m_dat_thang.SelectedValue.Value.Date);
         m_grv_don_hang_nhap.DataSource = v_ds_gd_don_dat_hang.GD_DON_DAT_HANG;
         m_grv_don_hang_nhap.DataBind();
-
         //Lay tong tien dinh muc
-        DateTime v_dau_thang = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
-        DateTime v_cuoi_thang = DateTime.Now.Date.AddMonths(1).AddDays(-DateTime.Now.Date.Day);
-        m_lbl_tong_tien_dm.Text = CIPConvert.ToStr(v_us_gd_don_dat_hang.get_tong_tien_dinh_muc_hang_thang(v_id_trung_tam, 174, v_dau_thang, v_cuoi_thang).ToString(), "#,###,##");
+        //DateTime v_dau_thang = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
+        //DateTime v_cuoi_thang = DateTime.Now.Date.AddMonths(1).AddDays(-DateTime.Now.Date.Day);
+        DateTime v_dau_thang = m_dat_thang.SelectedValue.Value.AddDays(-m_dat_thang.SelectedValue.Value.Date.Day + 1);
+        DateTime v_cuoi_thang = m_dat_thang.SelectedValue.Value.AddMonths(1).AddDays(-m_dat_thang.SelectedValue.Value.Date.Day);
+        m_lbl_tong_tien_dm.Text = CIPConvert.ToStr(v_us_gd_don_dat_hang.get_tong_tien_dinh_muc_hang_thang(v_id_trung_tam, 173, v_dau_thang, v_cuoi_thang).ToString(), "#,###,##");
+        m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_dat_hang.get_tong_tien_da_chi_hang_thang(v_id_trung_tam, v_dau_thang), "#,###");
     }
 
     protected void m_grv_don_hang_nhap_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -89,7 +91,8 @@ public partial class ChucNang_f890_duyet_don_hang_cc_td : System.Web.UI.Page
                     break;
                 case "Duyet":
                     v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET;
-                    //cong them chi phi
+                    v_us_gd_don_hang.Update();
+                    m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_hang.get_tong_tien_da_chi_hang_thang(v_us_gd_don_hang.dcID_PHONG_BAN, m_dat_thang.SelectedValue.Value.Date), "#,###");
                     break;
             }
             //v_us_gd_don_hang.Update();
@@ -99,6 +102,16 @@ public partial class ChucNang_f890_duyet_don_hang_cc_td : System.Web.UI.Page
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
+    }
+    protected void m_dat_thang_DateChanged(object sender, EventArgs e) {
+        try {
+            load_data_to_grid();
+        }
+        catch(Exception) {
+            
+            throw;
+        }
+      
     }
 }
 

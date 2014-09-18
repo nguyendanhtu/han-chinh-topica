@@ -23,7 +23,7 @@
                 &nbsp<ew:CalendarPopup ID="m_dat_thang" runat="server" TextBoxLabelStyle-BorderColor="#810913"
                     TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
                     DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
-                    ShowGoToToday="true" Width="10%">
+                    ShowGoToToday="true" Width="10%" OnDateChanged="m_dat_thang_DateChanged" SelectedDate="06/17/2014 23:48:00">
                     <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
                         ForeColor="Black" />
                     <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
@@ -57,7 +57,7 @@
                 <tr>
                     <td style="text-align: center">
                         <asp:Label ID="m_lbl_so_tien_da_chi" runat="Server" Text=" Số tiền đã chi thực tế: "></asp:Label>
-                        &nbsp&nbsp<asp:Label ID="Label5" runat="Server" Text="0"></asp:Label>
+                        &nbsp&nbsp<asp:Label ID="m_lbl_tong_tien_da_chi" runat="Server" Text="0"></asp:Label>
                     </td>
                 </tr>
             </table>
