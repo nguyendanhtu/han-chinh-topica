@@ -49,6 +49,12 @@ namespace BCTKApp
         private SIS.Controls.Button.SiSButton m_cmd_hien_thi_du_lieu;
         private SIS.Controls.Button.SiSButton m_cmd_cap_nhat_danh_sach_vpp;
         private Label label1;
+        private Label label2;
+        private Label label3;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private Panel m_pnl_header;
+        private Label m_lbl_header;
         private System.ComponentModel.IContainer components;
 
         public F603_cap_nhat_danh_sach_vpp()
@@ -89,8 +95,15 @@ namespace BCTKApp
             this.m_cmd_hien_thi_du_lieu = new SIS.Controls.Button.SiSButton();
             this.m_cmd_cap_nhat_danh_sach_vpp = new SIS.Controls.Button.SiSButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.m_pnl_header = new System.Windows.Forms.Panel();
+            this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.m_pnl_header.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -214,9 +227,9 @@ namespace BCTKApp
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg.ExtendLastCol = true;
-            this.m_fg.Location = new System.Drawing.Point(0, 142);
+            this.m_fg.Location = new System.Drawing.Point(0, 154);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(760, 343);
+            this.m_fg.Size = new System.Drawing.Size(760, 331);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -224,9 +237,9 @@ namespace BCTKApp
             // 
             this.m_cbo_nha_cung_cap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_nha_cung_cap.FormattingEnabled = true;
-            this.m_cbo_nha_cung_cap.Location = new System.Drawing.Point(102, 43);
+            this.m_cbo_nha_cung_cap.Location = new System.Drawing.Point(106, 53);
             this.m_cbo_nha_cung_cap.Name = "m_cbo_nha_cung_cap";
-            this.m_cbo_nha_cung_cap.Size = new System.Drawing.Size(360, 22);
+            this.m_cbo_nha_cung_cap.Size = new System.Drawing.Size(360, 21);
             this.m_cbo_nha_cung_cap.TabIndex = 21;
             // 
             // m_cmd_chon_file_bang_gia
@@ -234,9 +247,9 @@ namespace BCTKApp
             this.m_cmd_chon_file_bang_gia.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_chon_file_bang_gia.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_chon_file_bang_gia.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chon_file_bang_gia.Location = new System.Drawing.Point(25, 71);
+            this.m_cmd_chon_file_bang_gia.Location = new System.Drawing.Point(4, 82);
             this.m_cmd_chon_file_bang_gia.Name = "m_cmd_chon_file_bang_gia";
-            this.m_cmd_chon_file_bang_gia.Size = new System.Drawing.Size(133, 48);
+            this.m_cmd_chon_file_bang_gia.Size = new System.Drawing.Size(124, 48);
             this.m_cmd_chon_file_bang_gia.TabIndex = 23;
             this.m_cmd_chon_file_bang_gia.Text = "1- Chọn file và hiển thị";
             this.m_cmd_chon_file_bang_gia.UseVisualStyleBackColor = true;
@@ -246,9 +259,9 @@ namespace BCTKApp
             this.m_cmd_hien_thi_du_lieu.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_hien_thi_du_lieu.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_hien_thi_du_lieu.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_hien_thi_du_lieu.Location = new System.Drawing.Point(176, 71);
+            this.m_cmd_hien_thi_du_lieu.Location = new System.Drawing.Point(134, 82);
             this.m_cmd_hien_thi_du_lieu.Name = "m_cmd_hien_thi_du_lieu";
-            this.m_cmd_hien_thi_du_lieu.Size = new System.Drawing.Size(134, 48);
+            this.m_cmd_hien_thi_du_lieu.Size = new System.Drawing.Size(123, 48);
             this.m_cmd_hien_thi_du_lieu.TabIndex = 23;
             this.m_cmd_hien_thi_du_lieu.Text = "2 - Kiểm tra";
             this.m_cmd_hien_thi_du_lieu.UseVisualStyleBackColor = true;
@@ -258,9 +271,9 @@ namespace BCTKApp
             this.m_cmd_cap_nhat_danh_sach_vpp.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_cap_nhat_danh_sach_vpp.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_cap_nhat_danh_sach_vpp.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_cap_nhat_danh_sach_vpp.Location = new System.Drawing.Point(328, 71);
+            this.m_cmd_cap_nhat_danh_sach_vpp.Location = new System.Drawing.Point(273, 82);
             this.m_cmd_cap_nhat_danh_sach_vpp.Name = "m_cmd_cap_nhat_danh_sach_vpp";
-            this.m_cmd_cap_nhat_danh_sach_vpp.Size = new System.Drawing.Size(134, 48);
+            this.m_cmd_cap_nhat_danh_sach_vpp.Size = new System.Drawing.Size(126, 48);
             this.m_cmd_cap_nhat_danh_sach_vpp.TabIndex = 23;
             this.m_cmd_cap_nhat_danh_sach_vpp.Text = "3 - Cập nhật danh sách văn phòng phẩm";
             this.m_cmd_cap_nhat_danh_sach_vpp.UseVisualStyleBackColor = true;
@@ -268,16 +281,82 @@ namespace BCTKApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 46);
+            this.label1.Location = new System.Drawing.Point(22, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 14);
+            this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 24;
             this.label1.Text = "Nhà cung cấp";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(469, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(229, 15);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Giá trị sai lệch với giá trị trong phần mềm";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(469, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(162, 15);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "VPP không có trong hóa đơn";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Yellow;
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(704, 104);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(44, 20);
+            this.textBox2.TabIndex = 37;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Red;
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(704, 77);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(44, 20);
+            this.textBox1.TabIndex = 38;
+            // 
+            // m_pnl_header
+            // 
+            this.m_pnl_header.Controls.Add(this.m_lbl_header);
+            this.m_pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pnl_header.Location = new System.Drawing.Point(0, 0);
+            this.m_pnl_header.Name = "m_pnl_header";
+            this.m_pnl_header.Size = new System.Drawing.Size(760, 42);
+            this.m_pnl_header.TabIndex = 41;
+            // 
+            // m_lbl_header
+            // 
+            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_lbl_header.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_header.Name = "m_lbl_header";
+            this.m_lbl_header.Size = new System.Drawing.Size(760, 42);
+            this.m_lbl_header.TabIndex = 0;
+            this.m_lbl_header.Text = "DANH SÁCH VĂN PHÒNG PHẨM";
+            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // F603_cap_nhat_danh_sach_vpp
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(760, 521);
+            this.Controls.Add(this.m_pnl_header);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_cmd_cap_nhat_danh_sach_vpp);
             this.Controls.Add(this.m_cmd_hien_thi_du_lieu);
@@ -290,6 +369,7 @@ namespace BCTKApp
             this.Load += new System.EventHandler(this.F603_cap_nhat_danh_sach_vpp_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.m_pnl_header.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,6 +422,7 @@ namespace BCTKApp
         private void format_controls()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
+            m_lbl_header.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
