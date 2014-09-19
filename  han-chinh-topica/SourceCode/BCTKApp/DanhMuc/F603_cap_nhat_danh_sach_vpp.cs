@@ -388,14 +388,14 @@ namespace BCTKApp
         {
             TEN_NCC = 1
 ,
-            DON_GIA_CHUA_VAT = 4
+            DON_GIA_CHUA_VAT = 5
                 ,
             MA = 2
                 ,
-            DON_GIA_GOM_VAT = 5
+            DON_GIA_GOM_VAT = 6
                 ,
             TEN_VPP = 3
-                , DON_VI_TINH = 6
+                , DON_VI_TINH = 4
 
         }
         public class VanPhongPham
