@@ -500,5 +500,14 @@ public class US_V_GD_DON_DAT_HANG_DETAIL : US_Object
         v_stored_proc.addDatetimeInputParam("@NGAY", ip_dat_thang);
         v_stored_proc.fillDataSetByCommand(this, ip_ds);
     }
+
+    public void FillDataset(DS_V_GD_DON_DAT_HANG_DETAIL ip_v_ds, string v_ma_don_hang, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_BC_TINH_HINH_SU_DUNG_VPP_DETAIL_WEB");
+        v_stored_proc.addNVarcharInputParam("@MA_DON_HANG", v_ma_don_hang);
+        v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+        v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+        v_stored_proc.fillDataSetByCommand(this, ip_v_ds);
+    }
 }
 }
