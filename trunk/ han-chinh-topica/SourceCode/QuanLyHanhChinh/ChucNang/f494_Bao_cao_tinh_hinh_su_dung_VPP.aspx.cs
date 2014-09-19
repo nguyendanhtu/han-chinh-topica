@@ -91,6 +91,15 @@ public partial class ChucNang_f494_Bao_cao_tinh_hinh_su_dung_VPP : System.Web.UI
         if (v_ds_v_dm_bill.V_DM_BILL.Count == 0)
             thong_bao("Không tìm thấy Bill!", true);
     }
+
+    private void display_pop_up_detail(string v_ma_don_hang)
+    {
+        US_V_GD_DON_DAT_HANG_DETAIL v_us = new US_V_GD_DON_DAT_HANG_DETAIL();
+        DS_V_GD_DON_DAT_HANG_DETAIL v_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
+        v_us.FillDataset(v_ds, v_ma_don_hang, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
+        m_grv_detail.DataSource = v_ds.V_GD_DON_DAT_HANG_DETAIL;
+        m_grv_detail.DataBind();
+    }
     private void thong_bao(string ip_str_mess)
     {
         m_mtv_1.SetActiveView(m_view_confirm);
@@ -294,6 +303,33 @@ public partial class ChucNang_f494_Bao_cao_tinh_hinh_su_dung_VPP : System.Web.UI
             //    load_data_grv_detail(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI_MAT_PHI);
             //}
             m_grv_detail.DataBind();
+        }
+        catch (Exception v_e)
+        {
+
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_lbt_detail_OnClick(object sender, EventArgs e)
+    {
+        try
+        {
+            LinkButton lbt = (LinkButton)sender;
+            GridViewRow row = (GridViewRow)lbt.NamingContainer;
+            string v_ma_don_hang = row.Cells[3].Text;
+            view_detail_grv(true);
+            display_pop_up_detail(v_ma_don_hang);
+        }
+        catch (System.Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_grv_chi_tiet_bc_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            string v_ma_don_hang = m_grv_chi_tiet_bc.SelectedRow.Cells[3].ToString(); 
         }
         catch (Exception v_e)
         {
