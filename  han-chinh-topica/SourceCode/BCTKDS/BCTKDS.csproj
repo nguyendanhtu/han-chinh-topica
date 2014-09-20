@@ -318,6 +318,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_RPT_DS_IMPORT_BILL_EXCEL_WEB.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_GD_DON_DAT_HANG_DINH_MUC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_GD_DON_DAT_HANG_DINH_MUC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_RPT_TONG_TIEN_DINH_MUC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -402,6 +407,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_VPP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_GD_DON_DAT_HANG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -890,6 +900,17 @@
     <None Include="DS_RPT_DS_IMPORT_BILL_EXCEL_WEB.xss">
       <DependentUpon>DS_RPT_DS_IMPORT_BILL_EXCEL_WEB.xsd</DependentUpon>
     </None>
+    <None Include="DS_RPT_GD_DON_DAT_HANG_DINH_MUC.xsc">
+      <DependentUpon>DS_RPT_GD_DON_DAT_HANG_DINH_MUC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_GD_DON_DAT_HANG_DINH_MUC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_GD_DON_DAT_HANG_DINH_MUC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_GD_DON_DAT_HANG_DINH_MUC.xss">
+      <DependentUpon>DS_RPT_GD_DON_DAT_HANG_DINH_MUC.xsd</DependentUpon>
+    </None>
     <None Include="DS_RPT_TONG_TIEN_DINH_MUC.xsc">
       <DependentUpon>DS_RPT_TONG_TIEN_DINH_MUC.xsd</DependentUpon>
     </None>
@@ -1076,6 +1097,17 @@
     </None>
     <None Include="DS_V_DM_VPP.xss">
       <DependentUpon>DS_V_DM_VPP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.xsc">
+      <DependentUpon>DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.xss">
+      <DependentUpon>DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_DON_DAT_HANG.xsc">
       <DependentUpon>DS_V_GD_DON_DAT_HANG.xsd</DependentUpon>
