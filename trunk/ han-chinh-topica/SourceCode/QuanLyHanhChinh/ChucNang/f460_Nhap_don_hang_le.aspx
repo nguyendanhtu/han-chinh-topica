@@ -153,11 +153,15 @@
                             ItemStyle-Width="3%">
                             <ItemStyle HorizontalAlign="Right" Width="5%" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="GIA_TRI_CHUA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ CHƯA VAT (VNĐ)"
+                        <asp:BoundField DataField="GIA_TRI_CHUA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="GIÁ TRỊ CHƯA VAT (VNĐ)"
                             ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                             <ItemStyle HorizontalAlign="Right" Width="7%" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="GIA_TRI_DA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ GỒM VAT (VNĐ)"
+                        <asp:BoundField DataField="GIA_TRI_DA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="GIÁ TRỊ GỒM VAT (VNĐ)"
+                            ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                            <ItemStyle HorizontalAlign="Right" Width="7%" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="DINH_MUC" ItemStyle-HorizontalAlign="Right" HeaderText="ĐỊNH MỨC GẦN NHẤT (VNĐ)"
                             ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                             <ItemStyle HorizontalAlign="Right" Width="7%" />
                         </asp:BoundField>
@@ -253,7 +257,8 @@
                 <asp:Label ID="m_lbl_phieu_de_nghi_va_ban_giao_VPP" runat="server" CssClass="cssPageTitle"
                     Text="Danh sách VPP đề nghị cấp"></asp:Label>
                 <asp:Label ID="m_lbl_thong_tim_grv_don_hang_de" runat="server" CssClass="cssPageTitle"></asp:Label>
-                &nbsp; &nbsp; <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssPageTitle" ForeColor="Green" Font-Italic="true" BackColor="White"></asp:Label>
+                &nbsp; &nbsp;
+                <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssPageTitle" ForeColor="Green" Font-Italic="true" BackColor="White"></asp:Label>
                 <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
             </td>
         </tr>
@@ -314,6 +319,10 @@
                             <ItemStyle HorizontalAlign="Right" Width="7%" />
                         </asp:BoundField>
                         <asp:BoundField DataField="DON_GIA_GOM_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ GỒM VAT (VNĐ)"
+                            ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                            <ItemStyle HorizontalAlign="Right" Width="7%" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="TONG_TIEN" ItemStyle-HorizontalAlign="Right" HeaderText="TỔNG TIỀN ĐÃ VAT (VNĐ)"
                             ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                             <ItemStyle HorizontalAlign="Right" Width="7%" />
                         </asp:BoundField>
