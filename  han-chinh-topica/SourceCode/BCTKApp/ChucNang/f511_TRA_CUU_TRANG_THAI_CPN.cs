@@ -410,8 +410,8 @@ namespace BCTKApp
 		}
 		private void set_initial_form_load(){	
 			m_obj_trans = get_trans_object(m_grv_trang_thai);
-            m_dtp_tu_ngay.Text = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1).ToString();
-            m_dtp_den_ngay.Text = DateTime.Now.Date.ToString();
+            m_dtp_tu_ngay.Text = CIPConvert.ToStr(DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1), "dd/MM/yyyy");
+            m_dtp_den_ngay.Text = CIPConvert.ToStr(DateTime.Now.Date,"dd/MM/yyy");
             load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){

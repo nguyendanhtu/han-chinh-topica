@@ -234,6 +234,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_THONG_KE.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_VAN_THU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_VAN_THU.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_BACKUP_HISTORY.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -441,6 +446,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_THONG_KE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_GD_VAN_THU_ALL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_VAN_THU_ALL.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_HT_LOG_TRUY_CAP.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -723,6 +733,17 @@
     </None>
     <None Include="DS_GD_THONG_KE.xss">
       <DependentUpon>DS_GD_THONG_KE.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_VAN_THU.xsc">
+      <DependentUpon>DS_GD_VAN_THU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_VAN_THU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_VAN_THU.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_VAN_THU.xss">
+      <DependentUpon>DS_GD_VAN_THU.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_BACKUP_HISTORY.xsc">
       <DependentUpon>DS_HT_BACKUP_HISTORY.xsd</DependentUpon>
@@ -1163,6 +1184,17 @@
     </None>
     <None Include="DS_V_GD_THONG_KE.xss">
       <DependentUpon>DS_V_GD_THONG_KE.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_VAN_THU_ALL.xsc">
+      <DependentUpon>DS_V_GD_VAN_THU_ALL.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_VAN_THU_ALL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_VAN_THU_ALL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_VAN_THU_ALL.xss">
+      <DependentUpon>DS_V_GD_VAN_THU_ALL.xsd</DependentUpon>
     </None>
     <None Include="DS_V_HT_LOG_TRUY_CAP.xsc">
       <DependentUpon>DS_V_HT_LOG_TRUY_CAP.xsd</DependentUpon>

@@ -149,6 +149,7 @@
     <Compile Include="US_GD_PHAN_HOI.cs" />
     <Compile Include="US_GD_PHONG_BAN_DINH_MUC.cs" />
     <Compile Include="US_GD_THONG_KE.cs" />
+    <Compile Include="US_GD_VAN_THU.cs" />
     <Compile Include="US_HT_BACKUP_HISTORY.cs" />
     <Compile Include="US_HT_BUSINESS_PROCESS_LOCK.cs" />
     <Compile Include="US_HT_CHUC_NANG.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="US_V_GD_DON_DAT_HANG_DINH_MUC.cs" />
     <Compile Include="US_V_GD_PHONG_BAN_DINH_MUC.cs" />
     <Compile Include="US_V_GD_THONG_KE.cs" />
+    <Compile Include="US_V_GD_VAN_THU_ALL.cs" />
     <Compile Include="US_V_HT_LOG_TRUY_CAP.cs" />
     <Compile Include="US_V_TONG_HOP_BILL_THEO_PHONG_BAN.cs" />
     <Compile Include="US_V_TONG_HOP_CHI_PHI_VPP.cs" />
