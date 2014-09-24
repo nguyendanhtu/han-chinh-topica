@@ -6,27 +6,84 @@ using System.Configuration;
 
 namespace BCTKDS.CDBNames
 {
-    public class RPT_CHI_TIET_CHI_PHI_PHAP_NHAN {
-        public const string ID =  "ID";
-        public const string NOI_DUNG =  "NOI_DUNG";
-        public const string NOI_NHAN =  "NOI_NHAN";
-        public const string NGUOI_NHAN =  "NGUOI_NHAN";
-        public const string TRONG_NUOC =  "TRONG_NUOC";
-        public const string NUOC_NGOAI =  "NUOC_NGOAI";
-        public const string SO_BILL =  "SO_BILL";
-        public const string NGUOI_GUI =  "NGUOI_GUI";
-        public const string NGAY_GUI =  "NGAY_GUI";
-        public const string GHI_CHU =  "GHI_CHU";
-        public const string ID_PHONG_BAN =  "ID_PHONG_BAN";
-        public const string SO_TIEN =  "SO_TIEN";
-        public const string ID_TRANG_THAI =  "ID_TRANG_THAI";
-        public const string ID_PHAP_NHAN =  "ID_PHAP_NHAN";
-        public const string TY_TRONG =  "TY_TRONG";
-        public const string TIEN_PN =  "TIEN_PN";
-        public const string MA_PHONG_BAN =  "MA_PHONG_BAN";
-        public const string TEN_PHONG_BAN =  "TEN_PHONG_BAN";
-        public const string MA_PHAP_NHAN =  "MA_PHAP_NHAN";
-        public const string TEN_PHAP_NHAN =  "TEN_PHAP_NHAN";
+    public class GD_VAN_THU
+    {
+        public const string ID = "ID";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string SO_CV_DEN = "SO_CV_DEN";
+        public const string NOI_GUI = "NOI_GUI";
+        public const string TEN_LOAI_VA_TRICH_YEU_ND = "TEN_LOAI_VA_TRICH_YEU_ND";
+        public const string NGAY_THANG_TREN_CONG_VAN = "NGAY_THANG_TREN_CONG_VAN";
+        public const string ID_NOI_NGUOI_NHAN = "ID_NOI_NGUOI_NHAN";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string LINK_SCAN = "LINK_SCAN";
+        public const string ID_LOAI_CONG_VAN = "ID_LOAI_CONG_VAN";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string SO_VA_KY_HIEU = "SO_VA_KY_HIEU";
+        public const string NGUOI_KY = "NGUOI_KY";
+        public const string NOI_NHAN = "NOI_NHAN";
+        public const string ID_NGUOI_NHAN_BAN_LUU = "ID_NGUOI_NHAN_BAN_LUU";
+        public const string DANH_SACH_EMAIL_BAN_HANH = "DANH_SACH_EMAIL_BAN_HANH";
+        public const string DANH_SACH_EMAIL_XAC_NHAN = "DANH_SACH_EMAIL_XAC_NHAN";
+        public const string GHI_CHU = "GHI_CHU";
+    }
+
+
+    public class V_GD_VAN_THU_ALL
+    {
+        public const string ID = "ID";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string SO_CV_DEN = "SO_CV_DEN";
+        public const string NOI_GUI = "NOI_GUI";
+        public const string TEN_LOAI_VA_TRICH_YEU_ND = "TEN_LOAI_VA_TRICH_YEU_ND";
+        public const string NGAY_THANG_TREN_CONG_VAN = "NGAY_THANG_TREN_CONG_VAN";
+        public const string ID_NOI_NGUOI_NHAN = "ID_NOI_NGUOI_NHAN";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string LINK_SCAN = "LINK_SCAN";
+        public const string ID_LOAI_CONG_VAN = "ID_LOAI_CONG_VAN";
+        public const string NGAY_LAP = "NGAY_LAP";
+        public const string SO_VA_KY_HIEU = "SO_VA_KY_HIEU";
+        public const string NGUOI_KY = "NGUOI_KY";
+        public const string NOI_NHAN = "NOI_NHAN";
+        public const string ID_NGUOI_NHAN_BAN_LUU = "ID_NGUOI_NHAN_BAN_LUU";
+        public const string DANH_SACH_EMAIL_BAN_HANH = "DANH_SACH_EMAIL_BAN_HANH";
+        public const string DANH_SACH_EMAIL_XAC_NHAN = "DANH_SACH_EMAIL_XAC_NHAN";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
+        public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
+        public const string NOI_NGUOI_NHAN_MPB = "NOI_NGUOI_NHAN_MPB";
+        public const string NOI_NGUOI_NHAN_TPB = "NOI_NGUOI_NHAN_TPB";
+        public const string NGUOI_NHAN__BAN_LUU_MPB = "NGUOI_NHAN__BAN_LUU_MPB";
+        public const string NGUOI_NHAN__BAN_LUU_TPB = "NGUOI_NHAN__BAN_LUU_TPB";
+        public const string TRANG_THAI_ML = "TRANG_THAI_ML";
+        public const string LOAI_CONG_BAN_ML = "LOAI_CONG_BAN_ML";
+    }
+
+
+    public class RPT_CHI_TIET_CHI_PHI_PHAP_NHAN
+    {
+        public const string ID = "ID";
+        public const string NOI_DUNG = "NOI_DUNG";
+        public const string NOI_NHAN = "NOI_NHAN";
+        public const string NGUOI_NHAN = "NGUOI_NHAN";
+        public const string TRONG_NUOC = "TRONG_NUOC";
+        public const string NUOC_NGOAI = "NUOC_NGOAI";
+        public const string SO_BILL = "SO_BILL";
+        public const string NGUOI_GUI = "NGUOI_GUI";
+        public const string NGAY_GUI = "NGAY_GUI";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string TY_TRONG = "TY_TRONG";
+        public const string TIEN_PN = "TIEN_PN";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
+        public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
     }
     public class V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE
     {
@@ -92,27 +149,28 @@ namespace BCTKDS.CDBNames
         public const string DINH_MUC = "DINH_MUC";
     }
 
-    public class RPT_BC_CHI_TIET_DM {
-        public const string ID =  "ID";
-        public const string TEN_THONG_KE =  "TEN_THONG_KE";
-        public const string ID_CO_SO_DINH_MUC =  "ID_CO_SO_DINH_MUC";
-        public const string MA =  "MA";
-        public const string MO_TA =  "MO_TA";
-        public const string ID_LOAI_THOI_GIAN =  "ID_LOAI_THOI_GIAN";
-        public const string LOAI_THOI_GIAN =  "LOAI_THOI_GIAN";
-        public const string TU_NGAY =  "TU_NGAY";
-        public const string DEN_NGAY =  "DEN_NGAY";
-        public const string DON_GIA =  "DON_GIA";
-        public const string GIA_TRI_THONG_KE =  "GIA_TRI_THONG_KE";
-        public const string TONG_TIEN_DM =  "TONG_TIEN_DM";
-        public const string ID_DON_VI_THONG_KE =  "ID_DON_VI_THONG_KE";
-        public const string DON_VI_THONG_KE =  "DON_VI_THONG_KE";
-        public const string ID_DM_CO_SO =  "ID_DM_CO_SO";
-        public const string MA_CO_SO_DINH_MUC =  "MA_CO_SO_DINH_MUC";
-        public const string TEN_CO_SO_DINH_MUC =  "TEN_CO_SO_DINH_MUC";
-        public const string GHI_CHU_1 =  "GHI_CHU_1";
-        public const string GHI_CHU_2 =  "GHI_CHU_2";
-        public const string GHI_CHU_3 =  "GHI_CHU_3";
+    public class RPT_BC_CHI_TIET_DM
+    {
+        public const string ID = "ID";
+        public const string TEN_THONG_KE = "TEN_THONG_KE";
+        public const string ID_CO_SO_DINH_MUC = "ID_CO_SO_DINH_MUC";
+        public const string MA = "MA";
+        public const string MO_TA = "MO_TA";
+        public const string ID_LOAI_THOI_GIAN = "ID_LOAI_THOI_GIAN";
+        public const string LOAI_THOI_GIAN = "LOAI_THOI_GIAN";
+        public const string TU_NGAY = "TU_NGAY";
+        public const string DEN_NGAY = "DEN_NGAY";
+        public const string DON_GIA = "DON_GIA";
+        public const string GIA_TRI_THONG_KE = "GIA_TRI_THONG_KE";
+        public const string TONG_TIEN_DM = "TONG_TIEN_DM";
+        public const string ID_DON_VI_THONG_KE = "ID_DON_VI_THONG_KE";
+        public const string DON_VI_THONG_KE = "DON_VI_THONG_KE";
+        public const string ID_DM_CO_SO = "ID_DM_CO_SO";
+        public const string MA_CO_SO_DINH_MUC = "MA_CO_SO_DINH_MUC";
+        public const string TEN_CO_SO_DINH_MUC = "TEN_CO_SO_DINH_MUC";
+        public const string GHI_CHU_1 = "GHI_CHU_1";
+        public const string GHI_CHU_2 = "GHI_CHU_2";
+        public const string GHI_CHU_3 = "GHI_CHU_3";
     }
     public class RPT_BANG_CHI_PHI_CUOI_THANG_NCC
     {
@@ -633,25 +691,26 @@ namespace BCTKDS.CDBNames
         public const string SO_TIEN = "SO_TIEN";
         public const string PHONG_BAN_ID = "PHONG_BAN_ID";
     }
-    public class CM_DM_BANG_CHI_TIET_CUOI_THANG {
-        public const string ID =  "ID";
-        public const string SOCT =  "SOCT";
-        public const string NGAY =  "NGAY";
-        public const string LOAI =  "LOAI";
-        public const string BARCODE =  "BARCODE";
-        public const string NOIDEN =  "NOIDEN";
-        public const string TRLUONG =  "TRLUONG";
-        public const string CUOC =  "CUOC";
-        public const string PHI =  "PHI";
-        public const string PHIXD =  "PHIXD";
-        public const string TIENCK =  "TIENCK";
-        public const string TIEN =  "TIEN";
-        public const string GHICHU =  "GHICHU";
+    public class CM_DM_BANG_CHI_TIET_CUOI_THANG
+    {
+        public const string ID = "ID";
+        public const string SOCT = "SOCT";
+        public const string NGAY = "NGAY";
+        public const string LOAI = "LOAI";
+        public const string BARCODE = "BARCODE";
+        public const string NOIDEN = "NOIDEN";
+        public const string TRLUONG = "TRLUONG";
+        public const string CUOC = "CUOC";
+        public const string PHI = "PHI";
+        public const string PHIXD = "PHIXD";
+        public const string TIENCK = "TIENCK";
+        public const string TIEN = "TIEN";
+        public const string GHICHU = "GHICHU";
         public const string TRANG_THAI = "TRANG_THAI";
         public const string DIEN_GIAI = "DIEN_GIAI";
     }
 
-    
+
     public class CM_DM_TONG_HOP_TIEN_CHUYEN_PHAT_NHANH
     {
         public const string PHONG_BAN_ID = "PHONG_BAN_ID";

@@ -80,5 +80,36 @@ namespace BCTKApp.App_Code
             }
 
         }
+        public static bool SendEmailWithHtmlContent(string ip_str_toEmail, string ip_str_subject, string ip_str_noi_dung)
+        {
+            try
+            {
+                string fromAddress = "topica.quanlyhanhchinh@gmail.com";// Gmail Address from where you send the mail
+                string toAddress = ip_str_toEmail;
+                const string fromPassword = "quanlyhanhchinh1992";//Password of your gmail address
+                string subject = ip_str_subject;
+                string body = ip_str_noi_dung;
+                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
+                {
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                    smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
+                    smtp.Timeout = 20000;
+                }
+                System.Net.Mail.MailMessage ms = new System.Net.Mail.MailMessage(fromAddress, ip_str_toEmail);
+                ms.Subject = ip_str_subject;
+                ms.IsBodyHtml = true;
+                ms.Body = ip_str_noi_dung;
+                smtp.Send(ms);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
     }
 }
