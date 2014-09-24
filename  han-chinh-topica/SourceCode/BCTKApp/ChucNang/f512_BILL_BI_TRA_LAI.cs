@@ -649,7 +649,7 @@ namespace BCTKApp
                     string v_str_nguoi_gui = v_ds.Tables[0].Rows[i]["NGUOI_GUI"].ToString();
                     string v_str_noi_dung = "Kính gửi: Thầy, Cô"
                         + "\n TAD gửi, thư CPN trả lại:"
-                        + "\n Nười gửi: " + v_str_nguoi_gui
+                        + "\n Người gửi: " + v_str_nguoi_gui
                         + "\n Người nhận: " + v_str_nguoi_nhan
                         + "\n Địa chỉ: " + v_str_noi_nhan
                         + "\n Số bill: " + v_str_so_bill
