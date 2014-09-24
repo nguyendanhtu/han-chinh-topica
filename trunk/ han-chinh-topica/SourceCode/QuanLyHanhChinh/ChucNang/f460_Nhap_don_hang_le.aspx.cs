@@ -326,7 +326,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_lbl_MP.Visible = true;
     }
 
-    private void chuyen_trang_thai_sang_gui_td()
+    private bool chuyen_trang_thai_sang_gui_td()
     {
         bool v_flag = false;
         foreach (GridViewRow row in m_grv_don_hang_nhap.Rows)
@@ -345,12 +345,37 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             }
         }
         load_data_to_grid_don_hang();
-        if (v_flag == true)
-            thong_bao("Bạn đã gửi thành công phiếu cho TD duyệt", true);
-        else
-            thong_bao("Bạn chưa tích chọn phiếu đơn hàng nào",true);
+        if (v_flag == false)
+        {
+            thong_bao("Chưa chọn đơn hàng để gửi", true);
+            return false;
+        }
+        else return true;
     }
-
+    private bool gui_mail_thong_bao_cho_td()
+    {
+        string v_user_group_name =  "QL_" + m_hdf_ma_trung_tam.Value.ToUpper();
+        US_HT_USER_GROUP v_us_user_group = new US_HT_USER_GROUP();
+        DS_HT_USER_GROUP v_ds_user_group = new DS_HT_USER_GROUP();
+        v_us_user_group.FillDataset(v_ds_user_group, "where USER_GROUP_NAME = '" + v_user_group_name + "' or USER_GROUP_NAME= '"+v_user_group_name+"-TU'");
+        if (v_ds_user_group.HT_USER_GROUP.Rows.Count > 0)
+        {
+            decimal v_id_user_group = CIPConvert.ToDecimal(v_ds_user_group.HT_USER_GROUP.Rows[0]["ID"]);
+            US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
+            IP.Core.IPData.DS_HT_NGUOI_SU_DUNG v_ds_ht_nguoi_su_dung = new IP.Core.IPData.DS_HT_NGUOI_SU_DUNG();
+            v_us_ht_nguoi_su_dung.FillDataset(v_ds_ht_nguoi_su_dung, "where ID_USER_GROUP =" + v_id_user_group);
+            string v_mail = v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Rows[0]["MAIL"].ToString();
+            string v_str_noi_dung = "Kính gửi: Trưởng phòng " + " " + m_hdf_ma_trung_tam.Value
+                                    + "\n"
+                                    + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng. Xin cám ơn!"
+                                    +"\n"
+                                    + "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f890_duyet_don_hang_cc_td.aspx";
+            if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Xin TD duyệt đơn hàng", v_str_noi_dung); return true; }
+            else { thong_bao("Chưa có địa chỉ mail của TD.", true); return false; }
+        }
+        else
+        { thong_bao("Không tìm thấy user TD để gửi mail.", true); return false; }
+    }
     private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
     {
         m_mtv_1.SetActiveView(m_view_confirm);
@@ -709,7 +734,14 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         try
         {
             m_lbl_thong_bao.Visible = false;
-            chuyen_trang_thai_sang_gui_td();
+            if (chuyen_trang_thai_sang_gui_td() == true)
+            {
+                if (gui_mail_thong_bao_cho_td() == true)
+                    thong_bao("Đã gửi cho TD duyệt. \nMail thông báo đã được gửi đi.", true);
+                else
+                { thong_bao("Đã gửi cho TD duyệt. \nMail thông báo chưa được gửi do chưa cập nhật địa chỉ mail.");}
+            }
+            else return; 
             m_grv_don_hang_de.Visible = false;
             m_lbl_ma_don_hang_de.Visible = false;
             m_lbl_MP.Visible = false;
@@ -722,6 +754,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             //CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+
     protected void m_cbo_vpp_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
