@@ -4,6 +4,20 @@ using System.Text;
 
 namespace BCTKUS
 {
+    public class ID_LOAI_VAN_THU
+    {
+        public const decimal CONG_VAN_DEN_KHONG_LUU = 222;
+        public const decimal CONG_VAN_DI = 223;
+        public const decimal CONG_VAN_DEN_LUU = 229;
+    }
+    public class ID_TRANG_THAI_VAN_THU
+    {
+        public const decimal CHO_SO_VAO_SO_DONG_DAU = 224;
+        public const decimal DA_LUU_TAI_TAD = 225;
+        public const decimal DA_CHUYEN_DEN_NGUOI_NHAN = 226;
+        public const decimal NGUOI_NHAN_DA_NHAN_DUOC = 227;
+        public const decimal DA_CHUYEN_CHO_DON_VI_BAN_HANH = 228;
+    }
     public class CONST_ID_TRANG_THAI_DON_HANG
     { 
         public const decimal NHAP = 209;
@@ -36,6 +50,8 @@ namespace BCTKUS
     public class CONST_ID_CM_DM_LOAI_TD {
         public const decimal ID_CHUC_NANG = 16;
         public const decimal ID_LOAI_DINH_MUC = 17;
+        public const decimal ID_LOAI_CONG_VAN = 23;
+        public const decimal ID_TRANG_THAI_VAN_THU = 22;
     }
     public class CONST_ID_CM_DM_TU_DIEN {
         public const decimal ID_VIEW = 698;

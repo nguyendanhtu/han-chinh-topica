@@ -18,7 +18,7 @@
                 </tr>
                 <tr>
                     <td style="width: 30%" align="right">
-                        <span class="cssManField">Phòng ban </span>
+                        <asp:Label ID="m_lbl_phong_ban" runat="server" class="cssManField">Phòng ban </asp:Label>
                     </td>
                     <td style="width: 70%" align="left">
                         <asp:DropDownList ID="m_cbo_phong_ban" Width="50%" runat="server" class="cssDorpdownlist"></asp:DropDownList>
