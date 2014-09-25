@@ -461,9 +461,8 @@ namespace BCTKApp
             m_cmd_chon_file_bang_gia.Click += new EventHandler(m_cmd_chon_file_bang_gia_Click);
             m_cmd_hien_thi_du_lieu.Click += new EventHandler(m_cmd_hien_thi_du_lieu_Click);
             m_cmd_cap_nhat_danh_sach_vpp.Click += new EventHandler(m_cmd_cap_nhat_danh_sach_vpp_Click);
+            //m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
         }
-
-
 
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -682,16 +681,18 @@ namespace BCTKApp
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
             US_V_DM_VPP v_us = new US_V_DM_VPP();
             grid2us_object(v_us, m_fg.Row);
+            US_DM_VPP v_us_dm = new US_DM_VPP();
+            v_us_dm.dcID = v_us.dcID_VPP;
             try
             {
-                v_us.BeginTransaction();
-                v_us.Delete();
-                v_us.CommitTransaction();
+                v_us_dm.BeginTransaction();
+                v_us_dm.Delete();
+                v_us_dm.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
             }
             catch (Exception v_e)
             {
-                v_us.Rollback();
+                v_us_dm.Rollback();
                 CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
                     new CDBClientDBExceptionInterpret());
                 v_objErrHandler.showErrorMessage();
@@ -706,9 +707,6 @@ namespace BCTKApp
             //	F603_cap_nhat_danh_sach_vpp_DE v_fDE = new F603_cap_nhat_danh_sach_vpp_DE();			
             //	v_fDE.display(m_us);
         }
-
-
-
 
         #endregion
 
@@ -785,6 +783,18 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_dm_vpp();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
         void m_cmd_chon_file_bang_gia_Click(object sender, EventArgs e)
         {
