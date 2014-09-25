@@ -418,7 +418,7 @@ namespace BCTKApp
             temp = temp.AddDays(-(temp.Day));
             DateTime v_dat_thang = temp;
 			m_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();			
-			m_us.FillDatasetSearch_phapnhan(m_ds,v_dat_thang,v_dc_id_phap_nhan,v_str_tu_khoa);
+			m_us.FillDatasetSearch_phapnhan(m_ds,v_dat_thang,v_dc_id_phap_nhan,CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET,v_str_tu_khoa);
 			m_grv_don_hang.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_don_hang, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_don_hang);
