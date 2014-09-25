@@ -34,6 +34,7 @@
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_pnl_btn = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.m_lbl_thong_bao_cap_nhat = new System.Windows.Forms.Label();
             this.m_lbl_loading = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.m_cmd_thoat = new SIS.Controls.Button.SiSButton();
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_OpenFile_dlg = new System.Windows.Forms.OpenFileDialog();
-            this.m_lbl_thong_bao_cap_nhat = new System.Windows.Forms.Label();
             this.m_pnl_header.SuspendLayout();
             this.m_pnl_btn.SuspendLayout();
             this.m_pnl_grid.SuspendLayout();
@@ -104,6 +104,17 @@
             this.label2.Size = new System.Drawing.Size(229, 15);
             this.label2.TabIndex = 36;
             this.label2.Text = "Giá trị sai lệch với giá trị trong phần mềm";
+            // 
+            // m_lbl_thong_bao_cap_nhat
+            // 
+            this.m_lbl_thong_bao_cap_nhat.AutoSize = true;
+            this.m_lbl_thong_bao_cap_nhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_thong_bao_cap_nhat.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_thong_bao_cap_nhat.Location = new System.Drawing.Point(19, 59);
+            this.m_lbl_thong_bao_cap_nhat.Name = "m_lbl_thong_bao_cap_nhat";
+            this.m_lbl_thong_bao_cap_nhat.Size = new System.Drawing.Size(248, 16);
+            this.m_lbl_thong_bao_cap_nhat.TabIndex = 22;
+            this.m_lbl_thong_bao_cap_nhat.Text = "Danh sách các đơn hàng cần kiểm tra lại";
             // 
             // m_lbl_loading
             // 
@@ -294,17 +305,6 @@
             // m_OpenFile_dlg
             // 
             this.m_OpenFile_dlg.FileName = "openFileDialog1";
-            // 
-            // m_lbl_thong_bao_cap_nhat
-            // 
-            this.m_lbl_thong_bao_cap_nhat.AutoSize = true;
-            this.m_lbl_thong_bao_cap_nhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_thong_bao_cap_nhat.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao_cap_nhat.Location = new System.Drawing.Point(19, 59);
-            this.m_lbl_thong_bao_cap_nhat.Name = "m_lbl_thong_bao_cap_nhat";
-            this.m_lbl_thong_bao_cap_nhat.Size = new System.Drawing.Size(248, 16);
-            this.m_lbl_thong_bao_cap_nhat.TabIndex = 22;
-            this.m_lbl_thong_bao_cap_nhat.Text = "Danh sách các đơn hàng cần kiểm tra lại";
             // 
             // f461_So_sanh_chi_phi_cuoi_thang_NCC
             // 

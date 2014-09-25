@@ -176,6 +176,7 @@ namespace BCTKDS.CDBNames
     {
         public const string ID = "ID";
         public const string NGAY = "NGAY";
+        public const string MA_PHIEU = "MA_PHIEU";
         public const string MA_HD = "MA_HD";
         public const string TEN_VPP = "TEN_VPP";
         public const string DVT = "DVT";
