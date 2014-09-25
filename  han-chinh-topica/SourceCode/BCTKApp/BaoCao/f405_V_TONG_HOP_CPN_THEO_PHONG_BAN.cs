@@ -800,7 +800,7 @@ namespace BCTKApp
                 v_dr["NOI_NHAN"] = ip_fg.Rows[i][(int)e_col_Number.NOI_NHAN] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.NOI_NHAN].ToString();
                 v_dr["NGAY_GUI"] = ip_fg.Rows[i][(int)e_col_Number.NGAY_GUI].ToString().Split(' ')[0];
                 v_dr["SO_BILL"] = ip_fg.Rows[i][(int)e_col_Number.SO_BILL].ToString();
-                v_dr["SO_TIEN"] = ip_fg.Rows[i][(int)e_col_Number.SO_TIEN].ToString();
+                v_dr["SO_TIEN"] = ip_fg.Rows[i][(int)e_col_Number.SO_TIEN]==null?"":ip_fg.Rows[i][(int)e_col_Number.SO_TIEN].ToString();
                 v_dr["GHI_CHU"] = ip_fg.Rows[i][(int)e_col_Number.GHI_CHU] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.GHI_CHU].ToString();
                 v_dt.Rows.Add(v_dr);
             }
