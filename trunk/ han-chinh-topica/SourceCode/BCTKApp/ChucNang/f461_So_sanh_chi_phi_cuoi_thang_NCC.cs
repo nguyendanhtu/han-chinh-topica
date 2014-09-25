@@ -39,12 +39,13 @@ namespace BCTKApp.ChucNang
         private enum e_col_Number
         {
             NGAY = 1,
-            MA_HD = 2,
-            TEN_VPP = 3,
-            DVT = 4,
-            SO_LUONG = 5,
-            GIA_BAN = 6,
-            DOANH_THU = 7
+            MA_PHIEU = 2,
+            MA_HD = 3,
+            TEN_VPP = 4,
+            DVT = 5,
+            SO_LUONG = 6,
+            GIA_BAN = 7,
+            DOANH_THU = 8
         }		
         #endregion
 
@@ -91,6 +92,7 @@ namespace BCTKApp.ChucNang
         {
             Hashtable v_hst = new Hashtable();
             v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.NGAY, e_col_Number.NGAY);
+            v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.MA_PHIEU, e_col_Number.MA_PHIEU);
             v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.MA_HD, e_col_Number.MA_HD);
             v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.TEN_VPP, e_col_Number.TEN_VPP);
             v_hst.Add(RPT_BANG_CHI_PHI_CUOI_THANG_NCC.SO_LUONG, e_col_Number.SO_LUONG);
@@ -226,19 +228,19 @@ namespace BCTKApp.ChucNang
                     //m_lbl_tong_so_luong.Text = CIPConvert.ToStr(m_fg_load_file.Rows.Count - 1);
                     
                     //set mã hóa đơn MA_HD cho từng bản ghi
-                    int v_i_row_fg = 0;
-                    string v_str_ma_don_hang_ncc = "";
-                    for (v_i_row_fg = 0; v_i_row_fg < m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count; v_i_row_fg++)
-                    {
-                        if (m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.MA_HD].ToString() != "")
-                        {
-                            v_str_ma_don_hang_ncc = m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.MA_HD].ToString();
-                        }
-                        else
-                        {
-                            m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.MA_HD] = v_str_ma_don_hang_ncc;
-                        }
-                    }
+                    //int v_i_row_fg = 0;
+                    //string v_str_ma_don_hang_ncc = "";
+                    //for (v_i_row_fg = 0; v_i_row_fg < m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count; v_i_row_fg++)
+                    //{
+                    //    if (m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.MA_HD].ToString() != "")
+                    //    {
+                    //        v_str_ma_don_hang_ncc = m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.MA_HD].ToString();
+                    //    }
+                    //    else
+                    //    {
+                    //        m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_row_fg][(int)e_col_Number.MA_HD] = v_str_ma_don_hang_ncc;
+                    //    }
+                    //}
                     m_lbl_loading.Visible = false;
                 }
                 catch (Exception v_e)
@@ -272,7 +274,7 @@ namespace BCTKApp.ChucNang
                 C1.Win.C1FlexGrid.CellStyle v_cell_style_notOK_in_data = this.m_fg.Styles.Add("RowColorNotOk");
                 v_cell_style_notOK_in_data.BackColor = Color.Green;
           
-           //so sánh từng hóa đơn với MA_HD_NCC trong cơ sở dữ liệu
+           //so sánh từng hóa đơn với MA_PHIEU trong cơ sở dữ liệu
                 for (v_i_row_fg = 1, v_i_ds = 0; v_i_ds < m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count; v_i_row_fg++, v_i_ds++)
             {
                 m_lbl_loading.Visible = true;
@@ -280,7 +282,7 @@ namespace BCTKApp.ChucNang
                 progressBar1.Minimum = 0;
                 progressBar1.Maximum = m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count;
                 progressBar1.Value = v_i_row_fg;
-                v_us_v_don_dat_hang_de.So_sanh_hoa_don_theo_ma_NCC(v_ds_v_don_dat_hang_de, m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_ds][(int)e_col_Number.MA_HD].ToString(), m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_ds][(int)e_col_Number.TEN_VPP].ToString());
+                v_us_v_don_dat_hang_de.So_sanh_hoa_don_theo_ma_NCC(v_ds_v_don_dat_hang_de, m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_ds][(int)e_col_Number.MA_PHIEU].ToString(), m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_ds][(int)e_col_Number.TEN_VPP].ToString());
                 if (v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows.Count > 0)
                 {
                     if (CIPConvert.ToDecimal(m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_ds][(int)e_col_Number.SO_LUONG]) != CIPConvert.ToDecimal(v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows[0]["SO_LUONG"]))
@@ -329,7 +331,7 @@ namespace BCTKApp.ChucNang
                 progressBar1.Minimum = 0;
                 progressBar1.Maximum = m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Count;
                 progressBar1.Value = v_i_row_fg;
-                v_us_v_don_dat_hang_de.So_sanh_hoa_don_theo_ma_NCC(v_ds_v_don_dat_hang_de, m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_m_ds][(int)e_col_Number.MA_HD].ToString(), m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_m_ds][(int)e_col_Number.TEN_VPP].ToString());
+                v_us_v_don_dat_hang_de.So_sanh_hoa_don_theo_ma_NCC(v_ds_v_don_dat_hang_de, m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_m_ds][(int)e_col_Number.MA_PHIEU].ToString(), m_ds.RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Rows[v_i_m_ds][(int)e_col_Number.TEN_VPP].ToString());
                     if (v_ds_v_don_dat_hang_de.V_GD_DON_DAT_HANG_DETAIL.Rows.Count > 0)
                     {
                         decimal test = CIPConvert.ToDecimal(m_fg.Rows[v_i_row_fg][(int)e_col_Number.SO_LUONG]);
