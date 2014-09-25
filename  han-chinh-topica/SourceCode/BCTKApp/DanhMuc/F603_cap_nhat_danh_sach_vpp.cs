@@ -436,6 +436,12 @@ namespace BCTKApp
             m_cmd_hien_thi_du_lieu.Enabled = true;
             m_cmd_cap_nhat_danh_sach_vpp.Visible = true;
             m_cmd_cap_nhat_danh_sach_vpp.Enabled = true;
+            m_cmd_insert.Visible = true;
+            m_cmd_insert.Enabled = true;
+            m_cmd_update.Visible = true;
+            m_cmd_update.Enabled = true;
+            m_cmd_delete.Visible = true;
+            m_cmd_delete.Enabled = true;
             set_define_events();
             this.KeyPreview = true;
         }
@@ -654,8 +660,8 @@ namespace BCTKApp
         }
         private void insert_v_dm_vpp()
         {
-            //	F603_cap_nhat_danh_sach_vpp_DE v_fDE = new  F603_cap_nhat_danh_sach_vpp_DE();								
-            //	v_fDE.display();
+         F604_v_dm_vpp_de v_fDE = new  F604_v_dm_vpp_de();								
+           v_fDE.display_for_insert();
             load_data_2_grid();
         }
 
@@ -664,8 +670,8 @@ namespace BCTKApp
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
-            //	F603_cap_nhat_danh_sach_vpp_DE v_fDE = new F603_cap_nhat_danh_sach_vpp_DE();
-            //	v_fDE.display(m_us);
+            F604_v_dm_vpp_de v_fDE = new F604_v_dm_vpp_de();
+            v_fDE.display_for_update(m_us);
             load_data_2_grid();
         }
 
