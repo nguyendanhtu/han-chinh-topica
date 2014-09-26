@@ -11,7 +11,7 @@
                 changeYear: true,
                 required: true,
                 yearRange: '1950:2050',
-                dateFormat:'mm/yy'
+                dateFormat: 'mm/yy'
             });
         });
     </script>
@@ -57,7 +57,6 @@
             </td>
         </tr>
     </table>
-    
     <table border="0" cellspacing="0" cellpadding="0" width="100%">
         <tr>
             <td class="cssPageTitleBG" colspan="6">
@@ -148,6 +147,7 @@
                                         <td align="center" style="width: 60%">
                                             <asp:Label ID="m_lbl_ten_detail" runat="server" CssClass="cssPageTitle" Font-Size="Large"
                                                 BackColor="White"></asp:Label>
+                                                <asp:HiddenField ID="m_hdf_id_don_hang_detail" runat="server"></asp:HiddenField>
                                         </td>
                                         <td align="right" style="width: 20%">
                                             <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="45px"
@@ -155,10 +155,10 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <asp:GridView ID="m_grv_detail" runat="Server" AutoGenerateColumns="true" CssClass="GridViewStyle"
+                                        <asp:GridView ID="m_grv_detail" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                                             EmptyDataText="Chưa có dữ liệu báo cáo!" EmptyDataRowStyle-BorderColor="#810913"
-                                            CellPadding="8" PageSize="7">
+                                            CellPadding="8" PageSize="7" OnPageIndexChanging="m_grv_detail_PageIndexChanging">
                                             <PagerSettings Position="TopAndBottom" />
                                             <AlternatingRowStyle BackColor="White" />
                                             <EmptyDataRowStyle BorderColor="#810913" />
@@ -169,6 +169,38 @@
                                             <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
                                             <HeaderStyle CssClass="GridViewHeaderStyle" />
                                             <Columns>
+                                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
+                                                    <ItemTemplate>
+                                                        <%# Container.DataItemIndex + 1 %>
+                                                        <headerstyle width="15px" />
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Center" Width="2%" />
+                                                </asp:TemplateField>
+                                                <asp:BoundField DataField="MA_VPP" ItemStyle-HorizontalAlign="Left" HeaderText="MÃ VPP"
+                                                    ItemStyle-Width="7%">
+                                                    <ItemStyle HorizontalAlign="Right" Width="3%" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="TEN_VPP" ItemStyle-HorizontalAlign="Left" HeaderText="TÊN VPP"
+                                                    ItemStyle-Width="7%">
+                                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="SO_LUONG" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ LƯỢNG"
+                                                    ItemStyle-Width="7%" HtmlEncode="false">
+                                                    <ItemStyle HorizontalAlign="Right" Width="5%" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="DON_VI_TINH" ItemStyle-HorizontalAlign="Left" HeaderText="ĐƠN VỊ TÍNH"
+                                                    ItemStyle-Width="7%" HtmlEncode="false">
+                                                    <ItemStyle HorizontalAlign="Left" Width="3%" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="DON_GIA_CHUA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ(VNĐ)"
+                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
+                                                </asp:BoundField>
+                                                <asp:TemplateField HeaderText="THANH TOÁN (VNĐ)" ItemStyle-Width="7%" ItemStyle-HorizontalAlign="Right">
+                                                    <ItemTemplate>
+                                                    <asp:Label ID="m_lbl_thanh_toan" runat="server" Text='<%#get_so_tien_thanh_toan(Eval("SO_LUONG").ToString(),Eval("DON_GIA_CHUA_VAT").ToString()) %>'></asp:Label>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
                                             </Columns>
                                         </asp:GridView>
                             </div>
