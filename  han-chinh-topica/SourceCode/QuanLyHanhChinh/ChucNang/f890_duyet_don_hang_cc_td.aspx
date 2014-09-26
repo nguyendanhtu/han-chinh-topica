@@ -71,7 +71,7 @@
                             <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
                             <HeaderStyle CssClass="GridViewHeaderStyle" />
                             <Columns>
-                                <asp:TemplateField HeaderText="Không duyệt" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
+                                <asp:TemplateField HeaderText="Không duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <asp:LinkButton ID="m_lbt_khong_duyet" runat="server" CommandName="KhongDuyet" ToolTip="Không duyệt đơn này" CommandArgument='<%#Eval("ID") %>'
                                             OnClientClick="return confirm ('Bạn có thực sự muốn huỷ duyệt đơn hàng này?')">
@@ -80,11 +80,29 @@
                                     </ItemTemplate>
                                     <ItemStyle />
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Duyệt" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
+                                <asp:TemplateField HeaderText="Duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="m_lbt_duyet" runat="server" CommandName="Duyet" ToolTip="Không duyệt đơn này" CommandArgument='<%#Eval("ID") %>'
-                                            OnClientClick="return confirm ('Bạn có thực sự muốn duyệt đơn hàng này?')">
-                                                <img src="../Images/Button/edit.png" alt="Delete" />
+                                        <asp:LinkButton ID="m_lbt_duyet" runat="server" CommandName="Duyet" ToolTip="Duyệt đơn hàng" CommandArgument='<%#Eval("ID") %>'
+                                            OnClientClick="return confirm ('Bạn có thực sự muốn duyệt đơn hàng này?')" Visible='<%# is_td_duyet(Eval("ID").ToString(),Eval( "phan_tram_vuot").ToString()) %>'>
+                                                <img src="../Images/Button/Update.gif" alt="Duyệt" />
+                                        </asp:LinkButton>
+                                    </ItemTemplate>
+                                    <ItemStyle />
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Xin TAD duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="m_lbt_xin_tad_duyet" runat="server" CommandName="XinTADDuyet" ToolTip="Xin TAD duyệt" CommandArgument='<%#Eval("ID") %>'
+                                            OnClientClick="return confirm ('Bạn có thực sự muốn gửi cho TAD duyệt đơn hàng này?')" Visible='<%# is_tad_duyet(Eval("ID").ToString(),Eval( "phan_tram_vuot").ToString()) %>'>
+                                                <img src="../Images/Button/gmail-icon.png" alt="Xin TAD duyệt" />
+                                        </asp:LinkButton>
+                                    </ItemTemplate>
+                                    <ItemStyle />
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Xin CC duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="m_lbt_xin_cc_duyet" runat="server" CommandName="XinCCDuyet" ToolTip="Xin CC duyệt" CommandArgument='<%#Eval("ID") %>'
+                                            OnClientClick="return confirm ('Bạn có thực sự muốn gửi cho CC duyệt đơn hàng này?')" Visible='<%# is_cc_duyet(Eval("ID").ToString(),Eval( "phan_tram_vuot").ToString()) %>'>
+                                                <img src="../Images/Button/gmail-icon.png" alt="Xin CC duyệt" width="24px" height="24px"/>
                                         </asp:LinkButton>
                                     </ItemTemplate>
                                     <ItemStyle />
@@ -102,7 +120,7 @@
                                 </asp:BoundField>
                                 <asp:BoundField DataField="MA" ItemStyle-HorizontalAlign="left" HeaderText="Mã hóa đơn"
                                     ItemStyle-Width="7%">
-                                    <ItemStyle HorizontalAlign="right" Width="5%" />
+                                    <ItemStyle HorizontalAlign="right" Width="2%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="LAN" ItemStyle-HorizontalAlign="Left" HeaderText="LẦN GỬI"
                                     ItemStyle-Width="3%">
