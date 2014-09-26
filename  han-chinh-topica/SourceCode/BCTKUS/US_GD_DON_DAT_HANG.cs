@@ -314,5 +314,14 @@ public class US_GD_DON_DAT_HANG : US_Object
         v_store_proc.addNVarcharInputParam("@MA_HD ", ip_ma_hd);
         v_store_proc.fillDataSetByCommand(this, ip_v_ds);
     }
+    public void FillDatasetSearch_Web(DS_GD_DON_DAT_HANG ip_ds, DateTime ip_dat_thang, decimal ip_id_trung_tam, decimal ip_id_trang_thai, string ip_str_tu_khoa)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_GD_DON_DAT_HANG_Search_Web");
+        v_store_proc.addDatetimeInputParam("@THANG", ip_dat_thang);
+        v_store_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_id_trung_tam);
+        v_store_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_id_trang_thai);
+        v_store_proc.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
 }
 }
