@@ -20,29 +20,21 @@
             <br />
             <div style="text-align: center">
                 <asp:Label ID="m_lbl_chon_thang" runat="server" Text="Chọn tháng"> </asp:Label>
-                &nbsp<ew:CalendarPopup ID="m_dat_thang" runat="server" TextBoxLabelStyle-BorderColor="#810913"
-                    TextBoxLabelStyle-BorderWidth="1" ControlDisplay="TextBoxImage" Culture="vi-VN"
-                    DisableTextBoxEntry="true" GoToTodayText="Hôm nay: " ImageUrl="~/Images/cal.gif"
-                    ShowGoToToday="true" Width="10%" OnDateChanged="m_dat_thang_DateChanged" SelectedDate="06/17/2014 23:48:00">
-                    <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="9px"
-                        ForeColor="Black" />
-                    <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                        ForeColor="Black" />
-                    <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                        Font-Size="XX-Small" ForeColor="Gray" />
-                    <SelectedDateStyle BackColor="#810913" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                        Font-Size="XX-Small" ForeColor="Black" />
-                    <MonthHeaderStyle BackColor="#810913" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                        Font-Size="XX-Small" ForeColor="White" />
-                    <DayHeaderStyle BackColor="AliceBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                        Font-Size="XX-Small" ForeColor="Black" />
-                    <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                        ForeColor="Black" />
-                    <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                        ForeColor="Black" />
-                    <TodayDayStyle BackColor="CadetBlue" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                        Font-Size="XX-Small" ForeColor="Black" />
-                </ew:CalendarPopup>
+                &nbsp               
+                <asp:DropDownList ID="m_cbo_chon_thang" CssClass="cssDorpdownlist" OnSelectedIndexChanged="m_cbo_chon_thang_OnSelectedIndexChanged" runat="server" AutoPostBack="true">
+                    <asp:ListItem Value="1">Tháng 1 </asp:ListItem>
+                    <asp:ListItem Value="2">Tháng 2</asp:ListItem>
+                    <asp:ListItem Value="3">Tháng 3</asp:ListItem>
+                    <asp:ListItem Value="4">Tháng 4 </asp:ListItem>
+                    <asp:ListItem Value="5">Tháng 5 </asp:ListItem>
+                    <asp:ListItem Value="6">Tháng 6</asp:ListItem>
+                    <asp:ListItem Value="7">Tháng 7</asp:ListItem>
+                    <asp:ListItem Value="8">Tháng 8 </asp:ListItem>
+                    <asp:ListItem Value="9">Tháng 9 </asp:ListItem>
+                    <asp:ListItem Value="10">Tháng 10</asp:ListItem>
+                    <asp:ListItem Value="11">Tháng 11</asp:ListItem>
+                    <asp:ListItem Value="12">Tháng 12</asp:ListItem>
+                </asp:DropDownList>
             </div>
             <br />
             <table cellspacing="0" cellpadding="2" style="width: 100%">
