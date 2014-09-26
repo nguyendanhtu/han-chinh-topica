@@ -16,6 +16,16 @@ using System.Data;
 
 public partial class ChucNang_f570_tra_cuu_don_dat_hang : System.Web.UI.Page
 {
+    #region Public Interfaces
+    public string get_so_tien_thanh_toan(string ip_str_so_luong, string ip_str_don_gia)
+    {
+        string v_str_result = "";
+        if (ip_str_so_luong.Equals("")) return "0";
+        if (ip_str_don_gia.Equals("")) return "0";
+        v_str_result = CIPConvert.ToStr(CIPConvert.ToDecimal(ip_str_so_luong.Replace(",", "")) * CIPConvert.ToDecimal(ip_str_don_gia.Replace(",", "")), "#,###,##");
+        return v_str_result;
+    }
+    #endregion
     #region Member
     US_GD_DON_DAT_HANG m_us = new US_GD_DON_DAT_HANG();
     DS_GD_DON_DAT_HANG m_ds = new DS_GD_DON_DAT_HANG();
@@ -43,6 +53,18 @@ public partial class ChucNang_f570_tra_cuu_don_dat_hang : System.Web.UI.Page
         m_grv_don_hang.DataSource = m_ds.GD_DON_DAT_HANG;
         m_grv_don_hang.DataBind();
     }
+    private void load_data_2_grid_detail(decimal ip_dc_id_don_hang)
+    {
+        US_V_GD_DON_DAT_HANG_DETAIL v_us = new US_V_GD_DON_DAT_HANG_DETAIL();
+        DS_V_GD_DON_DAT_HANG_DETAIL v_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
+        v_us.FillDataset(v_ds, "where id_don_dat_hang=" + ip_dc_id_don_hang);
+        m_grv_detail.DataSource = v_ds.V_GD_DON_DAT_HANG_DETAIL;
+        m_grv_detail.DataBind();
+        string v_str_thong_tin = "Danh sách Có " + v_ds.V_GD_DON_DAT_HANG_DETAIL.Rows.Count + " mặt hàng";
+        m_lbl_grv_detail.Text = v_str_thong_tin;
+        m_lbl_ten_detail.Text = "Chi tiết hóa đơn đặt hàng";
+        view_detail_grv(true);
+    }
     private void load_title()
     {
         decimal v_id_trung_tam = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
@@ -53,8 +75,6 @@ public partial class ChucNang_f570_tra_cuu_don_dat_hang : System.Web.UI.Page
     }
     #endregion
     #region Event
-    
-    #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -126,14 +146,10 @@ public partial class ChucNang_f570_tra_cuu_don_dat_hang : System.Web.UI.Page
             switch (e.CommandName)
             {
                 case "Detail":
-                    if(e.CommandArgument.Equals("")) return;
+                    if (e.CommandArgument.Equals("")) return;
                     decimal v_dc_id_don_hang = CIPConvert.ToDecimal(e.CommandArgument);
-                    US_GD_DON_DAT_HANG_DETAIL v_us = new US_GD_DON_DAT_HANG_DETAIL();
-                    DS_GD_DON_DAT_HANG_DETAIL v_ds = new DS_GD_DON_DAT_HANG_DETAIL();
-                    v_us.FillDataset(v_ds, "where id_don_dat_hang=" + v_dc_id_don_hang);
-                    m_grv_detail.DataSource = v_ds.GD_DON_DAT_HANG_DETAIL;
-                    m_grv_detail.DataBind();
-                    view_detail_grv(true);
+                    m_hdf_id_don_hang_detail.Value = CIPConvert.ToDecimal(e.CommandArgument).ToString();
+                    load_data_2_grid_detail(v_dc_id_don_hang);
                     break;
 
 
@@ -155,4 +171,24 @@ public partial class ChucNang_f570_tra_cuu_don_dat_hang : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_grv_detail_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            m_grv_detail.PageIndex = e.NewPageIndex;
+            if (m_hdf_id_don_hang_detail.Value == "") return;
+            decimal v_dc_id_don_hang = CIPConvert.ToDecimal(m_hdf_id_don_hang_detail.Value);
+            load_data_2_grid_detail(v_dc_id_don_hang);
+            m_grv_detail.DataBind();
+
+        }
+        catch (Exception v_e)
+        {
+
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    #endregion
+    
+
 }
