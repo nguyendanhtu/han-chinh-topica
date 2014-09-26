@@ -34,7 +34,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
             this.m_grv_da_nhan = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_grv_da_chuyen = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -64,10 +63,11 @@
             this.m_grv_noi_bo_nhan_tra_lai = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_den_ngay = new System.Windows.Forms.Label();
-            this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_rdb_tat_ca = new System.Windows.Forms.RadioButton();
             this.m_rdb_chon_thang = new System.Windows.Forms.RadioButton();
             this.m_rdb_chon_ngay = new System.Windows.Forms.RadioButton();
+            this.m_dtp_tu_ngay = new BCTKApp.TCDatetime();
+            this.m_dtp_den_ngay = new BCTKApp.TCDatetime();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_da_nhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_da_chuyen)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -117,18 +117,6 @@
             this.m_grv_da_nhan.Size = new System.Drawing.Size(749, 322);
             this.m_grv_da_nhan.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_da_nhan.Styles"));
             this.m_grv_da_nhan.TabIndex = 36;
-            // 
-            // m_dtp_tu_ngay
-            // 
-            this.m_dtp_tu_ngay.Checked = false;
-            this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_tu_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(583, 84);
-            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
-            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(113, 23);
-            this.m_dtp_tu_ngay.TabIndex = 1;
-            this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 7, 14, 0, 0, 0, 0);
             // 
             // m_cmd_search
             // 
@@ -504,18 +492,6 @@
             this.m_lbl_den_ngay.TabIndex = 64;
             this.m_lbl_den_ngay.Text = "Đến  ngày";
             // 
-            // m_dtp_den_ngay
-            // 
-            this.m_dtp_den_ngay.Checked = false;
-            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dtp_den_ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_den_ngay.Location = new System.Drawing.Point(789, 84);
-            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
-            this.m_dtp_den_ngay.Size = new System.Drawing.Size(113, 23);
-            this.m_dtp_den_ngay.TabIndex = 63;
-            this.m_dtp_den_ngay.Value = new System.DateTime(2014, 7, 14, 0, 0, 0, 0);
-            // 
             // m_rdb_tat_ca
             // 
             this.m_rdb_tat_ca.AutoSize = true;
@@ -554,16 +530,37 @@
             this.m_rdb_chon_ngay.Text = "Chọn ngày";
             this.m_rdb_chon_ngay.UseVisualStyleBackColor = true;
             // 
+            // m_dtp_tu_ngay
+            // 
+            this.m_dtp_tu_ngay.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(583, 84);
+            this.m_dtp_tu_ngay.Mask = "00/00/0000";
+            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
+            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(74, 20);
+            this.m_dtp_tu_ngay.TabIndex = 68;
+            this.m_dtp_tu_ngay.ValidatingType = typeof(System.DateTime);
+            // 
+            // m_dtp_den_ngay
+            // 
+            this.m_dtp_den_ngay.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(788, 84);
+            this.m_dtp_den_ngay.Mask = "00/00/0000";
+            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
+            this.m_dtp_den_ngay.Size = new System.Drawing.Size(89, 20);
+            this.m_dtp_den_ngay.TabIndex = 69;
+            this.m_dtp_den_ngay.ValidatingType = typeof(System.DateTime);
+            // 
             // F506_CAP_NHAT_TRANG_THAI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 569);
+            this.Controls.Add(this.m_dtp_den_ngay);
+            this.Controls.Add(this.m_dtp_tu_ngay);
             this.Controls.Add(this.m_rdb_chon_ngay);
             this.Controls.Add(this.m_rdb_chon_thang);
             this.Controls.Add(this.m_rdb_tat_ca);
             this.Controls.Add(this.m_lbl_den_ngay);
-            this.Controls.Add(this.m_dtp_den_ngay);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_tab_main);
             this.Controls.Add(this.m_txt_key_word);
@@ -573,7 +570,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.m_lbl_tu_ngay);
-            this.Controls.Add(this.m_dtp_tu_ngay);
             this.Controls.Add(this.m_cmd_search);
             this.Name = "F506_CAP_NHAT_TRANG_THAI";
             this.Text = "F506-Cập nhật trạng thái CPN";
@@ -597,7 +593,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label m_lbl_tu_ngay;
-        private System.Windows.Forms.DateTimePicker m_dtp_tu_ngay;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private C1.Win.C1FlexGrid.C1FlexGrid m_grv_da_nhan;
         private C1.Win.C1FlexGrid.C1FlexGrid m_grv_da_chuyen;
@@ -628,9 +623,10 @@
         internal SIS.Controls.Button.SiSButton m_cmd_tra_lai_2_noi_bo_nhan_tl_all;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label m_lbl_den_ngay;
-        private System.Windows.Forms.DateTimePicker m_dtp_den_ngay;
         private System.Windows.Forms.RadioButton m_rdb_tat_ca;
         private System.Windows.Forms.RadioButton m_rdb_chon_thang;
         private System.Windows.Forms.RadioButton m_rdb_chon_ngay;
+        private TCDatetime m_dtp_tu_ngay;
+        private TCDatetime m_dtp_den_ngay;
     }
 }

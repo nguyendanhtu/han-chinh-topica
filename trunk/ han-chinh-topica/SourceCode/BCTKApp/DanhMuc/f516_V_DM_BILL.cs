@@ -408,8 +408,8 @@ namespace BCTKApp
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_bill);
-            m_dtp_tu_ngay.Text = (DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1)).ToString();
-            m_dtp_den_ngay.Text = DateTime.Now.Date.ToString();
+            m_dtp_tu_ngay.Text = CIPConvert.ToStr(DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1), "dd/MM/yyyy");
+            m_dtp_den_ngay.Text = CIPConvert.ToStr(DateTime.Now.Date, "dd/MM/yyyy");
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -419,8 +419,8 @@ namespace BCTKApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){
-            DateTime v_dat_tu_ngay = CIPConvert.ToDatetime(m_dtp_tu_ngay.Text);
-            DateTime v_dat_den_ngay = CIPConvert.ToDatetime(m_dtp_den_ngay.Text);
+            DateTime v_dat_tu_ngay = CIPConvert.ToDatetime(m_dtp_tu_ngay.Text.Trim(), "dd/MM/yyyy");
+            DateTime v_dat_den_ngay = CIPConvert.ToDatetime(m_dtp_den_ngay.Text.Trim(), "dd/MM/yyyy");
             decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             string v_str_tu_khoa = m_txt_tu_khoa.Text;
             if (v_str_tu_khoa == m_str_goi_y_tim_kiem) v_str_tu_khoa = "";

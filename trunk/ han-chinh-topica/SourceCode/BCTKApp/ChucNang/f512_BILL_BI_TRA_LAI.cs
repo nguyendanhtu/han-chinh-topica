@@ -272,9 +272,9 @@ namespace BCTKApp
             // 
             this.m_grv_bill.ColumnInfo = resources.GetString("m_grv_bill.ColumnInfo");
             this.m_grv_bill.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_bill.Location = new System.Drawing.Point(0, 125);
+            this.m_grv_bill.Location = new System.Drawing.Point(0, 104);
             this.m_grv_bill.Name = "m_grv_bill";
-            this.m_grv_bill.Size = new System.Drawing.Size(764, 401);
+            this.m_grv_bill.Size = new System.Drawing.Size(764, 422);
             this.m_grv_bill.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_bill.Styles"));
             this.m_grv_bill.TabIndex = 20;
             // 
@@ -289,13 +289,13 @@ namespace BCTKApp
             this.m_pnl_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_top.Location = new System.Drawing.Point(0, 0);
             this.m_pnl_top.Name = "m_pnl_top";
-            this.m_pnl_top.Size = new System.Drawing.Size(764, 119);
+            this.m_pnl_top.Size = new System.Drawing.Size(764, 98);
             this.m_pnl_top.TabIndex = 22;
             // 
             // m_dtp_den_ngay
             // 
             this.m_dtp_den_ngay.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
-            this.m_dtp_den_ngay.Location = new System.Drawing.Point(573, 66);
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(462, 49);
             this.m_dtp_den_ngay.Mask = "00/00/0000";
             this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
             this.m_dtp_den_ngay.Size = new System.Drawing.Size(100, 20);
@@ -305,7 +305,7 @@ namespace BCTKApp
             // m_dtp_tu_ngay
             // 
             this.m_dtp_tu_ngay.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(367, 69);
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(256, 52);
             this.m_dtp_tu_ngay.Mask = "00/00/0000";
             this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(100, 20);
@@ -317,7 +317,7 @@ namespace BCTKApp
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(500, 70);
+            this.label6.Location = new System.Drawing.Point(389, 53);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 16);
             this.label6.TabIndex = 39;
@@ -327,7 +327,7 @@ namespace BCTKApp
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(291, 70);
+            this.label7.Location = new System.Drawing.Point(180, 53);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 38;
@@ -341,7 +341,7 @@ namespace BCTKApp
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(696, 62);
+            this.m_cmd_search.Location = new System.Drawing.Point(585, 45);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 34;
