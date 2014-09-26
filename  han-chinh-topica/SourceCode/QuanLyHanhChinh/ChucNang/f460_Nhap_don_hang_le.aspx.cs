@@ -397,7 +397,11 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_pnl_confirm_tg.Visible = true;
         m_cmd_ok.Visible = true;
     }
-   
+    private void view_detail_grv(bool ip_visible)
+    {
+        mtv_detail.SetActiveView(View_detail);
+        m_pnl_detail_grv.Visible = ip_visible;
+    }
     private bool check_validate_is_ok()
     {
         string v_form_mode = get_form_mode(m_hdf_form_mode);
@@ -524,6 +528,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
                     v_us_ht_qh_sd_dl.FillDataset(v_ds_ht_qh_sd_dl, "where ID_USER_GROUP =" + v_id_user_group);
                     m_hdf_id_trung_tam.Value = v_ds_ht_qh_sd_dl.HT_QUAN_HE_SU_DUNG_DU_LIEU.Rows[0]["ID_PHONG_BAN"].ToString();
                     set_inital_form_mode();
+                    view_detail_grv(false);
                 }
                 thong_bao("", false,false);      
             }
@@ -630,6 +635,8 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             //Get the row that contains this button
             GridViewRow gvr = (GridViewRow)btn.NamingContainer;
             //Get rowindex
+            LinkButton lbt = (LinkButton)sender;
+            view_detail_grv(true);
             int rowindex = gvr.RowIndex;
             m_grv_don_hang_nhap.SelectedIndex = rowindex;
             m_hdf_id_don_hang.Value = CIPConvert.ToStr(m_grv_don_hang_nhap.DataKeys[rowindex].Value);
@@ -778,6 +785,17 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         try
         {
             m_lbl_thong_bao.Visible = false;
+        }
+        catch (System.Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cmd_detail_exit_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            view_detail_grv(false);
         }
         catch (System.Exception v_e)
         {
