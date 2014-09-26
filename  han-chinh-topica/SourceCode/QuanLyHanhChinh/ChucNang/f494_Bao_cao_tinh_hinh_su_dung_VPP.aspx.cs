@@ -94,10 +94,13 @@ public partial class ChucNang_f494_Bao_cao_tinh_hinh_su_dung_VPP : System.Web.UI
 
     private void display_pop_up_detail(string v_ma_don_hang)
     {
+        m_lbl_ten_detail.Text = "CHi tiết đơn hàng mã phiếu: " + v_ma_don_hang.ToString();
         US_V_GD_DON_DAT_HANG_DETAIL v_us = new US_V_GD_DON_DAT_HANG_DETAIL();
         DS_V_GD_DON_DAT_HANG_DETAIL v_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
         v_us.FillDataset(v_ds, v_ma_don_hang, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
         m_grv_detail.DataSource = v_ds.V_GD_DON_DAT_HANG_DETAIL;
+        string v_str_thong_tin = "Danh sách Có " + v_ds.V_GD_DON_DAT_HANG_DETAIL.Rows.Count + " vật tư";
+        m_lbl_grv_detail.Text = v_str_thong_tin;
         m_grv_detail.DataBind();
     }
     private void thong_bao(string ip_str_mess)
