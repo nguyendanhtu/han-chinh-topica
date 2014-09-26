@@ -181,5 +181,11 @@ public class US_CM_DM_TU_DIEN : US_Object
         CStoredProc v_store_proc = new CStoredProc("pr_load_loai_dinh_muc");
         v_store_proc.fillDataSetByCommand(this, ip_ds);
     }
+
+    public void FillDatasetByLoaiTuDienLoaiCongVan(DS_CM_DM_TU_DIEN ip_ds)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_CM_DM_TU_DIEN_get_trang_thai_cong_van");
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
 }
 }

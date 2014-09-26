@@ -102,4 +102,11 @@ namespace BCTKUS
         public const decimal TUYENMOI_TRUONG_DIAPHUONG = 11;
 
     }
+
+    public class CONST_ID_LOAI_CONG_VAN
+    {
+        public const decimal CONG_VAN_DEN = 222;
+        public const decimal CONG_VAN_DEN_KHONG_LUU = 229;
+        public const decimal CONG_VAN_DI = 223;
+    }
 }
