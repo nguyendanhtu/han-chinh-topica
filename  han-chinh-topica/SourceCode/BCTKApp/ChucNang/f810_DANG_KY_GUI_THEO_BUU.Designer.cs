@@ -39,7 +39,6 @@
             this.m_lbl_tong_so_bill = new System.Windows.Forms.Label();
             this.m_lbl_ = new System.Windows.Forms.Label();
             this.m_cmd_del = new SIS.Controls.Button.SiSButton();
-            this.m_dat_ngay_gui = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_gui = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -49,6 +48,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_cmd_danh_sach_bill = new SIS.Controls.Button.SiSButton();
             this.m_cmd_nhap_excel = new SIS.Controls.Button.SiSButton();
+            this.m_dat_ngay_gui = new BCTKApp.TCDatetime();
             this.m_pnl_tieu_de.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -105,12 +105,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_dat_ngay_gui);
             this.panel1.Controls.Add(this.m_lbl_loading);
             this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.m_lbl_tong_so_bill);
             this.panel1.Controls.Add(this.m_lbl_);
             this.panel1.Controls.Add(this.m_cmd_del);
-            this.panel1.Controls.Add(this.m_dat_ngay_gui);
             this.panel1.Controls.Add(this.m_lbl_ngay_gui);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 42);
@@ -170,15 +170,6 @@
             this.m_cmd_del.TabIndex = 6;
             this.m_cmd_del.TabStop = false;
             this.m_cmd_del.Text = "&Xóa hàng";
-            // 
-            // m_dat_ngay_gui
-            // 
-            this.m_dat_ngay_gui.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_dat_ngay_gui.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ngay_gui.Location = new System.Drawing.Point(555, 15);
-            this.m_dat_ngay_gui.Name = "m_dat_ngay_gui";
-            this.m_dat_ngay_gui.Size = new System.Drawing.Size(140, 20);
-            this.m_dat_ngay_gui.TabIndex = 1;
             // 
             // m_lbl_ngay_gui
             // 
@@ -320,6 +311,16 @@
             this.m_cmd_nhap_excel.UseVisualStyleBackColor = true;
             this.m_cmd_nhap_excel.Visible = false;
             // 
+            // m_dat_ngay_gui
+            // 
+            this.m_dat_ngay_gui.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+            this.m_dat_ngay_gui.Location = new System.Drawing.Point(554, 10);
+            this.m_dat_ngay_gui.Mask = "00/00/0000";
+            this.m_dat_ngay_gui.Name = "m_dat_ngay_gui";
+            this.m_dat_ngay_gui.Size = new System.Drawing.Size(100, 20);
+            this.m_dat_ngay_gui.TabIndex = 69;
+            this.m_dat_ngay_gui.ValidatingType = typeof(System.DateTime);
+            // 
             // f810_DANG_KY_GUI_THEO_BUU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,7 +347,6 @@
         private System.Windows.Forms.Panel m_pnl_tieu_de;
         private System.Windows.Forms.Label m_lbl_tieu_de;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_gui;
         private System.Windows.Forms.Label m_lbl_ngay_gui;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         internal System.Windows.Forms.ImageList imageList1;
@@ -361,6 +361,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label m_lbl_loading;
         private SIS.Controls.Button.SiSButton m_cmd_danh_sach_bill;
+        private TCDatetime m_dat_ngay_gui;
 
     }
 }

@@ -106,6 +106,7 @@ namespace BCTKApp {
             this.KeyPreview = true;
         }
         private void set_initial_form_load() {
+            m_dat_thang.Text = CIPConvert.ToStr(DateTime.Now.Date, "MM/yyyy");
             m_obj_trans_xls = get_2_us_obj_xls();
         }
         private void ghi_log_he_thong() {
@@ -316,7 +317,7 @@ namespace BCTKApp {
         private void add_danh_sach_du_lieu() {
             try {
                 //Tim ngay dau thang, cuoi thang
-                DateTime v_dau_thang = m_dat_thang.Value.AddDays(-m_dat_thang.Value.Day + 1).Date;
+                DateTime v_dau_thang = CIPConvert.ToDatetime("01/" + m_dat_thang.Text, "dd/MM/yyyy");
                 DateTime v_cuoi_thang = v_dau_thang.AddMonths(1).Date.AddDays(-1).Date;
                 //Lay ra 1 DataTable chua danh sach bill da gui trong thang tu CSDL
                 DataTable v_dt = null;
