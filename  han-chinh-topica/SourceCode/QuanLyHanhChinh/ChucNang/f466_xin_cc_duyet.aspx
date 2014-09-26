@@ -83,7 +83,7 @@
                                     <ItemTemplate>
                                         <asp:LinkButton ID="m_lbt_duyet" runat="server" CommandName="Duyet" ToolTip="Không duyệt đơn này" CommandArgument='<%#Eval("ID") %>'
                                             OnClientClick="return confirm ('Bạn có thực sự muốn duyệt đơn hàng này?')">
-                                                <img src="../Images/Button/edit.png" alt="Delete" />
+                                                <img src="../Images/Button/Update.gif" alt="Duyệt" />
                                         </asp:LinkButton>
                                     </ItemTemplate>
                                     <ItemStyle />
