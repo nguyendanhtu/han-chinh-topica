@@ -14,6 +14,43 @@ using IP.Core.IPUserService;
 
 public partial class ChucNang_f890_duyet_don_hang_cc_td : System.Web.UI.Page
 {
+    #region Public Interface
+    public bool is_cc_duyet(string ip_str_id_don_hang, string ip_str_ti_le_vuot)
+    {
+        bool v_b_result = false;
+        if (ip_str_id_don_hang.Equals("")) return false;
+        if(ip_str_ti_le_vuot.Equals("")) return false;
+        if (CIPConvert.ToDecimal(ip_str_ti_le_vuot) > 120)
+            v_b_result = true;
+        else v_b_result = false;
+        return v_b_result;
+    }
+    public bool is_td_duyet(string ip_str_id_don_hang, string ip_str_ti_le_vuot)
+    {
+        bool v_b_result = false;
+        if (ip_str_id_don_hang.Equals("")) return false;
+        if (ip_str_ti_le_vuot.Equals("")) return false;
+        if (CIPConvert.ToDecimal(ip_str_ti_le_vuot) <= 110)
+            v_b_result = true;
+        else v_b_result = false;
+        return v_b_result;
+    }
+    public bool is_tad_duyet(string ip_str_id_don_hang, string ip_str_ti_le_vuot)
+    {
+        bool v_b_result = false;
+        if (ip_str_id_don_hang.Equals("")) return false;
+        if (ip_str_ti_le_vuot.Equals("")) return false;
+        if (CIPConvert.ToDecimal(ip_str_ti_le_vuot) <= 120 && CIPConvert.ToDecimal(ip_str_ti_le_vuot) > 110)
+            v_b_result = true;
+        else v_b_result = false;
+        return v_b_result;
+    }
+    #endregion
+
+    #region Events
+
+    #endregion
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -80,6 +117,19 @@ public partial class ChucNang_f890_duyet_don_hang_cc_td : System.Web.UI.Page
         //Lay tong tien dinh muc
         m_lbl_tong_tien_dm.Text = CIPConvert.ToStr(v_us_gd_don_dat_hang.get_tong_tien_dinh_muc_hang_thang(v_id_trung_tam, 173, m_dat_dau_thang, m_dat_cuoi_thang).ToString(), "#,###,##");
         m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_dat_hang.get_tong_tien_da_chi_hang_thang(v_id_trung_tam, m_dat_dau_thang), "#,###");
+        
+        //check duyệt
+        //if(m_grv_don_hang_nhap.Rows.Count>1)
+            
+        //for (int i = 0; i < v_ds_gd_don_dat_hang.GD_DON_DAT_HANG.Rows.Count; i++)
+        //{
+        //    if (CIPConvert.ToDecimal(v_ds_gd_don_dat_hang.GD_DON_DAT_HANG.Rows[i]["PHAN_TRAM_VUOT"]) >= 120)
+        //    {
+        //        m_grv_don_hang_nhap.
+        //    }
+        //    else
+        //    { }
+        //}
     }
 
     protected void m_grv_don_hang_nhap_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -100,6 +150,14 @@ public partial class ChucNang_f890_duyet_don_hang_cc_td : System.Web.UI.Page
                     v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET;
                     v_us_gd_don_hang.Update();
                     m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_hang.get_tong_tien_da_chi_hang_thang(v_us_gd_don_hang.dcID_PHONG_BAN, m_dat_dau_thang), "#,###");
+                    break;
+                case "XinCCDuyet":
+                    v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET;
+                    v_us_gd_don_hang.Update();
+                    break;
+                case "XinTADDuyet":
+                    v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_TAD_DUYET;
+                    v_us_gd_don_hang.Update();
                     break;
             }
             //v_us_gd_don_hang.Update();
