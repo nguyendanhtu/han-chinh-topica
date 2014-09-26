@@ -49,6 +49,7 @@ namespace BCTKApp
         private Label label2;
         private TextBox m_txt_tu_khoa;
         private TCDatetime m_dtp_thang;
+        private C1FlexGrid m_fg_excel;
 		private System.ComponentModel.IContainer components;
 
 		public f535_gui_don_dat_hang_cho_NCC()
@@ -97,6 +98,7 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_don_hang = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_dtp_thang = new BCTKApp.TCDatetime();
             this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -104,10 +106,11 @@ namespace BCTKApp
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.m_dtp_thang = new BCTKApp.TCDatetime();
+            this.m_fg_excel = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -255,6 +258,16 @@ namespace BCTKApp
             this.panel1.Size = new System.Drawing.Size(738, 117);
             this.panel1.TabIndex = 22;
             // 
+            // m_dtp_thang
+            // 
+            this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
+            this.m_dtp_thang.Location = new System.Drawing.Point(225, 45);
+            this.m_dtp_thang.Mask = "00/0000";
+            this.m_dtp_thang.Name = "m_dtp_thang";
+            this.m_dtp_thang.Size = new System.Drawing.Size(99, 20);
+            this.m_dtp_thang.TabIndex = 47;
+            this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
+            // 
             // m_txt_tu_khoa
             // 
             this.m_txt_tu_khoa.Location = new System.Drawing.Point(225, 81);
@@ -326,20 +339,25 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Text = "ĐƠN HÀNG THEO TỪNG TRUNG TÂM";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // m_dtp_thang
+            // m_fg_excel
             // 
-            this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
-            this.m_dtp_thang.Location = new System.Drawing.Point(225, 45);
-            this.m_dtp_thang.Mask = "00/0000";
-            this.m_dtp_thang.Name = "m_dtp_thang";
-            this.m_dtp_thang.Size = new System.Drawing.Size(99, 20);
-            this.m_dtp_thang.TabIndex = 47;
-            this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
+            this.m_fg_excel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_fg_excel.ColumnInfo = "0,0,0,0,0,85,Columns:";
+            this.m_fg_excel.Location = new System.Drawing.Point(4, 361);
+            this.m_fg_excel.Name = "m_fg_excel";
+            this.m_fg_excel.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
+            this.m_fg_excel.Size = new System.Drawing.Size(734, 61);
+            this.m_fg_excel.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_excel.Styles"));
+            this.m_fg_excel.TabIndex = 24;
+            this.m_fg_excel.Visible = false;
             // 
             // f535_gui_don_dat_hang_cho_NCC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(738, 487);
+            this.Controls.Add(this.m_fg_excel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_grv_don_hang);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -350,6 +368,7 @@ namespace BCTKApp
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_excel)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -381,9 +400,6 @@ namespace BCTKApp
 			CGridUtils.AddSave_Excel_Handlers(m_grv_don_hang);
             CGridUtils.AddSearch_Handlers(m_grv_don_hang);
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            m_grv_don_hang.Tree.Column = (int)e_col_Number.NGAY_DAT_HANG;
-            m_grv_don_hang.Cols[(int)e_col_Number.TEN_PHONG_BAN].Visible = false;
-            m_grv_don_hang.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.ButtonBar;
             load_cbo_phap_nhan();
             m_cmd_search.Visible = true;
             m_cmd_search.Enabled = true;
@@ -422,12 +438,12 @@ namespace BCTKApp
 			m_grv_don_hang.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_don_hang, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_don_hang);
-            m_grv_don_hang.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-              , 0
-              , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình nhóm
-              , (int)e_col_Number.NGAY_DAT_HANG // chỗ này là tên trường mà mình Count
-              , "{0}"
-              );
+            //m_grv_don_hang.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+            //  , 0
+            //  , (int)e_col_Number.TEN_PHONG_BAN // chỗ này là tên trường mà mình nhóm
+            //  , (int)e_col_Number.NGAY_DAT_HANG // chỗ này là tên trường mà mình Count
+            //  , "{0}"
+            //  );
 			m_grv_don_hang.Redraw = true;
 		}
         
@@ -529,6 +545,45 @@ namespace BCTKApp
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_grv_don_hang, 0, m_grv_don_hang.Cols.Count - 1, true);
         }
+        private void export_dataset_2_excel()
+        {
+            CExcelReport v_obj_excel_report = new CExcelReport("f535_gui_don_hang_cho_NCC_new.xls", 6, 1);
+            v_obj_excel_report.AddFindAndReplaceItem("<thang>", m_dtp_thang.Text);
+            v_obj_excel_report.FindAndReplace(false);
+            DataSet v_ds = new DataSet();
+            v_ds = grid_to_dataset_export_excel(m_grv_don_hang);
+            m_fg_excel.DataSource = v_ds.Tables[0].DefaultView;
+            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg_excel, 0, m_fg_excel.Cols.Count - 1, true);
+        }
+        private DataSet grid_to_dataset_export_excel(C1FlexGrid ip_fg)
+        {
+            DataSet op_ds = new DataSet();
+            DataTable v_dt = new DataTable();
+            v_dt.Columns.Add("NGAY_DAT_HANG");
+            v_dt.Columns.Add("MA_DON_HANG");
+            v_dt.Columns.Add("HD_NCC");
+            v_dt.Columns.Add("TEN_VPP");
+            v_dt.Columns.Add("DON_VI_TINH");
+            v_dt.Columns.Add("SO_LUONG");
+            v_dt.Columns.Add("DON_GIA_CHUA_VAT");
+            v_dt.Columns.Add("THANH_TIEN");
+            op_ds.Tables.Add(v_dt);
+            for (int i = 1; i < ip_fg.Rows.Count; i++)
+            {
+                DataRow v_dr = v_dt.NewRow();
+                v_dr["NGAY_DAT_HANG"] = ip_fg.Rows[i][(int)e_col_Number.NGAY_DAT_HANG].ToString().Split(' ')[0];
+                v_dr["MA_DON_HANG"] = ip_fg.Rows[i][(int)e_col_Number.MA_DON_HANG] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.MA_DON_HANG].ToString();
+                v_dr["HD_NCC"] = "";
+                v_dr["TEN_VPP"] = ip_fg.Rows[i][(int)e_col_Number.TEN_VPP] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.TEN_VPP].ToString();
+                v_dr["DON_VI_TINH"] = ip_fg.Rows[i][(int)e_col_Number.DON_VI_TINH] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.DON_VI_TINH].ToString();
+                v_dr["SO_LUONG"] = ip_fg.Rows[i][(int)e_col_Number.SO_LUONG].ToString();
+                v_dr["DON_GIA_CHUA_VAT"] = ip_fg.Rows[i][(int)e_col_Number.DON_GIA_CHUA_VAT] == null ? "" : ip_fg.Rows[i][(int)e_col_Number.DON_GIA_CHUA_VAT].ToString();
+                v_dr["THANH_TIEN"] = (CIPConvert.ToDecimal(v_dr["SO_LUONG"]) * CIPConvert.ToDecimal(v_dr["DON_GIA_CHUA_VAT"])).ToString();
+                v_dt.Rows.Add(v_dr);
+            }
+            op_ds.AcceptChanges();
+            return op_ds;
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
@@ -610,7 +665,7 @@ namespace BCTKApp
 
 		private void m_cmd_xuat_excel_Click(object sender, EventArgs e) {
 			try{
-                export_2_excel();
+                export_dataset_2_excel();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
