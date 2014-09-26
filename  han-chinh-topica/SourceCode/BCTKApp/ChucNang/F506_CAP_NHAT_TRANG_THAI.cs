@@ -56,7 +56,7 @@ namespace BCTKApp
             CControlFormat.setC1FlexFormat(m_grv_da_chuyen);
             CControlFormat.setC1FlexFormat(m_grv_bi_tra_lai);
             CControlFormat.setC1FlexFormat(m_grv_noi_bo_nhan_tra_lai);
-            m_dtp_tu_ngay.Value = DateTime.Now.Date;
+            m_dtp_tu_ngay.Text =CIPConvert.ToStr(DateTime.Now.Date,"dd/MM/yyyy");
             //load_data_2_cbo_cu()é
             //load_data_2_cbo_moi();
             load_data_2_cbo_trung_tam();
@@ -77,8 +77,8 @@ namespace BCTKApp
         }
         private void load_data_2_grid(decimal ip_dc_trang_thai, C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
-            DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value.Date;
-            DateTime v_dat_den_ngay = m_dtp_den_ngay.Value.Date;
+            DateTime v_dat_tu_ngay = DateTime.Now.Date;
+            DateTime v_dat_den_ngay = DateTime.Now.Date;
             decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             decimal v_dc_id_trang_thai = ip_dc_trang_thai; //CIPConvert.ToDecimal(m_cbo_trang_thai_cu.SelectedValue);
             string v_str_key_word = m_txt_key_word.Text;
@@ -86,22 +86,26 @@ namespace BCTKApp
             m_ds = new DS_V_DM_BILL();
             if (m_rdb_tat_ca.Checked == true)
             {
-                m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_tu_ngay, v_dat_den_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
+                v_dat_tu_ngay = CIPConvert.ToDatetime(m_dtp_tu_ngay.Text.Trim(), "dd/MM/yyyy");
+                v_dat_den_ngay = CIPConvert.ToDatetime(m_dtp_den_ngay.Text.Trim(), "dd/MM/yyyy");
+                
             }
             if (m_rdb_chon_ngay.Checked == true)
             {
+                v_dat_tu_ngay = CIPConvert.ToDatetime(m_dtp_tu_ngay.Text.Trim(), "dd/MM/yyyy");
+                v_dat_den_ngay = CIPConvert.ToDatetime(m_dtp_den_ngay.Text.Trim(), "dd/MM/yyyy");
                 v_dat_den_ngay = v_dat_tu_ngay;
-                m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_tu_ngay, v_dat_den_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
             }
             if (m_rdb_chon_thang.Checked == true)
             {
-                v_dat_tu_ngay = m_dtp_tu_ngay.Value.Date.AddDays(-m_dtp_tu_ngay.Value.Date.Day + 1);
-                DateTime temp = m_dtp_tu_ngay.Value.Date;
+                v_dat_tu_ngay = CIPConvert.ToDatetime("01/" + m_dtp_tu_ngay.Text, "dd/MM/yyyy"); 
+                DateTime temp = v_dat_tu_ngay.Date;
                 temp = temp.AddMonths(1);
                 temp = temp.AddDays(-(temp.Day));
                 v_dat_den_ngay = temp;
-                m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_tu_ngay, v_dat_den_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
+                
             }
+            m_us.FillDatasetSearch_grid_ngay(m_ds, v_dat_tu_ngay, v_dat_den_ngay, v_dc_id_trung_tam, v_dc_id_trang_thai, v_str_key_word);
             i_fg.Redraw = false;
             m_obj_trans = get_trans_object(i_fg);
             CGridUtils.Dataset2C1Grid(m_ds, i_fg, m_obj_trans);
@@ -197,8 +201,8 @@ namespace BCTKApp
             m_lbl_tu_ngay.Visible = false;
             m_dtp_den_ngay.Visible = false;
             m_lbl_den_ngay.Visible = false;
-            m_dtp_den_ngay.Value = DateTime.Now.Date;
-            this.m_dtp_tu_ngay.Value = new System.DateTime(2010, 1, 14, 0, 0, 0, 0);
+            m_dtp_den_ngay.Text =CIPConvert.ToStr(DateTime.Now.Date,"dd/MM/yyyy");
+            m_dtp_tu_ngay.Text= CIPConvert.ToStr(new System.DateTime(2010, 1, 14, 0, 0, 0, 0),"dd/MM/yyyy");
             load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_NHAN_NOI_BO,m_grv_da_nhan);
             load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_DA_CHUYEN_CPN,m_grv_da_chuyen);
             load_data_2_grid(CONST_ID_TRANG_THAI_THU.ID_BI_TRA_LAI,m_grv_bi_tra_lai);
@@ -533,8 +537,8 @@ namespace BCTKApp
                     m_lbl_tu_ngay.Visible = false;
                     m_dtp_den_ngay.Visible = false;
                     m_lbl_den_ngay.Visible = false;
-                    m_dtp_den_ngay.Value = DateTime.Now.Date;
-                    this.m_dtp_tu_ngay.Value = new System.DateTime(2010, 1, 14, 0, 0, 0, 0);
+                    m_dtp_den_ngay.Text =CIPConvert.ToStr(DateTime.Now.Date,"dd/MM/yyyy");
+                    m_dtp_tu_ngay.Text = CIPConvert.ToStr(new System.DateTime(2010, 1, 14, 0, 0, 0, 0), "dd/MM/yyyy");
                 }
             }
             catch (Exception v_e)
@@ -552,8 +556,8 @@ namespace BCTKApp
                     m_dtp_tu_ngay.Visible = true;
                     m_lbl_tu_ngay.Visible = true;
                     m_lbl_tu_ngay.Text = "Ngày";
-                    m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
-                    m_dtp_tu_ngay.Value = DateTime.Now.Date;
+                    m_dtp_tu_ngay.Format = TCDatetime.DinhDang.dd_MM_yyyy;
+                    m_dtp_tu_ngay.Text =CIPConvert.ToStr(DateTime.Now.Date,"dd/MM/yyyy");
                     m_dtp_den_ngay.Visible = false;
                     m_lbl_den_ngay.Visible = false;
                 }
@@ -573,8 +577,8 @@ namespace BCTKApp
                     m_dtp_tu_ngay.Visible = true;
                     m_lbl_tu_ngay.Visible = true;
                     m_lbl_tu_ngay.Text = "Tháng";
-                    m_dtp_tu_ngay.CustomFormat = "MM/yyyy";
-                    m_dtp_tu_ngay.Value = DateTime.Now.Date;
+                    m_dtp_tu_ngay.Format = TCDatetime.DinhDang.MM_yyyy;
+                    m_dtp_tu_ngay.Text =CIPConvert.ToStr(DateTime.Now.Date,"MM/yyyy");
                     m_dtp_den_ngay.Visible = false;
                     m_lbl_den_ngay.Visible = false;
                 }
