@@ -470,8 +470,8 @@ namespace BCTKApp
             v_dr[CM_DM_TU_DIEN.ID] = -1;
             v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = -1;
             v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "TAT_CA";
-            v_dr[CM_DM_TU_DIEN.TEN] = "-------Tất cả------";
-            v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "-------Tất cả------";
+            v_dr[CM_DM_TU_DIEN.TEN] = "-----Tất cả-----";
+            v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "-----Tất cả-----";
             v_dr[CM_DM_TU_DIEN.GHI_CHU] = "";
             v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
             m_cbo_trang_thai.SelectedIndex = 0;

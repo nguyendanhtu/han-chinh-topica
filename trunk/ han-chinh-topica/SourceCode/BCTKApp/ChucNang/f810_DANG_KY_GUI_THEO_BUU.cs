@@ -122,6 +122,7 @@ namespace BCTKApp.ChucNang {
         }
 
         private void set_initial_form_load() {
+            m_dat_ngay_gui.Text = CIPConvert.ToStr(DateTime.Now.Date, "dd/MM/yyyy");
             load_cbo_phong_ban_2_grid();
             load_cbo_loai_thu_2_grid();
             load_ten_phong_ban_tuong_ung_2_grid();
@@ -253,7 +254,7 @@ namespace BCTKApp.ChucNang {
 
         private void grid_row_2_us_v_dm_bill(int ip_grid_row, US_V_DM_BILL iop_us_v_dm_bill) {
             iop_us_v_dm_bill.datNGAY_GUI
-               = m_dat_ngay_gui.Value;
+               = CIPConvert.ToDatetime(m_dat_ngay_gui.Text.Trim(), "dd/MM/yyyy");
 
             iop_us_v_dm_bill.strSO_BILL
                 = CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.SO_BILL]);
