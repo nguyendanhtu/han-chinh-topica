@@ -73,9 +73,9 @@
             <td align="left">
                 <asp:Button ID="m_cmd_cap_nhat_don_hang" runat="server" Text="Cập nhật đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" />
             </td>
-            <td align="left">
+            <%--          <td align="left">
                 <asp:Button ID="m_cmd_gui_td" runat="server" Text="Gửi cho TD duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_td_Click" />
-            </td>
+            </td>--%>
         </tr>
     </table>
     <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -93,6 +93,7 @@
                     Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                     EmptyDataText="Không có đơn hàng nào!" EmptyDataRowStyle-BorderColor="#810913"
                     CellPadding="8" PageSize="10"
+                    OnRowCommand="m_grv_don_hang_nhap_RowCommand"
                     OnRowEditing="m_grv_don_hang_nhap_RowEditing"
                     OnRowDeleting="m_grv_don_hang_nhap_RowDeleting"
                     OnPageIndexChanging="m_grv_don_hang_PageIndexChanging">
@@ -105,11 +106,11 @@
                     <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
                     <HeaderStyle CssClass="GridViewHeaderStyle" />
                     <Columns>
-                        <asp:TemplateField HeaderText="Chọn" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
+                        <%--        <asp:TemplateField HeaderText="Chọn" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
                             <ItemTemplate>
                                 <asp:CheckBox ID="chkRow" runat="server" OnCheckedChanged="OnCheckedChanged_chkRow" />
                             </ItemTemplate>
-                        </asp:TemplateField>
+                        </asp:TemplateField>--%>
                         <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
                             <ItemTemplate>
                                 <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
@@ -165,6 +166,15 @@
                             ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                             <ItemStyle HorizontalAlign="Right" Width="7%" />
                         </asp:BoundField>
+                        <asp:TemplateField HeaderText="Xin TAD duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="m_lbt_xin_td_duyet" runat="server" CommandName="XinTDDuyet" ToolTip="Xin TD duyệt" CommandArgument='<%#Eval("ID") %>'
+                                    OnClientClick="return confirm ('Bạn có thực sự muốn gửi cho TD duyệt đơn hàng này?')">
+                                                <img src="../Images/Button/gmail-icon.png" alt="Xin TD duyệt" width="24px" height="24px" />
+                                </asp:LinkButton>
+                            </ItemTemplate>
+                            <ItemStyle />
+                        </asp:TemplateField>
                         <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
                             Visible="False">
                             <ItemStyle HorizontalAlign="Center"></ItemStyle>
@@ -174,50 +184,24 @@
             </td>
         </tr>
     </table>
-    <asp:Panel ID="m_pnl_confirm_tg" runat="server">
-        <div class="cssLoadWapper">
-            <asp:MultiView ID="m_mtv_1" runat="server">
-                <asp:View ID="m_view_confirm" runat="server">
-                    <div class="cssLoadContent2" style="width: 50%">
-                        <table border="0" cellspacing="0" cellpadding="2" width="100%">
-                            <tr>
-                                <td align="center">
-                                    <br />
-                                    <asp:Label ID="m_lbl_popup_mess" CssClass="cssManField" Style="font-size: 14px" runat="server"></asp:Label>
-                                    <br />
-                                    <br />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center">
-                                    <asp:Button ID="m_cmd_ok" AccessKey="c" CssClass="cssGoogleButton" runat="server"
-                                        Text="OK" OnClick="m_cmd_ok_Click" />
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </asp:View>
-            </asp:MultiView>
-        </div>
-    </asp:Panel>
     <asp:Panel ID="m_pnl_detail_grv" runat="server">
         <div class="cssLoadWapper">
             <asp:MultiView ID="mtv_detail" runat="server">
                 <asp:View ID="View_detail" runat="server">
-                    <div class="cssLoadContent2" style="width: 100%; min-height: 500px; margin: 100px auto 0 auto; overflow-y: scroll;">
+                    <div class="cssLoadContent2" style="width: 100%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll;">
                         <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
                             <tr>
-                                <td>
+                                <td align="center">
                                     <asp:Label ID="m_lbl_MP" runat="Server" Text="MP:" CssClass="cssManField"></asp:Label>
                                     &nbsp
-                        <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField" Font-Bold="true"></asp:Label>
+                        <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField" Font-Bold="true" ForeColor="DarkRed"></asp:Label>
                                 </td>
-                                <td colspan="8" align="center">
+                                <td colspan="3" align="center">
                                     <asp:Label ID="m_lbl_title_ma_don_hang" runat="server" CssClass="cssPageTitle"
-                                        Text="Nhập thông tin chi tiết đơn hàng"></asp:Label>
+                                        Text="Nhập thông tin chi tiết đơn hàng" Font-Size="X-Large"></asp:Label>
                                     <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
                                 </td>
-                                <td align="right" style="width: 20%">
+                                <td align="right" colspan="1">
                                     <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="45px" Height="30px" runat="server"
                                         OnClick="m_cmd_detail_exit_Click" />
                                 </td>
@@ -226,32 +210,24 @@
                                 <td align="right">
                                     <asp:Label ID="m_lbl_chon_vpp" runat="Server" Text="Chọn VPP" CssClass="cssManField"></asp:Label>
                                 </td>
-                                <td style="width: 28%">
+                                <td align="left">
                                     <asp:DropDownList ID="m_cbo_vpp" runat="Server"
                                         Width="91%" AutoPostBack="true" OnSelectedIndexChanged="m_cbo_vpp_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
-                                <td align="right">
+                                <td align="left">
                                     <asp:Label ID="m_lbl_so_luong" runat="Server" Text="Số lượng" CssClass="cssManField"></asp:Label>
-                                </td>
-                                <td align="left" >
-                                    <asp:TextBox ID="m_txt_so_luong" runat="server" CssClass="=cssTextBox" Width="20%"></asp:TextBox>
+                                    &nbsp
+                                    <asp:TextBox ID="m_txt_so_luong" runat="server" CssClass="=cssTextBox" Width="50px"></asp:TextBox>
                                     &nbsp
                         <asp:Label ID="m_lbl_don_vi_tinh" runat="server" CssClass="cssManField" Text="Cái"></asp:Label>
-                                </td>
-                                <td align="right" >
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                     <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="Đơn giá chưa VAT: "></asp:Label>
-                                </td>
-                                <td align="left">
                                     <asp:Label ID="m_lbl_don_gia" runat="server" CssClass="=cssManField" Text="0" ForeColor="Blue"></asp:Label>
                                 </td>
                                 <td align="left">
                                     <asp:Button ID="m_cmd_them_don_hang_de" runat="server" Text="Thêm vào phiếu" CssClass="cssGoogleButton" OnClick="m_cmd_them_don_hang_de_Click" />
-                                </td>
-                                <td align="left">
                                     <asp:Button ID="m_cmd_cap_nhat_don_hang_de" runat="server" Text="Cập nhật lại" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_de_Click" />
-                                </td>
-                                <td>
                                     <asp:HiddenField ID="m_hdf_form_mode" runat="server" />
                                     <asp:HiddenField ID="m_hdf_ma_trung_tam" runat="server" />
                                     <asp:HiddenField ID="m_hdf_don_gia" runat="server" />
@@ -340,6 +316,32 @@
                                             </asp:CommandField>
                                         </Columns>
                                     </asp:GridView>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </asp:View>
+            </asp:MultiView>
+        </div>
+    </asp:Panel>
+    <asp:Panel ID="m_pnl_confirm_tg" runat="server">
+        <div class="cssLoadWapper">
+            <asp:MultiView ID="m_mtv_1" runat="server">
+                <asp:View ID="m_view_confirm" runat="server">
+                    <div class="cssLoadContent2" style="width: 50%">
+                        <table border="0" cellspacing="0" cellpadding="2" width="100%">
+                            <tr>
+                                <td align="center">
+                                    <br />
+                                    <asp:Label ID="m_lbl_popup_mess" CssClass="cssManField" Style="font-size: 14px" runat="server"></asp:Label>
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">
+                                    <asp:Button ID="m_cmd_ok" AccessKey="c" CssClass="cssGoogleButton" runat="server"
+                                        Text="OK" OnClick="m_cmd_ok_Click" />
                                 </td>
                             </tr>
                         </table>
