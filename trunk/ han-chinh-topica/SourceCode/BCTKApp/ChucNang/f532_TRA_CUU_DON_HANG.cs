@@ -407,7 +407,8 @@ namespace BCTKApp
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_DON_DAT_HANG.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){
+		private void load_data_2_grid()
+            {
             DateTime temp = CIPConvert.ToDatetime("01/"+m_dtp_thang.Text,"dd/MM/yyyy");
             temp = temp.AddMonths(1);
             temp = temp.AddDays(-(temp.Day));
