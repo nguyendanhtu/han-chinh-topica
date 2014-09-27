@@ -44,6 +44,7 @@ namespace BCTKApp
         private Label label1;
         private Label m_lbl_tieu_de;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private ToolTip toolTip1;
 		private System.ComponentModel.IContainer components;
 
 		public f538_TAD_DUYET_DON_HANG()
@@ -96,6 +97,7 @@ namespace BCTKApp
             this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -226,6 +228,7 @@ namespace BCTKApp
             this.m_grv_don_hang.Size = new System.Drawing.Size(738, 328);
             this.m_grv_don_hang.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_don_hang.Styles"));
             this.m_grv_don_hang.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.m_grv_don_hang, "Nhấp đúp chuột để xem chi tiết");
             // 
             // panel1
             // 
@@ -282,6 +285,10 @@ namespace BCTKApp
             this.m_lbl_tieu_de.TabIndex = 28;
             this.m_lbl_tieu_de.Text = "DUYỆT ĐƠN ĐẶT HÀNG";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 100;
             // 
             // f538_TAD_DUYET_DON_HANG
             // 
@@ -467,8 +474,8 @@ namespace BCTKApp
             //m_cbo_trung_tam.SelectedIndexChanged+=new EventHandler(m_cbo_trung_tam_SelectedIndexChanged);
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
             this.KeyDown+=new KeyEventHandler(f538_TAD_DUYET_DON_HANG_KeyDown);
+            m_grv_don_hang.DoubleClick += new EventHandler(m_grv_don_hang_DoubleClick);
 		}
-
        
 		#endregion
 
@@ -568,6 +575,23 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+       private void m_grv_don_hang_DoubleClick(object sender, EventArgs e)
+       {
+           try
+           {
+                if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_don_hang)) return;
+			    if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_don_hang, m_grv_don_hang.Row)) return;
+                US_V_GD_DON_DAT_HANG_DINH_MUC v_us = new US_V_GD_DON_DAT_HANG_DINH_MUC();
+			    grid2us_object(v_us, m_grv_don_hang.Row);
+                f534_TRA_CUU_DON_HANG_DE v_frm = new f534_TRA_CUU_DON_HANG_DE();
+                v_frm.display_for_detail(v_us.dcID, v_us.dcGIA_TRI_DA_VAT, v_us.strMA_DON_HANG, v_us.strTEN_PHONG_BAN);
+           }
+           catch (Exception v_e)
+           {
+
+               CSystemLog_301.ExceptionHandle(v_e);
+           }
+       }
 
 	}
 }

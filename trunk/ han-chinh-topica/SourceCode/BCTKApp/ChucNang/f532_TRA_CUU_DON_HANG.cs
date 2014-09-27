@@ -408,7 +408,7 @@ namespace BCTKApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){
-            DateTime temp = CIPConvert.ToDatetime("01/"+m_dtp_thang.Text);
+            DateTime temp = CIPConvert.ToDatetime("01/"+m_dtp_thang.Text,"dd/MM/yyyy");
             temp = temp.AddMonths(1);
             temp = temp.AddDays(-(temp.Day));
             DateTime v_dat_thang = temp;

@@ -345,7 +345,7 @@ namespace BCTKApp
 		}
         public void display_for_chi_tiet(US_V_GD_DON_DAT_HANG ip_us_v) 
         {
-            m_obj_trans = get_trans_object(m_grv_don_hang_de);
+            //m_obj_trans = get_trans_object(m_grv_don_hang_de);
             //format_controls();
             m_id_hoa_don = ip_us_v.dcID;
             m_lbl_ten_trung_tam.Text = ip_us_v.strTEN_PHONG_BAN;
@@ -359,6 +359,14 @@ namespace BCTKApp
             //CGridUtils.Dataset2C1Grid(m_ds, m_grv_don_hang_de, m_obj_trans);
             //CGridUtils.MakeSoTT(0, m_grv_don_hang_de);
             //m_grv_don_hang_de.Redraw = true;
+            this.ShowDialog();
+        }
+        public void display_for_detail(decimal ip_dc_id_don_hang, decimal ip_tong_tien, string ip_str_ma_hd, string ip_str_trung_tam)
+        {
+            m_id_hoa_don = ip_dc_id_don_hang;
+            m_lbl_ten_trung_tam.Text = ip_str_trung_tam;
+            m_lbl_ma_hd.Text = ip_str_ma_hd;
+            m_lbl_tong_tien.Text = CIPConvert.ToStr(ip_tong_tien, "#,##0") + "   (VNĐ)";
             this.ShowDialog();
         }
 		#endregion
