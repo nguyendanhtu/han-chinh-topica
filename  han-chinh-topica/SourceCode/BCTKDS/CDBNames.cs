@@ -965,6 +965,7 @@ namespace BCTKDS.CDBNames
         public const string TEN_TRANG_THAI = "TEN_TRANG_THAI";
         public const string GIA_TRI_CHUA_VAT = "GIA_TRI_CHUA_VAT";
         public const string GIA_TRI_DA_VAT = "GIA_TRI_DA_VAT";
+        public const string SO_TIEN_SAU_HD = "SO_TIEN_SAU_HD";
         public const string TONG_TIEN_DINH_MUC = "TONG_TIEN_DINH_MUC";
         public const string TY_LE_VUOT = "TY_LE_VUOT";
     }
