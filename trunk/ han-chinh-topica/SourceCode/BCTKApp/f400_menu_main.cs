@@ -9,6 +9,7 @@ using IP.Core.IPCommon;
 using BCTKApp.ChucNang;
 using BCTKApp.HeThong;
 using BCTKApp.DanhMuc;
+using BCTKApp.CongVan;
 
 namespace BCTKApp
 {
@@ -67,7 +68,12 @@ namespace BCTKApp
             m_cmd_bao_cao_tong_hop_chi_phi.Click+=new EventHandler(m_cmd_bao_cao_tong_hop_chi_phi_Click);
             m_cmd_tra_cuu_dh_VPP.Click += new EventHandler(m_cmd_tra_cuu_dh_VPP_Click);
             m_cmd_DM_VPP.Click += m_cmd_DM_VPP_Click;
+            m_cmd_nhap_van_ban_den.Click += m_cmd_nhap_van_ban_den_Click;
+            //m_cmd_nhap_van_ban_di.Click += m_cmd_nhap_van_ban_di_Click;
+            m_cmd_tra_cuu_va_ban_hanh.Click += m_cmd_tra_cuu_va_ban_hanh_Click;
         }
+
+        
 
         void f400_menu_main_Load(object sender, EventArgs e)
         {
@@ -509,6 +515,32 @@ namespace BCTKApp
             catch (System.Exception ex)
             {
 
+            }
+        }
+
+        void m_cmd_tra_cuu_va_ban_hanh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f612_tra_cuu_va_ban_hanh_van_ban v_frm = new f612_tra_cuu_va_ban_hanh_van_ban();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_nhap_van_ban_den_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f611_quan_ly_van_thu v_frm = new f611_quan_ly_van_thu();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
     }

@@ -4,6 +4,8 @@ using System.Text;
 using System.Drawing;
 using IP.Core.IPCommon;
 using System.Net;
+using System.IO;
+using System.Configuration;
 
 namespace BCTKApp.App_Code
 {
@@ -79,6 +81,44 @@ namespace BCTKApp.App_Code
                 return false;
             }
 
+        }
+        public static void Download(string filePath, string fileName)
+        {
+            FtpWebRequest reqFTP;
+            try
+            {
+                string ftpAddress = ConfigurationSettings.AppSettings["DOMAIN"];
+                string username = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
+                string password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
+                if (File.Exists(filePath + "\\" + fileName)) File.Delete(filePath + "\\" + fileName);
+                FileStream outputStream = new FileStream(filePath + "\\" + fileName, FileMode.Create);
+
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpAddress + "/FileUpload_Vanthu/" + fileName));
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(username, password);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                Stream ftpStream = response.GetResponseStream();
+                long cl = response.ContentLength;
+                int bufferSize = 2048;
+                int readCount;
+                byte[] buffer = new byte[bufferSize];
+
+                readCount = ftpStream.Read(buffer, 0, bufferSize);
+                while (readCount > 0)
+                {
+                    outputStream.Write(buffer, 0, readCount);
+                    readCount = ftpStream.Read(buffer, 0, bufferSize);
+                }
+
+                ftpStream.Close();
+                outputStream.Close();
+                response.Close();
+            }
+            catch (WebException e)
+            {
+                String status = ((FtpWebResponse)e.Response).StatusDescription;
+            }
         }
     }
 }

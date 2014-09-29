@@ -4,6 +4,10 @@ using System.Text;
 using System.Drawing;
 using IP.Core.IPCommon;
 using System.Net;
+using System.IO;
+using System.Windows.Forms;
+using System.Configuration;
+using System.Diagnostics;
 
 namespace BCTKApp.App_Code
 {
@@ -111,5 +115,112 @@ namespace BCTKApp.App_Code
             }
 
         }
+        public static bool ftpTransfer(string destination, string fileName)
+        {
+            string ftpAddress = ConfigurationSettings.AppSettings["DOMAIN"];
+            string username = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
+            string password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
+            FileInfo fileInf = new FileInfo(destination+fileName);
+            string uri = "ftp://" + ftpAddress + "/FileUpload_Vanthu/" + fileName;
+            FtpWebRequest reqFTP;
+
+            // Create FtpWebRequest object from the Uri provided
+            reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpAddress + "/FileUpload_Vanthu/" + fileName));
+
+            // Provide the WebPermission Credintials
+            reqFTP.Credentials = new NetworkCredential(username, password);
+
+            // By default KeepAlive is true, where the control connection is not closed
+            // after a command is executed.
+            reqFTP.KeepAlive = false;
+
+            // Specify the command to be executed.
+            reqFTP.Method = WebRequestMethods.Ftp.UploadFile;
+
+            // Specify the data transfer type.
+            reqFTP.UseBinary = true;
+
+            // Notify the server about the size of the uploaded file
+            //reqFTP.ContentLength = fileInf.Length;
+
+            // The buffer size is set to 2kb
+            int buffLength = 2048;
+            byte[] buff = new byte[buffLength];
+            int contentLen;
+
+            // Opens a file stream (System.IO.FileStream) to read the file to be uploaded
+            FileStream fs = fileInf.OpenRead();
+
+            try
+            {
+                // Stream to which the file to be upload is written
+                Stream strm = reqFTP.GetRequestStream();
+
+                // Read from the file stream 2kb at a time
+                contentLen = fs.Read(buff, 0, buffLength);
+
+                // Till Stream content ends
+                while (contentLen != 0)
+                {
+                    // Write Content from the file stream to the FTP Upload Stream
+                    strm.Write(buff, 0, contentLen);
+                    contentLen = fs.Read(buff, 0, buffLength);
+                }
+
+                // Close the file stream and the Request Stream
+                strm.Close();
+                fs.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+               MessageBox.Show("File đính kèm quá nặng, có lỗi xảy ra trong quá trình lưu file, bạn hãy chọn file nhẹ hơn");
+                return false;
+            }
+                
+        }
+        public static void Download(string filePath, string fileName)
+        {
+            FtpWebRequest reqFTP;
+            try
+            {
+                string ftpAddress = ConfigurationSettings.AppSettings["DOMAIN"];
+                string username = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
+                string password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
+                FileStream outputStream = new FileStream(filePath + "\\" + fileName, FileMode.Create);
+
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpAddress + "/" + fileName));
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(username, password);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                Stream ftpStream = response.GetResponseStream();
+                long cl = response.ContentLength;
+                int bufferSize = 2048;
+                int readCount;
+                byte[] buffer = new byte[bufferSize];
+
+                readCount = ftpStream.Read(buffer, 0, bufferSize);
+                while (readCount > 0)
+                {
+                    outputStream.Write(buffer, 0, readCount);
+                    readCount = ftpStream.Read(buffer, 0, bufferSize);
+                }
+
+                ftpStream.Close();
+                outputStream.Close();
+                response.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public static void open_pdf_file(string file_name, string file_path)
+        {
+            //Download(file_path, file_name);
+            System.Diagnostics.Process.Start(@"C:"+"\\"+file_name);
+        }
+        
     }
 }
