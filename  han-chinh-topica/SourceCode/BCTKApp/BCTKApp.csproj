@@ -302,6 +302,8 @@
     <Compile Include="ApplicationControl.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="App_Code\CongVanConstant.cs" />
+    <Compile Include="App_Code\CongVanUtil.cs" />
     <Compile Include="App_Code\HelpUtils.cs" />
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -436,6 +438,30 @@
     </Compile>
     <Compile Include="ChucNang\f876_so_sanh_chi_phi_cuoi_thang.Designer.cs">
       <DependentUpon>f876_so_sanh_chi_phi_cuoi_thang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongVan\f612_tra_cuu_va_ban_hanh_van_ban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CongVan\f611_quan_ly_van_thu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CongVan\F651_CAP_NHAT_CONG_VAN_DI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CongVan\F651_CAP_NHAT_CONG_VAN_DI.Designer.cs">
+      <DependentUpon>F651_CAP_NHAT_CONG_VAN_DI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongVan\F652_CAP_NHAT_CONG_VAN_DEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CongVan\F652_CAP_NHAT_CONG_VAN_DEN.Designer.cs">
+      <DependentUpon>F652_CAP_NHAT_CONG_VAN_DEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongVan\f653_ban_hanh_van_ban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CongVan\f653_ban_hanh_van_ban.Designer.cs">
+      <DependentUpon>f653_ban_hanh_van_ban.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\TCDatetime.cs">
       <SubType>Component</SubType>
@@ -735,6 +761,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f876_so_sanh_chi_phi_cuoi_thang.resx">
       <DependentUpon>f876_so_sanh_chi_phi_cuoi_thang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongVan\f612_tra_cuu_va_ban_hanh_van_ban.resx">
+      <DependentUpon>f612_tra_cuu_va_ban_hanh_van_ban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongVan\f611_quan_ly_van_thu.resx">
+      <DependentUpon>f611_quan_ly_van_thu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongVan\F651_CAP_NHAT_CONG_VAN_DI.resx">
+      <DependentUpon>F651_CAP_NHAT_CONG_VAN_DI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongVan\F652_CAP_NHAT_CONG_VAN_DEN.resx">
+      <DependentUpon>F652_CAP_NHAT_CONG_VAN_DEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongVan\f653_ban_hanh_van_ban.resx">
+      <DependentUpon>f653_ban_hanh_van_ban.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f446_DM_V_GD_PHONG_BAN_DINH_MUC.resx">
       <DependentUpon>f446_DM_V_GD_PHONG_BAN_DINH_MUC.cs</DependentUpon>

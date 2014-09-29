@@ -4,19 +4,32 @@ using System.Text;
 
 namespace BCTKUS
 {
+    public class ID_SO_CV_DI
+    {
+        public const decimal EDH = 232;
+        public const decimal TE = 233;
+        public const decimal TU_MB = 234;
+        public const decimal TU_MN = 235;
+        public const decimal EDT = 236;
+    }
+
+    public class ID_SO_CV_DEN
+    {
+        public const decimal CV_DEN = 237;
+    }
     public class ID_LOAI_VAN_THU
     {
-        public const decimal CONG_VAN_DEN_KHONG_LUU = 222;
-        public const decimal CONG_VAN_DI = 223;
-        public const decimal CONG_VAN_DEN_LUU = 229;
+        public const decimal CONG_VAN_DEN_KHONG_LUU = 221;
+        public const decimal CONG_VAN_DI = 222;
+        public const decimal CONG_VAN_DEN_LUU = 220;
     }
     public class ID_TRANG_THAI_VAN_THU
     {
-        public const decimal CHO_SO_VAO_SO_DONG_DAU = 224;
-        public const decimal DA_LUU_TAI_TAD = 225;
-        public const decimal DA_CHUYEN_DEN_NGUOI_NHAN = 226;
-        public const decimal NGUOI_NHAN_DA_NHAN_DUOC = 227;
-        public const decimal DA_CHUYEN_CHO_DON_VI_BAN_HANH = 228;
+        public const decimal CHO_SO_VAO_SO_DONG_DAU = 223;
+        public const decimal DA_LUU_TAI_TAD = 224;
+        public const decimal DA_CHUYEN_DEN_NGUOI_NHAN = 225;
+        public const decimal NGUOI_NHAN_DA_NHAN_DUOC = 226;
+        public const decimal DA_CHUYEN_CHO_DON_VI_BAN_HANH = 227;
     }
     public class CONST_ID_TRANG_THAI_DON_HANG
     { 

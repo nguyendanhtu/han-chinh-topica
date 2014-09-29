@@ -5,10 +5,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
+   <%-- <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
+        <ContentTemplate>--%>
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
                 <tr>
                     <td class="cssPageTitleBG" colspan="2">
@@ -55,7 +55,9 @@
                             Width="100%" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Không tìm thấy dữ liệu phù hợp!" EmptyDataRowStyle-BorderColor="#810913"
                             CellPadding="2" PageSize="50"
-                            AllowSorting="true">
+                            AllowSorting="true"
+                            OnRowCommand="m_grv_dm_bill_RowCommand"
+                            >
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />
@@ -82,9 +84,9 @@
                                 <asp:BoundField DataField="NOI_NHAN" HeaderText="Nơi nhận" />--%>
                                 <asp:BoundField DataField="NOI_NGUOI_NHAN_MPB" HeaderText="Nơi nhận" />
                                 <asp:BoundField DataField="NGUOI_NHAN__BAN_LUU_MPB" HeaderText="Nơi phát hành" />
-                                <asp:TemplateField HeaderText="Tải file scan" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle">
+                                <asp:TemplateField HeaderText="Xem file scan" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle">
                                     <ItemTemplate>
-                                        <asp:HyperLink ID="m_hlk_link_scan" Height="100%" Width="100%" style="cursor:pointer" runat="server" NavigateUrl='<%#Eval("LINK_SCAN") %>' ImageUrl="../Images/Grid/priority_low.gif"></asp:HyperLink>
+                                        <asp:Button ID="m_hlk_link_scan" Height="100%" Width="100%" Text="Xem file" Visible='<%#is_enable_view(Eval("LINK_SCAN").ToString()) %>' style="cursor:pointer" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="TaiFile"></asp:Button>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
@@ -92,7 +94,7 @@
                     </td>
                 </tr>
             </table>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+        <%--</ContentTemplate>
+    </asp:UpdatePanel>--%>
 </asp:Content>
 

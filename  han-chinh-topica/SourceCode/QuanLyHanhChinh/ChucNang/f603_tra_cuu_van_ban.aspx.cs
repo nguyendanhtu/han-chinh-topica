@@ -9,27 +9,19 @@ using IP.Core.IPData;
 using BCTKDS;
 using BCTKUS;
 using BCTKDS.CDBNames;
+using System.Diagnostics;
+using System.Net;
+using System.Configuration;
 public partial class ChucNang_f603_tra_cuu_van_ban : System.Web.UI.Page
 {
     #region Public Methods
-    //public string get_ngay_thang_cong_vang(string ip_str_id_loai_cong_van, string ip_str_ngay_thang_tren_cong_van, string ip_str_ngay_lap)
-    //{
-    //    string v_str_result = "";
-    //    decimal v_dc_id_loai_cong_van = CIPConvert.ToDecimal(ip_str_id_loai_cong_van);
-    //    if (v_dc_id_loai_cong_van == 223)//id cong van di
-    //        v_str_result = ip_str_ngay_lap;
-    //    else v_str_result = ip_str_ngay_thang_tren_cong_van;
-    //    return v_str_result;
-    //}
-    //public string get_so_va_ky_hieu_cong_van(string ip_str_id_loai_cong_van, string ip_str_so_cv_den, string ip_str_so_va_ky_hieu)
-    //{
-    //    string v_str_result = "";
-    //    decimal v_dc_id_loai_cong_van = CIPConvert.ToDecimal(ip_str_id_loai_cong_van);
-    //    if (v_dc_id_loai_cong_van == 223)//id cong van di
-    //        v_str_result = ip_str_so_va_ky_hieu;
-    //    else v_str_result = ip_str_so_cv_den+;
-    //    return v_str_result;
-    //}
+    public bool is_enable_view(string v_str_link_scan)
+    {
+        bool v_b_result = true;
+        if (v_str_link_scan.Equals("")) v_b_result = false;
+        if (!v_str_link_scan.Contains(ConfigurationSettings.AppSettings["DOMAIN"])) v_b_result = false;
+        return v_b_result;
+    }
     #endregion
 
     #region Private Methods
@@ -111,7 +103,7 @@ public partial class ChucNang_f603_tra_cuu_van_ban : System.Web.UI.Page
         {
             m_cbo_phong_ban.SelectedIndex = m_cbo_phong_ban.Items.IndexOf(m_cbo_phong_ban.Items.FindByText(ip_str_ma_phong_ban));
         }
-        if (ip_str_user.ToLower().StartsWith("td") | ip_str_user == "admin")
+        if (ip_str_user.ToLower().StartsWith("td") | ip_str_user == "admin" | ip_str_user == "vanthu")
         {
             m_grv_dm_bill.Columns[9].Visible = true;
             m_cbo_phong_ban.Visible = true;
@@ -136,7 +128,7 @@ public partial class ChucNang_f603_tra_cuu_van_ban : System.Web.UI.Page
         string v_str_command = "";
         v_str_command = "where  (id_nguoi_nhan_ban_luu=" + v_dc_id_phong_ban + " or id_noi_nguoi_nhan=" + v_dc_id_phong_ban;
         if (!v_us_ht_nguoi_su_dung.strMAIL.Equals(""))
-            v_str_command += " or " + V_GD_VAN_THU_ALL.DANH_SACH_EMAIL_BAN_HANH + " like '%" + v_us_ht_nguoi_su_dung.strMAIL.Replace("@topica.edu.vn", "") + "%'" + ") ";
+            v_str_command += " or " + V_GD_VAN_THU_ALL.DANH_SACH_EMAIL_BAN_HANH + " like '%" + v_us_ht_nguoi_su_dung.strMAIL.Replace("@topica.edu.vn", "").Replace("@gmail.com", "") + "%'" + ") ";
         else v_str_command += ") ";
         v_str_command += "and (id_loai_cong_van=" + v_dc_id_loai_cong_van + " or -1=" + v_dc_id_loai_cong_van + ")";
         if (!m_txt_tu_khoa.Text.Trim().Equals(""))
@@ -198,4 +190,25 @@ public partial class ChucNang_f603_tra_cuu_van_ban : System.Web.UI.Page
         }
     }
     #endregion
+    protected void m_grv_dm_bill_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandArgument.ToString().Equals("")) return;
+        decimal v_dc_id_van_thu = CIPConvert.ToDecimal(e.CommandArgument);
+        US_GD_VAN_THU v_us = new US_GD_VAN_THU(v_dc_id_van_thu);
+        if (v_us.strLINK_SCAN.Equals("")) return;
+        if (e.CommandName == "TaiFile")
+        {
+            BCTKApp.App_Code.HelpUtils.Download(Server.MapPath("~") + "\\PdfScan", v_us.strLINK_SCAN.Replace("210.245.89.37/FileUpload_Vanthu/", ""));
+            string v_str_file_save = Server.MapPath("~") + "\\PdfScan\\" + v_us.strLINK_SCAN.Replace("210.245.89.37/FileUpload_Vanthu/", "");
+            WebClient User = new WebClient();
+            Byte[] FileBuffer = User.DownloadData(v_str_file_save);
+            if (FileBuffer != null)
+            {
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("content-length", FileBuffer.Length.ToString());
+                Response.BinaryWrite(FileBuffer);
+
+            }
+        }
+    }
 }

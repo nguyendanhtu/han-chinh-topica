@@ -132,6 +132,67 @@ Public Class CControlFormat
 
     End Sub
 
+    Private Shared Sub formatControlInForms( _
+    ByVal ip_str_form_name As String _
+    , ByVal ip_control As System.Windows.Forms.Control)
+
+        'If (ip_control.ToString().IndexOf("SIS.Controls.Button.SiSButton") >= 0) Then
+        '    If (i_objControlerControl.CanUseControl(ip_str_form_name, ip_control.Name, "") = False) Then
+        '        ip_control.Visible = False
+        '        ip_control.Enabled = False
+        '    End If
+        'End If
+        If TypeOf ip_control Is Label Then
+            If ip_control.Font.Size < 15 Then
+                ip_control.Font = getRegularFont()
+            End If
+            ip_control.ForeColor = getSpecialForeColor()
+            ip_control.BackColor = getRegularBackColor()
+        ElseIf TypeOf ip_control Is TextBox Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+        ElseIf TypeOf ip_control Is GroupBox Then
+            ip_control.Font = getBoldFont()
+            ip_control.ForeColor = getSpecialForeColor()
+            ip_control.BackColor = getRegularBackColor()
+        ElseIf TypeOf ip_control Is ComboBox Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+        ElseIf TypeOf ip_control Is CheckBox Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+        ElseIf TypeOf ip_control Is DateTimePicker Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+        ElseIf TypeOf ip_control Is Button Then
+            ip_control.Font = getBoldFont()
+            ip_control.ForeColor = getSpecialForeColor()
+            'If (i_objControlerControl.CanUseControl(ip_str_form_name, ip_control.Name, "") = False) Then
+            '    ip_control.Visible = False
+            '    ip_control.Enabled = False
+            'End If
+            'ElseIf TypeOf ip_control Is DateTimePicker Then
+            '    CType(ip_control, DateTimePicker).CalendarForeColor = getRegularForeColor()
+            '    CType(ip_control, DateTimePicker).CalendarTitleForeColor = getRegularForeColor()
+            '    CType(ip_control, DateTimePicker).CalendarTrailingForeColor = getRegularForeColor()
+            '    'ElseIf TypeOf ip_control Is MenuStrip Then
+            '    '    Dim v_obj_tool_strip As ToolStripMenuItem
+            '    '    'For Each v_obj_tool_strip In CType(ip_control, MenuStrip).Items
+            '    '    '    formatToolStripMenuItem(ip_str_form_name, i_objControlerControl, v_obj_tool_strip)
+            '    '    'Next
+            '    'End If
+            '    If TypeOf ip_control Is TabControl Then
+            '        ip_control.Font = getRegularFont()
+            '        ip_control.ForeColor = getRegularForeColor()
+            '    End If
+
+            Dim v_control As System.Windows.Forms.Control
+            For Each v_control In ip_control.Controls
+                formatControlInForms(ip_str_form_name, v_control)
+            Next
+        End If
+    End Sub
+
     Private Shared Sub formatToolStripMenuItem( _
     ByVal ip_str_form_name As String _
     , ByVal i_objControlerControl As IControlerControl _
@@ -198,7 +259,47 @@ Public Class CControlFormat
 
         End Try
     End Sub
+    Public Shared Sub setFormStyle(ByVal i_form As Form _
+    , Optional ByVal i_form_style As IPFormStyle = IPFormStyle.DialogForm)
+        Try
+            AddHandler i_form.KeyDown, AddressOf i_form_KeyDown
 
+            Dim v_Control As System.Windows.Forms.Control
+            i_form.KeyPreview = True
+            With i_form
+                '.AutoScaleBaseSize = New System.Drawing.Size(6, 15)
+                .BackColor = getRegularBackColor()
+                .Font = getRegularFont()
+                .ForeColor = getRegularForeColor()
+                Select Case i_form_style
+                    Case IPFormStyle.DialogForm
+                        .FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+                        .MaximizeBox = False
+                        .MinimizeBox = False
+                        .StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+                        .ShowInTaskbar = True
+
+                    Case IPFormStyle.DockableTopForm
+                        .FormBorderStyle = FormBorderStyle.Sizable
+                        .MaximizeBox = True
+                        .MinimizeBox = True
+                        .StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+                        .ShowInTaskbar = False
+                    Case Else
+
+                End Select
+
+                '.ResumeLayout(False)
+                'Tund sửa ngày 11/06/2008
+                formatControlInForms(i_form.Name, i_form)
+
+            End With
+        Catch exp As Exception
+            MessageBox.Show(exp.Message, i_form.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Stop)
+        Finally
+
+        End Try
+    End Sub
     Public Shared Sub setFormStyle(ByVal i_form As Form)
         '***************************************************
         ' Dùng để set các property của Form ngoại trừ frmMain

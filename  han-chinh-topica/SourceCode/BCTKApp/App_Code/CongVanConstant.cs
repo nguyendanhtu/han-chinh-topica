@@ -20,9 +20,9 @@ namespace BCTKApp.App_Code
         public const string KH_CV_HDLDTV_EDUTOP64 = @"/HĐLĐTV-THR-EDUTOP64";
         public const string KH_CV_HDCTV_EDUTOP64 = @"/HĐCTV-THR-EDUTOP64";
         public const string KH_CV_BMTT_TPE = @"/BMTT-THR-TPE";
-        public const string KH_CV_HDCTV_TPE = @"/HĐCTV-TPE";
+        public const string KH_CV_HDCTV_TPE = @"/HĐCTV-THR-TPE";
         public const string KH_CV_HDTV_TPE = @"/HĐTV-THR-TPE";
         public const string KH_CV_QD_TPE = @"/QĐ-THR-TPE";
-        public const string KH_CV_HDTKCM_TPE = @"/HĐTKCM-TPE";
+        public const string KH_CV_HDTKCM_TPE = @"/HĐTKCM-THR-TPE";
     }
 }
