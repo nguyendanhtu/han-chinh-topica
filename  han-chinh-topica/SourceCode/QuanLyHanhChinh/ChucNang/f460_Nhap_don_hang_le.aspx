@@ -11,7 +11,7 @@
             $("#<%=m_cbo_vpp.ClientID%>").select2();
         });
     </script>
-    <script type="text/javascript">
+    <%-- <script type="text/javascript">
         $(document).ready(function () {
             $("#<%=m_txt_ngay_nhap.ClientID%>").datepicker({
                 changeMonth: true,
@@ -20,7 +20,7 @@
                 yearRange: '1950:2050',
             });
         });
-    </script>
+    </script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <%--    <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -44,7 +44,7 @@
         <tr>
             <td class="cssPageTitleBG" colspan="9">
                 <asp:Label ID="Label4" runat="server" CssClass="cssPageTitle"
-                    Text="Nhập thông tin đơn hàng"></asp:Label>
+                    Text="Thông tin đơn hàng"></asp:Label>
                 <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
                 <asp:HiddenField ID="m_hdf_id_don_hang" runat="server" />
             </td>
@@ -54,24 +54,23 @@
                 <asp:Label ID="m_lbl_so_phieu" runat="server" CssClass="cssManField" Text="Số phiếu:" ForeColor="Blue"></asp:Label>
             </td>
             <td align="left">&nbsp;
-                <asp:Label ID="m_lbl_hien_thi_so_phieu" runat="server" CssClass="cssManField" Text="0000" ForeColor="Blue"></asp:Label>
+                <asp:Label ID="m_lbl_hien_thi_so_phieu" runat="server" CssClass="cssManField" Text="-----------" ForeColor="Blue"></asp:Label>
             </td>
             <td align="right">
-                <asp:Label ID="m_lbl_lan" runat="server" CssClass="cssManField" Text="Lần "></asp:Label>
+                <asp:Label ID="m_lbl_lan" runat="server" CssClass="cssManField" Text="Lần: "></asp:Label>
             </td>
-            <td align="left">&nbsp;<asp:TextBox ID="m_txt_so_lan" runat="server" CssClass="cssManField" Text=" " Width="20%"></asp:TextBox>
+            <td align="left">&nbsp;<asp:Label ID="m_txt_so_lan" runat="server" CssClass="cssManField" Text="0" Width="20%"></asp:Label>
             </td>
             <td align="right">
-                <asp:Label ID="m_lbl_ngay_gui" runat="Server" Text="Ngày nhập " CssClass="cssManField"></asp:Label>
+                <asp:Label ID="m_lbl_ngay_gui" runat="Server" Text="Ngày đặt hàng: " CssClass="cssManField"></asp:Label>
             </td>
-            <td>
-                <asp:TextBox ID="m_txt_ngay_nhap" runat="Server"></asp:TextBox>
-            </td>
-            <td align="left">
-                <asp:Button ID="m_cmd_them_don_hang" runat="server" Text="Thêm đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_them_don_hang_Click" />
+            <td>&nbsp;&nbsp;<asp:Label ID="m_txt_ngay_nhap" runat="Server" CssClass="cssLabel" Text="----------"></asp:Label>
             </td>
             <td align="left">
-                <asp:Button ID="m_cmd_cap_nhat_don_hang" runat="server" Text="Cập nhật đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" />
+                <asp:Button ID="m_cmd_them_don_hang" runat="server" Text="Nhập đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_them_don_hang_Click" Visible="true" />
+            </td>
+            <td align="left">
+                <asp:Button ID="m_cmd_cap_nhat_don_hang" runat="server" Text="Cập nhật đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" Visible="false" />
             </td>
             <%--          <td align="left">
                 <asp:Button ID="m_cmd_gui_td" runat="server" Text="Gửi cho TD duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_td_Click" />
@@ -82,7 +81,7 @@
         <tr>
             <td class="cssPageTitleBG" colspan="6">
                 <asp:Label ID="Label2" runat="server" CssClass="cssPageTitle"
-                    Text="Danh sách đơn hàng nháp"></asp:Label>
+                    Text="Chi tiết thông tin đơn hàng"></asp:Label>
                 <asp:Label ID="m_lbl_thong_tin_don_hang" runat="server" CssClass="cssPageTitle"></asp:Label>
                 <%--  &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
             </td>
@@ -122,7 +121,7 @@
                         </asp:TemplateField>
                         <asp:CommandField ItemStyle-Width="1%" EditText="Sửa" EditImageUrl="../Images/Button/edit.png"
                             ShowEditButton="true" ButtonType="Image" HeaderText="Sửa" ItemStyle-HorizontalAlign="Center"
-                            HeaderStyle-HorizontalAlign="Center">
+                            HeaderStyle-HorizontalAlign="Center" Visible="false">
                             <HeaderStyle HorizontalAlign="Center" />
                             <ItemStyle HorizontalAlign="Center" Width="1%" />
                         </asp:CommandField>
@@ -162,11 +161,11 @@
                             ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                             <ItemStyle HorizontalAlign="Right" Width="7%" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="DINH_MUC" ItemStyle-HorizontalAlign="Right" HeaderText="ĐỊNH MỨC GẦN NHẤT (VNĐ)"
+                        <asp:BoundField DataField="DINH_MUC" ItemStyle-HorizontalAlign="Right" HeaderText="ĐỊNH MỨC (VNĐ)"
                             ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                             <ItemStyle HorizontalAlign="Right" Width="7%" />
                         </asp:BoundField>
-                        <asp:TemplateField HeaderText="Xin TAD duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center">
+                        <asp:TemplateField HeaderText="Xin TAD duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center" Visible="false">
                             <ItemTemplate>
                                 <asp:LinkButton ID="m_lbt_xin_td_duyet" runat="server" CommandName="XinTDDuyet" ToolTip="Xin TD duyệt" CommandArgument='<%#Eval("ID") %>'
                                     OnClientClick="return confirm ('Bạn có thực sự muốn gửi cho TD duyệt đơn hàng này?')">
@@ -192,13 +191,14 @@
                         <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
                             <tr>
                                 <td align="center">
+                                    <asp:Label ID="m_lbl_title_ma_don_hang" runat="server" CssClass="cssPageTitle"
+                                        Text="Nhập vật tư đơn hàng"></asp:Label>
+                                    &nbsp&nbsp
                                     <asp:Label ID="m_lbl_MP" runat="Server" Text="MP:" CssClass="cssManField"></asp:Label>
                                     &nbsp
                         <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField" Font-Bold="true" ForeColor="DarkRed"></asp:Label>
                                 </td>
                                 <td colspan="3" align="center">
-                                    <asp:Label ID="m_lbl_title_ma_don_hang" runat="server" CssClass="cssPageTitle"
-                                        Text="Nhập thông tin chi tiết đơn hàng" Font-Size="X-Large"></asp:Label>
                                     <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
                                 </td>
                                 <td align="right" colspan="1">
@@ -350,6 +350,20 @@
             </asp:MultiView>
         </div>
     </asp:Panel>
+    <table cellspacing="0" cellpadding="2" style="width: 100%; margin-top: 8%" class="cssTable" border="2">
+        <tr>
+            <td>
+                <asp:Label ID="m_lbl_nhap_mail" runat="server" Text="Nhập mail TD: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
+                <asp:TextBox ID="m_txt_nhap_mail" runat="server" CssClass="cssTextBox" placeholder="sampt"></asp:TextBox>
+                <asp:Label ID="m_lbl_duoi_mail" runat="server" Text="@Topica.edu.vn" CssClass="cssLabel"></asp:Label>
+                 &nbsp&nbsp
+                <asp:Button ID="m_cmd_gui_mail" runat="server" Text="Gửi mail xin duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_mail_Click" />
+            </td>
+            <td align="right">
+                <asp:Button ID="m_cmd_xuat_Excel" runat="server" Text="Xuất Excel" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" />
+            </td>
+        </tr>
+    </table>
     <%--  </ContentTemplate>
     </asp:UpdatePanel>--%>
 </asp:Content>
