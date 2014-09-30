@@ -73,14 +73,14 @@ public partial class ChucNang_f466_xin_cc_duyet : System.Web.UI.Page
         int thisyear = DateTime.Now.Year;
         DateTime m_dat_dau_thang = new DateTime(thisyear, int.Parse(m_cbo_chon_thang.SelectedValue.ToString()),1);
         DateTime m_dat_cuoi_thang = m_dat_dau_thang.AddMonths(1).AddDays(-1);
-        v_us_gd_don_dat_hang.load_ddh_xin_cc_duyet(v_ds_gd_don_dat_hang, v_id_trung_tam, m_dat_dau_thang, m_dat_cuoi_thang);
+        v_us_gd_don_dat_hang.load_ddh_xin_cc_duyet(v_ds_gd_don_dat_hang, v_id_trung_tam, m_dat_cuoi_thang);
         m_grv_don_hang_nhap.DataSource = v_ds_gd_don_dat_hang.GD_DON_DAT_HANG;
         m_grv_don_hang_nhap.DataBind();
         //Lay tong tien dinh muc
         //DateTime v_dau_thang = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
         //DateTime v_cuoi_thang = DateTime.Now.Date.AddMonths(1).AddDays(-DateTime.Now.Date.Day);
         m_lbl_tong_tien_dm.Text = CIPConvert.ToStr(v_us_gd_don_dat_hang.get_tong_tien_dinh_muc_hang_thang(v_id_trung_tam, 173, m_dat_dau_thang, m_dat_cuoi_thang).ToString(), "#,###,##");
-        m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_dat_hang.get_tong_tien_da_chi_hang_thang(v_id_trung_tam, m_dat_dau_thang), "#,###");
+        m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_dat_hang.get_tong_tien_da_chi_hang_thang(v_id_trung_tam, m_dat_cuoi_thang), "#,###");
     }
 
     protected void m_grv_don_hang_nhap_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -92,7 +92,7 @@ public partial class ChucNang_f466_xin_cc_duyet : System.Web.UI.Page
             US_GD_DON_DAT_HANG v_us_gd_don_hang = new US_GD_DON_DAT_HANG(v_dc_id_don_hang);
             int thisyear = DateTime.Now.Year;
             DateTime m_dat_dau_thang = new DateTime(thisyear, int.Parse(m_cbo_chon_thang.SelectedValue.ToString()), 1);
-
+            DateTime m_dat_cuoi_thang = m_dat_dau_thang.AddMonths(1).AddDays(-1);
             switch (e.CommandName)
             {
                 case "KhongDuyet":
@@ -101,7 +101,7 @@ public partial class ChucNang_f466_xin_cc_duyet : System.Web.UI.Page
                 case "Duyet":
                     v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET;
                     v_us_gd_don_hang.Update();
-                    m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_hang.get_tong_tien_da_chi_hang_thang(v_us_gd_don_hang.dcID_PHONG_BAN, m_dat_dau_thang), "#,###");
+                    m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_hang.get_tong_tien_da_chi_hang_thang(v_us_gd_don_hang.dcID_PHONG_BAN, m_dat_cuoi_thang), "#,###");
                     break;
             }
             //v_us_gd_don_hang.Update();
