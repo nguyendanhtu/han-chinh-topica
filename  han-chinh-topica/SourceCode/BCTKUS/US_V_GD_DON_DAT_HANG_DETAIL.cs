@@ -492,10 +492,10 @@ public class US_V_GD_DON_DAT_HANG_DETAIL : US_Object
         v_stored_proc.fillDataSetByCommand(this, v_ds_v_don_dat_hang_de);
     }
 
-    public void FillDatasetSearch_phapnhan(DS_V_GD_DON_DAT_HANG_DETAIL ip_ds, DateTime ip_dat_thang, decimal ip_dc_id_phap_nhan,decimal ip_id_trang_thai, string ip_str_tu_khoa)
+    public void FillDatasetSearch_phapnhan(DS_V_GD_DON_DAT_HANG_DETAIL ip_ds, DateTime ip_dat_thang, decimal ip_dc_id_phap_nhan, decimal ip_id_trang_thai, decimal ip_dc_id_trung_tam)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_DON_DAT_HANG_DETAIL_Search_Phapnhan");
-        v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
+        v_stored_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_dc_id_trung_tam);
         v_stored_proc.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_id_phap_nhan);
         v_stored_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_id_trang_thai);
         v_stored_proc.addDatetimeInputParam("@NGAY", ip_dat_thang);
