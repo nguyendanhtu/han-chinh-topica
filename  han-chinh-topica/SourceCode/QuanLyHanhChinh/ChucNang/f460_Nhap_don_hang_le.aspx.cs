@@ -86,7 +86,6 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         {
             v_us.FillDataset(v_ds, v_ngay_dau_thang, CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value));
             m_us_gd_don_dat_hang = new US_GD_DON_DAT_HANG();
-            m_us_gd_don_dat_hang.datNGAY_DAT_HANG = DateTime.Now;
             m_us_gd_don_dat_hang.dcID_PHONG_BAN = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
             if (v_ds.GD_DON_DAT_HANG.Rows.Count > 0)
             {
@@ -99,6 +98,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
                 m_txt_so_lan.Text = "1";
             }
             m_us_gd_don_dat_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.NHAP;
+            m_us_gd_don_dat_hang.datNGAY_DAT_HANG = DateTime.Now.Date;
             m_us_gd_don_dat_hang.strMA = m_lbl_hien_thi_so_phieu.Text;
             m_us_gd_don_dat_hang.strMA_HD_NCC = "";
             m_us_gd_don_dat_hang.dcGIA_TRI_DA_VAT = 0;
