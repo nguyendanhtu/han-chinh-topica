@@ -323,5 +323,21 @@ public class US_GD_DON_DAT_HANG : US_Object
         v_store_proc.addNVarcharInputParam("@TU_KHOA", ip_str_tu_khoa);
         v_store_proc.fillDataSetByCommand(this, ip_ds);
     }
+
+    public void FillDataset(DS_GD_DON_DAT_HANG ip_ds, DateTime v_ngay_dau_thang, decimal ip_id_trung_tam)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_tao_don_hang");
+        v_store_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_id_trung_tam);
+        v_store_proc.addDatetimeInputParam("@THANG", v_ngay_dau_thang);
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
+
+    public void get_so_don_hang_nhap_trung_tam(DS_GD_DON_DAT_HANG ip_ds, decimal ip_id_trung_Tam, decimal ip_id_trang_thai)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_get_so_don_hang_nhap_trung_tam");
+        v_store_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_id_trung_Tam);
+        v_store_proc.addDecimalInputParam("@ID_TRANG_THAI", ip_id_trang_thai);
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
 }
 }
