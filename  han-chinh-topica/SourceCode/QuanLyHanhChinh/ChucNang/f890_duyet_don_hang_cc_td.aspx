@@ -22,18 +22,18 @@
         <asp:Label ID="m_lbl_chon_thang" runat="server" Text="Chọn tháng"> </asp:Label>
         &nbsp               
                 <asp:DropDownList ID="m_cbo_chon_thang" CssClass="cssDorpdownlist" OnSelectedIndexChanged="m_cbo_chon_thang_OnSelectedIndexChanged" runat="server" AutoPostBack="true">
-                    <asp:ListItem Value="1">Tháng 1 </asp:ListItem>
-                    <asp:ListItem Value="2">Tháng 2</asp:ListItem>
-                    <asp:ListItem Value="3">Tháng 3</asp:ListItem>
-                    <asp:ListItem Value="4">Tháng 4 </asp:ListItem>
-                    <asp:ListItem Value="5">Tháng 5 </asp:ListItem>
-                    <asp:ListItem Value="6">Tháng 6</asp:ListItem>
-                    <asp:ListItem Value="7">Tháng 7</asp:ListItem>
-                    <asp:ListItem Value="8">Tháng 8 </asp:ListItem>
-                    <asp:ListItem Value="9">Tháng 9 </asp:ListItem>
-                    <asp:ListItem Value="10">Tháng 10</asp:ListItem>
-                    <asp:ListItem Value="11">Tháng 11</asp:ListItem>
-                    <asp:ListItem Value="12">Tháng 12</asp:ListItem>
+                    <asp:ListItem runat="server" Value="1">Tháng 1 </asp:ListItem>
+                    <asp:ListItem runat="server" Value="2">Tháng 2</asp:ListItem>
+                    <asp:ListItem runat="server" Value="3">Tháng 3</asp:ListItem>
+                    <asp:ListItem runat="server" Value="4">Tháng 4 </asp:ListItem>
+                    <asp:ListItem runat="server" Value="5">Tháng 5 </asp:ListItem>
+                    <asp:ListItem runat="server" Value="6">Tháng 6</asp:ListItem>
+                    <asp:ListItem runat="server" Value="7">Tháng 7</asp:ListItem>
+                    <asp:ListItem runat="server" Value="8">Tháng 8 </asp:ListItem>
+                    <asp:ListItem runat="server" Value="9">Tháng 9 </asp:ListItem>
+                    <asp:ListItem runat="server" Value="10">Tháng 10</asp:ListItem>
+                    <asp:ListItem runat="server" Value="11">Tháng 11</asp:ListItem>
+                    <asp:ListItem runat="server" Value="12">Tháng 12</asp:ListItem>
                 </asp:DropDownList>
     </div>
     <br />
