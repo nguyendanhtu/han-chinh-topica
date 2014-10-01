@@ -377,9 +377,19 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
 
     private bool check_txt_mail()
     {
+        US_HT_USER_GROUP v_us_user_group = new US_HT_USER_GROUP();
+        DS_HT_USER_GROUP v_ds_user_group = new DS_HT_USER_GROUP();
+        string v_ten_mail = m_txt_nhap_mail.Text.Trim() + "@topica.edu.vn";
         if (m_txt_nhap_mail.Text == "")
             return false;
-        return true;
+        else
+        {
+            v_us_user_group.Check_have_mail(v_ds_user_group, v_ten_mail);
+            if (v_ds_user_group.HT_USER_GROUP.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
     }
     private bool chuyen_trang_thai_sang_gui_td()
     {
@@ -821,7 +831,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
                 thong_bao("Đã gửi mail thành công cho TAD",true);
             }
             else
-                thong_bao("Bạn chưa nhập tên mail!",true);
+                thong_bao("Địa chỉ mail không hợp lệ!",true);
             load_data_to_grid_don_hang();
             m_hdf_id_don_hang.Value = null;
         }
