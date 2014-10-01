@@ -251,7 +251,7 @@ namespace BCTKApp
             this.m_cmd_chon_file_bang_gia.Name = "m_cmd_chon_file_bang_gia";
             this.m_cmd_chon_file_bang_gia.Size = new System.Drawing.Size(124, 48);
             this.m_cmd_chon_file_bang_gia.TabIndex = 23;
-            this.m_cmd_chon_file_bang_gia.Text = "1- Chọn file và hiển thị";
+            this.m_cmd_chon_file_bang_gia.Text = "Bước 1- Chọn file và hiển thị";
             this.m_cmd_chon_file_bang_gia.UseVisualStyleBackColor = true;
             // 
             // m_cmd_hien_thi_du_lieu
@@ -263,7 +263,7 @@ namespace BCTKApp
             this.m_cmd_hien_thi_du_lieu.Name = "m_cmd_hien_thi_du_lieu";
             this.m_cmd_hien_thi_du_lieu.Size = new System.Drawing.Size(123, 48);
             this.m_cmd_hien_thi_du_lieu.TabIndex = 23;
-            this.m_cmd_hien_thi_du_lieu.Text = "2 - Kiểm tra";
+            this.m_cmd_hien_thi_du_lieu.Text = "Bước 2 - Kiểm tra";
             this.m_cmd_hien_thi_du_lieu.UseVisualStyleBackColor = true;
             // 
             // m_cmd_cap_nhat_danh_sach_vpp
@@ -275,7 +275,7 @@ namespace BCTKApp
             this.m_cmd_cap_nhat_danh_sach_vpp.Name = "m_cmd_cap_nhat_danh_sach_vpp";
             this.m_cmd_cap_nhat_danh_sach_vpp.Size = new System.Drawing.Size(126, 48);
             this.m_cmd_cap_nhat_danh_sach_vpp.TabIndex = 23;
-            this.m_cmd_cap_nhat_danh_sach_vpp.Text = "3 - Cập nhật danh sách văn phòng phẩm";
+            this.m_cmd_cap_nhat_danh_sach_vpp.Text = "Bước 3 - Cập nhật DS VPP";
             this.m_cmd_cap_nhat_danh_sach_vpp.UseVisualStyleBackColor = true;
             // 
             // label1
