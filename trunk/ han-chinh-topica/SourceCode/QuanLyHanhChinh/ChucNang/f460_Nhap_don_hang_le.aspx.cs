@@ -379,7 +379,8 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     {
         US_HT_USER_GROUP v_us_user_group = new US_HT_USER_GROUP();
         DS_HT_USER_GROUP v_ds_user_group = new DS_HT_USER_GROUP();
-        string v_ten_mail = m_txt_nhap_mail.Text.Trim() + "@topica.edu.vn";
+        //string v_ten_mail = m_txt_nhap_mail.Text.Trim() + "@topica.edu.vn";
+        string v_ten_mail = m_txt_nhap_mail.Text.Trim() + "@gmail.com";
         if (m_txt_nhap_mail.Text == "")
             return false;
         else
@@ -813,17 +814,20 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     {
         try
         {
-            string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
+            //string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
+            string v_mail = m_txt_nhap_mail.Text + "@gmail.com";
             US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
             DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
+            string v_duong_dan = "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value;
             v_us.get_so_don_hang_nhap_trung_tam(v_ds, CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value), CONST_ID_TRANG_THAI_DON_HANG.NHAP);
             if (check_txt_mail() == true)
             {
+         
                 string v_str_noi_dung = "Kính gửi: Trưởng phòng " + " " + m_hdf_ma_trung_tam.Value
                                   + "\n"
                                   + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng. Xin cám ơn!"
                                   + "\n"
-                                  + "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f890_duyet_don_hang_cc_td.aspx";
+                                  + "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value;
                 if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Xin TD duyệt đơn hàng", v_str_noi_dung); }
                 v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(v_ds.GD_DON_DAT_HANG.Rows[0]["ID"]));
                 v_us.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET;
