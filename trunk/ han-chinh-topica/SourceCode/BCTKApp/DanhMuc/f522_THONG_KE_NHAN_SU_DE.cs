@@ -50,6 +50,7 @@ namespace BCTKApp
             m_chk_close_form.Font = new System.Drawing.Font("Tahoma", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             m_chk_close_form.ForeColor = Color.Maroon;
             load_data_2_cbo_trung_tam();
+            load_data_2_cbo_co_so_dm();
             DateTime temp = m_dtp_ngay.Value.Date;
             temp = temp.AddMonths(1);
             temp = temp.AddDays(-(temp.Day));
@@ -60,6 +61,7 @@ namespace BCTKApp
         {
             m_us_tk.dcID = ip_us_v.dcID;
             m_cbo_trung_tam.SelectedValue = ip_us_v.dcID_DM_CO_SO;
+            m_cbo_co_so_dm.SelectedValue = ip_us_v.dcID_CO_SO_DINH_MUC;
             m_txt_ten_thong_ke.Text = ip_us_v.strTEN_THONG_KE;
             m_txt_so_luong.Text = ip_us_v.dcGIA_TRI_THONG_KE.ToString();
             m_dtp_ngay.Value = ip_us_v.datDEN_NGAY.Date;
@@ -67,7 +69,7 @@ namespace BCTKApp
         }
         private void form_2_us_obj()
         {
-            m_us_tk.dcID_CO_SO_DINH_MUC = CONST_ID_CO_SO_DINH_MUC.NV_TRUNGTAM;
+            m_us_tk.dcID_CO_SO_DINH_MUC = CIPConvert.ToDecimal(m_cbo_co_so_dm.SelectedValue);
             m_us_tk.dcID_DM_CO_SO = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             m_us_tk.dcID_DON_VI_THONG_KE = CONST_ID_DON_VI_THONG_KE.NHAN_VIEN;
             m_us_tk.dcID_LOAI_THOI_GIAN = CONST_ID_CM_DM_TU_DIEN.ID_PHAT_SINH_CUOi_KY;
@@ -86,6 +88,15 @@ namespace BCTKApp
             m_cbo_trung_tam.ValueMember = V_DM_CO_SO.ID;
             m_cbo_trung_tam.DisplayMember = V_DM_CO_SO.MO_TA;
             m_cbo_trung_tam.DataSource = v_ds.V_DM_CO_SO;
+        }
+        private void load_data_2_cbo_co_so_dm()
+        {
+            US_DM_CO_SO_DINH_MUC v_us = new US_DM_CO_SO_DINH_MUC();
+            DS_DM_CO_SO_DINH_MUC v_ds = new DS_DM_CO_SO_DINH_MUC();
+            v_us.FillDataset(v_ds);
+            m_cbo_co_so_dm.ValueMember = DM_CO_SO_DINH_MUC.ID;
+            m_cbo_co_so_dm.DisplayMember = DM_CO_SO_DINH_MUC.MA_CO_SO_DINH_MUC;
+            m_cbo_co_so_dm.DataSource = v_ds.DM_CO_SO_DINH_MUC;
         }
         private bool validate_data_is_ok()
         {

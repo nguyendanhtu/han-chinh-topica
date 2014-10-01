@@ -100,18 +100,10 @@ namespace BCTKApp
         {
             US_DM_CO_SO_DINH_MUC v_us = new US_DM_CO_SO_DINH_MUC();
             DS_DM_CO_SO_DINH_MUC v_ds = new DS_DM_CO_SO_DINH_MUC();
-            v_ds.Clear();
-            if (m_cbo_loai_hv.SelectedIndex == 0)
-            {
-                v_us.FillDataset(v_ds, "Where TEN_CO_SO_DINH_MUC LIKE N'%học%'");
-            }
-            else
-            {
-                v_us.FillDataset(v_ds, "Where TEN_CO_SO_DINH_MUC LIKE N'%mới%'");
-            }
+            v_us.FillDataset(v_ds);
             m_cbo_co_so_dm.DataSource = v_ds.DM_CO_SO_DINH_MUC;
             m_cbo_co_so_dm.ValueMember = DM_CO_SO_DINH_MUC.ID;
-            m_cbo_co_so_dm.DisplayMember = DM_CO_SO_DINH_MUC.TEN_CO_SO_DINH_MUC;
+            m_cbo_co_so_dm.DisplayMember = DM_CO_SO_DINH_MUC.MA_CO_SO_DINH_MUC;
         }
         private bool validate_data_is_ok()
         {
