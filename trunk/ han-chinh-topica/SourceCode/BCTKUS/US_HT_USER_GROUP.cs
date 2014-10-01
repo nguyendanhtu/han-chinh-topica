@@ -118,5 +118,12 @@ public class US_HT_USER_GROUP : US_Object
         v_cstore.addNVarcharInputParam("@DESCRIPTION", this.strDESCRIPTION);
         v_cstore.ExecuteCommand(this);
     }
-	}
+
+    public void Check_have_mail(DS_HT_USER_GROUP v_ds_user_group, string v_ten_mail)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_Check_have_mail");
+        v_stored_proc.addNVarcharInputParam("@MAIL", v_ten_mail);
+        v_stored_proc.fillDataSetByCommand(this, v_ds_user_group);
+    }
+}
 }

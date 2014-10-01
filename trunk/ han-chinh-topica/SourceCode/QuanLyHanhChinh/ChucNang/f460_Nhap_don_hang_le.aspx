@@ -187,7 +187,7 @@
         <div class="cssLoadWapper">
             <asp:MultiView ID="mtv_detail" runat="server">
                 <asp:View ID="View_detail" runat="server">
-                    <div class="cssLoadContent2" style="width: 100%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll;">
+                    <div class="cssLoadContent2" style="width: 100%; max-height: 85%; min-height:75%; margin: 100px auto 0 auto; overflow-y: scroll;">
                         <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
                             <tr>
                                 <td align="center">

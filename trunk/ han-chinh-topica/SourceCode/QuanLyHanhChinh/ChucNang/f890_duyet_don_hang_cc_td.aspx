@@ -12,7 +12,7 @@
     <%--    <asp:UpdatePanel ID="UpdatePanelAll" runat="server">
         <ContentTemplate>--%>
     <div style="text-align: center">
-        <asp:Label ID="m_lbl_header" runat="server" Text="DUYỆT ĐƠN ĐẶT HÀNG" CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
+        <asp:Label ID="m_lbl_header" runat="server" Text="DUYỆT ĐƠN ĐẶT HÀNG (TD)" CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
         <br />
         <asp:Label ID="m_lbl_title" runat="server" CssClass="cssManField" Font-Bold="true" Font-Size="Medium" ForeColor="GrayText"></asp:Label>
     </div>
@@ -167,7 +167,7 @@
         <div class="cssLoadWapper">
             <asp:MultiView ID="mtv_detail" runat="server">
                 <asp:View ID="View_detail" runat="server">
-                    <div class="cssLoadContent2" style="width: 100%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll;">
+                    <div class="cssLoadContent2" style="width: 100%; max-height: 85%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll;">
                         <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
                             <tr>
                                 <td align="center">
@@ -185,8 +185,28 @@
                                     <asp:Label ID="m_lbl_ti_le_vuot" runat="server" Text="0" CssClass="cssManField"></asp:Label>
                                     <asp:HiddenField ID="m_hdf_id_don_hang" runat="server" />
                                 </td>
+                                <td align="left">
+                                    <asp:LinkButton ID="m_lbt_duyet" runat="server" CommandName="Duyet" BorderStyle="Groove" Text="Duyệt" ToolTip="Duyệt đơn hàng" Width="24px"
+                                        OnClick="m_lbt_duyet_OnClick">
+                                            <img src="../Images/Button/check.png" width="24px" alt="Duyet" />
+                                    </asp:LinkButton>
+                                    <asp:Label ID="m_lbl_duyet" runat="server" Text="Duyệt" CssClass="cssLabel"></asp:Label>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp
+                                     <asp:LinkButton ID="m_lbt_khong_duyet" runat="server" CommandName="KhongDuyet" BorderStyle="Groove" Text=" Không Duyệt" ToolTip="KHông duyệt đơn hàng" Width="24px"
+                                         OnClick="m_lbt_khong_duyet_OnClick">
+                                            <img src="../Images/Button/deletered.png" width="24px" alt="Duyet" />
+                                     </asp:LinkButton>
+                                    <asp:Label ID="Label4" runat="server" Text=" Không duyệt" CssClass="cssLabel"></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:Label ID="m_lbl_nhap_mail" runat="server" Text="Nhập mail TD: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
+                                    <asp:TextBox ID="m_txt_nhap_mail" runat="server" CssClass="cssTextBox" placeholder="sampt"></asp:TextBox>
+                                    <asp:Label ID="m_lbl_duoi_mail" runat="server" Text="@Topica.edu.vn" CssClass="cssLabel"></asp:Label>
+                                    &nbsp&nbsp
+                <asp:Button ID="m_cmd_gui_mail" runat="server" Text="Gửi mail xin duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_mail_Click" />
+                                </td>
                                 <td align="right" colspan="1">
-                                    <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="45px" Height="30px" runat="server"
+                                    <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="45px" Height="30px" ToolTip="Thoát" runat="server"
                                         OnClick="m_cmd_detail_exit_Click" />
                                 </td>
                             </tr>
@@ -275,6 +295,32 @@
                                             </asp:CommandField>
                                         </Columns>
                                     </asp:GridView>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </asp:View>
+            </asp:MultiView>
+        </div>
+    </asp:Panel>
+    <asp:Panel ID="m_pnl_confirm_tg" runat="server">
+        <div class="cssLoadWapper">
+            <asp:MultiView ID="m_mtv_1" runat="server">
+                <asp:View ID="m_view_confirm" runat="server">
+                    <div class="cssLoadContent2" style="width: 50%">
+                        <table border="0" cellspacing="0" cellpadding="2" width="100%">
+                            <tr>
+                                <td align="center">
+                                    <br />
+                                    <asp:Label ID="m_lbl_popup_mess" CssClass="cssManField" Style="font-size: 14px" runat="server"></asp:Label>
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">
+                                    <asp:Button ID="m_cmd_ok" AccessKey="c" CssClass="cssGoogleButton" runat="server"
+                                        Text="OK" OnClick="m_cmd_ok_Click" />
                                 </td>
                             </tr>
                         </table>
