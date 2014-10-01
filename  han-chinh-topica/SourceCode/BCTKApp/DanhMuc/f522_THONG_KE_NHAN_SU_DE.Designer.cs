@@ -47,6 +47,8 @@
             this.m_chk_close_form = new System.Windows.Forms.CheckBox();
             this.m_txt_ghi_chu = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.m_cbo_co_so_dm = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +91,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 108);
+            this.label2.Location = new System.Drawing.Point(12, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 9;
@@ -97,7 +99,7 @@
             // 
             // m_txt_ten_thong_ke
             // 
-            this.m_txt_ten_thong_ke.Location = new System.Drawing.Point(130, 101);
+            this.m_txt_ten_thong_ke.Location = new System.Drawing.Point(130, 131);
             this.m_txt_ten_thong_ke.Name = "m_txt_ten_thong_ke";
             this.m_txt_ten_thong_ke.Size = new System.Drawing.Size(222, 20);
             this.m_txt_ten_thong_ke.TabIndex = 10;
@@ -105,7 +107,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 154);
+            this.label3.Location = new System.Drawing.Point(12, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 11;
@@ -115,7 +117,7 @@
             // 
             this.m_dtp_ngay.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_ngay.Location = new System.Drawing.Point(130, 147);
+            this.m_dtp_ngay.Location = new System.Drawing.Point(130, 177);
             this.m_dtp_ngay.Name = "m_dtp_ngay";
             this.m_dtp_ngay.Size = new System.Drawing.Size(222, 20);
             this.m_dtp_ngay.TabIndex = 12;
@@ -123,7 +125,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 200);
+            this.label4.Location = new System.Drawing.Point(12, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 13;
@@ -131,7 +133,7 @@
             // 
             // m_txt_so_luong
             // 
-            this.m_txt_so_luong.Location = new System.Drawing.Point(130, 193);
+            this.m_txt_so_luong.Location = new System.Drawing.Point(130, 223);
             this.m_txt_so_luong.Name = "m_txt_so_luong";
             this.m_txt_so_luong.Size = new System.Drawing.Size(222, 20);
             this.m_txt_so_luong.TabIndex = 14;
@@ -142,7 +144,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 325);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 360);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(464, 36);
@@ -208,7 +210,7 @@
             // m_chk_close_form
             // 
             this.m_chk_close_form.AutoSize = true;
-            this.m_chk_close_form.Location = new System.Drawing.Point(130, 291);
+            this.m_chk_close_form.Location = new System.Drawing.Point(130, 321);
             this.m_chk_close_form.Name = "m_chk_close_form";
             this.m_chk_close_form.Size = new System.Drawing.Size(196, 17);
             this.m_chk_close_form.TabIndex = 15;
@@ -217,7 +219,7 @@
             // 
             // m_txt_ghi_chu
             // 
-            this.m_txt_ghi_chu.Location = new System.Drawing.Point(130, 241);
+            this.m_txt_ghi_chu.Location = new System.Drawing.Point(130, 271);
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
             this.m_txt_ghi_chu.Size = new System.Drawing.Size(222, 20);
             this.m_txt_ghi_chu.TabIndex = 18;
@@ -225,17 +227,36 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 248);
+            this.label5.Location = new System.Drawing.Point(12, 278);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 17;
             this.label5.Text = "Ghi chú";
             // 
+            // m_cbo_co_so_dm
+            // 
+            this.m_cbo_co_so_dm.FormattingEnabled = true;
+            this.m_cbo_co_so_dm.Location = new System.Drawing.Point(130, 99);
+            this.m_cbo_co_so_dm.Name = "m_cbo_co_so_dm";
+            this.m_cbo_co_so_dm.Size = new System.Drawing.Size(222, 21);
+            this.m_cbo_co_so_dm.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Cơ sở định mức";
+            // 
             // f522_THONG_KE_NHAN_SU_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 361);
+            this.ClientSize = new System.Drawing.Size(464, 396);
+            this.Controls.Add(this.m_cbo_co_so_dm);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.m_txt_ghi_chu);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -277,5 +298,7 @@
         private System.Windows.Forms.CheckBox m_chk_close_form;
         private System.Windows.Forms.TextBox m_txt_ghi_chu;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox m_cbo_co_so_dm;
+        private System.Windows.Forms.Label label6;
     }
 }
