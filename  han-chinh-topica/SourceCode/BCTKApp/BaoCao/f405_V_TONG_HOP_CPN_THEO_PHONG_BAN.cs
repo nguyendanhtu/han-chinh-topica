@@ -583,7 +583,7 @@ namespace BCTKApp
         {
             m_obj_trans = get_trans_object(m_fg);
             get_thoi_gian();
-            load_data_2_grid();
+            //load_data_2_grid();
             tim_kiem();
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
@@ -608,6 +608,7 @@ namespace BCTKApp
         }
         private void load_data_2_grid()
         {
+            
             m_ds_pn = new DS_V_TONG_HOP_CPN_THEO_PHONG_BAN_PN();
             m_us_pn.FillDataset(m_ds_pn);
             m_fg.Redraw = false;
@@ -686,13 +687,13 @@ namespace BCTKApp
             m_cbo_ten_pb.DataSource = v_ds.DM_PHAP_NHAN;
             m_cbo_ten_pb.ValueMember = DM_PHAP_NHAN.ID;
             m_cbo_ten_pb.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
-            DataRow v_dr = v_ds.DM_PHAP_NHAN.NewRow();
-            v_dr[DM_PHAP_NHAN.ID] = -1;
-            v_dr[DM_PHAP_NHAN.MA_PHAP_NHAN] = "Tất cả";
-            v_dr[DM_PHAP_NHAN.TEN_PHAP_NHAN] = "Tất cả";
-            v_ds.DM_PHAP_NHAN.Rows.InsertAt(v_dr, 0);
-            m_cbo_ten_pb.SelectedIndex = 0;
-            m_trang_thai = true;
+            //DataRow v_dr = v_ds.DM_PHAP_NHAN.NewRow();
+            //v_dr[DM_PHAP_NHAN.ID] = -1;
+            //v_dr[DM_PHAP_NHAN.MA_PHAP_NHAN] = "Tất cả";
+            //v_dr[DM_PHAP_NHAN.TEN_PHAP_NHAN] = "Tất cả";
+            //v_ds.DM_PHAP_NHAN.Rows.InsertAt(v_dr, 0);
+            //m_cbo_ten_pb.SelectedIndex = 0;
+           m_trang_thai = true;
         }
         private void tim_kiem()
         {
