@@ -687,12 +687,12 @@ namespace BCTKApp
             m_cbo_ten_pb.DataSource = v_ds.DM_PHAP_NHAN;
             m_cbo_ten_pb.ValueMember = DM_PHAP_NHAN.ID;
             m_cbo_ten_pb.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
-            //DataRow v_dr = v_ds.DM_PHAP_NHAN.NewRow();
-            //v_dr[DM_PHAP_NHAN.ID] = -1;
-            //v_dr[DM_PHAP_NHAN.MA_PHAP_NHAN] = "Tất cả";
-            //v_dr[DM_PHAP_NHAN.TEN_PHAP_NHAN] = "Tất cả";
-            //v_ds.DM_PHAP_NHAN.Rows.InsertAt(v_dr, 0);
-            //m_cbo_ten_pb.SelectedIndex = 0;
+            DataRow v_dr = v_ds.DM_PHAP_NHAN.NewRow();
+            v_dr[DM_PHAP_NHAN.ID] = -1;
+            v_dr[DM_PHAP_NHAN.MA_PHAP_NHAN] = "Tất cả";
+            v_dr[DM_PHAP_NHAN.TEN_PHAP_NHAN] = "Tất cả";
+            v_ds.DM_PHAP_NHAN.Rows.InsertAt(v_dr, 0);
+            m_cbo_ten_pb.SelectedIndex = 0;
            m_trang_thai = true;
         }
         private void tim_kiem()
