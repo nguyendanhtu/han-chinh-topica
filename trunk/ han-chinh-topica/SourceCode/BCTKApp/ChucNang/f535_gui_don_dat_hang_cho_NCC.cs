@@ -456,13 +456,13 @@ namespace BCTKApp
             m_cbo_phap_nhan.DataSource = v_ds.DM_PHAP_NHAN;
             m_cbo_phap_nhan.ValueMember = DM_PHAP_NHAN.ID;
             m_cbo_phap_nhan.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
-            //DataRow v_dr = v_ds.DM_PHAP_NHAN.NewRow();
-            //v_dr[DM_PHAP_NHAN.ID] = -1;
-            //v_dr[DM_PHAP_NHAN.MA_PHAP_NHAN] = "";
-            //v_dr[DM_PHAP_NHAN.TEN_PHAP_NHAN] = "Tất cả";
-            //v_dr[DM_PHAP_NHAN.GHI_CHU] = " ";
-            //v_ds.DM_PHAP_NHAN.Rows.InsertAt(v_dr, 0);
-            //m_cbo_phap_nhan.SelectedIndex = 0;        
+            DataRow v_dr = v_ds.DM_PHAP_NHAN.NewRow();
+            v_dr[DM_PHAP_NHAN.ID] = -1;
+            v_dr[DM_PHAP_NHAN.MA_PHAP_NHAN] = "";
+            v_dr[DM_PHAP_NHAN.TEN_PHAP_NHAN] = "Tất cả";
+            v_dr[DM_PHAP_NHAN.GHI_CHU] = " ";
+            v_ds.DM_PHAP_NHAN.Rows.InsertAt(v_dr, 0);
+            m_cbo_phap_nhan.SelectedIndex = 0;        
         }
         private void load_cbo_trung_tam()
         {
