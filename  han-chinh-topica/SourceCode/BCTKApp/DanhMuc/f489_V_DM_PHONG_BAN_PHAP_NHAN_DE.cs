@@ -33,7 +33,7 @@ namespace BCTKApp.DanhMuc {
             m_us_v = ip_v_m_us;
             m_us_obj_to_form();
             m_id = ip_v_m_us.dcID;
-            m_cbo_phap_nhan.Enabled = false;
+            m_cbo_phap_nhan.Enabled = true;
             this.ShowDialog();
         }
         #endregion
