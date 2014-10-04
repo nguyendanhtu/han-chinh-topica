@@ -94,7 +94,7 @@ public partial class ChucNang_f494_Bao_cao_tinh_hinh_su_dung_VPP : System.Web.UI
 
     private void display_pop_up_detail(string v_ma_don_hang)
     {
-        m_lbl_ten_detail.Text = "Chi tiết đơn hàng mã phiếu: " + v_ma_don_hang.ToString();
+        m_lbl_ten_detail.Text = "Mã phiếu: " + v_ma_don_hang.ToString();
         US_V_GD_DON_DAT_HANG_DETAIL v_us = new US_V_GD_DON_DAT_HANG_DETAIL();
         DS_V_GD_DON_DAT_HANG_DETAIL v_ds = new DS_V_GD_DON_DAT_HANG_DETAIL();
         v_us.FillDataset(v_ds, v_ma_don_hang, CIPConvert.ToDatetime(m_txt_tu_ngay.Text), CIPConvert.ToDatetime(m_txt_den_ngay.Text));
@@ -130,7 +130,6 @@ public partial class ChucNang_f494_Bao_cao_tinh_hinh_su_dung_VPP : System.Web.UI
         v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
         m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
     }
-
     private bool check_thoi_gian()
     {
         if (CIPConvert.ToDatetime(m_txt_tu_ngay.Text) > CIPConvert.ToDatetime(m_txt_den_ngay.Text))
@@ -320,11 +319,13 @@ public partial class ChucNang_f494_Bao_cao_tinh_hinh_su_dung_VPP : System.Web.UI
             LinkButton lbt = (LinkButton)sender;
             GridViewRow row = (GridViewRow)lbt.NamingContainer;
             string v_ma_don_hang = row.Cells[3].Text;
+            m_lbl_pop_tong_tien.Text = CIPConvert.ToStr(row.Cells[6].Text,"#,###") + "  (VNĐ)";
+            m_lbl_pop_ngay_dat.Text = row.Cells[2].Text;
             view_detail_grv(true);
             display_pop_up_detail(v_ma_don_hang);
         }
         catch (System.Exception v_e)
-        {
+        { 
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }

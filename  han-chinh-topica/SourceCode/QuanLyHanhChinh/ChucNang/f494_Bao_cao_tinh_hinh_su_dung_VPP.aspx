@@ -121,14 +121,24 @@
                 <div class="cssLoadWapper">
                     <asp:MultiView ID="mtv_detail" runat="server">
                         <asp:View ID="View_detail" runat="server">
-                            <div class="cssLoadContent2" style="width: 100%; margin: 100px auto 0 auto; overflow-y: scroll;">
+                            <div class="cssLoadContent2" style="width: 100%; scrollbar-highlight-color:blue; min-height: 80%; max-height: 80%; margin: 100px auto 0 auto; overflow-y: scroll;">
                                 <table border="0" cellspacing="0" cellpadding="0" width="100%">
                                     <tr>
                                         <td align="left" style="width: 20%">
-                                            <asp:Label ID="m_lbl_grv_detail" runat="server" CssClass="cssPageTitle" BackColor="White"></asp:Label>
+                                            &nbsp&nbsp&nbsp&nbsp
+                                            <asp:Label ID="m_lbl_grv_detail" runat="server" CssClass="cssManField" BackColor="White"></asp:Label>
                                         </td>
                                         <td align="center" style="width: 60%">
-                                            <asp:Label ID="m_lbl_ten_detail" runat="server" CssClass="cssPageTitle" Font-Size="Large" BackColor="White"></asp:Label>
+                                            <asp:Label ID="m_lbl_ten_detail" runat="server" CssClass="cssPageTitle"  BackColor="White"></asp:Label>
+                                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                            <asp:Label ID="Label1" runat="server" Text="Ngày đặt:" CssClass="cssManField" Font-Bold="true" BackColor="White"></asp:Label>
+                                            &nbsp&nbsp
+                                            <asp:Label ID="m_lbl_pop_ngay_dat" runat="server" Text="---------" CssClass="cssManField" Font-Bold="true" BackColor="White"></asp:Label>
+                                             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                            <asp:Label ID="m_lbl_pop_tong_tien_tl" runat="server" Text="Tổng tiền (đã VAT):" CssClass="cssManField" Font-Bold="true" BackColor="White"></asp:Label>
+                                            &nbsp&nbsp
+                                            <asp:Label ID="m_lbl_pop_tong_tien" runat="server" Text="---------" CssClass="cssManField" ForeColor="Red" Font-Bold="true" BackColor="White"></asp:Label>
+
                                         </td>
                                         <td align="right" style="width: 20%">
                                             <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="45px" Height="30px" runat="server"
@@ -140,7 +150,7 @@
                                             AutoGenerateColumns="false" CssClass="GridViewStyle"
                                             Width="99%" DataKeyNames="MA_VPP" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                                             EmptyDataText="Chưa có dữ liệu báo cáo!" EmptyDataRowStyle-BorderColor="#810913"
-                                            CellPadding="8" PageSize="7" OnPageIndexChanging="m_grv_detail_PageIndexChanging">
+                                            CellPadding="8" PageSize="10" OnPageIndexChanging="m_grv_detail_PageIndexChanging">
                                             <PagerSettings Position="TopAndBottom" />
                                             <AlternatingRowStyle BackColor="White" />
                                             <EmptyDataRowStyle BorderColor="#810913" />
@@ -160,27 +170,27 @@
                                                 </asp:TemplateField>
                                                 <asp:BoundField DataField="MA_VPP" ItemStyle-HorizontalAlign="Left" HeaderText="MÃ VPP"
                                                     ItemStyle-Width="7%">
-                                                    <ItemStyle HorizontalAlign="Right" Width="3%" />
+                                                    <ItemStyle HorizontalAlign="Left" Width="4%" />
                                                 </asp:BoundField>
                                                 <asp:BoundField DataField="TEN_VPP" ItemStyle-HorizontalAlign="Left" HeaderText="TÊN VPP"
                                                     ItemStyle-Width="7%">
-                                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                                    <ItemStyle HorizontalAlign="Left" Width="12%" />
                                                 </asp:BoundField>
                                                 <asp:BoundField DataField="DON_VI_TINH" ItemStyle-HorizontalAlign="Left" HeaderText="ĐƠN VỊ TÍNH"
                                                     ItemStyle-Width="7%">
-                                                    <ItemStyle HorizontalAlign="Left" Width="7%" />
+                                                    <ItemStyle HorizontalAlign="Left" Width="4%" />
                                                 </asp:BoundField>
                                                 <asp:BoundField DataField="SO_LUONG" ItemStyle-HorizontalAlign="Left" HeaderText="SỐ LƯỢNG"
-                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
-                                                    <ItemStyle HorizontalAlign="Right" Width="5%" />
+                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                                    <ItemStyle HorizontalAlign="Right" Width="4%" />
                                                 </asp:BoundField>
                                                 <asp:BoundField DataField="DON_GIA_CHUA_VAT" ItemStyle-HorizontalAlign="Left" HeaderText="ĐƠN GIÁ CHƯA VAT (VNĐ)"
-                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
-                                                    <ItemStyle HorizontalAlign="Right" Width="5%" />
+                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
                                                 </asp:BoundField>
                                                 <asp:BoundField DataField="DON_GIA_GOM_VAT" ItemStyle-HorizontalAlign="Left" HeaderText="ĐƠN GIÁ GỒM VAT (VNĐ)"
-                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
-                                                    <ItemStyle HorizontalAlign="Right" Width="5%" />
+                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
                                                 </asp:BoundField>
                                             </Columns>
                                         </asp:GridView>
@@ -246,11 +256,11 @@
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>--%>
                                 <asp:BoundField DataField="TONG_SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐÃ TÍNH VAT (VNĐ)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                                     <ItemStyle HorizontalAlign="right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="DINH_MUC" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐỊNH MỨC (VNĐ)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="TI_LE_DA_VUOT" ItemStyle-HorizontalAlign="Left" HeaderText="TỶ LỆ ĐÃ VƯỢT (%)"
@@ -311,7 +321,7 @@
                                     <ItemStyle HorizontalAlign="Center" Width="2%" />
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="NGAY_DAT_HANG" ItemStyle-HorizontalAlign="Left" HeaderText="NGÀY ĐẶT HÀNG"
-                                    ItemStyle-Width="7%">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:dd/MM/yyyy}">
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="MA_HD" ItemStyle-HorizontalAlign="right" HeaderText="MÃ ĐƠN HÀNG"
@@ -323,11 +333,11 @@
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="GIA_TRI_CHUA_VAT" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN CHƯA VAT (VNĐ)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                                     <ItemStyle HorizontalAlign="right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="GIA_TRI_DA_VAT" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐÃ VAT (VNĐ)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                                     <ItemStyle HorizontalAlign="right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
