@@ -254,7 +254,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
             LinkButton lbt = (LinkButton)sender;
             view_detail_grv(true);
             int rowindex = gvr.RowIndex;
-            m_grv_don_hang_nhap.SelectedIndex = rowindex;
+            //m_grv_don_hang_nhap.SelectedIndex = rowindex;
             m_hdf_id_don_hang.Value = CIPConvert.ToStr(m_grv_don_hang_nhap.DataKeys[rowindex].Value);
             m_lbl_ma_don_hang_de.Text = m_grv_don_hang_nhap.Rows[rowindex].Cells[6].Text;
             m_lbl_tong_tien.Text = m_grv_don_hang_nhap.Rows[rowindex].Cells[9].Text + "  (VNĐ)";
@@ -274,8 +274,13 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     {
         try
         {
-            view_detail_grv(false);
-            m_lbl_thong_bao.Visible = false;
+            US_GD_DON_DAT_HANG v_us_gd_don_hang = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
+            int thisyear = DateTime.Now.Year;
+            DateTime m_dat_dau_thang = new DateTime(thisyear, int.Parse(m_cbo_chon_thang.SelectedValue.ToString()), 1);
+            DateTime m_dat_cuoi_thang = m_dat_dau_thang.AddMonths(1).AddDays(-1);
+            v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET;
+            v_us_gd_don_hang.Update();
+            m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_hang.get_tong_tien_da_chi_hang_thang(v_us_gd_don_hang.dcID_PHONG_BAN, m_dat_cuoi_thang), "#,###");
         }
         catch (System.Exception v_e)
         {
@@ -286,8 +291,12 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     {
         try
         {
-            view_detail_grv(false);
-            m_lbl_thong_bao.Visible = false;
+            US_GD_DON_DAT_HANG v_us_gd_don_hang = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
+            int thisyear = DateTime.Now.Year;
+            DateTime m_dat_dau_thang = new DateTime(thisyear, int.Parse(m_cbo_chon_thang.SelectedValue.ToString()), 1);
+            DateTime m_dat_cuoi_thang = m_dat_dau_thang.AddMonths(1).AddDays(-1);
+            v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.TD_KHONG_DUYET;
+            v_us_gd_don_hang.Update();
         }
         catch (System.Exception v_e)
         {
