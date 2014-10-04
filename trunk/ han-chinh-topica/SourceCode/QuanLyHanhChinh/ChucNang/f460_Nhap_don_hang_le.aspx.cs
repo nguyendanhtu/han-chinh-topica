@@ -339,7 +339,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         decimal v_id_phong_ban = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
         US_RPT_GD_DON_DAT_HANG_DINH_MUC v_us_don_hang = new US_RPT_GD_DON_DAT_HANG_DINH_MUC();
         DS_RPT_GD_DON_DAT_HANG_DINH_MUC v_ds_don_hang = new DS_RPT_GD_DON_DAT_HANG_DINH_MUC();
-        v_us_don_hang.FillDataset(v_ds_don_hang, v_id_phong_ban);
+        v_us_don_hang.FillDS_don_hang_dinh_muc(v_ds_don_hang, v_id_phong_ban);
         m_grv_don_hang_nhap.DataSource = v_ds_don_hang.RPT_GD_DON_DAT_HANG_DINH_MUC;
         m_grv_don_hang_nhap.DataBind();
         //string v_str_thong_tin_don_hang = " (Có " + v_ds_don_hang.RPT_GD_DON_DAT_HANG_DINH_MUC.Rows.Count + " đơn hàng)";
@@ -354,7 +354,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_grv_don_hang_de.DataSource = v_ds_don_hang_de.V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE;
         m_grv_don_hang_de.DataBind();
         string v_str_thong_tin_don_hang_de = " (Có " + v_ds_don_hang_de.V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.Rows.Count + " mặt hàng)";
-        m_lbl_thong_tim_grv_don_hang_de.Text = v_str_thong_tin_don_hang_de;
+        //m_lbl_thong_tim_grv_don_hang_de.Text = v_str_thong_tin_don_hang_de;
 
         if (!m_hdf_ID_GD_DON_DAT_HANG_DE.Value.Equals(""))
         {
@@ -373,19 +373,27 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         m_lbl_ma_don_hang_de.Text = v_ds.Tables[0].Rows[0]["MA"].ToString();
         m_lbl_ma_don_hang_de.Visible = true;
         m_lbl_MP.Visible = true;
+
+        decimal v_id_phong_ban = CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value);
+        US_RPT_GD_DON_DAT_HANG_DINH_MUC v_us_don_hang = new US_RPT_GD_DON_DAT_HANG_DINH_MUC();
+        DS_RPT_GD_DON_DAT_HANG_DINH_MUC v_ds_don_hang = new DS_RPT_GD_DON_DAT_HANG_DINH_MUC();
+        v_us_don_hang.FillDS_don_hang_dinh_muc(v_ds_don_hang, v_id_phong_ban);
+        m_lbl_pop_lan.Text = CIPConvert.ToStr(v_ds_don_hang.RPT_GD_DON_DAT_HANG_DINH_MUC.Rows[0]["LAN"],"#,###");
+        DateTime v_dat_ngay = (DateTime)v_ds_don_hang.RPT_GD_DON_DAT_HANG_DINH_MUC.Rows[0]["NGAY_DAT_HANG"];
+        m_lbl_pop_ngay.Text = v_dat_ngay.ToString("dd/MM/yyyy");
+        m_lbl_pop_tong_tien.Text = CIPConvert.ToStr(v_ds_don_hang.RPT_GD_DON_DAT_HANG_DINH_MUC.Rows[0]["GIA_TRI_DA_VAT"],"#,###") + "  (VNĐ)";
+        m_lbl_pop_dinh_muc.Text = CIPConvert.ToStr(v_ds_don_hang.RPT_GD_DON_DAT_HANG_DINH_MUC.Rows[0]["DINH_MUC"],"#,###") + "  (VNĐ)";
     }
 
-    private bool check_txt_mail()
+    private bool check_txt_mail(string ip_ten_mail)
     {
         US_HT_USER_GROUP v_us_user_group = new US_HT_USER_GROUP();
         DS_HT_USER_GROUP v_ds_user_group = new DS_HT_USER_GROUP();
-        //string v_ten_mail = m_txt_nhap_mail.Text.Trim() + "@topica.edu.vn";
-        string v_ten_mail = m_txt_nhap_mail.Text.Trim() + "@gmail.com";
-        if (m_txt_nhap_mail.Text == "")
+        if (ip_ten_mail == "")
             return false;
         else
         {
-            v_us_user_group.Check_have_mail(v_ds_user_group, v_ten_mail);
+            v_us_user_group.Check_have_mail(v_ds_user_group, ip_ten_mail);
             if (v_ds_user_group.HT_USER_GROUP.Rows.Count > 0)
                 return true;
             else
@@ -814,13 +822,13 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     {
         try
         {
-            //string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
-            string v_mail = m_txt_nhap_mail.Text + "@gmail.com";
+            string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
+            //string v_mail = m_txt_nhap_mail.Text + "@gmail.com";
             US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
             DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
             string v_duong_dan = "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value;
             v_us.get_so_don_hang_nhap_trung_tam(v_ds, CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value), CONST_ID_TRANG_THAI_DON_HANG.NHAP);
-            if (check_txt_mail() == true)
+            if (check_txt_mail(v_mail) == true)
             {
          
                 string v_str_noi_dung = "Kính gửi: Trưởng phòng " + " " + m_hdf_ma_trung_tam.Value
@@ -836,6 +844,41 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             }
             else
                 thong_bao("Địa chỉ mail không hợp lệ!",true);
+            load_data_to_grid_don_hang();
+            m_hdf_id_don_hang.Value = null;
+        }
+        catch (System.Exception v_e)
+        {
+            thong_bao(v_e.ToString(), true);
+            //CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cmd_gui_mail_main_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
+            //string v_mail = m_txt_nhap_mail_main.Text + "@gmail.com";
+            US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
+            DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
+            string v_duong_dan = "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value;
+            v_us.get_so_don_hang_nhap_trung_tam(v_ds, CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value), CONST_ID_TRANG_THAI_DON_HANG.NHAP);
+            if (check_txt_mail(v_mail) == true)
+            {
+
+                string v_str_noi_dung = "Kính gửi: Trưởng phòng " + " " + m_hdf_ma_trung_tam.Value
+                                  + "\n"
+                                  + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng. Xin cám ơn!"
+                                  + "\n"
+                                  + "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value;
+                if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Xin TD duyệt đơn hàng", v_str_noi_dung); }
+                v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(v_ds.GD_DON_DAT_HANG.Rows[0]["ID"]));
+                v_us.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET;
+                v_us.Update();
+                thong_bao("Đã gửi mail thành công cho TAD", true);
+            }
+            else
+                thong_bao("Địa chỉ mail không hợp lệ!", true);
             load_data_to_grid_don_hang();
             m_hdf_id_don_hang.Value = null;
         }
@@ -876,6 +919,18 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         }
     }
     protected void m_cmd_detail_exit_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            view_detail_grv(false);
+            m_lbl_thong_bao.Visible = false;
+        }
+        catch (System.Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
+    protected void m_cmd_thoat_Click(object sender, EventArgs e)
     {
         try
         {

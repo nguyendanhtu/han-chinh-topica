@@ -187,8 +187,8 @@
         <div class="cssLoadWapper">
             <asp:MultiView ID="mtv_detail" runat="server">
                 <asp:View ID="View_detail" runat="server">
-                    <div class="cssLoadContent2" style="width: 100%; max-height: 85%; min-height:75%; margin: 100px auto 0 auto; overflow-y: scroll;">
-                        <table cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
+                    <div class="cssLoadContent2" style="width: 100%; max-height: 75%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll;">
+                        <table cellspacing="0" cellpadding="2" style="width: 100%; position: fixed" class="cssTable" border="0">
                             <tr>
                                 <td align="center">
                                     <asp:Label ID="m_lbl_title_ma_don_hang" runat="server" CssClass="cssPageTitle"
@@ -199,15 +199,32 @@
                         <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField" Font-Bold="true" ForeColor="DarkRed"></asp:Label>
                                 </td>
                                 <td colspan="3" align="center">
+                                    <asp:Label ID="m_lbl_pop_lan_tl" runat="Server" Text="Lần:" CssClass="cssManField"></asp:Label>
+                                    &nbsp&nbsp
+                                    <asp:Label ID="m_lbl_pop_lan" runat="Server" Text="--" CssClass="cssManField"></asp:Label>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <asp:Label ID="m_lbl_pop_ngay_dat_hang_tl" runat="Server" Text="Ngày đặt:" CssClass="cssManField"></asp:Label>
+                                    &nbsp&nbsp
+                                    <asp:Label ID="m_lbl_pop_ngay" runat="Server" Text="----------" CssClass="cssManField"></asp:Label>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <asp:Label ID="m_lbl_pop_tong_tien_tl" runat="Server" Text="Tổng tiền (đã VAT):" CssClass="cssManField"></asp:Label>
+                                    &nbsp&nbsp
+                                    <asp:Label ID="m_lbl_pop_tong_tien" runat="Server" Text="----------" CssClass="cssManField" ForeColor="Green" Font-Bold="true"></asp:Label>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <asp:Label ID="m_lbl_pop_dinh_muc_tl" runat="Server" Text="Định mức:" CssClass="cssManField"></asp:Label>
+                                    &nbsp&nbsp
+                                    <asp:Label ID="m_lbl_pop_dinh_muc" runat="Server" Text="----------" CssClass="cssManField" ForeColor="Red" Font-Bold="true"></asp:Label>
                                     <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
                                 </td>
                                 <td align="right" colspan="1">
-                                    <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="45px" Height="30px" runat="server"
+                                    <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="24px" Height="24px" runat="server"
                                         OnClick="m_cmd_detail_exit_Click" />
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right">
+                                    <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssPageTitle" ForeColor="Green" Font-Italic="true" BackColor="White"></asp:Label>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                     <asp:Label ID="m_lbl_chon_vpp" runat="Server" Text="Chọn VPP" CssClass="cssManField"></asp:Label>
                                 </td>
                                 <td align="left">
@@ -235,23 +252,23 @@
                                 </td>
                             </tr>
                         </table>
-                        <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                            <tr>
+                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; max-height: 300px; min-height: 300px; margin-top: 5%; overflow-y: scroll">
+                            <%--<tr style="width: 100%; position: fixed">
                                 <td class="cssPageTitleBG" colspan="6">
                                     <asp:Label ID="m_lbl_phieu_de_nghi_va_ban_giao_VPP" runat="server" CssClass="cssPageTitle"
                                         Text="Danh sách VPP đề nghị cấp"></asp:Label>
                                     <asp:Label ID="m_lbl_thong_tim_grv_don_hang_de" runat="server" CssClass="cssPageTitle"></asp:Label>
                                     &nbsp; &nbsp;
-                <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssPageTitle" ForeColor="Green" Font-Italic="true" BackColor="White"></asp:Label>
-                                    <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
+                
+
                                 </td>
-                            </tr>
+                            </tr>--%>
                             <tr>
                                 <td colspan="4">
                                     <asp:GridView ID="m_grv_don_hang_de" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                                         Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                                         EmptyDataText="Không có mặt hàng!" EmptyDataRowStyle-BorderColor="#810913"
-                                        CellPadding="8" PageSize="20"
+                                        CellPadding="8" PageSize="50"
                                         OnRowEditing="m_grv_don_hang_de_RowEditing"
                                         OnRowDeleting="m_grv_don_hang_de_RowDeleting"
                                         OnPageIndexChanging="m_grv_don_hang_de_PageIndexChanging">
@@ -320,6 +337,22 @@
                             </tr>
                         </table>
                     </div>
+                    <table class="cssLoadContent2" cellspacing="0" cellpadding="2" style="width: 100%; margin-top: 0px; position: fixed" border="0">
+                        <tr>
+                            <td>
+                                <asp:Label ID="m_lbl_nhap_mail" runat="server" Text="Nhập mail TD: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
+                                <asp:TextBox ID="m_txt_nhap_mail" runat="server" CssClass="cssTextBox" placeholder="sampt"></asp:TextBox>
+                                <asp:Label ID="m_lbl_duoi_mail" runat="server" Text="@Topica.edu.vn" CssClass="cssLabel"></asp:Label>
+                                &nbsp&nbsp
+                <asp:Button ID="m_cmd_gui_mail" runat="server" Text="Gửi mail xin duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_mail_Click" />
+                            </td>
+                            <td align="right">
+                                <asp:Button ID="m_cmd_xuat_Excel" runat="server" Text="Xuất Excel" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" />
+                                <asp:Button ID="m_cmd_thoat" runat="server" Text="Thoát" CssClass="cssGoogleButton" OnClick="m_cmd_thoat_Click" />
+
+                            </td>
+                        </tr>
+                    </table>
                 </asp:View>
             </asp:MultiView>
         </div>
@@ -350,17 +383,14 @@
             </asp:MultiView>
         </div>
     </asp:Panel>
-    <table cellspacing="0" cellpadding="2" style="width: 100%; margin-top: 8%" class="cssTable" border="2">
+    <table cellspacing="0" cellpadding="2" style="width: 100%; margin-top: 10%; position: relative" class="cssTable" border="0">
         <tr>
             <td>
-                <asp:Label ID="m_lbl_nhap_mail" runat="server" Text="Nhập mail TD: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
-                <asp:TextBox ID="m_txt_nhap_mail" runat="server" CssClass="cssTextBox" placeholder="sampt"></asp:TextBox>
-                <asp:Label ID="m_lbl_duoi_mail" runat="server" Text="@Topica.edu.vn" CssClass="cssLabel"></asp:Label>
-                 &nbsp&nbsp
-                <asp:Button ID="m_cmd_gui_mail" runat="server" Text="Gửi mail xin duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_mail_Click" />
-            </td>
-            <td align="right">
-                <asp:Button ID="m_cmd_xuat_Excel" runat="server" Text="Xuất Excel" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" />
+                <asp:Label ID="Label3" runat="server" Text="Nhập mail TD: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
+                <asp:TextBox ID="m_txt_nhap_mail_main" runat="server" CssClass="cssTextBox" placeholder="sampt"></asp:TextBox>
+                <asp:Label ID="Label5" runat="server" Text="@Topica.edu.vn" CssClass="cssLabel"></asp:Label>
+                &nbsp&nbsp
+                <asp:Button ID="m_cmd_gui_mail_main" runat="server" Text="Gửi mail xin duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_mail_main_Click" />
             </td>
         </tr>
     </table>

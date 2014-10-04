@@ -200,7 +200,7 @@
                                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                       <asp:Label ID="Label3" runat="Server" Text="Tỉ lệ vượt:" CssClass="cssManField"></asp:Label>
                                         &nbsp&nbsp
-                                    <asp:Label ID="m_lbl_ti_le_vuot" runat="server" Text="0" CssClass="cssManField"></asp:Label>
+                                    <asp:Label ID="m_lbl_ti_le_vuot" runat="server" Text="0" CssClass="cssManField" ForeColor="Red"></asp:Label>
                                         <asp:HiddenField ID="m_hdf_id_don_hang" runat="server" />
                                     </td>
                                     <td align="left">
@@ -217,7 +217,7 @@
                                         <asp:Label ID="Label4" runat="server" Text=" Không duyệt" CssClass="cssLabel"></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:Label ID="m_lbl_nhap_mail" runat="server" Text="Nhập mail TD: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
+                                        <asp:Label ID="m_lbl_nhap_mail" runat="server" Text="Nhập mail TAD/CC: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
                                         <asp:TextBox ID="m_txt_nhap_mail" runat="server" CssClass="cssTextBox" placeholder="sampt"></asp:TextBox>
                                         <asp:Label ID="m_lbl_duoi_mail" runat="server" Text="@Topica.edu.vn" CssClass="cssLabel"></asp:Label>
                                         &nbsp&nbsp

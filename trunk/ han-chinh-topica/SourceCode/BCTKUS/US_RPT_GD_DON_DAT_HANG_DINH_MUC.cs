@@ -192,7 +192,7 @@ public class US_RPT_GD_DON_DAT_HANG_DINH_MUC : US_Object
 	}
 #endregion
 
-    public void FillDataset(DS_RPT_GD_DON_DAT_HANG_DINH_MUC v_ds_don_hang, decimal ip_v_id_phong_ban)
+    public void FillDS_don_hang_dinh_muc(DS_RPT_GD_DON_DAT_HANG_DINH_MUC v_ds_don_hang, decimal ip_v_id_phong_ban)
     {
         CStoredProc v_store_proc = new CStoredProc("pr_DON_DAT_HANG_DINH_MUC");
         v_store_proc.addDecimalInputParam("@ID_TRUNG_TAM ", ip_v_id_phong_ban);
