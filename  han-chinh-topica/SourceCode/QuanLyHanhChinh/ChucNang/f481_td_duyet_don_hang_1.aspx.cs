@@ -47,10 +47,8 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     }
     #endregion
 
-    #region Events
 
-    #endregion
-
+    #region Private Method
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -184,6 +182,33 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
         mtv_detail.SetActiveView(View_detail);
         m_pnl_detail_grv.Visible = ip_visible;
     }
+    private bool check_td_duyet_don_hang()
+    {
+
+        DS_GD_DON_DAT_HANG v_ds_gd_don_dat_hang = new DS_GD_DON_DAT_HANG();
+        US_GD_DON_DAT_HANG v_us_gd_don_dat_hang = new US_GD_DON_DAT_HANG();
+        DateTime m_dat_cuoi_thang = DateTime.Now.AddMonths(1).AddDays(-1);
+        v_us_gd_don_dat_hang.load_ddh_xin_td_duyet(v_ds_gd_don_dat_hang, CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value), m_dat_cuoi_thang);
+        if (v_ds_gd_don_dat_hang.GD_DON_DAT_HANG.Rows.Count > 0)
+            return true;
+        else
+            return false;
+    }
+    private bool check_cc_duyet_don_hang()
+    {
+
+        DS_GD_DON_DAT_HANG v_ds_gd_don_dat_hang = new DS_GD_DON_DAT_HANG();
+        US_GD_DON_DAT_HANG v_us_gd_don_dat_hang = new US_GD_DON_DAT_HANG();
+        DateTime m_dat_cuoi_thang = DateTime.Now.AddMonths(1).AddDays(-1);
+        v_us_gd_don_dat_hang.load_ddh_xin_cc_duyet(v_ds_gd_don_dat_hang, CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value), m_dat_cuoi_thang);
+        if (v_ds_gd_don_dat_hang.GD_DON_DAT_HANG.Rows.Count > 0)
+            return true;
+        else
+            return false;
+    }
+    #endregion
+
+    #region Event
     protected void m_grv_don_hang_nhap_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         try
@@ -331,6 +356,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                 {
                     if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7]) <= 120)
                     {
+                        if (check_td_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng đang chờ duyệt. Vui lòng chờ TAD duyệt", true); return; };
                         m_lbl_nhap_mail.Text = "Nhập mail TAD: ";
                         string v_str_noi_dung = "Kính gửi phòng TAD,"
                                           + "\n"
@@ -345,6 +371,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                     }
                     else
                     {
+                        if (check_cc_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng đang chờ duyệt. Vui lòng chờ CC duyệt", true); return; };
                         m_lbl_nhap_mail.Text = "Nhập mail CC: ";
                         string v_str_noi_dung = "Kính gửi CC,"
                                           + "\n"
@@ -356,11 +383,12 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                         v_us.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET;
                         v_us.Update();
                         thong_bao("Đã gửi mail thành công cho CC", true);
-                    
+
                     }
                 }
                 if (CIPConvert.ToDecimal(m_hdf_form_mode.Value) == CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET)
                 {
+                    if (check_cc_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng đang chờ duyệt. Vui lòng chờ CC duyệt", true); return; };
                     m_lbl_nhap_mail.Text = "Nhập mail CC: ";
                     string v_str_noi_dung = "Kính gửi CC,"
                                       + "\n"
@@ -397,4 +425,5 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    #endregion
 }

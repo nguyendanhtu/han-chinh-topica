@@ -575,6 +575,18 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         }
         return true;
     }
+    private bool check_duyet_don_hang()
+    {
+
+        DS_GD_DON_DAT_HANG v_ds_gd_don_dat_hang = new DS_GD_DON_DAT_HANG();
+        US_GD_DON_DAT_HANG v_us_gd_don_dat_hang = new US_GD_DON_DAT_HANG();
+        DateTime m_dat_cuoi_thang =  DateTime.Now.AddMonths(1).AddDays(-1);
+        v_us_gd_don_dat_hang.load_ddh_xin_td_duyet(v_ds_gd_don_dat_hang, CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value), m_dat_cuoi_thang);
+        if (v_ds_gd_don_dat_hang.GD_DON_DAT_HANG.Rows.Count > 0)
+            return true;
+        else
+            return false;
+    }
     #endregion
 
     #region Events
@@ -822,6 +834,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     {
         try
         {
+            if (check_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng đang chờ duyệt. Vui lòng chờ TD duyệt", true); return; };
             string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
             //string v_mail = m_txt_nhap_mail.Text + "@gmail.com";
             US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
@@ -857,6 +870,7 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     {
         try
         {
+            if (check_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng đang chờ duyệt. Vui lòng chờ TD duyệt", true); return; };
             string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
             //string v_mail = m_txt_nhap_mail_main.Text + "@gmail.com";
             US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
