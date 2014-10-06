@@ -62,7 +62,6 @@ public partial class ChucNang_f570_tra_cuu_don_dat_hang : System.Web.UI.Page
         m_grv_detail.DataBind();
         string v_str_thong_tin = "Danh sách Có " + v_ds.V_GD_DON_DAT_HANG_DETAIL.Rows.Count + " mặt hàng";
         m_lbl_grv_detail.Text = v_str_thong_tin;
-        m_lbl_ten_detail.Text = "Chi tiết hóa đơn đặt hàng";
         view_detail_grv(true);
     }
     private void load_title()
@@ -149,7 +148,13 @@ public partial class ChucNang_f570_tra_cuu_don_dat_hang : System.Web.UI.Page
                     if (e.CommandArgument.Equals("")) return;
                     decimal v_dc_id_don_hang = CIPConvert.ToDecimal(e.CommandArgument);
                     m_hdf_id_don_hang_detail.Value = CIPConvert.ToDecimal(e.CommandArgument).ToString();
-                    load_data_2_grid_detail(v_dc_id_don_hang);
+                    US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
+                    DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
+                    v_us.FillDataset(v_ds, "where id=" + v_dc_id_don_hang);
+                    string v_str_ma_hd = v_ds.Tables[0].Rows[0]["MA"].ToString();
+                    m_lbl_pop_tong_tien.Text = CIPConvert.ToStr(v_ds.Tables[0].Rows[0]["GIA_TRI_DA_VAT"], "#,###") + "  (VNĐ)";
+                    m_lbl_ten_detail.Text = "Chi tiết mã phiếu :" + v_str_ma_hd;
+                    load_data_2_grid_detail(v_dc_id_don_hang);       
                     break;
 
 
