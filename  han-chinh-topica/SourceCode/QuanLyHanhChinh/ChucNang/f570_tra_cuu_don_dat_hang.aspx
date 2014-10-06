@@ -75,6 +75,7 @@
             <td>
                 <asp:HiddenField ID="m_hdf_id_don_hang" runat="server" />
             </td>
+           
         </tr>
         <tr>
             <td colspan="4">
@@ -148,6 +149,10 @@
                                             <asp:Label ID="m_lbl_ten_detail" runat="server" CssClass="cssPageTitle" Font-Size="Large"
                                                 BackColor="White"></asp:Label>
                                                 <asp:HiddenField ID="m_hdf_id_don_hang_detail" runat="server"></asp:HiddenField>
+                                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                            <asp:Label ID="m_lbl_pop_tong_tien_tl" runat="server" Text="Tổng tiền (đã VAT):" CssClass="cssManField" Font-Bold="true" BackColor="White"></asp:Label>
+                                            &nbsp&nbsp
+                                            <asp:Label ID="m_lbl_pop_tong_tien" runat="server" Text="---------" CssClass="cssManField" ForeColor="Red" Font-Bold="true" BackColor="White"></asp:Label>
                                         </td>
                                         <td align="right" style="width: 20%">
                                             <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="45px"
