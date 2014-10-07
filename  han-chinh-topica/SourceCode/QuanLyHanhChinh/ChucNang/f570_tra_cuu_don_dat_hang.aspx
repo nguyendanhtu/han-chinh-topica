@@ -120,11 +120,11 @@
                             ItemStyle-Width="7%">
                             <ItemStyle HorizontalAlign="Left" Width="7%" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="GIA_TRI_CHUA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ CHƯA VAT (VNĐ)"
+                        <asp:BoundField DataField="GIA_TRI_CHUA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="TỔNG TIỀN CHƯA VAT (VNĐ)"
                             ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                             <ItemStyle HorizontalAlign="Right" Width="7%" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="GIA_TRI_DA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ GỒM VAT (VNĐ)"
+                        <asp:BoundField DataField="GIA_TRI_DA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="TỔNG TIỀN GỒM VAT (VNĐ)"
                             ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                             <ItemStyle HorizontalAlign="Right" Width="7%" />
                         </asp:BoundField>
