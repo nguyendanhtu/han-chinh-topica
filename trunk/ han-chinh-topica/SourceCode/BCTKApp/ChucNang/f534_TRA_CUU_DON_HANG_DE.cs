@@ -89,6 +89,7 @@ namespace BCTKApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f534_TRA_CUU_DON_HANG_DE));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
@@ -102,7 +103,6 @@ namespace BCTKApp
             this.m_lbl_ten_trung_tam = new System.Windows.Forms.Label();
             this.m_lbl_trung_tam = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
-            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_don_hang_de)).BeginInit();
             this.panel1.SuspendLayout();
@@ -148,6 +148,21 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(752, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(102, 28);
+            this.m_cmd_xuat_excel.TabIndex = 15;
+            this.m_cmd_xuat_excel.Text = "Xuất &Excel";
             // 
             // m_cmd_insert
             // 
@@ -238,7 +253,7 @@ namespace BCTKApp
             // 
             this.m_lbl_ma_hd.AutoSize = true;
             this.m_lbl_ma_hd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ma_hd.Location = new System.Drawing.Point(384, 74);
+            this.m_lbl_ma_hd.Location = new System.Drawing.Point(366, 77);
             this.m_lbl_ma_hd.Name = "m_lbl_ma_hd";
             this.m_lbl_ma_hd.Size = new System.Drawing.Size(68, 16);
             this.m_lbl_ma_hd.TabIndex = 34;
@@ -248,7 +263,7 @@ namespace BCTKApp
             // 
             this.m_lbl_ma_hoa_don.AutoSize = true;
             this.m_lbl_ma_hoa_don.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ma_hoa_don.Location = new System.Drawing.Point(281, 74);
+            this.m_lbl_ma_hoa_don.Location = new System.Drawing.Point(263, 77);
             this.m_lbl_ma_hoa_don.Name = "m_lbl_ma_hoa_don";
             this.m_lbl_ma_hoa_don.Size = new System.Drawing.Size(88, 16);
             this.m_lbl_ma_hoa_don.TabIndex = 33;
@@ -278,7 +293,7 @@ namespace BCTKApp
             // 
             this.m_lbl_ten_trung_tam.AutoSize = true;
             this.m_lbl_ten_trung_tam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ten_trung_tam.Location = new System.Drawing.Point(384, 44);
+            this.m_lbl_ten_trung_tam.Location = new System.Drawing.Point(366, 47);
             this.m_lbl_ten_trung_tam.Name = "m_lbl_ten_trung_tam";
             this.m_lbl_ten_trung_tam.Size = new System.Drawing.Size(68, 16);
             this.m_lbl_ten_trung_tam.TabIndex = 30;
@@ -288,7 +303,7 @@ namespace BCTKApp
             // 
             this.m_lbl_trung_tam.AutoSize = true;
             this.m_lbl_trung_tam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_trung_tam.Location = new System.Drawing.Point(280, 44);
+            this.m_lbl_trung_tam.Location = new System.Drawing.Point(262, 47);
             this.m_lbl_trung_tam.Name = "m_lbl_trung_tam";
             this.m_lbl_trung_tam.Size = new System.Drawing.Size(91, 16);
             this.m_lbl_trung_tam.TabIndex = 29;
@@ -304,21 +319,6 @@ namespace BCTKApp
             this.m_lbl_tieu_de.TabIndex = 28;
             this.m_lbl_tieu_de.Text = "CHI TIẾT ĐƠN ĐẶT HÀNG";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 19;
-            this.m_cmd_xuat_excel.ImageList = this.ImageList;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(102, 28);
-            this.m_cmd_xuat_excel.TabIndex = 15;
-            this.m_cmd_xuat_excel.Text = "Xuất &Excel";
             // 
             // f534_TRA_CUU_DON_HANG_DE
             // 
