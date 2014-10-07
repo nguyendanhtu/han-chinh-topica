@@ -193,5 +193,14 @@ public class US_V_GD_DE_XUAT_VPP : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDatasetSearch(DS_V_GD_DE_XUAT_VPP ip_ds, DateTime ip_dat_thang, decimal ip_dc_id_phap_nhan, decimal ip_dc_id_trung_tam)
+    {
+        CStoredProc v_store_proc = new CStoredProc("pr_V_GD_DE_XUAT_VPP_Search");
+        v_store_proc.addDatetimeInputParam("@THANG", ip_dat_thang);
+        v_store_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_dc_id_trung_tam);
+        v_store_proc.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_id_phap_nhan);     
+        v_store_proc.fillDataSetByCommand(this, ip_ds);
+    }
+}
 }
