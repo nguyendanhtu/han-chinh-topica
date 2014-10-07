@@ -478,6 +478,9 @@
     <Compile Include="DanhMuc\f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE.Designer.cs">
       <DependentUpon>f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f478_Nhap_mail.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DanhMuc\f489_V_DM_PHONG_BAN_PHAP_NHAN_DE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -785,6 +788,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE.resx">
       <DependentUpon>f448_DM_V_GD_PHONG_BAN_DINH_MUC_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f478_Nhap_mail.resx">
+      <DependentUpon>f478_Nhap_mail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f489_V_DM_PHONG_BAN_PHAP_NHAN_DE.resx">
       <DependentUpon>f489_V_DM_PHONG_BAN_PHAP_NHAN_DE.cs</DependentUpon>
