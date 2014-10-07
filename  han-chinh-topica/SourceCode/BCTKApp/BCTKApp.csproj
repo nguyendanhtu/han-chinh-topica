@@ -547,6 +547,9 @@
     <Compile Include="DanhMuc\f529_DM_NHA_CC_DE.Designer.cs">
       <DependentUpon>f529_DM_NHA_CC_DE.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f565_V_GD_DE_XUAT_VPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DanhMuc\F603_cap_nhat_danh_sach_vpp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -836,6 +839,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f541_V_DM_CO_SO_DINH_MUC_DE.resx">
       <DependentUpon>f541_V_DM_CO_SO_DINH_MUC_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f565_V_GD_DE_XUAT_VPP.resx">
+      <DependentUpon>f565_V_GD_DE_XUAT_VPP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F603_cap_nhat_danh_sach_vpp.resx">
       <DependentUpon>F603_cap_nhat_danh_sach_vpp.cs</DependentUpon>

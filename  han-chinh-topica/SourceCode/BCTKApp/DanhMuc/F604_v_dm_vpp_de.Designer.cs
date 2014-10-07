@@ -238,7 +238,7 @@
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_lbl_tieu_de);
             this.Name = "F604_v_dm_vpp_de";
-            this.Text = "F604_v_dm_vpp_de";
+            this.Text = "F604- Chi tiết văn phòng phẩm";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
