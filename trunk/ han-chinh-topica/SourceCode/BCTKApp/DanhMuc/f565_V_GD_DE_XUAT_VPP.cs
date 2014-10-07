@@ -96,6 +96,7 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_de_xuat = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_dtp_thang = new BCTKApp.TCDatetime();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
@@ -103,7 +104,6 @@ namespace BCTKApp
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_lbl_thang = new System.Windows.Forms.Label();
-            this.m_dtp_thang = new BCTKApp.TCDatetime();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_de_xuat)).BeginInit();
             this.panel1.SuspendLayout();
@@ -251,6 +251,16 @@ namespace BCTKApp
             this.panel1.Size = new System.Drawing.Size(713, 126);
             this.panel1.TabIndex = 23;
             // 
+            // m_dtp_thang
+            // 
+            this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
+            this.m_dtp_thang.Location = new System.Drawing.Point(198, 44);
+            this.m_dtp_thang.Mask = "00/0000";
+            this.m_dtp_thang.Name = "m_dtp_thang";
+            this.m_dtp_thang.Size = new System.Drawing.Size(81, 20);
+            this.m_dtp_thang.TabIndex = 53;
+            this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
+            // 
             // m_cbo_phap_nhan
             // 
             this.m_cbo_phap_nhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -322,16 +332,6 @@ namespace BCTKApp
             this.m_lbl_thang.TabIndex = 2;
             this.m_lbl_thang.Text = "Tháng";
             // 
-            // m_dtp_thang
-            // 
-            this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
-            this.m_dtp_thang.Location = new System.Drawing.Point(198, 44);
-            this.m_dtp_thang.Mask = "00/0000";
-            this.m_dtp_thang.Name = "m_dtp_thang";
-            this.m_dtp_thang.Size = new System.Drawing.Size(81, 20);
-            this.m_dtp_thang.TabIndex = 53;
-            this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
-            // 
             // f565_V_GD_DE_XUAT_VPP
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -340,7 +340,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_grv_de_xuat);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f565_V_GD_DE_XUAT_VPP";
-            this.Text = "f565_V_GD_DE_XUAT_VPP";
+            this.Text = "F565-Đề xuất văn phòng phẩm";
             this.Load += new System.EventHandler(this.f565_V_GD_DE_XUAT_VPP_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_de_xuat)).EndInit();
@@ -465,7 +465,14 @@ namespace BCTKApp
 			i_us.DataRow2Me(v_dr);
 		}
 
-	
+        private void dm_grid2us_object(US_GD_DE_XUAT_VPP i_us
+                , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_grv_de_xuat.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 		private void us_object2grid(US_V_GD_DE_XUAT_VPP i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_grv_de_xuat.Rows[i_grid_row].UserData;
@@ -474,18 +481,19 @@ namespace BCTKApp
 		}
 
 
-		private void insert_v_gd_de_xuat_vpp(){			
-		//	f565_V_GD_DE_XUAT_VPP_DE v_fDE = new  f565_V_GD_DE_XUAT_VPP_DE();								
-		//	v_fDE.display();
+		private void insert_v_gd_de_xuat_vpp(){
+            F566_V_GD_DE_XUAT_VPP_DE v_fDE = new F566_V_GD_DE_XUAT_VPP_DE();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
-		private void update_v_gd_de_xuat_vpp(){			
+		private void update_v_gd_de_xuat_vpp()
+        {			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_de_xuat)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_de_xuat, m_grv_de_xuat.Row)) return;			
 			grid2us_object(m_us, m_grv_de_xuat.Row);
-		//	f565_V_GD_DE_XUAT_VPP_DE v_fDE = new f565_V_GD_DE_XUAT_VPP_DE();
-		//	v_fDE.display(m_us);
+            F566_V_GD_DE_XUAT_VPP_DE v_fDE = new F566_V_GD_DE_XUAT_VPP_DE();
+            v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
@@ -493,8 +501,8 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_de_xuat)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_de_xuat, m_grv_de_xuat.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_GD_DE_XUAT_VPP v_us = new US_V_GD_DE_XUAT_VPP();
-			grid2us_object(v_us, m_grv_de_xuat.Row);
+			US_GD_DE_XUAT_VPP v_us = new US_GD_DE_XUAT_VPP();
+			dm_grid2us_object(v_us, m_grv_de_xuat.Row);
 			try {			
 				v_us.BeginTransaction();    											
 				v_us.Delete();                      								
@@ -522,68 +530,130 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-		}
+            m_cmd_search.Click += m_cmd_search_Click;
+            m_cbo_phap_nhan.SelectedIndexChanged += m_cbo_phap_nhan_SelectedIndexChanged;
+            m_grv_de_xuat.DoubleClick += m_grv_de_xuat_DoubleClick;
+        }
+
+
 		#endregion
 
 //
 		//
 		//		EVENT HANLDERS
 		//
-		//
-		private void f565_V_GD_DE_XUAT_VPP_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        //
+        #region Event
+        private void f565_V_GD_DE_XUAT_VPP_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_gd_de_xuat_vpp();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_gd_de_xuat_vpp();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_gd_de_xuat_vpp();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_gd_de_xuat_vpp();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_gd_de_xuat_vpp();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_v_gd_de_xuat_vpp();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_v_gd_de_xuat_vpp();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                view_v_gd_de_xuat_vpp();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cbo_phap_nhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_cbo_trung_tam();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_grv_de_xuat_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_gd_de_xuat_vpp();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion
+        
 
 	}
 }
