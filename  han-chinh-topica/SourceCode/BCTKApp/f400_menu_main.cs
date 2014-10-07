@@ -10,6 +10,7 @@ using BCTKApp.ChucNang;
 using BCTKApp.HeThong;
 using BCTKApp.DanhMuc;
 using BCTKApp.CongVan;
+using IP.Core.IPSystemAdmin;
 
 namespace BCTKApp
 {
@@ -31,6 +32,13 @@ namespace BCTKApp
             set_define_event();
             //m_rib_bar_qldm_thong_ke.Visible = true;
             //m_cmd_bc_chi_phi_theo_phap_nhan.Visible = false;
+            if (CAppContext_201.getCurrentUser() == "vanthu")
+            {
+                m_rib_tab_quan_ly_dinh_muc.Visible = false;
+                m_rib_tab_van_thu.Visible = true;
+                m_rib_tab_CPN.Visible = false;
+                m_rib_tab_VPP.Visible = false;
+            }
         }
 
         private void set_define_event()
@@ -82,6 +90,13 @@ namespace BCTKApp
             //string ngay = "01-02-2014";
             //DateTime v_dat = new DateTime();
             //v_dat = CIPConvert.ToDatetime(ngay);
+            if (CAppContext_201.getCurrentUser() == "vanthu")
+            {
+                m_rib_tab_quan_ly_dinh_muc.Visible = false;
+                m_rib_tab_van_thu.Visible = true;
+                m_rib_tab_CPN.Visible = false;
+                m_rib_tab_VPP.Visible = false;
+            }
         }
         #endregion
         #region Event

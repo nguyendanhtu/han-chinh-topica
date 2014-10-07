@@ -37,10 +37,10 @@ namespace BCTKApp
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private Label m_lbl_title;
-        private RadioButton m_rdb_van_ban_di;
-        private RadioButton m_rdb_van_ban_den_khong_luu;
+        private RadioButton m_rdb_van_ban_den;
+        private RadioButton m_rdb_van_ban_di_khong_luu;
         private GroupBox groupBox1;
-        private RadioButton m_rdb_van_ban_den_luu;
+        private RadioButton m_rdb_van_ban_di_luu;
         private TextBox m_txt_tu_khoa;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private Label label1;
@@ -98,11 +98,11 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_title = new System.Windows.Forms.Label();
-            this.m_rdb_van_ban_di = new System.Windows.Forms.RadioButton();
-            this.m_rdb_van_ban_den_khong_luu = new System.Windows.Forms.RadioButton();
+            this.m_rdb_van_ban_den = new System.Windows.Forms.RadioButton();
+            this.m_rdb_van_ban_di_khong_luu = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_rdb_tat_ca = new System.Windows.Forms.RadioButton();
-            this.m_rdb_van_ban_den_luu = new System.Windows.Forms.RadioButton();
+            this.m_rdb_van_ban_di_luu = new System.Windows.Forms.RadioButton();
             this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -209,34 +209,34 @@ namespace BCTKApp
             this.m_lbl_title.Text = "TRA CỨU VÀ BAN HÀNH VĂN BẢN";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // m_rdb_van_ban_di
+            // m_rdb_van_ban_den
             // 
-            this.m_rdb_van_ban_di.AutoSize = true;
-            this.m_rdb_van_ban_di.ForeColor = System.Drawing.Color.Blue;
-            this.m_rdb_van_ban_di.Location = new System.Drawing.Point(81, 19);
-            this.m_rdb_van_ban_di.Name = "m_rdb_van_ban_di";
-            this.m_rdb_van_ban_di.Size = new System.Drawing.Size(77, 18);
-            this.m_rdb_van_ban_di.TabIndex = 1;
-            this.m_rdb_van_ban_di.Text = "Văn bản đi";
-            this.m_rdb_van_ban_di.UseVisualStyleBackColor = true;
+            this.m_rdb_van_ban_den.AutoSize = true;
+            this.m_rdb_van_ban_den.ForeColor = System.Drawing.Color.Blue;
+            this.m_rdb_van_ban_den.Location = new System.Drawing.Point(81, 19);
+            this.m_rdb_van_ban_den.Name = "m_rdb_van_ban_den";
+            this.m_rdb_van_ban_den.Size = new System.Drawing.Size(87, 18);
+            this.m_rdb_van_ban_den.TabIndex = 1;
+            this.m_rdb_van_ban_den.Text = "Văn bản đến";
+            this.m_rdb_van_ban_den.UseVisualStyleBackColor = true;
             // 
-            // m_rdb_van_ban_den_khong_luu
+            // m_rdb_van_ban_di_khong_luu
             // 
-            this.m_rdb_van_ban_den_khong_luu.AutoSize = true;
-            this.m_rdb_van_ban_den_khong_luu.ForeColor = System.Drawing.Color.Blue;
-            this.m_rdb_van_ban_den_khong_luu.Location = new System.Drawing.Point(173, 19);
-            this.m_rdb_van_ban_den_khong_luu.Name = "m_rdb_van_ban_den_khong_luu";
-            this.m_rdb_van_ban_den_khong_luu.Size = new System.Drawing.Size(137, 18);
-            this.m_rdb_van_ban_den_khong_luu.TabIndex = 2;
-            this.m_rdb_van_ban_den_khong_luu.Text = "Văn bản đến không lưu";
-            this.m_rdb_van_ban_den_khong_luu.UseVisualStyleBackColor = true;
+            this.m_rdb_van_ban_di_khong_luu.AutoSize = true;
+            this.m_rdb_van_ban_di_khong_luu.ForeColor = System.Drawing.Color.Blue;
+            this.m_rdb_van_ban_di_khong_luu.Location = new System.Drawing.Point(173, 19);
+            this.m_rdb_van_ban_di_khong_luu.Name = "m_rdb_van_ban_di_khong_luu";
+            this.m_rdb_van_ban_di_khong_luu.Size = new System.Drawing.Size(127, 18);
+            this.m_rdb_van_ban_di_khong_luu.TabIndex = 2;
+            this.m_rdb_van_ban_di_khong_luu.Text = "Văn bản đi không lưu";
+            this.m_rdb_van_ban_di_khong_luu.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.m_rdb_tat_ca);
-            this.groupBox1.Controls.Add(this.m_rdb_van_ban_di);
-            this.groupBox1.Controls.Add(this.m_rdb_van_ban_den_luu);
-            this.groupBox1.Controls.Add(this.m_rdb_van_ban_den_khong_luu);
+            this.groupBox1.Controls.Add(this.m_rdb_van_ban_den);
+            this.groupBox1.Controls.Add(this.m_rdb_van_ban_di_luu);
+            this.groupBox1.Controls.Add(this.m_rdb_van_ban_di_khong_luu);
             this.groupBox1.ForeColor = System.Drawing.Color.Maroon;
             this.groupBox1.Location = new System.Drawing.Point(393, 58);
             this.groupBox1.Name = "groupBox1";
@@ -258,16 +258,16 @@ namespace BCTKApp
             this.m_rdb_tat_ca.Text = "Tất cả";
             this.m_rdb_tat_ca.UseVisualStyleBackColor = true;
             // 
-            // m_rdb_van_ban_den_luu
+            // m_rdb_van_ban_di_luu
             // 
-            this.m_rdb_van_ban_den_luu.AutoSize = true;
-            this.m_rdb_van_ban_den_luu.ForeColor = System.Drawing.Color.Blue;
-            this.m_rdb_van_ban_den_luu.Location = new System.Drawing.Point(326, 19);
-            this.m_rdb_van_ban_den_luu.Name = "m_rdb_van_ban_den_luu";
-            this.m_rdb_van_ban_den_luu.Size = new System.Drawing.Size(105, 18);
-            this.m_rdb_van_ban_den_luu.TabIndex = 3;
-            this.m_rdb_van_ban_den_luu.Text = "Văn bản đến lưu";
-            this.m_rdb_van_ban_den_luu.UseVisualStyleBackColor = true;
+            this.m_rdb_van_ban_di_luu.AutoSize = true;
+            this.m_rdb_van_ban_di_luu.ForeColor = System.Drawing.Color.Blue;
+            this.m_rdb_van_ban_di_luu.Location = new System.Drawing.Point(326, 19);
+            this.m_rdb_van_ban_di_luu.Name = "m_rdb_van_ban_di_luu";
+            this.m_rdb_van_ban_di_luu.Size = new System.Drawing.Size(95, 18);
+            this.m_rdb_van_ban_di_luu.TabIndex = 3;
+            this.m_rdb_van_ban_di_luu.Text = "Văn bản đi lưu";
+            this.m_rdb_van_ban_di_luu.UseVisualStyleBackColor = true;
             // 
             // m_txt_tu_khoa
             // 
@@ -445,7 +445,11 @@ namespace BCTKApp
             TEN_LOAI_VA_TRICH_YEU_ND = 6
                 ,
             NGUOI_NHAN__BAN_LUU_MPB = 10
-                , NOI_NGUOI_NHAN_MPB = 9
+                ,
+            NOI_NGUOI_NHAN_MPB = 9
+                ,
+            SO_MAIL_DA_BAN_HANH = 16
+                , SO_MAIL_DA_XAC_NHAN = 17
 
         }
         #endregion
@@ -522,22 +526,26 @@ namespace BCTKApp
         {
             m_ds = new DS_V_GD_VAN_THU_ALL();
             decimal v_dc_id_loai_cong_van = -1;
-            if (m_rdb_van_ban_den_khong_luu.Checked == true) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DEN_KHONG_LUU;
-            else if (m_rdb_van_ban_den_luu.Checked == true) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DEN_LUU;
-            else if (m_rdb_van_ban_di.Checked == true) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DI;
+            if  (m_rdb_van_ban_di_luu.Checked == true) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DI;
+            else if (m_rdb_van_ban_den.Checked == true) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DEN;
             m_us.Search(m_ds, CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue), v_dc_id_loai_cong_van, CIPConvert.ToDatetime(m_txt_tu_ngay.Text, "dd/MM/yyyy"), CIPConvert.ToDatetime(m_txt_den_ngay.Text, "dd/MM/yyyy"), m_txt_tu_khoa.Text.Trim());
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            //for (int i = m_fg.Row; i < m_fg.Rows.Count; i++)
-            //{
-            //    for (int j = m_fg.Col; j < m_fg.Cols.Count; j++)
-            //    {
-            //        if (m_fg.Cols[j].Visible==true)
-            //        CGridUtils.WrapWordInOneCell(m_fg, i,j);
-            //    }
-            //}
+
             m_fg.Redraw = true;
             format_grid();
+            for (int i = m_fg.Row; i < m_fg.Rows.Count; i++)
+            {
+                US_V_GD_VAN_THU_ALL v_us=new US_V_GD_VAN_THU_ALL();
+               grid2us_object(v_us,i);
+                if (v_us.strDANH_SACH_EMAIL_BAN_HANH == "") m_fg.Rows[i][(int)e_col_Number.SO_MAIL_DA_BAN_HANH] = "0";
+                else
+                m_fg.Rows[i][(int)e_col_Number.SO_MAIL_DA_BAN_HANH] = v_us.strDANH_SACH_EMAIL_BAN_HANH. Split(';').Length;
+
+                if (v_us.strDANH_SACH_EMAIL_XAC_NHAN == "") m_fg.Rows[i][(int)e_col_Number.SO_MAIL_DA_XAC_NHAN] = "0";
+                else
+                    m_fg.Rows[i][(int)e_col_Number.SO_MAIL_DA_XAC_NHAN] = v_us.strDANH_SACH_EMAIL_XAC_NHAN.Split(';').Length;
+            }
         }
         private void grid2us_object(US_V_GD_VAN_THU_ALL i_us
             , int i_grid_row)
@@ -570,17 +578,17 @@ namespace BCTKApp
             if (m_us.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DI)
             {
                 F651_CAP_NHAT_CONG_VAN_DI v_frm = new F651_CAP_NHAT_CONG_VAN_DI();
+                v_frm.display_for_update(m_us.dcID, F651_CAP_NHAT_CONG_VAN_DI.eFormMode.DI_LUU);
+            }
+            //else if (m_us.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DI_KHONG_LUU)
+            //{
+            //    F651_CAP_NHAT_CONG_VAN_DI v_frm = new F651_CAP_NHAT_CONG_VAN_DI();
+            //    v_frm.display_for_update(m_us.dcID, F651_CAP_NHAT_CONG_VAN_DI.eFormMode.DI_KHONG_LUU);
+            //}
+            else if (m_us.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DEN)
+            {
+                F652_CAP_NHAT_CONG_VAN_DEN v_frm = new F652_CAP_NHAT_CONG_VAN_DEN();
                 v_frm.display_for_update(m_us.dcID);
-            }
-            else if (m_us.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DEN_KHONG_LUU)
-            {
-                F652_CAP_NHAT_CONG_VAN_DEN v_frm = new F652_CAP_NHAT_CONG_VAN_DEN();
-                v_frm.display(F652_CAP_NHAT_CONG_VAN_DEN.eFormMode.DEN_KHONG_LUU);
-            }
-            else if (m_us.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DEN_LUU)
-            {
-                F652_CAP_NHAT_CONG_VAN_DEN v_frm = new F652_CAP_NHAT_CONG_VAN_DEN();
-                v_frm.display(F652_CAP_NHAT_CONG_VAN_DEN.eFormMode.DEN_LUU);
             }
             load_data_2_grid();
         }
@@ -617,13 +625,10 @@ namespace BCTKApp
             m_cmd_search.Click += m_cmd_search_Click;
             m_cmd_ban_hanh.Click += m_cmd_ban_hanh_Click;
             m_rdb_tat_ca.CheckedChanged += m_rdb_tat_ca_CheckedChanged;
-            m_rdb_van_ban_den_khong_luu.CheckedChanged += m_rdb_van_ban_den_khong_luu_CheckedChanged;
-            m_rdb_van_ban_den_luu.CheckedChanged += m_rdb_van_ban_den_luu_CheckedChanged;
-            m_rdb_van_ban_di.CheckedChanged += m_rdb_van_ban_di_CheckedChanged;
+            m_rdb_van_ban_di_khong_luu.CheckedChanged += m_rdb_van_ban_den_khong_luu_CheckedChanged;
+            m_rdb_van_ban_di_luu.CheckedChanged += m_rdb_van_ban_den_luu_CheckedChanged;
+            m_rdb_van_ban_den.CheckedChanged += m_rdb_van_ban_di_CheckedChanged;
         }
-
-        
-
         void m_rdb_van_ban_di_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -635,8 +640,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-        
 
         private void format_grid()
         {
@@ -654,8 +657,8 @@ namespace BCTKApp
             m_fg.Cols[(int)e_col_Number.SO_VA_KY_HIEU].Visible = false;
             m_fg.Cols[(int)e_col_Number.TEN_LOAI_VA_TRICH_YEU_ND].Visible = false;
             m_fg.Cols[(int)e_col_Number.TRANG_THAI_ML].Visible = false;
-           
-            if (m_rdb_van_ban_den_khong_luu.Checked == true)
+
+            if (m_rdb_van_ban_den.Checked == true)
             {
                 m_fg.Cols[(int)e_col_Number.NGAY_LAP].Visible = true;
                 m_fg.Cols[(int)e_col_Number.NGAY_LAP].Caption = "Ngày đến";
@@ -668,20 +671,7 @@ namespace BCTKApp
                 m_fg.Cols[(int)e_col_Number.TRANG_THAI_ML].Visible = true;
                 m_fg.Cols[(int)e_col_Number.NGUOI_LAP].Visible = true;
             }
-            else if (m_rdb_van_ban_den_luu.Checked == true)
-            {
-                m_fg.Cols[(int)e_col_Number.NGAY_LAP].Visible = true;
-                m_fg.Cols[(int)e_col_Number.NGAY_LAP].Caption = "Ngày đến";
-                m_fg.Cols[(int)e_col_Number.SO_CV_DEN].Visible = true;
-                m_fg.Cols[(int)e_col_Number.SO_VA_KY_HIEU].Visible = true;
-                m_fg.Cols[(int)e_col_Number.TEN_LOAI_VA_TRICH_YEU_ND].Visible = true;
-                m_fg.Cols[(int)e_col_Number.NGAY_THANG_TREN_CONG_VAN].Visible = true;
-                m_fg.Cols[(int)e_col_Number.NOI_NHAN].Visible = true;
-                m_fg.Cols[(int)e_col_Number.GHI_CHU].Visible = true;
-                m_fg.Cols[(int)e_col_Number.TRANG_THAI_ML].Visible = true;
-                m_fg.Cols[(int)e_col_Number.NGUOI_LAP].Visible = true;
-            }
-            else if (m_rdb_van_ban_di.Checked == true)
+            else if (m_rdb_van_ban_di_khong_luu.Checked == true | m_rdb_van_ban_di_luu.Checked == true)
             {
                 m_fg.Cols[(int)e_col_Number.MA_PHAP_NHAN].Visible = true;
                 m_fg.Cols[(int)e_col_Number.NGAY_LAP].Caption = "Ngày nhập";
@@ -715,8 +705,6 @@ namespace BCTKApp
 
 
         }
-
-
         #endregion
 
         #region Events

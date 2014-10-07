@@ -54,13 +54,15 @@ namespace BCTKApp.CongVan
             this.m_lbl_nguoi_nhap = new System.Windows.Forms.Label();
             this.m_lbl_file_upload = new System.Windows.Forms.Label();
             this.m_cbx_ban_luu = new System.Windows.Forms.ComboBox();
-            this.m_tcd_ngay_nhap = new BCTKApp.TCDatetime();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_txt_nguoi_ky = new System.Windows.Forms.TextBox();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_tcd_ngay_nhap = new BCTKApp.TCDatetime();
+            this.m_tcd_ngay_tren_cv = new BCTKApp.TCDatetime();
+            this.m_lbl_ngay_tren_cv = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,11 +139,11 @@ namespace BCTKApp.CongVan
             // 
             this.m_lbl_noi_nhan.AutoSize = true;
             this.m_lbl_noi_nhan.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_noi_nhan.Location = new System.Drawing.Point(57, 190);
+            this.m_lbl_noi_nhan.Location = new System.Drawing.Point(44, 190);
             this.m_lbl_noi_nhan.Name = "m_lbl_noi_nhan";
-            this.m_lbl_noi_nhan.Size = new System.Drawing.Size(50, 14);
+            this.m_lbl_noi_nhan.Size = new System.Drawing.Size(63, 14);
             this.m_lbl_noi_nhan.TabIndex = 7;
-            this.m_lbl_noi_nhan.Text = "Nơi nhận";
+            this.m_lbl_noi_nhan.Text = "Người nhận";
             // 
             // m_txt_ghi_chu
             // 
@@ -229,11 +231,11 @@ namespace BCTKApp.CongVan
             // 
             this.m_lbl_nguoi_nhan.AutoSize = true;
             this.m_lbl_nguoi_nhan.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_nguoi_nhan.Location = new System.Drawing.Point(468, 190);
+            this.m_lbl_nguoi_nhan.Location = new System.Drawing.Point(548, 190);
             this.m_lbl_nguoi_nhan.Name = "m_lbl_nguoi_nhan";
-            this.m_lbl_nguoi_nhan.Size = new System.Drawing.Size(123, 14);
+            this.m_lbl_nguoi_nhan.Size = new System.Drawing.Size(41, 14);
             this.m_lbl_nguoi_nhan.TabIndex = 8;
-            this.m_lbl_nguoi_nhan.Text = "Người nhận văn bản lưu";
+            this.m_lbl_nguoi_nhan.Text = "Nơi lưu";
             // 
             // m_lbl_nguoi_nhap
             // 
@@ -264,16 +266,6 @@ namespace BCTKApp.CongVan
             this.m_cbx_ban_luu.Size = new System.Drawing.Size(145, 22);
             this.m_cbx_ban_luu.TabIndex = 7;
             // 
-            // m_tcd_ngay_nhap
-            // 
-            this.m_tcd_ngay_nhap.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
-            this.m_tcd_ngay_nhap.Location = new System.Drawing.Point(595, 60);
-            this.m_tcd_ngay_nhap.Mask = "00/00/0000";
-            this.m_tcd_ngay_nhap.Name = "m_tcd_ngay_nhap";
-            this.m_tcd_ngay_nhap.Size = new System.Drawing.Size(145, 20);
-            this.m_tcd_ngay_nhap.TabIndex = 1;
-            this.m_tcd_ngay_nhap.ValidatingType = typeof(System.DateTime);
-            // 
             // m_lbl_title
             // 
             this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
@@ -281,7 +273,7 @@ namespace BCTKApp.CongVan
             this.m_lbl_title.ForeColor = System.Drawing.Color.Blue;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(759, 59);
+            this.m_lbl_title.Size = new System.Drawing.Size(881, 59);
             this.m_lbl_title.TabIndex = 22;
             this.m_lbl_title.Text = "QUẢN LÝ DANH SÁCH VĂN BẢN ĐI";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -329,7 +321,7 @@ namespace BCTKApp.CongVan
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(565, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(687, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 31);
             this.m_cmd_save.TabIndex = 0;
@@ -344,7 +336,7 @@ namespace BCTKApp.CongVan
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(653, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(775, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(102, 31);
             this.m_cmd_exit.TabIndex = 1;
@@ -358,14 +350,46 @@ namespace BCTKApp.CongVan
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 361);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(759, 39);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(881, 39);
             this.m_pnl_out_place_dm.TabIndex = 12;
+            // 
+            // m_tcd_ngay_nhap
+            // 
+            this.m_tcd_ngay_nhap.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+            this.m_tcd_ngay_nhap.Location = new System.Drawing.Point(595, 60);
+            this.m_tcd_ngay_nhap.Mask = "00/00/0000";
+            this.m_tcd_ngay_nhap.Name = "m_tcd_ngay_nhap";
+            this.m_tcd_ngay_nhap.Size = new System.Drawing.Size(145, 20);
+            this.m_tcd_ngay_nhap.TabIndex = 1;
+            this.m_tcd_ngay_nhap.ValidatingType = typeof(System.DateTime);
+            // 
+            // m_tcd_ngay_tren_cv
+            // 
+            this.m_tcd_ngay_tren_cv.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+            this.m_tcd_ngay_tren_cv.Location = new System.Drawing.Point(725, 25);
+            this.m_tcd_ngay_tren_cv.Mask = "00/00/0000";
+            this.m_tcd_ngay_tren_cv.Name = "m_tcd_ngay_tren_cv";
+            this.m_tcd_ngay_tren_cv.Size = new System.Drawing.Size(145, 20);
+            this.m_tcd_ngay_tren_cv.TabIndex = 23;
+            this.m_tcd_ngay_tren_cv.ValidatingType = typeof(System.DateTime);
+            // 
+            // m_lbl_ngay_tren_cv
+            // 
+            this.m_lbl_ngay_tren_cv.AutoSize = true;
+            this.m_lbl_ngay_tren_cv.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_ngay_tren_cv.Location = new System.Drawing.Point(645, 25);
+            this.m_lbl_ngay_tren_cv.Name = "m_lbl_ngay_tren_cv";
+            this.m_lbl_ngay_tren_cv.Size = new System.Drawing.Size(68, 28);
+            this.m_lbl_ngay_tren_cv.TabIndex = 24;
+            this.m_lbl_ngay_tren_cv.Text = "Ngày tháng \r\ntrên văn bản";
             // 
             // F651_CAP_NHAT_CONG_VAN_DI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 400);
+            this.ClientSize = new System.Drawing.Size(881, 400);
+            this.Controls.Add(this.m_tcd_ngay_tren_cv);
+            this.Controls.Add(this.m_lbl_ngay_tren_cv);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_nguoi_ky);
             this.Controls.Add(this.m_lbl_title);
@@ -433,5 +457,7 @@ namespace BCTKApp.CongVan
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private TCDatetime m_tcd_ngay_tren_cv;
+        private System.Windows.Forms.Label m_lbl_ngay_tren_cv;
     }
 }

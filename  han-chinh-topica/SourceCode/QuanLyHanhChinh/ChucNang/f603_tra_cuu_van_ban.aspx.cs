@@ -46,23 +46,21 @@ public partial class ChucNang_f603_tra_cuu_van_ban : System.Web.UI.Page
         m_grv_dm_bill.Columns[9].Visible = false;
         if (m_cbo_loai_cong_van.SelectedValue.Equals("")) return;
         decimal v_dc_id_loai_cong_van = CIPConvert.ToDecimal(m_cbo_loai_cong_van.SelectedValue);
-        if (v_dc_id_loai_cong_van == ID_LOAI_VAN_THU.CONG_VAN_DEN_KHONG_LUU)
+        //if (v_dc_id_loai_cong_van == ID_LOAI_VAN_THU.CONG_VAN_DI_KHONG_LUU)
+        //{
+        //    m_grv_dm_bill.Columns[2].Visible = false;
+        //    m_grv_dm_bill.Columns[3].Visible = false;
+        //    m_grv_dm_bill.Columns[4].Visible = true;
+        //    m_grv_dm_bill.Columns[5].Visible = true;
+        //    m_grv_dm_bill.Columns[6].Visible = true;
+        //    m_grv_dm_bill.Columns[7].Visible = true;
+        //    m_grv_dm_bill.Columns[8].Visible = true;
+        //}
+        //else
+        if (v_dc_id_loai_cong_van == ID_LOAI_VAN_THU.CONG_VAN_DI)
         {
             m_grv_dm_bill.Columns[2].Visible = false;
-            m_grv_dm_bill.Columns[3].Visible = true;
-            m_grv_dm_bill.Columns[3].Visible = true;
-            m_grv_dm_bill.Columns[4].Visible = true;
-            m_grv_dm_bill.Columns[5].Visible = true;
-            m_grv_dm_bill.Columns[6].Visible = true;
-            m_grv_dm_bill.Columns[7].Visible = true;
-            m_grv_dm_bill.Columns[8].Visible = false;
-            m_grv_dm_bill.Columns[8].Visible = true;
-        }
-        else if (v_dc_id_loai_cong_van == ID_LOAI_VAN_THU.CONG_VAN_DEN_LUU)
-        {
-            m_grv_dm_bill.Columns[2].Visible = false;
-            m_grv_dm_bill.Columns[3].Visible = true;
-            m_grv_dm_bill.Columns[3].Visible = true;
+            m_grv_dm_bill.Columns[3].Visible = false;
             m_grv_dm_bill.Columns[4].Visible = true;
             m_grv_dm_bill.Columns[5].Visible = true;
             m_grv_dm_bill.Columns[6].Visible = true;
@@ -70,14 +68,13 @@ public partial class ChucNang_f603_tra_cuu_van_ban : System.Web.UI.Page
             m_grv_dm_bill.Columns[8].Visible = false;
             m_grv_dm_bill.Columns[9].Visible = true;
         }
-        else if (v_dc_id_loai_cong_van == ID_LOAI_VAN_THU.CONG_VAN_DI)
+        else if (v_dc_id_loai_cong_van == ID_LOAI_VAN_THU.CONG_VAN_DEN)
         {
             m_grv_dm_bill.Columns[2].Visible = true;
-            m_grv_dm_bill.Columns[3].Visible = false;
-            m_grv_dm_bill.Columns[3].Visible = false;
+            m_grv_dm_bill.Columns[3].Visible = true;
             m_grv_dm_bill.Columns[4].Visible = true;
             m_grv_dm_bill.Columns[5].Visible = true;
-            m_grv_dm_bill.Columns[6].Visible = true;
+            m_grv_dm_bill.Columns[6].Visible = false;
             m_grv_dm_bill.Columns[7].Visible = false;
             m_grv_dm_bill.Columns[8].Visible = true;
             m_grv_dm_bill.Columns[9].Visible = true;

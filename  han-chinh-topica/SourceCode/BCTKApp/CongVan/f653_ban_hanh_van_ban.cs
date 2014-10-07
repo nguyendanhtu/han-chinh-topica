@@ -28,9 +28,12 @@ namespace BCTKApp.CongVan
         {
             m_dc_id_van_thu = ip_dc_id_van_ban;
             US_V_GD_VAN_THU_ALL v_us = new US_V_GD_VAN_THU_ALL(ip_dc_id_van_ban);
-            m_lbl_loai_van_ban.Text = v_us.strLOAI_CONG_BAN_ML;
+            US_CM_DM_TU_DIEN v_us_loai_van_ban = new US_CM_DM_TU_DIEN(v_us.dcID_LOAI_CONG_VAN);
+            m_lbl_loai_van_ban.Text = v_us_loai_van_ban.strTEN;
             m_lbl_so_va_ky_hieu.Text = v_us.strSO_CV_DEN + " " + v_us.strSO_VA_KY_HIEU;
             m_lbl_ten_loai_va_trich_yeu_noi_dung.Text = v_us.strTEN_LOAI_VA_TRICH_YEU_ND;
+            m_lbl_danh_sach_mail_da_ban_hanh.Text = v_us.strDANH_SACH_EMAIL_BAN_HANH;
+            m_lbl_danh_sach_mail_da_xac_nhan.Text = v_us.strDANH_SACH_EMAIL_XAC_NHAN;
             this.ShowDialog();
         }
 
@@ -53,6 +56,8 @@ namespace BCTKApp.CongVan
             m_lbl_loai_van_ban.Text = "";
             m_lbl_so_va_ky_hieu.Text = "";
             m_lbl_ten_loai_va_trich_yeu_noi_dung.Text = "";
+            m_lbl_danh_sach_mail_da_xac_nhan.Text = "";
+            m_lbl_danh_sach_mail_da_ban_hanh.Text = "";
             m_txt_email.Text = "";
             m_txt_email.Focus();
         }
@@ -102,9 +107,17 @@ namespace BCTKApp.CongVan
                 string v_str_mess="";
                 for (int i = 0; i < v_arr_email.Length; i++)
                 {
-                    HelpUtils.SendEmailWithHtmlContent("dmt.20102514@gmail.com","[QuanLyVanThu] Ban hanh van ban"
-                        ,get_html_contain(ConfigurationSettings.AppSettings["WEB_URL"]+ "/ChucNang/f604_xac_nhan_cong_van.aspx?mail=dmt.20102514&id_cong_van="+v_us.dcID,v_us.strTEN_LOAI_VA_TRICH_YEU_ND));
-                    if (!v_us.strDANH_SACH_EMAIL_BAN_HANH.Contains(v_arr_email[i]))
+                    if (!v_arr_email[i].Trim().Equals(""))
+                    {
+                        string v_str_send_to = v_arr_email[i];
+                        if (!v_str_send_to.Contains("@gmail.com")) v_str_send_to += "@topica.edu.vn";
+                        
+                        HelpUtils.SendEmailWithHtmlContent(v_str_send_to, "[QuanLyVanThu] Ban hanh van ban"
+                        , get_html_contain(ConfigurationSettings.AppSettings["WEB_URL"] + "/ChucNang/f604_xac_nhan_cong_van.aspx?mail=dmt.20102514&id_cong_van=" + v_us.dcID, v_us.strTEN_LOAI_VA_TRICH_YEU_ND)
+                        ,v_us.strLINK_SCAN);
+                    }
+                    
+                    if (!v_us.strDANH_SACH_EMAIL_BAN_HANH.Contains(v_arr_email[i])&& !v_arr_email[i].Trim().Equals(""))
                     {
                         v_us.strDANH_SACH_EMAIL_BAN_HANH += ";" + v_arr_email[i];
                     }

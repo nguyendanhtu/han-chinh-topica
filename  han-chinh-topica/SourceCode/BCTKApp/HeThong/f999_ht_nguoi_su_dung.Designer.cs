@@ -37,8 +37,13 @@
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_title = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -144,25 +149,71 @@
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 0);
+            this.m_fg.Location = new System.Drawing.Point(0, 128);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(891, 436);
+            this.m_fg.Size = new System.Drawing.Size(891, 308);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 0;
+            // 
+            // m_txt_tim_kiem
+            // 
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(175, 78);
+            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(424, 20);
+            this.m_txt_tim_kiem.TabIndex = 22;
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(616, 74);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 23;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            // 
+            // m_lbl_title
+            // 
+            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_lbl_title.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_title.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_title.Name = "m_lbl_title";
+            this.m_lbl_title.Size = new System.Drawing.Size(891, 54);
+            this.m_lbl_title.TabIndex = 24;
+            this.m_lbl_title.Text = "QUẢN LÝ NGƯỜI DÙNG";
+            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_lbl_title);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(891, 54);
+            this.panel1.TabIndex = 25;
             // 
             // f999_ht_nguoi_su_dung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 436);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.m_cmd_search);
+            this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_fg);
             this.Name = "f999_ht_nguoi_su_dung";
             this.Text = "F999 - Quản lý người sử dụng";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,5 +226,9 @@
         internal SIS.Controls.Button.SiSButton m_cmd_delete;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        private System.Windows.Forms.TextBox m_txt_tim_kiem;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private System.Windows.Forms.Label m_lbl_title;
+        private System.Windows.Forms.Panel panel1;
     }
 }

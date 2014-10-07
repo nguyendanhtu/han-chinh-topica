@@ -19,9 +19,8 @@ namespace BCTKUS
     }
     public class ID_LOAI_VAN_THU
     {
-        public const decimal CONG_VAN_DEN_KHONG_LUU = 221;
-        public const decimal CONG_VAN_DI = 222;
-        public const decimal CONG_VAN_DEN_LUU = 220;
+        public const decimal CONG_VAN_DEN = 222;
+        public const decimal CONG_VAN_DI = 220;
     }
     public class ID_TRANG_THAI_VAN_THU
     {

@@ -63,7 +63,7 @@ public partial class ChucNang_f604_xac_nhan_cong_van : System.Web.UI.Page
             }
             if (v_b_xac_nhan_yn)
             {
-                if (v_us_gd_van_thu.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DI)
+                if (v_us_gd_van_thu.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DEN)
                 {
                     v_us_gd_van_thu.dcID_TRANG_THAI = ID_TRANG_THAI_VAN_THU.NGUOI_NHAN_DA_NHAN_DUOC;
                 }

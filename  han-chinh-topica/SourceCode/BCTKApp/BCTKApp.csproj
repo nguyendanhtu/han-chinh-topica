@@ -932,7 +932,9 @@
   <ItemGroup>
     <Service Include="{CF845C55-C321-4742-B673-E6212D061ED9}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="PdfScan\" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>

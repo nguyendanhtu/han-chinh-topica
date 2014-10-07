@@ -22,6 +22,11 @@ namespace BCTKApp
             get;
             set;
         }
+        private string Allow_Null
+        {
+            get;
+            set;
+        }
         public TCDatetime(DinhDang ip_dinhdang)
         {
             InitializeComponent();
@@ -39,11 +44,68 @@ namespace BCTKApp
                     this.Mask = "00/00/0000";
                     break;
             }
+            this.Allow_Null = "N";
+        }
+        public TCDatetime(DinhDang ip_dinhdang,string ip_str_allow_null)
+        {
+            InitializeComponent();
+            this.ValidatingType = typeof(DateTime);
+            switch (ip_dinhdang)
+            {
+                case DinhDang.dd_MM_yyyy:
+                    this.Mask = "00/00/0000";
+                    break;
+
+                case DinhDang.MM_yyyy:
+                    this.Mask = "00/0000";
+                    break;
+                default:
+                    this.Mask = "00/00/0000";
+                    break;
+            }
+            if (ip_str_allow_null.ToUpper().Trim() == "N")
+                this.Allow_Null = "N";
+            else this.Allow_Null = "Y";
+        }
+        public DateTime? getValue()
+        {
+            if (this.Allow_Null == "Y") return null;
+            DateTime v_dat = new DateTime();
+            bool v_b_result = false;
+            switch (Format)
+            {
+                case DinhDang.dd_MM_yyyy:
+                    v_b_result = DateTime.TryParseExact(this.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.AssumeLocal, out v_dat);
+                    break;
+                case DinhDang.MM_yyyy:
+                    v_b_result = DateTime.TryParseExact(this.Text, "MM/yyyy", null, System.Globalization.DateTimeStyles.AssumeLocal, out v_dat);
+                    break;
+            }
+            return v_dat;
         }
         public enum DinhDang
         {
             dd_MM_yyyy,
             MM_yyyy
+        }
+        public enum AL
+        {
+            Y,
+            N
+        }
+        public AL AllowNull
+        {
+            get
+            {
+                if (this.Allow_Null == "N") return AL.N;
+                else return AL.Y;
+            }
+            set
+            {
+                if (value.ToString().Trim().ToUpper() == "N")
+                    this.Allow_Null = "N";
+                else this.Allow_Null = "Y";
+            }
         }
         public DinhDang Format
         {
@@ -77,6 +139,7 @@ namespace BCTKApp
         {
             try
             {
+                if (this.Allow_Null == "Y") return;
                 DateTime v_dat = new DateTime();
                 bool v_b_result =false;
                 switch (Format)
