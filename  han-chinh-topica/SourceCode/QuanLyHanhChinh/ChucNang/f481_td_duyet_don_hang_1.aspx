@@ -22,20 +22,20 @@
     <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/jquery.ui.datepicker-vi.js")%>'></script>
     <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/jquery.dataTables.sorting.js")%>'></script>
 </head>
-<body style="background-color:white">
+<body style="background-color: white">
     <%--    <asp:UpdatePanel ID="UpdatePanelAll" runat="server">
         <ContentTemplate>--%>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
         <div style="text-align: center">
-            <br/>
+            <br />
             <asp:Label ID="m_lbl_header" runat="server" Text="DUYỆT ĐƠN ĐẶT HÀNG" CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
             <br />
             <asp:Label ID="m_lbl_title" runat="server" CssClass="cssManField" Font-Bold="true" Font-Size="Medium" ForeColor="GrayText"></asp:Label>
         </div>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <div style="text-align: center">
             <asp:Label ID="m_lbl_chon_thang" runat="server" Text="Chọn tháng"></asp:Label>
             &nbsp               
@@ -99,7 +99,7 @@
                                 </ItemTemplate>
                                 <ItemStyle />
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center"  Visible="false">
+                            <asp:TemplateField HeaderText="Duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center" Visible="false">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="m_lbt_duyet" runat="server" CommandName="Duyet" ToolTip="Duyệt đơn hàng" CommandArgument='<%#Eval("ID") %>'
                                         OnClientClick="return confirm ('Bạn có thực sự muốn duyệt đơn hàng này?')" Visible='<%# is_td_duyet(Eval("ID").ToString(),Eval( "phan_tram_vuot").ToString()) %>'>
@@ -108,7 +108,7 @@
                                 </ItemTemplate>
                                 <ItemStyle />
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Xin TAD duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center"  Visible="false">
+                            <asp:TemplateField HeaderText="Xin TAD duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center" Visible="false">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="m_lbt_xin_tad_duyet" runat="server" CommandName="XinTADDuyet" ToolTip="Xin TAD duyệt" CommandArgument='<%#Eval("ID") %>'
                                         OnClientClick="return confirm ('Bạn có thực sự muốn gửi cho TAD duyệt đơn hàng này?')" Visible='<%# is_tad_duyet(Eval("ID").ToString(),Eval( "phan_tram_vuot").ToString()) %>'>
@@ -117,7 +117,7 @@
                                 </ItemTemplate>
                                 <ItemStyle />
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Xin CC duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center"  Visible="false">
+                            <asp:TemplateField HeaderText="Xin CC duyệt" ItemStyle-Width="2%" ItemStyle-HorizontalAlign="Center" Visible="false">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="m_lbt_xin_cc_duyet" runat="server" CommandName="XinCCDuyet" ToolTip="Xin CC duyệt" CommandArgument='<%#Eval("ID") %>'
                                         OnClientClick="return confirm ('Bạn có thực sự muốn gửi cho CC duyệt đơn hàng này?')" Visible='<%# is_cc_duyet(Eval("ID").ToString(),Eval( "phan_tram_vuot").ToString()) %>'>
@@ -161,7 +161,7 @@
                                 ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:P1}">
                                 <ItemStyle HorizontalAlign="Right" Width="5%" />
                             </asp:BoundField>
-                            <asp:TemplateField HeaderText="Xem chi tiết" ItemStyle-Width="5%" ItemStyle-HorizontalAlign="Center">
+                            <asp:TemplateField HeaderText="Xem chi tiết" ItemStyle-Width="5%" ItemStyle-HorizontalAlign="Center" Visible="false">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="m_lbt_detail" runat="server" CommandName="Detail" OnClick=" m_lbt_detail_OnClick" ToolTip="Chi tiết">
                                             <img src="../Images/Button/detail.png" alt="Detail" />
@@ -177,7 +177,148 @@
                     </asp:GridView>
                 </td>
             </tr>
-
+        </table>
+        <table id="Table1" runat="server" cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
+            <tr>
+                <td><br/></td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <asp:Label ID="m_lbl_MP" runat="Server" Text="MP:" CssClass="cssManField"></asp:Label>
+                    &nbsp
+                        <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField" Font-Bold="true" ForeColor="DarkRed"></asp:Label>
+                </td>
+                <td colspan="3" align="left">
+                    <asp:Label ID="Label2" runat="Server" Text="Tổng tiền:" CssClass="cssManField"></asp:Label>
+                    &nbsp&nbsp
+                                    <asp:Label ID="m_lbl_tong_tien" runat="server" Text="0" CssClass="cssManField"></asp:Label>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                      <asp:Label ID="Label3" runat="Server" Text="Tỉ lệ vượt:" CssClass="cssManField"></asp:Label>
+                    &nbsp&nbsp
+                                    <asp:Label ID="m_lbl_ti_le_vuot" runat="server" Text="0" CssClass="cssManField" ForeColor="Red"></asp:Label>
+                    <asp:HiddenField ID="m_hdf_id_don_hang" runat="server" />
+                </td>
+                <td align="left">
+                    <asp:LinkButton ID="m_lbt_duyet" runat="server" CommandName="Duyet" BorderStyle="Groove" Text="Duyệt" ToolTip="Duyệt đơn hàng" Width="24px" CssClass="cssButton" Style="cursor: pointer"
+                        OnClick="m_lbt_duyet_OnClick" OnClientClick="return confirm ('Bạn có thực sự muốn duyệt đơn hàng này?')">
+                                            <img src="../Images/Button/check.png" width="24px" alt="Duyet" />
+                    </asp:LinkButton>
+                    <asp:Label ID="m_lbl_duyet" runat="server" Text="Duyệt" CssClass="cssLabel"></asp:Label>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp
+                                     <asp:LinkButton ID="m_lbt_khong_duyet" runat="server" CommandName="KhongDuyet" BorderStyle="Groove" Text=" Không Duyệt" ToolTip="KHông duyệt đơn hàng" Width="24px" CssClass="cssButton" Style="cursor: pointer"
+                                         OnClick="m_lbt_khong_duyet_OnClick" OnClientClick="return confirm ('Bạn có thực sự muốn huỷ duyệt đơn hàng này?')">
+                                            <img src="../Images/Button/deletered.png" width="24px" alt="Duyet" />
+                                     </asp:LinkButton>
+                    <asp:Label ID="Label4" runat="server" Text=" Không duyệt" CssClass="cssLabel"></asp:Label>
+                </td>
+                <td>&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <asp:Label ID="m_lbl_nhap_mail" runat="server" Text="Nhập mail TAD/CC: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
+                    <asp:TextBox ID="m_txt_nhap_mail" runat="server" CssClass="cssTextBox" placeholder="sampt"></asp:TextBox>
+                    <asp:Label ID="m_lbl_duoi_mail" runat="server" Text="@Topica.edu.vn" CssClass="cssLabel"></asp:Label>
+                    &nbsp&nbsp
+                <asp:Button ID="m_cmd_gui_mail" runat="server" Text="Gửi mail xin duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_mail_Click" />
+                </td>
+                <td id="Td1" runat="server" align="right" colspan="1">
+                    <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="45px" Height="30px" ToolTip="Thoát" runat="server" CssClass="ui-buttonset"
+                        OnClick="m_cmd_detail_exit_Click" Visible="false" />
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <asp:HiddenField ID="m_hdf_don_gia" runat="server" />
+                    <asp:HiddenField ID="m_hdf_ID_GD_DON_DAT_HANG_DE" runat="server" />
+                </td>
+            </tr>
+                 <tr>
+                <td><br/></td>
+            </tr>
+        </table>
+        <div class="cssLoadContent2" style="width: 100%; max-height: 55%; min-height: 55%; margin: 0 auto 0 auto; overflow-y: scroll;">
+            <table id="Table2" runat="server" border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td class="cssPageTitleBG" colspan="6">
+                        <asp:Label ID="m_lbl_phieu_de_nghi_va_ban_giao_VPP" runat="server" CssClass="cssPageTitle"
+                            Text="Chi tiết đơn hàng xin duyệt"></asp:Label>
+                        <asp:Label ID="m_lbl_thong_tim_grv_don_hang_de" runat="server" CssClass="cssPageTitle"></asp:Label>
+                        &nbsp; &nbsp;
+                <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssPageTitle" ForeColor="Green" Font-Italic="true"></asp:Label>
+                        <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <asp:GridView ID="m_grv_don_hang_de" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
+                            Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
+                            EmptyDataText="Không có mặt hàng!" EmptyDataRowStyle-BorderColor="#810913"
+                            CellPadding="8">
+                            <PagerSettings Position="TopAndBottom" />
+                            <AlternatingRowStyle BackColor="White" />
+                            <FooterStyle CssClass="GridViewFooterStyle" />
+                            <RowStyle CssClass="GridViewRowStyle" />
+                            <SelectedRowStyle CssClass="GridViewSelectedRowStyle" />
+                            <PagerStyle CssClass="GridViewPagerStyle" />
+                            <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
+                            <HeaderStyle CssClass="GridViewHeaderStyle" />
+                            <Columns>
+                                <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
+                                            OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
+                                            <img src="../Images/Button/deletered.png" alt="Delete" />
+                                        </asp:LinkButton>
+                                    </ItemTemplate>
+                                    <ItemStyle />
+                                </asp:TemplateField>
+                                <asp:CommandField ItemStyle-Width="1%" EditText="Sửa" EditImageUrl="../Images/Button/edit.png"
+                                    ShowEditButton="true" ButtonType="Image" HeaderText="Sửa" ItemStyle-HorizontalAlign="Center"
+                                    HeaderStyle-HorizontalAlign="Center">
+                                    <HeaderStyle HorizontalAlign="Center" />
+                                    <ItemStyle HorizontalAlign="Center" Width="1%" />
+                                </asp:CommandField>
+                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <%# Container.DataItemIndex + 1 %>
+                                        <headerstyle width="15px" />
+                                    </ItemTemplate>
+                                    <ItemStyle HorizontalAlign="Center" Width="2%" />
+                                </asp:TemplateField>
+                                <asp:BoundField DataField="TEN_VPP" ItemStyle-HorizontalAlign="Left" HeaderText="TÊN VPP"
+                                    ItemStyle-Width="7%">
+                                    <ItemStyle HorizontalAlign="Left" Width="12%" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="SO_LUONG" ItemStyle-HorizontalAlign="Right" HeaderText="SỐ LƯỢNG"
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                    <ItemStyle HorizontalAlign="right" Width="5%" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="DON_VI_TINH" ItemStyle-HorizontalAlign="Left" HeaderText="ĐƠN VỊ TÍNH"
+                                    ItemStyle-Width="7%">
+                                    <ItemStyle HorizontalAlign="Right" Width="5%" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="DON_GIA_CHUA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ CHƯA VAT (VNĐ)"
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="DON_GIA_GOM_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ GỒM VAT (VNĐ)"
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="TONG_TIEN" ItemStyle-HorizontalAlign="Right" HeaderText="TỔNG TIỀN ĐÃ VAT (VNĐ)"
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
+                                </asp:BoundField>
+                                <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
+                                    Visible="False">
+                                    <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                                </asp:CommandField>
+                            </Columns>
+                        </asp:GridView>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table cellspacing="0" cellpadding="2" style="width: 100%; margin-top: 10px; position: fixed" class="cssTable" border="0">
+            <tr>
+            </tr>
         </table>
 
         <%--        </ContentTemplate>
@@ -187,136 +328,6 @@
                 <asp:MultiView ID="mtv_detail" runat="server">
                     <asp:View ID="View_detail" runat="server">
                         <div class="cssLoadContent2" style="width: 100%; max-height: 85%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll;">
-                            <table runat="server" cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
-                                <tr>
-                                    <td align="center">
-                                        <asp:Label ID="m_lbl_MP" runat="Server" Text="MP:" CssClass="cssManField"></asp:Label>
-                                        &nbsp
-                        <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField" Font-Bold="true" ForeColor="DarkRed"></asp:Label>
-                                    </td>
-                                    <td colspan="3" align="left">
-                                        <asp:Label ID="Label2" runat="Server" Text="Tổng tiền:" CssClass="cssManField"></asp:Label>
-                                        &nbsp&nbsp
-                                    <asp:Label ID="m_lbl_tong_tien" runat="server" Text="0" CssClass="cssManField"></asp:Label>
-                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                      <asp:Label ID="Label3" runat="Server" Text="Tỉ lệ vượt:" CssClass="cssManField"></asp:Label>
-                                        &nbsp&nbsp
-                                    <asp:Label ID="m_lbl_ti_le_vuot" runat="server" Text="0" CssClass="cssManField" ForeColor="Red"></asp:Label>
-                                        <asp:HiddenField ID="m_hdf_id_don_hang" runat="server" />
-                                    </td>
-                                    <td align="left">
-                                        <asp:LinkButton ID="m_lbt_duyet" runat="server" CommandName="Duyet" BorderStyle="Groove" Text="Duyệt" ToolTip="Duyệt đơn hàng" Width="24px"
-                                            OnClick="m_lbt_duyet_OnClick">
-                                            <img src="../Images/Button/check.png" width="24px" alt="Duyet" />
-                                        </asp:LinkButton>
-                                        <asp:Label ID="m_lbl_duyet" runat="server" Text="Duyệt" CssClass="cssLabel"></asp:Label>
-                                        &nbsp&nbsp&nbsp&nbsp&nbsp
-                                     <asp:LinkButton ID="m_lbt_khong_duyet" runat="server" CommandName="KhongDuyet" BorderStyle="Groove" Text=" Không Duyệt" ToolTip="KHông duyệt đơn hàng" Width="24px"
-                                         OnClick="m_lbt_khong_duyet_OnClick" OnClientClick="return confirm ('Bạn có thực sự muốn huỷ duyệt đơn hàng này?')">
-                                            <img src="../Images/Button/deletered.png" width="24px" alt="Duyet" />
-                                     </asp:LinkButton>
-                                        <asp:Label ID="Label4" runat="server" Text=" Không duyệt" CssClass="cssLabel"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="m_lbl_nhap_mail" runat="server" Text="Nhập mail TAD/CC: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
-                                        <asp:TextBox ID="m_txt_nhap_mail" runat="server" CssClass="cssTextBox" placeholder="sampt"></asp:TextBox>
-                                        <asp:Label ID="m_lbl_duoi_mail" runat="server" Text="@Topica.edu.vn" CssClass="cssLabel"></asp:Label>
-                                        &nbsp&nbsp
-                <asp:Button ID="m_cmd_gui_mail" runat="server" Text="Gửi mail xin duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_mail_Click" />
-                                    </td>
-                                    <td runat="server" align="right" colspan="1">
-                                        <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="45px" Height="30px" ToolTip="Thoát" runat="server"
-                                            OnClick="m_cmd_detail_exit_Click" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="left">
-                                        <asp:HiddenField ID="m_hdf_don_gia" runat="server" />
-                                        <asp:HiddenField ID="m_hdf_ID_GD_DON_DAT_HANG_DE" runat="server" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <table runat="server" border="0" cellspacing="0" cellpadding="0" width="100%">
-                                <tr>
-                                    <td class="cssPageTitleBG" colspan="6">
-                                        <asp:Label ID="m_lbl_phieu_de_nghi_va_ban_giao_VPP" runat="server" CssClass="cssPageTitle"
-                                            Text="Danh sách VPP đề nghị cấp"></asp:Label>
-                                        <asp:Label ID="m_lbl_thong_tim_grv_don_hang_de" runat="server" CssClass="cssPageTitle"></asp:Label>
-                                        &nbsp; &nbsp;
-                <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssPageTitle" ForeColor="Green" Font-Italic="true" BackColor="White"></asp:Label>
-                                        <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4">
-                                        <asp:GridView ID="m_grv_don_hang_de" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
-                                            Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
-                                            EmptyDataText="Không có mặt hàng!" EmptyDataRowStyle-BorderColor="#810913"
-                                            CellPadding="8">
-                                            <PagerSettings Position="TopAndBottom" />
-                                            <AlternatingRowStyle BackColor="White" />
-                                            <FooterStyle CssClass="GridViewFooterStyle" />
-                                            <RowStyle CssClass="GridViewRowStyle" />
-                                            <SelectedRowStyle CssClass="GridViewSelectedRowStyle" />
-                                            <PagerStyle CssClass="GridViewPagerStyle" />
-                                            <AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
-                                            <HeaderStyle CssClass="GridViewHeaderStyle" />
-                                            <Columns>
-                                                <asp:TemplateField HeaderText="Xóa" ItemStyle-Width="1%" ItemStyle-HorizontalAlign="Center">
-                                                    <ItemTemplate>
-                                                        <asp:LinkButton ID="m_lbt_delete" runat="server" CommandName="Delete" ToolTip="Xóa"
-                                                            OnClientClick="return confirm ('Bạn có thực sự muốn xóa bản ghi này?')">
-                                            <img src="../Images/Button/deletered.png" alt="Delete" />
-                                                        </asp:LinkButton>
-                                                    </ItemTemplate>
-                                                    <ItemStyle />
-                                                </asp:TemplateField>
-                                                <asp:CommandField ItemStyle-Width="1%" EditText="Sửa" EditImageUrl="../Images/Button/edit.png"
-                                                    ShowEditButton="true" ButtonType="Image" HeaderText="Sửa" ItemStyle-HorizontalAlign="Center"
-                                                    HeaderStyle-HorizontalAlign="Center">
-                                                    <HeaderStyle HorizontalAlign="Center" />
-                                                    <ItemStyle HorizontalAlign="Center" Width="1%" />
-                                                </asp:CommandField>
-                                                <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
-                                                    <ItemTemplate>
-                                                        <%# Container.DataItemIndex + 1 %>
-                                                        <headerstyle width="15px" />
-                                                    </ItemTemplate>
-                                                    <ItemStyle HorizontalAlign="Center" Width="2%" />
-                                                </asp:TemplateField>
-                                                <asp:BoundField DataField="TEN_VPP" ItemStyle-HorizontalAlign="Left" HeaderText="TÊN VPP"
-                                                    ItemStyle-Width="7%">
-                                                    <ItemStyle HorizontalAlign="Left" Width="12%" />
-                                                </asp:BoundField>
-                                                <asp:BoundField DataField="SO_LUONG" ItemStyle-HorizontalAlign="Right" HeaderText="SỐ LƯỢNG"
-                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
-                                                    <ItemStyle HorizontalAlign="right" Width="5%" />
-                                                </asp:BoundField>
-                                                <asp:BoundField DataField="DON_VI_TINH" ItemStyle-HorizontalAlign="Left" HeaderText="ĐƠN VỊ TÍNH"
-                                                    ItemStyle-Width="7%">
-                                                    <ItemStyle HorizontalAlign="Right" Width="5%" />
-                                                </asp:BoundField>
-                                                <asp:BoundField DataField="DON_GIA_CHUA_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ CHƯA VAT (VNĐ)"
-                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
-                                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
-                                                </asp:BoundField>
-                                                <asp:BoundField DataField="DON_GIA_GOM_VAT" ItemStyle-HorizontalAlign="Right" HeaderText="ĐƠN GIÁ GỒM VAT (VNĐ)"
-                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
-                                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
-                                                </asp:BoundField>
-                                                <asp:BoundField DataField="TONG_TIEN" ItemStyle-HorizontalAlign="Right" HeaderText="TỔNG TIỀN ĐÃ VAT (VNĐ)"
-                                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
-                                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
-                                                </asp:BoundField>
-                                                <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"
-                                                    Visible="False">
-                                                    <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                                </asp:CommandField>
-                                            </Columns>
-                                        </asp:GridView>
-                                    </td>
-                                </tr>
-                            </table>
                         </div>
                     </asp:View>
                 </asp:MultiView>
