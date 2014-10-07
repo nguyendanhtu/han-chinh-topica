@@ -128,6 +128,20 @@ namespace BCTKDS.CDBNames
         public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
         public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
     }
+    public class V_HT_NGUOI_SU_DUNG
+    {
+        public const string ID = "ID";
+        public const string TEN_TRUY_CAP = "TEN_TRUY_CAP";
+        public const string TEN = "TEN";
+        public const string NGAY_TAO = "NGAY_TAO";
+        public const string NGUOI_TAO = "NGUOI_TAO";
+        public const string TRANG_THAI = "TRANG_THAI";
+        public const string ID_USER_GROUP = "ID_USER_GROUP";
+        public const string MAIL = "MAIL";
+        public const string USER_GROUP_NAME = "USER_GROUP_NAME";
+        public const string DESCRIPTION = "DESCRIPTION";
+    }
+
     public class V_BC_TINH_HINH_VPP_THEO_PHONG_BAN
     {
         public const string MA_PHONG_BAN = "MA_PHONG_BAN";

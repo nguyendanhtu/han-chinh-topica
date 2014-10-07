@@ -462,6 +462,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_HT_LOG_TRUY_CAP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_HT_NGUOI_SU_DUNG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_TONG_HOP_BILL_THEO_PHONG_BAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1227,6 +1232,17 @@
     </None>
     <None Include="DS_V_HT_LOG_TRUY_CAP.xss">
       <DependentUpon>DS_V_HT_LOG_TRUY_CAP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_HT_NGUOI_SU_DUNG.xsc">
+      <DependentUpon>DS_V_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_HT_NGUOI_SU_DUNG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_HT_NGUOI_SU_DUNG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_HT_NGUOI_SU_DUNG.xss">
+      <DependentUpon>DS_V_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
     </None>
     <None Include="DS_V_TONG_HOP_BILL_THEO_PHONG_BAN.xsc">
       <DependentUpon>DS_V_TONG_HOP_BILL_THEO_PHONG_BAN.xsd</DependentUpon>
