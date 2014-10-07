@@ -31,6 +31,7 @@
         <div style="text-align: center">
             <br />
             <asp:Label ID="m_lbl_header" runat="server" Text="DUYỆT ĐƠN ĐẶT HÀNG" CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
+            <asp:Label ID="m_lbl_trung_tam_ban" runat="server"  CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
             <br />
             <asp:Label ID="m_lbl_title" runat="server" CssClass="cssManField" Font-Bold="true" Font-Size="Medium" ForeColor="GrayText"></asp:Label>
         </div>
@@ -63,6 +64,7 @@
                     <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
                     <asp:HiddenField ID="m_hdf_form_mode" runat="server" />
                     <asp:HiddenField ID="m_hdf_ma_trung_tam" runat="server" />
+                    <asp:HiddenField ID="m_hdf_ten_trung_tam" runat="server" />
                 </td>
             </tr>
             <tr>
