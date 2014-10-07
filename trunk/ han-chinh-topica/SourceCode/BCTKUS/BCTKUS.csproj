@@ -191,6 +191,7 @@
     <Compile Include="US_V_GD_THONG_KE.cs" />
     <Compile Include="US_V_GD_VAN_THU_ALL.cs" />
     <Compile Include="US_V_HT_LOG_TRUY_CAP.cs" />
+    <Compile Include="US_V_HT_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_V_TONG_HOP_BILL_THEO_PHONG_BAN.cs" />
     <Compile Include="US_V_TONG_HOP_CHI_PHI_VPP.cs" />
     <Compile Include="US_V_TONG_HOP_CPN_THEO_PHONG_BAN.cs" />
