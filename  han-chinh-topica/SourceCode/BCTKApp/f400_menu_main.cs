@@ -72,6 +72,7 @@ namespace BCTKApp
             //m_cmd_nhap_van_ban_di.Click += m_cmd_nhap_van_ban_di_Click;
             m_cmd_tra_cuu_va_ban_hanh.Click += m_cmd_tra_cuu_va_ban_hanh_Click;
             m_cmd_nhap_mail.Click += new EventHandler(m_cmd_nhap_mail_Click);
+            m_cmd_nhap_de_xuat.Click += m_cmd_nhap_de_xuat_Click;
         }
 
         
@@ -550,6 +551,19 @@ namespace BCTKApp
             try
             {
                 f478_Nhap_mail v_frm = new f478_Nhap_mail();
+                v_frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_nhap_de_xuat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f565_V_GD_DE_XUAT_VPP v_frm = new f565_V_GD_DE_XUAT_VPP();
                 v_frm.ShowDialog();
             }
             catch (Exception v_e)
