@@ -121,6 +121,8 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
         DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
         v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
         m_lbl_title.Text = "Trung tâm - ban: " + v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
+        m_hdf_ten_trung_tam.Value = m_lbl_title.Text;
+        m_hdf_ma_trung_tam.Value = v_ds.DM_PHONG_BAN[0]["MA_PHONG_BAN"].ToString();
         // lấy mã trung tâm
         m_hdf_ma_trung_tam.Value = v_ds.DM_PHONG_BAN.Rows[0]["MA_PHONG_BAN"].ToString();
 
@@ -377,10 +379,11 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                         m_lbl_nhap_mail.Text = "Nhập mail TAD: ";
                         string v_str_noi_dung = "Kính gửi phòng TAD,"
                                           + "\n"
-                                          + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng. Xin cám ơn!"
+                                          + "Vui lòng xem xét duyệt đơn hàng cho trung tâm - ban " + m_hdf_ma_trung_tam.Value
                                           + "\n"
-                                          + "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f890_duyet_don_hang_cc_td.aspx";
-                        if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Xin TAD duyệt đơn hàng", v_str_noi_dung); }
+                                          + "Xin cám ơn!";
+                              
+                        if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail,"["+ m_hdf_ma_trung_tam.Value+"]Xin TAD duyệt đơn hàng", v_str_noi_dung); }
                         v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(v_ds.GD_DON_DAT_HANG.Rows[0]["ID"]));
                         v_us.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_TAD_DUYET;
                         v_us.Update();
@@ -395,7 +398,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                                           + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng. Xin cám ơn!"
                                           + "\n"
                                           + "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value + "&form_mode=" + CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET;
-                        if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Xin TAD duyệt đơn hàng", v_str_noi_dung); }
+                        if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "[" + m_hdf_ma_trung_tam.Value + "]Xin CC duyệt đơn hàng", v_str_noi_dung); }
                         v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(v_ds.GD_DON_DAT_HANG.Rows[0]["ID"]));
                         v_us.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET;
                         v_us.Update();
@@ -412,7 +415,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                                       + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng. Xin cám ơn!"
                                       + "\n"
                                       + "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value + "&form_mode=" + CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET;
-                    if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Xin TAD duyệt đơn hàng", v_str_noi_dung); }
+                    if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "[" + m_hdf_ma_trung_tam.Value + "]Xin CC duyệt đơn hàng", v_str_noi_dung); }
                     v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(v_ds.GD_DON_DAT_HANG.Rows[0]["ID"]));
                     v_us.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_TAD_DUYET;
                     v_us.Update();
