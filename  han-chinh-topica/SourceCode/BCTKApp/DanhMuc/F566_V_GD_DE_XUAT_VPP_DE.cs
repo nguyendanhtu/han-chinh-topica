@@ -64,7 +64,7 @@ namespace BCTKApp
         {
             US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
             DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
-            v_us.FillDataset(v_ds);
+            v_us.FillDataset(v_ds,"order by ten_phong_ban ");
             m_cbo_trung_tam.DataSource = v_ds.DM_PHONG_BAN;
             m_cbo_trung_tam.ValueMember = DM_PHONG_BAN.ID;
             m_cbo_trung_tam.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
