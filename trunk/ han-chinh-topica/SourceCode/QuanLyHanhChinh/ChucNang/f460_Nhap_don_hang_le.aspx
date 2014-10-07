@@ -70,7 +70,7 @@
                 <asp:Button ID="m_cmd_them_don_hang" runat="server" Text="Nhập đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_them_don_hang_Click" Visible="true" />
             </td>
             <td align="left">
-                <asp:Button ID="m_cmd_cap_nhat_don_hang" runat="server" Text="Cập nhật đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" Visible="false" />
+                <asp:Button ID="m_cmd_cap_nhat_don_hang"  PostBackUrl="~/ChucNang/f560_tra_cuu_dm_vpp.aspx" runat="server" Text="Danh mục VPP" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click"  Visible="true" ></asp:Button>
             </td>
             <%--          <td align="left">
                 <asp:Button ID="m_cmd_gui_td" runat="server" Text="Gửi cho TD duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_td_Click" />
@@ -187,7 +187,7 @@
         <div class="cssLoadWapper">
             <asp:MultiView ID="mtv_detail" runat="server">
                 <asp:View ID="View_detail" runat="server">
-                    <div class="cssLoadContent2" style="width: 100%; max-height: 75%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll;">
+                    <div class="cssLoadContent2" style="width: 100%; max-height: 75%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll;scrollbar-highlight-color:khaki">
                         <table cellspacing="0" cellpadding="2" style="width: 100%; position: fixed" class="cssTable" border="0">
                             <tr>
                                 <td align="center">

@@ -49,38 +49,33 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
 
 
     #region Private Method
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-        try
-        {
-            if (!IsPostBack)
-            {
-                string id_phong_ban = Request.QueryString["id_phong_ban"];
-                string form_mode = Request.QueryString["form_mode"];
-                m_hdf_id_trung_tam.Value = id_phong_ban;
-                m_hdf_form_mode.Value = form_mode;
-                set_thang_hien_tai();
-                set_inital_form_mode();
-                view_detail_grv(false);
-                thong_bao("", false);
-            }
-        }
-        catch (Exception v_e)
-        {
-            CSystemLog_301.ExceptionHandle(this, v_e);
-        }
-    }
 
     private void set_thang_hien_tai()
     {
         int this_month = DateTime.Now.Month;
         m_cbo_chon_thang.SelectedValue = this_month.ToString();
     }
-
     private void set_inital_form_mode()
     {
         load_data_to_grid();
+        load_thong_tin_chi_tiet();
+        load_data_to_grid_don_hang_de();
+    }
+    private void load_thong_tin_chi_tiet()
+    {
+        if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 120)
+        {
+            m_lbl_nhap_mail.Text = "Nhập mail TAD: ";
+        }
+        else
+            m_lbl_nhap_mail.Text = "Nhập mail CC: ";
+        m_hdf_id_don_hang.Value = CIPConvert.ToStr(m_grv_don_hang_nhap.DataKeys[0].Value);
+        m_lbl_ma_don_hang_de.Text = m_grv_don_hang_nhap.Rows[0].Cells[6].Text;
+        m_lbl_tong_tien.Text = m_grv_don_hang_nhap.Rows[0].Cells[9].Text + "  (VNĐ)";
+        if (m_grv_don_hang_nhap.Rows[0].Cells[11].Text != null)
+            m_lbl_ti_le_vuot.Text = m_grv_don_hang_nhap.Rows[0].Cells[11].Text;
+        else
+            m_lbl_ti_le_vuot.Text = "-----";
     }
     private bool check_txt_mail()
     {
@@ -209,6 +204,28 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     #endregion
 
     #region Event
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+        try
+        {
+            if (!IsPostBack)
+            {
+                string id_phong_ban = Request.QueryString["id_phong_ban"];
+                string form_mode = Request.QueryString["form_mode"];
+                m_hdf_id_trung_tam.Value = id_phong_ban;
+                m_hdf_form_mode.Value = form_mode;
+                set_thang_hien_tai();
+                set_inital_form_mode();
+                view_detail_grv(false);
+                thong_bao("", false);
+            }
+        }
+        catch (Exception v_e)
+        {
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     protected void m_grv_don_hang_nhap_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         try
@@ -401,6 +418,8 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                     v_us.Update();
                     thong_bao("Đã gửi mail thành công cho TAD", true);
                 }
+                load_data_to_grid();
+                load_data_to_grid_don_hang_de();
             }
             else
                 thong_bao("Bạn chưa nhập tên mail!", true);

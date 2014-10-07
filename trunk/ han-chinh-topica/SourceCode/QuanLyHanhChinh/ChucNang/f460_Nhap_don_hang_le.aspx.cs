@@ -42,7 +42,6 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         load_don_hang();
         load_cbo_VPP();
         load_don_vi_tinh_don_gia();
-        m_cmd_cap_nhat_don_hang.Visible = false;
         m_cmd_cap_nhat_don_hang_de.Visible = false;
         load_data_to_grid_don_hang();
         m_lbl_thong_bao.Visible = false;
@@ -653,13 +652,14 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
     {
         try
         {
-            m_lbl_thong_bao.Visible = false;
-            //m_lbl_mess.Text = "";
-            save_don_hang();
-            load_data_to_grid_don_hang();
-            m_cmd_cap_nhat_don_hang.Visible = false;
-            m_cmd_them_don_hang.Visible = true;
-            Huy_thao_tac_don_hang();
+            //m_lbl_thong_bao.Visible = false;
+            ////m_lbl_mess.Text = "";
+            //save_don_hang();
+            //load_data_to_grid_don_hang();
+            //m_cmd_cap_nhat_don_hang.Visible = false;
+            //m_cmd_them_don_hang.Visible = true;
+            //Huy_thao_tac_don_hang();
+
         }
         catch (Exception v_e)
         {
