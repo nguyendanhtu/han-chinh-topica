@@ -25,22 +25,59 @@ namespace BCTKApp.CongVan
         }
 
         #region Public Intefaces
+        public void display(eFormMode ip_e_form_mode)
+        {
+            m_e_form_mode = ip_e_form_mode;
+            switch (m_e_form_mode)
+            {
+                case eFormMode.DI_KHONG_LUU:
+                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - KHÔNG LƯU";
+                    break;
+
+                case eFormMode.DI_LUU:
+                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - LƯU";
+                    break;
+            }
+            load_data_trang_thai();
+            this.ShowDialog();
+        }
         public void display_for_insert()
         {
             m_dc_id_cong_van = 0;
             this.ShowDialog();
         }
 
-        public void display_for_update(decimal ip_dc_id_cong_van)
+        public void display_for_update(decimal ip_dc_id_cong_van, eFormMode ip_e_form_mode)
         {
             m_dc_id_cong_van = ip_dc_id_cong_van;
+            m_e_form_mode = ip_e_form_mode;
+            switch (m_e_form_mode)
+            {
+                case eFormMode.DI_KHONG_LUU:
+                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - KHÔNG LƯU";
+                    break;
+
+                case eFormMode.DI_LUU:
+                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - LƯU";
+                    break;
+            }
+            load_data_trang_thai();
             us_object_to_form(m_dc_id_cong_van);
             this.ShowDialog();
         }
         #endregion
 
+        #region Data Structures
+        public enum eFormMode
+        {
+            DI_KHONG_LUU = 0,
+            DI_LUU = 1
+        }
+        #endregion
+
         #region Members
-        Decimal m_dc_id_cong_van;
+        Decimal m_dc_id_cong_van=0;
+        private eFormMode m_e_form_mode = eFormMode.DI_KHONG_LUU;
         #endregion
 
         #region Private methods
@@ -55,6 +92,7 @@ namespace BCTKApp.CongVan
             m_cbx_phap_nhan.SelectedIndex=0;
             m_cbx_trang_thai.SelectedIndex=0;
         }
+
         private void us_object_to_form(decimal ip_dc_id_cong_van)
         {
             if (ip_dc_id_cong_van == 0)
@@ -76,10 +114,11 @@ namespace BCTKApp.CongVan
             m_tcd_ngay_nhap.Text = CIPConvert.ToStr(v_us.datNGAY_LAP, "dd/MM/yyyy");
             m_txt_ten_loai.Text = v_us.strTEN_LOAI_VA_TRICH_YEU_ND;
         }
+
         private void form_to_us_object(US_GD_VAN_THU op_us)
         {
             op_us.dcID = m_dc_id_cong_van;
-            op_us.dcID_LOAI_CONG_VAN = ID_LOAI_VAN_THU.CONG_VAN_DI;
+            op_us.dcID_LOAI_CONG_VAN = ID_LOAI_VAN_THU.CONG_VAN_DEN;
             op_us.dcID_PHAP_NHAN=CIPConvert.ToDecimal(m_cbx_phap_nhan.SelectedValue);
             op_us.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbx_trang_thai.SelectedValue);
             op_us.dcID_NOI_NGUOI_NHAN = CIPConvert.ToDecimal(m_cbx_ban_luu.SelectedValue);
@@ -90,6 +129,7 @@ namespace BCTKApp.CongVan
             op_us.strNOI_NHAN = m_txt_noi_nhan.Text;
             op_us.datNGAY_LAP = CIPConvert.ToDatetime(m_tcd_ngay_nhap.Text, "dd/MM/yyyy");
         }
+
         private bool check_data_is_ok()
         {
             bool v_b_result = true;
@@ -125,6 +165,7 @@ namespace BCTKApp.CongVan
             }
             return v_b_result;
         }
+
         private void load_form_data()
         {
             load_data_phap_nhan();
@@ -166,7 +207,9 @@ namespace BCTKApp.CongVan
             {
                 US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
                 DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-                v_us_cm_dm_tu_dien.FillDataset(v_ds_cm_dm_tu_dien, "where ma_tu_dien in ('CHO_SO_VAO_SO_DONG_DAU','DA_LUU_TAI_TAD','DA_CHUYEN_DEN_NGUOI_NHAN','NGUOI_NHAN_DA_NHAN_DUOC') order by ten_ngan");
+                if (m_e_form_mode == eFormMode.DI_KHONG_LUU)
+                    v_us_cm_dm_tu_dien.FillDataset(v_ds_cm_dm_tu_dien, "where ma_tu_dien in ('CHO_SO_VAO_SO_DONG_DAU','DA_CHUYEN_CHO_DON_VI_BAN_HANH') order by ten_ngan");
+                else v_us_cm_dm_tu_dien.FillDataset(v_ds_cm_dm_tu_dien, "where ma_tu_dien in ('CHO_SO_VAO_SO_DONG_DAU','DA_LUU_TAI_TAD','DA_CHUYEN_DEN_NGUOI_NHAN','NGUOI_NHAN_DA_NHAN_DUOC') order by ten_ngan");
 
                 m_cbx_trang_thai.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
                 m_cbx_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
@@ -177,6 +220,7 @@ namespace BCTKApp.CongVan
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
         private void set_define_events()
         {
             m_cmd_exit.Click += m_cmd_exit_Click;
@@ -184,20 +228,28 @@ namespace BCTKApp.CongVan
             m_cbx_phap_nhan.SelectedIndexChanged += m_cbx_phap_nhan_SelectedIndexChanged;
         }
 
-       
-
-
         private void load_data_nguoi_nhan_ban_luu()
         {
             try
             {
                 US_V_DM_PHONG_BAN_PHAP_NHAN v_us_dm_phong_ban = new US_V_DM_PHONG_BAN_PHAP_NHAN();
                 DS_V_DM_PHONG_BAN_PHAP_NHAN v_ds_dm_phong_ban = new DS_V_DM_PHONG_BAN_PHAP_NHAN();
-                v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban,"where id_phap_nhan="+m_cbx_phap_nhan.SelectedValue.ToString()+" order by ma_phong_ban");
-
-                m_cbx_ban_luu.DataSource = v_ds_dm_phong_ban.v_DM_PHONG_BAN_PHAP_NHAN;
                 m_cbx_ban_luu.DisplayMember = V_DM_PHONG_BAN_PHAP_NHAN.MA_PHONG_BAN;
                 m_cbx_ban_luu.ValueMember = V_DM_PHONG_BAN_PHAP_NHAN.ID_PHONG_BAN;
+
+                US_DM_PHAP_NHAN v_us_dm_phap_nhan = new US_DM_PHAP_NHAN(CIPConvert.ToDecimal(m_cbx_phap_nhan.SelectedValue));
+                if (v_us_dm_phap_nhan.strMA_PHAP_NHAN == "TPE" )
+                {
+                    v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban, "where id_phap_nhan="+m_cbx_phap_nhan.SelectedValue+" order by ma_phong_ban");//5 la id EDT
+                    m_cbx_ban_luu.DataSource = v_ds_dm_phong_ban.v_DM_PHONG_BAN_PHAP_NHAN;
+                }
+                else
+                {
+                    v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban, "where id_phap_nhan=5 order by ma_phong_ban");//5 la id EDT
+                    m_cbx_ban_luu.DataSource = v_ds_dm_phong_ban.v_DM_PHONG_BAN_PHAP_NHAN;
+                }
+                
+                
             }
             catch (Exception v_e)
             {
@@ -239,7 +291,7 @@ namespace BCTKApp.CongVan
                 if (!m_txt_file_upload.Text.Trim().Equals(""))
                     v_us_gd_van_thu.strLINK_SCAN = v_str_save_file;
                 else v_us_gd_van_thu.strLINK_SCAN = "";
-                v_us_gd_van_thu.dcID_LOAI_CONG_VAN = ID_LOAI_VAN_THU.CONG_VAN_DI;
+                v_us_gd_van_thu.dcID_LOAI_CONG_VAN = ID_LOAI_VAN_THU.CONG_VAN_DI; ;
                 v_us_gd_van_thu.dcID_PHAP_NHAN = CIPConvert.ToDecimal(m_cbx_phap_nhan.SelectedValue);
 
                 if (m_dc_id_cong_van == 0)

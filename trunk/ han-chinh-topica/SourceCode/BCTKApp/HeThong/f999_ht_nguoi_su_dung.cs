@@ -71,7 +71,7 @@ namespace BCTKApp.HeThong
         #region Private Methods
         private void format_controls()
         {
-            CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setFormStyle(this);
             CControlFormat.setC1FlexFormat(m_fg);
             m_fg.Cols[(int)e_col_Number.TRANG_THAI].DataMap = get_mapping_col_trang_thai();
             set_define_events();
@@ -108,7 +108,9 @@ namespace BCTKApp.HeThong
         private void load_data_2_grid()
         {
             m_ds = new DS_HT_NGUOI_SU_DUNG();
-            m_us.FillDataset(m_ds);
+            if(m_txt_tim_kiem.Text.Trim().Equals(""))
+            m_us.FillDataset(m_ds," order by ten_truy_cap");
+            else m_us.FillDataset(m_ds, "where ten_truy_cap like N'%" + m_txt_tim_kiem.Text + "%' order by ten_truy_cap");
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
@@ -181,7 +183,10 @@ namespace BCTKApp.HeThong
             this.KeyDown += new KeyEventHandler(f999_ht_nguoi_su_dung_KeyDown);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
             this.Load +=new EventHandler(f999_ht_nguoi_su_dung_Load);
+            m_cmd_search.Click += m_cmd_search_Click;
         }
+
+        
 
         #endregion
 
@@ -281,6 +286,10 @@ namespace BCTKApp.HeThong
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+        void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            load_data_2_grid();
         }
     }
 }

@@ -84,7 +84,7 @@ namespace BCTKApp.App_Code
             }
 
         }
-        public static bool SendEmailWithHtmlContent(string ip_str_toEmail, string ip_str_subject, string ip_str_noi_dung)
+        public static bool SendEmailWithHtmlContent(string ip_str_toEmail, string ip_str_subject, string ip_str_noi_dung, string ip_str_file_name)
         {
             try
             {
@@ -103,9 +103,18 @@ namespace BCTKApp.App_Code
                     smtp.Timeout = 20000;
                 }
                 System.Net.Mail.MailMessage ms = new System.Net.Mail.MailMessage(fromAddress, ip_str_toEmail);
+                if (!ip_str_file_name.Equals(""))
+                {
+                    BCTKApp.App_Code.HelpUtils.DownloadInApp(AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "PdfScan", ip_str_file_name.Replace("210.245.89.37/FileUpload_Vanthu/", ""));
+                    string v_str_file_save = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "PdfScan\\" + ip_str_file_name.Replace("210.245.89.37/FileUpload_Vanthu/", "");
+                    System.Net.Mail.Attachment v_attach = new System.Net.Mail.Attachment(v_str_file_save);
+                    ms.Attachments.Add(v_attach);
+                }
+
                 ms.Subject = ip_str_subject;
                 ms.IsBodyHtml = true;
                 ms.Body = ip_str_noi_dung;
+
                 smtp.Send(ms);
                 return true;
             }
@@ -120,7 +129,7 @@ namespace BCTKApp.App_Code
             string ftpAddress = ConfigurationSettings.AppSettings["DOMAIN"];
             string username = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
             string password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
-            FileInfo fileInf = new FileInfo(destination+fileName);
+            FileInfo fileInf = new FileInfo(destination + fileName);
             string uri = "ftp://" + ftpAddress + "/FileUpload_Vanthu/" + fileName;
             FtpWebRequest reqFTP;
 
@@ -174,10 +183,10 @@ namespace BCTKApp.App_Code
             }
             catch (Exception ex)
             {
-               MessageBox.Show("File đính kèm quá nặng, có lỗi xảy ra trong quá trình lưu file, bạn hãy chọn file nhẹ hơn");
+                MessageBox.Show("File đính kèm quá nặng, có lỗi xảy ra trong quá trình lưu file, bạn hãy chọn file nhẹ hơn");
                 return false;
             }
-                
+
         }
         public static void Download(string filePath, string fileName)
         {
@@ -216,11 +225,48 @@ namespace BCTKApp.App_Code
                 MessageBox.Show(ex.Message);
             }
         }
+        public static void DownloadInApp(string filePath, string fileName)
+        {
+            FtpWebRequest reqFTP;
+            try
+            {
+                string ftpAddress = ConfigurationSettings.AppSettings["DOMAIN"];
+                string username = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
+                string password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
+                FileStream outputStream = new FileStream(filePath + "\\" + fileName, FileMode.Create);
+
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpAddress + "/FileUpload_Vanthu/" + fileName));
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(username, password);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                Stream ftpStream = response.GetResponseStream();
+                long cl = response.ContentLength;
+                int bufferSize = 2048;
+                int readCount;
+                byte[] buffer = new byte[bufferSize];
+
+                readCount = ftpStream.Read(buffer, 0, bufferSize);
+                while (readCount > 0)
+                {
+                    outputStream.Write(buffer, 0, readCount);
+                    readCount = ftpStream.Read(buffer, 0, bufferSize);
+                }
+
+                ftpStream.Close();
+                outputStream.Close();
+                response.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         public static void open_pdf_file(string file_name, string file_path)
         {
             //Download(file_path, file_name);
-            System.Diagnostics.Process.Start(@"C:"+"\\"+file_name);
+            System.Diagnostics.Process.Start(@"C:" + "\\" + file_name);
         }
-        
+
     }
 }
