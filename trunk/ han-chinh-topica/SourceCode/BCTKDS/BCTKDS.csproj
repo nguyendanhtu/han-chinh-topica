@@ -204,6 +204,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DOC_TABLE_COMMENT.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_DE_XUAT_VPP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_DE_XUAT_VPP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_DINH_MUC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -487,6 +492,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_GD_DE_XUAT_VPP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_DE_XUAT_VPP.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -667,6 +677,17 @@
     </None>
     <None Include="DS_DOC_TABLE_COMMENT.xss">
       <DependentUpon>DS_DOC_TABLE_COMMENT.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DE_XUAT_VPP.xsc">
+      <DependentUpon>DS_GD_DE_XUAT_VPP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DE_XUAT_VPP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_DE_XUAT_VPP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_DE_XUAT_VPP.xss">
+      <DependentUpon>DS_GD_DE_XUAT_VPP.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_DINH_MUC.xsc">
       <DependentUpon>DS_GD_DINH_MUC.xsd</DependentUpon>
@@ -1265,6 +1286,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_DE_XUAT_VPP.xsc">
+      <DependentUpon>DS_V_GD_DE_XUAT_VPP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_DE_XUAT_VPP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_DE_XUAT_VPP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_DE_XUAT_VPP.xss">
+      <DependentUpon>DS_V_GD_DE_XUAT_VPP.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
