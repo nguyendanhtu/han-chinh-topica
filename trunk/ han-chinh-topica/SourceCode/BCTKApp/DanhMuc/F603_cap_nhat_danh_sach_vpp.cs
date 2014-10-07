@@ -365,7 +365,7 @@ namespace BCTKApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "F603_cap_nhat_danh_sach_vpp";
-            this.Text = "F603_cap_nhat_danh_sach_vpp";
+            this.Text = "F603- Danh sách văn phòng phẩm";
             this.Load += new System.EventHandler(this.F603_cap_nhat_danh_sach_vpp_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
