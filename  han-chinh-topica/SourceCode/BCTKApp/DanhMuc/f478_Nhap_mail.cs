@@ -29,56 +29,58 @@ namespace BCTKApp
 
 
 
-	public class f478_Nhap_mail : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+    public class f478_Nhap_mail : System.Windows.Forms.Form
+    {
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_view;
         private Label m_lbl_header;
-        private Label label2;
-        private ComboBox m_cbo_trung_tam;
-		private System.ComponentModel.IContainer components;
+        private TextBox m_txt_dia_chi_mail;
+        private Label label1;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private ToolTip toolTip1;
+        private System.ComponentModel.IContainer components;
 
-		public f478_Nhap_mail()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public f478_Nhap_mail()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f478_Nhap_mail));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -90,8 +92,10 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_header = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
+            this.m_txt_dia_chi_mail = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -216,11 +220,14 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 101);
+            this.m_fg.Location = new System.Drawing.Point(0, 99);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(779, 272);
+            this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.CellRange;
+            this.m_fg.Size = new System.Drawing.Size(779, 274);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.m_fg, "Nhấp đúp chuột vào ô cột Mail để thay đổi Mail");
+            this.m_fg.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.m_fg_CellChanged);
             // 
             // m_lbl_header
             // 
@@ -233,30 +240,53 @@ namespace BCTKApp
             this.m_lbl_header.TabIndex = 21;
             this.m_lbl_header.Text = "Nhập Mail";
             // 
-            // label2
+            // m_txt_dia_chi_mail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Trung tâm";
+            this.m_txt_dia_chi_mail.Location = new System.Drawing.Point(264, 55);
+            this.m_txt_dia_chi_mail.Name = "m_txt_dia_chi_mail";
+            this.m_txt_dia_chi_mail.Size = new System.Drawing.Size(234, 20);
+            this.m_txt_dia_chi_mail.TabIndex = 22;
             // 
-            // m_cbo_trung_tam
+            // label1
             // 
-            this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(141, 53);
-            this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
-            this.m_cbo_trung_tam.Size = new System.Drawing.Size(272, 21);
-            this.m_cbo_trung_tam.TabIndex = 24;
-            this.m_cbo_trung_tam.SelectedValueChanged += new System.EventHandler(this.m_cbo_trung_tam_SelectedValueChanged);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(166, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Nhập địa chỉ mail:";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 18;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(511, 50);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 24;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 50;
+            this.toolTip1.AutoPopDelay = 5000;
+            this.toolTip1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.toolTip1.ForeColor = System.Drawing.Color.Blue;
+            this.toolTip1.InitialDelay = 50;
+            this.toolTip1.ReshowDelay = 10;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // f478_Nhap_mail
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(779, 409);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.m_cbo_trung_tam);
+            this.Controls.Add(this.m_cmd_search);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.m_txt_dia_chi_mail);
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -268,221 +298,290 @@ namespace BCTKApp
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-		#endregion
+        #region Public Interface
+        public void display()
+        {
+            this.ShowDialog();
+        }
+        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			TEN_TRUY_CAP = 1
-,ID_USER_GROUP = 4
-,DESCRIPTION = 7
-,USER_GROUP_NAME = 6
-,MAIL = 5
-,NGAY_TAO = 3
-,TEN = 2
+        #region Data Structure
+        private enum e_col_Number
+        {
+            TEN_TRUY_CAP = 1
+,
+            ID_USER_GROUP = 4
+                ,
+            DESCRIPTION = 7
+                ,
+            USER_GROUP_NAME = 6
+                ,
+            MAIL = 5
+                ,
+            NGAY_TAO = 3
+                , TEN = 2
 
-		}			
-		#endregion
+        }
+        #endregion
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_HT_NGUOI_SU_DUNG m_ds = new DS_V_HT_NGUOI_SU_DUNG();
-		US_V_HT_NGUOI_SU_DUNG m_us = new US_V_HT_NGUOI_SU_DUNG();
+        #region Members
+        ITransferDataRow m_obj_trans;
+        DS_V_HT_NGUOI_SU_DUNG m_ds = new DS_V_HT_NGUOI_SU_DUNG();
+        US_V_HT_NGUOI_SU_DUNG m_us = new US_V_HT_NGUOI_SU_DUNG();
         bool flag = false;
-		#endregion
+        #endregion
 
-		#region Private Methods
-		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_fg);
-			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
-			set_define_events();
-            load_cbo_trung_tam();
-			this.KeyPreview = true;		
-		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
-		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_HT_NGUOI_SU_DUNG.TEN_TRUY_CAP, e_col_Number.TEN_TRUY_CAP);
-			v_htb.Add(V_HT_NGUOI_SU_DUNG.ID_USER_GROUP, e_col_Number.ID_USER_GROUP);
-			v_htb.Add(V_HT_NGUOI_SU_DUNG.DESCRIPTION, e_col_Number.DESCRIPTION);
-			v_htb.Add(V_HT_NGUOI_SU_DUNG.USER_GROUP_NAME, e_col_Number.USER_GROUP_NAME);
-			v_htb.Add(V_HT_NGUOI_SU_DUNG.MAIL, e_col_Number.MAIL);
-			v_htb.Add(V_HT_NGUOI_SU_DUNG.NGAY_TAO, e_col_Number.NGAY_TAO);
-			v_htb.Add(V_HT_NGUOI_SU_DUNG.TEN, e_col_Number.TEN);
-									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_HT_NGUOI_SU_DUNG.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){
-            decimal v_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);		
-			m_ds = new DS_V_HT_NGUOI_SU_DUNG();			
-			m_us.FillDataset(m_ds, v_id_trung_tam);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
-		}
-        private void load_cbo_trung_tam()
+        #region Private Methods
+        private void format_controls()
+        {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_fg);
+            // m_lbl_header
+            // 
+            this.m_lbl_header.AutoSize = true;
+            this.m_lbl_header.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_header.Location = new System.Drawing.Point(317, 13);
+            this.m_lbl_header.Name = "m_lbl_header";
+            this.m_lbl_header.Size = new System.Drawing.Size(106, 23);
+            this.m_lbl_header.TabIndex = 21;
+            this.m_lbl_header.Text = "Nhập Mail";
+            // 
+            m_fg.AllowEditing = true;
+            m_fg.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None;
+            m_fg.AutoSearch = C1.Win.C1FlexGrid.AutoSearchEnum.None;
+            m_fg.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
+            m_fg.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            set_define_events();
+            //load_cbo_trung_tam();
+            this.KeyPreview = true;
+        }
+        private void set_initial_form_load()
+        {
+            m_obj_trans = get_trans_object(m_fg);
+            load_data_2_grid();
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_HT_NGUOI_SU_DUNG.TEN_TRUY_CAP, e_col_Number.TEN_TRUY_CAP);
+            v_htb.Add(V_HT_NGUOI_SU_DUNG.ID_USER_GROUP, e_col_Number.ID_USER_GROUP);
+            v_htb.Add(V_HT_NGUOI_SU_DUNG.DESCRIPTION, e_col_Number.DESCRIPTION);
+            v_htb.Add(V_HT_NGUOI_SU_DUNG.USER_GROUP_NAME, e_col_Number.USER_GROUP_NAME);
+            v_htb.Add(V_HT_NGUOI_SU_DUNG.MAIL, e_col_Number.MAIL);
+            v_htb.Add(V_HT_NGUOI_SU_DUNG.NGAY_TAO, e_col_Number.NGAY_TAO);
+            v_htb.Add(V_HT_NGUOI_SU_DUNG.TEN, e_col_Number.TEN);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_HT_NGUOI_SU_DUNG.NewRow());
+            return v_obj_trans;
+        }
+        private void load_data_2_grid()
         {
             flag = false;
-            US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
-            DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
-            v_us.FillDataset(v_ds);
-            m_cbo_trung_tam.DataSource = v_ds.DM_PHONG_BAN;
-            m_cbo_trung_tam.ValueMember = DM_PHONG_BAN.ID;
-            m_cbo_trung_tam.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
-            DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
-            v_dr[DM_PHONG_BAN.ID] = -1;
-            v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "Tất cả";
-            v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "Tất cả";
-            v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
-            m_cbo_trung_tam.SelectedIndex = 0;
+            string v_mail = m_txt_dia_chi_mail.Text.Trim();
+            m_ds = new DS_V_HT_NGUOI_SU_DUNG();
+            m_us.FillDataset(m_ds, v_mail);
+            //m_us.FillDataset(m_ds);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
             flag = true;
         }
-		private void grid2us_object(US_V_HT_NGUOI_SU_DUNG i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
+        //private void load_cbo_trung_tam()
+        //{
+        //    flag = false;
+        //    US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+        //    DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+        //    v_us.FillDataset(v_ds);
+        //    m_cbo_trung_tam.DataSource = v_ds.DM_PHONG_BAN;
+        //    m_cbo_trung_tam.ValueMember = DM_PHONG_BAN.ID;
+        //    m_cbo_trung_tam.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
+        //    flag = true;
+        //}
+        private void grid2us_object(US_V_HT_NGUOI_SU_DUNG i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
-	
-		private void us_object2grid(US_V_HT_NGUOI_SU_DUNG i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+
+        private void us_object2grid(US_V_HT_NGUOI_SU_DUNG i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
 
 
-		private void insert_v_ht_nguoi_su_dung(){			
-		//	f478_Nhap_mail_DE v_fDE = new  f478_Nhap_mail_DE();								
-		//	v_fDE.display();
-			load_data_2_grid();
-		}
+        private void insert_v_ht_nguoi_su_dung()
+        {
+            //	f478_Nhap_mail_DE v_fDE = new  f478_Nhap_mail_DE();								
+            //	v_fDE.display();
+            load_data_2_grid();
+        }
 
-		private void update_v_ht_nguoi_su_dung(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
-		//	f478_Nhap_mail_DE v_fDE = new f478_Nhap_mail_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
-		}
-				
-		private void delete_v_ht_nguoi_su_dung(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_HT_NGUOI_SU_DUNG v_us = new US_V_HT_NGUOI_SU_DUNG();
-			grid2us_object(v_us, m_fg.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
+        private void update_v_ht_nguoi_su_dung()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            //	f478_Nhap_mail_DE v_fDE = new f478_Nhap_mail_DE();
+            //	v_fDE.display(m_us);
+            load_data_2_grid();
+        }
 
-		private void view_v_ht_nguoi_su_dung(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
-		//	f478_Nhap_mail_DE v_fDE = new f478_Nhap_mail_DE();			
-		//	v_fDE.display(m_us);
-		}
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-		}
-		#endregion
+        private void delete_v_ht_nguoi_su_dung()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            US_V_HT_NGUOI_SU_DUNG v_us = new US_V_HT_NGUOI_SU_DUNG();
+            grid2us_object(v_us, m_fg.Row);
+            try
+            {
+                v_us.BeginTransaction();
+                v_us.Delete();
+                v_us.CommitTransaction();
+                m_fg.Rows.Remove(m_fg.Row);
+            }
+            catch (Exception v_e)
+            {
+                v_us.Rollback();
+                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_objErrHandler.showErrorMessage();
+            }
+        }
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f478_Nhap_mail_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        private void view_v_ht_nguoi_su_dung()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            //	f478_Nhap_mail_DE v_fDE = new f478_Nhap_mail_DE();			
+            //	v_fDE.display(m_us);
+        }
+        private void set_define_events()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_search.Click +=m_cmd_search_Click;
+        }
+        #endregion
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        //
+        //
+        //		EVENT HANLDERS
+        //
+        //
+        private void f478_Nhap_mail_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_ht_nguoi_su_dung();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_ht_nguoi_su_dung();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_ht_nguoi_su_dung();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_ht_nguoi_su_dung();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_v_ht_nguoi_su_dung();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_ht_nguoi_su_dung();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-        private void m_cbo_trung_tam_SelectedValueChanged(object sender, EventArgs e)
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_v_ht_nguoi_su_dung();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                view_v_ht_nguoi_su_dung();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_fg_CellChanged(object sender, RowColEventArgs e)
         {
             try
             {
                 if (flag == true)
                 {
+                    int i_row = e.Row;
+                    int i_col = e.Col;
+                    US_V_HT_NGUOI_SU_DUNG v_us = new US_V_HT_NGUOI_SU_DUNG();
+                    DS_V_HT_NGUOI_SU_DUNG v_ds = new DS_V_HT_NGUOI_SU_DUNG();
+                    v_us.FillDataset(v_ds, "where TEN_TRUY_CAP=" + "'"+m_fg.Rows[i_row][(int)e_col_Number.TEN_TRUY_CAP].ToString()+"'");
+                    string message = "Bạn vừa có thay đổi tên mail! Bạn có muốn lưu lại không?";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result;
+                    result = MessageBox.Show(message, "Thông báo", buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        v_us = new US_V_HT_NGUOI_SU_DUNG();
+                        decimal v_dc_ID= CIPConvert.ToDecimal(v_ds.V_HT_NGUOI_SU_DUNG.Rows[0]["ID"]);
+                        string v_mail = m_fg.Rows[i_row][i_col].ToString();
+                        v_us.Update_mail(v_mail, v_dc_ID);
+                        MessageBox.Show("Đã lưu thay đổi", "Thông báo", MessageBoxButtons.OK);
+                    }
                     load_data_2_grid();
                 }
             }
@@ -491,6 +590,18 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-	}
+
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+    }
 }
 
