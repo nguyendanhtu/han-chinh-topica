@@ -60,6 +60,7 @@ public class Person
             if (v_str_url_without_query == "Account/ChangePassword.aspx") return true;
             if (v_str_url_without_query.Contains("MessageError.aspx")) return true;
             if (v_str_url_without_query.Contains("ChucNang/f604_xac_nhan_cong_van.aspx")) return true;
+            if (v_str_url_without_query.Contains("ChucNang/f560_tra_cuu_dm_vpp.aspx")) return true;
             if (CIPConvert.ToDecimal(v_obj_id_user_login) == -1)
             {
                 return false;
