@@ -67,7 +67,7 @@ public partial class ChucNang_f604_xac_nhan_cong_van : System.Web.UI.Page
                 {
                     v_us_gd_van_thu.dcID_TRANG_THAI = ID_TRANG_THAI_VAN_THU.NGUOI_NHAN_DA_NHAN_DUOC;
                 }
-                else v_us_gd_van_thu.dcID_TRANG_THAI = ID_TRANG_THAI_VAN_THU.DA_CHUYEN_CHO_DON_VI_BAN_HANH;
+                else v_us_gd_van_thu.dcID_TRANG_THAI = ID_TRANG_THAI_VAN_THU.DA_CHUYEN_DEN_NGUOI_NHAN;
             }
             v_us_gd_van_thu.Update();
             m_lbl_thong_bao.Text = "Cám ơn bạn đã xác nhận công văn! Từ bây giờ, bạn có thể tra cứu công văn này trong chức năng!";
