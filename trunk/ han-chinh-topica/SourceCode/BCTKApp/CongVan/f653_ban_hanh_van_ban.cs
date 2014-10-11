@@ -84,10 +84,12 @@ namespace BCTKApp.CongVan
                      <head>
                      </head>
                     <body>
-                        <p>Gửi các Thầy, Cô</p>
-                        <p>Xin gửi Thầy, Cô văn bản: "+ip_str_ten_loai_va_trich_yeu_noi_dung+@"</p>
+                        <p>Kính gửi các Thầy/Cô</p>
+                        <p>TAD ban hành văn bản/tài liệu: " + ip_str_ten_loai_va_trich_yeu_noi_dung + @"</p>
+                        <p>Chi tiết mời các Thầy/Cô xem file đính kèm bên dưới.</p>
                         <p>Xin click vào link dưới đây để xác nhận đã nhận email này, và Thầy Cô có thể tra cứu văn bản trong website</p>
                         <a href='" + ip_str_url + @"'>Xác nhận, tôi đã nhận được email này</a>
+                        <p>Trân trọng!</p>
                     </body>
                 </html>";
         }
@@ -110,7 +112,8 @@ namespace BCTKApp.CongVan
                     if (!v_arr_email[i].Trim().Equals(""))
                     {
                         string v_str_send_to = v_arr_email[i];
-                        if (!v_str_send_to.Contains("@gmail.com")) v_str_send_to += "@topica.edu.vn";
+                        if (!v_str_send_to.Contains("@gmail.com") 
+                            && !v_str_send_to.Contains("@yahoo.com")) v_str_send_to += "@topica.edu.vn";
                         
                         HelpUtils.SendEmailWithHtmlContent(v_str_send_to, "[QuanLyVanThu] Ban hanh van ban"
                         , get_html_contain(ConfigurationSettings.AppSettings["WEB_URL"] + "/ChucNang/f604_xac_nhan_cong_van.aspx?mail=dmt.20102514&id_cong_van=" + v_us.dcID, v_us.strTEN_LOAI_VA_TRICH_YEU_ND)
