@@ -7,10 +7,10 @@ namespace BCTKUS
     public class ID_SO_CV_DI
     {
         public const decimal EDH = 232;
-        public const decimal TE = 233;
-        public const decimal TU_MB = 234;
-        public const decimal TU_MN = 235;
+        public const decimal TPE = 233;
         public const decimal EDT = 236;
+        public const decimal AMZ = 238;
+        public const decimal AMATOP = 242;
     }
 
     public class ID_SO_CV_DEN
@@ -19,16 +19,16 @@ namespace BCTKUS
     }
     public class ID_LOAI_VAN_THU
     {
-        public const decimal CONG_VAN_DEN = 222;
         public const decimal CONG_VAN_DI = 220;
+        public const decimal CONG_VAN_DEN = 222;
     }
     public class ID_TRANG_THAI_VAN_THU
     {
         public const decimal CHO_SO_VAO_SO_DONG_DAU = 223;
-        public const decimal DA_LUU_TAI_TAD = 224;
-        public const decimal DA_CHUYEN_DEN_NGUOI_NHAN = 225;
+        public const decimal DA_CHUYEN_DEN_NGUOI_NHAN = 224;
+        public const decimal DA_LUU = 225;
         public const decimal NGUOI_NHAN_DA_NHAN_DUOC = 226;
-        public const decimal DA_CHUYEN_CHO_DON_VI_BAN_HANH = 227;
+        
     }
     public class CONST_ID_TRANG_THAI_DON_HANG
     { 
