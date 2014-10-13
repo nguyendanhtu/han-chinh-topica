@@ -215,6 +215,7 @@
                                     &nbsp&nbsp
                                     <asp:Label ID="m_lbl_pop_dinh_muc" runat="Server" Text="----------" CssClass="cssManField" ForeColor="Red" Font-Bold="true"></asp:Label>
                                     <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
+                                    <asp:HiddenField ID="m_hdf_id_user" runat="server" />
                                 </td>
                                 <td align="right" colspan="1">
                                     <asp:ImageButton ID="_cmd_detail_exit" ImageUrl="../Images/Button/exit.png" Width="24px" Height="24px" runat="server"
