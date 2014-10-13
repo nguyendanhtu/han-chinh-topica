@@ -49,7 +49,6 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         //load_ma_don_hang_nhap_gan_nhat();
         //thong_bao("", false);
     }
-
     private void load_don_hang()
     {
         US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
@@ -65,7 +64,6 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         else
             return;
     }
-
     private void tao_don_hang()
     {
         DateTime v_ngay_dau_thang = DateTime.Now.AddDays(-DateTime.Now.Day + 1);
@@ -586,6 +584,64 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         else
             return false;
     }
+
+    private void ExportToExcel()
+    {
+        US_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE v_us_don_hang_de = new US_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE();
+        DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE v_ds_don_hang_de = new DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE();
+        v_us_don_hang_de.FillDataset(v_ds_don_hang_de, "Where id_don_dat_hang=" + CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
+        //m_grv_don_hang_de.DataSource = v_ds_don_hang_de.V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE;
+        //m_grv_don_hang_de.DataBind();
+        string filename = "Phiếu đề nghị cấp vật tư" + ".xls";
+        System.IO.StringWriter tw = new System.IO.StringWriter();
+        System.Web.UI.HtmlTextWriter hw = new System.Web.UI.HtmlTextWriter(tw);
+        System.Web.UI.WebControls.DataGrid dgGrid = new System.Web.UI.WebControls.DataGrid();
+        dgGrid.DataSource = v_ds_don_hang_de;
+        dgGrid.DataBind();
+
+        //Get the HTML for the control.
+        //header
+        hw.Write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        m_lbl_header.RenderControl(hw);
+        hw.WriteLine("<br />");
+        // tên phòng ban
+        hw.Write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        m_lbl_title.RenderControl(hw);
+        hw.WriteLine("<br />");
+        //m_lbl_title_ma_don_hang.RenderControl(hw);
+        //Mã đơn hàng
+        m_lbl_MP.RenderControl(hw);
+        m_lbl_ma_don_hang_de.RenderControl(hw);
+        hw.Write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        m_lbl_pop_lan_tl.RenderControl(hw);
+        hw.Write("&nbsp&nbsp&nbsp");
+        m_lbl_pop_lan.RenderControl(hw);
+        hw.Write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        m_lbl_pop_ngay_dat_hang_tl.RenderControl(hw);
+        hw.Write("&nbsp&nbsp&nbsp");
+        m_lbl_pop_ngay.RenderControl(hw);
+
+        hw.Write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        m_lbl_pop_tong_tien_tl.RenderControl(hw);
+        hw.Write("&nbsp&nbsp&nbsp");
+        m_lbl_pop_tong_tien.RenderControl(hw);
+
+        hw.Write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        m_lbl_pop_dinh_muc_tl.RenderControl(hw);
+        hw.Write("&nbsp&nbsp&nbsp");
+        m_lbl_pop_dinh_muc.RenderControl(hw);
+        //dgGrid.RenderControl(hw);
+        Response.ClearContent();
+        Response.Buffer = true;
+        Response.ContentType = "application/vnd.ms-excel";
+        Response.AppendHeader("Content-Disposition",
+                              "attachment; filename=" + filename + "");
+        this.EnableViewState = false;
+        dgGrid.RenderControl(hw);
+        Response.Write(tw.ToString());
+        Response.End();
+    }
+
     #endregion
 
     #region Events
@@ -623,6 +679,10 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    //public override void VerifyRenderingInServerForm(System.Web.UI.Control control)
+    //{
+    //    //Required to verify that the control is rendered properly on page
+    //}
     //đơn hàng
     protected void m_cmd_them_don_hang_Click(object sender, EventArgs e)
     {
@@ -648,22 +708,16 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             //CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
-    protected void m_cmd_cap_nhat_don_hang_Click(object sender, EventArgs e)
+    protected void m_cmd_xuat_excel_Click(object sender, EventArgs e)
     {
         try
         {
-            //m_lbl_thong_bao.Visible = false;
-            ////m_lbl_mess.Text = "";
-            //save_don_hang();
-            //load_data_to_grid_don_hang();
-            //m_cmd_cap_nhat_don_hang.Visible = false;
-            //m_cmd_them_don_hang.Visible = true;
-            //Huy_thao_tac_don_hang();
-
+            //ExportToExcel();
+            Response.Redirect("/QuanLyHanhChinh/ChucNang/f456_export_excel.aspx?id_don_hang="+m_hdf_id_don_hang.Value+"&id_trung_tam="+m_hdf_id_trung_tam.Value);
         }
         catch (Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(this, v_e);
+            thong_bao(v_e.ToString(),true); 
         }
     }
     protected void m_grv_don_hang_nhap_RowEditing(object sender, GridViewEditEventArgs e)
