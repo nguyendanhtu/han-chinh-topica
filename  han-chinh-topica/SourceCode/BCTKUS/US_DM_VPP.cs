@@ -177,6 +177,28 @@ namespace BCTKUS
             pm_objDR["ID_NHA_CUNG_CAP"] = System.Convert.DBNull;
         }
 
+        public string strGIOI_HAN_VPP
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "GIOI_HAN_VPP", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["GIOI_HAN_VPP"] = value;
+            }
+        }
+
+        public bool IsGIOI_HAN_VPPNull()
+        {
+            return pm_objDR.IsNull("GIOI_HAN_VPP");
+        }
+
+        public void SetGIOI_HAN_VPPNull()
+        {
+            pm_objDR["GIOI_HAN_VPP"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_DM_VPP()
