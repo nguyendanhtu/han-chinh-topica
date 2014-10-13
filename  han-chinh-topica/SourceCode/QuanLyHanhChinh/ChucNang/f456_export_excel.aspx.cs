@@ -83,7 +83,7 @@ public partial class ChucNang_f456_export_excel : System.Web.UI.Page
         Response.ClearContent();
         Response.ClearHeaders();
         Response.Charset = "";
-        string FileName = "Phieu_de_nghi_Cap_" + DateTime.Now + ".xls";
+        string FileName = "Phieu_de_nghi_Cap_" + CIPConvert.ToStr(m_hdf_ma_trung_tam.Value) + "_" + DateTime.Now.ToString("yyyyMMdd") +".xls";
         StringWriter strwritter = new StringWriter();
         HtmlTextWriter htmltextwrtter = new HtmlTextWriter(strwritter);
         Response.Cache.SetCacheability(HttpCacheability.NoCache);
