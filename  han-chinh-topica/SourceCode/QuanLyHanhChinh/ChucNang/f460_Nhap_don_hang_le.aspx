@@ -70,7 +70,7 @@
                 <asp:Button ID="m_cmd_them_don_hang" runat="server" Text="Nhập đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_them_don_hang_Click" Visible="true" />
             </td>
             <td align="left">
-                <asp:Button ID="m_cmd_cap_nhat_don_hang"  PostBackUrl="~/ChucNang/f560_tra_cuu_dm_vpp.aspx" runat="server" Text="Danh mục VPP" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click"  Visible="true" ></asp:Button>
+                <asp:Button ID="m_cmd_cap_nhat_don_hang"  PostBackUrl="~/ChucNang/f560_tra_cuu_dm_vpp.aspx" runat="server" Text="Danh mục VPP" CssClass="cssGoogleButton" Visible="true" ></asp:Button>
             </td>
             <%--          <td align="left">
                 <asp:Button ID="m_cmd_gui_td" runat="server" Text="Gửi cho TD duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_td_Click" />
@@ -252,7 +252,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; max-height: 300px; min-height: 300px; margin-top: 5%; overflow-y: scroll">
+                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;  margin-top:6%; overflow-y: scroll">
                             <%--<tr style="width: 100%; position: fixed">
                                 <td class="cssPageTitleBG" colspan="6">
                                     <asp:Label ID="m_lbl_phieu_de_nghi_va_ban_giao_VPP" runat="server" CssClass="cssPageTitle"
@@ -347,7 +347,7 @@
                 <asp:Button ID="m_cmd_gui_mail" runat="server" Text="Gửi mail xin duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_mail_Click" />
                             </td>
                             <td align="right">
-                                <asp:Button ID="m_cmd_xuat_Excel" runat="server" Text="Xuất Excel" CssClass="cssGoogleButton" OnClick="m_cmd_cap_nhat_don_hang_Click" />
+                                <asp:Button ID="m_cmd_xuat_Excel" runat="server" Text="Xuất Excel" CssClass="cssGoogleButton" OnClick="m_cmd_xuat_excel_Click" />
                                 <asp:Button ID="m_cmd_thoat" runat="server" Text="Thoát" CssClass="cssGoogleButton" OnClick="m_cmd_thoat_Click" />
 
                             </td>
