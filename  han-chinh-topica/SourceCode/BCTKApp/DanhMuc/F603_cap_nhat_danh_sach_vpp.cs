@@ -631,7 +631,7 @@ namespace BCTKApp
                     US_DM_VPP v_us_dm_vpp = new US_DM_VPP(v_lst_find_match[0].ID);
                     v_us_dm_vpp.dcDON_GIA_CHUA_VAT = CIPConvert.ToDecimal(m_fg.Rows[v_i_row_fg][5].ToString());
                     v_us_dm_vpp.dcDON_GIA_GOM_VAT = CIPConvert.ToDecimal(m_fg.Rows[v_i_row_fg][6].ToString());
-                    v_us_dm_vpp.strGIOI_HAN_VPP = m_fg.Rows[v_i_row_fg][7].ToString();
+                    //v_us_dm_vpp.strGIOI_HAN_VPP = m_fg.Rows[v_i_row_fg][7].ToString();
                     v_us_dm_vpp.Update();
                 }
 
