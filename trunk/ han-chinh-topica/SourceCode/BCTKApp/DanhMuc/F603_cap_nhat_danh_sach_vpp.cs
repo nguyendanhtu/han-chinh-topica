@@ -395,7 +395,9 @@ namespace BCTKApp
             DON_GIA_GOM_VAT = 6
                 ,
             TEN_VPP = 3
-                , DON_VI_TINH = 4
+                ,
+            DON_VI_TINH = 4
+                , GIOI_HAN_VPP = 7
 
         }
         public class VanPhongPham
@@ -407,6 +409,7 @@ namespace BCTKApp
             public decimal GIA_TRI_CHUA_VAT;
             public decimal GIA_TRI_GOM_VAT;
             public string DON_VI_TINH;
+            public string GIOI_HAN_VPP;
         }
         #endregion
 
@@ -473,7 +476,7 @@ namespace BCTKApp
             v_htb.Add(V_DM_VPP.DON_GIA_GOM_VAT, e_col_Number.DON_GIA_GOM_VAT);
             v_htb.Add(V_DM_VPP.TEN_VPP, e_col_Number.TEN_VPP);
             v_htb.Add(V_DM_VPP.DON_VI_TINH, e_col_Number.DON_VI_TINH);
-
+            v_htb.Add(V_DM_VPP.GIOI_HAN_VPP, e_col_Number.GIOI_HAN_VPP);
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_VPP.NewRow());
             return v_obj_trans;
         }
@@ -599,6 +602,7 @@ namespace BCTKApp
                 vpp.DON_VI_TINH = v_dr[V_DM_VPP.DON_VI_TINH].ToString();
                 vpp.GIA_TRI_CHUA_VAT = CIPConvert.ToDecimal(v_dr[V_DM_VPP.DON_GIA_CHUA_VAT].ToString());
                 vpp.GIA_TRI_GOM_VAT = CIPConvert.ToDecimal(v_dr[V_DM_VPP.DON_GIA_GOM_VAT].ToString());
+                vpp.GIOI_HAN_VPP = v_dr[V_DM_VPP.GIOI_HAN_VPP].ToString();
                 //add item to list
                 v_lst_vpp.Add(vpp);
 
@@ -619,6 +623,7 @@ namespace BCTKApp
                     v_us_dm_vpp.strMA = m_fg.Rows[v_i_row_fg][2].ToString();
                     v_us_dm_vpp.strTEN = m_fg.Rows[v_i_row_fg][3].ToString();
                     v_us_dm_vpp.strDON_VI_TINH = m_fg.Rows[v_i_row_fg][4].ToString();
+                    v_us_dm_vpp.strGIOI_HAN_VPP = m_fg.Rows[v_i_row_fg][7].ToString();
                     v_us_dm_vpp.Insert();
                 }
                 else //cap nhat don gia
@@ -626,9 +631,12 @@ namespace BCTKApp
                     US_DM_VPP v_us_dm_vpp = new US_DM_VPP(v_lst_find_match[0].ID);
                     v_us_dm_vpp.dcDON_GIA_CHUA_VAT = CIPConvert.ToDecimal(m_fg.Rows[v_i_row_fg][5].ToString());
                     v_us_dm_vpp.dcDON_GIA_GOM_VAT = CIPConvert.ToDecimal(m_fg.Rows[v_i_row_fg][6].ToString());
+                    v_us_dm_vpp.strGIOI_HAN_VPP = m_fg.Rows[v_i_row_fg][7].ToString();
                     v_us_dm_vpp.Update();
                 }
+
             }
+            BaseMessages.MsgBox_Infor("Cập nhật thành công");
         }
         private void excel_file_to_dataset(string ip_str_file_path)
         {
@@ -644,6 +652,7 @@ namespace BCTKApp
             m_dt_temp.Columns.Add("DON_VI_TINH");
             m_dt_temp.Columns.Add("DON_GIA_CHUA_VAT");
             m_dt_temp.Columns.Add("DON_GIA_GOM_VAT");
+            m_dt_temp.Columns.Add("GIOI_HAN_VPP");
             m_ds_temp.Tables.Add(m_dt_temp);
             //data from excel file to dataset and fill to grid
             v_cer.Export2DatasetDSPhongThi(m_ds_temp, m_ds_temp.Tables[0].TableName, 10);
@@ -652,15 +661,15 @@ namespace BCTKApp
             //format lai 2 cot don gia
             for (int i = 0; i < m_ds_temp.Tables[0].Rows.Count; i++)
             {
-                m_ds.Tables[0].Rows[i][2] = CIPConvert.ToDecimal(m_ds.Tables[0].Rows[i][2]).ToString();
-                m_ds.Tables[0].Rows[i][3] = CIPConvert.ToDecimal(m_ds.Tables[0].Rows[i][3]).ToString();
+                m_ds.Tables[0].Rows[i][2] = CIPConvert.ToDecimal(m_ds.Tables[0].Rows[i][4]).ToString();
+                m_ds.Tables[0].Rows[i][3] = CIPConvert.ToDecimal(m_ds.Tables[0].Rows[i][5]).ToString();
             }
             m_fg.DataSource = m_ds_temp.Tables[0];
         }
         private void insert_v_dm_vpp()
         {
-         F604_v_dm_vpp_de v_fDE = new  F604_v_dm_vpp_de();								
-           v_fDE.display_for_insert();
+            F604_v_dm_vpp_de v_fDE = new F604_v_dm_vpp_de();
+            v_fDE.display_for_insert();
             load_data_2_grid();
         }
 
