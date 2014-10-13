@@ -648,9 +648,24 @@ namespace BCTKUS
         #region "Additional"
         public void Search(DS_V_GD_VAN_THU_ALL op_ds, decimal ip_dc_id_phap_nhan
             , decimal ip_dc_id_loai_cong_van, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay
-            , string ip_str_tu_khoa)
+            , string ip_str_tu_khoa
+            )
         {
             CStoredProc v_sp = new CStoredProc("pr_v_gd_van_thu_all_search");
+            v_sp.addDecimalInputParam("@ip_dc_id_phap_nhan", ip_dc_id_phap_nhan);
+            v_sp.addDecimalInputParam("@ip_dc_id_loai_cong_van", ip_dc_id_loai_cong_van);
+            v_sp.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_sp.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+            v_sp.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
+        public void Search(DS_V_GD_VAN_THU_ALL op_ds, decimal ip_dc_id_phap_nhan
+            , decimal ip_dc_id_loai_cong_van, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay
+            , string ip_str_tu_khoa
+            , decimal ip_dc_id_trang_thai)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_v_gd_van_thu_all_search_with_trang_thai");
+            v_sp.addDecimalInputParam("@ip_dc_id_trang_thai", ip_dc_id_trang_thai);
             v_sp.addDecimalInputParam("@ip_dc_id_phap_nhan", ip_dc_id_phap_nhan);
             v_sp.addDecimalInputParam("@ip_dc_id_loai_cong_van", ip_dc_id_loai_cong_van);
             v_sp.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
