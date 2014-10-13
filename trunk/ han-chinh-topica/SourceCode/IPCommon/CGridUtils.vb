@@ -259,7 +259,7 @@ Public Class CGridUtils
 
         End If
     End Sub
-    Private Shared Sub add_PopUp_Menu(ByVal i_fg As C1.Win.C1FlexGrid.C1FlexGrid)
+    Public Shared Sub add_PopUp_Menu(ByVal i_fg As C1.Win.C1FlexGrid.C1FlexGrid)
         '1. create context mnu
         Dim v_context_mnu As New System.Windows.Forms.ContextMenu
         Dim v_mnu_save_image As New System.Windows.Forms.MenuItem
@@ -270,7 +270,7 @@ Public Class CGridUtils
         '2. Add to grid
         i_fg.ContextMenu = v_context_mnu
     End Sub
-    Private Shared Sub grid_PopUp_Save(ByVal sender As Object, _
+    Public Shared Sub grid_PopUp_Save(ByVal sender As Object, _
                          ByVal e As System.EventArgs)
         Dim v_mnu_save_image As System.Windows.Forms.MenuItem = CType(sender, System.Windows.Forms.MenuItem)
         Dim v_context_mnu As System.Windows.Forms.ContextMenu = CType(v_mnu_save_image.Parent, System.Windows.Forms.ContextMenu)
