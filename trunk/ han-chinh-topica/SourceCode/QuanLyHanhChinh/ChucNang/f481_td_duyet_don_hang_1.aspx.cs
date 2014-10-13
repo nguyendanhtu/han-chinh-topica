@@ -58,8 +58,6 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     private void set_inital_form_mode()
     {
         load_data_to_grid();
-        load_thong_tin_chi_tiet();
-        load_data_to_grid_don_hang_de();
     }
     private void load_thong_tin_chi_tiet()
     {
@@ -138,6 +136,11 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
             v_us_gd_don_dat_hang.load_ddh_xin_cc_duyet(v_ds_gd_don_dat_hang, v_id_trung_tam, m_dat_cuoi_thang);
         m_grv_don_hang_nhap.DataSource = v_ds_gd_don_dat_hang.GD_DON_DAT_HANG;
         m_grv_don_hang_nhap.DataBind();
+        if (v_ds_gd_don_dat_hang.GD_DON_DAT_HANG.Count > 0)
+        {
+            load_thong_tin_chi_tiet();
+            load_data_to_grid_don_hang_de();
+        }
         //Lay tong tien dinh muc
         m_lbl_tong_tien_dm.Text = CIPConvert.ToStr(v_us_gd_don_dat_hang.get_tong_tien_dinh_muc_hang_thang(v_id_trung_tam, 173, m_dat_dau_thang, m_dat_cuoi_thang).ToString(), "#,###,##");
         m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_dat_hang.get_tong_tien_da_chi_hang_thang(v_id_trung_tam, m_dat_cuoi_thang), "#,###");
@@ -215,8 +218,10 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
             {
                 string id_phong_ban = Request.QueryString["id_phong_ban"];
                 string form_mode = Request.QueryString["form_mode"];
+                string id_user = Request.QueryString["id_user"];
                 m_hdf_id_trung_tam.Value = id_phong_ban;
                 m_hdf_form_mode.Value = form_mode;
+                m_hdf_id_user.Value = id_user;
                 set_thang_hien_tai();
                 set_inital_form_mode();
                 view_detail_grv(false);
@@ -329,6 +334,13 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     {
         try
         {
+            string v_mail;
+            US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
+            IP.Core.IPData.DS_HT_NGUOI_SU_DUNG v_ds_ht_nguoi_su_dung = new IP.Core.IPData.DS_HT_NGUOI_SU_DUNG();
+            v_us_ht_nguoi_su_dung.FillDataset(v_ds_ht_nguoi_su_dung, "where id= " + CIPConvert.ToDecimal(m_hdf_id_user.Value));
+            if (v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Count > 0)
+                v_mail = v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Rows[0]["MAIL"].ToString();
+            else v_mail = "";
             US_GD_DON_DAT_HANG v_us_gd_don_hang = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
             int thisyear = DateTime.Now.Year;
             DateTime m_dat_dau_thang = new DateTime(thisyear, int.Parse(m_cbo_chon_thang.SelectedValue.ToString()), 1);
@@ -336,7 +348,15 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
             v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET;
             v_us_gd_don_hang.Update();
             m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_hang.get_tong_tien_da_chi_hang_thang(v_us_gd_don_hang.dcID_PHONG_BAN, m_dat_cuoi_thang), "#,###");
+            string v_str_noi_dung = "Dear trung tâm- ban:" + m_hdf_ma_trung_tam.Value + "," + "\n"
+                              + "Đơn hàng của bạn đã được duyệt thành công!"
+                              + "\n"
+                              + "Xin cám ơn!";
+
+            if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Thông báo đã duyệt", v_str_noi_dung); thong_bao("Đã gửi mail thông báo duyệt cho người gửi đơn hàng này!", true); }
+            else { thong_bao("Chưa gửi mail thông báo duyệt cho người xin duyệt đơn hàng!"); }
         }
+
         catch (System.Exception v_e)
         {
             CSystemLog_301.ExceptionHandle(this, v_e);
@@ -346,6 +366,13 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     {
         try
         {
+            string v_mail;
+            US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
+            IP.Core.IPData.DS_HT_NGUOI_SU_DUNG v_ds_ht_nguoi_su_dung = new IP.Core.IPData.DS_HT_NGUOI_SU_DUNG();
+            v_us_ht_nguoi_su_dung.FillDataset(v_ds_ht_nguoi_su_dung, "where id= " + CIPConvert.ToDecimal(m_hdf_id_user.Value));
+            if (v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Count > 0)
+                v_mail = v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Rows[0]["MAIL"].ToString();
+            else { v_mail = "";}
             US_GD_DON_DAT_HANG v_us_gd_don_hang = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
             int thisyear = DateTime.Now.Year;
             DateTime m_dat_dau_thang = new DateTime(thisyear, int.Parse(m_cbo_chon_thang.SelectedValue.ToString()), 1);
@@ -355,6 +382,13 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
             if (CIPConvert.ToDecimal(m_hdf_form_mode.Value) == CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET)
                 v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.CC_KHONG_DUYET;
             v_us_gd_don_hang.Update();
+            string v_str_noi_dung = "Dear trung tâm- ban:" + m_hdf_ma_trung_tam.Value + "," + "\n"
+                           + "Đơn hàng của bạn không được duyệt"
+                           + "\n"
+                           + "Xin cám ơn!";
+
+            if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Thông báo không duyệt", v_str_noi_dung); thong_bao("Đã gửi mail thông báo không duyệt cho người gửi đơn hàng này!",true); }
+            else { thong_bao("Chưa gửi mail thông báo duyệt cho người gửi đơn hàng!"); }
         }
         catch (System.Exception v_e)
         {
