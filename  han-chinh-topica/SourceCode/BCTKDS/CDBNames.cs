@@ -218,12 +218,13 @@ namespace BCTKDS.CDBNames
     {
         public const string ID_VPP = "ID_VPP";
         public const string MA = "MA";
-        public const string DON_GIA_CHUA_VAT = "DON_GIA_CHUA_VAT";
-        public const string DON_GIA_GOM_VAT = "DON_GIA_GOM_VAT";
         public const string TEN_VPP = "TEN_VPP";
         public const string DON_VI_TINH = "DON_VI_TINH";
+        public const string DON_GIA_CHUA_VAT = "DON_GIA_CHUA_VAT";
+        public const string DON_GIA_GOM_VAT = "DON_GIA_GOM_VAT";
         public const string ID_NHA_CUNG_CAP = "ID_NHA_CUNG_CAP";
         public const string TEN_NCC = "TEN_NCC";
+        public const string GIOI_HAN_VPP = "GIOI_HAN_VPP";
     }
     public class DM_VPP
     {
@@ -234,6 +235,7 @@ namespace BCTKDS.CDBNames
         public const string TEN = "TEN";
         public const string DON_VI_TINH = "DON_VI_TINH";
         public const string ID_NHA_CUNG_CAP = "ID_NHA_CUNG_CAP";
+        public const string GIOI_HAN_VPP = "GIOI_HAN_VPP";
     }
 
 

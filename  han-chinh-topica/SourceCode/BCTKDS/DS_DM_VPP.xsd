@@ -2,19 +2,20 @@
 <xs:schema id="DS_DM_VPP" targetNamespace="http://tempuri.org/DS_DM_VPP.xsd" xmlns:mstns="http://tempuri.org/DS_DM_VPP.xsd" xmlns="http://tempuri.org/DS_DM_VPP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ADMIN_SOFTConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ADMIN_SOFTConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.ADMIN_SOFTConnectionString2" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ADMIN_SOFTConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ADMIN_SOFTConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.ADMIN_SOFTConnectionString3" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ADMIN_SOFTConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ADMIN_SOFTConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.ADMIN_SOFTConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ADMIN_SOFTConnectionString4" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ADMIN_SOFTConnectionString4 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.ADMIN_SOFTConnectionString4" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DM_VPPTableAdapter" GeneratorDataComponentClassName="DM_VPPTableAdapter" Name="DM_VPP" UserDataComponentName="DM_VPPTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ADMIN_SOFTConnectionString1 (Settings)" DbObjectName="ADMIN_SOFT.dbo.DM_VPP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ADMIN_SOFTConnectionString4 (Settings)" DbObjectName="ADMIN_SOFT.dbo.DM_VPP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[DM_VPP] WHERE (([ID] = @Original_ID) AND ((@IsNull_MA = 1 AND [MA] IS NULL) OR ([MA] = @Original_MA)) AND ((@IsNull_DON_GIA_CHUA_VAT = 1 AND [DON_GIA_CHUA_VAT] IS NULL) OR ([DON_GIA_CHUA_VAT] = @Original_DON_GIA_CHUA_VAT)) AND ((@IsNull_DON_GIA_GOM_VAT = 1 AND [DON_GIA_GOM_VAT] IS NULL) OR ([DON_GIA_GOM_VAT] = @Original_DON_GIA_GOM_VAT)) AND ((@IsNull_TEN = 1 AND [TEN] IS NULL) OR ([TEN] = @Original_TEN)) AND ((@IsNull_DON_VI_TINH = 1 AND [DON_VI_TINH] IS NULL) OR ([DON_VI_TINH] = @Original_DON_VI_TINH)) AND ((@IsNull_ID_NHA_CUNG_CAP = 1 AND [ID_NHA_CUNG_CAP] IS NULL) OR ([ID_NHA_CUNG_CAP] = @Original_ID_NHA_CUNG_CAP)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[DM_VPP] WHERE (([ID] = @Original_ID) AND ((@IsNull_MA = 1 AND [MA] IS NULL) OR ([MA] = @Original_MA)) AND ((@IsNull_DON_GIA_CHUA_VAT = 1 AND [DON_GIA_CHUA_VAT] IS NULL) OR ([DON_GIA_CHUA_VAT] = @Original_DON_GIA_CHUA_VAT)) AND ((@IsNull_DON_GIA_GOM_VAT = 1 AND [DON_GIA_GOM_VAT] IS NULL) OR ([DON_GIA_GOM_VAT] = @Original_DON_GIA_GOM_VAT)) AND ((@IsNull_TEN = 1 AND [TEN] IS NULL) OR ([TEN] = @Original_TEN)) AND ((@IsNull_DON_VI_TINH = 1 AND [DON_VI_TINH] IS NULL) OR ([DON_VI_TINH] = @Original_DON_VI_TINH)) AND ((@IsNull_ID_NHA_CUNG_CAP = 1 AND [ID_NHA_CUNG_CAP] IS NULL) OR ([ID_NHA_CUNG_CAP] = @Original_ID_NHA_CUNG_CAP)) AND ((@IsNull_GIOI_HAN_VPP = 1 AND [GIOI_HAN_VPP] IS NULL) OR ([GIOI_HAN_VPP] = @Original_GIOI_HAN_VPP)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MA" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -29,13 +30,15 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DON_VI_TINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DON_VI_TINH" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_NHA_CUNG_CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_NHA_CUNG_CAP" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ID_NHA_CUNG_CAP" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID_NHA_CUNG_CAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GIOI_HAN_VPP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GIOI_HAN_VPP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_GIOI_HAN_VPP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GIOI_HAN_VPP" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[DM_VPP] ([MA], [DON_GIA_CHUA_VAT], [DON_GIA_GOM_VAT], [TEN], [DON_VI_TINH], [ID_NHA_CUNG_CAP]) VALUES (@MA, @DON_GIA_CHUA_VAT, @DON_GIA_GOM_VAT, @TEN, @DON_VI_TINH, @ID_NHA_CUNG_CAP);
-SELECT ID, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN, DON_VI_TINH, ID_NHA_CUNG_CAP FROM DM_VPP WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [dbo].[DM_VPP] ([MA], [DON_GIA_CHUA_VAT], [DON_GIA_GOM_VAT], [TEN], [DON_VI_TINH], [ID_NHA_CUNG_CAP], [GIOI_HAN_VPP]) VALUES (@MA, @DON_GIA_CHUA_VAT, @DON_GIA_GOM_VAT, @TEN, @DON_VI_TINH, @ID_NHA_CUNG_CAP, @GIOI_HAN_VPP);
+SELECT ID, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN, DON_VI_TINH, ID_NHA_CUNG_CAP, GIOI_HAN_VPP FROM DM_VPP WHERE (ID = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@DON_GIA_CHUA_VAT" Precision="21" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="DON_GIA_CHUA_VAT" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -43,19 +46,20 @@ SELECT ID, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN, DON_VI_TINH, ID_NHA_CUNG_
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TEN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TEN" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DON_VI_TINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DON_VI_TINH" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ID_NHA_CUNG_CAP" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID_NHA_CUNG_CAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@GIOI_HAN_VPP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GIOI_HAN_VPP" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN, DON_VI_TINH, ID_NHA_CUNG_CAP FROM dbo.DM_VPP</CommandText>
+                    <CommandText>SELECT ID, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN, DON_VI_TINH, ID_NHA_CUNG_CAP, GIOI_HAN_VPP FROM dbo.DM_VPP</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[DM_VPP] SET [MA] = @MA, [DON_GIA_CHUA_VAT] = @DON_GIA_CHUA_VAT, [DON_GIA_GOM_VAT] = @DON_GIA_GOM_VAT, [TEN] = @TEN, [DON_VI_TINH] = @DON_VI_TINH, [ID_NHA_CUNG_CAP] = @ID_NHA_CUNG_CAP WHERE (([ID] = @Original_ID) AND ((@IsNull_MA = 1 AND [MA] IS NULL) OR ([MA] = @Original_MA)) AND ((@IsNull_DON_GIA_CHUA_VAT = 1 AND [DON_GIA_CHUA_VAT] IS NULL) OR ([DON_GIA_CHUA_VAT] = @Original_DON_GIA_CHUA_VAT)) AND ((@IsNull_DON_GIA_GOM_VAT = 1 AND [DON_GIA_GOM_VAT] IS NULL) OR ([DON_GIA_GOM_VAT] = @Original_DON_GIA_GOM_VAT)) AND ((@IsNull_TEN = 1 AND [TEN] IS NULL) OR ([TEN] = @Original_TEN)) AND ((@IsNull_DON_VI_TINH = 1 AND [DON_VI_TINH] IS NULL) OR ([DON_VI_TINH] = @Original_DON_VI_TINH)) AND ((@IsNull_ID_NHA_CUNG_CAP = 1 AND [ID_NHA_CUNG_CAP] IS NULL) OR ([ID_NHA_CUNG_CAP] = @Original_ID_NHA_CUNG_CAP)));
-SELECT ID, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN, DON_VI_TINH, ID_NHA_CUNG_CAP FROM DM_VPP WHERE (ID = @ID)</CommandText>
+                    <CommandText>UPDATE [dbo].[DM_VPP] SET [MA] = @MA, [DON_GIA_CHUA_VAT] = @DON_GIA_CHUA_VAT, [DON_GIA_GOM_VAT] = @DON_GIA_GOM_VAT, [TEN] = @TEN, [DON_VI_TINH] = @DON_VI_TINH, [ID_NHA_CUNG_CAP] = @ID_NHA_CUNG_CAP, [GIOI_HAN_VPP] = @GIOI_HAN_VPP WHERE (([ID] = @Original_ID) AND ((@IsNull_MA = 1 AND [MA] IS NULL) OR ([MA] = @Original_MA)) AND ((@IsNull_DON_GIA_CHUA_VAT = 1 AND [DON_GIA_CHUA_VAT] IS NULL) OR ([DON_GIA_CHUA_VAT] = @Original_DON_GIA_CHUA_VAT)) AND ((@IsNull_DON_GIA_GOM_VAT = 1 AND [DON_GIA_GOM_VAT] IS NULL) OR ([DON_GIA_GOM_VAT] = @Original_DON_GIA_GOM_VAT)) AND ((@IsNull_TEN = 1 AND [TEN] IS NULL) OR ([TEN] = @Original_TEN)) AND ((@IsNull_DON_VI_TINH = 1 AND [DON_VI_TINH] IS NULL) OR ([DON_VI_TINH] = @Original_DON_VI_TINH)) AND ((@IsNull_ID_NHA_CUNG_CAP = 1 AND [ID_NHA_CUNG_CAP] IS NULL) OR ([ID_NHA_CUNG_CAP] = @Original_ID_NHA_CUNG_CAP)) AND ((@IsNull_GIOI_HAN_VPP = 1 AND [GIOI_HAN_VPP] IS NULL) OR ([GIOI_HAN_VPP] = @Original_GIOI_HAN_VPP)));
+SELECT ID, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN, DON_VI_TINH, ID_NHA_CUNG_CAP, GIOI_HAN_VPP FROM DM_VPP WHERE (ID = @ID)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@DON_GIA_CHUA_VAT" Precision="21" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="DON_GIA_CHUA_VAT" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -63,6 +67,7 @@ SELECT ID, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN, DON_VI_TINH, ID_NHA_CUNG_
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TEN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TEN" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DON_VI_TINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DON_VI_TINH" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ID_NHA_CUNG_CAP" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID_NHA_CUNG_CAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@GIOI_HAN_VPP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GIOI_HAN_VPP" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MA" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_MA" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -76,6 +81,8 @@ SELECT ID, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN, DON_VI_TINH, ID_NHA_CUNG_
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DON_VI_TINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DON_VI_TINH" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_NHA_CUNG_CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_NHA_CUNG_CAP" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ID_NHA_CUNG_CAP" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID_NHA_CUNG_CAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GIOI_HAN_VPP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GIOI_HAN_VPP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_GIOI_HAN_VPP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GIOI_HAN_VPP" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="" DataTypeServer="DT_POID" DbType="Decimal" Direction="Input" ParameterName="@ID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
@@ -90,6 +97,7 @@ SELECT ID, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN, DON_VI_TINH, ID_NHA_CUNG_
               <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
               <Mapping SourceColumn="DON_VI_TINH" DataSetColumn="DON_VI_TINH" />
               <Mapping SourceColumn="ID_NHA_CUNG_CAP" DataSetColumn="ID_NHA_CUNG_CAP" />
+              <Mapping SourceColumn="GIOI_HAN_VPP" DataSetColumn="GIOI_HAN_VPP" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -129,6 +137,13 @@ SELECT ID, MA, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, TEN, DON_VI_TINH, ID_NHA_CUNG_
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ID_NHA_CUNG_CAP" msprop:Generator_ColumnVarNameInTable="columnID_NHA_CUNG_CAP" msprop:Generator_ColumnPropNameInRow="ID_NHA_CUNG_CAP" msprop:Generator_ColumnPropNameInTable="ID_NHA_CUNG_CAPColumn" msprop:Generator_UserColumnName="ID_NHA_CUNG_CAP" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GIOI_HAN_VPP" msprop:Generator_ColumnVarNameInTable="columnGIOI_HAN_VPP" msprop:Generator_ColumnPropNameInRow="GIOI_HAN_VPP" msprop:Generator_ColumnPropNameInTable="GIOI_HAN_VPPColumn" msprop:Generator_UserColumnName="GIOI_HAN_VPP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
