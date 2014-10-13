@@ -72,6 +72,7 @@ namespace BCTKApp
             m_us.dcDON_GIA_CHUA_VAT = CIPConvert.ToDecimal(m_txt_don_gia.Text.Trim().Replace(",", "").Replace(".", ""));
             m_us.dcDON_GIA_GOM_VAT = CIPConvert.ToDecimal((float)m_us.dcDON_GIA_CHUA_VAT * 1.1);
             m_us.dcID_NHA_CUNG_CAP = CIPConvert.ToDecimal(m_cbo_nha_cc.SelectedValue);
+            m_us.strGIOI_HAN_VPP = m_txt_gioi_han.Text;
         }
         private void us_obj_2_form(US_V_DM_VPP ip_v_us)
         {
@@ -81,6 +82,7 @@ namespace BCTKApp
             m_txt_don_vi_tinh.Text = ip_v_us.strDON_VI_TINH;
             m_txt_don_gia.Text = ip_v_us.dcDON_GIA_CHUA_VAT.ToString();
             m_cbo_nha_cc.SelectedValue = ip_v_us.dcID_NHA_CUNG_CAP;
+            m_txt_gioi_han.Text = ip_v_us.strGIOI_HAN_VPP;
         }
         private void save_data()
         {

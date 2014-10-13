@@ -46,6 +46,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.m_txt_don_gia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.m_txt_gioi_han = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,7 +144,7 @@
             // 
             this.m_cbo_nha_cc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_nha_cc.FormattingEnabled = true;
-            this.m_cbo_nha_cc.Location = new System.Drawing.Point(152, 199);
+            this.m_cbo_nha_cc.Location = new System.Drawing.Point(152, 235);
             this.m_cbo_nha_cc.Name = "m_cbo_nha_cc";
             this.m_cbo_nha_cc.Size = new System.Drawing.Size(242, 21);
             this.m_cbo_nha_cc.TabIndex = 16;
@@ -150,7 +152,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 208);
+            this.label1.Location = new System.Drawing.Point(67, 244);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 19;
@@ -219,11 +221,29 @@
             this.label3.TabIndex = 23;
             this.label3.Text = "Đơn giá (chưa VAT)";
             // 
+            // m_txt_gioi_han
+            // 
+            this.m_txt_gioi_han.Location = new System.Drawing.Point(153, 204);
+            this.m_txt_gioi_han.Name = "m_txt_gioi_han";
+            this.m_txt_gioi_han.Size = new System.Drawing.Size(241, 20);
+            this.m_txt_gioi_han.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(69, 209);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Giới hạn";
+            // 
             // F604_v_dm_vpp_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 326);
+            this.Controls.Add(this.m_txt_gioi_han);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.m_txt_don_gia);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.m_txt_don_vi_tinh);
@@ -263,5 +283,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox m_txt_don_gia;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox m_txt_gioi_han;
+        private System.Windows.Forms.Label label4;
     }
 }
