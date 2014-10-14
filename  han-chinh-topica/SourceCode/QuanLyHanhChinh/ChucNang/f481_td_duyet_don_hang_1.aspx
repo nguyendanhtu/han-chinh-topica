@@ -66,7 +66,9 @@
                     <asp:HiddenField ID="m_hdf_ma_trung_tam" runat="server" />
                     <asp:HiddenField ID="m_hdf_ten_trung_tam" runat="server" />
                     <asp:HiddenField ID="m_hdf_id_user" runat="server" />
-                    <asp:HiddenField ID="HiddenField1" runat="server" />
+                    <asp:HiddenField ID="m_hdf_ma_don_hang" runat="server" />
+                    <asp:HiddenField ID="m_hdf_ngay_dat" runat="server" />
+                    <asp:HiddenField ID="m_hdf_lan_dat" runat="server" />
                 </td>
             </tr>
             <tr>
