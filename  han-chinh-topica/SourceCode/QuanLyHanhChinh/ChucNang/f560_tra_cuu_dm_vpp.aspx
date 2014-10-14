@@ -103,6 +103,10 @@
                             ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                             <ItemStyle HorizontalAlign="Right" Width="7%" />
                         </asp:BoundField>
+                         <asp:BoundField DataField="GIOI_HAN_VPP" ItemStyle-HorizontalAlign="Right" HeaderText="SỐ LƯỢNG TỐI ĐA"
+                            ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                            <ItemStyle HorizontalAlign="Right" Width="7%" />
+                        </asp:BoundField>
                     </Columns>
                 </asp:GridView>
             </td>
