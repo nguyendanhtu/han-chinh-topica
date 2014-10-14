@@ -30,17 +30,20 @@ namespace BCTKApp.CongVan
             m_e_form_mode = ip_e_form_mode;
             switch (m_e_form_mode)
             {
-                case eFormMode.DI_KHONG_LUU:
-                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - KHÔNG LƯU";
+                case eFormMode.DI_NOI_BO:
+                    m_lbl_title.Text = "THÊM MỚI VĂN BẢN ĐI - NỘI BỘ";
+                    m_rdb_noi_bo.Checked = true;
                     break;
 
-                case eFormMode.DI_LUU:
-                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - LƯU";
+                case eFormMode.DI_BEN_NGOAI:
+                    m_lbl_title.Text = "THÊM MỚI VĂN BẢN ĐI - BÊN NGOÀI";
+                    m_rdb_ben_ngoai.Checked = true;
                     break;
             }
             load_data_trang_thai();
             this.ShowDialog();
         }
+
         public void display_for_insert()
         {
             m_dc_id_cong_van = 0;
@@ -53,12 +56,14 @@ namespace BCTKApp.CongVan
             m_e_form_mode = ip_e_form_mode;
             switch (m_e_form_mode)
             {
-                case eFormMode.DI_KHONG_LUU:
-                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - KHÔNG LƯU";
+                case eFormMode.DI_NOI_BO:
+                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - NỘI BỘ";
+                    m_rdb_noi_bo.Checked = true;
                     break;
 
-                case eFormMode.DI_LUU:
-                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - LƯU";
+                case eFormMode.DI_BEN_NGOAI:
+                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - BÊN NGOÀI";
+                    m_rdb_ben_ngoai.Checked = true;
                     break;
             }
             load_data_trang_thai();
@@ -70,14 +75,14 @@ namespace BCTKApp.CongVan
         #region Data Structures
         public enum eFormMode
         {
-            DI_KHONG_LUU = 0,
-            DI_LUU = 1
+            DI_NOI_BO = 0,
+            DI_BEN_NGOAI = 1
         }
         #endregion
 
         #region Members
         Decimal m_dc_id_cong_van=0;
-        private eFormMode m_e_form_mode = eFormMode.DI_KHONG_LUU;
+        private eFormMode m_e_form_mode = eFormMode.DI_NOI_BO;
         #endregion
 
         #region Private methods
@@ -174,7 +179,9 @@ namespace BCTKApp.CongVan
 
             load_data_nguoi_nhan_ban_luu();
             load_thong_tin_so_va_ky_hieu_van_ban();
-            m_dc_id_cong_van = 0; ;
+            m_dc_id_cong_van = 0;
+            m_rdb_noi_bo.Checked = true;
+            m_txt_so.LoaiCongVan = m_cbx_phap_nhan.Text;
         }
 
         private void load_data_phap_nhan()
@@ -207,9 +214,10 @@ namespace BCTKApp.CongVan
             {
                 US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
                 DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-                if (m_e_form_mode == eFormMode.DI_KHONG_LUU)
+                /*if (m_e_form_mode == eFormMode.DI_NOI_BO)
                     v_us_cm_dm_tu_dien.FillDataset(v_ds_cm_dm_tu_dien, "where ma_tu_dien in ('CHO_SO_VAO_SO_DONG_DAU','DA_CHUYEN_CHO_DON_VI_BAN_HANH') order by ten_ngan");
-                else v_us_cm_dm_tu_dien.FillDataset(v_ds_cm_dm_tu_dien, "where ma_tu_dien in ('CHO_SO_VAO_SO_DONG_DAU','DA_LUU_TAI_TAD','DA_CHUYEN_DEN_NGUOI_NHAN','NGUOI_NHAN_DA_NHAN_DUOC') order by ten_ngan");
+                else */
+                    v_us_cm_dm_tu_dien.FillDataset(v_ds_cm_dm_tu_dien, "where ma_tu_dien in ('CHO_SO_VAO_SO_DONG_DAU','DA_LUU','DA_CHUYEN_DEN_NGUOI_NHAN','NGUOI_NHAN_DA_NHAN_DUOC') order by ten_ngan");
 
                 m_cbx_trang_thai.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
                 m_cbx_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
@@ -240,16 +248,14 @@ namespace BCTKApp.CongVan
                 US_DM_PHAP_NHAN v_us_dm_phap_nhan = new US_DM_PHAP_NHAN(CIPConvert.ToDecimal(m_cbx_phap_nhan.SelectedValue));
                 if (v_us_dm_phap_nhan.strMA_PHAP_NHAN == "TPE" )
                 {
-                    v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban, "where id_phap_nhan="+m_cbx_phap_nhan.SelectedValue+" order by ma_phong_ban");//5 la id EDT
+                    v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban, "where id_phap_nhan=" +m_cbx_phap_nhan.SelectedValue + " order by ma_phong_ban");//5 la id EDT
                     m_cbx_ban_luu.DataSource = v_ds_dm_phong_ban.v_DM_PHONG_BAN_PHAP_NHAN;
                 }
                 else
                 {
                     v_us_dm_phong_ban.FillDataset(v_ds_dm_phong_ban, "where id_phap_nhan=5 order by ma_phong_ban");//5 la id EDT
                     m_cbx_ban_luu.DataSource = v_ds_dm_phong_ban.v_DM_PHONG_BAN_PHAP_NHAN;
-                }
-                
-                
+                }    
             }
             catch (Exception v_e)
             {
@@ -279,19 +285,31 @@ namespace BCTKApp.CongVan
                 v_us_gd_van_thu.strTEN_LOAI_VA_TRICH_YEU_ND = m_txt_ten_loai.Text.Trim();
                 v_us_gd_van_thu.strNOI_NHAN = m_txt_noi_nhan.Text.Trim();
                 v_us_gd_van_thu.dcID_NGUOI_NHAN_BAN_LUU = CIPConvert.ToDecimal(m_cbx_ban_luu.SelectedValue);
-                if (m_cbx_ban_luu.SelectedValue==null)
+                if (m_cbx_ban_luu.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("Bạn phải chọn Người nhận bản lưu", "Cảnh báo");
+                    MessageBox.Show("Bạn phải chọn Người nhận/Nơi nhận bản lưu", "Cảnh báo");
                     return false;
                 }
-                v_us_gd_van_thu.dcID_NOI_NGUOI_NHAN = CIPConvert.ToDecimal(m_cbx_ban_luu.SelectedValue);
+
+                if (m_cbx_ban_luu.SelectedValue != null)
+                {
+                    v_us_gd_van_thu.dcID_NOI_NGUOI_NHAN = CIPConvert.ToDecimal(m_cbx_ban_luu.SelectedValue);
+                    v_us_gd_van_thu.dcID_NGUOI_NHAN_BAN_LUU = CIPConvert.ToDecimal(m_cbx_ban_luu.SelectedValue);
+                }
+                else
+                {
+                    v_us_gd_van_thu.SetID_NOI_NGUOI_NHANNull();
+                    v_us_gd_van_thu.SetID_NGUOI_NHAN_BAN_LUUNull();
+                }
                 v_us_gd_van_thu.strGHI_CHU = m_txt_ghi_chu.Text.Trim();
                 v_us_gd_van_thu.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbx_trang_thai.SelectedValue);
                 v_us_gd_van_thu.strNGUOI_LAP = m_txt_nguoi_nhap.Text.Trim();
                 if (!m_txt_file_upload.Text.Trim().Equals(""))
                     v_us_gd_van_thu.strLINK_SCAN = v_str_save_file;
                 else v_us_gd_van_thu.strLINK_SCAN = "";
-                v_us_gd_van_thu.dcID_LOAI_CONG_VAN = ID_LOAI_VAN_THU.CONG_VAN_DI; ;
+                v_us_gd_van_thu.dcID_LOAI_CONG_VAN = (m_rdb_noi_bo.Checked)
+                                                         ? ID_LOAI_VAN_THU.CONG_VAN_DI_NOI_BO
+                                                         : ID_LOAI_VAN_THU.CONG_VAN_DI_BEN_NGOAI;
                 v_us_gd_van_thu.dcID_PHAP_NHAN = CIPConvert.ToDecimal(m_cbx_phap_nhan.SelectedValue);
 
                 if (m_dc_id_cong_van == 0)
@@ -299,7 +317,7 @@ namespace BCTKApp.CongVan
                     v_us_gd_van_thu.Insert();
                     US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
                     DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
-                    v_us.FillDataset(v_ds, "where ma_tu_dien='" + m_cbx_phap_nhan.Text+"'");
+                    v_us.FillDataset(v_ds, "where ma_tu_dien='" + m_cbx_phap_nhan.Text + "'");
                     if (v_ds.CM_DM_TU_DIEN.Count > 0)
                     {
                         string v_str_so = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN_NGAN].ToString();
@@ -345,6 +363,7 @@ namespace BCTKApp.CongVan
             m_txt_nguoi_nhap.Text = string.Empty;
             m_txt_file_upload.Text = string.Empty;
             m_tcd_ngay_nhap.Text = CIPConvert.ToStr(DateTime.Now, "dd/MM/yyyy");
+            m_txt_nguoi_nhap.Text = "SamPT";
         }
         #endregion 
 
@@ -358,16 +377,10 @@ namespace BCTKApp.CongVan
             if (v_ofd_file_upload.ShowDialog() == DialogResult.OK)
             {
                 m_txt_file_upload.Text = v_ofd_file_upload.FileName;
-
             }
         }
 
-        private void m_btn_exit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        void m_cmd_save_Click(object sender, EventArgs e)
+        private void m_cmd_save_Click(object sender, EventArgs e)
         {
             try
             {
@@ -389,7 +402,7 @@ namespace BCTKApp.CongVan
             }
         }
 
-        void m_cmd_exit_Click(object sender, EventArgs e)
+        private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
             {
@@ -400,7 +413,8 @@ namespace BCTKApp.CongVan
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        void m_cbx_phap_nhan_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void m_cbx_phap_nhan_SelectedIndexChanged(object sender, EventArgs e)
         {
             //for (int i = 0; i < m_cbx_ky_hieu.Items.Count; i++)
             //{
@@ -416,6 +430,8 @@ namespace BCTKApp.CongVan
             load_thong_tin_so_va_ky_hieu_van_ban();
 
             load_data_nguoi_nhan_ban_luu();
+            m_txt_so.LoaiCongVan = m_cbx_phap_nhan.Text;
+            m_txt_so.UpdateValue();
         }
         
         #endregion
