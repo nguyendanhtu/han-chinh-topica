@@ -69,7 +69,6 @@ namespace BCTKApp
         }
         public DateTime? getValue()
         {
-            if (this.Allow_Null == "Y") return null;
             DateTime v_dat = new DateTime();
             bool v_b_result = false;
             switch (Format)
@@ -81,6 +80,7 @@ namespace BCTKApp
                     v_b_result = DateTime.TryParseExact(this.Text, "MM/yyyy", null, System.Globalization.DateTimeStyles.AssumeLocal, out v_dat);
                     break;
             }
+            if (this.Allow_Null == "Y" && !v_b_result) return null;
             return v_dat;
         }
         public enum DinhDang

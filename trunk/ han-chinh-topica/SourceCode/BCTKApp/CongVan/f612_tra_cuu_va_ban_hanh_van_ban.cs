@@ -39,9 +39,9 @@ namespace BCTKApp
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private Label m_lbl_title;
         private RadioButton m_rdb_van_ban_den;
-        private RadioButton m_rdb_van_ban_di_khong_luu;
+        private RadioButton m_rdb_van_ban_di_noi_bo;
         private GroupBox groupBox1;
-        private RadioButton m_rdb_van_ban_di_luu;
+        private RadioButton m_rdb_van_ban_di_ben_ngoai;
         private TextBox m_txt_tu_khoa;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private Label label1;
@@ -103,10 +103,10 @@ namespace BCTKApp
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_rdb_van_ban_den = new System.Windows.Forms.RadioButton();
-            this.m_rdb_van_ban_di_khong_luu = new System.Windows.Forms.RadioButton();
+            this.m_rdb_van_ban_di_noi_bo = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_rdb_tat_ca = new System.Windows.Forms.RadioButton();
-            this.m_rdb_van_ban_di_luu = new System.Windows.Forms.RadioButton();
+            this.m_rdb_van_ban_di_ben_ngoai = new System.Windows.Forms.RadioButton();
             this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -223,28 +223,28 @@ namespace BCTKApp
             this.m_rdb_van_ban_den.ForeColor = System.Drawing.Color.Blue;
             this.m_rdb_van_ban_den.Location = new System.Drawing.Point(81, 19);
             this.m_rdb_van_ban_den.Name = "m_rdb_van_ban_den";
-            this.m_rdb_van_ban_den.Size = new System.Drawing.Size(87, 18);
+            this.m_rdb_van_ban_den.Size = new System.Drawing.Size(87, 17);
             this.m_rdb_van_ban_den.TabIndex = 1;
             this.m_rdb_van_ban_den.Text = "Văn bản đến";
             this.m_rdb_van_ban_den.UseVisualStyleBackColor = true;
             // 
-            // m_rdb_van_ban_di_khong_luu
+            // m_rdb_van_ban_di_noi_bo
             // 
-            this.m_rdb_van_ban_di_khong_luu.AutoSize = true;
-            this.m_rdb_van_ban_di_khong_luu.ForeColor = System.Drawing.Color.Blue;
-            this.m_rdb_van_ban_di_khong_luu.Location = new System.Drawing.Point(173, 19);
-            this.m_rdb_van_ban_di_khong_luu.Name = "m_rdb_van_ban_di_khong_luu";
-            this.m_rdb_van_ban_di_khong_luu.Size = new System.Drawing.Size(116, 18);
-            this.m_rdb_van_ban_di_khong_luu.TabIndex = 2;
-            this.m_rdb_van_ban_di_khong_luu.Text = "Văn bản đi - nội bộ";
-            this.m_rdb_van_ban_di_khong_luu.UseVisualStyleBackColor = true;
+            this.m_rdb_van_ban_di_noi_bo.AutoSize = true;
+            this.m_rdb_van_ban_di_noi_bo.ForeColor = System.Drawing.Color.Blue;
+            this.m_rdb_van_ban_di_noi_bo.Location = new System.Drawing.Point(173, 19);
+            this.m_rdb_van_ban_di_noi_bo.Name = "m_rdb_van_ban_di_noi_bo";
+            this.m_rdb_van_ban_di_noi_bo.Size = new System.Drawing.Size(109, 17);
+            this.m_rdb_van_ban_di_noi_bo.TabIndex = 2;
+            this.m_rdb_van_ban_di_noi_bo.Text = "Văn bản đi nội bộ";
+            this.m_rdb_van_ban_di_noi_bo.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.m_rdb_tat_ca);
             this.groupBox1.Controls.Add(this.m_rdb_van_ban_den);
-            this.groupBox1.Controls.Add(this.m_rdb_van_ban_di_luu);
-            this.groupBox1.Controls.Add(this.m_rdb_van_ban_di_khong_luu);
+            this.groupBox1.Controls.Add(this.m_rdb_van_ban_di_ben_ngoai);
+            this.groupBox1.Controls.Add(this.m_rdb_van_ban_di_noi_bo);
             this.groupBox1.ForeColor = System.Drawing.Color.Maroon;
             this.groupBox1.Location = new System.Drawing.Point(315, 62);
             this.groupBox1.Name = "groupBox1";
@@ -260,22 +260,23 @@ namespace BCTKApp
             this.m_rdb_tat_ca.ForeColor = System.Drawing.Color.Blue;
             this.m_rdb_tat_ca.Location = new System.Drawing.Point(20, 19);
             this.m_rdb_tat_ca.Name = "m_rdb_tat_ca";
+
             this.m_rdb_tat_ca.Size = new System.Drawing.Size(56, 18);
             this.m_rdb_tat_ca.TabIndex = 0;
             this.m_rdb_tat_ca.TabStop = true;
             this.m_rdb_tat_ca.Text = "Topica";
             this.m_rdb_tat_ca.UseVisualStyleBackColor = true;
             // 
-            // m_rdb_van_ban_di_luu
+            // m_rdb_van_ban_di_ben_ngoai
             // 
-            this.m_rdb_van_ban_di_luu.AutoSize = true;
-            this.m_rdb_van_ban_di_luu.ForeColor = System.Drawing.Color.Blue;
-            this.m_rdb_van_ban_di_luu.Location = new System.Drawing.Point(295, 18);
-            this.m_rdb_van_ban_di_luu.Name = "m_rdb_van_ban_di_luu";
-            this.m_rdb_van_ban_di_luu.Size = new System.Drawing.Size(134, 18);
-            this.m_rdb_van_ban_di_luu.TabIndex = 3;
-            this.m_rdb_van_ban_di_luu.Text = "Văn bản đi - bên ngoài";
-            this.m_rdb_van_ban_di_luu.UseVisualStyleBackColor = true;
+            this.m_rdb_van_ban_di_ben_ngoai.AutoSize = true;
+            this.m_rdb_van_ban_di_ben_ngoai.ForeColor = System.Drawing.Color.Blue;
+            this.m_rdb_van_ban_di_ben_ngoai.Location = new System.Drawing.Point(288, 18);
+            this.m_rdb_van_ban_di_ben_ngoai.Name = "m_rdb_van_ban_di_ben_ngoai";
+            this.m_rdb_van_ban_di_ben_ngoai.Size = new System.Drawing.Size(127, 17);
+            this.m_rdb_van_ban_di_ben_ngoai.TabIndex = 3;
+            this.m_rdb_van_ban_di_ben_ngoai.Text = "Văn bản đi bên ngoài";
+            this.m_rdb_van_ban_di_ben_ngoai.UseVisualStyleBackColor = true;
             // 
             // m_txt_tu_khoa
             // 
@@ -305,7 +306,7 @@ namespace BCTKApp
             this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(541, 185);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 14);
+            this.label1.Size = new System.Drawing.Size(139, 13);
             this.label1.TabIndex = 26;
             this.label1.Text = "* Nhập số cv hoặc người ký";
             // 
@@ -336,6 +337,7 @@ namespace BCTKApp
             this.m_cbo_phap_nhan.FormattingEnabled = true;
             this.m_cbo_phap_nhan.Location = new System.Drawing.Point(316, 118);
             this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
+
             this.m_cbo_phap_nhan.Size = new System.Drawing.Size(134, 22);
             this.m_cbo_phap_nhan.TabIndex = 0;
             // 
@@ -345,7 +347,7 @@ namespace BCTKApp
             this.label3.ForeColor = System.Drawing.Color.Maroon;
             this.label3.Location = new System.Drawing.Point(385, 159);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 14);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 28;
             this.label3.Text = "Đến ngày";
             // 
@@ -355,7 +357,7 @@ namespace BCTKApp
             this.label4.ForeColor = System.Drawing.Color.Maroon;
             this.label4.Location = new System.Drawing.Point(252, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 14);
+            this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 28;
             this.label4.Text = "Pháp nhân";
             // 
@@ -365,7 +367,7 @@ namespace BCTKApp
             this.label2.ForeColor = System.Drawing.Color.Maroon;
             this.label2.Location = new System.Drawing.Point(262, 159);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 14);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 28;
             this.label2.Text = "Từ ngày";
             // 
@@ -530,6 +532,8 @@ namespace BCTKApp
             load_data_to_cbo_trang_thai();
             m_obj_trans = get_trans_object(m_fg);
             DateTime v_dau_thang = DateTime.Now.AddDays(-DateTime.Now.Day + 1);
+            m_txt_tu_ngay.AllowNull = TCDatetime.AL.Y;
+            m_txt_den_ngay.AllowNull = TCDatetime.AL.Y;
             //v_dau_thang=v_dat
             m_txt_tu_ngay.Text = CIPConvert.ToStr(v_dau_thang.AddMonths(-v_dau_thang.Month + 1), "dd/MM/yyyy");
             m_txt_den_ngay.Text = CIPConvert.ToStr(v_dau_thang.AddMonths(1).AddDays(-1), "dd/MM/yyyy");
@@ -599,19 +603,28 @@ namespace BCTKApp
             if (m_cbo_trang_thai.SelectedValue == null) return;
             m_ds = new DS_V_GD_VAN_THU_ALL();
             decimal v_dc_id_loai_cong_van = -1;
-            if (m_rdb_van_ban_di_luu.Checked == true) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DI;
-            else if (m_rdb_van_ban_den.Checked == true) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DEN;
-            DateTime v_dat_tu_ngay = DateTime.Now;
-            DateTime v_dat_den_ngay = DateTime.Now;
-            if (m_txt_tu_ngay.getValue() == null) v_dat_tu_ngay = new DateTime(1800, 1, 1);
-            else v_dat_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text, "dd/MM/yyyy");
-            if (m_txt_den_ngay.getValue() != null) v_dat_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text, "dd/MM/yyyy");
-            m_us.Search(m_ds, CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue)
-                , v_dc_id_loai_cong_van
-                , v_dat_tu_ngay
-                , v_dat_den_ngay
-                , m_txt_tu_khoa.Text.Trim()
-                , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue));
+
+            if (m_rdb_van_ban_di_ben_ngoai.Checked) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DI_BEN_NGOAI;
+            else if (m_rdb_van_ban_den.Checked) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DEN;
+            else if (m_rdb_van_ban_di_noi_bo.Checked) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DI_NOI_BO;
+            string v_str_from_date = (m_txt_tu_ngay.Text.Replace("/", "").Trim() == string.Empty) ? "01/01/1900" : m_txt_tu_ngay.Text;
+            string v_str_to_date = (m_txt_den_ngay.Text.Replace("/", "").Trim() == string.Empty) ? "30/12/2999" : m_txt_den_ngay.Text;
+            m_us.Search(m_ds, CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue), v_dc_id_loai_cong_van, CIPConvert.ToDatetime(v_str_from_date, "dd/MM/yyyy"), CIPConvert.ToDatetime(v_str_to_date, "dd/MM/yyyy"), m_txt_tu_khoa.Text.Trim());
+
+            //if (m_rdb_van_ban_di_noi_bo.Checked == true) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DI;
+            //else if (m_rdb_van_ban_den.Checked == true) v_dc_id_loai_cong_van = ID_LOAI_VAN_THU.CONG_VAN_DEN;
+            //DateTime v_dat_tu_ngay = DateTime.Now;
+            //DateTime v_dat_den_ngay = DateTime.Now;
+            //if (m_txt_tu_ngay.getValue() == null) v_dat_tu_ngay = new DateTime(1800, 1, 1);
+            //else v_dat_tu_ngay = CIPConvert.ToDatetime(m_txt_tu_ngay.Text, "dd/MM/yyyy");
+            //if (m_txt_den_ngay.getValue() != null) v_dat_den_ngay = CIPConvert.ToDatetime(m_txt_den_ngay.Text, "dd/MM/yyyy");
+            //m_us.Search(m_ds, CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue)
+            //    , v_dc_id_loai_cong_van
+            //    , v_dat_tu_ngay
+            //    , v_dat_den_ngay
+            //    , m_txt_tu_khoa.Text.Trim()
+            //    , CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue));
+
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_fg);
@@ -659,10 +672,15 @@ namespace BCTKApp
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
-            if (m_us.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DI)
+            if (m_us.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DI_NOI_BO)
             {
                 F651_CAP_NHAT_CONG_VAN_DI v_frm = new F651_CAP_NHAT_CONG_VAN_DI();
-                v_frm.display_for_update(m_us.dcID, F651_CAP_NHAT_CONG_VAN_DI.eFormMode.DI_LUU);
+                v_frm.display_for_update(m_us.dcID, F651_CAP_NHAT_CONG_VAN_DI.eFormMode.DI_NOI_BO);
+            }
+            else if (m_us.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DI_BEN_NGOAI)
+            {
+                F651_CAP_NHAT_CONG_VAN_DI v_frm = new F651_CAP_NHAT_CONG_VAN_DI();
+                v_frm.display_for_update(m_us.dcID, F651_CAP_NHAT_CONG_VAN_DI.eFormMode.DI_BEN_NGOAI);
             }
             //else if (m_us.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DI_KHONG_LUU)
             //{
@@ -709,8 +727,8 @@ namespace BCTKApp
             m_cmd_search.Click += m_cmd_search_Click;
             m_cmd_ban_hanh.Click += m_cmd_ban_hanh_Click;
             m_rdb_tat_ca.CheckedChanged += m_rdb_tat_ca_CheckedChanged;
-            m_rdb_van_ban_di_khong_luu.CheckedChanged += m_rdb_van_ban_den_khong_luu_CheckedChanged;
-            m_rdb_van_ban_di_luu.CheckedChanged += m_rdb_van_ban_den_luu_CheckedChanged;
+            m_rdb_van_ban_di_noi_bo.CheckedChanged += m_rdb_van_ban_den_khong_luu_CheckedChanged;
+            m_rdb_van_ban_di_ben_ngoai.CheckedChanged += m_rdb_van_ban_den_luu_CheckedChanged;
             m_rdb_van_ban_den.CheckedChanged += m_rdb_van_ban_di_CheckedChanged;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
         }
@@ -758,7 +776,7 @@ namespace BCTKApp
                 m_fg.Cols[(int)e_col_Number.TRANG_THAI_ML].Visible = true;
                 m_fg.Cols[(int)e_col_Number.NGUOI_LAP].Visible = true;
             }
-            else if (m_rdb_van_ban_di_khong_luu.Checked == true | m_rdb_van_ban_di_luu.Checked == true)
+            else if (m_rdb_van_ban_di_noi_bo.Checked == true | m_rdb_van_ban_di_ben_ngoai.Checked == true)
             {
                 m_fg.Cols[(int)e_col_Number.MA_PHAP_NHAN].Visible = true;
                 m_fg.Cols[(int)e_col_Number.NGAY_LAP].Caption = "Ngày nhập";
