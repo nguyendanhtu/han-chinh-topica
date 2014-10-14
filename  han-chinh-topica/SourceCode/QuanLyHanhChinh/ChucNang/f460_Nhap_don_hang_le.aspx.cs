@@ -890,23 +890,24 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         try
         {
             if (check_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng đang chờ duyệt. Vui lòng chờ TD duyệt", true); return; };
-            string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
-            //string v_mail = m_txt_nhap_mail.Text + "@gmail.com";
+            //string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
+            string v_mail = m_txt_nhap_mail.Text + "@gmail.com";
             US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
             DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
-            string v_duong_dan = "http://http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value + "&form_mode=" + CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET + "&id_user=" + m_hdf_id_user.Value;
+            string v_duong_dan = "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value + "&form_mode=" + CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET + "&id_user=" + m_hdf_id_user.Value;
             v_us.get_so_don_hang_nhap_trung_tam(v_ds, CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value), CONST_ID_TRANG_THAI_DON_HANG.NHAP);
             if (check_txt_mail(v_mail) == true)
             {
          
-                string v_str_noi_dung = "Kính gửi TD/PM " + " " + m_hdf_ma_trung_tam.Value + ","
+                string v_str_noi_dung = "Kính gửi TD/PM: " + " " + m_hdf_ma_trung_tam.Value + ","
                                   + "\n"
                                   + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng:"
                                   +"\n"
                                   + "MP: " + m_lbl_ma_don_hang_de.Text + "    Lần:" + m_lbl_pop_lan.Text + "  Ngày đặt: " + m_lbl_pop_ngay.Text
+                                  + "\n"
                                   + "Xin cám ơn!"
                                   + "\n"
-                                  + "http://http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value + "&form_mode=" + CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET + "&id_user=" + m_hdf_id_user.Value;
+                                  + "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value + "&form_mode=" + CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET + "&id_user=" + m_hdf_id_user.Value;
                 if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "[" + m_hdf_ma_trung_tam.Value + "]Xin TD duyệt đơn hàng", v_str_noi_dung); }
                 v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(v_ds.GD_DON_DAT_HANG.Rows[0]["ID"]));
                 v_us.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET;
@@ -938,11 +939,12 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
             if (check_txt_mail(v_mail) == true)
             {
 
-                string v_str_noi_dung = "Kính gửi TD/PM " + " " + m_hdf_ma_trung_tam.Value + ","
+                string v_str_noi_dung = "Kính gửi TD/PM: " + " " + m_hdf_ma_trung_tam.Value + ","
                                   + "\n"
                                   + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng:"
                                   + "\n"
                                   + "MP: " + m_lbl_ma_don_hang_de.Text + "    Lần:" + m_lbl_pop_lan.Text + "  Ngày đặt: " + m_lbl_pop_ngay.Text
+                                  + "\n"
                                   + "Xin cám ơn!"
                                   + "\n"
                                   + "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value + "&form_mode=" + CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET + "&id_user=" + m_hdf_id_user;
