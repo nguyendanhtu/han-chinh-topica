@@ -124,6 +124,24 @@ namespace BCTKApp.App_Code
             }
 
         }
+        public static void openPDFFile(string ip_str_file_name)
+        {
+            try
+            {
+                string v_str_file_save = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "PdfScan\\" + ip_str_file_name.Replace("210.245.89.37/FileUpload_Vanthu/", "");
+                if (!ip_str_file_name.Equals(""))
+                {
+                    if(!File.Exists(v_str_file_save))
+                    BCTKApp.App_Code.HelpUtils.DownloadInApp(AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "PdfScan", ip_str_file_name.Replace("210.245.89.37/FileUpload_Vanthu/", ""));
+                    System.Diagnostics.Process.Start(v_str_file_save);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Máy tính của bạn chưa cài chương trình đọc pdf, bạn có thể cài đặt Foxit Reader hoặc một chương trình đọc file pdf để có thể xem được file scan!", "Cảnh báo");
+            }
+            
+        }
         public static bool ftpTransfer(string destination, string fileName)
         {
             string ftpAddress = ConfigurationSettings.AppSettings["DOMAIN"];

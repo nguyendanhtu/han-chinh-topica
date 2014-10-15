@@ -96,6 +96,7 @@ namespace BCTKApp.CongVan
             m_cbx_ky_hieu.Text = "";
             m_cbx_phap_nhan.SelectedIndex=0;
             m_cbx_trang_thai.SelectedIndex=0;
+
         }
 
         private void us_object_to_form(decimal ip_dc_id_cong_van)
@@ -116,7 +117,14 @@ namespace BCTKApp.CongVan
             m_cbx_ky_hieu.Text = v_us.strSO_VA_KY_HIEU.Replace(m_txt_so.Text,"");
             m_cbx_phap_nhan.SelectedValue = v_us.dcID_PHAP_NHAN.ToString();
             m_cbx_trang_thai.SelectedValue = v_us.dcID_TRANG_THAI.ToString();
+            if (v_us.IsNGAY_LAPNull())
+                m_tcd_ngay_nhap.Text = "";
+            else
             m_tcd_ngay_nhap.Text = CIPConvert.ToStr(v_us.datNGAY_LAP, "dd/MM/yyyy");
+            if (v_us.IsNGAY_THANG_TREN_CONG_VANNull())
+                m_tcd_ngay_tren_cv.Text = "";
+            else
+                m_tcd_ngay_tren_cv.Text = CIPConvert.ToStr(v_us.datNGAY_THANG_TREN_CONG_VAN, "dd/MM/yyyy");
             m_txt_ten_loai.Text = v_us.strTEN_LOAI_VA_TRICH_YEU_ND;
         }
 
@@ -132,7 +140,18 @@ namespace BCTKApp.CongVan
             op_us.strNGUOI_KY = m_txt_nguoi_ky.Text;
             op_us.strNGUOI_LAP = m_txt_nguoi_nhap.Text;
             op_us.strNOI_NHAN = m_txt_noi_nhan.Text;
+            if (m_tcd_ngay_nhap.getValue()==null)
+            {
+                op_us.SetNGAY_LAPNull();
+            }
+            else
             op_us.datNGAY_LAP = CIPConvert.ToDatetime(m_tcd_ngay_nhap.Text, "dd/MM/yyyy");
+            if (m_tcd_ngay_tren_cv.getValue() == null)
+            {
+                op_us.SetNGAY_THANG_TREN_CONG_VANNull();
+            }
+            else
+                op_us.datNGAY_THANG_TREN_CONG_VAN = CIPConvert.ToDatetime(m_tcd_ngay_tren_cv.Text, "dd/MM/yyyy");
         }
 
         private bool check_data_is_ok()
@@ -175,7 +194,7 @@ namespace BCTKApp.CongVan
         {
             load_data_phap_nhan();
             load_data_trang_thai();
-            load_data_ky_hieu();
+            load_data_ky_hieu("");
 
             load_data_nguoi_nhan_ban_luu();
             load_thong_tin_so_va_ky_hieu_van_ban();
@@ -203,9 +222,21 @@ namespace BCTKApp.CongVan
             }
         }
 
-        private void load_data_ky_hieu()
+        private void load_data_ky_hieu(string ma_phap_nhan)
         {
+            if(ma_phap_nhan.Equals(""))
             m_cbx_ky_hieu.DataSource = CongVanUtil.get_list_ky_hieu_cong_van();
+            else
+            {
+                List<string> v_lst_cv=CongVanUtil.get_list_ky_hieu_cong_van();
+                for (int i = 0; i < v_lst_cv.Count; i++)
+                {
+                    string v_str_edit = v_lst_cv[i];
+                    v_str_edit = v_str_edit.Replace(v_str_edit.Split('-')[2], m_cbx_phap_nhan.Text);
+                    v_lst_cv[i] = v_str_edit;
+                }
+                m_cbx_ky_hieu.DataSource = v_lst_cv;
+            }
         }
 
         private void load_data_trang_thai()
@@ -268,7 +299,7 @@ namespace BCTKApp.CongVan
             try
             {
                 string v_str_file_name = m_txt_file_upload.Text.Split('\\')[m_txt_file_upload.Text.Split('\\').Length - 1];
-                string v_str_save_file = ConfigurationSettings.AppSettings["DOMAIN"] + "/" + "FileUpload_Vanthu" + "/" + v_str_file_name;
+                string v_str_save_file = ConfigurationSettings.AppSettings["DOMAIN"] + "/" + "FileUpload_Vanthu" + "/" + v_str_file_name.Replace(ConfigurationSettings.AppSettings["DOMAIN"] + "/" + "FileUpload_Vanthu" + "/","");
                 if (!m_txt_file_upload.Text.Trim().Equals("") && !m_txt_file_upload.Text.Contains(ConfigurationSettings.AppSettings["DOMAIN"]))
                 {
                     if (!HelpUtils.ftpTransfer(m_txt_file_upload.Text.Replace(v_str_file_name, ""), v_str_file_name)) return false;
@@ -278,7 +309,17 @@ namespace BCTKApp.CongVan
                 US_GD_VAN_THU v_us_gd_van_thu = new US_GD_VAN_THU();
                 v_us_gd_van_thu.dcID = m_dc_id_cong_van;
                 v_us_gd_van_thu.dcID_PHAP_NHAN = CIPConvert.ToDecimal(m_cbx_phap_nhan.SelectedValue);
+                if (m_tcd_ngay_nhap.getValue()==null)
+                {
+                    v_us_gd_van_thu.SetNGAY_LAPNull();   
+                }
+                else
                 v_us_gd_van_thu.datNGAY_LAP = CIPConvert.ToDatetime(m_tcd_ngay_nhap.Text,"dd/MM/yyyy");
+                if (m_tcd_ngay_tren_cv.getValue()==null)
+                {
+                    v_us_gd_van_thu.SetNGAY_THANG_TREN_CONG_VANNull();
+                }
+                else v_us_gd_van_thu.datNGAY_THANG_TREN_CONG_VAN=CIPConvert.ToDatetime(m_tcd_ngay_tren_cv.Text,"dd/MM/yyyy");
                 v_us_gd_van_thu.strSO_VA_KY_HIEU =
                     new StringBuilder(m_txt_so.Text.Trim()).Append(m_cbx_ky_hieu.Text.Trim()).ToString();
                 v_us_gd_van_thu.strNGUOI_KY = m_txt_nguoi_ky.Text;
@@ -363,6 +404,7 @@ namespace BCTKApp.CongVan
             m_txt_nguoi_nhap.Text = string.Empty;
             m_txt_file_upload.Text = string.Empty;
             m_tcd_ngay_nhap.Text = CIPConvert.ToStr(DateTime.Now, "dd/MM/yyyy");
+            m_tcd_ngay_tren_cv.Text = "";
             m_txt_nguoi_nhap.Text = "SamPT";
         }
         #endregion 
@@ -427,6 +469,7 @@ namespace BCTKApp.CongVan
             //    }
             //    m_cbx_ky_hieu.Items[i] = v_arr_result;
             //}
+            load_data_ky_hieu(m_cbx_phap_nhan.Text);
             load_thong_tin_so_va_ky_hieu_van_ban();
 
             load_data_nguoi_nhan_ban_luu();

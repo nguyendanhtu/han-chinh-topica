@@ -163,7 +163,7 @@ namespace BCTKApp.CongVan
             try
             {
                 string v_str_file_name = m_txt_file_upload.Text.Split('\\')[m_txt_file_upload.Text.Split('\\').Length - 1];
-                string v_str_save_file = ConfigurationSettings.AppSettings["DOMAIN"] + "/" + "FileUpload_Vanthu" + "/" + v_str_file_name;
+                string v_str_save_file = ConfigurationSettings.AppSettings["DOMAIN"] + "/" + "FileUpload_Vanthu" + "/" + v_str_file_name.Replace(ConfigurationSettings.AppSettings["DOMAIN"] + "/" + "FileUpload_Vanthu" + "/","");
                 if (!m_txt_file_upload.Text.Trim().Equals("") && !m_txt_file_upload.Text.Contains(ConfigurationSettings.AppSettings["DOMAIN"]))
                 {
                     if (!HelpUtils.ftpTransfer(m_txt_file_upload.Text.Replace(v_str_file_name, ""), v_str_file_name)) return false;
