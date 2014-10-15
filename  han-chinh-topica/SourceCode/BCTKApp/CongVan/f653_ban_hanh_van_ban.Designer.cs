@@ -49,6 +49,7 @@
             this.m_lbl_danh_sach_mail_da_ban_hanh = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.m_lbl_danh_sach_mail_da_xac_nhan = new System.Windows.Forms.Label();
+            this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
@@ -103,6 +104,8 @@
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xem_file);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -121,9 +124,9 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 21;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(454, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(452, 4);
             this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 31);
+            this.m_cmd_save.Size = new System.Drawing.Size(88, 29);
             this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "Ban hành";
             // 
@@ -136,9 +139,9 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(542, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(540, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(106, 31);
+            this.m_cmd_exit.Size = new System.Drawing.Size(106, 29);
             this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Trở về (Esc)";
             // 
@@ -269,6 +272,21 @@
             this.m_lbl_danh_sach_mail_da_xac_nhan.TabIndex = 332;
             this.m_lbl_danh_sach_mail_da_xac_nhan.Text = "Tên loại và trích yếu nội dung";
             // 
+            // m_cmd_xem_file
+            // 
+            this.m_cmd_xem_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xem_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xem_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xem_file.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xem_file.ImageIndex = 5;
+            this.m_cmd_xem_file.ImageList = this.ImageList;
+            this.m_cmd_xem_file.Location = new System.Drawing.Point(380, 4);
+            this.m_cmd_xem_file.Name = "m_cmd_xem_file";
+            this.m_cmd_xem_file.Size = new System.Drawing.Size(72, 29);
+            this.m_cmd_xem_file.TabIndex = 6;
+            this.m_cmd_xem_file.Text = "Xem file";
+            // 
             // f653_ban_hanh_van_ban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -320,5 +338,6 @@
         private System.Windows.Forms.Label m_lbl_danh_sach_mail_da_ban_hanh;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label m_lbl_danh_sach_mail_da_xac_nhan;
+        internal SIS.Controls.Button.SiSButton m_cmd_xem_file;
     }
 }

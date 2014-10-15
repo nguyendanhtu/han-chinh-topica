@@ -305,6 +305,7 @@
     <Compile Include="App_Code\CongVanConstant.cs" />
     <Compile Include="App_Code\CongVanUtil.cs" />
     <Compile Include="App_Code\HelpUtils.cs" />
+    <Compile Include="App_Code\NumbericUtil.cs" />
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -468,6 +469,12 @@
     </Compile>
     <Compile Include="Controls\TCDatetime.Designer.cs">
       <DependentUpon>TCDatetime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TCSoVaKyHieu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TCSoVaKyHieu.Designer.cs">
+      <DependentUpon>TCSoVaKyHieu.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\f446_DM_V_GD_PHONG_BAN_DINH_MUC.cs">
       <SubType>Form</SubType>

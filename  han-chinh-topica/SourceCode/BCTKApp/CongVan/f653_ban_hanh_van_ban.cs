@@ -48,8 +48,16 @@ namespace BCTKApp.CongVan
         {
             m_cmd_save.Click += m_cmd_save_Click;
             m_cmd_exit.Click += m_cmd_exit_Click;
+            m_cmd_xem_file.Click += m_cmd_xem_file_Click;
         }
 
+
+        private void view_file_pdf()
+        {
+            if (m_dc_id_van_thu == 0) return;
+            US_V_GD_VAN_THU_ALL v_us = new US_V_GD_VAN_THU_ALL(m_dc_id_van_thu);
+            HelpUtils.openPDFFile(v_us.strLINK_SCAN);
+        }
 
         private void format_control()
         {
@@ -134,7 +142,17 @@ namespace BCTKApp.CongVan
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        void m_cmd_xem_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                view_file_pdf();
+            }
+            catch (Exception v_e)
+            {
 
+            }
+        }
         #endregion
     }
 }
