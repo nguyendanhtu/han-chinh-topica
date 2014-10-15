@@ -34,17 +34,17 @@ namespace BCTKApp
             //m_cmd_bc_chi_phi_theo_phap_nhan.Visible = false;
             if (CAppContext_201.getCurrentUser() == "vanthu" | CAppContext_201.getCurrentUser()=="admin")
             {
-                m_rib_tab_quan_ly_dinh_muc.Visible = false;
-                m_rib_tab_van_thu.Visible = true;
-                m_rib_tab_CPN.Visible = false;
-                m_rib_tab_VPP.Visible = false;
-            }
-            else
-            {
                 m_rib_tab_quan_ly_dinh_muc.Visible = true;
                 m_rib_tab_van_thu.Visible = false;
                 m_rib_tab_CPN.Visible = true;
                 m_rib_tab_VPP.Visible = true;
+            }
+            else
+            {
+                m_rib_tab_quan_ly_dinh_muc.Visible = false;
+                m_rib_tab_van_thu.Visible = true;
+                m_rib_tab_CPN.Visible = false;
+                m_rib_tab_VPP.Visible = false;
             }
         }
 
