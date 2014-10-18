@@ -890,8 +890,8 @@ public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
         try
         {
             if (check_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng đang chờ duyệt. Vui lòng chờ TD duyệt", true); return; };
-            //string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
-            string v_mail = m_txt_nhap_mail.Text + "@gmail.com";
+            string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
+            //string v_mail = m_txt_nhap_mail.Text + "@gmail.com";
             US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
             DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
             string v_duong_dan = "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value + "&form_mode=" + CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET + "&id_user=" + m_hdf_id_user.Value;
