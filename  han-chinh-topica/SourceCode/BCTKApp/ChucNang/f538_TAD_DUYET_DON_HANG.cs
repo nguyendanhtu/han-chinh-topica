@@ -225,6 +225,7 @@ namespace BCTKApp
             this.m_grv_don_hang.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_don_hang.Location = new System.Drawing.Point(0, 123);
             this.m_grv_don_hang.Name = "m_grv_don_hang";
+            this.m_grv_don_hang.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
             this.m_grv_don_hang.Size = new System.Drawing.Size(738, 328);
             this.m_grv_don_hang.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_don_hang.Styles"));
             this.m_grv_don_hang.TabIndex = 20;
@@ -288,7 +289,13 @@ namespace BCTKApp
             // 
             // toolTip1
             // 
-            this.toolTip1.AutomaticDelay = 100;
+            this.toolTip1.AutomaticDelay = 50;
+            this.toolTip1.AutoPopDelay = 5000;
+            this.toolTip1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.toolTip1.ForeColor = System.Drawing.Color.Blue;
+            this.toolTip1.InitialDelay = 50;
+            this.toolTip1.ReshowDelay = 10;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // f538_TAD_DUYET_DON_HANG
             // 
@@ -394,7 +401,7 @@ namespace BCTKApp
             DataRow v_dr = v_ds.DM_PHONG_BAN.NewRow();
             v_dr[DM_PHONG_BAN.ID] = -1;
             v_dr[DM_PHONG_BAN.MA_PHONG_BAN] = "";
-            v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "------------Tất cả------------";
+            v_dr[DM_PHONG_BAN.TEN_PHONG_BAN] = "-------------------------------Tất cả---------------------------------";
 
 
             v_ds.DM_PHONG_BAN.Rows.InsertAt(v_dr, 0);
@@ -412,6 +419,30 @@ namespace BCTKApp
 			grid2us_object(m_us, m_grv_don_hang.Row);
 		//	f538_TAD_DUYET_DON_HANG_DE v_fDE = new f538_TAD_DUYET_DON_HANG_DE();
 		//	v_fDE.display(m_us);
+            US_DM_PHONG_BAN v_us_pb = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds_pb = new DS_DM_PHONG_BAN();
+            US_HT_NGUOI_SU_DUNG v_us_user = new US_HT_NGUOI_SU_DUNG();
+            DS_HT_NGUOI_SU_DUNG v_ds_user = new DS_HT_NGUOI_SU_DUNG();
+            v_us_pb.FillDataset(v_ds_pb,"where ID ="+m_us.dcID_PHONG_BAN);
+            string ten_truy_cap = "nv_"+v_ds_pb.Tables[0].Rows[0]["MA_PHONG_BAN"].ToString();
+            v_us_user.FillDataset(v_ds_user,"Where TEN_TRUY_CAP = "+ "'"+ ten_truy_cap+ "'");
+            string v_mail;
+            if (v_ds_user.Tables[0].Rows.Count >= 0)
+                v_mail = v_ds_user.Tables[0].Rows[0]["MAIL"].ToString();
+            else {
+                v_mail = "";
+                DialogResult result = MessageBox.Show("Chưa có mail người gửi! \nBạn có muốn duyệt đơn hàng này mà không gửi mail thông báo?", "Thông báo", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                    update_trang_thai(m_us, CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
+                else
+                    return;
+            }
+            string v_str_noi_dung = "Dear " + m_us.strTEN_PHONG_BAN + ",\n"
+                              + "Đơn hàng MP:" + m_us.strMA_DON_HANG.ToString() + "  Lần: " + m_us.dcLAN_DAT_HANG.ToString() + "  Ngày đặt: " + m_us.datNGAY_DAT_HANG.ToShortDateString() + " đã được duyệt thành công!"
+                              + "\n"
+                              + "Xin cám ơn!";
+
+            if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Thông báo đã duyệt", v_str_noi_dung); }
             update_trang_thai(m_us, CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
             BaseMessages.MsgBox_Infor("Đã duyệt đơn hàng thành công");
 			load_data_2_grid();
@@ -423,6 +454,31 @@ namespace BCTKApp
             grid2us_object(m_us, m_grv_don_hang.Row);
             //	f538_TAD_DUYET_DON_HANG_DE v_fDE = new f538_TAD_DUYET_DON_HANG_DE();
             //	v_fDE.display(m_us);
+            US_DM_PHONG_BAN v_us_pb = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds_pb = new DS_DM_PHONG_BAN();
+            US_HT_NGUOI_SU_DUNG v_us_user = new US_HT_NGUOI_SU_DUNG();
+            DS_HT_NGUOI_SU_DUNG v_ds_user = new DS_HT_NGUOI_SU_DUNG();
+            v_us_pb.FillDataset(v_ds_pb, "where ID =" + m_us.dcID_PHONG_BAN);
+            string ten_truy_cap = "nv_" + v_ds_pb.Tables[0].Rows[0]["MA_PHONG_BAN"].ToString();
+            v_us_user.FillDataset(v_ds_user, "Where TEN_TRUY_CAP = " + "'" + ten_truy_cap + "'");
+            string v_mail;
+            if (v_ds_user.Tables[0].Rows.Count >= 0)
+                v_mail = v_ds_user.Tables[0].Rows[0]["MAIL"].ToString();
+            else
+            {
+                v_mail = "";
+                DialogResult result = MessageBox.Show("Chưa có mail người gửi! \nBạn có muốn Không duyệt đơn hàng này mà không gửi mail thông báo?", "Thông báo", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                    update_trang_thai(m_us, CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET);
+                else
+                    return;
+            }
+            string v_str_noi_dung = "Dear " + m_us.strTEN_PHONG_BAN + ",\n"
+                              + "Đơn hàng MP:" + m_us.strMA_DON_HANG.ToString() + "  Lần: " + m_us.dcLAN_DAT_HANG.ToString() + "  Ngày đặt: " + m_us.datNGAY_DAT_HANG.ToShortDateString() + " không được duyệt!"
+                              + "\n"
+                              + "Xin cám ơn!";
+
+            if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Thông báo không được duyệt", v_str_noi_dung); }
             update_trang_thai(m_us, CONST_ID_TRANG_THAI_DON_HANG.TAD_KHONG_DUYET);
             BaseMessages.MsgBox_Infor("Đơn hàng không được duyệt");
             load_data_2_grid();
@@ -516,7 +572,11 @@ namespace BCTKApp
         private void m_cmd_duyet_Click(object sender, EventArgs e)
         {
 			try{
-				duyet_v_gd_don_dat_hang_dinh_muc();
+                DialogResult result = MessageBox.Show("Bạn có muốn duyệt đơn hàng này không?","Thông báo",MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                    duyet_v_gd_don_dat_hang_dinh_muc();
+                else
+                    return;
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
