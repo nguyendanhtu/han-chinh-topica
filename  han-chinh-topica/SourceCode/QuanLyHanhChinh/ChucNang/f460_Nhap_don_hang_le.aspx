@@ -70,7 +70,7 @@
                 <asp:Button ID="m_cmd_them_don_hang" runat="server" Text="Nhập đơn hàng" CssClass="cssGoogleButton" OnClick="m_cmd_them_don_hang_Click" Visible="true" />
             </td>
             <td align="left">
-                <asp:Button ID="m_cmd_cap_nhat_don_hang"  PostBackUrl="~/ChucNang/f560_tra_cuu_dm_vpp.aspx" runat="server" Text="Danh mục VPP" CssClass="cssGoogleButton" Visible="true" ></asp:Button>
+                <asp:Button ID="m_cmd_cap_nhat_don_hang" PostBackUrl="~/ChucNang/f560_tra_cuu_dm_vpp.aspx" runat="server" Text="Danh mục VPP" CssClass="cssGoogleButton" Visible="true"></asp:Button>
             </td>
             <%--          <td align="left">
                 <asp:Button ID="m_cmd_gui_td" runat="server" Text="Gửi cho TD duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_td_Click" />
@@ -187,7 +187,7 @@
         <div class="cssLoadWapper">
             <asp:MultiView ID="mtv_detail" runat="server">
                 <asp:View ID="View_detail" runat="server">
-                    <div class="cssLoadContent2" style="width: 100%; max-height: 75%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll;scrollbar-highlight-color:khaki">
+                    <div class="cssLoadContent2" style="width: 100%; max-height: 75%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll; scrollbar-highlight-color: khaki">
                         <table cellspacing="0" cellpadding="2" style="width: 100%; position: fixed" class="cssTable" border="0">
                             <tr>
                                 <td align="center">
@@ -253,7 +253,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;  margin-top:6%; overflow-y: scroll">
+                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; margin-top: 6%; overflow-y: scroll">
                             <%--<tr style="width: 100%; position: fixed">
                                 <td class="cssPageTitleBG" colspan="6">
                                     <asp:Label ID="m_lbl_phieu_de_nghi_va_ban_giao_VPP" runat="server" CssClass="cssPageTitle"
@@ -340,7 +340,10 @@
                     </div>
                     <table class="cssLoadContent2" cellspacing="0" cellpadding="2" style="width: 100%; margin-top: 0px; position: fixed" border="0">
                         <tr>
-                            <td>
+                            <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<asp:Label ID="Label6" runat="server" Text="Nhập người gửi (*): " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
+                                <asp:TextBox ID="m_txt_nguoi_gui" runat="server" CssClass="cssTextBox" placeholder="Tên người gửi"></asp:TextBox>
+                            </td>
+                            <td align="left">
                                 <asp:Label ID="m_lbl_nhap_mail" runat="server" Text="Nhập mail TD: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
                                 <asp:TextBox ID="m_txt_nhap_mail" runat="server" CssClass="cssTextBox" placeholder="sampt"></asp:TextBox>
                                 <asp:Label ID="m_lbl_duoi_mail" runat="server" Text="@Topica.edu.vn" CssClass="cssLabel"></asp:Label>
@@ -386,7 +389,7 @@
     </asp:Panel>
     <table cellspacing="0" cellpadding="2" style="width: 100%; margin-top: 10%; position: relative" class="cssTable" border="0">
         <tr>
-            <td>
+            <td align="left">
                 <asp:Label ID="Label3" runat="server" Text="Nhập mail TD: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
                 <asp:TextBox ID="m_txt_nhap_mail_main" runat="server" CssClass="cssTextBox" placeholder="sampt"></asp:TextBox>
                 <asp:Label ID="Label5" runat="server" Text="@Topica.edu.vn" CssClass="cssLabel"></asp:Label>

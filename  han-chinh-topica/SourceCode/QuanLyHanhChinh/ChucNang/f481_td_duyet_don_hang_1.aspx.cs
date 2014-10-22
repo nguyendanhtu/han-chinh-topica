@@ -230,9 +230,11 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                 string id_phong_ban = Request.QueryString["id_phong_ban"];
                 string form_mode = Request.QueryString["form_mode"];
                 string id_user = Request.QueryString["id_user"];
+                string nguoi_gui = Request.QueryString["nguoi_gui"];
                 m_hdf_id_trung_tam.Value = id_phong_ban;
                 m_hdf_form_mode.Value = form_mode;
                 m_hdf_id_user.Value = id_user;
+                m_hdf_nguoi_gui.Value = nguoi_gui;
                 set_thang_hien_tai();
                 set_inital_form_mode();
                 view_detail_grv(false);
@@ -359,7 +361,8 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
             v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET;
             v_us_gd_don_hang.Update();
             m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_hang.get_tong_tien_da_chi_hang_thang(v_us_gd_don_hang.dcID_PHONG_BAN, m_dat_cuoi_thang), "#,###");
-            string v_str_noi_dung = "Dear trung tâm- ban:" + m_hdf_ma_trung_tam.Value + "," + "\n"
+            string v_str_noi_dung = "Dear " + m_hdf_nguoi_gui.Value + ",\n" 
+                              +"Trung tâm- ban: " + m_hdf_ma_trung_tam.Value + "." + "\n"
                               + "Đơn hàng MP:"+ m_lbl_ma_don_hang_de.Text+ "  Lần: "+ m_hdf_lan_dat.Value+ "  Ngày đặt: "+ m_hdf_ngay_dat.Value+ " đã được duyệt thành công!"
                               + "\n"
                               + "Xin cám ơn!";
@@ -395,7 +398,8 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
             if (CIPConvert.ToDecimal(m_hdf_form_mode.Value) == CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET)
                 v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.CC_KHONG_DUYET;
             v_us_gd_don_hang.Update();
-            string v_str_noi_dung = "Dear trung tâm- ban:" + m_hdf_ma_trung_tam.Value + "," + "\n"
+            string v_str_noi_dung = "Dear " + m_hdf_nguoi_gui.Value + ",\n" 
+                           +"Trung tâm- ban: " + m_hdf_ma_trung_tam.Value + "." + "\n"
                            + "Đơn hàng MP:" + m_lbl_ma_don_hang_de.Text + "  Lần: " + m_hdf_lan_dat.Value + "  Ngày đặt: " + m_hdf_ngay_dat.Value + " Không được duyệt!"
                            + "\n"
                            + "Xin cám ơn!";

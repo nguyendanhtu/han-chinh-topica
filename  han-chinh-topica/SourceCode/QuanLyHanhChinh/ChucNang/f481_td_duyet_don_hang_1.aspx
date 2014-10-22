@@ -69,6 +69,7 @@
                     <asp:HiddenField ID="m_hdf_ma_don_hang" runat="server" />
                     <asp:HiddenField ID="m_hdf_ngay_dat" runat="server" />
                     <asp:HiddenField ID="m_hdf_lan_dat" runat="server" />
+                    <asp:HiddenField ID="m_hdf_nguoi_gui" runat="server" />
                 </td>
             </tr>
             <tr>
