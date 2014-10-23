@@ -240,7 +240,7 @@
                 <td><br/></td>
             </tr>
         </table>
-        <div class="cssLoadContent2" style="width: 100%; max-height: 55%; min-height: 55%; margin: 0 auto 0 auto; overflow-y: scroll;">
+        <div class="cssLoadContent2" style="width: 100%; max-height: 55%; min-height: 55%; margin: 0 auto 0 auto; overflow-y: scroll; z-index:-1">
             <table id="Table2" runat="server" border="0" cellspacing="0" cellpadding="0" width="100%">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
@@ -334,7 +334,7 @@
             <div class="cssLoadWapper">
                 <asp:MultiView ID="mtv_detail" runat="server">
                     <asp:View ID="View_detail" runat="server">
-                        <div class="cssLoadContent2" style="width: 100%; max-height: 85%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll;">
+                        <div class="cssLoadContent2" style="width: 100%; max-height: 85%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll; z-index:1001">
                         </div>
                     </asp:View>
                 </asp:MultiView>
