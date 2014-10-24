@@ -276,7 +276,7 @@ namespace BCTKApp
         {
             try
             {
-                f454_BAO_CAO_TINH_HINH_VPP frm = new f454_BAO_CAO_TINH_HINH_VPP();
+                f710_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN frm = new f710_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
                 frm.display();
             }
             catch (Exception v_e)
