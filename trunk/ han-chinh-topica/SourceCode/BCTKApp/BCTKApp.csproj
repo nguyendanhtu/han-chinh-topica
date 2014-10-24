@@ -309,9 +309,10 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaoCao\f555_TONG_HOP_CHI_PHI_VPP.cs">
+    <Compile Include="BaoCao\f454_BAO_CAO_TINH_HINH_VPP.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f555_TONG_HOP_CHI_PHI_VPP.cs" />
     <Compile Include="BaoCao\f710_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,9 +335,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaoCao\f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaoCao\f706_V_BC_CHI_TIET_DM.cs">
@@ -677,6 +675,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCao\f454_BAO_CAO_TINH_HINH_VPP.resx">
+      <DependentUpon>f454_BAO_CAO_TINH_HINH_VPP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f555_TONG_HOP_CHI_PHI_VPP.resx">
       <DependentUpon>f555_TONG_HOP_CHI_PHI_VPP.cs</DependentUpon>
     </EmbeddedResource>
@@ -701,9 +702,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.resx">
       <DependentUpon>f410_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.resx">
-      <DependentUpon>f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f706_V_BC_CHI_TIET_DM.resx">
       <DependentUpon>f706_V_BC_CHI_TIET_DM.cs</DependentUpon>
