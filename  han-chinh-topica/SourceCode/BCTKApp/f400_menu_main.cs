@@ -95,6 +95,7 @@ namespace BCTKApp
             m_cmd_tra_cuu_va_ban_hanh.Click += m_cmd_tra_cuu_va_ban_hanh_Click;
             m_cmd_nhap_mail.Click += new EventHandler(m_cmd_nhap_mail_Click);
             m_cmd_nhap_de_xuat.Click += m_cmd_nhap_de_xuat_Click;
+            m_cmd_bao_cao_tinh_hinh_vpp.Click +=m_cmd_bao_cao_tinh_hinh_vpp_Click;
         }
 
         
@@ -263,6 +264,19 @@ namespace BCTKApp
             try
             {
                 f880_RPT_TONG_TIEN_DINH_MUC frm = new f880_RPT_TONG_TIEN_DINH_MUC();
+                frm.display();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_bao_cao_tinh_hinh_vpp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f454_BAO_CAO_TINH_HINH_VPP frm = new f454_BAO_CAO_TINH_HINH_VPP();
                 frm.display();
             }
             catch (Exception v_e)
@@ -513,7 +527,7 @@ namespace BCTKApp
         {
             try
             {
-                f555_TONG_HOP_CHI_PHI_VPP v_frm = new f555_TONG_HOP_CHI_PHI_VPP();
+                f454_BAO_CAO_TINH_HINH_VPP v_frm = new f454_BAO_CAO_TINH_HINH_VPP();
                 v_frm.ShowDialog();
             }
             catch (Exception v_e)

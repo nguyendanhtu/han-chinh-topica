@@ -44,6 +44,7 @@
             this.m_cmd_nha_cc = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_DM_VPP = new DevComponents.DotNetBar.ButtonItem();
             this.m_cmd_nhap_mail = new DevComponents.DotNetBar.ButtonItem();
+            this.m_cmd_nhap_de_xuat = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_pnl_he_thong = new DevComponents.DotNetBar.RibbonPanel();
             this.m_rib_bar_he_thong = new DevComponents.DotNetBar.RibbonBar();
             this.m_cmd_quan_ly_nguoi_su_dung = new DevComponents.DotNetBar.ButtonItem();
@@ -92,7 +93,7 @@
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.m_cmd_nhap_de_xuat = new DevComponents.DotNetBar.ButtonItem();
+            this.m_cmd_bao_cao_tinh_hinh_vpp = new DevComponents.DotNetBar.ButtonItem();
             this.m_rib_control_TAD.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.m_rib_pnl_he_thong.SuspendLayout();
@@ -194,10 +195,11 @@
             this.m_rib_bao_cao_tra_cuu_VPP.ImageSize = DevComponents.DotNetBar.eBarImageSize.Medium;
             this.m_rib_bao_cao_tra_cuu_VPP.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.m_cmd_tra_cuu_dh_VPP,
-            this.m_cmd_bao_cao_tong_hop_chi_phi});
+            this.m_cmd_bao_cao_tong_hop_chi_phi,
+            this.m_cmd_bao_cao_tinh_hinh_vpp});
             this.m_rib_bao_cao_tra_cuu_VPP.Location = new System.Drawing.Point(586, 0);
             this.m_rib_bao_cao_tra_cuu_VPP.Name = "m_rib_bao_cao_tra_cuu_VPP";
-            this.m_rib_bao_cao_tra_cuu_VPP.Size = new System.Drawing.Size(154, 102);
+            this.m_rib_bao_cao_tra_cuu_VPP.Size = new System.Drawing.Size(226, 102);
             this.m_rib_bao_cao_tra_cuu_VPP.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.m_rib_bao_cao_tra_cuu_VPP.TabIndex = 3;
             this.m_rib_bao_cao_tra_cuu_VPP.Text = "Tra cứu và báo cáo";
@@ -355,6 +357,14 @@
             this.m_cmd_nhap_mail.Name = "m_cmd_nhap_mail";
             this.m_cmd_nhap_mail.SubItemsExpandWidth = 14;
             this.m_cmd_nhap_mail.Text = "Nhập mail";
+            // 
+            // m_cmd_nhap_de_xuat
+            // 
+            this.m_cmd_nhap_de_xuat.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_nhap_de_xuat.Image")));
+            this.m_cmd_nhap_de_xuat.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.m_cmd_nhap_de_xuat.Name = "m_cmd_nhap_de_xuat";
+            this.m_cmd_nhap_de_xuat.SubItemsExpandWidth = 14;
+            this.m_cmd_nhap_de_xuat.Text = "Nhập đề xuất";
             // 
             // m_rib_pnl_he_thong
             // 
@@ -1090,13 +1100,13 @@
             // 
             this.buttonItem1.Name = "buttonItem1";
             // 
-            // m_cmd_nhap_de_xuat
+            // m_cmd_bao_cao_tinh_hinh_vpp
             // 
-            this.m_cmd_nhap_de_xuat.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_nhap_de_xuat.Image")));
-            this.m_cmd_nhap_de_xuat.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.m_cmd_nhap_de_xuat.Name = "m_cmd_nhap_de_xuat";
-            this.m_cmd_nhap_de_xuat.SubItemsExpandWidth = 14;
-            this.m_cmd_nhap_de_xuat.Text = "Nhập đề xuất";
+            this.m_cmd_bao_cao_tinh_hinh_vpp.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_bao_cao_tinh_hinh_vpp.Image")));
+            this.m_cmd_bao_cao_tinh_hinh_vpp.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.m_cmd_bao_cao_tinh_hinh_vpp.Name = "m_cmd_bao_cao_tinh_hinh_vpp";
+            this.m_cmd_bao_cao_tinh_hinh_vpp.SubItemsExpandWidth = 14;
+            this.m_cmd_bao_cao_tinh_hinh_vpp.Text = "Báo cáo tình hình VPP";
             // 
             // f400_menu_main
             // 
@@ -1187,6 +1197,7 @@
         private DevComponents.DotNetBar.RibbonTabItem m_rib_tab_van_thu;
         private DevComponents.DotNetBar.ButtonItem m_cmd_nhap_mail;
         private DevComponents.DotNetBar.ButtonItem m_cmd_nhap_de_xuat;
+        private DevComponents.DotNetBar.ButtonItem m_cmd_bao_cao_tinh_hinh_vpp;
 
     }
 }
