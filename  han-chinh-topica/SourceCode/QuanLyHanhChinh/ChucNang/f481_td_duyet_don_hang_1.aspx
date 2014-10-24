@@ -31,7 +31,7 @@
         <div style="text-align: center">
             <br />
             <asp:Label ID="m_lbl_header" runat="server" Text="DUYỆT ĐƠN ĐẶT HÀNG" CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
-            <asp:Label ID="m_lbl_trung_tam_ban" runat="server"  CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
+            <asp:Label ID="m_lbl_trung_tam_ban" runat="server" CssClass="cssManField" Font-Bold="true" Font-Size="X-Large"></asp:Label>
             <br />
             <asp:Label ID="m_lbl_title" runat="server" CssClass="cssManField" Font-Bold="true" Font-Size="Medium" ForeColor="GrayText"></asp:Label>
         </div>
@@ -187,7 +187,9 @@
         </table>
         <table id="Table1" runat="server" cellspacing="0" cellpadding="2" style="width: 100%" class="cssTable" border="0">
             <tr>
-                <td><br/></td>
+                <td>
+                    <br />
+                </td>
             </tr>
             <tr>
                 <td align="center">
@@ -220,7 +222,7 @@
                 </td>
                 <td>&nbsp&nbsp&nbsp&nbsp&nbsp
                     <asp:Label ID="m_lbl_nhap_mail" runat="server" Text="Nhập mail TAD/CC: " CssClass="cssLabelTitle" ForeColor="DarkSlateBlue"></asp:Label>
-                    <asp:TextBox ID="m_txt_nhap_mail" runat="server" CssClass="cssTextBox" placeholder="sampt"></asp:TextBox>
+                    <asp:TextBox ID="m_txt_nhap_mail" runat="server" CssClass="cssTextBox" placeholder="Mail người duyệt"></asp:TextBox>
                     <asp:Label ID="m_lbl_duoi_mail" runat="server" Text="@Topica.edu.vn" CssClass="cssLabel"></asp:Label>
                     &nbsp&nbsp
                 <asp:Button ID="m_cmd_gui_mail" runat="server" Text="Gửi mail xin duyệt" CssClass="cssGoogleButton" OnClick="m_cmd_gui_mail_Click" />
@@ -236,11 +238,13 @@
                     <asp:HiddenField ID="m_hdf_ID_GD_DON_DAT_HANG_DE" runat="server" />
                 </td>
             </tr>
-                 <tr>
-                <td><br/></td>
+            <tr>
+                <td>
+                    <br />
+                </td>
             </tr>
         </table>
-        <div class="cssLoadContent2" style="width: 100%; max-height: 55%; min-height: 55%; margin: 0 auto 0 auto; overflow-y: scroll; z-index:-1">
+        <div class="cssLoadContent2" style="width: 100%; max-height: 55%; min-height: 55%; margin: 0 auto 0 auto; overflow-y: scroll; z-index: -1">
             <table id="Table2" runat="server" border="0" cellspacing="0" cellpadding="0" width="100%">
                 <tr>
                     <td class="cssPageTitleBG" colspan="6">
@@ -334,7 +338,7 @@
             <div class="cssLoadWapper">
                 <asp:MultiView ID="mtv_detail" runat="server">
                     <asp:View ID="View_detail" runat="server">
-                        <div class="cssLoadContent2" style="width: 100%; max-height: 85%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll; z-index:1001">
+                        <div class="cssLoadContent2" style="width: 100%; max-height: 85%; min-height: 75%; margin: 100px auto 0 auto; overflow-y: scroll; z-index: 1001">
                         </div>
                     </asp:View>
                 </asp:MultiView>

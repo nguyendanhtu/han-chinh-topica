@@ -72,12 +72,21 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     }
     private void load_thong_tin_chi_tiet()
     {
-        if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 120)
+        if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 10)
         {
-            m_lbl_nhap_mail.Text = "Nhập mail TAD: ";
+            m_lbl_nhap_mail.Text = "Nhập mail TAD/CC: ";
         }
         else
-            m_lbl_nhap_mail.Text = "Nhập mail CC: ";
+        {
+            if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 20)
+            {
+                m_lbl_nhap_mail.Text = "Nhập mail TAD: ";
+            }
+            else
+            {
+                m_lbl_nhap_mail.Text = "Nhập mail CC: ";
+            }
+        }
         m_hdf_id_don_hang.Value = CIPConvert.ToStr(m_grv_don_hang_nhap.DataKeys[0].Value);
         m_lbl_ma_don_hang_de.Text = m_grv_don_hang_nhap.Rows[0].Cells[6].Text;
         m_lbl_tong_tien.Text = m_grv_don_hang_nhap.Rows[0].Cells[9].Text + "  (VNĐ)";
@@ -92,14 +101,21 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
         DS_HT_USER_GROUP v_ds_user_group = new DS_HT_USER_GROUP();
         string v_ten_mail = m_txt_nhap_mail.Text.Trim() + "@topica.edu.vn";
         if (m_txt_nhap_mail.Text == "")
+        {
+            thong_bao("Bạn chưa nhập mail",true);
+            m_txt_nhap_mail.Focus();
             return false;
+        }
         else
         {
             v_us_user_group.Check_have_mail(v_ds_user_group, v_ten_mail);
             if (v_ds_user_group.HT_USER_GROUP.Rows.Count > 0)
                 return true;
             else
+            {
+                thong_bao("Địa chỉ mail không hợp lệ hoặc chưa cung cấp cho TAD.\nVui lòng liên hệ với TAD để biết thêm chi tiết.");
                 return false;
+            }
         }
     }
     private void thong_bao(string ip_str_mess, bool ip_panel_thong_bao_visible)
@@ -216,6 +232,34 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
             return true;
         else
             return false;
+    }
+    private bool check_quyen_duyet()
+    {
+        DS_GD_DON_DAT_HANG v_ds_gd_don_dat_hang = new DS_GD_DON_DAT_HANG();
+        US_GD_DON_DAT_HANG v_us_gd_don_dat_hang = new US_GD_DON_DAT_HANG();
+        int thisyear = DateTime.Now.Year;
+        DateTime m_dat_dau_thang = new DateTime(thisyear, int.Parse(m_cbo_chon_thang.SelectedValue.ToString()), 1);
+        DateTime m_dat_cuoi_thang = m_dat_dau_thang.AddMonths(1).AddDays(-1);
+        if (CIPConvert.ToDecimal(m_hdf_form_mode.Value) == CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET)
+        {
+            v_us_gd_don_dat_hang.load_ddh_xin_td_duyet(v_ds_gd_don_dat_hang, CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value), m_dat_cuoi_thang);
+            if (CIPConvert.ToDecimal(v_ds_gd_don_dat_hang.Tables[0].Rows[0]["PHAN_TRAM_VUOT"]) <= CIPConvert.ToDecimal(0.1))
+            {
+                return true;
+            }
+            else
+            {
+                if (CIPConvert.ToDecimal(v_ds_gd_don_dat_hang.Tables[0].Rows[0]["PHAN_TRAM_VUOT"]) <= CIPConvert.ToDecimal(0.2))
+                {
+                    thong_bao("Tỉ lệ vượt nằm trong quyền duyệt của TAD. Vui lòng gửi mail xin TAD duyệt!", true);
+                    m_lbl_nhap_mail.Text = "Nhập mail xin TAD duyệt";
+                    return false;
+                }
+                else { thong_bao("Tỉ lệ vượt nằm trong quyền duyệt của CC. Vui lòng gửi mail xin CC duyệt!"); m_lbl_nhap_mail.Text = "Nhập mail xin CC duyệt"; return false; }
+            }
+        }
+        else
+            return true;    
     }
     #endregion
 
@@ -347,6 +391,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     {
         try
         {
+            if (check_quyen_duyet() == false) { return; }
             string v_mail;
             US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new US_HT_NGUOI_SU_DUNG();
             IP.Core.IPData.DS_HT_NGUOI_SU_DUNG v_ds_ht_nguoi_su_dung = new IP.Core.IPData.DS_HT_NGUOI_SU_DUNG();
@@ -363,14 +408,14 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
             m_lbl_tong_tien_da_chi.Text = CIPConvert.ToStr(v_us_gd_don_hang.get_tong_tien_da_chi_hang_thang(v_us_gd_don_hang.dcID_PHONG_BAN, m_dat_cuoi_thang), "#,###");
             string v_str_noi_dung = "Dear " + m_hdf_nguoi_gui.Value + ",\n" 
                               +"Trung tâm- ban: " + m_hdf_ma_trung_tam.Value + "." + "\n"
-                              + "Đơn hàng MP:"+ m_lbl_ma_don_hang_de.Text+ "  Lần: "+ m_hdf_lan_dat.Value+ "  Ngày đặt: "+ m_hdf_ngay_dat.Value+ " đã được duyệt thành công!"
+                              + "Đơn hàng VPP Mã phiếu:"+ m_lbl_ma_don_hang_de.Text+ "  Lần: "+ m_hdf_lan_dat.Value+ "  Ngày đặt: "+ m_hdf_ngay_dat.Value+ " đã được duyệt thành công!"
                               + "\n"
                               + "Xin cám ơn!";
 
-            if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Thông báo đã duyệt", v_str_noi_dung); thong_bao("Đã gửi mail thông báo duyệt cho người gửi đơn hàng này!", true); }
-            else { thong_bao("Chưa gửi mail thông báo duyệt cho người xin duyệt đơn hàng!"); }
+            if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Thông báo đã duyệt", v_str_noi_dung); thong_bao("Đã gửi mail thông báo duyệt cho người gửi đơn hàng VPP này!", true); }
+            else { thong_bao("Chưa gửi mail thông báo duyệt cho người xin duyệt đơn hàng VPP!"); }
             load_data_to_grid();
-            load_data_to_grid_don_hang_de();
+            m_grv_don_hang_de.Visible = false;
         }
 
         catch (System.Exception v_e)
@@ -406,6 +451,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
 
             if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Thông báo không duyệt", v_str_noi_dung); thong_bao("Đã gửi mail thông báo không duyệt cho người gửi đơn hàng này!",true); }
             else { thong_bao("Chưa gửi mail thông báo duyệt cho người gửi đơn hàng!"); }
+            m_grv_don_hang_de.Visible = true;
         }
         catch (System.Exception v_e)
         {
@@ -426,16 +472,16 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                 {
                     if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7]) <= 120)
                     {
-                        if (check_td_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng đang chờ duyệt. Vui lòng chờ TAD duyệt", true); return; };
+                        if (check_td_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng VPP đang chờ duyệt. Vui lòng chờ TAD duyệt", true); return; };
                         m_lbl_nhap_mail.Text = "Nhập mail TAD: ";
                         string v_str_noi_dung = "Kính gửi phòng TAD,"
                                           + "\n"
                                           + "Vui lòng xem xét duyệt đơn hàng cho trung tâm - ban " + m_hdf_ma_trung_tam.Value + "\n"
-                                          + "Đơn hàng MP:" + m_lbl_ma_don_hang_de.Text + "  Lần: " + m_hdf_lan_dat.Value + "  Ngày đặt: " + m_hdf_ngay_dat.Value
+                                          + "Đơn hàng VPP Mã phiếu:" + m_lbl_ma_don_hang_de.Text + "  Lần: " + m_hdf_lan_dat.Value + "  Ngày đặt: " + m_hdf_ngay_dat.Value
                                           + "\n"
                                           + "Xin cám ơn!";
-                              
-                        if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail,"["+ m_hdf_ma_trung_tam.Value+"]Xin TAD duyệt đơn hàng", v_str_noi_dung); }
+
+                        if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "[" + m_hdf_ma_trung_tam.Value + "]Xin TAD duyệt đơn hàng VPP", v_str_noi_dung); }
                         v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(v_ds.GD_DON_DAT_HANG.Rows[0]["ID"]));
                         v_us.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_TAD_DUYET;
                         v_us.Update();
@@ -443,15 +489,15 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                     }
                     else
                     {
-                        if (check_cc_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng đang chờ duyệt. Vui lòng chờ CC duyệt", true); return; };
+                        if (check_cc_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng đang VPP chờ duyệt. Vui lòng chờ CC duyệt", true); return; };
                         m_lbl_nhap_mail.Text = "Nhập mail CC: ";
                         string v_str_noi_dung = "Kính gửi CC,"
                                           + "\n"
-                                          + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng:"
+                                          + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng VPP:"
                                           + "\n"
-                                          + "Đơn hàng MP:" + m_lbl_ma_don_hang_de.Text + "  Lần: " + m_hdf_lan_dat.Value + "  Ngày đặt: " + m_hdf_ngay_dat.Value + "\n"
+                                          + "Đơn hàng VPP Mã phiếu:" + m_lbl_ma_don_hang_de.Text + "  Lần: " + m_hdf_lan_dat.Value + "  Ngày đặt: " + m_hdf_ngay_dat.Value + "\n"
                                           + "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value + "&form_mode=" + CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET;
-                        if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "[" + m_hdf_ma_trung_tam.Value + "]Xin CC duyệt đơn hàng", v_str_noi_dung); }
+                        if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "[" + m_hdf_ma_trung_tam.Value + "]Xin CC duyệt đơn hàng VPP", v_str_noi_dung); }
                         v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(v_ds.GD_DON_DAT_HANG.Rows[0]["ID"]));
                         v_us.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET;
                         v_us.Update();
@@ -461,16 +507,16 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                 }
                 if (CIPConvert.ToDecimal(m_hdf_form_mode.Value) == CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET)
                 {
-                    if (check_cc_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng đang chờ duyệt. Vui lòng chờ CC duyệt", true); return; };
+                    if (check_cc_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng VPP đang chờ duyệt. Vui lòng chờ CC duyệt", true); return; };
                     m_lbl_nhap_mail.Text = "Nhập mail CC: ";
                     string v_str_noi_dung = "Kính gửi CC,"
                                       + "\n"
-                                      + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng:"
+                                      + "Vui lòng truy cập vào đường link bên dưới để duyệt đơn hàng VPP:"
                                       + "\n"
-                                      + "Đơn hàng MP:" + m_lbl_ma_don_hang_de.Text + "  Lần: " + m_hdf_lan_dat.Value + "  Ngày đặt: " + m_hdf_ngay_dat.Value
+                                      + "Đơn hàng VPP Mã Phiếu:" + m_lbl_ma_don_hang_de.Text + "  Lần: " + m_hdf_lan_dat.Value + "  Ngày đặt: " + m_hdf_ngay_dat.Value
                                       + "\n"
                                       + "http://trm.topica.edu.vn/QuanLyHanhChinh/ChucNang/f481_td_duyet_don_hang_1.aspx?id_phong_ban=" + m_hdf_id_trung_tam.Value + "&form_mode=" + CONST_ID_TRANG_THAI_DON_HANG.XIN_CC_DUYET;
-                    if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "[" + m_hdf_ma_trung_tam.Value + "]Xin CC duyệt đơn hàng", v_str_noi_dung); }
+                    if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "[" + m_hdf_ma_trung_tam.Value + "]Xin CC duyệt đơn hàng VPP", v_str_noi_dung); }
                     v_us = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(v_ds.GD_DON_DAT_HANG.Rows[0]["ID"]));
                     v_us.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.XIN_TAD_DUYET;
                     v_us.Update();
@@ -478,7 +524,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                 }
             }
             else
-                thong_bao("Bạn chưa nhập tên mail!", true);
+                return;
             load_data_to_grid_don_hang_de();
             m_hdf_id_don_hang.Value = null;
         }
