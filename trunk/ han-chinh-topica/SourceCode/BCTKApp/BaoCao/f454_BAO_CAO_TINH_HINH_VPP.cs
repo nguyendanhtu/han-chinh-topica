@@ -363,14 +363,14 @@ namespace BCTKApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			TEN_PHONG_BAN = 1,TONG_TIEN_CHUA_VAT = 3,TONG_TIEN_DA_VAT = 5,TONG_SO_HOA_DON = 2,THUE_VAT = 4
+			TEN_PHONG_BAN = 1,TONG_TIEN_DA_VAT = 3,TI_LE_DA_VUOT = 5,TONG_SO_HOA_DON = 2,DINH_MUC = 4
 		}			
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_TONG_HOP_CHI_PHI_VPP m_ds = new DS_V_TONG_HOP_CHI_PHI_VPP();
-		US_V_TONG_HOP_CHI_PHI_VPP m_us = new US_V_TONG_HOP_CHI_PHI_VPP();
+		ITransferDataRow m_obj_trans;
+        DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN m_ds = new DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
+        US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN m_us = new US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
         private const String m_str_goi_y = "Nhập mã hoặc tên trung tâm";
 		#endregion
 
@@ -399,24 +399,29 @@ namespace BCTKApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_TONG_HOP_CHI_PHI_VPP.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);			v_htb.Add(V_TONG_HOP_CHI_PHI_VPP.TONG_TIEN_CHUA_VAT, e_col_Number.TONG_TIEN_CHUA_VAT);			v_htb.Add(V_TONG_HOP_CHI_PHI_VPP.TONG_TIEN_DA_VAT, e_col_Number.TONG_TIEN_DA_VAT);			v_htb.Add(V_TONG_HOP_CHI_PHI_VPP.TONG_SO_HOA_DON, e_col_Number.TONG_SO_HOA_DON);			v_htb.Add(V_TONG_HOP_CHI_PHI_VPP.THUE_VAT, e_col_Number.THUE_VAT);									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_TONG_HOP_CHI_PHI_VPP.NewRow());
+            v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
+            v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.TONG_DON_HANG, e_col_Number.TONG_SO_HOA_DON);
+            v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.TONG_SO_TIEN, e_col_Number.TONG_TIEN_DA_VAT);
+            v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.DINH_MUC, e_col_Number.DINH_MUC);
+            v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.TI_LE_DA_VUOT, e_col_Number.TI_LE_DA_VUOT);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.NewRow());
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid()
         {
-            DateTime temp = CIPConvert.ToDatetime("01/"+m_dtp_thang.Text);
+            DateTime temp = CIPConvert.ToDatetime("01/" + m_dtp_thang.Text);
             temp = temp.AddMonths(1);
             temp = temp.AddDays(-(temp.Day));
             DateTime v_dat_thang = temp;
             decimal v_dc_id_phap_nhan = CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue);
             decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
-			m_ds = new DS_V_TONG_HOP_CHI_PHI_VPP();			
-			m_us.FillDatasetSearch(m_ds,CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET,v_dat_thang,v_dc_id_phap_nhan,v_dc_id_trung_tam);
-			m_grv_tong_tien.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_grv_tong_tien, m_obj_trans);
+            m_ds = new DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
+            m_us.FillDatasetSearch(m_ds, CONST_ID_TRANG_THAI_DON_HANG.DA_DUYET, v_dat_thang, v_dc_id_phap_nhan, v_dc_id_trung_tam);
+            m_grv_tong_tien.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_grv_tong_tien, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_tong_tien);
-			m_grv_tong_tien.Redraw = true;
+            m_grv_tong_tien.Redraw = true;
 		}
 		private void grid2us_object(US_V_TONG_HOP_CHI_PHI_VPP i_us
 			, int i_grid_row) {
@@ -487,7 +492,7 @@ namespace BCTKApp
 		private void update_v_tong_hop_chi_phi_vpp(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_tong_tien)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_tong_tien, m_grv_tong_tien.Row)) return;			
-			grid2us_object(m_us, m_grv_tong_tien.Row);
+            //grid2us_object(m_us, m_grv_tong_tien.Row);
 		//	f555_TONG_HOP_CHI_PHI_VPP_DE v_fDE = new f555_TONG_HOP_CHI_PHI_VPP_DE();
 		//	v_fDE.display(m_us);
 			load_data_2_grid();
@@ -516,7 +521,7 @@ namespace BCTKApp
 		private void view_v_tong_hop_chi_phi_vpp(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_tong_tien)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_tong_tien, m_grv_tong_tien.Row)) return;
-			grid2us_object(m_us, m_grv_tong_tien.Row);
+            //grid2us_object(m_us, m_grv_tong_tien.Row);
 		//	f555_TONG_HOP_CHI_PHI_VPP_DE v_fDE = new f555_TONG_HOP_CHI_PHI_VPP_DE();			
 		//	v_fDE.display(m_us);
 		}
