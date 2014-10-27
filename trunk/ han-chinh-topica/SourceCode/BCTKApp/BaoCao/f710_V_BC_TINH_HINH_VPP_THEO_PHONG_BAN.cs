@@ -211,7 +211,6 @@ namespace BCTKApp
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_tim_kiem.TabIndex = 39;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm";
-            this.m_cmd_tim_kiem.Visible = false;
             this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
             // 
             // m_txt_tim_kiem
@@ -407,7 +406,7 @@ namespace BCTKApp
 		#region Private Methods
         private void format_controls()
         {
-            CControlFormat.setFormStyle(this, new CAppContext_201());
+            //CControlFormat.setFormStyle(this, new CAppContext_201());
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
