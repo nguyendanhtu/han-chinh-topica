@@ -121,9 +121,9 @@ namespace BCTKApp
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
             this.m_txt_den_ngay = new BCTKApp.TCDatetime();
             this.m_txt_tu_ngay = new BCTKApp.TCDatetime();
-            this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -181,11 +181,11 @@ namespace BCTKApp
             this.m_cmd_them_van_ban_di_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_them_van_ban_di_luu.ImageIndex = 2;
             this.m_cmd_them_van_ban_di_luu.ImageList = this.ImageList;
-            this.m_cmd_them_van_ban_di_luu.Location = new System.Drawing.Point(201, 4);
+            this.m_cmd_them_van_ban_di_luu.Location = new System.Drawing.Point(251, 4);
             this.m_cmd_them_van_ban_di_luu.Name = "m_cmd_them_van_ban_di_luu";
-            this.m_cmd_them_van_ban_di_luu.Size = new System.Drawing.Size(178, 28);
+            this.m_cmd_them_van_ban_di_luu.Size = new System.Drawing.Size(128, 28);
             this.m_cmd_them_van_ban_di_luu.TabIndex = 0;
-            this.m_cmd_them_van_ban_di_luu.Text = "Thêm văn bản đi nội bộ";
+            this.m_cmd_them_van_ban_di_luu.Text = "Thêm văn bản đi";
             // 
             // m_cmd_them_van_ban_di_khong_luu
             // 
@@ -201,6 +201,7 @@ namespace BCTKApp
             this.m_cmd_them_van_ban_di_khong_luu.Size = new System.Drawing.Size(200, 28);
             this.m_cmd_them_van_ban_di_khong_luu.TabIndex = 1;
             this.m_cmd_them_van_ban_di_khong_luu.Text = "Thêm văn bản đi bên ngoài";
+            this.m_cmd_them_van_ban_di_khong_luu.Visible = false;
             // 
             // m_cmd_insert
             // 
@@ -435,6 +436,20 @@ namespace BCTKApp
             this.label2.TabIndex = 28;
             this.label2.Text = "Từ ngày";
             // 
+            // m_cmd_xem_file
+            // 
+            this.m_cmd_xem_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xem_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xem_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xem_file.ImageIndex = 5;
+            this.m_cmd_xem_file.ImageList = this.ImageList;
+            this.m_cmd_xem_file.Location = new System.Drawing.Point(927, 135);
+            this.m_cmd_xem_file.Name = "m_cmd_xem_file";
+            this.m_cmd_xem_file.Size = new System.Drawing.Size(72, 30);
+            this.m_cmd_xem_file.TabIndex = 5;
+            this.m_cmd_xem_file.Text = "Xem file";
+            // 
             // m_txt_den_ngay
             // 
             this.m_txt_den_ngay.AllowNull = BCTKApp.TCDatetime.AL.Y;
@@ -458,20 +473,6 @@ namespace BCTKApp
             this.m_txt_tu_ngay.Size = new System.Drawing.Size(72, 20);
             this.m_txt_tu_ngay.TabIndex = 2;
             this.m_txt_tu_ngay.ValidatingType = typeof(System.DateTime);
-            // 
-            // m_cmd_xem_file
-            // 
-            this.m_cmd_xem_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xem_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xem_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xem_file.ImageIndex = 5;
-            this.m_cmd_xem_file.ImageList = this.ImageList;
-            this.m_cmd_xem_file.Location = new System.Drawing.Point(927, 135);
-            this.m_cmd_xem_file.Name = "m_cmd_xem_file";
-            this.m_cmd_xem_file.Size = new System.Drawing.Size(72, 30);
-            this.m_cmd_xem_file.TabIndex = 5;
-            this.m_cmd_xem_file.Text = "Xem file";
             // 
             // f611_quan_ly_van_thu
             // 
