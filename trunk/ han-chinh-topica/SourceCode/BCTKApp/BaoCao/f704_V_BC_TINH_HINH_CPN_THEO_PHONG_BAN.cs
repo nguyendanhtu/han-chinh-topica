@@ -151,7 +151,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 487);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(990, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1018, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_xuat_excel
@@ -178,7 +178,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(891, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(919, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(95, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -191,7 +191,7 @@ namespace BCTKApp
             this.m_fg.Location = new System.Drawing.Point(0, 158);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell;
-            this.m_fg.Size = new System.Drawing.Size(990, 329);
+            this.m_fg.Size = new System.Drawing.Size(1018, 329);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào cột: Mã Trung Tâm - Ban để xem chi tiết!");
@@ -271,7 +271,7 @@ namespace BCTKApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(990, 35);
+            this.m_lbl_header.Size = new System.Drawing.Size(1018, 35);
             this.m_lbl_header.TabIndex = 30;
             this.m_lbl_header.Text = "TÌNH HÌNH CPN THEO TRUNG TÂM - BAN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -292,7 +292,7 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(990, 123);
+            this.panel1.Size = new System.Drawing.Size(1018, 123);
             this.panel1.TabIndex = 2830;
             // 
             // m_dt_den_ngay
@@ -311,7 +311,7 @@ namespace BCTKApp
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(557, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 14);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 44;
             // 
             // m_lbl_tong_so_vuot_dm
@@ -339,7 +339,7 @@ namespace BCTKApp
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(727, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(254, 14);
+            this.label2.Size = new System.Drawing.Size(251, 13);
             this.label2.TabIndex = 41;
             this.label2.Text = "Các trung tâm vượt định mức sẽ được đánh dấu đỏ";
             // 
@@ -357,7 +357,7 @@ namespace BCTKApp
             // f704_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(990, 523);
+            this.ClientSize = new System.Drawing.Size(1018, 523);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_lbl_header);
@@ -385,7 +385,7 @@ namespace BCTKApp
         #region Data Structure
         private enum e_col_Number
         {
-            TI_LE_DA_VUOT = 6
+            TI_LE_DA_VUOT = 7
 ,
             TEN_PHONG_BAN = 2
                 ,
@@ -393,9 +393,11 @@ namespace BCTKApp
                 ,
             TONG_SO_BILL = 3
                 ,
-            DINH_MUC = 5
-                , TONG_SO_TIEN = 4
-
+            DINH_MUC = 6
+                , 
+            TONG_SO_TIEN = 4
+                ,
+            TONG_TIEN_DE_XUAT = 5
         }
         #endregion
 
@@ -445,6 +447,7 @@ namespace BCTKApp
             v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
             v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.MA_PHONG_BAN, e_col_Number.MA_PHONG_BAN);
             v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_BILL, e_col_Number.TONG_SO_BILL);
+            v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_TIEN_DE_XUAT, e_col_Number.TONG_TIEN_DE_XUAT);
             v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.DINH_MUC, e_col_Number.DINH_MUC);
             v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_TIEN, e_col_Number.TONG_SO_TIEN);
 
