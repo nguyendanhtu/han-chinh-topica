@@ -45,13 +45,15 @@
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
             this.m_dtp_thang = new BCTKApp.TCDatetime();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_cbo_loai_de_xuat = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_chk_close_form
             // 
             this.m_chk_close_form.AutoSize = true;
-            this.m_chk_close_form.Location = new System.Drawing.Point(136, 229);
+            this.m_chk_close_form.Location = new System.Drawing.Point(136, 230);
             this.m_chk_close_form.Name = "m_chk_close_form";
             this.m_chk_close_form.Size = new System.Drawing.Size(196, 17);
             this.m_chk_close_form.TabIndex = 4;
@@ -94,7 +96,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(285, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(280, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
@@ -105,10 +107,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 256);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 273);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(465, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(460, 36);
             this.m_pnl_out_place_dm.TabIndex = 41;
             // 
             // m_cmd_exit
@@ -120,7 +122,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(373, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(368, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -128,7 +130,7 @@
             // 
             // m_txt_ghi_chu
             // 
-            this.m_txt_ghi_chu.Location = new System.Drawing.Point(136, 178);
+            this.m_txt_ghi_chu.Location = new System.Drawing.Point(136, 191);
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
             this.m_txt_ghi_chu.Size = new System.Drawing.Size(275, 20);
             this.m_txt_ghi_chu.TabIndex = 3;
@@ -136,7 +138,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 185);
+            this.label5.Location = new System.Drawing.Point(18, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 34;
@@ -144,7 +146,7 @@
             // 
             // m_txt_so_tien
             // 
-            this.m_txt_so_tien.Location = new System.Drawing.Point(136, 137);
+            this.m_txt_so_tien.Location = new System.Drawing.Point(136, 122);
             this.m_txt_so_tien.Name = "m_txt_so_tien";
             this.m_txt_so_tien.Size = new System.Drawing.Size(275, 20);
             this.m_txt_so_tien.TabIndex = 2;
@@ -153,7 +155,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 144);
+            this.label4.Location = new System.Drawing.Point(18, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 32;
@@ -162,7 +164,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 102);
+            this.label3.Location = new System.Drawing.Point(18, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 30;
@@ -191,9 +193,9 @@
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(465, 36);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(460, 36);
             this.m_lbl_tieu_de.TabIndex = 26;
-            this.m_lbl_tieu_de.Text = "CẬP NHẬT THÔNG TIN ĐỀ XUẤT VPP";
+            this.m_lbl_tieu_de.Text = "CẬP NHẬT THÔNG TIN ĐỀ XUẤT ";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_cbo_trung_tam
@@ -206,25 +208,45 @@
             // 
             // m_dtp_thang
             // 
+            this.m_dtp_thang.AllowNull = BCTKApp.TCDatetime.AL.Y;
             this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
-            this.m_dtp_thang.Location = new System.Drawing.Point(136, 94);
+            this.m_dtp_thang.Location = new System.Drawing.Point(136, 88);
             this.m_dtp_thang.Mask = "00/0000";
             this.m_dtp_thang.Name = "m_dtp_thang";
             this.m_dtp_thang.Size = new System.Drawing.Size(100, 20);
             this.m_dtp_thang.TabIndex = 1;
             this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 163);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Loại đề xuất";
+            // 
+            // m_cbo_loai_de_xuat
+            // 
+            this.m_cbo_loai_de_xuat.FormattingEnabled = true;
+            this.m_cbo_loai_de_xuat.Location = new System.Drawing.Point(136, 160);
+            this.m_cbo_loai_de_xuat.Name = "m_cbo_loai_de_xuat";
+            this.m_cbo_loai_de_xuat.Size = new System.Drawing.Size(275, 21);
+            this.m_cbo_loai_de_xuat.TabIndex = 0;
+            // 
             // F566_V_GD_DE_XUAT_VPP_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 292);
+            this.ClientSize = new System.Drawing.Size(460, 309);
             this.Controls.Add(this.m_dtp_thang);
+            this.Controls.Add(this.m_cbo_loai_de_xuat);
             this.Controls.Add(this.m_cbo_trung_tam);
             this.Controls.Add(this.m_chk_close_form);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_ghi_chu);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.m_txt_so_tien);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -232,7 +254,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_tieu_de);
             this.Name = "F566_V_GD_DE_XUAT_VPP_DE";
-            this.Text = "F566_V_GD_DE_XUAT_VPP_DE";
+            this.Text = "F566- Nhập chi tiết thông tin đề xuất";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,5 +278,7 @@
         private System.Windows.Forms.Label m_lbl_tieu_de;
         private System.Windows.Forms.ComboBox m_cbo_trung_tam;
         private TCDatetime m_dtp_thang;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox m_cbo_loai_de_xuat;
     }
 }

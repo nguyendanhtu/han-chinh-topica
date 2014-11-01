@@ -571,7 +571,8 @@ namespace BCTKApp
             v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", v_dt_tu_ngay.ToShortDateString());
             v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", v_dt_den_ngay.ToShortDateString());
             v_obj_excel_report.FindAndReplace(false);
-            v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
+            //v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
+            v_obj_excel_report.Export2ExcelWithoutFixedRows_saveDialog("abc",m_fg, 0, m_fg.Cols.Count - 1, true);
         }
 		private void set_define_events(){
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);

@@ -204,6 +204,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DOC_TABLE_COMMENT.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_DE_XUAT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_DE_XUAT.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_DE_XUAT_VPP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -422,6 +427,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_GD_DE_XUAT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_DE_XUAT.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_GD_DON_DAT_HANG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -682,6 +692,17 @@
     </None>
     <None Include="DS_DOC_TABLE_COMMENT.xss">
       <DependentUpon>DS_DOC_TABLE_COMMENT.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DE_XUAT.xsc">
+      <DependentUpon>DS_GD_DE_XUAT.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DE_XUAT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_DE_XUAT.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_GD_DE_XUAT.xss">
+      <DependentUpon>DS_GD_DE_XUAT.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_DE_XUAT_VPP.xsc">
       <DependentUpon>DS_GD_DE_XUAT_VPP.xsd</DependentUpon>
@@ -1155,6 +1176,17 @@
     </None>
     <None Include="DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.xss">
       <DependentUpon>DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_DE_XUAT.xsc">
+      <DependentUpon>DS_V_GD_DE_XUAT.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_DE_XUAT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_DE_XUAT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_DE_XUAT.xss">
+      <DependentUpon>DS_V_GD_DE_XUAT.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_DON_DAT_HANG.xsc">
       <DependentUpon>DS_V_GD_DON_DAT_HANG.xsd</DependentUpon>
