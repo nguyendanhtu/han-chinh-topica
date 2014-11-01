@@ -29,7 +29,7 @@ namespace BCTKApp
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
         }
-        public void display_for_update(US_V_GD_DE_XUAT_VPP ip_us_v)
+        public void display_for_update(US_V_GD_DE_XUAT ip_us_v)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_obj_2_form(ip_us_v);
@@ -40,8 +40,8 @@ namespace BCTKApp
         #endregion
 
         #region Member
-        US_GD_DE_XUAT_VPP m_us = new US_GD_DE_XUAT_VPP();
-        DS_GD_DE_XUAT_VPP m_ds = new DS_GD_DE_XUAT_VPP();
+        US_GD_DE_XUAT m_us = new US_GD_DE_XUAT();
+        DS_GD_DE_XUAT m_ds = new DS_GD_DE_XUAT();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
 
@@ -53,6 +53,7 @@ namespace BCTKApp
             m_chk_close_form.Font = new System.Drawing.Font("Tahoma", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             m_chk_close_form.ForeColor = Color.Maroon;
             load_data_2_cbo();
+            load_cbo_loai_de_xuat();
             m_dtp_thang.Text = DateTime.Now.Date.ToString("MM/yyyy");
             m_cmd_exit.Visible = true;
             m_cmd_exit.Enabled = true;
@@ -69,12 +70,22 @@ namespace BCTKApp
             m_cbo_trung_tam.ValueMember = DM_PHONG_BAN.ID;
             m_cbo_trung_tam.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
         }
-        private void us_obj_2_form(US_V_GD_DE_XUAT_VPP ip_us_v)
+        private void load_cbo_loai_de_xuat()
+        {
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+            v_us.FillDataset(v_ds,"where id_loai_tu_dien ="+17);
+            m_cbo_loai_de_xuat.DataSource = v_ds.CM_DM_TU_DIEN;
+            m_cbo_loai_de_xuat.ValueMember = CM_DM_TU_DIEN.ID;
+            m_cbo_loai_de_xuat.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
+        }
+        private void us_obj_2_form(US_V_GD_DE_XUAT ip_us_v)
         {
             m_us.dcID = ip_us_v.dcID;
             m_cbo_trung_tam.SelectedValue = ip_us_v.dcID_PHONG_BAN;
             m_txt_so_tien.Text = CIPConvert.ToStr(ip_us_v.dcSO_TIEN, "#,##0");
             m_txt_ghi_chu.Text = ip_us_v.strGHI_CHU;
+            m_cbo_loai_de_xuat.Text = ip_us_v.strLOAI_DE_XUAT;
             m_dtp_thang.Text = ip_us_v.datTHANG_AP_DUNG.ToString("MM/yyyy");
         }
         private void form_2_us_obj()
@@ -83,6 +94,7 @@ namespace BCTKApp
             m_us.dcSO_TIEN = CIPConvert.ToDecimal(m_txt_so_tien.Text.Trim().Replace(",", "").Replace(".", ""));
             m_us.strGHI_CHU = m_txt_ghi_chu.Text;
             m_us.datTHANG_AP_DUNG = CIPConvert.ToDatetime("01/" + m_dtp_thang.Text, "dd/MM/yyyy");
+            m_us.dcID_LOAI_DE_XUAT = CIPConvert.ToDecimal(m_cbo_loai_de_xuat.SelectedValue);
         }
         private void save_data()
         {

@@ -1029,6 +1029,27 @@ namespace BCTKDS.CDBNames
         public const string SO_TIEN = "SO_TIEN";
         public const string GHI_CHU = "GHI_CHU";
     }
+    public class V_GD_DE_XUAT
+    {
+        public const string ID = "ID";
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string MA_PHONG_BAN = "MA_PHONG_BAN";
+        public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
+        public const string THANG_AP_DUNG = "THANG_AP_DUNG";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string LOAI_DE_XUAT = "LOAI_DE_XUAT";
+    }
+
+    public class GD_DE_XUAT
+    {
+        public const string ID = "ID";
+        public const string ID_PHONG_BAN = "ID_PHONG_BAN";
+        public const string THANG_AP_DUNG = "THANG_AP_DUNG";
+        public const string SO_TIEN = "SO_TIEN";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string ID_LOAI_DE_XUAT = "ID_LOAI_DE_XUAT";
+    }
     public class V_GD_DE_XUAT_VPP
     {
         public const string ID = "ID";

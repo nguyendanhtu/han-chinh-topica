@@ -48,6 +48,8 @@ namespace BCTKApp
         private Label label4;
         private Label m_lbl_tieu_de;
         private Label m_lbl_thang;
+        private ComboBox m_cbo_loai_de_xuat;
+        private Label label1;
 		private System.ComponentModel.IContainer components;
 
 		public f565_V_GD_DE_XUAT_VPP()
@@ -104,6 +106,8 @@ namespace BCTKApp
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_lbl_thang = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cbo_loai_de_xuat = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_de_xuat)).BeginInit();
             this.panel1.SuspendLayout();
@@ -144,10 +148,10 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 428);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 498);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(713, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(817, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -159,7 +163,7 @@ namespace BCTKApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(357, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(461, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -174,7 +178,7 @@ namespace BCTKApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(445, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(549, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -204,7 +208,7 @@ namespace BCTKApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(533, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(637, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -219,7 +223,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(621, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(725, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -229,9 +233,9 @@ namespace BCTKApp
             // 
             this.m_grv_de_xuat.ColumnInfo = resources.GetString("m_grv_de_xuat.ColumnInfo");
             this.m_grv_de_xuat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_de_xuat.Location = new System.Drawing.Point(0, 136);
+            this.m_grv_de_xuat.Location = new System.Drawing.Point(0, 158);
             this.m_grv_de_xuat.Name = "m_grv_de_xuat";
-            this.m_grv_de_xuat.Size = new System.Drawing.Size(713, 292);
+            this.m_grv_de_xuat.Size = new System.Drawing.Size(817, 340);
             this.m_grv_de_xuat.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_de_xuat.Styles"));
             this.m_grv_de_xuat.TabIndex = 20;
             // 
@@ -240,7 +244,9 @@ namespace BCTKApp
             this.panel1.Controls.Add(this.m_dtp_thang);
             this.panel1.Controls.Add(this.m_cbo_phap_nhan);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.m_cbo_loai_de_xuat);
             this.panel1.Controls.Add(this.m_cbo_trung_tam);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.m_lbl_tieu_de);
@@ -248,11 +254,12 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(713, 126);
+            this.panel1.Size = new System.Drawing.Size(817, 152);
             this.panel1.TabIndex = 23;
             // 
             // m_dtp_thang
             // 
+            this.m_dtp_thang.AllowNull = BCTKApp.TCDatetime.AL.Y;
             this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
             this.m_dtp_thang.Location = new System.Drawing.Point(198, 44);
             this.m_dtp_thang.Mask = "00/0000";
@@ -284,7 +291,7 @@ namespace BCTKApp
             // 
             this.m_cbo_trung_tam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(198, 84);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(198, 105);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(302, 21);
             this.m_cbo_trung_tam.TabIndex = 32;
@@ -297,7 +304,7 @@ namespace BCTKApp
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(520, 79);
+            this.m_cmd_search.Location = new System.Drawing.Point(520, 100);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 22;
@@ -306,7 +313,7 @@ namespace BCTKApp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(128, 92);
+            this.label4.Location = new System.Drawing.Point(128, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 31;
@@ -318,9 +325,9 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(713, 36);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(817, 36);
             this.m_lbl_tieu_de.TabIndex = 28;
-            this.m_lbl_tieu_de.Text = "TRA CỨU ĐỀ XUẤT VPP THEO TRUNG TÂM";
+            this.m_lbl_tieu_de.Text = "NHẬP ĐỀ XUẤT THEO TRUNG TÂM";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_lbl_thang
@@ -332,15 +339,33 @@ namespace BCTKApp
             this.m_lbl_thang.TabIndex = 2;
             this.m_lbl_thang.Text = "Tháng";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(128, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Loại đề xuất";
+            // 
+            // m_cbo_loai_de_xuat
+            // 
+            this.m_cbo_loai_de_xuat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_loai_de_xuat.FormattingEnabled = true;
+            this.m_cbo_loai_de_xuat.Location = new System.Drawing.Point(198, 74);
+            this.m_cbo_loai_de_xuat.Name = "m_cbo_loai_de_xuat";
+            this.m_cbo_loai_de_xuat.Size = new System.Drawing.Size(302, 21);
+            this.m_cbo_loai_de_xuat.TabIndex = 32;
+            // 
             // f565_V_GD_DE_XUAT_VPP
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(713, 464);
+            this.ClientSize = new System.Drawing.Size(817, 534);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_grv_de_xuat);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f565_V_GD_DE_XUAT_VPP";
-            this.Text = "F565-Đề xuất văn phòng phẩm";
+            this.Text = "F565- Nhập đề xuất theo trung tâm";
             this.Load += new System.EventHandler(this.f565_V_GD_DE_XUAT_VPP_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_de_xuat)).EndInit();
@@ -359,14 +384,14 @@ namespace BCTKApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			TEN_PHONG_BAN = 1,GHI_CHU = 4,SO_TIEN = 3,THANG_AP_DUNG = 2
+			TEN_PHONG_BAN = 1,GHI_CHU = 5,SO_TIEN = 3,THANG_AP_DUNG = 2            ,LOAI_DE_XUAT = 4
 		}			
 		#endregion
 
 		#region Members
 		ITransferDataRow m_obj_trans;		
-		DS_V_GD_DE_XUAT_VPP m_ds = new DS_V_GD_DE_XUAT_VPP();
-		US_V_GD_DE_XUAT_VPP m_us = new US_V_GD_DE_XUAT_VPP();
+		DS_V_GD_DE_XUAT m_ds = new DS_V_GD_DE_XUAT();
+		US_V_GD_DE_XUAT m_us = new US_V_GD_DE_XUAT();
 		#endregion
 
 		#region Private Methods
@@ -378,6 +403,7 @@ namespace BCTKApp
             CGridUtils.AddSearch_Handlers(m_grv_de_xuat);
             load_data_2_cbo_phap_nhan();
             load_cbo_trung_tam();
+            load_cbo_loai_de_xuat();
             m_cmd_exit.Visible = true;
             m_cmd_exit.Enabled = true;
             m_cmd_search.Visible = true;
@@ -398,16 +424,18 @@ namespace BCTKApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_GD_DE_XUAT_VPP.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);			v_htb.Add(V_GD_DE_XUAT_VPP.GHI_CHU, e_col_Number.GHI_CHU);			v_htb.Add(V_GD_DE_XUAT_VPP.SO_TIEN, e_col_Number.SO_TIEN);			v_htb.Add(V_GD_DE_XUAT_VPP.THANG_AP_DUNG, e_col_Number.THANG_AP_DUNG);									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds._V_GD_DE_XUAT_VPP.NewRow());
+			v_htb.Add(V_GD_DE_XUAT.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);			v_htb.Add(V_GD_DE_XUAT.GHI_CHU, e_col_Number.GHI_CHU);			v_htb.Add(V_GD_DE_XUAT.SO_TIEN, e_col_Number.SO_TIEN);			v_htb.Add(V_GD_DE_XUAT.THANG_AP_DUNG, e_col_Number.THANG_AP_DUNG);
+            v_htb.Add(V_GD_DE_XUAT.LOAI_DE_XUAT, e_col_Number.LOAI_DE_XUAT);									
+			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_DE_XUAT.NewRow());
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){
             DateTime v_dat_thang = CIPConvert.ToDatetime("01/" + m_dtp_thang.Text, "dd/MM/yyyy");
             decimal v_dc_id_phap_nhan = CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue);
-            decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);			
-			m_ds = new DS_V_GD_DE_XUAT_VPP();			
-			m_us.FillDatasetSearch(m_ds,v_dat_thang,v_dc_id_phap_nhan,v_dc_id_trung_tam);
+            decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
+            decimal v_dc_id_loai_de_xuat = CIPConvert.ToDecimal(m_cbo_loai_de_xuat.SelectedValue);
+			m_ds = new DS_V_GD_DE_XUAT();			
+			m_us.FillDatasetSearch(m_ds,v_dat_thang,v_dc_id_phap_nhan,v_dc_id_trung_tam, v_dc_id_loai_de_xuat);
 			m_grv_de_xuat.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_de_xuat, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_de_xuat);
@@ -457,7 +485,25 @@ namespace BCTKApp
             v_ds.v_DM_PHONG_BAN_PHAP_NHAN.Rows.InsertAt(v_dr, 0);
             m_cbo_trung_tam.SelectedIndex = 0;
         }
-		private void grid2us_object(US_V_GD_DE_XUAT_VPP i_us
+        private void load_cbo_loai_de_xuat()
+        {
+            BCTKUS.US_CM_DM_TU_DIEN v_us = new BCTKUS.US_CM_DM_TU_DIEN();
+            BCTKDS.DS_CM_DM_TU_DIEN v_ds = new BCTKDS.DS_CM_DM_TU_DIEN();
+            v_us.FillDataset(v_ds, "where id_loai_tu_dien =" + 17);
+            m_cbo_loai_de_xuat.DataSource = v_ds.CM_DM_TU_DIEN;
+            m_cbo_loai_de_xuat.ValueMember = CM_DM_TU_DIEN.ID;
+            m_cbo_loai_de_xuat.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
+            DataRow v_dr = v_ds.CM_DM_TU_DIEN.NewRow();
+            v_dr[CM_DM_TU_DIEN.ID] = -1;
+            v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 17;
+            v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "";
+            v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "----------------------------Tất cả-----------------------------";
+            v_dr[CM_DM_TU_DIEN.TEN] = "";
+            v_dr[CM_DM_TU_DIEN.GHI_CHU] = "";
+            v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+            m_cbo_trung_tam.SelectedIndex = 0;
+        }
+		private void grid2us_object(US_V_GD_DE_XUAT i_us
 			, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_grv_de_xuat.Rows[i_grid_row].UserData;
@@ -465,7 +511,7 @@ namespace BCTKApp
 			i_us.DataRow2Me(v_dr);
 		}
 
-        private void dm_grid2us_object(US_GD_DE_XUAT_VPP i_us
+        private void dm_grid2us_object(US_GD_DE_XUAT i_us
                 , int i_grid_row)
         {
             DataRow v_dr;
@@ -473,7 +519,7 @@ namespace BCTKApp
             m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
             i_us.DataRow2Me(v_dr);
         }
-		private void us_object2grid(US_V_GD_DE_XUAT_VPP i_us
+		private void us_object2grid(US_V_GD_DE_XUAT i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_grv_de_xuat.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
@@ -501,7 +547,7 @@ namespace BCTKApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_de_xuat)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_de_xuat, m_grv_de_xuat.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_GD_DE_XUAT_VPP v_us = new US_GD_DE_XUAT_VPP();
+			US_GD_DE_XUAT v_us = new US_GD_DE_XUAT();
 			dm_grid2us_object(v_us, m_grv_de_xuat.Row);
 			try {			
 				v_us.BeginTransaction();    											

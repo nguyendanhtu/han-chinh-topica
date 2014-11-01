@@ -143,6 +143,7 @@
     <Compile Include="US_DM_VPP.cs" />
     <Compile Include="US_DOC_COLUMN_COMMENT.cs" />
     <Compile Include="US_DOC_TABLE_COMMENT.cs" />
+    <Compile Include="US_GD_DE_XUAT.cs" />
     <Compile Include="US_GD_DE_XUAT_VPP.cs" />
     <Compile Include="US_GD_DINH_MUC.cs" />
     <Compile Include="US_GD_DON_DAT_HANG.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="US_V_DM_PHONG_BAN_PHAP_NHAN.cs" />
     <Compile Include="US_V_DM_VPP.cs" />
     <Compile Include="US_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.cs" />
+    <Compile Include="US_V_GD_DE_XUAT.cs" />
     <Compile Include="US_V_GD_DE_XUAT_VPP.cs" />
     <Compile Include="US_V_GD_DON_DAT_HANG.cs" />
     <Compile Include="US_V_GD_DON_DAT_HANG_DETAIL.cs" />
