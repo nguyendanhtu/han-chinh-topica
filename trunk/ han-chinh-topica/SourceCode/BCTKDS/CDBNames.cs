@@ -149,6 +149,7 @@ namespace BCTKDS.CDBNames
         public const string ID_PHONG_BAN = "ID_PHONG_BAN";
         public const string TONG_DON_HANG = "TONG_DON_HANG";
         public const string TONG_SO_TIEN = "TONG_SO_TIEN";
+        public const string TONG_TIEN_DE_XUAT = "TONG_TIEN_DE_XUAT";
         public const string DINH_MUC = "DINH_MUC";
         public const string TI_LE_DA_VUOT = "TI_LE_DA_VUOT";
     }
@@ -421,6 +422,7 @@ namespace BCTKDS.CDBNames
         public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
         public const string TONG_SO_BILL = "TONG_SO_BILL";
         public const string TONG_SO_TIEN = "TONG_SO_TIEN";
+        public const string TONG_TIEN_DE_XUAT = "TONG_TIEN_DE_XUAT";
         public const string DINH_MUC = "DINH_MUC";
         public const string TI_LE_DA_VUOT = "TI_LE_DA_VUOT";
     }

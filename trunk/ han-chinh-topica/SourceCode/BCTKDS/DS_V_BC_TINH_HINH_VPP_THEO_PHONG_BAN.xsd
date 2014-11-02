@@ -4,15 +4,15 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ADMIN_SOFTConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ADMIN_SOFTConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.ADMIN_SOFTConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TestConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TestConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.TestConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_BC_TINH_HINH_VPP_THEO_PHONG_BANTableAdapter" GeneratorDataComponentClassName="V_BC_TINH_HINH_VPP_THEO_PHONG_BANTableAdapter" Name="V_BC_TINH_HINH_VPP_THEO_PHONG_BAN" UserDataComponentName="V_BC_TINH_HINH_VPP_THEO_PHONG_BANTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ADMIN_SOFTConnectionString1 (Settings)" DbObjectName="ADMIN_SOFT.dbo.V_BC_TINH_HINH_VPP_THEO_PHONG_BAN" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TestConnectionString (Settings)" DbObjectName="Test.dbo.V_BC_TINH_HINH_VPP_THEO_PHONG_BAN" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MA_PHONG_BAN, TEN_PHONG_BAN, ID_PHONG_BAN, TONG_DON_HANG, TONG_SO_TIEN, DINH_MUC, TI_LE_DA_VUOT FROM dbo.V_BC_TINH_HINH_VPP_THEO_PHONG_BAN</CommandText>
+                    <CommandText>SELECT MA_PHONG_BAN, TEN_PHONG_BAN, ID_PHONG_BAN, TONG_DON_HANG, TONG_SO_TIEN, TONG_TIEN_DE_XUAT, DINH_MUC, TI_LE_DA_VUOT FROM dbo.V_BC_TINH_HINH_VPP_THEO_PHONG_BAN</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -24,6 +24,7 @@
               <Mapping SourceColumn="ID_PHONG_BAN" DataSetColumn="ID_PHONG_BAN" />
               <Mapping SourceColumn="TONG_DON_HANG" DataSetColumn="TONG_DON_HANG" />
               <Mapping SourceColumn="TONG_SO_TIEN" DataSetColumn="TONG_SO_TIEN" />
+              <Mapping SourceColumn="TONG_TIEN_DE_XUAT" DataSetColumn="TONG_TIEN_DE_XUAT" />
               <Mapping SourceColumn="DINH_MUC" DataSetColumn="DINH_MUC" />
               <Mapping SourceColumn="TI_LE_DA_VUOT" DataSetColumn="TI_LE_DA_VUOT" />
             </Mappings>
@@ -57,6 +58,7 @@
               <xs:element name="ID_PHONG_BAN" msprop:Generator_ColumnVarNameInTable="columnID_PHONG_BAN" msprop:Generator_ColumnPropNameInRow="ID_PHONG_BAN" msprop:Generator_ColumnPropNameInTable="ID_PHONG_BANColumn" msprop:Generator_UserColumnName="ID_PHONG_BAN" type="xs:decimal" />
               <xs:element name="TONG_DON_HANG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTONG_DON_HANG" msprop:Generator_ColumnPropNameInRow="TONG_DON_HANG" msprop:Generator_ColumnPropNameInTable="TONG_DON_HANGColumn" msprop:Generator_UserColumnName="TONG_DON_HANG" type="xs:decimal" minOccurs="0" />
               <xs:element name="TONG_SO_TIEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTONG_SO_TIEN" msprop:Generator_ColumnPropNameInRow="TONG_SO_TIEN" msprop:Generator_ColumnPropNameInTable="TONG_SO_TIENColumn" msprop:Generator_UserColumnName="TONG_SO_TIEN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TONG_TIEN_DE_XUAT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTONG_TIEN_DE_XUAT" msprop:Generator_ColumnPropNameInRow="TONG_TIEN_DE_XUAT" msprop:Generator_ColumnPropNameInTable="TONG_TIEN_DE_XUATColumn" msprop:Generator_UserColumnName="TONG_TIEN_DE_XUAT" type="xs:decimal" minOccurs="0" />
               <xs:element name="DINH_MUC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDINH_MUC" msprop:Generator_ColumnPropNameInRow="DINH_MUC" msprop:Generator_ColumnPropNameInTable="DINH_MUCColumn" msprop:Generator_UserColumnName="DINH_MUC" type="xs:decimal" minOccurs="0" />
               <xs:element name="TI_LE_DA_VUOT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTI_LE_DA_VUOT" msprop:Generator_ColumnPropNameInRow="TI_LE_DA_VUOT" msprop:Generator_ColumnPropNameInTable="TI_LE_DA_VUOTColumn" msprop:Generator_UserColumnName="TI_LE_DA_VUOT" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
