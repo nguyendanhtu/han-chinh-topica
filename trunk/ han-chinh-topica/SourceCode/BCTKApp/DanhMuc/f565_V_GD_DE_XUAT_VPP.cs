@@ -98,16 +98,16 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_de_xuat = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_dtp_thang = new BCTKApp.TCDatetime();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.m_cbo_loai_de_xuat = new System.Windows.Forms.ComboBox();
             this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_lbl_thang = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_cbo_loai_de_xuat = new System.Windows.Forms.ComboBox();
+            this.m_dtp_thang = new BCTKApp.TCDatetime();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_de_xuat)).BeginInit();
             this.panel1.SuspendLayout();
@@ -151,7 +151,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 498);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(817, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(901, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -163,7 +163,7 @@ namespace BCTKApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(461, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(545, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -178,7 +178,7 @@ namespace BCTKApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(549, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(633, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -208,7 +208,7 @@ namespace BCTKApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(637, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(721, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -223,7 +223,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(725, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(809, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -235,7 +235,7 @@ namespace BCTKApp
             this.m_grv_de_xuat.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_de_xuat.Location = new System.Drawing.Point(0, 158);
             this.m_grv_de_xuat.Name = "m_grv_de_xuat";
-            this.m_grv_de_xuat.Size = new System.Drawing.Size(817, 340);
+            this.m_grv_de_xuat.Size = new System.Drawing.Size(901, 340);
             this.m_grv_de_xuat.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_de_xuat.Styles"));
             this.m_grv_de_xuat.TabIndex = 20;
             // 
@@ -254,25 +254,14 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(817, 152);
+            this.panel1.Size = new System.Drawing.Size(901, 152);
             this.panel1.TabIndex = 23;
-            // 
-            // m_dtp_thang
-            // 
-            this.m_dtp_thang.AllowNull = BCTKApp.TCDatetime.AL.Y;
-            this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
-            this.m_dtp_thang.Location = new System.Drawing.Point(198, 44);
-            this.m_dtp_thang.Mask = "00/0000";
-            this.m_dtp_thang.Name = "m_dtp_thang";
-            this.m_dtp_thang.Size = new System.Drawing.Size(81, 20);
-            this.m_dtp_thang.TabIndex = 53;
-            this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
             // 
             // m_cbo_phap_nhan
             // 
             this.m_cbo_phap_nhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_phap_nhan.FormattingEnabled = true;
-            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(378, 43);
+            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(503, 47);
             this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
             this.m_cbo_phap_nhan.Size = new System.Drawing.Size(122, 21);
             this.m_cbo_phap_nhan.TabIndex = 52;
@@ -281,20 +270,38 @@ namespace BCTKApp
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(294, 48);
+            this.label2.Location = new System.Drawing.Point(419, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 51;
             this.label2.Text = "Pháp nhân";
             // 
+            // m_cbo_loai_de_xuat
+            // 
+            this.m_cbo_loai_de_xuat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_loai_de_xuat.FormattingEnabled = true;
+            this.m_cbo_loai_de_xuat.Location = new System.Drawing.Point(323, 78);
+            this.m_cbo_loai_de_xuat.Name = "m_cbo_loai_de_xuat";
+            this.m_cbo_loai_de_xuat.Size = new System.Drawing.Size(302, 21);
+            this.m_cbo_loai_de_xuat.TabIndex = 32;
+            // 
             // m_cbo_trung_tam
             // 
             this.m_cbo_trung_tam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(198, 105);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(323, 109);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(302, 21);
             this.m_cbo_trung_tam.TabIndex = 32;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(253, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Loại đề xuất";
             // 
             // m_cmd_search
             // 
@@ -304,7 +311,7 @@ namespace BCTKApp
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(520, 100);
+            this.m_cmd_search.Location = new System.Drawing.Point(645, 104);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 22;
@@ -313,7 +320,7 @@ namespace BCTKApp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(128, 113);
+            this.label4.Location = new System.Drawing.Point(253, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 31;
@@ -325,7 +332,7 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(817, 36);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(901, 36);
             this.m_lbl_tieu_de.TabIndex = 28;
             this.m_lbl_tieu_de.Text = "NHẬP ĐỀ XUẤT THEO TRUNG TÂM";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -333,34 +340,27 @@ namespace BCTKApp
             // m_lbl_thang
             // 
             this.m_lbl_thang.AutoSize = true;
-            this.m_lbl_thang.Location = new System.Drawing.Point(128, 50);
+            this.m_lbl_thang.Location = new System.Drawing.Point(253, 54);
             this.m_lbl_thang.Name = "m_lbl_thang";
             this.m_lbl_thang.Size = new System.Drawing.Size(38, 13);
             this.m_lbl_thang.TabIndex = 2;
             this.m_lbl_thang.Text = "Tháng";
             // 
-            // label1
+            // m_dtp_thang
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(128, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Loại đề xuất";
-            // 
-            // m_cbo_loai_de_xuat
-            // 
-            this.m_cbo_loai_de_xuat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_loai_de_xuat.FormattingEnabled = true;
-            this.m_cbo_loai_de_xuat.Location = new System.Drawing.Point(198, 74);
-            this.m_cbo_loai_de_xuat.Name = "m_cbo_loai_de_xuat";
-            this.m_cbo_loai_de_xuat.Size = new System.Drawing.Size(302, 21);
-            this.m_cbo_loai_de_xuat.TabIndex = 32;
+            this.m_dtp_thang.AllowNull = BCTKApp.TCDatetime.AL.Y;
+            this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
+            this.m_dtp_thang.Location = new System.Drawing.Point(323, 48);
+            this.m_dtp_thang.Mask = "00/0000";
+            this.m_dtp_thang.Name = "m_dtp_thang";
+            this.m_dtp_thang.Size = new System.Drawing.Size(81, 20);
+            this.m_dtp_thang.TabIndex = 53;
+            this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
             // 
             // f565_V_GD_DE_XUAT_VPP
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(817, 534);
+            this.ClientSize = new System.Drawing.Size(901, 534);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_grv_de_xuat);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -439,6 +439,29 @@ namespace BCTKApp
 			m_grv_de_xuat.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_de_xuat, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_de_xuat);
+            m_grv_de_xuat.AllowResizing = AllowResizingEnum.Both;
+            ArrayList _al = new ArrayList();
+            for (int _row = m_grv_de_xuat.Rows.Fixed; _row < m_grv_de_xuat.Rows.Count; _row++)
+            {
+                Button btn = new Button();
+                btn.BackColor = SystemColors.Control;
+                btn.Tag = _row.ToString();
+                btn.Text = "Upload file";
+
+                btn.Click += (s1, e1) =>
+                {
+                    var button = s1 as Button;
+                    m_grv_de_xuat.Rows.Remove(Convert.ToInt32(button.Tag.ToString()));
+                };
+
+                //_al.Add(new HostedControl(m_grv_de_xuat, btn, _row, 3));
+            }
+
+            //m_grv_de_xuat.Paint += (s1, e1) =>
+            //{
+            //    foreach (HostedControl hosted in _al)
+            //        hosted.UpdatePosition();
+            //};
 			m_grv_de_xuat.Redraw = true;
 		}
         private void load_data_2_cbo_phap_nhan()

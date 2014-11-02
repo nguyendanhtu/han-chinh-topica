@@ -385,19 +385,21 @@ namespace BCTKApp
         #region Data Structure
         private enum e_col_Number
         {
-            TI_LE_DA_VUOT = 7
-,
-            TEN_PHONG_BAN = 2
+            TI_LE_DA_VUOT = 8
                 ,
-            MA_PHONG_BAN = 1
+            TEN_PHONG_BAN = 3
                 ,
-            TONG_SO_BILL = 3
+            MA_PHONG_BAN = 2
                 ,
-            DINH_MUC = 6
+            TONG_SO_BILL = 4
+                ,
+            DINH_MUC = 7
                 , 
-            TONG_SO_TIEN = 4
+            TONG_SO_TIEN = 5
                 ,
-            TONG_TIEN_DE_XUAT = 5
+            TONG_TIEN_DE_XUAT = 6
+                ,
+            ID_PHONG_BAN = 1
         }
         #endregion
 
@@ -450,6 +452,7 @@ namespace BCTKApp
             v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_TIEN_DE_XUAT, e_col_Number.TONG_TIEN_DE_XUAT);
             v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.DINH_MUC, e_col_Number.DINH_MUC);
             v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_TIEN, e_col_Number.TONG_SO_TIEN);
+            v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.ID_PHONG_BAN, e_col_Number.ID_PHONG_BAN);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.NewRow());
             return v_obj_trans;
@@ -675,7 +678,7 @@ namespace BCTKApp
                 int i_grid_col = m_fg.Selection.LeftCol;
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
                 //Data v_dc = (DataColumn)m_fg.Cols[i_grid_row].UserData;
-                v_id_phong_ban = CIPConvert.ToDecimal(v_dr[0]);
+                v_id_phong_ban = CIPConvert.ToDecimal(v_dr[2]);  // chú ý chỗ này lấy theo vị trí dataset không phải theo grid
                 if (v_dr[3].ToString() != "")
                     v_tong_bill = CIPConvert.ToDecimal(v_dr[3]);
                 else
