@@ -151,7 +151,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 525);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(908, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_xuat_excel
@@ -178,7 +178,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(785, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(809, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(95, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -191,7 +191,7 @@ namespace BCTKApp
             this.m_fg.Location = new System.Drawing.Point(0, 158);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell;
-            this.m_fg.Size = new System.Drawing.Size(884, 367);
+            this.m_fg.Size = new System.Drawing.Size(908, 367);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào các cột: , Tổng số tiền thực tế và Tổng số tiền định mức đ" +
@@ -272,7 +272,7 @@ namespace BCTKApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(884, 35);
+            this.m_lbl_header.Size = new System.Drawing.Size(908, 35);
             this.m_lbl_header.TabIndex = 30;
             this.m_lbl_header.Text = "BÁO CÁO TÌNH HÌNH VPP THEO TRUNG TÂM - BAN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -293,7 +293,7 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 123);
+            this.panel1.Size = new System.Drawing.Size(908, 123);
             this.panel1.TabIndex = 2830;
             // 
             // m_dt_den_ngay
@@ -358,7 +358,7 @@ namespace BCTKApp
             // f710_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(908, 561);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_lbl_header);
@@ -384,20 +384,21 @@ namespace BCTKApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			TI_LE_DA_VUOT = 6
+			TI_LE_DA_VUOT = 7
 ,TEN_PHONG_BAN = 2
 ,MA_PHONG_BAN = 1
-,TONG_SO_BILL = 3
-,DINH_MUC = 5
+,TONG_DON_HANG = 3
+,DINH_MUC = 6
 ,TONG_SO_TIEN = 4
-
+            ,
+            TONG_TIEN_DE_XUAT = 5
 		}			
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN m_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
-		US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN m_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+		ITransferDataRow m_obj_trans;
+        DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN m_ds = new DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
+        US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN m_us = new US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
         bool m_trang_thai = false;
         DateTime v_dt_tu_ngay;
         DateTime v_dt_den_ngay;
@@ -430,14 +431,15 @@ namespace BCTKApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TI_LE_DA_VUOT, e_col_Number.TI_LE_DA_VUOT);
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.MA_PHONG_BAN, e_col_Number.MA_PHONG_BAN);
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_BILL, e_col_Number.TONG_SO_BILL);
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.DINH_MUC, e_col_Number.DINH_MUC);
-			v_htb.Add(V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_TIEN, e_col_Number.TONG_SO_TIEN);
+            v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.TI_LE_DA_VUOT, e_col_Number.TI_LE_DA_VUOT);
+            v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
+            v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.MA_PHONG_BAN, e_col_Number.MA_PHONG_BAN);
+			v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.TONG_DON_HANG, e_col_Number.TONG_DON_HANG);
+            v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.DINH_MUC, e_col_Number.DINH_MUC);
+            v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.TONG_SO_TIEN, e_col_Number.TONG_SO_TIEN);
+            v_htb.Add(V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.TONG_TIEN_DE_XUAT, e_col_Number.TONG_TIEN_DE_XUAT);
 									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.NewRow());
+			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_BC_TINH_HINH_VPP_THEO_PHONG_BAN.NewRow());
 			return v_obj_trans;			
 		}
         private void load_data_2_grid()
@@ -446,8 +448,8 @@ namespace BCTKApp
             //decimal v_id_trang_thai = -1;
 
 
-            US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
-            DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
+            DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
             v_us.FillDataset(v_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
@@ -476,8 +478,8 @@ namespace BCTKApp
             v_dt_tu_ngay = m_dt_tu_ngay.Value.AddDays(-m_dt_tu_ngay.Value.Date.Day+1);
             v_dt_den_ngay = m_dt_den_ngay.Value.AddMonths(1).AddDays(-m_dt_den_ngay.Value.Day);
             decimal v_dc_tong_so_vuot_dm = 0;
-            US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
-            DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+            US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
+            DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN v_ds = new DS_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
             v_us.FillDatasetSearch_VPP(v_ds, v_dt_tu_ngay, v_dt_den_ngay, v_id_trang_thai, v_id_tu_khoa);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
@@ -506,7 +508,7 @@ namespace BCTKApp
             else m_lbl_tong_so_vuot_dm.Text = CIPConvert.ToStr(v_dc_tong_so_vuot_dm, "#,###");
             m_fg.Redraw = true;
         }
-		private void grid2us_object(US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN i_us
+		private void grid2us_object(US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN i_us
 			, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
@@ -515,7 +517,7 @@ namespace BCTKApp
 		}
 
 	
-		private void us_object2grid(US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN i_us
+		private void us_object2grid(US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
@@ -538,11 +540,11 @@ namespace BCTKApp
 			load_data_2_grid();
 		}
 				
-		private void delete_V_BC_TINH_HINH_CPN_theo_phong_ban(){
+		private void delete_V_BC_TINH_HINH_VPP_theo_phong_ban(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN();
+			US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN v_us = new US_V_BC_TINH_HINH_VPP_THEO_PHONG_BAN();
 			grid2us_object(v_us, m_fg.Row);
 			try {			
 				v_us.BeginTransaction();    											
