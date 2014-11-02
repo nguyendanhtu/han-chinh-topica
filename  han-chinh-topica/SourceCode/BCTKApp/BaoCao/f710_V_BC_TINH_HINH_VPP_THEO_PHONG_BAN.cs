@@ -151,7 +151,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 525);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(908, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(992, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_xuat_excel
@@ -178,7 +178,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(809, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(893, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(95, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -191,11 +191,10 @@ namespace BCTKApp
             this.m_fg.Location = new System.Drawing.Point(0, 158);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell;
-            this.m_fg.Size = new System.Drawing.Size(908, 367);
+            this.m_fg.Size = new System.Drawing.Size(992, 367);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột vào các cột: , Tổng số tiền thực tế và Tổng số tiền định mức đ" +
-        "ể xem chi tiết!");
+            this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột để xem chi tiết định mức");
             // 
             // m_cmd_tim_kiem
             // 
@@ -272,7 +271,7 @@ namespace BCTKApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(908, 35);
+            this.m_lbl_header.Size = new System.Drawing.Size(992, 35);
             this.m_lbl_header.TabIndex = 30;
             this.m_lbl_header.Text = "BÁO CÁO TÌNH HÌNH VPP THEO TRUNG TÂM - BAN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -293,7 +292,7 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(908, 123);
+            this.panel1.Size = new System.Drawing.Size(992, 123);
             this.panel1.TabIndex = 2830;
             // 
             // m_dt_den_ngay
@@ -358,7 +357,7 @@ namespace BCTKApp
             // f710_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(908, 561);
+            this.ClientSize = new System.Drawing.Size(992, 561);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_lbl_header);
@@ -578,7 +577,6 @@ namespace BCTKApp
         }
 		private void set_define_events(){
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            
             m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             m_dt_tu_ngay.ValueChanged += new EventHandler(m_dt_tu_ngay_ValueChanged);
@@ -659,7 +657,7 @@ namespace BCTKApp
                 int i_grid_col=m_fg.Selection.LeftCol;
                 DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
                 //Data v_dc = (DataColumn)m_fg.Cols[i_grid_row].UserData;
-                v_id_phong_ban = CIPConvert.ToDecimal(v_dr[0]);
+                v_id_phong_ban = CIPConvert.ToDecimal(v_dr[2]);
                 if (v_dr[3].ToString() != "")
                     v_tong_bill = CIPConvert.ToDecimal(v_dr[3]);
                 else
@@ -668,22 +666,19 @@ namespace BCTKApp
                     v_tong_tien = CIPConvert.ToDecimal(v_dr[4]);
                 else
                     v_tong_tien = 0;
-                if (i_grid_col == (int)e_col_Number.DINH_MUC)
-                {
-                    f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
-                    v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay,173);
-                }
-                else 
-                if (  (i_grid_col == (int)e_col_Number.TONG_SO_TIEN))// && v_dr[4].ToString() != "")
-                {
-                    //f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
-                    //v_frm1.Display_for_chi_tiet(v_id_phong_ban, -1, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
-                    // form chi tiết VPP theo từng phòng ban. từng đơn hàng
-                    BaseMessages.MsgBox_Infor("Chỗ này là chi tiết VPP của từng phòng ban!");
-                }
-                else {
-                    BaseMessages.MsgBox_Infor("Bạn nhấp đúp chuột vào các cột: Tổng số tiền thực tế và Tổng số tiền định mức để xem chi tiết!");
-              }
+                f706_V_BC_CHI_TIET_DM v_frm = new f706_V_BC_CHI_TIET_DM();
+                 v_frm.Display_for_chi_tiet(v_id_phong_ban, v_dt_tu_ngay, v_dt_den_ngay,173);
+                
+                //else 
+                //if (  (i_grid_col == (int)e_col_Number.TONG_DON_HANG))// && v_dr[4].ToString() != "")
+                //{
+                //    //f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE v_frm1 = new f407_V_TONG_HOP_BILL_THEO_PHONG_BAN_DE();
+                //    //v_frm1.Display_for_chi_tiet(v_id_phong_ban, -1, v_dt_tu_ngay, v_dt_den_ngay, v_tong_bill, v_tong_tien);
+                //    // form chi tiết VPP theo từng phòng ban. từng đơn hàng
+                //    BaseMessages.MsgBox_Infor("Chỗ này là chi tiết VPP của từng phòng ban!");
+                //}
+                //else {
+                //    BaseMessages.MsgBox_Infor("Bạn nhấp đúp chuột vào các cột: Tổng sđơn hàng và Tổng số tiền định mức để xem chi tiết!");
             }
             catch (Exception v_e)
             {
