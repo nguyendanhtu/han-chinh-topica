@@ -123,7 +123,27 @@ public class US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN : US_Object
 	public void SetTONG_SO_TIENNull() {
 		pm_objDR["TONG_SO_TIEN"] = System.Convert.DBNull;
 	}
+    public decimal dcTONG_TIEN_DE_XUAT
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "TONG_TIEN_DE_XUAT", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["TONG_TIEN_DE_XUAT"] = value;
+        }
+    }
 
+    public bool IsTONG_TIEN_DE_XUATNull()
+    {
+        return pm_objDR.IsNull("TONG_TIEN_DE_XUAT");
+    }
+
+    public void SetTONG_TIEN_DE_XUATNull()
+    {
+        pm_objDR["TONG_TIEN_DE_XUAT"] = System.Convert.DBNull;
+    }
 	public decimal dcDINH_MUC 
 	{
 		get

@@ -279,15 +279,17 @@ namespace BCTKDS {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class V_BC_TINH_HINH_CPN_THEO_PHONG_BANDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
-            private global::System.Data.DataColumn columnID_PHONG_BAN;
-            
             private global::System.Data.DataColumn columnMA_PHONG_BAN;
             
             private global::System.Data.DataColumn columnTEN_PHONG_BAN;
             
+            private global::System.Data.DataColumn columnID_PHONG_BAN;
+            
             private global::System.Data.DataColumn columnTONG_SO_BILL;
             
             private global::System.Data.DataColumn columnTONG_SO_TIEN;
+            
+            private global::System.Data.DataColumn columnTONG_TIEN_DE_XUAT;
             
             private global::System.Data.DataColumn columnDINH_MUC;
             
@@ -328,14 +330,6 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_PHONG_BANColumn {
-                get {
-                    return this.columnID_PHONG_BAN;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn MA_PHONG_BANColumn {
                 get {
                     return this.columnMA_PHONG_BAN;
@@ -352,6 +346,14 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_PHONG_BANColumn {
+                get {
+                    return this.columnID_PHONG_BAN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn TONG_SO_BILLColumn {
                 get {
                     return this.columnTONG_SO_BILL;
@@ -363,6 +365,14 @@ namespace BCTKDS {
             public global::System.Data.DataColumn TONG_SO_TIENColumn {
                 get {
                     return this.columnTONG_SO_TIEN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TONG_TIEN_DE_XUATColumn {
+                get {
+                    return this.columnTONG_TIEN_DE_XUAT;
                 }
             }
             
@@ -419,19 +429,27 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_BC_TINH_HINH_CPN_THEO_PHONG_BANRow AddV_BC_TINH_HINH_CPN_THEO_PHONG_BANRow(decimal ID_PHONG_BAN, string MA_PHONG_BAN, string TEN_PHONG_BAN, int TONG_SO_BILL, decimal TONG_SO_TIEN, decimal DINH_MUC, decimal TI_LE_DA_VUOT) {
+            public V_BC_TINH_HINH_CPN_THEO_PHONG_BANRow AddV_BC_TINH_HINH_CPN_THEO_PHONG_BANRow(string MA_PHONG_BAN, string TEN_PHONG_BAN, decimal ID_PHONG_BAN, decimal TONG_SO_BILL, decimal TONG_SO_TIEN, decimal TONG_TIEN_DE_XUAT, decimal DINH_MUC, decimal TI_LE_DA_VUOT) {
                 V_BC_TINH_HINH_CPN_THEO_PHONG_BANRow rowV_BC_TINH_HINH_CPN_THEO_PHONG_BANRow = ((V_BC_TINH_HINH_CPN_THEO_PHONG_BANRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID_PHONG_BAN,
                         MA_PHONG_BAN,
                         TEN_PHONG_BAN,
+                        ID_PHONG_BAN,
                         TONG_SO_BILL,
                         TONG_SO_TIEN,
+                        TONG_TIEN_DE_XUAT,
                         DINH_MUC,
                         TI_LE_DA_VUOT};
                 rowV_BC_TINH_HINH_CPN_THEO_PHONG_BANRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_BC_TINH_HINH_CPN_THEO_PHONG_BANRow);
                 return rowV_BC_TINH_HINH_CPN_THEO_PHONG_BANRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public V_BC_TINH_HINH_CPN_THEO_PHONG_BANRow FindByID_PHONG_BAN(decimal ID_PHONG_BAN) {
+                return ((V_BC_TINH_HINH_CPN_THEO_PHONG_BANRow)(this.Rows.Find(new object[] {
+                            ID_PHONG_BAN})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -457,11 +475,12 @@ namespace BCTKDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnID_PHONG_BAN = base.Columns["ID_PHONG_BAN"];
                 this.columnMA_PHONG_BAN = base.Columns["MA_PHONG_BAN"];
                 this.columnTEN_PHONG_BAN = base.Columns["TEN_PHONG_BAN"];
+                this.columnID_PHONG_BAN = base.Columns["ID_PHONG_BAN"];
                 this.columnTONG_SO_BILL = base.Columns["TONG_SO_BILL"];
                 this.columnTONG_SO_TIEN = base.Columns["TONG_SO_TIEN"];
+                this.columnTONG_TIEN_DE_XUAT = base.Columns["TONG_TIEN_DE_XUAT"];
                 this.columnDINH_MUC = base.Columns["DINH_MUC"];
                 this.columnTI_LE_DA_VUOT = base.Columns["TI_LE_DA_VUOT"];
             }
@@ -469,25 +488,32 @@ namespace BCTKDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnID_PHONG_BAN = new global::System.Data.DataColumn("ID_PHONG_BAN", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_PHONG_BAN);
                 this.columnMA_PHONG_BAN = new global::System.Data.DataColumn("MA_PHONG_BAN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMA_PHONG_BAN);
                 this.columnTEN_PHONG_BAN = new global::System.Data.DataColumn("TEN_PHONG_BAN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTEN_PHONG_BAN);
-                this.columnTONG_SO_BILL = new global::System.Data.DataColumn("TONG_SO_BILL", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnID_PHONG_BAN = new global::System.Data.DataColumn("ID_PHONG_BAN", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_PHONG_BAN);
+                this.columnTONG_SO_BILL = new global::System.Data.DataColumn("TONG_SO_BILL", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTONG_SO_BILL);
                 this.columnTONG_SO_TIEN = new global::System.Data.DataColumn("TONG_SO_TIEN", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTONG_SO_TIEN);
+                this.columnTONG_TIEN_DE_XUAT = new global::System.Data.DataColumn("TONG_TIEN_DE_XUAT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTONG_TIEN_DE_XUAT);
                 this.columnDINH_MUC = new global::System.Data.DataColumn("DINH_MUC", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDINH_MUC);
                 this.columnTI_LE_DA_VUOT = new global::System.Data.DataColumn("TI_LE_DA_VUOT", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTI_LE_DA_VUOT);
-                this.columnID_PHONG_BAN.AllowDBNull = false;
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_PHONG_BAN}, true));
                 this.columnMA_PHONG_BAN.AllowDBNull = false;
                 this.columnMA_PHONG_BAN.MaxLength = 15;
-                this.columnTEN_PHONG_BAN.AllowDBNull = false;
                 this.columnTEN_PHONG_BAN.MaxLength = 250;
+                this.columnID_PHONG_BAN.AllowDBNull = false;
+                this.columnID_PHONG_BAN.Unique = true;
+                this.columnTONG_SO_BILL.ReadOnly = true;
+                this.columnTONG_SO_TIEN.ReadOnly = true;
+                this.columnTONG_TIEN_DE_XUAT.ReadOnly = true;
                 this.columnDINH_MUC.ReadOnly = true;
                 this.columnTI_LE_DA_VUOT.ReadOnly = true;
             }
@@ -632,17 +658,6 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ID_PHONG_BAN {
-                get {
-                    return ((decimal)(this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.ID_PHONG_BANColumn]));
-                }
-                set {
-                    this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.ID_PHONG_BANColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MA_PHONG_BAN {
                 get {
                     return ((string)(this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.MA_PHONG_BANColumn]));
@@ -656,7 +671,13 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEN_PHONG_BAN {
                 get {
-                    return ((string)(this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TEN_PHONG_BANColumn]));
+                    try {
+                        return ((string)(this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TEN_PHONG_BANColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TEN_PHONG_BAN\' in table \'V_BC_TINH_HINH_CPN_THEO_PHONG_BAN\'" +
+                                " is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TEN_PHONG_BANColumn] = value;
@@ -665,10 +686,21 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int TONG_SO_BILL {
+            public decimal ID_PHONG_BAN {
+                get {
+                    return ((decimal)(this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.ID_PHONG_BANColumn]));
+                }
+                set {
+                    this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.ID_PHONG_BANColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TONG_SO_BILL {
                 get {
                     try {
-                        return ((int)(this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_BILLColumn]));
+                        return ((decimal)(this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_BILLColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TONG_SO_BILL\' in table \'V_BC_TINH_HINH_CPN_THEO_PHONG_BAN\' " +
@@ -694,6 +726,23 @@ namespace BCTKDS {
                 }
                 set {
                     this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_TIENColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TONG_TIEN_DE_XUAT {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_TIEN_DE_XUATColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TONG_TIEN_DE_XUAT\' in table \'V_BC_TINH_HINH_CPN_THEO_PHONG_" +
+                                "BAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_TIEN_DE_XUATColumn] = value;
                 }
             }
             
@@ -733,6 +782,18 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTEN_PHONG_BANNull() {
+                return this.IsNull(this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TEN_PHONG_BANColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTEN_PHONG_BANNull() {
+                this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TEN_PHONG_BANColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTONG_SO_BILLNull() {
                 return this.IsNull(this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_BILLColumn);
             }
@@ -753,6 +814,18 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTONG_SO_TIENNull() {
                 this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_SO_TIENColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTONG_TIEN_DE_XUATNull() {
+                return this.IsNull(this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_TIEN_DE_XUATColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTONG_TIEN_DE_XUATNull() {
+                this[this.tableV_BC_TINH_HINH_CPN_THEO_PHONG_BAN.TONG_TIEN_DE_XUATColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -939,11 +1012,12 @@ namespace BCTKDS.DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BANTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "V_BC_TINH_HINH_CPN_THEO_PHONG_BAN";
-            tableMapping.ColumnMappings.Add("ID_PHONG_BAN", "ID_PHONG_BAN");
             tableMapping.ColumnMappings.Add("MA_PHONG_BAN", "MA_PHONG_BAN");
             tableMapping.ColumnMappings.Add("TEN_PHONG_BAN", "TEN_PHONG_BAN");
+            tableMapping.ColumnMappings.Add("ID_PHONG_BAN", "ID_PHONG_BAN");
             tableMapping.ColumnMappings.Add("TONG_SO_BILL", "TONG_SO_BILL");
             tableMapping.ColumnMappings.Add("TONG_SO_TIEN", "TONG_SO_TIEN");
+            tableMapping.ColumnMappings.Add("TONG_TIEN_DE_XUAT", "TONG_TIEN_DE_XUAT");
             tableMapping.ColumnMappings.Add("DINH_MUC", "DINH_MUC");
             tableMapping.ColumnMappings.Add("TI_LE_DA_VUOT", "TI_LE_DA_VUOT");
             this._adapter.TableMappings.Add(tableMapping);
@@ -953,7 +1027,7 @@ namespace BCTKDS.DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BANTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BCTKDS.Properties.Settings.Default.ADMIN_SOFTConnectionString1;
+            this._connection.ConnectionString = global::BCTKDS.Properties.Settings.Default.TestConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -962,8 +1036,9 @@ namespace BCTKDS.DS_V_BC_TINH_HINH_CPN_THEO_PHONG_BANTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_PHONG_BAN, MA_PHONG_BAN, TEN_PHONG_BAN, TONG_SO_BILL, TONG_SO_TIEN, DIN" +
-                "H_MUC, TI_LE_DA_VUOT FROM dbo.V_BC_TINH_HINH_CPN_THEO_PHONG_BAN";
+            this._commandCollection[0].CommandText = "SELECT MA_PHONG_BAN, TEN_PHONG_BAN, ID_PHONG_BAN, TONG_SO_BILL, TONG_SO_TIEN, TON" +
+                "G_TIEN_DE_XUAT, DINH_MUC, TI_LE_DA_VUOT FROM dbo.V_BC_TINH_HINH_CPN_THEO_PHONG_B" +
+                "AN";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
