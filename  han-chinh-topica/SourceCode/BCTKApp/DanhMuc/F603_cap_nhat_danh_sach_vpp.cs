@@ -291,23 +291,23 @@ namespace BCTKApp
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(469, 109);
+            this.label2.ForeColor = System.Drawing.Color.Blue;
+            this.label2.Location = new System.Drawing.Point(535, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(229, 15);
+            this.label2.Size = new System.Drawing.Size(139, 15);
             this.label2.TabIndex = 40;
-            this.label2.Text = "Giá trị sai lệch với giá trị trong phần mềm";
+            this.label2.Text = "VPP cần cập nhật lại giá";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(469, 82);
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(535, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 15);
+            this.label3.Size = new System.Drawing.Size(108, 15);
             this.label3.TabIndex = 39;
-            this.label3.Text = "VPP không có trong hóa đơn";
+            this.label3.Text = "VPP cần thêm mới";
             // 
             // textBox2
             // 
@@ -320,7 +320,7 @@ namespace BCTKApp
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Red;
+            this.textBox1.BackColor = System.Drawing.Color.LightCyan;
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(704, 77);
             this.textBox1.Name = "textBox1";
@@ -545,7 +545,7 @@ namespace BCTKApp
             }
 
             C1.Win.C1FlexGrid.CellStyle v_cell_style_err = this.m_fg.Styles.Add("RowColorErr");
-            v_cell_style_err.BackColor = Color.Red;
+            v_cell_style_err.BackColor = Color.LightCyan;
             C1.Win.C1FlexGrid.CellStyle v_cell_style_err2 = this.m_fg.Styles.Add("RowColorErr2");
             v_cell_style_err2.BackColor = Color.Yellow;
             v_cell_style_err2.ForeColor = Color.DarkRed;
