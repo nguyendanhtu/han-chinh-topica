@@ -44,6 +44,8 @@ namespace BCTKApp
         private Label label1;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private ToolTip toolTip1;
+        private Label label2;
+        private ComboBox m_cbo_trung_tam;
         private System.ComponentModel.IContainer components;
 
         public f478_Nhap_mail()
@@ -96,6 +98,8 @@ namespace BCTKApp
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -220,10 +224,10 @@ namespace BCTKApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 99);
+            this.m_fg.Location = new System.Drawing.Point(0, 133);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.CellRange;
-            this.m_fg.Size = new System.Drawing.Size(779, 274);
+            this.m_fg.Size = new System.Drawing.Size(779, 240);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.toolTip1.SetToolTip(this.m_fg, "Nhấp đúp chuột vào ô cột Mail để thay đổi Mail");
@@ -242,7 +246,7 @@ namespace BCTKApp
             // 
             // m_txt_dia_chi_mail
             // 
-            this.m_txt_dia_chi_mail.Location = new System.Drawing.Point(264, 55);
+            this.m_txt_dia_chi_mail.Location = new System.Drawing.Point(265, 82);
             this.m_txt_dia_chi_mail.Name = "m_txt_dia_chi_mail";
             this.m_txt_dia_chi_mail.Size = new System.Drawing.Size(234, 20);
             this.m_txt_dia_chi_mail.TabIndex = 22;
@@ -250,11 +254,11 @@ namespace BCTKApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(166, 62);
+            this.label1.Location = new System.Drawing.Point(194, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Nhập địa chỉ mail:";
+            this.label1.Text = "Từ khóa";
             // 
             // m_cmd_search
             // 
@@ -264,7 +268,7 @@ namespace BCTKApp
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(511, 50);
+            this.m_cmd_search.Location = new System.Drawing.Point(512, 77);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 24;
@@ -281,10 +285,29 @@ namespace BCTKApp
             this.toolTip1.ReshowDelay = 10;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(191, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Trung tâm";
+            // 
+            // m_cbo_trung_tam
+            // 
+            this.m_cbo_trung_tam.FormattingEnabled = true;
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(265, 50);
+            this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
+            this.m_cbo_trung_tam.Size = new System.Drawing.Size(234, 21);
+            this.m_cbo_trung_tam.TabIndex = 25;
+            // 
             // f478_Nhap_mail
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(779, 409);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.m_cbo_trung_tam);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_txt_dia_chi_mail);
@@ -359,7 +382,7 @@ namespace BCTKApp
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
             set_define_events();
-            //load_cbo_trung_tam();
+            load_cbo_trung_tam();
             this.KeyPreview = true;
         }
         private void set_initial_form_load()
@@ -384,26 +407,28 @@ namespace BCTKApp
         private void load_data_2_grid()
         {
             flag = false;
+            decimal v_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             string v_mail = m_txt_dia_chi_mail.Text.Trim();
             m_ds = new DS_V_HT_NGUOI_SU_DUNG();
-            m_us.FillDataset(m_ds, v_mail);
+            m_us.FillDataset(m_ds, v_mail, v_id_trung_tam);
             //m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
             flag = true;
         }
-        //private void load_cbo_trung_tam()
-        //{
-        //    flag = false;
-        //    US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
-        //    DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
-        //    v_us.FillDataset(v_ds);
-        //    m_cbo_trung_tam.DataSource = v_ds.DM_PHONG_BAN;
-        //    m_cbo_trung_tam.ValueMember = DM_PHONG_BAN.ID;
-        //    m_cbo_trung_tam.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
-        //    flag = true;
-        //}
+        private void load_cbo_trung_tam()
+        {
+            flag = false;
+            US_DM_PHONG_BAN v_us = new US_DM_PHONG_BAN();
+            DS_DM_PHONG_BAN v_ds = new DS_DM_PHONG_BAN();
+            v_us.FillDataset(v_ds);
+            m_cbo_trung_tam.DataSource = v_ds.DM_PHONG_BAN;
+            m_cbo_trung_tam.ValueMember = DM_PHONG_BAN.ID;
+            m_cbo_trung_tam.DisplayMember = DM_PHONG_BAN.TEN_PHONG_BAN;
+            m_cbo_trung_tam.SelectedIndex = 0;
+            flag = true;
+        }
         private void grid2us_object(US_V_HT_NGUOI_SU_DUNG i_us
             , int i_grid_row)
         {
@@ -479,7 +504,9 @@ namespace BCTKApp
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_search.Click +=m_cmd_search_Click;
+            m_cbo_trung_tam.SelectedIndexChanged +=m_cbo_trung_tam_SelectedIndexChanged;
         }
+
         #endregion
 
         //
@@ -601,6 +628,13 @@ namespace BCTKApp
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cbo_trung_tam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (flag == true)
+            {
+                load_data_2_grid();
             }
         }
     }

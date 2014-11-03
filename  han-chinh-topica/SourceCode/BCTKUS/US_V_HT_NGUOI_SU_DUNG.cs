@@ -258,10 +258,11 @@ public class US_V_HT_NGUOI_SU_DUNG : US_Object
 	}
 #endregion
 
-    public void FillDataset_ht_nguoi_su_dung_Search(DS_V_HT_NGUOI_SU_DUNG m_ds, string v_mail)
+    public void FillDataset_ht_nguoi_su_dung_Search(DS_V_HT_NGUOI_SU_DUNG m_ds, string v_mail, decimal v_id_trung_tam)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_load_ht_nguoi_su_dung_search");
         v_stored_proc.addNVarcharInputParam("@MAIL", v_mail);
+        v_stored_proc.addDecimalInputParam("@ID_TRUNG_TAM",v_id_trung_tam);
         v_stored_proc.fillDataSetByCommand(this, m_ds);
     }
     public void Update_mail(string v_mail, decimal v_dc_ID)
@@ -270,6 +271,14 @@ public class US_V_HT_NGUOI_SU_DUNG : US_Object
         v_store_proc.addDecimalInputParam("@ID", v_dc_ID);
         v_store_proc.addNVarcharInputParam("@MAIL", v_mail);
         v_store_proc.ExecuteCommand(this);
+    }
+
+    public void FillDataset(DS_V_HT_NGUOI_SU_DUNG m_ds, string v_mail, decimal v_id_trung_tam)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_load_ht_nguoi_su_dung_search");
+        v_stored_proc.addNVarcharInputParam("@MAIL", v_mail);
+        v_stored_proc.addDecimalInputParam("@ID_TRUNG_TAM", v_id_trung_tam);
+        v_stored_proc.fillDataSetByCommand(this, m_ds);
     }
 }
 }
