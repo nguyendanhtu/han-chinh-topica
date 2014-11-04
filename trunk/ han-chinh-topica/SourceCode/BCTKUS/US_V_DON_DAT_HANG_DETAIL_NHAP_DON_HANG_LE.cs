@@ -431,6 +431,27 @@ public class US_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE : US_Object
 		pm_objDR["TONG_TIEN"] = System.Convert.DBNull;
 	}
 
+    public string strMO_TA
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MO_TA", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MO_TA"] = value;
+        }
+    }
+
+    public bool IsMO_TANull()
+    {
+        return pm_objDR.IsNull("MO_TA");
+    }
+
+    public void SetMO_TANull()
+    {
+        pm_objDR["MO_TA"] = System.Convert.DBNull;
+    }
 #endregion
 #region "Init Functions"
 	public US_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE() 

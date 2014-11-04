@@ -162,6 +162,27 @@ public class US_GD_DON_DAT_HANG_DETAIL : US_Object
 		pm_objDR["ID_VPP"] = System.Convert.DBNull;
 	}
 
+    public string strMO_TA
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MO_TA", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MO_TA"] = value;
+        }
+    }
+
+    public bool IsMO_TANull()
+    {
+        return pm_objDR.IsNull("MO_TA");
+    }
+
+    public void SetMO_TANull()
+    {
+        pm_objDR["MO_TA"] = System.Convert.DBNull;
+    }
 #endregion
 #region "Init Functions"
 	public US_GD_DON_DAT_HANG_DETAIL() 

@@ -214,6 +214,10 @@
                                     <asp:Label ID="m_lbl_pop_dinh_muc_tl" runat="Server" Text="Định mức:" CssClass="cssManField"></asp:Label>
                                     &nbsp&nbsp
                                     <asp:Label ID="m_lbl_pop_dinh_muc" runat="Server" Text="----------" CssClass="cssManField" ForeColor="Red" Font-Bold="true"></asp:Label>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <asp:Label ID="m_lbl_pop_ti_le_vuot_tl" runat="Server" Text="Tỉ lệ vượt:" CssClass="cssManField"></asp:Label>
+                                    &nbsp&nbsp
+                                    <asp:Label ID="m_lbl_pop_ti_le_vuot" runat="Server" Text="----------" CssClass="cssManField" ForeColor="Red" Font-Bold="true"></asp:Label>
                                     <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
                                     <asp:HiddenField ID="m_hdf_id_user" runat="server" />
                                 </td>
@@ -223,14 +227,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="right">
-                                    <asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssPageTitle" ForeColor="Green" Font-Italic="true" BackColor="White"></asp:Label>
-                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <td align="center">
                                     <asp:Label ID="m_lbl_chon_vpp" runat="Server" Text="Chọn VPP" CssClass="cssManField"></asp:Label>
-                                </td>
-                                <td align="left">
-                                    <asp:DropDownList ID="m_cbo_vpp" runat="Server"
-                                        Width="91%" AutoPostBack="true" OnSelectedIndexChanged="m_cbo_vpp_SelectedIndexChanged">
+                                    <asp:DropDownList ID="m_cbo_vpp" runat="Server" Width="100%"
+                                        AutoPostBack="true" OnSelectedIndexChanged="m_cbo_vpp_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </td>
                                 <td align="left">
@@ -240,8 +240,11 @@
                                     &nbsp
                         <asp:Label ID="m_lbl_don_vi_tinh" runat="server" CssClass="cssManField" Text="Cái"></asp:Label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                    <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="Đơn giá chưa VAT: "></asp:Label>
+                                    <asp:Label ID="Label1" runat="server" CssClass="cssManField" Text="Đơn giá đã VAT: "></asp:Label>
                                     <asp:Label ID="m_lbl_don_gia" runat="server" CssClass="=cssManField" Text="0" ForeColor="Blue"></asp:Label>
+                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <asp:Label ID="Label7" runat="server" CssClass="cssManField" Text="Mô tả: "></asp:Label>
+                                    &nbsp<asp:TextBox ID="m_txt_mo_ta" runat="server" CssClass="cssTextBox" TextMode="MultiLine" Width="250px" Height="18px"></asp:TextBox>
                                 </td>
                                 <td align="left">
                                     <asp:Button ID="m_cmd_them_don_hang_de" runat="server" Text="Thêm vào phiếu" CssClass="cssGoogleButton" OnClick="m_cmd_them_don_hang_de_Click" />
@@ -252,8 +255,9 @@
                                     <asp:HiddenField ID="m_hdf_ID_GD_DON_DAT_HANG_DE" runat="server" />
                                 </td>
                             </tr>
+                            <tr> <td align="left"><asp:Label ID="m_lbl_thong_bao" runat="server" CssClass="cssPageTitle" ForeColor="Green" Font-Italic="true" BackColor="White"></asp:Label></td></tr>
                         </table>
-                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; margin-top: 6%; overflow-y: scroll">
+                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; margin-top: 8%; overflow-y: scroll">
                             <%--<tr style="width: 100%; position: fixed">
                                 <td class="cssPageTitleBG" colspan="6">
                                     <asp:Label ID="m_lbl_phieu_de_nghi_va_ban_giao_VPP" runat="server" CssClass="cssPageTitle"
@@ -326,6 +330,10 @@
                                             </asp:BoundField>
                                             <asp:BoundField DataField="TONG_TIEN" ItemStyle-HorizontalAlign="Right" HeaderText="TỔNG TIỀN ĐÃ VAT (VNĐ)"
                                                 ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                                <ItemStyle HorizontalAlign="Right" Width="7%" />
+                                            </asp:BoundField>
+                                              <asp:BoundField DataField="MO_TA" ItemStyle-HorizontalAlign="Left" HeaderText="Mô tả"
+                                                ItemStyle-Width="7%" HtmlEncode="false">
                                                 <ItemStyle HorizontalAlign="Right" Width="7%" />
                                             </asp:BoundField>
                                             <asp:CommandField DeleteText="Xóa" ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center"

@@ -319,6 +319,8 @@ namespace BCTKDS {
             
             private global::System.Data.DataColumn columnTONG_TIEN;
             
+            private global::System.Data.DataColumn columnMO_TA;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LEDataTable() {
@@ -514,6 +516,14 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MO_TAColumn {
+                get {
+                    return this.columnMO_TA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -569,7 +579,8 @@ namespace BCTKDS {
                         decimal ID_TRANG_THAI_HANG, 
                         string TRANG_THAI_HANG, 
                         string MA_HD_NCC, 
-                        decimal TONG_TIEN) {
+                        decimal TONG_TIEN, 
+                        string MO_TA) {
                 V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LERow rowV_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LERow = ((V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -591,7 +602,8 @@ namespace BCTKDS {
                         ID_TRANG_THAI_HANG,
                         TRANG_THAI_HANG,
                         MA_HD_NCC,
-                        TONG_TIEN};
+                        TONG_TIEN,
+                        MO_TA};
                 rowV_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LERow);
                 return rowV_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LERow;
@@ -647,6 +659,7 @@ namespace BCTKDS {
                 this.columnTRANG_THAI_HANG = base.Columns["TRANG_THAI_HANG"];
                 this.columnMA_HD_NCC = base.Columns["MA_HD_NCC"];
                 this.columnTONG_TIEN = base.Columns["TONG_TIEN"];
+                this.columnMO_TA = base.Columns["MO_TA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -692,6 +705,8 @@ namespace BCTKDS {
                 base.Columns.Add(this.columnMA_HD_NCC);
                 this.columnTONG_TIEN = new global::System.Data.DataColumn("TONG_TIEN", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTONG_TIEN);
+                this.columnMO_TA = new global::System.Data.DataColumn("MO_TA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMO_TA);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -704,6 +719,7 @@ namespace BCTKDS {
                 this.columnTRANG_THAI_HANG.MaxLength = 250;
                 this.columnMA_HD_NCC.MaxLength = 10;
                 this.columnTONG_TIEN.ReadOnly = true;
+                this.columnMO_TA.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1180,6 +1196,23 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MO_TA {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.MO_TAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MO_TA\' in table \'V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.MO_TAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_VPPNull() {
                 return this.IsNull(this.tableV_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.ID_VPPColumn);
             }
@@ -1405,6 +1438,18 @@ namespace BCTKDS {
             public void SetTONG_TIENNull() {
                 this[this.tableV_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.TONG_TIENColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMO_TANull() {
+                return this.IsNull(this.tableV_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.MO_TAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMO_TANull() {
+                this[this.tableV_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE.MO_TAColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1586,6 +1631,7 @@ namespace BCTKDS.DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LETableAdapters {
             tableMapping.ColumnMappings.Add("TRANG_THAI_HANG", "TRANG_THAI_HANG");
             tableMapping.ColumnMappings.Add("MA_HD_NCC", "MA_HD_NCC");
             tableMapping.ColumnMappings.Add("TONG_TIEN", "TONG_TIEN");
+            tableMapping.ColumnMappings.Add("MO_TA", "MO_TA");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1593,7 +1639,7 @@ namespace BCTKDS.DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LETableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BCTKDS.Properties.Settings.Default.ADMIN_SOFTConnectionString1;
+            this._connection.ConnectionString = global::BCTKDS.Properties.Settings.Default.TestConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1602,7 +1648,7 @@ namespace BCTKDS.DS_V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LETableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, ID_VPP, MA_VPP, TEN_VPP, DON_VI_TINH, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, SO_LUONG, NGAY_DAT_HANG, LAN_DAT_HANG, ID_DON_DAT_HANG, MA_DON_HANG, ID_PHONG_BAN, TEN_PHONG_BAN, GIA_TRI_CHUA_VAT, GIA_TRI_DA_VAT, ID_TRANG_THAI_HANG, TRANG_THAI_HANG, MA_HD_NCC, TONG_TIEN FROM dbo.V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE";
+            this._commandCollection[0].CommandText = @"SELECT ID, ID_VPP, MA_VPP, TEN_VPP, DON_VI_TINH, DON_GIA_CHUA_VAT, DON_GIA_GOM_VAT, SO_LUONG, NGAY_DAT_HANG, LAN_DAT_HANG, ID_DON_DAT_HANG, MA_DON_HANG, ID_PHONG_BAN, TEN_PHONG_BAN, GIA_TRI_CHUA_VAT, GIA_TRI_DA_VAT, ID_TRANG_THAI_HANG, TRANG_THAI_HANG, MA_HD_NCC, TONG_TIEN, MO_TA FROM dbo.V_DON_DAT_HANG_DETAIL_NHAP_DON_HANG_LE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
