@@ -223,5 +223,13 @@ public class US_V_GD_DE_XUAT : US_Object
         v_store_proc.addDecimalInputParam("@ID_DE_XUAT", ip_dc_id_de_xuat);
         v_store_proc.fillDataSetByCommand(this, ip_ds);
     }
-	}
+
+    public void FillDSLayDeXuat(DS_V_GD_DE_XUAT v_ds_de_xuat, DateTime v_dat_ngay, decimal v_id_phong_ban)
+    {
+        CStoredProc v_strore_proc = new CStoredProc("pr_get_de_xuat_trung_tam");
+        v_strore_proc.addDatetimeInputParam("@NGAY_DAT_HANG", v_dat_ngay);
+        v_strore_proc.addDecimalInputParam("@ID_TRUNG_TAM", v_id_phong_ban);
+        v_strore_proc.fillDataSetByCommand(this,v_ds_de_xuat);
+    }
+}
 }
