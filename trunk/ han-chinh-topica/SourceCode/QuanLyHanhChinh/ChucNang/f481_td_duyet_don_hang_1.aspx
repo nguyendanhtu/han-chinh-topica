@@ -38,9 +38,9 @@
         <br />
         <br />
         <div style="text-align: center">
-            <asp:Label ID="m_lbl_chon_thang" runat="server" Text="Chọn tháng"></asp:Label>
+            <asp:Label ID="m_lbl_chon_thang" runat="server" Text="Chọn tháng" Visible="false"></asp:Label>
             &nbsp               
-                <asp:DropDownList ID="m_cbo_chon_thang" CssClass="cssDorpdownlist" OnSelectedIndexChanged="m_cbo_chon_thang_OnSelectedIndexChanged" runat="server" AutoPostBack="true">
+                <asp:DropDownList ID="m_cbo_chon_thang" CssClass="cssDorpdownlist" OnSelectedIndexChanged="m_cbo_chon_thang_OnSelectedIndexChanged" runat="server" Visible="false" AutoPostBack="true">
                     <asp:ListItem runat="server" Value="1">Tháng 1 </asp:ListItem>
                     <asp:ListItem runat="server" Value="2">Tháng 2</asp:ListItem>
                     <asp:ListItem runat="server" Value="3">Tháng 3</asp:ListItem>
@@ -54,13 +54,22 @@
                     <asp:ListItem runat="server" Value="11">Tháng 11</asp:ListItem>
                     <asp:ListItem runat="server" Value="12">Tháng 12</asp:ListItem>
                 </asp:DropDownList>
+
+            <asp:Label ID="m_lbl_MP" runat="Server" Text="Mã Phiếu:" CssClass="cssManField"></asp:Label>
+            &nbsp
+            <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField" Font-Bold="true" ForeColor="DarkRed"></asp:Label>
+            &nbsp&nbsp&nbsp&nbsp&nbsp
+            <asp:Label ID="m_lbl_ngay_dat_hang_tl" runat="server" Text="Ngày đặt hàng: " Visible="true" CssClass="cssManField"></asp:Label>
+            &nbsp
+            <asp:Label ID="m_lbl_ngay_dat_hang" runat="server" Text="--------" Visible="true" CssClass="cssManField"></asp:Label>
+            &nbsp
         </div>
         <br />
         <table runat="server" cellspacing="0" cellpadding="2" style="width: 100%">
             <tr>
                 <td style="text-align: center">
-                    <asp:Label ID="Label1" runat="Server" Text="Tổng tiền định mức: "></asp:Label>&nbsp&nbsp
-                        &nbsp&nbsp<asp:Label ID="m_lbl_tong_tien_dm" runat="Server" Text="0"></asp:Label>
+                    <asp:Label ID="Label1" runat="Server" Text="Tổng tiền định mức: " Visible="false"></asp:Label>&nbsp&nbsp
+                        &nbsp&nbsp<asp:Label ID="m_lbl_tong_tien_dm" runat="Server" Text="0" Visible="false"></asp:Label>
                     <asp:HiddenField ID="m_hdf_id_trung_tam" runat="server" />
                     <asp:HiddenField ID="m_hdf_form_mode" runat="server" />
                     <asp:HiddenField ID="m_hdf_ma_trung_tam" runat="server" />
@@ -70,16 +79,34 @@
                     <asp:HiddenField ID="m_hdf_ngay_dat" runat="server" />
                     <asp:HiddenField ID="m_hdf_lan_dat" runat="server" />
                     <asp:HiddenField ID="m_hdf_nguoi_gui" runat="server" />
+                    <asp:HiddenField ID="m_hdf_ngay_gui" runat="server" />
+                    <asp:HiddenField ID="m_hdf_ti_le_vuot" runat="server" />
                 </td>
             </tr>
             <tr>
+                <td style="text-align: center">
+                    <asp:Label ID="Label5" runat="Server" Text="Tổng nhân sự/học viên: "></asp:Label>
+                    &nbsp&nbsp<asp:Label ID="m_lbl_tong_nhan_su" runat="Server" Text="0"></asp:Label>
+                </td>
+                <td style="text-align: center">
+                    <asp:Label ID="Label7" runat="Server" Text=" Định mức đầu người: "></asp:Label>
+                    &nbsp&nbsp<asp:Label ID="m_lbl_dinh_muc_dau_nguoi" runat="Server" Text="0"></asp:Label>
+                </td>
+                <td style="text-align: center">
+                    <asp:Label ID="Label6" runat="Server" Text=" Tổng tiền định mức: "></asp:Label>
+                    &nbsp&nbsp<asp:Label ID="m_lbl_tong_dinh_muc" runat="Server" Text="0"></asp:Label>
+                </td>
                 <td style="text-align: center">
                     <asp:Label ID="m_lbl_so_tien_da_chi" runat="Server" Text=" Số tiền đã chi thực tế: "></asp:Label>
                     &nbsp&nbsp<asp:Label ID="m_lbl_tong_tien_da_chi" runat="Server" Text="0"></asp:Label>
                 </td>
             </tr>
+            <tr>
+                <td align="right" colspan="4">
+                    <asp:Label ID="m_lbl_ghi_chu" runat="server" Text="Lưu ý:  Tỉ lệ vượt từ 110% -> 120% xin TAD duyệt. Tỉ lệ vượt trên 120% xin CC duyệt" Font-Italic="true" ForeColor="DarkBlue"></asp:Label> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                </td>
+            </tr>
         </table>
-        <br />
         <table runat="server" border="0" cellspacing="0" cellpadding="0" width="100%">
             <tr>
                 <td>
@@ -192,12 +219,7 @@
                 </td>
             </tr>
             <tr>
-                <td align="center">
-                    <asp:Label ID="m_lbl_MP" runat="Server" Text="MP:" CssClass="cssManField"></asp:Label>
-                    &nbsp
-                        <asp:Label ID="m_lbl_ma_don_hang_de" runat="Server" Text="..." CssClass="cssManField" Font-Bold="true" ForeColor="DarkRed"></asp:Label>
-                </td>
-                <td colspan="3" align="left">
+                <td colspan="3" align="center">
                     <asp:Label ID="Label2" runat="Server" Text="Tổng tiền:" CssClass="cssManField"></asp:Label>
                     &nbsp&nbsp
                                     <asp:Label ID="m_lbl_tong_tien" runat="server" Text="0" CssClass="cssManField"></asp:Label>
@@ -207,7 +229,7 @@
                                     <asp:Label ID="m_lbl_ti_le_vuot" runat="server" Text="0" CssClass="cssManField" ForeColor="Red"></asp:Label>
                     <asp:HiddenField ID="m_hdf_id_don_hang" runat="server" />
                 </td>
-                <td align="left">
+                <td align="center">
                     <asp:LinkButton ID="m_lbt_duyet" runat="server" CommandName="Duyet" BorderStyle="Groove" Text="Duyệt" ToolTip="Duyệt đơn hàng" Width="24px" CssClass="cssButton" Style="cursor: pointer"
                         OnClick="m_lbt_duyet_OnClick" OnClientClick="return confirm ('Bạn có thực sự muốn duyệt đơn hàng này?')">
                                             <img src="../Images/Button/check.png" width="24px" alt="Duyet" />
