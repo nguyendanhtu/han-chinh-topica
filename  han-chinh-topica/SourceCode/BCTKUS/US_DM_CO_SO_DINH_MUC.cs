@@ -180,5 +180,6 @@ public class US_DM_CO_SO_DINH_MUC : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+}
 }

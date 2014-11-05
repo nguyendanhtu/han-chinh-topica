@@ -47,6 +47,7 @@
                     Text="Thông tin đơn hàng"></asp:Label>
                 <%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
                 <asp:HiddenField ID="m_hdf_id_don_hang" runat="server" />
+                <asp:HiddenField ID="m_hdf_ngay_dat_hang" runat="server" />
             </td>
         </tr>
         <tr>

@@ -433,5 +433,12 @@ public class US_V_GD_THONG_KE : US_Object
         v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
         v_stored_proc.fillDataSetByCommand(this, ip_m_ds);
     }
-	}
+
+    public void FillDataset(DS_V_GD_THONG_KE ip_v_ds, decimal ip_id_phong_ban)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_get_thong_ke_nhan_su_trung_tam_vpp");
+        v_stored_proc.addDecimalInputParam("@ID_PHONG_BAN", ip_id_phong_ban);
+        v_stored_proc.fillDataSetByCommand(this, ip_v_ds);
+    }
+}
 }
