@@ -103,7 +103,7 @@
             </tr>
             <tr>
                 <td align="right" colspan="4">
-                    <asp:Label ID="m_lbl_ghi_chu" runat="server" Text="Lưu ý:  Tỉ lệ vượt từ 110% -> 120% xin TAD duyệt. Tỉ lệ vượt trên 120% xin CC duyệt" Font-Italic="true" ForeColor="DarkBlue"></asp:Label> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <asp:Label ID="m_lbl_ghi_chu" runat="server" Text="Lưu ý:  Tỉ lệ vượt từ 10% -> 20% xin TAD duyệt. Tỉ lệ vượt trên 20% xin CC duyệt" Font-Italic="true" ForeColor="DarkBlue"></asp:Label> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                 </td>
             </tr>
         </table>
