@@ -72,13 +72,13 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     }
     private void load_thong_tin_chi_tiet()
     {
-        if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 10)
+        if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 110)
         {
             m_lbl_nhap_mail.Text = "Nhập mail TAD/CC: ";
         }
         else
         {
-            if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 20)
+            if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 120)
             {
                 m_lbl_nhap_mail.Text = "Nhập mail TAD: ";
             }
@@ -123,8 +123,8 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     {
         US_HT_USER_GROUP v_us_user_group = new US_HT_USER_GROUP();
         DS_HT_USER_GROUP v_ds_user_group = new DS_HT_USER_GROUP();
-        //string v_ten_mail = m_txt_nhap_mail.Text.Trim() + "@topica.edu.vn";
-        string v_ten_mail = m_txt_nhap_mail.Text.Trim() + "@gmail.com";
+        string v_ten_mail = m_txt_nhap_mail.Text.Trim() + "@topica.edu.vn";
+        //string v_ten_mail = m_txt_nhap_mail.Text.Trim() + "@gmail.com";
         if (m_txt_nhap_mail.Text == "")
         {
             thong_bao("Bạn chưa nhập mail",true);
@@ -493,8 +493,8 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     {
         try
         {
-            //string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
-            string v_mail = m_txt_nhap_mail.Text + "@gmail.com";
+            string v_mail = m_txt_nhap_mail.Text + "@topica.edu.vn";
+            //string v_mail = m_txt_nhap_mail.Text + "@gmail.com";
             US_GD_DON_DAT_HANG v_us = new US_GD_DON_DAT_HANG();
             DS_GD_DON_DAT_HANG v_ds = new DS_GD_DON_DAT_HANG();
             if (check_txt_mail() == true)
