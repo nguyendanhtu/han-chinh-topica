@@ -20,7 +20,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
         bool v_b_result = false;
         if (ip_str_id_don_hang.Equals("")) return false;
         if (ip_str_ti_le_vuot.Equals("")) return false;
-        if (CIPConvert.ToDecimal(ip_str_ti_le_vuot) > 120)
+        if (CIPConvert.ToDecimal(ip_str_ti_le_vuot) > 20)
             v_b_result = true;
         else v_b_result = false;
         return v_b_result;
@@ -30,7 +30,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
         bool v_b_result = false;
         if (ip_str_id_don_hang.Equals("")) return false;
         if (ip_str_ti_le_vuot.Equals("")) return false;
-        if (CIPConvert.ToDecimal(ip_str_ti_le_vuot) <= 110)
+        if (CIPConvert.ToDecimal(ip_str_ti_le_vuot) <= 10)
             v_b_result = true;
         else v_b_result = false;
         return v_b_result;
@@ -40,7 +40,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
         bool v_b_result = false;
         if (ip_str_id_don_hang.Equals("")) return false;
         if (ip_str_ti_le_vuot.Equals("")) return false;
-        if (CIPConvert.ToDecimal(ip_str_ti_le_vuot) <= 120 && CIPConvert.ToDecimal(ip_str_ti_le_vuot) > 110)
+        if (CIPConvert.ToDecimal(ip_str_ti_le_vuot) <= 20 && CIPConvert.ToDecimal(ip_str_ti_le_vuot) > 10)
             v_b_result = true;
         else v_b_result = false;
         return v_b_result;
@@ -72,13 +72,13 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     }
     private void load_thong_tin_chi_tiet()
     {
-        if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 110)
+        if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 10)
         {
             m_lbl_nhap_mail.Text = "Nhập mail TAD/CC: ";
         }
         else
         {
-            if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 120)
+            if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 20)
             {
                 m_lbl_nhap_mail.Text = "Nhập mail TAD: ";
             }
@@ -204,7 +204,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
 
         //for (int i = 0; i < v_ds_gd_don_dat_hang.GD_DON_DAT_HANG.Rows.Count; i++)
         //{
-        //    if (CIPConvert.ToDecimal(v_ds_gd_don_dat_hang.GD_DON_DAT_HANG.Rows[i]["PHAN_TRAM_VUOT"]) >= 120)
+        //    if (CIPConvert.ToDecimal(v_ds_gd_don_dat_hang.GD_DON_DAT_HANG.Rows[i]["PHAN_TRAM_VUOT"]) >= 20)
         //    {
         //        m_grv_don_hang_nhap.
         //    }
@@ -386,7 +386,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     {
         try
         {
-            if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 120)
+            if (CIPConvert.ToDecimal(m_grv_don_hang_nhap.Rows[0].Cells[7].Text) <= 20)
             {
                 m_lbl_nhap_mail.Text = "Nhập mail TAD: ";
             }
@@ -502,7 +502,7 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                 if (CIPConvert.ToDecimal(m_hdf_form_mode.Value) == CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET)
                 {
                     v_us.get_so_don_hang_nhap_trung_tam(v_ds, CIPConvert.ToDecimal(m_hdf_id_trung_tam.Value), CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET);
-                    if ((CIPConvert.ToDecimal(m_hdf_ti_le_vuot.Value)*100) <= 120)
+                    if ((CIPConvert.ToDecimal(m_hdf_ti_le_vuot.Value)*100) <= 20)
                     {
                         if (check_td_duyet_don_hang() == true) { thong_bao("Đang có một đơn hàng VPP đang chờ duyệt. Vui lòng chờ TAD duyệt", true); return; };
                         m_lbl_nhap_mail.Text = "Nhập mail TAD: ";
