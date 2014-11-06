@@ -151,7 +151,7 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 525);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(992, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(993, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_xuat_excel
@@ -178,7 +178,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(893, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(894, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(95, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -191,7 +191,7 @@ namespace BCTKApp
             this.m_fg.Location = new System.Drawing.Point(0, 158);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Cell;
-            this.m_fg.Size = new System.Drawing.Size(992, 367);
+            this.m_fg.Size = new System.Drawing.Size(993, 367);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.toolTip1.SetToolTip(this.m_fg, "Bạn nhấp đúp chuột để xem chi tiết định mức");
@@ -271,7 +271,7 @@ namespace BCTKApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(992, 35);
+            this.m_lbl_header.Size = new System.Drawing.Size(993, 35);
             this.m_lbl_header.TabIndex = 30;
             this.m_lbl_header.Text = "BÁO CÁO TÌNH HÌNH VPP THEO TRUNG TÂM - BAN";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -292,7 +292,7 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(992, 123);
+            this.panel1.Size = new System.Drawing.Size(993, 123);
             this.panel1.TabIndex = 2830;
             // 
             // m_dt_den_ngay
@@ -357,7 +357,7 @@ namespace BCTKApp
             // f710_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(992, 561);
+            this.ClientSize = new System.Drawing.Size(993, 561);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_lbl_header);
