@@ -121,20 +121,19 @@
                 <div class="cssLoadWapper">
                     <asp:MultiView ID="mtv_detail" runat="server">
                         <asp:View ID="View_detail" runat="server">
-                            <div class="cssLoadContent2" style="width: 100%; scrollbar-highlight-color:blue; min-height: 80%; max-height: 80%; margin: 100px auto 0 auto; overflow-y: scroll;">
+                            <div class="cssLoadContent2" style="width: 100%; scrollbar-highlight-color: blue; min-height: 80%; max-height: 80%; margin: 100px auto 0 auto; overflow-y: scroll;">
                                 <table border="0" cellspacing="0" cellpadding="0" width="100%">
                                     <tr>
-                                        <td align="left" style="width: 20%">
-                                            &nbsp&nbsp&nbsp&nbsp
+                                        <td align="left" style="width: 20%">&nbsp&nbsp&nbsp&nbsp
                                             <asp:Label ID="m_lbl_grv_detail" runat="server" CssClass="cssManField" BackColor="White"></asp:Label>
                                         </td>
                                         <td align="center" style="width: 60%">
-                                            <asp:Label ID="m_lbl_ten_detail" runat="server" CssClass="cssPageTitle"  BackColor="White"></asp:Label>
+                                            <asp:Label ID="m_lbl_ten_detail" runat="server" CssClass="cssPageTitle" BackColor="White"></asp:Label>
                                             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                             <asp:Label ID="Label1" runat="server" Text="Ngày đặt:" CssClass="cssManField" Font-Bold="true" BackColor="White"></asp:Label>
                                             &nbsp&nbsp
                                             <asp:Label ID="m_lbl_pop_ngay_dat" runat="server" Text="---------" CssClass="cssManField" Font-Bold="true" BackColor="White"></asp:Label>
-                                             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                             <asp:Label ID="m_lbl_pop_tong_tien_tl" runat="server" Text="Tổng tiền (đã VAT):" CssClass="cssManField" Font-Bold="true" BackColor="White"></asp:Label>
                                             &nbsp&nbsp
                                             <asp:Label ID="m_lbl_pop_tong_tien" runat="server" Text="---------" CssClass="cssManField" ForeColor="Red" Font-Bold="true" BackColor="White"></asp:Label>
@@ -258,6 +257,10 @@
                                 <asp:BoundField DataField="TONG_SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐÃ TÍNH VAT (VNĐ)"
                                     ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                                     <ItemStyle HorizontalAlign="right" Width="7%" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="TONG_TIEN_DE_XUAT" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐỀ XUẤT (VNĐ)"
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="DINH_MUC" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐỊNH MỨC (VNĐ)"
                                     ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">

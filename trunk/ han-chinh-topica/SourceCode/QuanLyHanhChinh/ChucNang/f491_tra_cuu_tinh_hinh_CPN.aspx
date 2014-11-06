@@ -254,11 +254,15 @@
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>--%>
                                 <asp:BoundField DataField="TONG_SO_TIEN" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐÃ TÍNH VAT (VNĐ)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                                     <ItemStyle HorizontalAlign="right" Width="7%" />
                                 </asp:BoundField>
+                                 <asp:BoundField DataField="TONG_TIEN_DE_XUAT" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐỀ XUẤT (VNĐ)"
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
+                                    <ItemStyle HorizontalAlign="Right" Width="7%" />
+                                </asp:BoundField>
                                 <asp:BoundField DataField="DINH_MUC" ItemStyle-HorizontalAlign="Left" HeaderText="TỔNG TIỀN ĐỊNH MỨC (VNĐ)"
-                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N}">
+                                    ItemStyle-Width="7%" HtmlEncode="false" DataFormatString="{0:N0}">
                                     <ItemStyle HorizontalAlign="Right" Width="7%" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="TI_LE_DA_VUOT" ItemStyle-HorizontalAlign="Left" HeaderText="TỶ LỆ ĐÃ VƯỢT (%)"
