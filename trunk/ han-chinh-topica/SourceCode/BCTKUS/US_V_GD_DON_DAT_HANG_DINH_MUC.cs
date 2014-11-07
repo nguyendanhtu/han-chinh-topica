@@ -207,7 +207,30 @@ public class US_V_GD_DON_DAT_HANG_DINH_MUC : US_Object
 		pm_objDR["GIA_TRI_CHUA_VAT"] = System.Convert.DBNull;
 	}
 
-	public decimal dcGIA_TRI_DA_VAT 
+    public decimal dcVAT
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "VAT", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["VAT"] = value;
+        }
+    }
+
+    public bool IsVATNull()
+    {
+        return pm_objDR.IsNull("VAT");
+    }
+
+    public void SetVATNull()
+    {
+        pm_objDR["VAT"] = System.Convert.DBNull;
+    }
+
+
+    public decimal dcGIA_TRI_DA_VAT 
 	{
 		get
 		{

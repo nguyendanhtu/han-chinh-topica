@@ -324,7 +324,7 @@ namespace BCTKApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			TEN_PHONG_BAN = 3,MA_DON_HANG = 2,GIA_TRI_DA_VAT = 5,GIA_TRI_CHUA_VAT = 4,SO_TIEN_SAU_HD = 6,NGAY_DAT_HANG = 1,TONG_TIEN_DINH_MUC = 7,TY_LE_VUOT = 8
+			TEN_PHONG_BAN = 3,MA_DON_HANG = 2,GIA_TRI_DA_VAT = 6,GIA_TRI_CHUA_VAT = 4    ,VAT = 5,SO_TIEN_SAU_HD = 7,NGAY_DAT_HANG = 1,TONG_TIEN_DINH_MUC = 8,TY_LE_VUOT = 9
 		}			
 		#endregion
 
@@ -360,7 +360,8 @@ namespace BCTKApp
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
 			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.MA_DON_HANG, e_col_Number.MA_DON_HANG);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.GIA_TRI_DA_VAT, e_col_Number.GIA_TRI_DA_VAT);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.GIA_TRI_CHUA_VAT, e_col_Number.GIA_TRI_CHUA_VAT);
-            v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.SO_TIEN_SAU_HD, e_col_Number.SO_TIEN_SAU_HD);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.NGAY_DAT_HANG, e_col_Number.NGAY_DAT_HANG);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.TONG_TIEN_DINH_MUC, e_col_Number.TONG_TIEN_DINH_MUC);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.TY_LE_VUOT, e_col_Number.TY_LE_VUOT);									
+            v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.SO_TIEN_SAU_HD, e_col_Number.SO_TIEN_SAU_HD);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.NGAY_DAT_HANG, e_col_Number.NGAY_DAT_HANG);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.TONG_TIEN_DINH_MUC, e_col_Number.TONG_TIEN_DINH_MUC);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.TY_LE_VUOT, e_col_Number.TY_LE_VUOT);
+            v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.VAT, E);									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_DON_DAT_HANG_DINH_MUC.NewRow());
 			return v_obj_trans;			
 		}
