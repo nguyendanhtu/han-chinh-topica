@@ -283,7 +283,8 @@
                         <asp:GridView ID="m_grv_don_hang_de" runat="Server" AutoGenerateColumns="false" CssClass="GridViewStyle"
                             Width="99%" DataKeyNames="ID" AllowPaging="true" PagerStyle-HorizontalAlign="Center"
                             EmptyDataText="Không có mặt hàng!" EmptyDataRowStyle-BorderColor="#810913"
-                            CellPadding="8">
+                            CellPadding="8" PageSize="10"
+                            OnPageIndexChanging="m_grv_don_hang_de_PageIndexChanging">
                             <PagerSettings Position="TopAndBottom" />
                             <AlternatingRowStyle BackColor="White" />
                             <FooterStyle CssClass="GridViewFooterStyle" />

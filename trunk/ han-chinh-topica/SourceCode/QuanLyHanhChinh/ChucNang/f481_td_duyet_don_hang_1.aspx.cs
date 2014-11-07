@@ -581,5 +581,19 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
             CSystemLog_301.ExceptionHandle(this, v_e);
         }
     }
+    protected void m_grv_don_hang_de_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            m_grv_don_hang_de.PageIndex = e.NewPageIndex;
+            load_data_to_grid();
+            m_grv_don_hang_de.DataBind();
+        }
+        catch (Exception v_e)
+        {
+
+            CSystemLog_301.ExceptionHandle(this, v_e);
+        }
+    }
     #endregion
 }
