@@ -294,7 +294,7 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
     }
     private void form_2_us_object()
     {
-        m_us_user = new US_HT_NGUOI_SU_DUNG(CIPConvert.ToDecimal(m_hdf_id_nguoi_su_dung.Value));
+        m_us_user = new US_HT_NGUOI_SU_DUNG();
         m_us_user.dcID_USER_GROUP = CIPConvert.ToDecimal(m_cbo_user_group.SelectedValue);
         m_us_user.strTEN_TRUY_CAP = m_txt_ten_dang_nhap.Text.TrimEnd();
         m_us_user.strTEN = m_txt_ho_va_ten.Text.TrimEnd();
@@ -373,7 +373,7 @@ public partial class Quantri_F800_Users : System.Web.UI.Page
         }
         catch (Exception v_e)
         {
-            CSystemLog_301.ExceptionHandle(this, v_e);
+            thong_bao("Lỗi "+v_e.ToString());
         }
     }
     protected void btnCancel_Click(object sender, EventArgs e)
