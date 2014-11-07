@@ -410,28 +410,31 @@ public class US_V_GD_THONG_KE : US_Object
         v_stored_proc.addDecimalInputParam("@ID_LOAI_DINH_MUC",ip_id_loai_dinh_muc);
         v_stored_proc.fillDataSetByCommand(this, ip_m_ds);
     }
-    public void FillDatasetSearch_hocvien(DS_V_GD_THONG_KE ip_m_ds, string ip_v_str_tim_kiem, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    public void FillDatasetSearch_hocvien(DS_V_GD_THONG_KE ip_m_ds, string ip_v_str_tim_kiem, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay, decimal v_id_loai_dinh_muc)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_THONG_KE_Search_hocvien");
         v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tim_kiem);
         v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
         v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+        v_stored_proc.addDecimalInputParam("@ID_LOAI_DINH_MUC",v_id_loai_dinh_muc);
         v_stored_proc.fillDataSetByCommand(this, ip_m_ds);
     }
-    public void FillDatasetSearch_hocvien_danghoc(DS_V_GD_THONG_KE ip_m_ds, string ip_v_str_tim_kiem, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    public void FillDatasetSearch_hocvien_danghoc(DS_V_GD_THONG_KE ip_m_ds, string ip_v_str_tim_kiem, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay, decimal v_id_loai_dinh_muc)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_THONG_KE_Search_hocvien_danghoc");
         v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tim_kiem);
         v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
         v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+        v_stored_proc.addDecimalInputParam("@ID_LOAI_DINH_MUC", v_id_loai_dinh_muc);
         v_stored_proc.fillDataSetByCommand(this, ip_m_ds);
     }
-    public void FillDatasetSearch_hocvien_tuyenmoi(DS_V_GD_THONG_KE ip_m_ds, string ip_v_str_tim_kiem, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    public void FillDatasetSearch_hocvien_tuyenmoi(DS_V_GD_THONG_KE ip_m_ds, string ip_v_str_tim_kiem, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay, decimal v_id_loai_dinh_muc)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_THONG_KE_Search_hocvien_tuyenmoi");
         v_stored_proc.addNVarcharInputParam("@TU_KHOA", ip_v_str_tim_kiem);
         v_stored_proc.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
         v_stored_proc.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+        v_stored_proc.addDecimalInputParam("@ID_LOAI_DINH_MUC", v_id_loai_dinh_muc);
         v_stored_proc.fillDataSetByCommand(this, ip_m_ds);
     }
 

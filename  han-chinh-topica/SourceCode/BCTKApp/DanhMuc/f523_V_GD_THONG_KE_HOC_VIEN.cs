@@ -50,6 +50,8 @@ namespace BCTKApp
         private Label label1;
         private DateTimePicker m_dtp_den_ngay;
         private DateTimePicker m_dtp_tu_ngay;
+        private ComboBox m_cbo_loai_dm;
+        private Label m_lbl_loai_dm;
 		private System.ComponentModel.IContainer components;
 
 		public f523_V_GD_THONG_KE_HOC_VIEN()
@@ -108,6 +110,8 @@ namespace BCTKApp
             this.label1 = new System.Windows.Forms.Label();
             this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_cbo_loai_dm = new System.Windows.Forms.ComboBox();
+            this.m_lbl_loai_dm = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_thong_ke_hoc_vien)).BeginInit();
             this.panel1.SuspendLayout();
@@ -233,14 +237,16 @@ namespace BCTKApp
             // 
             this.m_grv_thong_ke_hoc_vien.ColumnInfo = resources.GetString("m_grv_thong_ke_hoc_vien.ColumnInfo");
             this.m_grv_thong_ke_hoc_vien.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_thong_ke_hoc_vien.Location = new System.Drawing.Point(0, 172);
+            this.m_grv_thong_ke_hoc_vien.Location = new System.Drawing.Point(0, 163);
             this.m_grv_thong_ke_hoc_vien.Name = "m_grv_thong_ke_hoc_vien";
-            this.m_grv_thong_ke_hoc_vien.Size = new System.Drawing.Size(884, 354);
+            this.m_grv_thong_ke_hoc_vien.Size = new System.Drawing.Size(884, 363);
             this.m_grv_thong_ke_hoc_vien.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_thong_ke_hoc_vien.Styles"));
             this.m_grv_thong_ke_hoc_vien.TabIndex = 20;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cbo_loai_dm);
+            this.panel1.Controls.Add(this.m_lbl_loai_dm);
             this.panel1.Controls.Add(this.m_cbo_loai_tk);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.m_cmd_search);
@@ -254,22 +260,22 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 166);
+            this.panel1.Size = new System.Drawing.Size(884, 157);
             this.panel1.TabIndex = 22;
             // 
             // m_cbo_loai_tk
             // 
             this.m_cbo_loai_tk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_loai_tk.FormattingEnabled = true;
-            this.m_cbo_loai_tk.Location = new System.Drawing.Point(296, 87);
+            this.m_cbo_loai_tk.Location = new System.Drawing.Point(517, 84);
             this.m_cbo_loai_tk.Name = "m_cbo_loai_tk";
-            this.m_cbo_loai_tk.Size = new System.Drawing.Size(232, 21);
+            this.m_cbo_loai_tk.Size = new System.Drawing.Size(125, 21);
             this.m_cbo_loai_tk.TabIndex = 34;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(211, 96);
+            this.label3.Location = new System.Drawing.Point(432, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 33;
@@ -283,7 +289,7 @@ namespace BCTKApp
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(656, 120);
+            this.m_cmd_search.Location = new System.Drawing.Point(656, 111);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 22;
@@ -291,15 +297,15 @@ namespace BCTKApp
             // 
             // m_txt_tu_khoa
             // 
-            this.m_txt_tu_khoa.Location = new System.Drawing.Point(296, 128);
+            this.m_txt_tu_khoa.Location = new System.Drawing.Point(278, 119);
             this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
-            this.m_txt_tu_khoa.Size = new System.Drawing.Size(323, 20);
+            this.m_txt_tu_khoa.Size = new System.Drawing.Size(364, 20);
             this.m_txt_tu_khoa.TabIndex = 32;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(211, 135);
+            this.label4.Location = new System.Drawing.Point(198, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 31;
@@ -328,7 +334,7 @@ namespace BCTKApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(211, 56);
+            this.label1.Location = new System.Drawing.Point(198, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 2;
@@ -338,7 +344,7 @@ namespace BCTKApp
             // 
             this.m_dtp_den_ngay.CustomFormat = "MM/yyyy";
             this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_den_ngay.Location = new System.Drawing.Point(494, 50);
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(517, 51);
             this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
             this.m_dtp_den_ngay.Size = new System.Drawing.Size(125, 20);
             this.m_dtp_den_ngay.TabIndex = 1;
@@ -347,11 +353,29 @@ namespace BCTKApp
             // 
             this.m_dtp_tu_ngay.CustomFormat = "MM/yyyy";
             this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(296, 50);
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(278, 51);
             this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(119, 20);
             this.m_dtp_tu_ngay.TabIndex = 0;
             this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
+            // 
+            // m_cbo_loai_dm
+            // 
+            this.m_cbo_loai_dm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_loai_dm.FormattingEnabled = true;
+            this.m_cbo_loai_dm.Location = new System.Drawing.Point(278, 84);
+            this.m_cbo_loai_dm.Name = "m_cbo_loai_dm";
+            this.m_cbo_loai_dm.Size = new System.Drawing.Size(137, 21);
+            this.m_cbo_loai_dm.TabIndex = 36;
+            // 
+            // m_lbl_loai_dm
+            // 
+            this.m_lbl_loai_dm.AutoSize = true;
+            this.m_lbl_loai_dm.Location = new System.Drawing.Point(198, 92);
+            this.m_lbl_loai_dm.Name = "m_lbl_loai_dm";
+            this.m_lbl_loai_dm.Size = new System.Drawing.Size(74, 13);
+            this.m_lbl_loai_dm.TabIndex = 35;
+            this.m_lbl_loai_dm.Text = "Loại định mức";
             // 
             // f523_V_GD_THONG_KE_HOC_VIEN
             // 
@@ -389,6 +413,7 @@ namespace BCTKApp
 		DS_V_GD_THONG_KE m_ds = new DS_V_GD_THONG_KE();
 		US_V_GD_THONG_KE m_us = new US_V_GD_THONG_KE();
         private const String m_str_goi_y_tim_kiem = "Mã cơ sở , tên cơ sở thống kê ";
+        bool m_trang_thai = false;
 		#endregion
 
 		#region Private Methods
@@ -404,9 +429,29 @@ namespace BCTKApp
             this.m_cbo_loai_tk.Items.AddRange(new object[] { "---Tất cả----", "Học viên đang học", "Học viên tuyển mới" });
             m_cbo_loai_tk.SelectedIndex = 0;
             m_dtp_den_ngay.Value = DateTime.Now.Date;
+            load_cbo_loai_dinh_muc();
 			set_define_events();
 			this.KeyPreview = true;		
 		}
+        private void load_cbo_loai_dinh_muc()
+        {
+            m_trang_thai = false;
+            BCTKUS.US_CM_DM_TU_DIEN v_us = new BCTKUS.US_CM_DM_TU_DIEN();
+            BCTKDS.DS_CM_DM_TU_DIEN v_ds = new BCTKDS.DS_CM_DM_TU_DIEN();
+            v_us.FillDataset(v_ds, "where id_loai_tu_dien =" + 17);
+            m_cbo_loai_dm.DataSource = v_ds.CM_DM_TU_DIEN;
+            m_cbo_loai_dm.ValueMember = CM_DM_TU_DIEN.ID;
+            m_cbo_loai_dm.DisplayMember = CM_DM_TU_DIEN.TEN;
+            //DataRow v_dr = v_ds.CM_DM_TU_DIEN.NewRow();
+            //v_dr[CM_DM_TU_DIEN.ID] = -1;
+            //v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 17;
+            //v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = " ";
+            //v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
+            //v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "Tất cả";
+            //v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+            //m_cbo_loai_dm.SelectedIndex = 0;
+            m_trang_thai = true;
+        }
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_thong_ke_hoc_vien);
 			load_data_2_grid();		
@@ -421,6 +466,7 @@ namespace BCTKApp
             DateTime v_dat_tu_ngay = m_dtp_tu_ngay.Value.Date.AddDays(- m_dtp_tu_ngay.Value.Date.Day + 1);
             DateTime v_dat_den_ngay = m_dtp_den_ngay.Value.Date;
             DateTime temp = m_dtp_den_ngay.Value.Date;
+            decimal v_id_loai_dinh_muc = CIPConvert.ToDecimal(m_cbo_loai_dm.SelectedValue);
             temp = temp.AddMonths(1);
             temp = temp.AddDays(-(temp.Day));
             v_dat_den_ngay = temp;
@@ -433,21 +479,21 @@ namespace BCTKApp
                 m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.TU_NGAY].Visible = true;
                 m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.DEN_NGAY].Caption = "Đến ngày";
                 m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.GHI_CHU_1].Width = 125;
-                m_us.FillDatasetSearch_hocvien(m_ds, v_str_tu_khoa, v_dat_tu_ngay, v_dat_den_ngay);
+                m_us.FillDatasetSearch_hocvien(m_ds, v_str_tu_khoa, v_dat_tu_ngay, v_dat_den_ngay,v_id_loai_dinh_muc);
             }
             else if (m_cbo_loai_tk.SelectedIndex == 1)
             {
                 m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.TU_NGAY].Visible = false;
                 m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.DEN_NGAY].Caption = "Tại ngày";
                 m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.GHI_CHU_1].Width = 240;
-                m_us.FillDatasetSearch_hocvien_danghoc(m_ds, v_str_tu_khoa, v_dat_tu_ngay, v_dat_den_ngay);
+                m_us.FillDatasetSearch_hocvien_danghoc(m_ds, v_str_tu_khoa, v_dat_tu_ngay, v_dat_den_ngay,v_id_loai_dinh_muc);
             }
             else
             {
                 m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.TU_NGAY].Visible = true;
                 m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.DEN_NGAY].Caption = "Đến ngày";
                 m_grv_thong_ke_hoc_vien.Cols[(int)e_col_Number.GHI_CHU_1].Width = 125;
-                m_us.FillDatasetSearch_hocvien_tuyenmoi(m_ds, v_str_tu_khoa, v_dat_tu_ngay, v_dat_den_ngay);
+                m_us.FillDatasetSearch_hocvien_tuyenmoi(m_ds, v_str_tu_khoa, v_dat_tu_ngay, v_dat_den_ngay, v_id_loai_dinh_muc);
             }
 			m_grv_thong_ke_hoc_vien.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_thong_ke_hoc_vien, m_obj_trans);
@@ -559,6 +605,7 @@ namespace BCTKApp
             m_dtp_den_ngay.ValueChanged+=new EventHandler(m_dtp_den_ngay_ValueChanged);
             this.KeyDown+=new KeyEventHandler(f523_V_GD_THONG_KE_HOC_VIEN_KeyDown);
             m_grv_thong_ke_hoc_vien.DoubleClick+=new EventHandler(m_grv_thong_ke_hoc_vien_DoubleClick);
+            m_cbo_loai_dm.SelectedIndexChanged += m_cbo_loai_dm_SelectedIndexChanged;
 		}
 		#endregion
 
@@ -747,6 +794,18 @@ namespace BCTKApp
             try
             {
                 update_v_gd_thong_ke();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cbo_loai_dm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_trang_thai == true)
+                    load_data_2_grid();
             }
             catch (Exception v_e)
             {
