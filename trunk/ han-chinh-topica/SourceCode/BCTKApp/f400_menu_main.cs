@@ -200,11 +200,11 @@ namespace BCTKApp
             f523_V_GD_THONG_KE_HOC_VIEN v_frm = new f523_V_GD_THONG_KE_HOC_VIEN();
             v_frm.ShowDialog();
         }
-        private void m_cmd_hv_tuyen_moi_Click(object sender, EventArgs e)
-        {
-            f503_THONG_KE_HV_TUYEN_MOI v_frm = new f503_THONG_KE_HV_TUYEN_MOI();
-            v_frm.ShowDialog();
-        }
+        //private void m_cmd_hv_tuyen_moi_Click(object sender, EventArgs e)
+        //{
+        //    f503_THONG_KE_HV_TUYEN_MOI v_frm = new f503_THONG_KE_HV_TUYEN_MOI();
+        //    v_frm.ShowDialog();
+        //}
         void m_cmd_theo_tung_bill_Click(object sender, EventArgs e)
         {
             try

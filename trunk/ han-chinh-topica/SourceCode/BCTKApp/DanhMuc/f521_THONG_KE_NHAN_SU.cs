@@ -98,6 +98,8 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cbo_loai_dm = new System.Windows.Forms.ComboBox();
+            this.m_lbl_loai_dm = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -106,8 +108,6 @@ namespace BCTKApp
             this.label1 = new System.Windows.Forms.Label();
             this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
-            this.m_cbo_loai_dm = new System.Windows.Forms.ComboBox();
-            this.m_lbl_loai_dm = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -258,6 +258,24 @@ namespace BCTKApp
             this.panel1.Size = new System.Drawing.Size(903, 132);
             this.panel1.TabIndex = 21;
             // 
+            // m_cbo_loai_dm
+            // 
+            this.m_cbo_loai_dm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_loai_dm.FormattingEnabled = true;
+            this.m_cbo_loai_dm.Location = new System.Drawing.Point(291, 78);
+            this.m_cbo_loai_dm.Name = "m_cbo_loai_dm";
+            this.m_cbo_loai_dm.Size = new System.Drawing.Size(325, 21);
+            this.m_cbo_loai_dm.TabIndex = 34;
+            // 
+            // m_lbl_loai_dm
+            // 
+            this.m_lbl_loai_dm.AutoSize = true;
+            this.m_lbl_loai_dm.Location = new System.Drawing.Point(211, 86);
+            this.m_lbl_loai_dm.Name = "m_lbl_loai_dm";
+            this.m_lbl_loai_dm.Size = new System.Drawing.Size(74, 13);
+            this.m_lbl_loai_dm.TabIndex = 33;
+            this.m_lbl_loai_dm.Text = "Loại định mức";
+            // 
             // m_cmd_search
             // 
             this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -335,24 +353,6 @@ namespace BCTKApp
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(125, 20);
             this.m_dtp_tu_ngay.TabIndex = 0;
             this.m_dtp_tu_ngay.Value = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
-            // 
-            // m_cbo_loai_dm
-            // 
-            this.m_cbo_loai_dm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.m_cbo_loai_dm.FormattingEnabled = true;
-            this.m_cbo_loai_dm.Location = new System.Drawing.Point(291, 78);
-            this.m_cbo_loai_dm.Name = "m_cbo_loai_dm";
-            this.m_cbo_loai_dm.Size = new System.Drawing.Size(325, 21);
-            this.m_cbo_loai_dm.TabIndex = 34;
-            // 
-            // m_lbl_loai_dm
-            // 
-            this.m_lbl_loai_dm.AutoSize = true;
-            this.m_lbl_loai_dm.Location = new System.Drawing.Point(211, 86);
-            this.m_lbl_loai_dm.Name = "m_lbl_loai_dm";
-            this.m_lbl_loai_dm.Size = new System.Drawing.Size(74, 13);
-            this.m_lbl_loai_dm.TabIndex = 33;
-            this.m_lbl_loai_dm.Text = "Loại định mức";
             // 
             // f521_THONG_KE_NHAN_SU
             // 
