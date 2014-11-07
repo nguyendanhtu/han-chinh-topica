@@ -297,6 +297,8 @@ namespace BCTKDS {
             
             private global::System.Data.DataColumn columnGIA_TRI_CHUA_VAT;
             
+            private global::System.Data.DataColumn columnVAT;
+            
             private global::System.Data.DataColumn columnGIA_TRI_DA_VAT;
             
             private global::System.Data.DataColumn columnMA_HD_NCC;
@@ -408,6 +410,14 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VATColumn {
+                get {
+                    return this.columnVAT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn GIA_TRI_DA_VATColumn {
                 get {
                     return this.columnGIA_TRI_DA_VAT;
@@ -459,7 +469,7 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_GD_DON_DAT_HANGRow AddV_GD_DON_DAT_HANGRow(decimal ID, System.DateTime NGAY_DAT_HANG, decimal LAN, decimal ID_TRANG_THAI, string TRANG_THAI, decimal ID_PHONG_BAN, string TEN_PHONG_BAN, string MA_HD, decimal GIA_TRI_CHUA_VAT, decimal GIA_TRI_DA_VAT, string MA_HD_NCC) {
+            public V_GD_DON_DAT_HANGRow AddV_GD_DON_DAT_HANGRow(decimal ID, System.DateTime NGAY_DAT_HANG, decimal LAN, decimal ID_TRANG_THAI, string TRANG_THAI, decimal ID_PHONG_BAN, string TEN_PHONG_BAN, string MA_HD, decimal GIA_TRI_CHUA_VAT, decimal VAT, decimal GIA_TRI_DA_VAT, string MA_HD_NCC) {
                 V_GD_DON_DAT_HANGRow rowV_GD_DON_DAT_HANGRow = ((V_GD_DON_DAT_HANGRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -471,6 +481,7 @@ namespace BCTKDS {
                         TEN_PHONG_BAN,
                         MA_HD,
                         GIA_TRI_CHUA_VAT,
+                        VAT,
                         GIA_TRI_DA_VAT,
                         MA_HD_NCC};
                 rowV_GD_DON_DAT_HANGRow.ItemArray = columnValuesArray;
@@ -517,6 +528,7 @@ namespace BCTKDS {
                 this.columnTEN_PHONG_BAN = base.Columns["TEN_PHONG_BAN"];
                 this.columnMA_HD = base.Columns["MA_HD"];
                 this.columnGIA_TRI_CHUA_VAT = base.Columns["GIA_TRI_CHUA_VAT"];
+                this.columnVAT = base.Columns["VAT"];
                 this.columnGIA_TRI_DA_VAT = base.Columns["GIA_TRI_DA_VAT"];
                 this.columnMA_HD_NCC = base.Columns["MA_HD_NCC"];
             }
@@ -542,6 +554,8 @@ namespace BCTKDS {
                 base.Columns.Add(this.columnMA_HD);
                 this.columnGIA_TRI_CHUA_VAT = new global::System.Data.DataColumn("GIA_TRI_CHUA_VAT", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGIA_TRI_CHUA_VAT);
+                this.columnVAT = new global::System.Data.DataColumn("VAT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVAT);
                 this.columnGIA_TRI_DA_VAT = new global::System.Data.DataColumn("GIA_TRI_DA_VAT", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGIA_TRI_DA_VAT);
                 this.columnMA_HD_NCC = new global::System.Data.DataColumn("MA_HD_NCC", typeof(string), null, global::System.Data.MappingType.Element);
@@ -553,6 +567,7 @@ namespace BCTKDS {
                 this.columnTRANG_THAI.MaxLength = 250;
                 this.columnTEN_PHONG_BAN.MaxLength = 250;
                 this.columnMA_HD.MaxLength = 35;
+                this.columnVAT.ReadOnly = true;
                 this.columnMA_HD_NCC.MaxLength = 10;
             }
             
@@ -835,6 +850,22 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal VAT {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_GD_DON_DAT_HANG.VATColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VAT\' in table \'V_GD_DON_DAT_HANG\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_DON_DAT_HANG.VATColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal GIA_TRI_DA_VAT {
                 get {
                     try {
@@ -959,6 +990,18 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetGIA_TRI_CHUA_VATNull() {
                 this[this.tableV_GD_DON_DAT_HANG.GIA_TRI_CHUA_VATColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVATNull() {
+                return this.IsNull(this.tableV_GD_DON_DAT_HANG.VATColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVATNull() {
+                this[this.tableV_GD_DON_DAT_HANG.VATColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1154,6 +1197,7 @@ namespace BCTKDS.DS_V_GD_DON_DAT_HANGTableAdapters {
             tableMapping.ColumnMappings.Add("TEN_PHONG_BAN", "TEN_PHONG_BAN");
             tableMapping.ColumnMappings.Add("MA_HD", "MA_HD");
             tableMapping.ColumnMappings.Add("GIA_TRI_CHUA_VAT", "GIA_TRI_CHUA_VAT");
+            tableMapping.ColumnMappings.Add("VAT", "VAT");
             tableMapping.ColumnMappings.Add("GIA_TRI_DA_VAT", "GIA_TRI_DA_VAT");
             tableMapping.ColumnMappings.Add("MA_HD_NCC", "MA_HD_NCC");
             this._adapter.TableMappings.Add(tableMapping);
@@ -1163,7 +1207,7 @@ namespace BCTKDS.DS_V_GD_DON_DAT_HANGTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BCTKDS.Properties.Settings.Default.ADMIN_SOFTConnectionString1;
+            this._connection.ConnectionString = global::BCTKDS.Properties.Settings.Default.TestConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1173,8 +1217,8 @@ namespace BCTKDS.DS_V_GD_DON_DAT_HANGTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, NGAY_DAT_HANG, LAN, ID_TRANG_THAI, TRANG_THAI, ID_PHONG_BAN, TEN_PHONG" +
-                "_BAN, MA_HD, GIA_TRI_CHUA_VAT, GIA_TRI_DA_VAT, MA_HD_NCC FROM dbo.V_GD_DON_DAT_H" +
-                "ANG";
+                "_BAN, MA_HD, GIA_TRI_CHUA_VAT, VAT, GIA_TRI_DA_VAT, MA_HD_NCC FROM dbo.V_GD_DON_" +
+                "DAT_HANG";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -982,6 +982,7 @@ namespace BCTKDS.CDBNames
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
         public const string TEN_TRANG_THAI = "TEN_TRANG_THAI";
         public const string GIA_TRI_CHUA_VAT = "GIA_TRI_CHUA_VAT";
+        public const string VAT = "VAT";
         public const string GIA_TRI_DA_VAT = "GIA_TRI_DA_VAT";
         public const string SO_TIEN_SAU_HD = "SO_TIEN_SAU_HD";
         public const string TONG_TIEN_DINH_MUC = "TONG_TIEN_DINH_MUC";
@@ -998,6 +999,7 @@ namespace BCTKDS.CDBNames
         public const string TEN_PHONG_BAN = "TEN_PHONG_BAN";
         public const string MA_HD = "MA_HD";
         public const string GIA_TRI_CHUA_VAT = "GIA_TRI_CHUA_VAT";
+        public const string VAT = "VAT";
         public const string GIA_TRI_DA_VAT = "GIA_TRI_DA_VAT";
         public const string MA_HD_NCC = "MA_HD_NCC";
     }
