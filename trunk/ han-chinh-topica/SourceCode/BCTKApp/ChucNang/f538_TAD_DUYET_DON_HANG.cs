@@ -138,10 +138,10 @@ namespace BCTKApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_khong_duyet);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 451);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 501);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(738, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1077, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -153,7 +153,7 @@ namespace BCTKApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(382, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(721, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -168,7 +168,7 @@ namespace BCTKApp
             this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_duyet.ImageIndex = 16;
             this.m_cmd_duyet.ImageList = this.ImageList;
-            this.m_cmd_duyet.Location = new System.Drawing.Point(470, 4);
+            this.m_cmd_duyet.Location = new System.Drawing.Point(809, 4);
             this.m_cmd_duyet.Name = "m_cmd_duyet";
             this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet.TabIndex = 13;
@@ -198,7 +198,7 @@ namespace BCTKApp
             this.m_cmd_khong_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_khong_duyet.ImageIndex = 4;
             this.m_cmd_khong_duyet.ImageList = this.ImageList;
-            this.m_cmd_khong_duyet.Location = new System.Drawing.Point(558, 4);
+            this.m_cmd_khong_duyet.Location = new System.Drawing.Point(897, 4);
             this.m_cmd_khong_duyet.Name = "m_cmd_khong_duyet";
             this.m_cmd_khong_duyet.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_khong_duyet.TabIndex = 14;
@@ -213,7 +213,7 @@ namespace BCTKApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(646, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(985, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -226,7 +226,7 @@ namespace BCTKApp
             this.m_grv_don_hang.Location = new System.Drawing.Point(0, 123);
             this.m_grv_don_hang.Name = "m_grv_don_hang";
             this.m_grv_don_hang.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange;
-            this.m_grv_don_hang.Size = new System.Drawing.Size(738, 328);
+            this.m_grv_don_hang.Size = new System.Drawing.Size(1077, 378);
             this.m_grv_don_hang.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_don_hang.Styles"));
             this.m_grv_don_hang.TabIndex = 20;
             this.toolTip1.SetToolTip(this.m_grv_don_hang, "Nhấp đúp chuột để xem chi tiết");
@@ -240,7 +240,7 @@ namespace BCTKApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 117);
+            this.panel1.Size = new System.Drawing.Size(1077, 117);
             this.panel1.TabIndex = 23;
             // 
             // m_cmd_search
@@ -251,7 +251,7 @@ namespace BCTKApp
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 18;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(326, 77);
+            this.m_cmd_search.Location = new System.Drawing.Point(499, 75);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 38;
@@ -261,7 +261,7 @@ namespace BCTKApp
             // 
             this.m_cbo_trung_tam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trung_tam.FormattingEnabled = true;
-            this.m_cbo_trung_tam.Location = new System.Drawing.Point(233, 47);
+            this.m_cbo_trung_tam.Location = new System.Drawing.Point(406, 45);
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(299, 21);
             this.m_cbo_trung_tam.TabIndex = 35;
@@ -270,7 +270,7 @@ namespace BCTKApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 52);
+            this.label1.Location = new System.Drawing.Point(322, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 34;
@@ -282,7 +282,7 @@ namespace BCTKApp
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(738, 32);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(1077, 32);
             this.m_lbl_tieu_de.TabIndex = 28;
             this.m_lbl_tieu_de.Text = "DUYỆT ĐƠN ĐẶT HÀNG";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -300,7 +300,7 @@ namespace BCTKApp
             // f538_TAD_DUYET_DON_HANG
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(738, 487);
+            this.ClientSize = new System.Drawing.Size(1077, 537);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_grv_don_hang);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -361,7 +361,7 @@ namespace BCTKApp
 			Hashtable v_htb = new Hashtable();
 			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.MA_DON_HANG, e_col_Number.MA_DON_HANG);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.GIA_TRI_DA_VAT, e_col_Number.GIA_TRI_DA_VAT);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.GIA_TRI_CHUA_VAT, e_col_Number.GIA_TRI_CHUA_VAT);
             v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.SO_TIEN_SAU_HD, e_col_Number.SO_TIEN_SAU_HD);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.NGAY_DAT_HANG, e_col_Number.NGAY_DAT_HANG);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.TONG_TIEN_DINH_MUC, e_col_Number.TONG_TIEN_DINH_MUC);			v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.TY_LE_VUOT, e_col_Number.TY_LE_VUOT);
-            v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.VAT, E);									
+            v_htb.Add(V_GD_DON_DAT_HANG_DINH_MUC.VAT, e_col_Number.VAT);									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_DON_DAT_HANG_DINH_MUC.NewRow());
 			return v_obj_trans;			
 		}
