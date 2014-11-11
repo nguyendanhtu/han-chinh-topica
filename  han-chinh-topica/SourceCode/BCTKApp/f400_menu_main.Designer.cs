@@ -536,7 +536,7 @@
             // 
             this.m_cmd_tra_cuu_va_ban_hanh.Name = "m_cmd_tra_cuu_va_ban_hanh";
             this.m_cmd_tra_cuu_va_ban_hanh.SubItemsExpandWidth = 14;
-            this.m_cmd_tra_cuu_va_ban_hanh.Text = "Tra cứu và ban hành";
+            this.m_cmd_tra_cuu_va_ban_hanh.Text = "Tra cứu, báo cáo và ban hành";
             // 
             // m_rib_pnl_CPN
             // 
