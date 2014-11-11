@@ -356,4 +356,70 @@ Public Class CExcelReport
             Throw v_e
         End Try
     End Sub
+    'Huytd
+    Public Sub Export2ExcelWithoutFixedRows_saveDialog(str_file_name As String, i_fg As C1FlexGrid, i_iFromGridCol As Integer, i_iToGridCol As Integer, i_b_show As Boolean)
+        Try
+            Dim saveFileDialog As New SaveFileDialog()
+
+            saveFileDialog.Filter = "Execl files (*.xls)|*.xls"
+
+            saveFileDialog.FilterIndex = 0
+
+            saveFileDialog.RestoreDirectory = True
+
+            saveFileDialog.CreatePrompt = True
+
+            saveFileDialog.Title = "Export Excel File To"
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US")
+            If Not m_init_successful Then
+                Return
+            End If
+            Dim v_objFact As New CExportColumnFactory(i_fg, m_objExcelWorksheet)
+            Dim v_objExpCol As IExportColumn
+            Dim v_iGridCol As Integer
+            Dim v_iNumberOfCol As Integer = 0
+            Dim v_iVisibleColsCount As Integer = 0
+            Dim v_iCount As Integer = 0
+            ' Chen 1 so dong trong Excel tuong ung voi so Ban ghi can insert
+            Dim v_obj_range As Range = m_objExcelWorksheet.Range(m_objExcelWorksheet.Cells(m_iSheetStartRow + 1, m_iSheetStartCol), m_objExcelWorksheet.Cells(m_iSheetStartRow + 1, m_iSheetStartCol))
+            v_iCount = i_fg.Rows.Fixed
+            While v_iCount <= i_fg.Rows.Count - 2
+                v_obj_range.EntireRow.Insert(Excel.XlDirection.xlDown)
+                System.Math.Max(System.Threading.Interlocked.Increment(v_iCount), v_iCount - 1)
+            End While
+            v_iGridCol = i_iFromGridCol
+            While v_iGridCol <= i_iToGridCol
+                If i_fg.Cols(v_iGridCol).Visible Then
+                    v_objExpCol = v_objFact.CreateExportColumn(v_iGridCol, m_iSheetStartCol + v_iNumberOfCol, m_iSheetStartRow)
+                    v_iNumberOfCol += 1
+                    v_objExpCol.ExportWithoutFixedRows()
+
+                    v_iVisibleColsCount += 1
+                End If
+                System.Math.Max(System.Threading.Interlocked.Increment(v_iGridCol), v_iGridCol - 1)
+            End While
+            If (m_b_set_style) Then
+                setStyle4Node(i_fg, v_iVisibleColsCount)
+            End If
+            m_iSheetStartRow = m_iSheetStartRow + i_fg.Rows.Count
+            If i_b_show Then
+                If saveFileDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+                    m_objExcelApp.Visible = True
+                    'Not Display Excel
+                    Dim v_strFilenameWithPath As String
+                    v_strFilenameWithPath = str_file_name
+                    m_objExcelApp.SaveWorkspace(v_strFilenameWithPath)
+                    'm_objExcelApp.Workbooks.Close()
+                    Unmount()
+                End If
+            End If
+        Catch v_e As Exception
+            m_objExcelApp.Workbooks.Close()
+            Unmount()
+            Throw v_e
+        End Try
+
+
+
+    End Sub
 End Class
