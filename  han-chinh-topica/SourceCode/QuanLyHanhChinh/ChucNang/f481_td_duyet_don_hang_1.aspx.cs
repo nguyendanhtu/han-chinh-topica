@@ -445,8 +445,8 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                               + "\n"
                               + "Xin cám ơn!";
 
-            if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Thông báo đã duyệt", v_str_noi_dung); thong_bao("Đã gửi mail thông báo duyệt cho người gửi đơn hàng VPP này!", true); }
-            else { thong_bao("Chưa gửi mail thông báo duyệt cho người xin duyệt đơn hàng VPP!"); }
+            if (!v_mail.Equals("")) { BCTKApp.App_Code.HelpUtils.SendEmailHanhChinhTopica(v_mail, "Thông báo đã duyệt", v_str_noi_dung); thong_bao("Duyệt thành công!", true); }
+            else { thong_bao("Duyệt thành công!"); }
             m_grv_don_hang_nhap.Visible = false;
             m_grv_don_hang_de.Visible = false;
         }
