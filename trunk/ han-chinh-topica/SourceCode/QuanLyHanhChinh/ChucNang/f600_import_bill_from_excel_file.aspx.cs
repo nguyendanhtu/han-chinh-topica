@@ -317,7 +317,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             //m_cmd_kiem_tra_va_import.Visible = false;
             //thong_bao("Đã cập nhật thành công " + lst_import.Count + " bill!");
             m_lbl_thong_tim_grv_dm_bill.Text = "Có tất cả " + lst_order.Count + " bill hợp lệ!";
-            m_grv_dm_bill.DataSource = null;
+			m_grv_dm_bill.DataSource = lst_order;
             m_grv_dm_bill.DataBind();
         }
         else
