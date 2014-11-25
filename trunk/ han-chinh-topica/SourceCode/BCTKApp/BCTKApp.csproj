@@ -282,6 +282,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RemoteAccessHelper.cs" />
     <Content Include="application_certificate.ico" />
     <Content Include="post_office.ico" />
     <None Include="Resources\lorrygreen.jpg" />
@@ -602,6 +603,7 @@
     <Compile Include="f996_license_form.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FileExplorer.cs" />
     <Compile Include="frmBarChart.cs">
       <SubType>Form</SubType>
     </Compile>

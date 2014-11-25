@@ -88,3 +88,8 @@ Public Enum DirectoryFormMode
     SelectMode
 End Enum
 
+Public Enum DataEntryFileMode
+    UploadFile
+    EditFile
+    DeleteFile
+End Enum
