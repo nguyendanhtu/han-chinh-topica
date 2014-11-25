@@ -267,8 +267,8 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
     {
         DS_GD_DON_DAT_HANG v_ds_gd_don_dat_hang = new DS_GD_DON_DAT_HANG();
         US_GD_DON_DAT_HANG v_us_gd_don_dat_hang = new US_GD_DON_DAT_HANG();
-        int thisyear = DateTime.Now.Year;
-        DateTime m_dat_dau_thang = new DateTime(thisyear, int.Parse(m_cbo_chon_thang.SelectedValue.ToString()), 1);
+        DateTime v_ngay_dat_hang = CIPConvert.ToDatetime(m_hdf_ngay_gui.Value);
+        DateTime m_dat_dau_thang = new DateTime(v_ngay_dat_hang.Year, v_ngay_dat_hang.Month, 1);
         DateTime m_dat_cuoi_thang = m_dat_dau_thang.AddMonths(1).AddDays(-1);
         if (CIPConvert.ToDecimal(m_hdf_form_mode.Value) == CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET)
         {
@@ -468,8 +468,8 @@ public partial class ChucNang_f481_td_duyet_don_hang_1 : System.Web.UI.Page
                 v_mail = v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Rows[0]["MAIL"].ToString();
             else { v_mail = "";}
             US_GD_DON_DAT_HANG v_us_gd_don_hang = new US_GD_DON_DAT_HANG(CIPConvert.ToDecimal(m_hdf_id_don_hang.Value));
-            int thisyear = DateTime.Now.Year;
-            DateTime m_dat_dau_thang = new DateTime(thisyear, int.Parse(m_cbo_chon_thang.SelectedValue.ToString()), 1);
+            DateTime v_ngay_dat_hang = CIPConvert.ToDatetime(m_hdf_ngay_gui.Value);
+            DateTime m_dat_dau_thang = new DateTime(v_ngay_dat_hang.Year, v_ngay_dat_hang.Month, 1);
             DateTime m_dat_cuoi_thang = m_dat_dau_thang.AddMonths(1).AddDays(-1);
             if (CIPConvert.ToDecimal(m_hdf_form_mode.Value) == CONST_ID_TRANG_THAI_DON_HANG.XIN_TD_DUYET)
                 v_us_gd_don_hang.dcID_TRANG_THAI = CONST_ID_TRANG_THAI_DON_HANG.TD_KHONG_DUYET;
