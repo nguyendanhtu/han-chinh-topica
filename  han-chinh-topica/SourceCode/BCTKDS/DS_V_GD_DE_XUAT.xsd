@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="TestConnectionString (Settings)" DbObjectName="Test.dbo.V_GD_DE_XUAT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, ID_PHONG_BAN, MA_PHONG_BAN, TEN_PHONG_BAN, THANG_AP_DUNG, SO_TIEN, GHI_CHU, LOAI_DE_XUAT FROM dbo.V_GD_DE_XUAT</CommandText>
+                    <CommandText>SELECT ID, ID_PHONG_BAN, MA_PHONG_BAN, TEN_PHONG_BAN, THANG_AP_DUNG, SO_TIEN, GHI_CHU, ID_LOAI_DE_XUAT, LOAI_DE_XUAT, LINK FROM dbo.V_GD_DE_XUAT</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -26,7 +26,9 @@
               <Mapping SourceColumn="THANG_AP_DUNG" DataSetColumn="THANG_AP_DUNG" />
               <Mapping SourceColumn="SO_TIEN" DataSetColumn="SO_TIEN" />
               <Mapping SourceColumn="GHI_CHU" DataSetColumn="GHI_CHU" />
+              <Mapping SourceColumn="ID_LOAI_DE_XUAT" DataSetColumn="ID_LOAI_DE_XUAT" />
               <Mapping SourceColumn="LOAI_DE_XUAT" DataSetColumn="LOAI_DE_XUAT" />
+              <Mapping SourceColumn="LINK" DataSetColumn="LINK" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -66,10 +68,18 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ID_LOAI_DE_XUAT" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_DE_XUAT" msprop:Generator_ColumnPropNameInRow="ID_LOAI_DE_XUAT" msprop:Generator_ColumnPropNameInTable="ID_LOAI_DE_XUATColumn" msprop:Generator_UserColumnName="ID_LOAI_DE_XUAT" type="xs:decimal" />
               <xs:element name="LOAI_DE_XUAT" msprop:Generator_ColumnVarNameInTable="columnLOAI_DE_XUAT" msprop:Generator_ColumnPropNameInRow="LOAI_DE_XUAT" msprop:Generator_ColumnPropNameInTable="LOAI_DE_XUATColumn" msprop:Generator_UserColumnName="LOAI_DE_XUAT" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LINK" msprop:Generator_ColumnVarNameInTable="columnLINK" msprop:Generator_ColumnPropNameInRow="LINK" msprop:Generator_ColumnPropNameInTable="LINKColumn" msprop:Generator_UserColumnName="LINK" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

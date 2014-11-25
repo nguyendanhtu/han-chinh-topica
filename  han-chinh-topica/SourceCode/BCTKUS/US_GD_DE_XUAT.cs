@@ -144,7 +144,27 @@ public class US_GD_DE_XUAT : US_Object
 	public void SetID_LOAI_DE_XUATNull() {
 		pm_objDR["ID_LOAI_DE_XUAT"] = System.Convert.DBNull;
 	}
+    public string strLINK
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "LINK", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["LINK"] = value;
+        }
+    }
 
+    public bool IsLINKNull()
+    {
+        return pm_objDR.IsNull("LINK");
+    }
+
+    public void SetLINKNull()
+    {
+        pm_objDR["LINK"] = System.Convert.DBNull;
+    }
 #endregion
 #region "Init Functions"
 	public US_GD_DE_XUAT() 
