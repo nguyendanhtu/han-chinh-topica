@@ -293,7 +293,11 @@ namespace BCTKDS {
             
             private global::System.Data.DataColumn columnGHI_CHU;
             
+            private global::System.Data.DataColumn columnID_LOAI_DE_XUAT;
+            
             private global::System.Data.DataColumn columnLOAI_DE_XUAT;
+            
+            private global::System.Data.DataColumn columnLINK;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -386,9 +390,25 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_LOAI_DE_XUATColumn {
+                get {
+                    return this.columnID_LOAI_DE_XUAT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn LOAI_DE_XUATColumn {
                 get {
                     return this.columnLOAI_DE_XUAT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LINKColumn {
+                get {
+                    return this.columnLINK;
                 }
             }
             
@@ -429,7 +449,7 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_GD_DE_XUATRow AddV_GD_DE_XUATRow(decimal ID, decimal ID_PHONG_BAN, string MA_PHONG_BAN, string TEN_PHONG_BAN, System.DateTime THANG_AP_DUNG, decimal SO_TIEN, string GHI_CHU, string LOAI_DE_XUAT) {
+            public V_GD_DE_XUATRow AddV_GD_DE_XUATRow(decimal ID, decimal ID_PHONG_BAN, string MA_PHONG_BAN, string TEN_PHONG_BAN, System.DateTime THANG_AP_DUNG, decimal SO_TIEN, string GHI_CHU, decimal ID_LOAI_DE_XUAT, string LOAI_DE_XUAT, string LINK) {
                 V_GD_DE_XUATRow rowV_GD_DE_XUATRow = ((V_GD_DE_XUATRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -439,7 +459,9 @@ namespace BCTKDS {
                         THANG_AP_DUNG,
                         SO_TIEN,
                         GHI_CHU,
-                        LOAI_DE_XUAT};
+                        ID_LOAI_DE_XUAT,
+                        LOAI_DE_XUAT,
+                        LINK};
                 rowV_GD_DE_XUATRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_GD_DE_XUATRow);
                 return rowV_GD_DE_XUATRow;
@@ -482,7 +504,9 @@ namespace BCTKDS {
                 this.columnTHANG_AP_DUNG = base.Columns["THANG_AP_DUNG"];
                 this.columnSO_TIEN = base.Columns["SO_TIEN"];
                 this.columnGHI_CHU = base.Columns["GHI_CHU"];
+                this.columnID_LOAI_DE_XUAT = base.Columns["ID_LOAI_DE_XUAT"];
                 this.columnLOAI_DE_XUAT = base.Columns["LOAI_DE_XUAT"];
+                this.columnLINK = base.Columns["LINK"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -502,8 +526,12 @@ namespace BCTKDS {
                 base.Columns.Add(this.columnSO_TIEN);
                 this.columnGHI_CHU = new global::System.Data.DataColumn("GHI_CHU", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGHI_CHU);
+                this.columnID_LOAI_DE_XUAT = new global::System.Data.DataColumn("ID_LOAI_DE_XUAT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_LOAI_DE_XUAT);
                 this.columnLOAI_DE_XUAT = new global::System.Data.DataColumn("LOAI_DE_XUAT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLOAI_DE_XUAT);
+                this.columnLINK = new global::System.Data.DataColumn("LINK", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLINK);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -511,7 +539,9 @@ namespace BCTKDS {
                 this.columnMA_PHONG_BAN.MaxLength = 15;
                 this.columnTEN_PHONG_BAN.MaxLength = 250;
                 this.columnGHI_CHU.MaxLength = 250;
+                this.columnID_LOAI_DE_XUAT.AllowDBNull = false;
                 this.columnLOAI_DE_XUAT.MaxLength = 500;
+                this.columnLINK.MaxLength = 150;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -761,6 +791,17 @@ namespace BCTKDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_LOAI_DE_XUAT {
+                get {
+                    return ((decimal)(this[this.tableV_GD_DE_XUAT.ID_LOAI_DE_XUATColumn]));
+                }
+                set {
+                    this[this.tableV_GD_DE_XUAT.ID_LOAI_DE_XUATColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string LOAI_DE_XUAT {
                 get {
                     try {
@@ -772,6 +813,22 @@ namespace BCTKDS {
                 }
                 set {
                     this[this.tableV_GD_DE_XUAT.LOAI_DE_XUATColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LINK {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_GD_DE_XUAT.LINKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LINK\' in table \'V_GD_DE_XUAT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_DE_XUAT.LINKColumn] = value;
                 }
             }
             
@@ -857,6 +914,18 @@ namespace BCTKDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLOAI_DE_XUATNull() {
                 this[this.tableV_GD_DE_XUAT.LOAI_DE_XUATColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLINKNull() {
+                return this.IsNull(this.tableV_GD_DE_XUAT.LINKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLINKNull() {
+                this[this.tableV_GD_DE_XUAT.LINKColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1026,7 +1095,9 @@ namespace BCTKDS.DS_V_GD_DE_XUATTableAdapters {
             tableMapping.ColumnMappings.Add("THANG_AP_DUNG", "THANG_AP_DUNG");
             tableMapping.ColumnMappings.Add("SO_TIEN", "SO_TIEN");
             tableMapping.ColumnMappings.Add("GHI_CHU", "GHI_CHU");
+            tableMapping.ColumnMappings.Add("ID_LOAI_DE_XUAT", "ID_LOAI_DE_XUAT");
             tableMapping.ColumnMappings.Add("LOAI_DE_XUAT", "LOAI_DE_XUAT");
+            tableMapping.ColumnMappings.Add("LINK", "LINK");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1044,7 +1115,7 @@ namespace BCTKDS.DS_V_GD_DE_XUATTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, ID_PHONG_BAN, MA_PHONG_BAN, TEN_PHONG_BAN, THANG_AP_DUNG, SO_TIEN, GHI" +
-                "_CHU, LOAI_DE_XUAT FROM dbo.V_GD_DE_XUAT";
+                "_CHU, ID_LOAI_DE_XUAT, LOAI_DE_XUAT, LINK FROM dbo.V_GD_DE_XUAT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

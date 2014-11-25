@@ -1043,6 +1043,7 @@ namespace BCTKDS.CDBNames
         public const string SO_TIEN = "SO_TIEN";
         public const string GHI_CHU = "GHI_CHU";
         public const string LOAI_DE_XUAT = "LOAI_DE_XUAT";
+        public const string LINK = "LINK";
     }
 
     public class GD_DE_XUAT
@@ -1053,6 +1054,7 @@ namespace BCTKDS.CDBNames
         public const string SO_TIEN = "SO_TIEN";
         public const string GHI_CHU = "GHI_CHU";
         public const string ID_LOAI_DE_XUAT = "ID_LOAI_DE_XUAT";
+        public const string LINK = "LINK";
     }
     public class V_GD_DE_XUAT_VPP
     {
