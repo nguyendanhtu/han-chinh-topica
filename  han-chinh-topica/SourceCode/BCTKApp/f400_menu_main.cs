@@ -29,17 +29,19 @@ namespace BCTKApp
         #region Private Methods
         private void format_controls()
         {
-            set_define_event();
+            set_define_event();	
             //m_rib_bar_qldm_thong_ke.Visible = true;
             //m_cmd_bc_chi_phi_theo_phap_nhan.Visible = false;
-            if (CAppContext_201.getCurrentUser() == "vanthu")
+			IP.Core.IPUserService.US_HT_NGUOI_SU_DUNG v_us = new IP.Core.IPUserService.US_HT_NGUOI_SU_DUNG(CAppContext_201.getCurrentUserID());
+            if (v_us.strTEN_TRUY_CAP == "vanthu")
             {
                 m_rib_tab_quan_ly_dinh_muc.Visible = false;
                 m_rib_tab_van_thu.Visible = true;
                 m_rib_tab_CPN.Visible = false;
                 m_rib_tab_VPP.Visible = false;
+				m_rib_tab_van_thu.Select();
             }
-            else if(CAppContext_201.getCurrentUser()=="admin")
+			else if (v_us.strTEN_TRUY_CAP == "admin")
             {
                 m_rib_tab_quan_ly_dinh_muc.Visible = true;
                 m_rib_tab_van_thu.Visible = true;
