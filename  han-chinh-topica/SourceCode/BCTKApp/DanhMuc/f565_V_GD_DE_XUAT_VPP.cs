@@ -29,16 +29,59 @@ namespace BCTKApp
 
 
 
-	public class f565_V_GD_DE_XUAT_VPP : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_grv_de_xuat;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+    public class f565_V_GD_DE_XUAT_VPP : System.Windows.Forms.Form
+    {
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        internal class HostedControl
+        {
+            internal C1FlexGrid _flex;
+            internal Control _ctl;
+            internal Row _row;
+            internal Column _col;
+
+            internal HostedControl(C1FlexGrid flex, Control hosted, int row, int col)
+            { 
+                //save info
+                _flex = flex;
+                _ctl = hosted;
+                _row = flex.Rows[row];
+                _col = flex.Cols[col];
+
+                //insert hosted control into grid
+                _flex.Controls.Add(_ctl);
+            }
+
+            internal bool UpdatePosition()
+            { 
+                //get row/ col indcies
+                int r = _row.Index;
+                int c = _col.Index;
+                if (r < 0 || c < 0) return false;
+
+                // get cell rect
+                Rectangle rc = _flex.GetCellRect(c,r,false);
+
+                // hide control if out of range
+                if (rc.Width <= 0 || rc.Height <= 0 || !rc.IntersectsWith(_flex.ClientRectangle))
+                {
+                    _ctl.Visible = false;
+                    return true;
+                }
+                // move the control and show it
+                _ctl.Bounds = rc;
+                _ctl.Visible = true;
+
+                //done
+                return true;
+            }
+        }
+        private C1.Win.C1FlexGrid.C1FlexGrid m_grv_de_xuat;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_view;
         private Panel panel1;
         private TCDatetime m_dtp_thang;
         private ComboBox m_cbo_phap_nhan;
@@ -50,43 +93,43 @@ namespace BCTKApp
         private Label m_lbl_thang;
         private ComboBox m_cbo_loai_de_xuat;
         private Label label1;
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components;
 
-		public f565_V_GD_DE_XUAT_VPP()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public f565_V_GD_DE_XUAT_VPP()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f565_V_GD_DE_XUAT_VPP));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -373,33 +416,46 @@ namespace BCTKApp
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-		#endregion
+        #region Public Interface
+        public void display()
+        {
+            this.ShowDialog();
+        }
+        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			TEN_PHONG_BAN = 1,GHI_CHU = 5,SO_TIEN = 3,THANG_AP_DUNG = 2            ,LOAI_DE_XUAT = 4
-		}			
-		#endregion
+        #region Data Structure
+        private enum e_col_Number
+        {
+            TEN_PHONG_BAN = 1
+,
+            GHI_CHU = 5
+                ,
+            SO_TIEN = 3
+                ,
+            THANG_AP_DUNG = 2
+                       , LOAI_DE_XUAT = 4,
+            LINK = 6
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_GD_DE_XUAT m_ds = new DS_V_GD_DE_XUAT();
-		US_V_GD_DE_XUAT m_us = new US_V_GD_DE_XUAT();
-		#endregion
+        }
+        #endregion
 
-		#region Private Methods
-		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_grv_de_xuat);
+        #region Members
+        ArrayList m_list_button = new ArrayList();
+        ITransferDataRow m_obj_trans;
+        DS_V_GD_DE_XUAT m_ds_v_gd_de_xuat = new DS_V_GD_DE_XUAT();
+        US_V_GD_DE_XUAT m_us_v_gd_de_xuat = new US_V_GD_DE_XUAT();
+        #endregion
+
+        #region Private Methods
+        private void format_controls()
+        {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_grv_de_xuat);
             m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 15, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			CGridUtils.AddSave_Excel_Handlers(m_grv_de_xuat);
+            CGridUtils.AddSave_Excel_Handlers(m_grv_de_xuat);
             CGridUtils.AddSearch_Handlers(m_grv_de_xuat);
             load_data_2_cbo_phap_nhan();
             load_cbo_trung_tam();
@@ -414,56 +470,43 @@ namespace BCTKApp
             m_cmd_update.Enabled = true;
             m_cmd_delete.Visible = true;
             m_cmd_delete.Enabled = true;
-			set_define_events();
-			this.KeyPreview = true;		
-		}
-		private void set_initial_form_load(){
-            m_dtp_thang.Text = DateTime.Now.Date.ToString("MM/yyyy");			
-			m_obj_trans = get_trans_object(m_grv_de_xuat);
-			load_data_2_grid();		
-		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_GD_DE_XUAT.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);			v_htb.Add(V_GD_DE_XUAT.GHI_CHU, e_col_Number.GHI_CHU);			v_htb.Add(V_GD_DE_XUAT.SO_TIEN, e_col_Number.SO_TIEN);			v_htb.Add(V_GD_DE_XUAT.THANG_AP_DUNG, e_col_Number.THANG_AP_DUNG);
-            v_htb.Add(V_GD_DE_XUAT.LOAI_DE_XUAT, e_col_Number.LOAI_DE_XUAT);									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_DE_XUAT.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){
+            set_define_events();
+            this.KeyPreview = true;
+        }
+        private void set_initial_form_load()
+        {
+            m_dtp_thang.Text = DateTime.Now.Date.ToString("MM/yyyy");
+            m_obj_trans = get_trans_object(m_grv_de_xuat);
+            load_data_2_grid();
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_DE_XUAT.TEN_PHONG_BAN, e_col_Number.TEN_PHONG_BAN);
+            v_htb.Add(V_GD_DE_XUAT.GHI_CHU, e_col_Number.GHI_CHU);
+            v_htb.Add(V_GD_DE_XUAT.SO_TIEN, e_col_Number.SO_TIEN);
+            v_htb.Add(V_GD_DE_XUAT.THANG_AP_DUNG, e_col_Number.THANG_AP_DUNG);
+            v_htb.Add(V_GD_DE_XUAT.LOAI_DE_XUAT, e_col_Number.LOAI_DE_XUAT);
+            v_htb.Add(V_GD_DE_XUAT.LINK, e_col_Number.LINK);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_gd_de_xuat.V_GD_DE_XUAT.NewRow());
+            return v_obj_trans;
+        }
+        private void load_data_2_grid()
+        {
             DateTime v_dat_thang = CIPConvert.ToDatetime("01/" + m_dtp_thang.Text, "dd/MM/yyyy");
             decimal v_dc_id_phap_nhan = CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue);
             decimal v_dc_id_trung_tam = CIPConvert.ToDecimal(m_cbo_trung_tam.SelectedValue);
             decimal v_dc_id_loai_de_xuat = CIPConvert.ToDecimal(m_cbo_loai_de_xuat.SelectedValue);
-			m_ds = new DS_V_GD_DE_XUAT();			
-			m_us.FillDatasetSearch(m_ds,v_dat_thang,v_dc_id_phap_nhan,v_dc_id_trung_tam, v_dc_id_loai_de_xuat);
-			m_grv_de_xuat.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_grv_de_xuat, m_obj_trans);
+            m_ds_v_gd_de_xuat = new DS_V_GD_DE_XUAT();
+            m_us_v_gd_de_xuat.FillDatasetSearch(m_ds_v_gd_de_xuat, v_dat_thang, v_dc_id_phap_nhan, v_dc_id_trung_tam, v_dc_id_loai_de_xuat);
+            m_grv_de_xuat.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds_v_gd_de_xuat, m_grv_de_xuat, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_de_xuat);
             m_grv_de_xuat.AllowResizing = AllowResizingEnum.Both;
-            ArrayList _al = new ArrayList();
-            for (int _row = m_grv_de_xuat.Rows.Fixed; _row < m_grv_de_xuat.Rows.Count; _row++)
-            {
-                Button btn = new Button();
-                btn.BackColor = SystemColors.Control;
-                btn.Tag = _row.ToString();
-                btn.Text = "Upload file";
-
-                btn.Click += (s1, e1) =>
-                {
-                    var button = s1 as Button;
-                    m_grv_de_xuat.Rows.Remove(Convert.ToInt32(button.Tag.ToString()));
-                };
-
-                //_al.Add(new HostedControl(m_grv_de_xuat, btn, _row, 3));
-            }
-
-            //m_grv_de_xuat.Paint += (s1, e1) =>
-            //{
-            //    foreach (HostedControl hosted in _al)
-            //        hosted.UpdatePosition();
-            //};
-			m_grv_de_xuat.Redraw = true;
-		}
+            create_button_upload_file_2_grid(m_ds_v_gd_de_xuat);
+            m_grv_de_xuat.Redraw = true;
+        }
         private void load_data_2_cbo_phap_nhan()
         {
             US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN();
@@ -526,13 +569,14 @@ namespace BCTKApp
             v_ds.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
             m_cbo_trung_tam.SelectedIndex = 0;
         }
-		private void grid2us_object(US_V_GD_DE_XUAT i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_grv_de_xuat.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
+        private void grid2us_object(US_V_GD_DE_XUAT i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_grv_de_xuat.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
         private void dm_grid2us_object(US_GD_DE_XUAT i_us
                 , int i_grid_row)
@@ -542,75 +586,101 @@ namespace BCTKApp
             m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
             i_us.DataRow2Me(v_dr);
         }
-		private void us_object2grid(US_V_GD_DE_XUAT i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_grv_de_xuat.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+        private void us_object2grid(US_V_GD_DE_XUAT i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr = (DataRow)m_grv_de_xuat.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
 
+        private void create_button_upload_file_2_grid(DS_V_GD_DE_XUAT ip_ds_v_gd_de_xuat)
+        {
+            //Column c = m_grv_de_xuat.Cols[6];
+            //c.DataType = typeof(Color);
+            //c.ComboList = "Up load file";
+            int v_i_rows;
+            Button v_btn_up_load_file = new Button();
+            v_btn_up_load_file.BackColor = SystemColors.ButtonHighlight;
+            v_btn_up_load_file.Text = "Up load file";
+            v_btn_up_load_file.Tag = "Up load file";
 
-		private void insert_v_gd_de_xuat_vpp(){
+            v_btn_up_load_file.Click += v_btn_up_load_file_Click;
+
+            for (v_i_rows = 0; v_i_rows < m_grv_de_xuat.Rows.Count -1 ; v_i_rows++)
+                m_list_button.Add(new HostedControl(m_grv_de_xuat, v_btn_up_load_file, v_i_rows, (int)e_col_Number.LINK));
+            // draw button
+            
+        }
+
+        private void insert_v_gd_de_xuat_vpp()
+        {
             F566_V_GD_DE_XUAT_VPP_DE v_fDE = new F566_V_GD_DE_XUAT_VPP_DE();
             v_fDE.display_for_insert();
-			load_data_2_grid();
-		}
+            load_data_2_grid();
+        }
 
-		private void update_v_gd_de_xuat_vpp()
-        {			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_de_xuat)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_de_xuat, m_grv_de_xuat.Row)) return;			
-			grid2us_object(m_us, m_grv_de_xuat.Row);
+        private void update_v_gd_de_xuat_vpp()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_de_xuat)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_de_xuat, m_grv_de_xuat.Row)) return;
+            grid2us_object(m_us_v_gd_de_xuat, m_grv_de_xuat.Row);
             F566_V_GD_DE_XUAT_VPP_DE v_fDE = new F566_V_GD_DE_XUAT_VPP_DE();
-            v_fDE.display_for_update(m_us);
-			load_data_2_grid();
-		}
-				
-		private void delete_v_gd_de_xuat_vpp(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_de_xuat)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_de_xuat, m_grv_de_xuat.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_GD_DE_XUAT v_us = new US_GD_DE_XUAT();
-			dm_grid2us_object(v_us, m_grv_de_xuat.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_grv_de_xuat.Rows.Remove(m_grv_de_xuat.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
+            v_fDE.display_for_update(m_us_v_gd_de_xuat);
+            load_data_2_grid();
+        }
 
-		private void view_v_gd_de_xuat_vpp(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_de_xuat)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_de_xuat, m_grv_de_xuat.Row)) return;
-			grid2us_object(m_us, m_grv_de_xuat.Row);
-		//	f565_V_GD_DE_XUAT_VPP_DE v_fDE = new f565_V_GD_DE_XUAT_VPP_DE();			
-		//	v_fDE.display(m_us);
-		}
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+        private void delete_v_gd_de_xuat_vpp()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_de_xuat)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_de_xuat, m_grv_de_xuat.Row)) return;
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            US_GD_DE_XUAT v_us = new US_GD_DE_XUAT();
+            dm_grid2us_object(v_us, m_grv_de_xuat.Row);
+            try
+            {
+                v_us.BeginTransaction();
+                v_us.Delete();
+                v_us.CommitTransaction();
+                m_grv_de_xuat.Rows.Remove(m_grv_de_xuat.Row);
+            }
+            catch (Exception v_e)
+            {
+                v_us.Rollback();
+                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_objErrHandler.showErrorMessage();
+            }
+        }
+
+        private void view_v_gd_de_xuat_vpp()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_de_xuat)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_de_xuat, m_grv_de_xuat.Row)) return;
+            grid2us_object(m_us_v_gd_de_xuat, m_grv_de_xuat.Row);
+            //	f565_V_GD_DE_XUAT_VPP_DE v_fDE = new f565_V_GD_DE_XUAT_VPP_DE();			
+            //	v_fDE.display(m_us);
+        }
+        private void set_define_events()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_search.Click += m_cmd_search_Click;
             m_cbo_phap_nhan.SelectedIndexChanged += m_cbo_phap_nhan_SelectedIndexChanged;
             m_grv_de_xuat.DoubleClick += m_grv_de_xuat_DoubleClick;
+            m_grv_de_xuat.CellButtonClick += m_grv_de_xuat_CellButtonClick;
+            this.m_grv_de_xuat.Paint += m_grv_de_xuat_Paint;
         }
 
+        #endregion
 
-		#endregion
-
-//
-		//
-		//		EVENT HANLDERS
-		//
+        //
+        //
+        //		EVENT HANLDERS
+        //
         //
         #region Event
         private void f565_V_GD_DE_XUAT_VPP_Load(object sender, System.EventArgs e)
@@ -721,9 +791,36 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
-        
+        private void m_grv_de_xuat_CellButtonClick(object sender, RowColEventArgs e)
+        {
+            // Create color picker dialog.
+            ColorDialog clrDlg = new ColorDialog();
+            // Initialize the dialog.
+            if (m_grv_de_xuat[e.Row, e.Col] == typeof(Color))
+            {
+                clrDlg.Color = (Color)m_grv_de_xuat[e.Row, e.Col];
+            }
+            // Get new color from dialog and assign it to the cell.
+            if (clrDlg.ShowDialog() == DialogResult.OK)
+            {
+                m_grv_de_xuat[e.Row, e.Col] = clrDlg.Color;
+            }
+        }
 
-	}
+
+        private void v_btn_up_load_file_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            MessageBox.Show("Click on row: "+btn.Tag);
+        }
+        private void m_grv_de_xuat_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (HostedControl hosted in m_list_button)
+                hosted.UpdatePosition();
+        }
+        #endregion
+
+
+    }
 }
 

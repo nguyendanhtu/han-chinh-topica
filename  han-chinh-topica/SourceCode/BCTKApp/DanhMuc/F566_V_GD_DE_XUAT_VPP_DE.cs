@@ -13,6 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BCTKDS.CDBNames;
+using BCTKApp;
+using System.Configuration;
 
 namespace BCTKApp
 {
@@ -40,9 +42,18 @@ namespace BCTKApp
         #endregion
 
         #region Member
+
         US_GD_DE_XUAT m_us = new US_GD_DE_XUAT();
         DS_GD_DE_XUAT m_ds = new DS_GD_DE_XUAT();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
+
+        private DataEntryFileMode m_e_file_mode;
+        private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
+        private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+        private string m_str_user_name = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
+        private string m_str_password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
+        private string m_str_link_old;
+
         #endregion
 
         #region Private Method
@@ -101,6 +112,57 @@ namespace BCTKApp
             if (!validate_data_is_ok())
                 return;
             form_2_us_obj();
+            #region Xử lý file đính kèm
+            switch (m_e_file_mode)
+            {
+                case DataEntryFileMode.UploadFile:
+                    // Kiểm tra file đã tồn tại trên server hay chưa
+                    if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
+                    {
+                        BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
+                        return;
+                    }
+
+                    // Nếu đã chọn file 
+                    if (m_lbl_file_name.Text != "")
+                    {
+                        // Upload server có sử dụng user và pass
+                        if (m_str_user_name != "")
+                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
+                        // Upload không sử dụng user và pass
+                        else
+                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                    }
+                    break;
+                case DataEntryFileMode.EditFile:
+                    // Nếu ko up lên file mới sẽ bỏ qua bước này
+                    if (m_str_link_old != m_lbl_file_name.Text)
+                    {
+                        // Kiểm tra file vừa upload đã tồn tại hay chưa
+                        if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
+                        {
+                            BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
+                            return;
+                        }
+
+                        // Xóa file cũ
+                        if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
+                            FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+
+                        // Upload file mới lên
+                        if (m_str_user_name != "")
+                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
+                        else
+                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                    }
+                    break;
+                case DataEntryFileMode.DeleteFile:
+                    // Kiểm tra file có tồn tại hay không
+                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
+                        FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                    break;
+            }
+            #endregion
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -138,9 +200,14 @@ namespace BCTKApp
             m_cmd_exit.Click += m_cmd_exit_Click;
             m_cmd_save.Click += m_cmd_save_Click;
             m_txt_so_tien.TextChanged+=m_txt_so_tien_TextChanged;
+            m_cmd_file_dinh_kem.Click +=m_cmd_file_dinh_kem_Click;
         }
 
-        
+        private void chon_file()
+        {
+            FileExplorer.SelectFile(m_ofd_chon_file,m_str_link_old);
+            m_lbl_file_name.Text = FileExplorer.fileName;
+        }
 
       
         #endregion
@@ -180,6 +247,18 @@ namespace BCTKApp
             {
                 m_txt_so_tien.Text = string.Format("{0:#,###}", CIPConvert.ToDecimal(m_txt_so_tien.Text.Trim()));
                 m_txt_so_tien.SelectionStart = m_txt_so_tien.Text.Length + 1;
+            }
+        }
+        private void m_cmd_file_dinh_kem_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                chon_file();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         #endregion  

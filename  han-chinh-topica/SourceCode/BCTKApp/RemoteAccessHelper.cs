@@ -26,15 +26,23 @@ namespace BCTKApp
                 NetworkCredential credentials)
             {
                 _networkName = networkName;
-
+                if (!_networkName.Contains("\\\\"))
+                {
+                    return;
+                }
                 var netResource = new NetResource()
                 {
                     Scope = ResourceScope.GlobalNetwork,
                     ResourceType = ResourceType.Disk,
                     DisplayType = ResourceDisplaytype.Share,
-                    RemoteName = networkName
+                    RemoteName = networkName.TrimEnd('\\')
                 };
-
+                //var userName = string.IsNullOrEmpty(credentials.Domain)? credentials.UserName: string.Format(@"{0}\{1}", credentials.Domain, credentials.UserName);
+                //using (new NetworkConnection(@"\\server\read", readCredentials))
+                //using (new NetworkConnection(@"\\server2\write", writeCredentials))
+                //{
+                //    File.Copy(@"\\server\read\file", @"\\server2\write\file");
+                //}
                 var result = WNetAddConnection2(
                     netResource,
                     credentials.Password,
