@@ -44,16 +44,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_cbo_trung_tam = new System.Windows.Forms.ComboBox();
-            this.m_dtp_thang = new BCTKApp.TCDatetime();
             this.label6 = new System.Windows.Forms.Label();
             this.m_cbo_loai_de_xuat = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.m_cmd_file_dinh_kem = new System.Windows.Forms.Button();
+            this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
+            this.m_lbl_file_name = new System.Windows.Forms.Label();
+            this.m_dtp_thang = new BCTKApp.TCDatetime();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_chk_close_form
             // 
             this.m_chk_close_form.AutoSize = true;
-            this.m_chk_close_form.Location = new System.Drawing.Point(136, 230);
+            this.m_chk_close_form.Location = new System.Drawing.Point(136, 282);
             this.m_chk_close_form.Name = "m_chk_close_form";
             this.m_chk_close_form.Size = new System.Drawing.Size(196, 17);
             this.m_chk_close_form.TabIndex = 4;
@@ -96,7 +100,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(280, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(342, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
@@ -107,10 +111,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 273);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 305);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(460, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(522, 36);
             this.m_pnl_out_place_dm.TabIndex = 41;
             // 
             // m_cmd_exit
@@ -122,7 +126,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 11;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(368, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(430, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -193,7 +197,7 @@
             this.m_lbl_tieu_de.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_tieu_de.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_tieu_de.Name = "m_lbl_tieu_de";
-            this.m_lbl_tieu_de.Size = new System.Drawing.Size(460, 36);
+            this.m_lbl_tieu_de.Size = new System.Drawing.Size(522, 36);
             this.m_lbl_tieu_de.TabIndex = 26;
             this.m_lbl_tieu_de.Text = "CẬP NHẬT THÔNG TIN ĐỀ XUẤT ";
             this.m_lbl_tieu_de.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -205,17 +209,6 @@
             this.m_cbo_trung_tam.Name = "m_cbo_trung_tam";
             this.m_cbo_trung_tam.Size = new System.Drawing.Size(275, 21);
             this.m_cbo_trung_tam.TabIndex = 0;
-            // 
-            // m_dtp_thang
-            // 
-            this.m_dtp_thang.AllowNull = BCTKApp.TCDatetime.AL.Y;
-            this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
-            this.m_dtp_thang.Location = new System.Drawing.Point(136, 88);
-            this.m_dtp_thang.Mask = "00/0000";
-            this.m_dtp_thang.Name = "m_dtp_thang";
-            this.m_dtp_thang.Size = new System.Drawing.Size(100, 20);
-            this.m_dtp_thang.TabIndex = 1;
-            this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
             // 
             // label6
             // 
@@ -234,17 +227,67 @@
             this.m_cbo_loai_de_xuat.Size = new System.Drawing.Size(275, 21);
             this.m_cbo_loai_de_xuat.TabIndex = 0;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 232);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 13);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "File đính kèm";
+            // 
+            // m_cmd_file_dinh_kem
+            // 
+            this.m_cmd_file_dinh_kem.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.m_cmd_file_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_file_dinh_kem.ImageIndex = 2;
+            this.m_cmd_file_dinh_kem.ImageList = this.ImageList;
+            this.m_cmd_file_dinh_kem.Location = new System.Drawing.Point(136, 229);
+            this.m_cmd_file_dinh_kem.Name = "m_cmd_file_dinh_kem";
+            this.m_cmd_file_dinh_kem.Size = new System.Drawing.Size(146, 25);
+            this.m_cmd_file_dinh_kem.TabIndex = 42;
+            this.m_cmd_file_dinh_kem.Text = "Chọn file đính kèm";
+            this.m_cmd_file_dinh_kem.UseVisualStyleBackColor = true;
+            // 
+            // m_ofd_chon_file
+            // 
+            this.m_ofd_chon_file.FileName = "File đề xuất";
+            // 
+            // m_lbl_file_name
+            // 
+            this.m_lbl_file_name.AutoSize = true;
+            this.m_lbl_file_name.ForeColor = System.Drawing.Color.DarkBlue;
+            this.m_lbl_file_name.Location = new System.Drawing.Point(140, 257);
+            this.m_lbl_file_name.Name = "m_lbl_file_name";
+            this.m_lbl_file_name.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_file_name.TabIndex = 34;
+            this.m_lbl_file_name.Text = "...";
+            // 
+            // m_dtp_thang
+            // 
+            this.m_dtp_thang.AllowNull = BCTKApp.TCDatetime.AL.Y;
+            this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
+            this.m_dtp_thang.Location = new System.Drawing.Point(136, 88);
+            this.m_dtp_thang.Mask = "00/0000";
+            this.m_dtp_thang.Name = "m_dtp_thang";
+            this.m_dtp_thang.Size = new System.Drawing.Size(100, 20);
+            this.m_dtp_thang.TabIndex = 1;
+            this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
+            // 
             // F566_V_GD_DE_XUAT_VPP_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 309);
+            this.ClientSize = new System.Drawing.Size(522, 341);
+            this.Controls.Add(this.m_cmd_file_dinh_kem);
             this.Controls.Add(this.m_dtp_thang);
             this.Controls.Add(this.m_cbo_loai_de_xuat);
             this.Controls.Add(this.m_cbo_trung_tam);
             this.Controls.Add(this.m_chk_close_form);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_ghi_chu);
+            this.Controls.Add(this.m_lbl_file_name);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.m_txt_so_tien);
@@ -280,5 +323,9 @@
         private TCDatetime m_dtp_thang;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox m_cbo_loai_de_xuat;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
+        private System.Windows.Forms.Label m_lbl_file_name;
+        private System.Windows.Forms.Button m_cmd_file_dinh_kem;
     }
 }
