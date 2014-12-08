@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using BCTKDS.CDBNames;
 using BCTKApp;
 using System.Configuration;
+using System.IO;
 
 namespace BCTKApp
 {
@@ -98,6 +99,12 @@ namespace BCTKApp
             m_txt_ghi_chu.Text = ip_us_v.strGHI_CHU;
             m_cbo_loai_de_xuat.Text = ip_us_v.strLOAI_DE_XUAT;
             m_dtp_thang.Text = ip_us_v.datTHANG_AP_DUNG.ToString("MM/yyyy");
+            if (ip_us_v.strLINK != null || ip_us_v.strLINK != "")
+            {
+                m_lbl_file_name.Text = ip_us_v.strLINK;
+            }
+            else
+                m_lbl_file_name.Text = "Hiện tại chưa có file đính kèm";
         }
         private void form_2_us_obj()
         {
@@ -160,9 +167,13 @@ namespace BCTKApp
                     // Kiểm tra file có tồn tại hay không
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
                         FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                    else
+                        MessageBox.Show("Hiện tại không có file đính kèm nào.\n Bạn không thể xóa!");
                     break;
             }
             #endregion
+            //insert vào cơ sở dữ liệu
+            m_us.strLINK = m_lbl_file_name.Text;
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -201,6 +212,8 @@ namespace BCTKApp
             m_cmd_save.Click += m_cmd_save_Click;
             m_txt_so_tien.TextChanged+=m_txt_so_tien_TextChanged;
             m_cmd_file_dinh_kem.Click +=m_cmd_file_dinh_kem_Click;
+            m_cmd_xoa_file.Click +=m_cmd_xoa_file_Click;
+            m_cmd_xem_file.Click +=m_cmd_xem_file_Click;
         }
 
         private void chon_file()
@@ -256,6 +269,58 @@ namespace BCTKApp
                 chon_file();
             }
             catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_xem_file_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                if (m_lbl_file_name.Text.Trim() != "")
+                {
+                    SaveFileDialog save_dlg = new SaveFileDialog();
+                    save_dlg.InitialDirectory = Convert.ToString(Environment.SpecialFolder.MyDocuments);
+                    save_dlg.Filter = "Your extension here (*.PDF)|*.pdf|(*.XLSX)|*.xlsx|(*.DOCX)|*.docx|All Files (*.*)|*.*";
+                    save_dlg.FilterIndex = 1;
+                    string oldPathAndName = "D:\\File_de_xuat\\" + m_lbl_file_name.Text.Trim();
+                    if (save_dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        string newPathAndName = save_dlg.FileName;
+                        System.IO.File.Copy(oldPathAndName, newPathAndName);
+                        MessageBox.Show("Bạn đã lưu file thành công","Thông báo");
+                    }
+                }
+                else
+                    MessageBox.Show("Chưa có file đính kèm\n Bạn không thể tải về","Thông báo");
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_xoa_file_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa file đính kèm không?", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    m_e_file_mode = DataEntryFileMode.DeleteFile;
+                    m_str_link_old = m_lbl_file_name.Text;
+                    m_lbl_file_name.Text = "";
+                    save_data();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            
+            }
+            catch (System.Exception v_e)
             {
 
                 CSystemLog_301.ExceptionHandle(v_e);
