@@ -47,10 +47,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.m_cbo_loai_de_xuat = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.m_cmd_file_dinh_kem = new System.Windows.Forms.Button();
             this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
             this.m_lbl_file_name = new System.Windows.Forms.Label();
+            this.m_cmd_file_dinh_kem = new SIS.Controls.Button.SiSButton();
             this.m_dtp_thang = new BCTKApp.TCDatetime();
+            this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_xoa_file = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -236,19 +238,6 @@
             this.label7.TabIndex = 34;
             this.label7.Text = "File đính kèm";
             // 
-            // m_cmd_file_dinh_kem
-            // 
-            this.m_cmd_file_dinh_kem.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.m_cmd_file_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_file_dinh_kem.ImageIndex = 2;
-            this.m_cmd_file_dinh_kem.ImageList = this.ImageList;
-            this.m_cmd_file_dinh_kem.Location = new System.Drawing.Point(136, 229);
-            this.m_cmd_file_dinh_kem.Name = "m_cmd_file_dinh_kem";
-            this.m_cmd_file_dinh_kem.Size = new System.Drawing.Size(146, 25);
-            this.m_cmd_file_dinh_kem.TabIndex = 42;
-            this.m_cmd_file_dinh_kem.Text = "Chọn file đính kèm";
-            this.m_cmd_file_dinh_kem.UseVisualStyleBackColor = true;
-            // 
             // m_ofd_chon_file
             // 
             this.m_ofd_chon_file.FileName = "File đề xuất";
@@ -257,11 +246,25 @@
             // 
             this.m_lbl_file_name.AutoSize = true;
             this.m_lbl_file_name.ForeColor = System.Drawing.Color.DarkBlue;
-            this.m_lbl_file_name.Location = new System.Drawing.Point(140, 257);
+            this.m_lbl_file_name.Location = new System.Drawing.Point(133, 232);
             this.m_lbl_file_name.Name = "m_lbl_file_name";
-            this.m_lbl_file_name.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_file_name.Size = new System.Drawing.Size(136, 13);
             this.m_lbl_file_name.TabIndex = 34;
-            this.m_lbl_file_name.Text = "...";
+            this.m_lbl_file_name.Text = "Hiện chưa có file đính kèm";
+            // 
+            // m_cmd_file_dinh_kem
+            // 
+            this.m_cmd_file_dinh_kem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_file_dinh_kem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_file_dinh_kem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_file_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_file_dinh_kem.ImageIndex = 3;
+            this.m_cmd_file_dinh_kem.ImageList = this.ImageList;
+            this.m_cmd_file_dinh_kem.Location = new System.Drawing.Point(136, 248);
+            this.m_cmd_file_dinh_kem.Name = "m_cmd_file_dinh_kem";
+            this.m_cmd_file_dinh_kem.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_file_dinh_kem.TabIndex = 43;
+            this.m_cmd_file_dinh_kem.Text = "Chọn file";
             // 
             // m_dtp_thang
             // 
@@ -274,11 +277,41 @@
             this.m_dtp_thang.TabIndex = 1;
             this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
             // 
+            // m_cmd_xem_file
+            // 
+            this.m_cmd_xem_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xem_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xem_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xem_file.ImageIndex = 6;
+            this.m_cmd_xem_file.ImageList = this.ImageList;
+            this.m_cmd_xem_file.Location = new System.Drawing.Point(230, 248);
+            this.m_cmd_xem_file.Name = "m_cmd_xem_file";
+            this.m_cmd_xem_file.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xem_file.TabIndex = 43;
+            this.m_cmd_xem_file.Text = "Tải file";
+            // 
+            // m_cmd_xoa_file
+            // 
+            this.m_cmd_xoa_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xoa_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xoa_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xoa_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xoa_file.ImageIndex = 4;
+            this.m_cmd_xoa_file.ImageList = this.ImageList;
+            this.m_cmd_xoa_file.Location = new System.Drawing.Point(324, 248);
+            this.m_cmd_xoa_file.Name = "m_cmd_xoa_file";
+            this.m_cmd_xoa_file.Size = new System.Drawing.Size(87, 28);
+            this.m_cmd_xoa_file.TabIndex = 43;
+            this.m_cmd_xoa_file.Text = "Xóa file";
+            // 
             // F566_V_GD_DE_XUAT_VPP_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 341);
+            this.Controls.Add(this.m_cmd_xoa_file);
+            this.Controls.Add(this.m_cmd_xem_file);
             this.Controls.Add(this.m_cmd_file_dinh_kem);
             this.Controls.Add(this.m_dtp_thang);
             this.Controls.Add(this.m_cbo_loai_de_xuat);
@@ -326,6 +359,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
         private System.Windows.Forms.Label m_lbl_file_name;
-        private System.Windows.Forms.Button m_cmd_file_dinh_kem;
+        internal SIS.Controls.Button.SiSButton m_cmd_file_dinh_kem;
+        internal SIS.Controls.Button.SiSButton m_cmd_xem_file;
+        internal SIS.Controls.Button.SiSButton m_cmd_xoa_file;
     }
 }

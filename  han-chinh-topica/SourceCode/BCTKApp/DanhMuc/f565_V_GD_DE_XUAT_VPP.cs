@@ -141,6 +141,7 @@ namespace BCTKApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_de_xuat = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_dtp_thang = new BCTKApp.TCDatetime();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cbo_loai_de_xuat = new System.Windows.Forms.ComboBox();
@@ -150,7 +151,6 @@ namespace BCTKApp
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_tieu_de = new System.Windows.Forms.Label();
             this.m_lbl_thang = new System.Windows.Forms.Label();
-            this.m_dtp_thang = new BCTKApp.TCDatetime();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_de_xuat)).BeginInit();
             this.panel1.SuspendLayout();
@@ -300,6 +300,17 @@ namespace BCTKApp
             this.panel1.Size = new System.Drawing.Size(901, 152);
             this.panel1.TabIndex = 23;
             // 
+            // m_dtp_thang
+            // 
+            this.m_dtp_thang.AllowNull = BCTKApp.TCDatetime.AL.Y;
+            this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
+            this.m_dtp_thang.Location = new System.Drawing.Point(323, 48);
+            this.m_dtp_thang.Mask = "00/0000";
+            this.m_dtp_thang.Name = "m_dtp_thang";
+            this.m_dtp_thang.Size = new System.Drawing.Size(81, 20);
+            this.m_dtp_thang.TabIndex = 53;
+            this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
+            // 
             // m_cbo_phap_nhan
             // 
             this.m_cbo_phap_nhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -388,17 +399,6 @@ namespace BCTKApp
             this.m_lbl_thang.Size = new System.Drawing.Size(38, 13);
             this.m_lbl_thang.TabIndex = 2;
             this.m_lbl_thang.Text = "Tháng";
-            // 
-            // m_dtp_thang
-            // 
-            this.m_dtp_thang.AllowNull = BCTKApp.TCDatetime.AL.Y;
-            this.m_dtp_thang.Format = BCTKApp.TCDatetime.DinhDang.MM_yyyy;
-            this.m_dtp_thang.Location = new System.Drawing.Point(323, 48);
-            this.m_dtp_thang.Mask = "00/0000";
-            this.m_dtp_thang.Name = "m_dtp_thang";
-            this.m_dtp_thang.Size = new System.Drawing.Size(81, 20);
-            this.m_dtp_thang.TabIndex = 53;
-            this.m_dtp_thang.ValidatingType = typeof(System.DateTime);
             // 
             // f565_V_GD_DE_XUAT_VPP
             // 
@@ -504,7 +504,7 @@ namespace BCTKApp
             CGridUtils.Dataset2C1Grid(m_ds_v_gd_de_xuat, m_grv_de_xuat, m_obj_trans);
             CGridUtils.MakeSoTT(0, m_grv_de_xuat);
             m_grv_de_xuat.AllowResizing = AllowResizingEnum.Both;
-            create_button_upload_file_2_grid(m_ds_v_gd_de_xuat);
+            //create_button_upload_file_2_grid(m_ds_v_gd_de_xuat);
             m_grv_de_xuat.Redraw = true;
         }
         private void load_data_2_cbo_phap_nhan()
@@ -605,7 +605,6 @@ namespace BCTKApp
             v_btn_up_load_file.Text = "Up load file";
             v_btn_up_load_file.Tag = "Up load file";
 
-            v_btn_up_load_file.Click += v_btn_up_load_file_Click;
 
             for (v_i_rows = 0; v_i_rows < m_grv_de_xuat.Rows.Count -1 ; v_i_rows++)
                 m_list_button.Add(new HostedControl(m_grv_de_xuat, v_btn_up_load_file, v_i_rows, (int)e_col_Number.LINK));
@@ -672,7 +671,6 @@ namespace BCTKApp
             m_cbo_phap_nhan.SelectedIndexChanged += m_cbo_phap_nhan_SelectedIndexChanged;
             m_grv_de_xuat.DoubleClick += m_grv_de_xuat_DoubleClick;
             m_grv_de_xuat.CellButtonClick += m_grv_de_xuat_CellButtonClick;
-            this.m_grv_de_xuat.Paint += m_grv_de_xuat_Paint;
         }
 
         #endregion
@@ -807,17 +805,6 @@ namespace BCTKApp
             }
         }
 
-
-        private void v_btn_up_load_file_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            MessageBox.Show("Click on row: "+btn.Tag);
-        }
-        private void m_grv_de_xuat_Paint(object sender, PaintEventArgs e)
-        {
-            foreach (HostedControl hosted in m_list_button)
-                hosted.UpdatePosition();
-        }
         #endregion
 
 
