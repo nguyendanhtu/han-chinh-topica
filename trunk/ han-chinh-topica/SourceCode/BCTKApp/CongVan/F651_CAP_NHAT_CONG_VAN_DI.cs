@@ -31,12 +31,12 @@ namespace BCTKApp.CongVan
             switch (m_e_form_mode)
             {
                 case eFormMode.DI_NOI_BO:
-                    m_lbl_title.Text = "THÊM MỚI VĂN BẢN ĐI - NỘI BỘ";
+                    m_lbl_title.Text = "THÊM MỚI VĂN BẢN ĐI";
                     m_rdb_noi_bo.Checked = true;
                     break;
 
                 case eFormMode.DI_BEN_NGOAI:
-                    m_lbl_title.Text = "THÊM MỚI VĂN BẢN ĐI - BÊN NGOÀI";
+                    m_lbl_title.Text = "THÊM MỚI VĂN BẢN ĐI";
                     m_rdb_ben_ngoai.Checked = true;
                     break;
             }
@@ -57,12 +57,12 @@ namespace BCTKApp.CongVan
             switch (m_e_form_mode)
             {
                 case eFormMode.DI_NOI_BO:
-                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - NỘI BỘ";
+                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI ";
                     m_rdb_noi_bo.Checked = true;
                     break;
 
                 case eFormMode.DI_BEN_NGOAI:
-                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI - BÊN NGOÀI";
+                    m_lbl_title.Text = "CẬP NHẬT VĂN BẢN ĐI";
                     m_rdb_ben_ngoai.Checked = true;
                     break;
             }
@@ -353,24 +353,25 @@ namespace BCTKApp.CongVan
                                                          : ID_LOAI_VAN_THU.CONG_VAN_DI_BEN_NGOAI;
                 v_us_gd_van_thu.dcID_PHAP_NHAN = CIPConvert.ToDecimal(m_cbx_phap_nhan.SelectedValue);
 
-                if (m_dc_id_cong_van == 0)
-                {
-                    v_us_gd_van_thu.Insert();
-                    US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
-                    DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
-                    v_us.FillDataset(v_ds, "where ma_tu_dien='" + m_cbx_phap_nhan.Text + "'");
-                    if (v_ds.CM_DM_TU_DIEN.Count > 0)
-                    {
-                        string v_str_so = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN_NGAN].ToString();
-                        string v_str_nam = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN].ToString();
-                        v_str_so = CIPConvert.ToStr((CIPConvert.ToDecimal(v_str_so) + 1), "0#");
-                        v_us.DataRow2Me(v_ds.Tables[0].Rows[0]);
-                        v_us.strTEN = v_str_nam;
-                        v_us.strTEN_NGAN = v_str_so;
-                        v_us.Update();
-                    }
-                }
-                else v_us_gd_van_thu.Update();
+				//Tu Dong nhay so cong van
+				//if (m_dc_id_cong_van == 0)
+				//{
+				//	v_us_gd_van_thu.Insert();
+				//	US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+				//	DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+				//	v_us.FillDataset(v_ds, "where ma_tu_dien='" + m_cbx_phap_nhan.Text + "'");
+				//	if (v_ds.CM_DM_TU_DIEN.Count > 0)
+				//	{
+				//		string v_str_so = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN_NGAN].ToString();
+				//		string v_str_nam = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN].ToString();
+				//		v_str_so = CIPConvert.ToStr((CIPConvert.ToDecimal(v_str_so) + 1), "0#");
+				//		v_us.DataRow2Me(v_ds.Tables[0].Rows[0]);
+				//		v_us.strTEN = v_str_nam;
+				//		v_us.strTEN_NGAN = v_str_so;
+				//		v_us.Update();
+				//	}
+				//}
+				//else v_us_gd_van_thu.Update();
                 return true;
             }
             catch (Exception v_e)
@@ -381,15 +382,15 @@ namespace BCTKApp.CongVan
         }
         private void load_thong_tin_so_va_ky_hieu_van_ban()
         {
-            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
-            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
-            v_us.FillDataset(v_ds, "where ma_tu_dien='" + m_cbx_phap_nhan.Text + "'");
-            if (v_ds.CM_DM_TU_DIEN.Count > 0)
-            {
-                string v_str_so = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN_NGAN].ToString();
-                string v_str_nam = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN].ToString();
-                m_txt_so.Text = v_str_so + "/" + v_str_nam;
-            }
+			//US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+			//DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+			//v_us.FillDataset(v_ds, "where ma_tu_dien='" + m_cbx_phap_nhan.Text + "'");
+			//if (v_ds.CM_DM_TU_DIEN.Count > 0)
+			//{
+			//	string v_str_so = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN_NGAN].ToString();
+			//	string v_str_nam = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN].ToString();
+			//	m_txt_so.Text = v_str_so + "/" + v_str_nam;
+			//}
         }
         private void clear_form_data()
         {

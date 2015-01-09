@@ -35,8 +35,8 @@ namespace BCTKApp
 
         private void set_define_events()
         {
-            this.LostFocus += m_txt_so_va_ky_hieu_LostFocus;
-            this.GotFocus += m_txt_so_va_ky_hieu_GotFocus;
+            //this.LostFocus += m_txt_so_va_ky_hieu_LostFocus;
+            //this.GotFocus += m_txt_so_va_ky_hieu_GotFocus;
         }
 
         private void m_txt_so_va_ky_hieu_GotFocus(object sender, EventArgs e)

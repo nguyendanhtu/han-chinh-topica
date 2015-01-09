@@ -100,7 +100,7 @@ namespace BCTKApp.App_Code
                     smtp.EnableSsl = true;
                     smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
                     smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
-                    smtp.Timeout = 20000;
+                    smtp.Timeout = 200000;
                 }
                 System.Net.Mail.MailMessage ms = new System.Net.Mail.MailMessage(fromAddress, ip_str_toEmail);
                 if (!ip_str_file_name.Equals(""))
