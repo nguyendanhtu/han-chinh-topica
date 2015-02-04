@@ -8,6 +8,8 @@ using System.IO;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Diagnostics;
+using System.Net.Mail;
+using System.Net.Mime;
 
 namespace BCTKApp.App_Code
 {
@@ -98,17 +100,27 @@ namespace BCTKApp.App_Code
                     smtp.Host = "smtp.gmail.com";
                     smtp.Port = 587;
                     smtp.EnableSsl = true;
-                    smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+					smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+					smtp.UseDefaultCredentials = false;
                     smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
-                    smtp.Timeout = 200000;
+                    smtp.Timeout = int.MaxValue;
                 }
                 System.Net.Mail.MailMessage ms = new System.Net.Mail.MailMessage(fromAddress, ip_str_toEmail);
                 if (!ip_str_file_name.Equals(""))
                 {
+					string v_str_file_save = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "PdfScan\\" + ip_str_file_name.Replace("210.245.89.37/FileUpload_Vanthu/", "");
+					if(!File.Exists(v_str_file_save))
                     BCTKApp.App_Code.HelpUtils.DownloadInApp(AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "PdfScan", ip_str_file_name.Replace("210.245.89.37/FileUpload_Vanthu/", ""));
-                    string v_str_file_save = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "PdfScan\\" + ip_str_file_name.Replace("210.245.89.37/FileUpload_Vanthu/", "");
-                    System.Net.Mail.Attachment v_attach = new System.Net.Mail.Attachment(v_str_file_save);
-                    ms.Attachments.Add(v_attach);
+					// Create  the file attachment for this e-mail message.
+					Attachment data = new Attachment(v_str_file_save, MediaTypeNames.Application.Octet);
+					// Add time stamp information for the file.
+					ContentDisposition disposition = data.ContentDisposition;
+					disposition.CreationDate = System.IO.File.GetCreationTime(v_str_file_save);
+					disposition.ModificationDate = System.IO.File.GetLastWriteTime(v_str_file_save);
+					disposition.ReadDate = System.IO.File.GetLastAccessTime(v_str_file_save);
+					// Add the file attachment to this e-mail message.
+					//ms.Attachments.Add(data);
+					ms.Attachments.Insert(0, data);
                 }
 
                 ms.Subject = ip_str_subject;

@@ -354,24 +354,24 @@ namespace BCTKApp.CongVan
                 v_us_gd_van_thu.dcID_PHAP_NHAN = CIPConvert.ToDecimal(m_cbx_phap_nhan.SelectedValue);
 
 				//Tu Dong nhay so cong van
-				//if (m_dc_id_cong_van == 0)
-				//{
-				//	v_us_gd_van_thu.Insert();
-				//	US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
-				//	DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
-				//	v_us.FillDataset(v_ds, "where ma_tu_dien='" + m_cbx_phap_nhan.Text + "'");
-				//	if (v_ds.CM_DM_TU_DIEN.Count > 0)
-				//	{
-				//		string v_str_so = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN_NGAN].ToString();
-				//		string v_str_nam = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN].ToString();
-				//		v_str_so = CIPConvert.ToStr((CIPConvert.ToDecimal(v_str_so) + 1), "0#");
-				//		v_us.DataRow2Me(v_ds.Tables[0].Rows[0]);
-				//		v_us.strTEN = v_str_nam;
-				//		v_us.strTEN_NGAN = v_str_so;
-				//		v_us.Update();
-				//	}
-				//}
-				//else v_us_gd_van_thu.Update();
+				if (m_dc_id_cong_van == 0)
+				{
+					v_us_gd_van_thu.Insert();
+					//US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+					//DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+					//v_us.FillDataset(v_ds, "where ma_tu_dien='" + m_cbx_phap_nhan.Text + "'");
+					//if (v_ds.CM_DM_TU_DIEN.Count > 0)
+					//{
+					//	string v_str_so = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN_NGAN].ToString();
+					//	string v_str_nam = v_ds.Tables[0].Rows[0][CM_DM_TU_DIEN.TEN].ToString();
+					//	v_str_so = CIPConvert.ToStr((CIPConvert.ToDecimal(v_str_so) + 1), "0#");
+					//	v_us.DataRow2Me(v_ds.Tables[0].Rows[0]);
+					//	v_us.strTEN = v_str_nam;
+					//	v_us.strTEN_NGAN = v_str_so;
+					//	v_us.Update();
+					//}
+				}
+				else v_us_gd_van_thu.Update();
                 return true;
             }
             catch (Exception v_e)
