@@ -125,9 +125,13 @@ namespace BCTKApp.CongVan
 							&& !v_str_send_to.Contains("@yahoo.com")
 							&& !v_str_send_to.Contains("@topica.edu.vn")) v_str_send_to += "@topica.edu.vn";
 						string v_str_web_url = get_html_contain(ConfigurationSettings.AppSettings["WEB_URL"] + "/ChucNang/f604_xac_nhan_cong_van.aspx?mail="+v_str_send_to+"&id_cong_van=" + v_us.dcID, v_us.strTEN_LOAI_VA_TRICH_YEU_ND);
-						HelpUtils.SendEmailWithHtmlContent(v_str_send_to, "[QuanLyVanThu] Ban hanh van ban"
+						if (!HelpUtils.SendEmailWithHtmlContent(v_str_send_to, "[QuanLyVanThu] Ban hanh van ban"
 						, v_str_web_url
-						, v_us.strLINK_SCAN);
+						, v_us.strLINK_SCAN))
+						{
+							MessageBox.Show("Đã có lỗi trong quá trình thực hiện, bạn vui lòng thực hiện lại thao tác!", "Thông báo");
+							return;
+						}
 					}
 
 					if (!v_us.strDANH_SACH_EMAIL_BAN_HANH.Contains(v_arr_email[i]) && !v_arr_email[i].Trim().Equals(""))
@@ -136,6 +140,8 @@ namespace BCTKApp.CongVan
 					}
 				}
 				v_us.Update();
+				MessageBox.Show("Đã gửi email ban hành văn bản thành công!", "Thông báo");
+				this.Close();
 			}
 			catch (Exception v_e)
 			{
@@ -144,8 +150,7 @@ namespace BCTKApp.CongVan
 				return;
 			}
 			
-			MessageBox.Show("Đã gửi email ban hành văn bản thành công!", "Thông báo");
-			this.Close();
+			
 
 		}
 		void m_cmd_xem_file_Click(object sender, EventArgs e)

@@ -628,9 +628,10 @@ namespace BCTKApp
             m_us.Search(m_ds, CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue), v_dc_id_loai_cong_van, CIPConvert.ToDatetime(v_str_from_date, "dd/MM/yyyy"), CIPConvert.ToDatetime(v_str_to_date, "dd/MM/yyyy"), m_txt_tu_khoa.Text.Trim());
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            if (m_fg.Row < 0) return;
+			//Neu khong co du lieu thi return
+            if (m_fg.Rows.Count < 0) return;
 
-            for (int i = m_fg.Row; i < m_fg.Rows.Count; i++)
+            for (int i = m_fg.Rows.Fixed; i < m_fg.Rows.Count; i++)
             {
                 if (m_fg.Rows[i][(int)e_col_Number.FILE_SCAN] != null) 
                      m_fg.Rows[i][(int)e_col_Number.FILE_SCAN]=m_fg.Rows[i][(int)e_col_Number.FILE_SCAN].ToString().Replace("210.245.89.37/FileUpload_Vanthu/", "");
