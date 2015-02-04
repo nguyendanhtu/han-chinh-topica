@@ -542,11 +542,14 @@ namespace BCTKApp
 
         private void export_2_excel()
         {
+            m_grv_bill.Cols[2].Visible = false;
             CExcelReport v_obj_excel_report = new CExcelReport("f512_bill_bi_tra_lai.xls", 6, 1);
             v_obj_excel_report.AddFindAndReplaceItem("<tu_ngay>", m_dtp_tu_ngay.Text);
             v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", m_dtp_den_ngay.Text);
             v_obj_excel_report.FindAndReplace(false);
+            
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_grv_bill, 0, m_grv_bill.Cols.Count - 1, true);
+            m_grv_bill.Cols[2].Visible = true;
         }
         private void set_define_events()
         {
