@@ -412,7 +412,7 @@ namespace BCTKApp
         private enum e_col_Number
         {
             TEN_PHONG_BAN = 3
-,
+                ,
             ID_PHONG_BAN = 1
                 ,
             TONG_SO_BILL = 4
@@ -422,8 +422,10 @@ namespace BCTKApp
             TONG_SO_TIEN = 5
                 ,
             VAT = 6
-                , TONG_TIEN_THANH_TOAN = 7
-
+                , 
+            TONG_TIEN_THANH_TOAN = 7
+                ,
+            UU_TIEN = 8
         }
         #endregion
 
@@ -892,6 +894,7 @@ namespace BCTKApp
 
         private void export_2_excel()
         {
+            m_fg.Cols[(int)e_col_Number.UU_TIEN].Visible = false;
             m_dat_chon_thang = CIPConvert.ToDatetime("01/" + m_dt_chon_thang.Text);
             DateTime v_dt_tu_ngay = m_dat_chon_thang;
             DateTime v_dt_den_ngay = m_dat_chon_thang.AddMonths(1).AddDays(-m_dat_chon_thang.Day);
@@ -907,6 +910,7 @@ namespace BCTKApp
             //v_obj_excel_report.AddFindAndReplaceItem("<trang_thai>", m_cbo_trang_thai.Text);
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
+            m_fg.Cols[(int)e_col_Number.UU_TIEN].Visible = true;
         }
 
         private void f406_V_TONG_HOP_BILL_THEO_PHONG_BAN_KeyDown(object sender, KeyEventArgs e)
