@@ -124,6 +124,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
         v_us.FillDataset(v_ds, "where id=" + v_id_trung_tam);
         m_lbl_ten_trung_tam.Text = v_ds.DM_PHONG_BAN.Rows[0]["TEN_PHONG_BAN"].ToString();
         m_lbl_thong_tim_grv_dm_bill.Text = "(Chưa có Bill nào được import)";
+        m_lbl_thong_tim_grv_dm_bill.ForeColor = System.Drawing.Color.Red;
         m_cmd_upload.Visible = true;
         m_cmd_kiem_tra_va_import.Visible = true;
     }
@@ -317,6 +318,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             //m_cmd_kiem_tra_va_import.Visible = false;
             //thong_bao("Đã cập nhật thành công " + lst_import.Count + " bill!");
             m_lbl_thong_tim_grv_dm_bill.Text = "Có tất cả " + lst_order.Count + " bill hợp lệ!";
+            m_lbl_thong_tim_grv_dm_bill.ForeColor = System.Drawing.Color.Green;
 			m_grv_dm_bill.DataSource = lst_order;
             m_grv_dm_bill.DataBind();
         }
@@ -328,6 +330,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             m_grv_dm_bill.Visible = true;
             ip_grv.DataBind();
             m_lbl_thong_tim_grv_dm_bill.Text = v_str_mess;
+            m_lbl_thong_tim_grv_dm_bill.ForeColor = System.Drawing.Color.Red;
             //check_validate_grid_is_ok();
         }
 
@@ -346,6 +349,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             Session["TempImportExcel"] = null;
             thong_bao("Đã cập nhật thành công " + lst_import.Count + " bill!");
             m_lbl_thong_tim_grv_dm_bill.Text = "Đã cập nhật thành công " + lst_import.Count + " bill!";
+            m_lbl_thong_tim_grv_dm_bill.ForeColor = System.Drawing.Color.Green;
             m_grv_dm_bill.DataSource = null;
             m_grv_dm_bill.DataBind();
         }
@@ -357,6 +361,7 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
             m_grv_dm_bill.Visible = true;
             m_grv_dm_bill.DataBind();
             m_lbl_thong_tim_grv_dm_bill.Text = v_str_mess;
+            m_lbl_thong_tim_grv_dm_bill.ForeColor = System.Drawing.Color.Red;
             //check_validate_grid_is_ok();
         }
     }
