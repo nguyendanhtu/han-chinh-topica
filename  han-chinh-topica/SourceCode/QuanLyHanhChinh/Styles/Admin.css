@@ -313,7 +313,7 @@ input[type=text]:focus, textarea:focus {
 
 .cssPageTitleBG {
     border: solid 1px #b4b4b4;
-    background-color: ActiveCaption;
+    background-color: aliceblue;
     height: 26px;
 }
 
