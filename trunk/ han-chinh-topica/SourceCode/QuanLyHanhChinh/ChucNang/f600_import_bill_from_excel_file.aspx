@@ -128,9 +128,9 @@
 					<table width="100%">
 						<tr>
 							<td class="cssPageTitleBG" colspan="6">
-								<asp:Label ID="m_lbl_danh_muc_bill" runat="server" CssClass="cssPageTitle" ForeColor="DarkBlue"
-									Text="Danh sách các Bill đã được import"></asp:Label>
-								<asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle"
+								<%--<asp:Label ID="m_lbl_danh_muc_bill" runat="server" CssClass="cssPageTitle" ForeColor="DarkBlue"
+									Text="Danh sách các Bill đã được import"></asp:Label>--%>
+								<asp:Label ID="m_lbl_thong_tim_grv_dm_bill" runat="server" CssClass="cssPageTitle" style="display:inline"
 									ForeColor="Red"></asp:Label>
 								<%-- &nbsp;<span class="expand-collapse-text initial-expand"></span><span class="expand-collapse-text"></span>--%>
 							</td>
