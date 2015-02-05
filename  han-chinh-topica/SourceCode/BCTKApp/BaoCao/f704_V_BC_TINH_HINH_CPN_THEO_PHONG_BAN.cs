@@ -588,7 +588,9 @@ namespace BCTKApp
             v_obj_excel_report.AddFindAndReplaceItem("<den_ngay>", v_dt_den_ngay.ToShortDateString());
             v_obj_excel_report.FindAndReplace(false);
             v_obj_excel_report.Export2ExcelWithoutFixedRows(m_fg, 0, m_fg.Cols.Count - 1, true);
+            //v_obj_excel_report.Export2ExcelWithoutFixedRows_saveDialog(v_str_file_name, m_fg, 0, m_fg.Cols.Count - 1, true);
         }
+
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -634,7 +636,14 @@ namespace BCTKApp
 
         private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
         {
-            export_2_excel();
+            try {
+                export_2_excel();
+            }
+            catch (Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+            
         }
         private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
         {
