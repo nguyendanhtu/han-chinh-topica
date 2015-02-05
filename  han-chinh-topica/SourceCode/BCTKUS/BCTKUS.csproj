@@ -143,6 +143,7 @@
     <Compile Include="US_DM_VPP.cs" />
     <Compile Include="US_DOC_COLUMN_COMMENT.cs" />
     <Compile Include="US_DOC_TABLE_COMMENT.cs" />
+    <Compile Include="US_GD_BAN_HANH_VAN_BAN.cs" />
     <Compile Include="US_GD_DE_XUAT.cs" />
     <Compile Include="US_GD_DE_XUAT_VPP.cs" />
     <Compile Include="US_GD_DINH_MUC.cs" />
@@ -160,6 +161,7 @@
     <Compile Include="US_HT_QUAN_HE_SU_DUNG_DU_LIEU.cs" />
     <Compile Include="US_HT_QUYEN_GROUP.cs" />
     <Compile Include="US_HT_USER_GROUP.cs" />
+    <Compile Include="US_HT_VAN_THU_HISTORY.cs" />
     <Compile Include="US_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.cs" />
     <Compile Include="US_RPT_BANG_DINH_MUC.cs" />
     <Compile Include="US_RPT_BC_CHI_TIET_DM.cs" />
@@ -171,6 +173,7 @@
     <Compile Include="US_TONG_HOP_CPN_THEO_PHONG_BAN.cs" />
     <Compile Include="US_UT_SEQUENCES.cs" />
     <Compile Include="US_V_BANG_CO_SO_DINH_MUC.cs" />
+    <Compile Include="US_V_BAN_HANH_VAN_BAN.cs" />
     <Compile Include="US_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.cs" />
     <Compile Include="US_V_BC_CHI_TIET_DM.cs" />
     <Compile Include="US_V_BC_TINH_HINH_CPN_THEO_PHONG_BAN.cs" />
@@ -194,11 +197,13 @@
     <Compile Include="US_V_GD_VAN_THU_ALL.cs" />
     <Compile Include="US_V_HT_LOG_TRUY_CAP.cs" />
     <Compile Include="US_V_HT_NGUOI_SU_DUNG.cs" />
+    <Compile Include="US_V_HT_VAN_THU_HISTORY.cs" />
     <Compile Include="US_V_TONG_HOP_BILL_THEO_PHONG_BAN.cs" />
     <Compile Include="US_V_TONG_HOP_CHI_PHI_VPP.cs" />
     <Compile Include="US_V_TONG_HOP_CPN_THEO_PHONG_BAN.cs" />
     <Compile Include="US_V_TONG_HOP_CPN_THEO_PHONG_BAN_PN.cs" />
     <Compile Include="US_V_TONG_TIEN_BILL_THEO_PHONG_BAN.cs" />
+    <Compile Include="VanThuHistory.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

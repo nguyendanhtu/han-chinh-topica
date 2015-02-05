@@ -204,6 +204,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DOC_TABLE_COMMENT.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_BAN_HANH_VAN_BAN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_BAN_HANH_VAN_BAN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_DE_XUAT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -298,6 +303,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_HT_VAN_THU_HISTORY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_VAN_THU_HISTORY.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -352,6 +362,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_BANG_CO_SO_DINH_MUC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_BAN_HANH_VAN_BAN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_BAN_HANH_VAN_BAN.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -476,6 +491,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_HT_VAN_THU_HISTORY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_HT_VAN_THU_HISTORY.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_TONG_HOP_BILL_THEO_PHONG_BAN.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -693,6 +713,17 @@
     <None Include="DS_DOC_TABLE_COMMENT.xss">
       <DependentUpon>DS_DOC_TABLE_COMMENT.xsd</DependentUpon>
     </None>
+    <None Include="DS_GD_BAN_HANH_VAN_BAN.xsc">
+      <DependentUpon>DS_GD_BAN_HANH_VAN_BAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_BAN_HANH_VAN_BAN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_BAN_HANH_VAN_BAN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_BAN_HANH_VAN_BAN.xss">
+      <DependentUpon>DS_GD_BAN_HANH_VAN_BAN.xsd</DependentUpon>
+    </None>
     <None Include="DS_GD_DE_XUAT.xsc">
       <DependentUpon>DS_GD_DE_XUAT.xsd</DependentUpon>
     </None>
@@ -891,6 +922,17 @@
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </None>
+    <None Include="DS_HT_VAN_THU_HISTORY.xsc">
+      <DependentUpon>DS_HT_VAN_THU_HISTORY.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_VAN_THU_HISTORY.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_VAN_THU_HISTORY.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_HT_VAN_THU_HISTORY.xss">
+      <DependentUpon>DS_HT_VAN_THU_HISTORY.xsd</DependentUpon>
+    </None>
     <None Include="DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.xsc">
       <DependentUpon>DS_RPT_BANG_CHI_PHI_CUOI_THANG_NCC.xsd</DependentUpon>
     </None>
@@ -1011,6 +1053,17 @@
     </None>
     <None Include="DS_V_BANG_CO_SO_DINH_MUC.xss">
       <DependentUpon>DS_V_BANG_CO_SO_DINH_MUC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_BAN_HANH_VAN_BAN.xsc">
+      <DependentUpon>DS_V_BAN_HANH_VAN_BAN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_BAN_HANH_VAN_BAN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_BAN_HANH_VAN_BAN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_BAN_HANH_VAN_BAN.xss">
+      <DependentUpon>DS_V_BAN_HANH_VAN_BAN.xsd</DependentUpon>
     </None>
     <None Include="DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.xsc">
       <DependentUpon>DS_V_BC_CHI_PHI_THEO_CAC_PHAP_NHAN.xsd</DependentUpon>
@@ -1275,6 +1328,17 @@
     </None>
     <None Include="DS_V_HT_NGUOI_SU_DUNG.xss">
       <DependentUpon>DS_V_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_HT_VAN_THU_HISTORY.xsc">
+      <DependentUpon>DS_V_HT_VAN_THU_HISTORY.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_HT_VAN_THU_HISTORY.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_HT_VAN_THU_HISTORY.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_HT_VAN_THU_HISTORY.xss">
+      <DependentUpon>DS_V_HT_VAN_THU_HISTORY.xsd</DependentUpon>
     </None>
     <None Include="DS_V_TONG_HOP_BILL_THEO_PHONG_BAN.xsc">
       <DependentUpon>DS_V_TONG_HOP_BILL_THEO_PHONG_BAN.xsd</DependentUpon>
