@@ -189,7 +189,14 @@ Public Class CExcelReport
                 m_objExcelApp.Visible = True 'Not Display Excel
                 Dim v_strFilenameWithPath As String
                 v_strFilenameWithPath = m_strOutputPath & CType(Rnd() * 1000000000000, Int64)
-                m_objExcelApp.SaveWorkspace(v_strFilenameWithPath)
+                Try
+                    m_objExcelApp.SaveWorkspace(v_strFilenameWithPath)
+                Catch
+                    'm_objExcelApp.Workbooks.Close()
+                    Unmount()
+                    Return
+                End Try
+
                 'm_objExcelApp.Workbooks.Close()
                 Unmount()
             End If
