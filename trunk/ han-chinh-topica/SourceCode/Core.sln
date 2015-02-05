@@ -41,8 +41,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "QuanLyHanhChinh", "QuanLyHa
 		VWDPort = "56940"
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{0B501067-8311-4186-B27B-837A4FE05AA6}"
-EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -399,24 +397,6 @@ Global
 		{214A8906-7310-44A6-B4BC-D67476EA9AED}.SIPDebug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{214A8906-7310-44A6-B4BC-D67476EA9AED}.SIPDebug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{214A8906-7310-44A6-B4BC-D67476EA9AED}.SIPDebug|x86.ActiveCfg = Debug|Any CPU
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.BondDebug|Any CPU.ActiveCfg = Debug
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.BondDebug|Mixed Platforms.ActiveCfg = Debug
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.BondDebug|x86.ActiveCfg = Debug
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.Debug|Any CPU.ActiveCfg = Debug
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.Debug|x86.ActiveCfg = Debug
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.iFASDebug|Any CPU.ActiveCfg = Debug
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.iFASDebug|Mixed Platforms.ActiveCfg = Debug
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.iFASDebug|x86.ActiveCfg = Debug
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.PersonalBuild|Any CPU.ActiveCfg = Release
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.PersonalBuild|Mixed Platforms.ActiveCfg = Release
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.PersonalBuild|x86.ActiveCfg = Release
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.Release|Any CPU.ActiveCfg = Release
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.Release|Mixed Platforms.ActiveCfg = Release
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.Release|x86.ActiveCfg = Release
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.SIPDebug|Any CPU.ActiveCfg = Debug
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.SIPDebug|Mixed Platforms.ActiveCfg = Debug
-		{0B501067-8311-4186-B27B-837A4FE05AA6}.SIPDebug|x86.ActiveCfg = Debug
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

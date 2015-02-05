@@ -404,6 +404,15 @@ public partial class ChucNang_f600_import_bill_from_excel_file : System.Web.UI.P
                 v_us.strNOI_NHAN = lst_import[i].NOI_NHAN;
                 v_us.strNOI_DUNG = lst_import[i].NOI_DUNG;
                 v_us.datNGAY_GUI = CIPConvert.ToDatetime(lst_import[i].NGAY_GUI, "dd/MM/yyyy");
+				DateTime v_dat=new DateTime();
+				if (DateTime.TryParseExact(lst_import[i].NGAY_GUI, "dd/MM/yyyy", null, new DateTimeStyles(), out v_dat))
+				{
+					v_us.datNGAY_GUI = v_dat;
+				}
+				else
+				{
+					v_us.datNGAY_GUI = DateTime.FromOADate(Convert.ToDouble(lst_import[i]));
+				}
                 v_us.strNUOC_NGOAI = lst_import[i].NGOAI_NUOC;
                 v_us.strTRONG_NUOC = lst_import[i].TRONG_NUOC;
                 v_us.Insert();

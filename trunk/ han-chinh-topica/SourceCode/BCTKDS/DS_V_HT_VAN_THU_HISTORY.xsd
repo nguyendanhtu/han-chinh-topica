@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_HT_VAN_THU_HISTORY" targetNamespace="http://tempuri.org/DS_V_HT_VAN_THU_HISTORY.xsd" xmlns:mstns="http://tempuri.org/DS_V_HT_VAN_THU_HISTORY.xsd" xmlns="http://tempuri.org/DS_V_HT_VAN_THU_HISTORY.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ADMIN_SOFTConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ADMIN_SOFTConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BCTKDS.Properties.Settings.GlobalReference.Default.ADMIN_SOFTConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_HT_VAN_THU_HISTORYTableAdapter" GeneratorDataComponentClassName="V_HT_VAN_THU_HISTORYTableAdapter" Name="V_HT_VAN_THU_HISTORY" UserDataComponentName="V_HT_VAN_THU_HISTORYTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ADMIN_SOFTConnectionString2 (Settings)" DbObjectName="ADMIN_SOFT.dbo.V_HT_VAN_THU_HISTORY" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, ID_NGUOI_SU_DUNG, THOI_DIEM, HANH_DONG, GHI_CHU, GHI_CHU_1, GHI_CHU_2, TEN_TRUY_CAP, TEN FROM dbo.V_HT_VAN_THU_HISTORY</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ID_NGUOI_SU_DUNG" DataSetColumn="ID_NGUOI_SU_DUNG" />
+              <Mapping SourceColumn="THOI_DIEM" DataSetColumn="THOI_DIEM" />
+              <Mapping SourceColumn="HANH_DONG" DataSetColumn="HANH_DONG" />
+              <Mapping SourceColumn="GHI_CHU" DataSetColumn="GHI_CHU" />
+              <Mapping SourceColumn="GHI_CHU_1" DataSetColumn="GHI_CHU_1" />
+              <Mapping SourceColumn="GHI_CHU_2" DataSetColumn="GHI_CHU_2" />
+              <Mapping SourceColumn="TEN_TRUY_CAP" DataSetColumn="TEN_TRUY_CAP" />
+              <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_HT_VAN_THU_HISTORY" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_HT_VAN_THU_HISTORY" msprop:Generator_UserDSName="DS_V_HT_VAN_THU_HISTORY">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_HT_VAN_THU_HISTORY" msprop:Generator_TableClassName="V_HT_VAN_THU_HISTORYDataTable" msprop:Generator_TableVarName="tableV_HT_VAN_THU_HISTORY" msprop:Generator_TablePropName="V_HT_VAN_THU_HISTORY" msprop:Generator_RowDeletingName="V_HT_VAN_THU_HISTORYRowDeleting" msprop:Generator_RowChangingName="V_HT_VAN_THU_HISTORYRowChanging" msprop:Generator_RowEvHandlerName="V_HT_VAN_THU_HISTORYRowChangeEventHandler" msprop:Generator_RowDeletedName="V_HT_VAN_THU_HISTORYRowDeleted" msprop:Generator_UserTableName="V_HT_VAN_THU_HISTORY" msprop:Generator_RowChangedName="V_HT_VAN_THU_HISTORYRowChanged" msprop:Generator_RowEvArgName="V_HT_VAN_THU_HISTORYRowChangeEvent" msprop:Generator_RowClassName="V_HT_VAN_THU_HISTORYRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID_NGUOI_SU_DUNG" msprop:Generator_ColumnVarNameInTable="columnID_NGUOI_SU_DUNG" msprop:Generator_ColumnPropNameInRow="ID_NGUOI_SU_DUNG" msprop:Generator_ColumnPropNameInTable="ID_NGUOI_SU_DUNGColumn" msprop:Generator_UserColumnName="ID_NGUOI_SU_DUNG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="THOI_DIEM" msprop:Generator_ColumnVarNameInTable="columnTHOI_DIEM" msprop:Generator_ColumnPropNameInRow="THOI_DIEM" msprop:Generator_ColumnPropNameInTable="THOI_DIEMColumn" msprop:Generator_UserColumnName="THOI_DIEM" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="HANH_DONG" msprop:Generator_ColumnVarNameInTable="columnHANH_DONG" msprop:Generator_ColumnPropNameInRow="HANH_DONG" msprop:Generator_ColumnPropNameInTable="HANH_DONGColumn" msprop:Generator_UserColumnName="HANH_DONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GHI_CHU" msprop:Generator_ColumnVarNameInTable="columnGHI_CHU" msprop:Generator_ColumnPropNameInRow="GHI_CHU" msprop:Generator_ColumnPropNameInTable="GHI_CHUColumn" msprop:Generator_UserColumnName="GHI_CHU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GHI_CHU_1" msprop:Generator_ColumnVarNameInTable="columnGHI_CHU_1" msprop:Generator_ColumnPropNameInRow="GHI_CHU_1" msprop:Generator_ColumnPropNameInTable="GHI_CHU_1Column" msprop:Generator_UserColumnName="GHI_CHU_1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GHI_CHU_2" msprop:Generator_ColumnVarNameInTable="columnGHI_CHU_2" msprop:Generator_ColumnPropNameInRow="GHI_CHU_2" msprop:Generator_ColumnPropNameInTable="GHI_CHU_2Column" msprop:Generator_UserColumnName="GHI_CHU_2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_TRUY_CAP" msprop:Generator_ColumnVarNameInTable="columnTEN_TRUY_CAP" msprop:Generator_ColumnPropNameInRow="TEN_TRUY_CAP" msprop:Generator_ColumnPropNameInTable="TEN_TRUY_CAPColumn" msprop:Generator_UserColumnName="TEN_TRUY_CAP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN" msprop:Generator_ColumnVarNameInTable="columnTEN" msprop:Generator_ColumnPropNameInRow="TEN" msprop:Generator_ColumnPropNameInTable="TENColumn" msprop:Generator_UserColumnName="TEN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_HT_VAN_THU_HISTORY" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

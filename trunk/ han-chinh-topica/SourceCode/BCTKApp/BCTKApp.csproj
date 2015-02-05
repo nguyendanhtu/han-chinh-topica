@@ -282,6 +282,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CongVan\F660_danh_sach_ban_hanh_van_ban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CongVan\F660_lich_su_van_thu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RemoteAccessHelper.cs" />
     <Content Include="application_certificate.ico" />
     <Content Include="post_office.ico" />
