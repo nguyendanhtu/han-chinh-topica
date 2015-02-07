@@ -291,8 +291,13 @@
     <Compile Include="RemoteAccessHelper.cs" />
     <Content Include="application_certificate.ico" />
     <Content Include="post_office.ico" />
+    <None Include="Resources\Saki-Snowish-Document-search.ico" />
+    <None Include="Resources\Treetog-Junior-Folder-documents.ico" />
     <None Include="Resources\lorrygreen.jpg" />
     <None Include="Resources\1407849431_98245.jpg" />
+    <None Include="Resources\document.jpg" />
+    <None Include="Resources\Oxygen-Icons.org-Oxygen-Apps-preferences-contact-list.ico" />
+    <None Include="Resources\Mayosoft-Azullustre-URL-history.ico" />
     <Content Include="Resources\Reports\Output\Readme.txt" />
     <Content Include="Resources\Reports\Templates\Readme.txt" />
     <None Include="App.config">
@@ -800,6 +805,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CongVan\f653_ban_hanh_van_ban.resx">
       <DependentUpon>f653_ban_hanh_van_ban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongVan\F660_danh_sach_ban_hanh_van_ban.resx">
+      <DependentUpon>F660_danh_sach_ban_hanh_van_ban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongVan\F660_lich_su_van_thu.resx">
+      <DependentUpon>F660_lich_su_van_thu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f446_DM_V_GD_PHONG_BAN_DINH_MUC.resx">
       <DependentUpon>f446_DM_V_GD_PHONG_BAN_DINH_MUC.cs</DependentUpon>

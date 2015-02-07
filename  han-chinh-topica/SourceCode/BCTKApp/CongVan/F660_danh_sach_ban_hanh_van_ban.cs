@@ -23,6 +23,8 @@ using BCTKDS;
 using BCTKDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using BCTKApp.App_Code;
+using System.Configuration;
 
 namespace BCTKApp
 {
@@ -31,7 +33,6 @@ namespace BCTKApp
 
 	public class F660_danh_sach_ban_hanh_van_ban : System.Windows.Forms.Form
 	{
-		internal System.Windows.Forms.ImageList ImageList;
 		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
 		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
@@ -39,6 +40,17 @@ namespace BCTKApp
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
+		internal ImageList ImageList;
+		internal SIS.Controls.Button.SiSButton m_cmd_xem_file;
+		private Label m_lbl_title;
+		internal SIS.Controls.Button.SiSButton m_cmd_ban_hanh_lai_van_ban;
+		private TCDatetime m_txt_tu_ngay;
+		private TCDatetime m_txt_den_ngay;
+		private Label label1;
+		private Label label2;
+		private TextBox m_txt_tu_khoa;
+		internal SIS.Controls.Button.SiSButton m_cmd_search;
+		private Label label3;
 		private System.ComponentModel.IContainer components;
 
 		public F660_danh_sach_ban_hanh_van_ban()
@@ -77,24 +89,28 @@ namespace BCTKApp
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(F660_danh_sach_ban_hanh_van_ban));
-			this.ImageList = new System.Windows.Forms.ImageList(this.components);
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F660_danh_sach_ban_hanh_van_ban));
 			this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-			this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
-			this.m_cmd_update = new SIS.Controls.Button.SiSButton();
 			this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-			this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+			this.ImageList = new System.Windows.Forms.ImageList(this.components);
+			this.m_cmd_update = new SIS.Controls.Button.SiSButton();
 			this.m_cmd_view = new SIS.Controls.Button.SiSButton();
+			this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
+			this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
 			this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+			this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
+			this.m_lbl_title = new System.Windows.Forms.Label();
+			this.m_cmd_ban_hanh_lai_van_ban = new SIS.Controls.Button.SiSButton();
+			this.m_txt_tu_ngay = new BCTKApp.TCDatetime();
+			this.m_txt_den_ngay = new BCTKApp.TCDatetime();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.m_txt_tu_khoa = new System.Windows.Forms.TextBox();
+			this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+			this.label3 = new System.Windows.Forms.Label();
 			this.m_pnl_out_place_dm.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// ImageList
-			// 
-			this.ImageList.ImageSize = new System.Drawing.Size(16, 16);
-			this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-			this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
 			// 
 			// m_pnl_out_place_dm
 			// 
@@ -104,41 +120,11 @@ namespace BCTKApp
 			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
 			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
 			this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.m_pnl_out_place_dm.DockPadding.All = 4;
-			this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+			this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 441);
 			this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
-			this.m_pnl_out_place_dm.Size = new System.Drawing.Size(686, 36);
+			this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
+			this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1054, 36);
 			this.m_pnl_out_place_dm.TabIndex = 19;
-			// 
-			// m_cmd_delete
-			// 
-			this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-			this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_delete.ImageIndex = 4;
-			this.m_cmd_delete.ImageList = this.ImageList;
-			this.m_cmd_delete.Location = new System.Drawing.Point(506, 4);
-			this.m_cmd_delete.Name = "m_cmd_delete";
-			this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_delete.TabIndex = 14;
-			this.m_cmd_delete.Text = "&Xoá";
-			// 
-			// m_cmd_update
-			// 
-			this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-			this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_update.ImageIndex = 3;
-			this.m_cmd_update.ImageList = this.ImageList;
-			this.m_cmd_update.Location = new System.Drawing.Point(418, 4);
-			this.m_cmd_update.Name = "m_cmd_update";
-			this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_update.TabIndex = 13;
-			this.m_cmd_update.Text = "&Sửa";
 			// 
 			// m_cmd_insert
 			// 
@@ -149,26 +135,55 @@ namespace BCTKApp
 			this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.m_cmd_insert.ImageIndex = 2;
 			this.m_cmd_insert.ImageList = this.ImageList;
-			this.m_cmd_insert.Location = new System.Drawing.Point(330, 4);
+			this.m_cmd_insert.Location = new System.Drawing.Point(698, 4);
 			this.m_cmd_insert.Name = "m_cmd_insert";
 			this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
 			this.m_cmd_insert.TabIndex = 12;
 			this.m_cmd_insert.Text = "&Thêm";
+			this.m_cmd_insert.Visible = false;
 			// 
-			// m_cmd_exit
+			// ImageList
 			// 
-			this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-			this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_exit.ImageIndex = 12;
-			this.m_cmd_exit.ImageList = this.ImageList;
-			this.m_cmd_exit.Location = new System.Drawing.Point(594, 4);
-			this.m_cmd_exit.Name = "m_cmd_exit";
-			this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_exit.TabIndex = 11;
-			this.m_cmd_exit.Text = "Thoát (Esc)";
+			this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+			this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+			this.ImageList.Images.SetKeyName(0, "");
+			this.ImageList.Images.SetKeyName(1, "");
+			this.ImageList.Images.SetKeyName(2, "");
+			this.ImageList.Images.SetKeyName(3, "");
+			this.ImageList.Images.SetKeyName(4, "");
+			this.ImageList.Images.SetKeyName(5, "");
+			this.ImageList.Images.SetKeyName(6, "");
+			this.ImageList.Images.SetKeyName(7, "");
+			this.ImageList.Images.SetKeyName(8, "");
+			this.ImageList.Images.SetKeyName(9, "");
+			this.ImageList.Images.SetKeyName(10, "");
+			this.ImageList.Images.SetKeyName(11, "");
+			this.ImageList.Images.SetKeyName(12, "");
+			this.ImageList.Images.SetKeyName(13, "");
+			this.ImageList.Images.SetKeyName(14, "");
+			this.ImageList.Images.SetKeyName(15, "");
+			this.ImageList.Images.SetKeyName(16, "");
+			this.ImageList.Images.SetKeyName(17, "");
+			this.ImageList.Images.SetKeyName(18, "");
+			this.ImageList.Images.SetKeyName(19, "");
+			this.ImageList.Images.SetKeyName(20, "");
+			this.ImageList.Images.SetKeyName(21, "");
+			// 
+			// m_cmd_update
+			// 
+			this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
+			this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+			this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+			this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+			this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.m_cmd_update.ImageIndex = 3;
+			this.m_cmd_update.ImageList = this.ImageList;
+			this.m_cmd_update.Location = new System.Drawing.Point(786, 4);
+			this.m_cmd_update.Name = "m_cmd_update";
+			this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
+			this.m_cmd_update.TabIndex = 13;
+			this.m_cmd_update.Text = "&Sửa";
+			this.m_cmd_update.Visible = false;
 			// 
 			// m_cmd_view
 			// 
@@ -184,29 +199,185 @@ namespace BCTKApp
 			this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
 			this.m_cmd_view.TabIndex = 21;
 			this.m_cmd_view.Text = "Xem";
+			this.m_cmd_view.Visible = false;
+			// 
+			// m_cmd_delete
+			// 
+			this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
+			this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+			this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+			this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+			this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.m_cmd_delete.ImageIndex = 4;
+			this.m_cmd_delete.ImageList = this.ImageList;
+			this.m_cmd_delete.Location = new System.Drawing.Point(874, 4);
+			this.m_cmd_delete.Name = "m_cmd_delete";
+			this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
+			this.m_cmd_delete.TabIndex = 14;
+			this.m_cmd_delete.Text = "&Xoá";
+			this.m_cmd_delete.Visible = false;
+			// 
+			// m_cmd_exit
+			// 
+			this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+			this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+			this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+			this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+			this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.m_cmd_exit.ImageIndex = 12;
+			this.m_cmd_exit.ImageList = this.ImageList;
+			this.m_cmd_exit.Location = new System.Drawing.Point(962, 4);
+			this.m_cmd_exit.Name = "m_cmd_exit";
+			this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+			this.m_cmd_exit.TabIndex = 11;
+			this.m_cmd_exit.Text = "Thoát (Esc)";
 			// 
 			// m_fg
 			// 
-			this.m_fg.ColumnInfo = @"20,1,0,0,0,85,Columns:0{Width:13;}	 3{Caption:""Ngày nhận"";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}7{Caption:"""";Visible:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}13{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}0{Caption:"""";Visible:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}19{Caption:""Người ký"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}16{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}2{Caption:""Ngày ban hành"";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}8{Caption:"""";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}14{Caption:""Người lập"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}5{Caption:"""";Visible:False;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}6{Caption:"""";Visible:False;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}12{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}11{Caption:"""";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}9{Caption:"""";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}10{Caption:"""";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}1{Caption:"""";Visible:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}15{Caption:""Link scan"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}4{Caption:""Email"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}18{Caption:""Số và ký hiệu"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}17{Caption:""Ngày lập"";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	";
-			this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_fg.Location = new System.Drawing.Point(0, 0);
+			this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+			this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.m_fg.Location = new System.Drawing.Point(0, 149);
 			this.m_fg.Name = "m_fg";
-			this.m_fg.Size = new System.Drawing.Size(686, 373);
-			this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(@"Normal{Font:Microsoft Sans Serif, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	");
+			this.m_fg.Size = new System.Drawing.Size(1054, 292);
+			this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
 			this.m_fg.TabIndex = 20;
+			// 
+			// m_cmd_xem_file
+			// 
+			this.m_cmd_xem_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
+			this.m_cmd_xem_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+			this.m_cmd_xem_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+			this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.m_cmd_xem_file.ImageIndex = 5;
+			this.m_cmd_xem_file.ImageList = this.ImageList;
+			this.m_cmd_xem_file.Location = new System.Drawing.Point(970, 111);
+			this.m_cmd_xem_file.Name = "m_cmd_xem_file";
+			this.m_cmd_xem_file.Size = new System.Drawing.Size(72, 26);
+			this.m_cmd_xem_file.TabIndex = 21;
+			this.m_cmd_xem_file.Text = "Xem file";
+			// 
+			// m_lbl_title
+			// 
+			this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
+			this.m_lbl_title.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.m_lbl_title.ForeColor = System.Drawing.Color.Blue;
+			this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
+			this.m_lbl_title.Name = "m_lbl_title";
+			this.m_lbl_title.Size = new System.Drawing.Size(1054, 46);
+			this.m_lbl_title.TabIndex = 23;
+			this.m_lbl_title.Text = "F661 - Danh sách email đã ban hành";
+			this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// m_cmd_ban_hanh_lai_van_ban
+			// 
+			this.m_cmd_ban_hanh_lai_van_ban.AdjustImageLocation = new System.Drawing.Point(0, 0);
+			this.m_cmd_ban_hanh_lai_van_ban.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+			this.m_cmd_ban_hanh_lai_van_ban.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+			this.m_cmd_ban_hanh_lai_van_ban.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.m_cmd_ban_hanh_lai_van_ban.ImageIndex = 21;
+			this.m_cmd_ban_hanh_lai_van_ban.ImageList = this.ImageList;
+			this.m_cmd_ban_hanh_lai_van_ban.Location = new System.Drawing.Point(826, 111);
+			this.m_cmd_ban_hanh_lai_van_ban.Name = "m_cmd_ban_hanh_lai_van_ban";
+			this.m_cmd_ban_hanh_lai_van_ban.Size = new System.Drawing.Size(136, 26);
+			this.m_cmd_ban_hanh_lai_van_ban.TabIndex = 24;
+			this.m_cmd_ban_hanh_lai_van_ban.Text = "Ban hành lại văn bản";
+			// 
+			// m_txt_tu_ngay
+			// 
+			this.m_txt_tu_ngay.AllowNull = BCTKApp.TCDatetime.AL.Y;
+			this.m_txt_tu_ngay.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+			this.m_txt_tu_ngay.Location = new System.Drawing.Point(378, 54);
+			this.m_txt_tu_ngay.Mask = "00/00/0000";
+			this.m_txt_tu_ngay.Name = "m_txt_tu_ngay";
+			this.m_txt_tu_ngay.Size = new System.Drawing.Size(100, 20);
+			this.m_txt_tu_ngay.TabIndex = 25;
+			this.m_txt_tu_ngay.ValidatingType = typeof(System.DateTime);
+			// 
+			// m_txt_den_ngay
+			// 
+			this.m_txt_den_ngay.AllowNull = BCTKApp.TCDatetime.AL.Y;
+			this.m_txt_den_ngay.Format = BCTKApp.TCDatetime.DinhDang.dd_MM_yyyy;
+			this.m_txt_den_ngay.Location = new System.Drawing.Point(620, 54);
+			this.m_txt_den_ngay.Mask = "00/00/0000";
+			this.m_txt_den_ngay.Name = "m_txt_den_ngay";
+			this.m_txt_den_ngay.Size = new System.Drawing.Size(100, 20);
+			this.m_txt_den_ngay.TabIndex = 25;
+			this.m_txt_den_ngay.ValidatingType = typeof(System.DateTime);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(329, 56);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(46, 13);
+			this.label1.TabIndex = 26;
+			this.label1.Text = "Từ ngày";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(567, 57);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(53, 13);
+			this.label2.TabIndex = 26;
+			this.label2.Text = "Đến ngày";
+			// 
+			// m_txt_tu_khoa
+			// 
+			this.m_txt_tu_khoa.Location = new System.Drawing.Point(378, 93);
+			this.m_txt_tu_khoa.Name = "m_txt_tu_khoa";
+			this.m_txt_tu_khoa.Size = new System.Drawing.Size(242, 20);
+			this.m_txt_tu_khoa.TabIndex = 27;
+			// 
+			// m_cmd_search
+			// 
+			this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+			this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+			this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+			this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.m_cmd_search.ImageIndex = 18;
+			this.m_cmd_search.ImageList = this.ImageList;
+			this.m_cmd_search.Location = new System.Drawing.Point(626, 87);
+			this.m_cmd_search.Name = "m_cmd_search";
+			this.m_cmd_search.Size = new System.Drawing.Size(88, 30);
+			this.m_cmd_search.TabIndex = 28;
+			this.m_cmd_search.Text = "Tìm kiếm";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.ForeColor = System.Drawing.Color.Maroon;
+			this.label3.Location = new System.Drawing.Point(375, 120);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(150, 13);
+			this.label3.TabIndex = 29;
+			this.label3.Text = "* Nhập email hoặc số văn bản";
 			// 
 			// F660_danh_sach_ban_hanh_van_ban
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(686, 409);
+			this.ClientSize = new System.Drawing.Size(1054, 477);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.m_cmd_search);
+			this.Controls.Add(this.m_txt_tu_khoa);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.m_txt_den_ngay);
+			this.Controls.Add(this.m_txt_tu_ngay);
+			this.Controls.Add(this.m_cmd_ban_hanh_lai_van_ban);
+			this.Controls.Add(this.m_lbl_title);
+			this.Controls.Add(this.m_cmd_xem_file);
 			this.Controls.Add(this.m_fg);
 			this.Controls.Add(this.m_pnl_out_place_dm);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "F660_danh_sach_ban_hanh_van_ban";
-			this.Text = "F660_danh_sach_ban_hanh_van_ban";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "F661 - Danh sách email đã ban hành";
 			this.Load += new System.EventHandler(this.F660_danh_sach_ban_hanh_van_ban_Load);
 			this.m_pnl_out_place_dm.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion
@@ -272,15 +443,17 @@ namespace BCTKApp
 		#region Private Methods
 		private void format_controls()
 		{
-			CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_fg);
-			CGridUtils.AddSave_Excel_Handlers(m_fg);
-			CGridUtils.AddSearch_Handlers(m_fg);
+			//CControlFormat.setFormStyle(this, new CAppContext_201());
+			//CControlFormat.setC1FlexFormat(m_fg);
+			//CGridUtils.AddSave_Excel_Handlers(m_fg);
+			//CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
 			this.KeyPreview = true;
 		}
 		private void set_initial_form_load()
 		{
+			m_txt_tu_ngay.Text = CIPConvert.ToStr(DateTime.Now, "dd/MM/yyyy");
+			m_txt_den_ngay.Text = CIPConvert.ToStr(DateTime.Now.AddMonths(2), "dd/MM/yyyy");
 			m_obj_trans = get_trans_object(m_fg);
 			load_data_2_grid();
 		}
@@ -314,7 +487,10 @@ namespace BCTKApp
 		private void load_data_2_grid()
 		{
 			m_ds = new DS_V_BAN_HANH_VAN_BAN();
-			m_us.FillDataset(m_ds);
+			m_us.v_ban_hanh_van_ban(m_ds
+				, CIPConvert.ToDatetime(m_txt_tu_ngay.Text, "dd/MM/yyyy")
+				, CIPConvert.ToDatetime(m_txt_den_ngay.Text, "dd/MM/yyyy")
+				, m_txt_tu_khoa.Text.Trim());
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
@@ -393,7 +569,93 @@ namespace BCTKApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+			m_cmd_xem_file.Click += m_cmd_xem_file_Click;
+			m_cmd_ban_hanh_lai_van_ban.Click += m_cmd_ban_hanh_lai_van_ban_Click;
+			m_cmd_search.Click += m_cmd_search_Click;
 		}
+		private string get_html_contain(
+			string ip_str_url
+			, string ip_str_ten_loai_va_trich_yeu_noi_dung)
+		{
+			return
+				@"<html>
+                     <head>
+                     </head>
+                    <body>
+						<img src='"+ip_str_url+@"' style='display:none' >
+                        <p>Kính gửi các Thầy/Cô</p>
+                        <p>TAD ban hành văn bản/tài liệu: " + ip_str_ten_loai_va_trich_yeu_noi_dung + @"</p>
+                        <p>Chi tiết mời các Thầy/Cô xem file đính kèm bên dưới.</p>
+                        <p>Xin click vào link dưới đây để xác nhận đã nhận email này, và Thầy Cô có thể tra cứu văn bản trong website</p>
+                        <a href='" + ip_str_url + @"'>Xác nhận, tôi đã nhận được email này</a>
+                        <p>Trân trọng!</p>
+                    </body>
+                </html>";
+		}
+		private string get_url_postback_in_email(
+			string ip_str_send_to_email
+			,decimal ip_dc_id_van_thu)
+		{
+			return ConfigurationSettings.AppSettings["WEB_URL"] + "/ChucNang/f604_xac_nhan_cong_van.aspx?mail=" + ip_str_send_to_email + "&id_cong_van=" + ip_dc_id_van_thu;
+		}
+		private void ban_hanh_van_ban(
+			string ip_str_danh_sach_email_ban_hanh
+			, decimal ip_dc_id_van_thu)
+		{
+			US_GD_VAN_THU v_us = new US_GD_VAN_THU(ip_dc_id_van_thu);
+			string[] v_arr_email = ip_str_danh_sach_email_ban_hanh.Split(';');
+			string v_str_mess = "";
+			try
+			{
+				for (int i = 0; i < v_arr_email.Length; i++)
+				{
+					if (!v_arr_email[i].Trim().Equals(""))
+					{
+						string v_str_send_to = v_arr_email[i];
+						if (!v_str_send_to.Contains("@gmail.com")
+							&& !v_str_send_to.Contains("@yahoo.com")
+							&& !v_str_send_to.Contains("@topica.edu.vn")) v_str_send_to += "@topica.edu.vn";
+						string v_str_web_url = get_html_contain(
+							get_url_postback_in_email(v_str_send_to,v_us.dcID)
+							, v_us.strTEN_LOAI_VA_TRICH_YEU_ND);
+						if (!HelpUtils.SendEmailWithHtmlContent(v_str_send_to
+							, "[QuanLyVanThu] Ban hanh van ban"
+						, v_str_web_url
+						, v_us.strLINK_SCAN))
+						{
+							MessageBox.Show("Đã có lỗi trong quá trình thực hiện, bạn vui lòng thực hiện lại thao tác!", "Thông báo");
+							return;
+						}
+						//Ghi du lieu Ban hanh van ban
+						VanThu v_van_thu = new VanThu();
+						v_van_thu.ban_hanh_van_ban(v_us.dcID, DateTime.Now, v_str_send_to);
+						//Ghi lich su Ban hanh van ban
+						string v_str_van_ban_so = "";
+						if (v_us.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DEN)
+						{
+							v_str_van_ban_so = v_us.strSO_CV_DEN;
+						}
+						else v_str_van_ban_so = v_us.strSO_VA_KY_HIEU;
+						v_van_thu.ghi_lich_su_hanh_dong(
+							CAppContext_201.getCurrentUserID()
+							, DateTime.Now
+							, "Ban hành văn bản số: " + v_str_van_ban_so + " cho email: " + v_str_send_to);
+					}
+				}
+				v_us.Update();
+				MessageBox.Show("Đã gửi email ban hành văn bản thành công!", "Thông báo");
+				this.Close();
+			}
+			catch (Exception v_e)
+			{
+				//CSystemLog_301.ExceptionHandle(v_e);
+				MessageBox.Show("Đã có lỗi trong quá trình thực hiện, bạn vui lòng thực hiện lại thao tác!", "Thông báo");
+				return;
+			}
+		}
+		
+
+		
 		#endregion
 
 		//
@@ -472,6 +734,44 @@ namespace BCTKApp
 			{
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
+		}
+
+		void m_cmd_xem_file_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+				if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+				grid2us_object(m_us, m_fg.Row);
+				if (m_us.dcID_VAN_BAN == 0) return;
+				US_V_GD_VAN_THU_ALL v_us = new US_V_GD_VAN_THU_ALL(m_us.dcID_VAN_BAN);
+				HelpUtils.openPDFFile(v_us.strLINK_SCAN);
+			}
+			catch (Exception v_e)
+			{
+				CSystemLog_301.ExceptionHandle(v_e);
+			}
+		}
+
+		void m_cmd_ban_hanh_lai_van_ban_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+				if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+				grid2us_object(m_us, m_fg.Row);
+				if (m_us.dcID_VAN_BAN == 0) return;
+
+				ban_hanh_van_ban(m_us.strGHI_CHU, m_us.dcID_VAN_BAN);//ghi chu luu email da ban hanh
+			}
+			catch (Exception v_e)
+			{
+				CSystemLog_301.ExceptionHandle(v_e);
+			}
+		}
+		void m_cmd_search_Click(object sender, EventArgs e)
+		{
+			load_data_2_grid();
 		}
 
 	}
