@@ -49,7 +49,7 @@ public partial class ChucNang_f604_xac_nhan_cong_van : System.Web.UI.Page
 					v_str_van_ban_so = v_us_gd_van_thu.strSO_CV_DEN;
 				}
 				else v_str_van_ban_so = v_us_gd_van_thu.strSO_VA_KY_HIEU;
-				v_van_thu.ghi_lich_su_hanh_dong(Person.get_user_id(), DateTime.Now, "Nhận văn bản số: " + v_str_van_ban_so);
+				//v_van_thu.ghi_lich_su_hanh_dong(Person.get_user_id(), DateTime.Now, "Nhận văn bản số: " + v_str_van_ban_so);
 				m_lbl_thong_bao.Text = "Cám ơn bạn đã xác nhận công văn! Từ bây giờ, bạn có thể tra cứu công văn này trong chức năng!";
 				m_hpl_chuc_nang.NavigateUrl = "f603_tra_cuu_van_ban.aspx";
 				m_hpl_chuc_nang.Text = "Tra cứu văn thư";

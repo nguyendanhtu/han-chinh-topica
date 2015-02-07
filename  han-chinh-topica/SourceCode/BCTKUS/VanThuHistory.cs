@@ -26,7 +26,7 @@ namespace BCTKUS
 			return true;
 		}
 
-		public bool ban_hanh_van_ban(
+		public decimal ban_hanh_van_ban(
 			decimal ip_dc_id_van_ban
 			, DateTime ip_dat_ngay_ban_hanh
 			, string ip_str_email_ban_hanh)
@@ -38,12 +38,12 @@ namespace BCTKUS
 				v_us.datNGAY_BAN_HANH = ip_dat_ngay_ban_hanh;
 				v_us.strGHI_CHU = ip_str_email_ban_hanh;
 				v_us.Insert();
+				return v_us.dcID;
 			}
 			catch (Exception)
 			{
-				return false;
+				return -1;
 			}
-			return true;
 		}
 
 		public bool nhan_van_ban(

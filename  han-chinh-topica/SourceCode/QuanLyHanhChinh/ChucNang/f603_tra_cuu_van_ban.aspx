@@ -77,11 +77,11 @@
                                     </ItemTemplate>
                                     <ItemStyle HorizontalAlign="Center" />
                                 </asp:TemplateField>
-                                <%--<asp:BoundField DataField="NGAY_LAP" HeaderText="Ngày lâp" DataFormatString="{0:dd/MM/yyyy}" />--%>
+                               
                                 <asp:TemplateField HeaderText="Ngày tháng trên văn bản" >
                                     <ItemTemplate>
                                         <asp:Label ID="m_lbl_ngay_thang_tren_van_ban_grid" runat="server" 
-                                            Text='<%#Eval("NGAY_THANG_TREN_CONG_VAN").ToString().Equals("")? "N/A":
+                                            Text='<%#!Eval("NGAY_THANG_TREN_CONG_VAN").ToString().Equals("")? "N/A":
                                        CIPConvert.ToDatetime(Eval("SO_CV_DEN"),"dd/MM/yyyy").ToString()%>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -94,17 +94,16 @@
                                 <asp:BoundField DataField="TEN_LOAI_VA_TRICH_YEU_ND" HeaderText="Tên loại và trích yếu nội dung" />
                                 <asp:TemplateField HeaderText="Người ký" >
                                     <ItemTemplate>
-                                        <asp:Label ID="m_lbl_so_cong_van_den_grid" runat="server" Text='<%#Eval("NGUOI_KY").ToString().Equals("")? "N/A": Eval("NGUOI_KY")%>'></asp:Label>
+                                        <asp:Label ID="m_lbl_nguoi_ky_grid" runat="server" Text='<%#Eval("NGUOI_KY").ToString().Equals("")? "N/A": Eval("NGUOI_KY")%>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <%--<asp:BoundField DataField="NOI_GUI" HeaderText="Nơi gửi" />
-                                <asp:BoundField DataField="NOI_NHAN" HeaderText="Nơi nhận" />--%>
-                                <asp:BoundField DataField="NOI_NGUOI_NHAN_MPB" HeaderText="Nơi nhận" />
-                                <asp:BoundField DataField="NGUOI_NHAN__BAN_LUU_MPB" HeaderText="Nơi phát hành" />
-                                <asp:TemplateField HeaderText="Xem file scan" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle">
+
+                                <%--<asp:BoundField DataField="NOI_NGUOI_NHAN_MPB" HeaderText="Nơi nhận" />
+                                <asp:BoundField DataField="NGUOI_NHAN__BAN_LUU_MPB" HeaderText="Nơi phát hành" />--%>
+                                <asp:TemplateField HeaderText="Xem file scan" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle" ItemStyle-BackColor="LightBlue">
                                     <ItemTemplate>
-                                        <asp:Button ID="m_hlk_link_scan" Height="100%" Width="100%" Text="Xem file" Visible='<%#is_enable_view(Eval("LINK_SCAN").ToString()) %>'
-                                             style="cursor:pointer;" runat="server" CommandArgument='<%#Eval("ID") %>' CommandName="TaiFile"></asp:Button>
+                                        <asp:Button ID="m_hlk_link_scan" Height="100%" Width="100%"  Text="Xem file" Visible='<%#is_enable_view(Eval("LINK_SCAN").ToString()) %>'
+                                             style="cursor:pointer;" formtarget="_blank" runat="server" CommandArgument='<%#Eval("ID_VAN_BAN") %>' CommandName="TaiFile"></asp:Button>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>

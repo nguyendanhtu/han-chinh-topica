@@ -27,7 +27,7 @@ namespace BCTKApp.CongVan
 		#region Public Interfaces
 		public void display(decimal ip_dc_id_van_ban)
 		{
-			m_dc_id_van_thu = ip_dc_id_van_ban;
+			m_dc_id_gd_van_ban = ip_dc_id_van_ban;
 			US_V_GD_VAN_THU_ALL v_us = new US_V_GD_VAN_THU_ALL(ip_dc_id_van_ban);
 			US_CM_DM_TU_DIEN v_us_loai_van_ban = new US_CM_DM_TU_DIEN(v_us.dcID_LOAI_CONG_VAN);
 			m_lbl_loai_van_ban.Text = v_us_loai_van_ban.strTEN;
@@ -65,7 +65,7 @@ namespace BCTKApp.CongVan
 		#endregion
 
 		#region Members
-		public decimal m_dc_id_van_thu = 0;
+		public decimal m_dc_id_gd_van_ban = 0;
 		#endregion
 
 		#region Private Methods
@@ -84,8 +84,8 @@ namespace BCTKApp.CongVan
 
 		private void view_file_pdf()
 		{
-			if (m_dc_id_van_thu == 0) return;
-			US_V_GD_VAN_THU_ALL v_us = new US_V_GD_VAN_THU_ALL(m_dc_id_van_thu);
+			if (m_dc_id_gd_van_ban == 0) return;
+			US_V_GD_VAN_THU_ALL v_us = new US_V_GD_VAN_THU_ALL(m_dc_id_gd_van_ban);
 			HelpUtils.openPDFFile(v_us.strLINK_SCAN);
 		}
 
@@ -113,11 +113,17 @@ namespace BCTKApp.CongVan
 				{
 					if (!v_arr_email[i].Trim().Equals(""))
 					{
+						
 						string v_str_send_to = v_arr_email[i];
 						if (!v_str_send_to.Contains("@gmail.com")
 							&& !v_str_send_to.Contains("@yahoo.com")
 							&& !v_str_send_to.Contains("@topica.edu.vn")) v_str_send_to += "@topica.edu.vn";
-						string v_str_web_url = get_html_contain(ConfigurationSettings.AppSettings["WEB_URL"] + "/ChucNang/f604_xac_nhan_cong_van.aspx?mail=" + v_str_send_to + "&id_cong_van=" + v_us.dcID, v_us.strTEN_LOAI_VA_TRICH_YEU_ND);
+						//Ghi du lieu Ban hanh van ban
+						VanThu v_van_thu = new VanThu();
+						decimal v_dc_id_gd_ban_hanh = -1;
+						v_dc_id_gd_ban_hanh = v_van_thu.ban_hanh_van_ban(v_us.dcID, DateTime.Now, v_str_send_to);
+						string v_str_web_url = get_html_contain(ConfigurationSettings.AppSettings["WEB_URL"] + "/ChucNang/f604_xac_nhan_cong_van.aspx?mail=" + v_str_send_to + "&id_cong_van=" + v_dc_id_gd_ban_hanh, v_us.strTEN_LOAI_VA_TRICH_YEU_ND);
+
 						if (!HelpUtils.SendEmailWithHtmlContent(v_str_send_to
 							, "[QuanLyVanThu] Ban hanh van ban"
 						, v_str_web_url
@@ -126,9 +132,7 @@ namespace BCTKApp.CongVan
 							MessageBox.Show("Đã có lỗi trong quá trình thực hiện, bạn vui lòng thực hiện lại thao tác!", "Thông báo");
 							return;
 						}
-						//Ghi du lieu Ban hanh van ban
-						VanThu v_van_thu = new VanThu();
-						v_van_thu.ban_hanh_van_ban(v_us.dcID, DateTime.Now, v_str_send_to);
+						
 						//Ghi lich su Ban hanh van ban
 						string v_str_van_ban_so = "";
 						if (v_us.dcID_LOAI_CONG_VAN == ID_LOAI_VAN_THU.CONG_VAN_DEN)
@@ -195,7 +199,7 @@ namespace BCTKApp.CongVan
 				m_txt_email.Focus();
 				return;
 			}
-			this.ban_hanh_van_ban(m_txt_email.Text,m_dc_id_van_thu);
+			this.ban_hanh_van_ban(m_txt_email.Text,m_dc_id_gd_van_ban);
 		}
 		void m_cmd_xem_file_Click(object sender, EventArgs e)
 		{
