@@ -50,6 +50,8 @@
 			this.m_lbl_danh_sach_mail_da_ban_hanh = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.m_lbl_danh_sach_mail_da_xac_nhan = new System.Windows.Forms.Label();
+			this.m_cmd_xem_chi_tiet_ban_hanh = new SIS.Controls.Button.SiSButton();
+			this.m_cmd_xem_lich_su = new SIS.Controls.Button.SiSButton();
 			this.panel1.SuspendLayout();
 			this.m_pnl_out_place_dm.SuspendLayout();
 			this.SuspendLayout();
@@ -109,7 +111,7 @@
 			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
 			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
 			this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 299);
+			this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 268);
 			this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
 			this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
 			this.m_pnl_out_place_dm.Size = new System.Drawing.Size(652, 36);
@@ -263,9 +265,9 @@
 			this.m_lbl_danh_sach_mail_da_ban_hanh.ForeColor = System.Drawing.Color.Blue;
 			this.m_lbl_danh_sach_mail_da_ban_hanh.Location = new System.Drawing.Point(202, 138);
 			this.m_lbl_danh_sach_mail_da_ban_hanh.Name = "m_lbl_danh_sach_mail_da_ban_hanh";
-			this.m_lbl_danh_sach_mail_da_ban_hanh.Size = new System.Drawing.Size(149, 13);
+			this.m_lbl_danh_sach_mail_da_ban_hanh.Size = new System.Drawing.Size(52, 13);
 			this.m_lbl_danh_sach_mail_da_ban_hanh.TabIndex = 332;
-			this.m_lbl_danh_sach_mail_da_ban_hanh.Text = "Tên loại và trích yếu nội dung";
+			this.m_lbl_danh_sach_mail_da_ban_hanh.Text = "111 email";
 			// 
 			// label8
 			// 
@@ -283,15 +285,45 @@
 			this.m_lbl_danh_sach_mail_da_xac_nhan.ForeColor = System.Drawing.Color.Blue;
 			this.m_lbl_danh_sach_mail_da_xac_nhan.Location = new System.Drawing.Point(202, 162);
 			this.m_lbl_danh_sach_mail_da_xac_nhan.Name = "m_lbl_danh_sach_mail_da_xac_nhan";
-			this.m_lbl_danh_sach_mail_da_xac_nhan.Size = new System.Drawing.Size(149, 13);
+			this.m_lbl_danh_sach_mail_da_xac_nhan.Size = new System.Drawing.Size(52, 13);
 			this.m_lbl_danh_sach_mail_da_xac_nhan.TabIndex = 332;
-			this.m_lbl_danh_sach_mail_da_xac_nhan.Text = "Tên loại và trích yếu nội dung";
+			this.m_lbl_danh_sach_mail_da_xac_nhan.Text = "112 email";
+			// 
+			// m_cmd_xem_chi_tiet_ban_hanh
+			// 
+			this.m_cmd_xem_chi_tiet_ban_hanh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+			this.m_cmd_xem_chi_tiet_ban_hanh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+			this.m_cmd_xem_chi_tiet_ban_hanh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+			this.m_cmd_xem_chi_tiet_ban_hanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.m_cmd_xem_chi_tiet_ban_hanh.ImageIndex = 8;
+			this.m_cmd_xem_chi_tiet_ban_hanh.ImageList = this.ImageList;
+			this.m_cmd_xem_chi_tiet_ban_hanh.Location = new System.Drawing.Point(292, 135);
+			this.m_cmd_xem_chi_tiet_ban_hanh.Name = "m_cmd_xem_chi_tiet_ban_hanh";
+			this.m_cmd_xem_chi_tiet_ban_hanh.Size = new System.Drawing.Size(94, 44);
+			this.m_cmd_xem_chi_tiet_ban_hanh.TabIndex = 335;
+			this.m_cmd_xem_chi_tiet_ban_hanh.Text = "Xem chi tiết";
+			// 
+			// m_cmd_xem_lich_su
+			// 
+			this.m_cmd_xem_lich_su.AdjustImageLocation = new System.Drawing.Point(0, 0);
+			this.m_cmd_xem_lich_su.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+			this.m_cmd_xem_lich_su.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+			this.m_cmd_xem_lich_su.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.m_cmd_xem_lich_su.ImageIndex = 1;
+			this.m_cmd_xem_lich_su.ImageList = this.ImageList;
+			this.m_cmd_xem_lich_su.Location = new System.Drawing.Point(401, 135);
+			this.m_cmd_xem_lich_su.Name = "m_cmd_xem_lich_su";
+			this.m_cmd_xem_lich_su.Size = new System.Drawing.Size(140, 44);
+			this.m_cmd_xem_lich_su.TabIndex = 335;
+			this.m_cmd_xem_lich_su.Text = "Xem lịch sử ban hành";
 			// 
 			// f653_ban_hanh_van_ban
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(652, 335);
+			this.ClientSize = new System.Drawing.Size(652, 304);
+			this.Controls.Add(this.m_cmd_xem_lich_su);
+			this.Controls.Add(this.m_cmd_xem_chi_tiet_ban_hanh);
 			this.Controls.Add(this.m_txt_email);
 			this.Controls.Add(this.m_lbl_so_va_ky_hieu);
 			this.Controls.Add(this.m_lbl_loai_van_ban);
@@ -307,6 +339,7 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.m_pnl_out_place_dm);
 			this.Controls.Add(this.panel1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "f653_ban_hanh_van_ban";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "F653 - Ban hành văn bản";
@@ -339,5 +372,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label m_lbl_danh_sach_mail_da_xac_nhan;
         internal SIS.Controls.Button.SiSButton m_cmd_xem_file;
+		internal SIS.Controls.Button.SiSButton m_cmd_xem_chi_tiet_ban_hanh;
+		internal SIS.Controls.Button.SiSButton m_cmd_xem_lich_su;
     }
 }

@@ -26,13 +26,14 @@ namespace BCTKApp
         {
             this.ShowDialog();
         }
+
         #region Private Methods
         private void format_controls()
         {
             set_define_event();	
-            //m_rib_bar_qldm_thong_ke.Visible = true;
-            //m_cmd_bc_chi_phi_theo_phap_nhan.Visible = false;
+           
 			IP.Core.IPUserService.US_HT_NGUOI_SU_DUNG v_us = new IP.Core.IPUserService.US_HT_NGUOI_SU_DUNG(CAppContext_201.getCurrentUserID());
+			//Ẩn chức năng Hành chính khi user VanThu đăng nhập và ngược lại
             if (v_us.strTEN_TRUY_CAP == "vanthu")
             {
                 m_rib_tab_quan_ly_dinh_muc.Visible = false;
@@ -98,9 +99,9 @@ namespace BCTKApp
             m_cmd_nhap_mail.Click += new EventHandler(m_cmd_nhap_mail_Click);
             m_cmd_nhap_de_xuat.Click += m_cmd_nhap_de_xuat_Click;
             m_cmd_bao_cao_tinh_hinh_vpp.Click +=m_cmd_bao_cao_tinh_hinh_vpp_Click;
+			m_cmd_lich_su_thao_tac_van_thu.Click += m_cmd_lich_su_thao_tac_van_thu_Click;
+			m_cmd_danh_sach_email_ban_hanh.Click += m_cmd_danh_sach_email_ban_hanh_Click;
         }
-
-        
 
         void f400_menu_main_Load(object sender, EventArgs e)
         {
@@ -116,6 +117,7 @@ namespace BCTKApp
             }
         }
         #endregion
+
         #region Event
         private void m_cmd_thong_tin_thang_excel_Click(object sender, EventArgs e)
         {
@@ -220,7 +222,8 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
+        
+
         private void m_cmd_nhap_theo_t_Click(object sender, EventArgs e)
         {
             try
@@ -511,7 +514,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_so_sanh_chi_phi_NCC_Click(object sender, EventArgs e)
         {
             try
@@ -538,7 +540,6 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_tra_cuu_dh_VPP_Click(object sender, EventArgs e)
         {
             try
@@ -564,33 +565,6 @@ namespace BCTKApp
 
             }
         }
-
-        void m_cmd_tra_cuu_va_ban_hanh_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                f612_tra_cuu_va_ban_hanh_van_ban v_frm = new f612_tra_cuu_va_ban_hanh_van_ban();
-                v_frm.ShowDialog();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_nhap_van_ban_den_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                f611_quan_ly_van_thu v_frm = new f611_quan_ly_van_thu();
-                v_frm.ShowDialog();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
         private void m_cmd_nhap_mail_Click(object sender, EventArgs e)
         {
             try
@@ -616,5 +590,59 @@ namespace BCTKApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-    }
+		#endregion
+
+		#region VanThu
+		void m_cmd_tra_cuu_va_ban_hanh_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				f612_tra_cuu_va_ban_hanh_van_ban v_frm = new f612_tra_cuu_va_ban_hanh_van_ban();
+				v_frm.ShowDialog();
+			}
+			catch (Exception v_e)
+			{
+				CSystemLog_301.ExceptionHandle(v_e);
+			}
+		}
+
+		void m_cmd_nhap_van_ban_den_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				f611_quan_ly_van_thu v_frm = new f611_quan_ly_van_thu();
+				v_frm.ShowDialog();
+			}
+			catch (Exception v_e)
+			{
+				CSystemLog_301.ExceptionHandle(v_e);
+			}
+		}
+		void m_cmd_danh_sach_email_ban_hanh_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				F660_danh_sach_ban_hanh_van_ban v_frm = new F660_danh_sach_ban_hanh_van_ban();
+				v_frm.display();
+			}
+			catch (Exception v_e)
+			{
+				CSystemLog_301.ExceptionHandle(v_e);
+			}
+		}
+
+		void m_cmd_lich_su_thao_tac_van_thu_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				F660_lich_su_van_thu v_frm = new F660_lich_su_van_thu();
+				v_frm.display();
+			}
+			catch (Exception v_e)
+			{
+				CSystemLog_301.ExceptionHandle(v_e);
+			}
+		}
+		#endregion
+	}
 }
