@@ -762,7 +762,7 @@ namespace BCTKApp
 				grid2us_object(m_us, m_fg.Row);
 				if (m_us.dcID_VAN_BAN == 0) return;
 
-				ban_hanh_van_ban(m_us.strGHI_CHU, m_us.dcID_VAN_BAN);//ghi chu luu email da ban hanh
+				ban_hanh_van_ban(m_us.strGHI_CHU, m_us.dcID);//ghi chu luu email da ban hanh
 			}
 			catch (Exception v_e)
 			{

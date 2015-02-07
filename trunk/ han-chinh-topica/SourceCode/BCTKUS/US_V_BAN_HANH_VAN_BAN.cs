@@ -504,6 +504,18 @@ namespace BCTKUS
 			v_sp.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
 			v_sp.fillDataSetByCommand(this, op_ds);
 		}
+		public void v_tra_cuu_van_ban(
+			DS_V_BAN_HANH_VAN_BAN op_ds
+			, decimal ip_dc_id_doi_tuong_nhan
+			, string ip_str_email
+			, string ip_str_tu_khoa)
+		{
+			CStoredProc v_sp = new CStoredProc("pr_v_ban_hanh_van_ban_F603");
+			v_sp.addDecimalInputParam("@ip_dc_id_doi_tuong_nhan", ip_dc_id_doi_tuong_nhan);
+			v_sp.addNVarcharInputParam("@ip_str_email", ip_str_email);
+			v_sp.addNVarcharInputParam("@ip_str_tu_khoa", ip_str_tu_khoa);
+			v_sp.fillDataSetByCommand(this, op_ds);
+		}
 		#endregion
 	}
 }
