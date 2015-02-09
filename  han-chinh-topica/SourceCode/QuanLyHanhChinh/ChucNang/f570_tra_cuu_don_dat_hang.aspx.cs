@@ -11,7 +11,6 @@ using BCTKDS.CDBNames;
 using IP.Core.IPCommon;
 using IP.Core.WinFormControls;
 using IP.Core.IPUserService;
-using System.Windows.Forms;
 using System.Data;
 
 public partial class ChucNang_f570_tra_cuu_don_dat_hang : System.Web.UI.Page

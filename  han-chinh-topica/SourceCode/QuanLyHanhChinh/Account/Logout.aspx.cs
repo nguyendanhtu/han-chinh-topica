@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BCTKUS;
+using System.Web.Security;
 
 public partial class Account_Logout : System.Web.UI.Page
 {
@@ -18,6 +19,7 @@ public partial class Account_Logout : System.Web.UI.Page
         Response.Cookies["PassWord"].Expires = DateTime.Now.AddMonths(-1);
         Session[SESSION.AccounLoginYN] = "N";
         Session[SESSION.UserName] = "";
-        Response.Redirect("~/Account/Login.aspx");
+        FormsAuthentication.SignOut();
+        Response.Redirect("http://accounts.google.com/logout");
     }
 }
