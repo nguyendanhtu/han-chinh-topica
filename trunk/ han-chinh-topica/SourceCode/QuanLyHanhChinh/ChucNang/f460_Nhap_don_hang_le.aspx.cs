@@ -11,7 +11,7 @@ using BCTKDS.CDBNames;
 using IP.Core.IPCommon;
 using IP.Core.WinFormControls;
 using IP.Core.IPUserService;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 public partial class ChucNang_f460_Nhap_don_hang_le : System.Web.UI.Page
 {

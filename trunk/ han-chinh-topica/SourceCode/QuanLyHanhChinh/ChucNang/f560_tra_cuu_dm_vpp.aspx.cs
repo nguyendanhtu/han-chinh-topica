@@ -11,7 +11,7 @@ using BCTKDS.CDBNames;
 using IP.Core.IPCommon;
 using IP.Core.WinFormControls;
 using IP.Core.IPUserService;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using System.Data;
 
 public partial class ChucNang_f560_tra_cuu_dm_vpp : System.Web.UI.Page
